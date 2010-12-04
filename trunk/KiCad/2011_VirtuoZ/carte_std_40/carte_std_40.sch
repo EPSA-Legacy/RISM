@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 04/12/2010 17:13:40
+EESchema Schematic File Version 2  date 04/12/2010 17:27:37
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,7 +29,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 43  0
+LIBS:carte_std_40-cache
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
@@ -42,36 +43,37 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L PWR_FLAG #FLG01
-U 1 1 4CFA68A4
-P 2050 2450
-F 0 "#FLG01" H 2050 2720 30  0001 C CNN
-F 1 "PWR_FLAG" H 2050 2680 30  0000 C CNN
-	1    2050 2450
-	-1   0    0    1   
-$EndComp
-Connection ~ 2250 2150
+Connection ~ 2400 2450
 Wire Wire Line
-	2250 2150 2250 2100
-Connection ~ 2700 2450
+	3100 2400 3100 2450
 Wire Wire Line
-	2050 2450 2700 2450
-Wire Wire Line
-	3600 2150 3600 2400
-Connection ~ 2150 2150
-Wire Wire Line
-	2150 2050 2150 2150
-Wire Wire Line
-	2300 2150 2050 2150
-Wire Wire Line
-	2050 2450 2050 2350
+	2700 2500 2700 2450
 Wire Wire Line
 	3200 2150 3100 2150
 Wire Wire Line
-	2700 2450 2700 2500
+	2050 2350 2050 2450
 Wire Wire Line
-	3100 2400 3100 2450
+	2300 2150 2050 2150
+Wire Wire Line
+	2150 2050 2150 2150
+Connection ~ 2150 2150
+Wire Wire Line
+	3600 2150 3600 2400
+Wire Wire Line
+	2050 2450 2700 2450
+Connection ~ 2700 2450
+Wire Wire Line
+	2250 2150 2250 2100
+Connection ~ 2250 2150
+$Comp
+L PWR_FLAG #FLG01
+U 1 1 4CFA68A4
+P 2400 2450
+F 0 "#FLG01" H 2400 2720 30  0001 C CNN
+F 1 "PWR_FLAG" H 2400 2680 30  0000 C CNN
+	1    2400 2450
+	-1   0    0    1   
+$EndComp
 $Comp
 L GND #PWR02
 U 1 1 4CFA688A
@@ -86,7 +88,7 @@ L R R1
 U 1 1 4CFA685A
 P 3350 2400
 F 0 "R1" V 3430 2400 50  0000 C CNN
-F 1 "R" V 3350 2400 50  0000 C CNN
+F 1 "520" V 3350 2400 50  0000 C CNN
 	1    3350 2400
 	0    1    1    0   
 $EndComp
@@ -95,7 +97,7 @@ L LED D1
 U 1 1 4CFA6855
 P 3400 2150
 F 0 "D1" H 3400 2250 50  0000 C CNN
-F 1 "LED" H 3400 2050 50  0000 C CNN
+F 1 "RED" H 3400 2050 50  0000 C CNN
 	1    3400 2150
 	1    0    0    -1  
 $EndComp
@@ -131,7 +133,7 @@ L CONN_2 P1
 U 1 1 4CFA681B
 P 1700 2250
 F 0 "P1" V 1650 2250 40  0000 C CNN
-F 1 "CONN_2" V 1750 2250 40  0000 C CNN
+F 1 "ALIM" V 1750 2250 40  0000 C CNN
 	1    1700 2250
 	-1   0    0    -1  
 $EndComp

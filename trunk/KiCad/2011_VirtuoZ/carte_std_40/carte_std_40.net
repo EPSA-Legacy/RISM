@@ -1,25 +1,32 @@
-# EESchema Netlist Version 1.1 created  04/12/2010 17:14:18
+# EESchema Netlist Version 1.1 created  04/12/2010 17:27:43
 (
- ( /4CFA6855 LED-3MM D1 LED
-  ( 1 N-000003 )
-  ( 2 N-000004 )
+ ( /4CFA685A $noname  R1 520 {Lib=R}
+  (    1 N-000002 )
+  (    2 GND )
  )
- ( /4CFA681B bornier2 P1 CONN_2
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4CFA6855 $noname  D1 RED {Lib=LED}
+  (    1 N-000001 )
+  (    2 N-000002 )
  )
- ( /4CFA685A R3 R1 R
-  ( 1 N-000004 )
-  ( 2 GND )
+ ( /4CFA681B $noname  P1 ALIM {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4CFA680D LM78XX U1 7805
-  ( GND GND )
-  ( VI +12V )
-  ( VO N-000003 )
+ ( /4CFA680D $noname  U1 7805 {Lib=7805}
+  (   VI +12V )
+  (   VO N-000001 )
+  (  GND GND )
  )
 )
 *
 { Allowed footprints by component:
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component D1
  LED-3MM
  LED-5MM
@@ -29,12 +36,21 @@ $component D1
  LED-1206
  LEDV
 $endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "" ""
+ U1 VO
+ D1 1
+Net 2 "" ""
+ D1 2
+ R1 1
+Net 3 "GND" "GND"
+ R1 2
+ P1 2
+ U1 GND
+Net 4 "+12V" "+12V"
+ P1 1
+ U1 VI
+}
+#End
