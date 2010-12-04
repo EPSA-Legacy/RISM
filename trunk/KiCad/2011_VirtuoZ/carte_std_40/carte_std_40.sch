@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 04/12/2010 17:33:25
+EESchema Schematic File Version 2  date 04/12/2010 17:37:03
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -44,34 +44,32 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	2050 2450 3100 2450
-Connection ~ 2250 2150
-Wire Wire Line
-	2250 2150 2250 2100
-Connection ~ 2700 2450
-Wire Wire Line
-	3600 2150 3600 2400
-Connection ~ 2150 2150
-Wire Wire Line
-	2150 2050 2150 2150
-Wire Wire Line
-	2300 2150 2050 2150
-Wire Wire Line
-	2050 2450 2050 2350
-Wire Wire Line
-	3200 2150 3100 2150
+	3600 2450 3600 2150
+Connection ~ 2400 2450
 Wire Wire Line
 	2700 2450 2700 2500
 Wire Wire Line
-	3100 2450 3100 2400
-Connection ~ 2400 2450
+	3200 2150 3100 2150
+Wire Wire Line
+	2050 2350 2050 2450
+Wire Wire Line
+	2300 2150 2050 2150
+Wire Wire Line
+	2150 2050 2150 2150
+Connection ~ 2150 2150
+Connection ~ 2700 2450
+Wire Wire Line
+	2250 2150 2250 2100
+Connection ~ 2250 2150
+Wire Wire Line
+	2050 2450 3100 2450
 $Comp
 L R R1
 U 1 1 4CFA685A
-P 3350 2400
-F 0 "R1" V 3430 2400 50  0000 C CNN
-F 1 "520" V 3350 2400 50  0000 C CNN
-	1    3350 2400
+P 3350 2450
+F 0 "R1" V 3430 2450 50  0000 C CNN
+F 1 "520" V 3350 2450 50  0000 C CNN
+	1    3350 2450
 	0    1    1    0   
 $EndComp
 $Comp
