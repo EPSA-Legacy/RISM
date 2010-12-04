@@ -1,227 +1,117 @@
-# EESchema Netlist Version 1.0 generee le  19/1/2003-00:31:07
+# EESchema Netlist Version 1.1 created  04/12/2010 20:14:51
 (
- ( 4BC4B468 $noname  U1 LM324 {Lib=LM324}
-  (    1 N-000023 )
-  (    2 N-000023 )
-  (    3 Vnd_1 )
-  (    4 +6V )
-  (    5 Vng_1 )
-  (    6 N-000026 )
-  (    7 N-000026 )
-  (    8 RA4_1 )
-  (    9 N-000025 )
-  (   10 N-000026 )
-  (   11 GND )
-  (   12 N-000023 )
-  (   13 N-000022 )
-  (   14 RC0_1 )
+ ( /4BC499DB C1 C1 17p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( 3E29E703 $noname  U2 7806 {Lib=7805}
-  (    1 +12V )
-  (    2 GND )
-  (    3 +6V )
+ ( /4BC499D7 C1V5 C2 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( 3E22453D $noname  HE2 HE10-10 {Lib=HE10-10}
-  (    1 RC0_1 )
-  (    2  ? )
-  (    3  ? )
-  (    4  ? )
-  (    5  ? )
-  (    6  ? )
-  (    7  ? )
-  (    8 +12V )
-  (    9  ? )
-  (   10 GND )
+ ( /4CFA8A0D LEDV D1 YELLOW
+  ( 1 VDD )
+  ( 2 N-000003 )
  )
- ( 3E22453C $noname  HE1 HE10-10 {Lib=HE10-10}
-  (    1  ? )
-  (    2 RA4_1 )
-  (    3  ? )
-  (    4  ? )
-  (    5  ? )
-  (    6  ? )
-  (    7  ? )
-  (    8  ? )
-  (    9 VCC )
-  (   10 GND )
+ ( /4CFA8A09 LEDV D2 RED
+  ( 1 VCC )
+  ( 2 N-000002 )
  )
- ( 4BE90EC1 $noname  R7 1k {Lib=R}
-  (    1 GND )
-  (    2 N-000021 )
+ ( /4BC49510 bornier2 P2 CAPT
+  ( 1 VDD )
+  ( 2 /capt_in )
  )
- ( 4BE90EC0 $noname  D1 RED {Lib=LED}
-  (    1 VCC )
-  (    2 N-000021 )
+ ( /4CFA8AC4 1pin P3 GND
+  ( 1 GND )
  )
- ( 4BE90EBE $noname  GND3 Meca {Lib=CONN_1}
-  (    1 GND )
+ ( /4CFA8AD7 1pin P4 VDD
+  ( 1 VDD )
  )
- ( 4BE90EBD $noname  GND2 Meca {Lib=CONN_1}
-  (    1 GND )
+ ( /4CFA8ADC 1pin P5 VCC
+  ( 1 VCC )
  )
- ( 4BE90EBC $noname  GND1 Meca {Lib=CONN_1}
-  (    1 GND )
+ ( /4CFA8ADE 1pin P6 U_out
+  ( 1 /U_out )
  )
- ( 4BC4AAC5 $noname  R2 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000022 )
+ ( /4CFA8C92 TESTPOINT P7 U_in
+  ( 1 /capt_in )
  )
- ( 4BC4AAC4 $noname  R4 22k {Lib=R}
-  (    1 N-000022 )
-  (    2 GND )
+ ( /4CFA8CA9 TESTPOINT P8 U_int
+  ( 1 /U_int )
  )
- ( 4BC4AAC3 $noname  R6 330 {Lib=R}
-  (    1 GND )
-  (    2 Vnd_1 )
+ ( /4CFA8CB2 TESTPOINT P9 U_seuil
+  ( 1 N-000009 )
  )
- ( 4BC49A9B $noname  R1 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000025 )
+ ( /4CFA8A0E R3 R1 1k
+  ( 1 GND )
+  ( 2 N-000003 )
  )
- ( 4BC49A98 $noname  R3 22k {Lib=R}
-  (    1 N-000025 )
-  (    2 GND )
+ ( /4CFA8A08 R3 R2 1k
+  ( 1 GND )
+  ( 2 N-000002 )
  )
- ( 4BC49A94 $noname  R5 330 {Lib=R}
-  (    1 GND )
-  (    2 Vng_1 )
+ ( /4CFA84A4 PIN_ARRAY_3X1 RV1 1k
+  ( 1 /capt_in )
+  ( 2 GND )
+  ( 3 ? )
  )
- ( 4BC499DB $noname  C1 17p {Lib=C}
-  (    1 +6V )
-  (    2 GND )
+ ( /4CFA846A PIN_ARRAY_3X1 RV2 20k
+  ( 1 GND )
+  ( 2 N-000009 )
+  ( 3 VCC )
  )
- ( 4BC499D7 $noname  C2 1u {Lib=CP}
-  (    1 +6V )
-  (    2 GND )
- )
- ( 4BC4959D $noname  J1 DB9 {Lib=DB9}
-  (    1 RA4_1 )
-  (    2 RC0_1 )
-  (    3 GND )
-  (    4 GND )
-  (    5 GND )
-  (    6 GND )
-  (    7 GND )
-  (    8 GND )
-  (    9 GND )
- )
- ( 4BC49511 $noname  P1 VitD {Lib=CONN_2}
-  (    1 +12V )
-  (    2 Vnd_1 )
- )
- ( 4BC49510 $noname  P2 VitG {Lib=CONN_2}
-  (    1 +12V )
-  (    2 Vng_1 )
+ ( /4CFA8397 8DIP-ELL300 U1 TL082
+  ( 1 /U_int )
+  ( 2 /U_int )
+  ( 3 /capt_in )
+  ( 4 GND )
+  ( 5 /U_int )
+  ( 6 N-000009 )
+  ( 7 /U_out )
+  ( 8 VCC )
  )
 )
 *
-{ Pin List by Nets
-Net 3 "GND"
- U1 11
- #PWR12 1
- U2 2
- #FLG3 1
- #PWR11 1
- #PWR10 1
- HE2 10
- HE1 10
- #PWR22 1
- R7 1
- #PWR21 1
- GND3 1
- GND2 1
- GND1 1
- U1 11
- U1 11
- #PWR20 1
- #PWR19 1
- R4 2
- R6 1
- #PWR18 1
- U1 11
- #PWR17 1
- #PWR16 1
- R3 2
- R5 1
- #PWR15 1
- #PWR14 1
- C1 2
- C2 2
- #PWR13 1
- J1 6
- J1 7
- J1 3
- J1 8
- J1 4
- J1 9
- J1 5
-Net 4 "+12V"
- #PWR2 1
- U2 1
- #FLG1 1
- #PWR1 1
- HE2 8
- #PWR3 1
- P1 1
- P2 1
-Net 5 "VCC"
- #FLG2 1
- #PWR23 1
- HE1 9
- #PWR26 1
- D1 1
- #PWR25 1
- R2 1
- #PWR24 1
- R1 1
-Net 14 "RC0_1"
- U1 14
- HE2 1
- J1 2
-Net 16 "RA4_1"
- HE1 2
- U1 8
- J1 1
-Net 21 ""
- R7 2
- D1 2
-Net 22 ""
- U1 13
- R2 2
- R4 1
-Net 23 ""
- U1 12
- U1 1
- U1 2
-Net 24 "Vnd_1"
- R6 2
- U1 3
- P1 2
-Net 25 ""
- U1 9
- R1 2
- R3 1
-Net 26 ""
- U1 10
- U1 7
- U1 6
-Net 27 "Vng_1"
- U1 5
- R5 2
- P2 2
-Net 28 "+6V"
- #PWR9 1
- #PWR8 1
- #PWR7 1
- #PWR6 1
- #PWR5 1
- U1 4
- #PWR4 1
- U2 3
- U1 4
- U1 4
- U1 4
- C1 1
- C2 1
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
 }
-#End

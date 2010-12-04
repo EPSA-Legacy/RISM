@@ -1,45 +1,39 @@
-EESchema (2006-08-28)  >> Creation date: 15/4/2010-09:16:29
+eeschema (2010-05-05 BZR 2356)-stable  >> Creation date: 04/12/2010 20:31:58
 
-#Cmp ( ordre = Reference )
-| C1         10u         
-| C2         17p         
-| C3         17p         
-| C4         1u          
-| D1         RED         
-| J1         DB9         
-| P1         Alim        
-| P2         VitD        
-| P3         VitG        
-| R1         10k         
-| R2         10k         
-| R3         22k         
-| R4         22k         
-| R5         330         
-| R6         330         
-| R7         500         
-| U1         7805        
-| U2         LM324       
+#Cmp ( ordre = Référence )
+| C1         17p         
+| C2         1u          
+| D1         YELLOW      
+| D2         RED         
+| P2         CAPT        
+| P3         GND         
+| P4         VDD         
+| P5         VCC         
+| P6         U_out       
+| P?         U_in        
+| R1         1k          
+| R2         1k          
+| RV1        1k          
+| RV2        20k         
+| U1         TL082       
 #End Cmp
 
 #Cmp ( ordre = Valeur )
-| 10k          R1        
-| 10k          R2        
-| 10u          C1        
-| 17p          C2        
-| 17p          C3        
-| 1u           C4        
-| 22k          R3        
-| 22k          R4        
-| 330          R5        
-| 330          R6        
-| 500          R7        
-| 7805         U1        
-| Alim         P1        
-| DB9          J1        
-| LM324        U2        
-| RED          D1        
-| VitD         P2        
-| VitG         P3        
+| 17p          C1        
+| 1k           R1        
+| 1k           R2        
+| 1k           RV1       
+| 1u           C2        
+| 20k          RV2       
+| CAPT         P2        
+| GND          P3        
+| RED          D2        
+| TL082        U1        
+| U_in         P?        
+| U_out        P6        
+| VCC          P5        
+| VDD          P4        
+| YELLOW       D1        
 #End Cmp
 
 #End List
