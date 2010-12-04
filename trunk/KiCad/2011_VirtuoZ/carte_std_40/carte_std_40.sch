@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 04/12/2010 17:27:37
+EESchema Schematic File Version 2  date 04/12/2010 17:33:25
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -43,46 +43,28 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Connection ~ 2400 2450
 Wire Wire Line
-	3100 2400 3100 2450
+	2050 2450 3100 2450
+Connection ~ 2250 2150
 Wire Wire Line
-	2700 2500 2700 2450
+	2250 2150 2250 2100
+Connection ~ 2700 2450
 Wire Wire Line
-	3200 2150 3100 2150
+	3600 2150 3600 2400
+Connection ~ 2150 2150
 Wire Wire Line
-	2050 2350 2050 2450
+	2150 2050 2150 2150
 Wire Wire Line
 	2300 2150 2050 2150
 Wire Wire Line
-	2150 2050 2150 2150
-Connection ~ 2150 2150
+	2050 2450 2050 2350
 Wire Wire Line
-	3600 2150 3600 2400
+	3200 2150 3100 2150
 Wire Wire Line
-	2050 2450 2700 2450
-Connection ~ 2700 2450
+	2700 2450 2700 2500
 Wire Wire Line
-	2250 2150 2250 2100
-Connection ~ 2250 2150
-$Comp
-L PWR_FLAG #FLG01
-U 1 1 4CFA68A4
-P 2400 2450
-F 0 "#FLG01" H 2400 2720 30  0001 C CNN
-F 1 "PWR_FLAG" H 2400 2680 30  0000 C CNN
-	1    2400 2450
-	-1   0    0    1   
-$EndComp
-$Comp
-L GND #PWR02
-U 1 1 4CFA688A
-P 3100 2450
-F 0 "#PWR02" H 3100 2450 30  0001 C CNN
-F 1 "GND" H 3100 2380 30  0001 C CNN
-	1    3100 2450
-	1    0    0    -1  
-$EndComp
+	3100 2450 3100 2400
+Connection ~ 2400 2450
 $Comp
 L R R1
 U 1 1 4CFA685A
@@ -91,6 +73,15 @@ F 0 "R1" V 3430 2400 50  0000 C CNN
 F 1 "520" V 3350 2400 50  0000 C CNN
 	1    3350 2400
 	0    1    1    0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG01
+U 1 1 4CFA68A4
+P 2400 2450
+F 0 "#FLG01" H 2400 2720 30  0001 C CNN
+F 1 "PWR_FLAG" H 2400 2680 30  0000 C CNN
+	1    2400 2450
+	-1   0    0    1   
 $EndComp
 $Comp
 L LED D1

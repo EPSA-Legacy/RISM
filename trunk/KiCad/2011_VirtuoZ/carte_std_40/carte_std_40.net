@@ -1,12 +1,12 @@
-# EESchema Netlist Version 1.1 created  04/12/2010 17:27:43
+# EESchema Netlist Version 1.1 created  04/12/2010 17:33:29
 (
  ( /4CFA685A $noname  R1 520 {Lib=R}
-  (    1 N-000002 )
+  (    1 N-000004 )
   (    2 GND )
  )
  ( /4CFA6855 $noname  D1 RED {Lib=LED}
-  (    1 N-000001 )
-  (    2 N-000002 )
+  (    1 N-000003 )
+  (    2 N-000004 )
  )
  ( /4CFA681B $noname  P1 ALIM {Lib=CONN_2}
   (    1 +12V )
@@ -14,7 +14,7 @@
  )
  ( /4CFA680D $noname  U1 7805 {Lib=7805}
   (   VI +12V )
-  (   VO N-000001 )
+  (   VO N-000003 )
   (  GND GND )
  )
 )
@@ -39,18 +39,18 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "" ""
- U1 VO
- D1 1
-Net 2 "" ""
- D1 2
- R1 1
-Net 3 "GND" "GND"
+Net 1 "GND" "GND"
  R1 2
- P1 2
  U1 GND
-Net 4 "+12V" "+12V"
- P1 1
+ P1 2
+Net 2 "+12V" "+12V"
  U1 VI
+ P1 1
+Net 3 "" ""
+ D1 1
+ U1 VO
+Net 4 "" ""
+ R1 1
+ D1 2
 }
 #End
