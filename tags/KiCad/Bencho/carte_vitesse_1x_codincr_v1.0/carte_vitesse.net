@@ -1,0 +1,117 @@
+# EESchema Netlist Version 1.1 created  04/12/2010 20:14:51
+(
+ ( /4BC499DB C1 C1 17p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4BC499D7 C1V5 C2 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4CFA8A0D LEDV D1 YELLOW
+  ( 1 VDD )
+  ( 2 N-000003 )
+ )
+ ( /4CFA8A09 LEDV D2 RED
+  ( 1 VCC )
+  ( 2 N-000002 )
+ )
+ ( /4BC49510 bornier2 P2 CAPT
+  ( 1 VDD )
+  ( 2 /capt_in )
+ )
+ ( /4CFA8AC4 1pin P3 GND
+  ( 1 GND )
+ )
+ ( /4CFA8AD7 1pin P4 VDD
+  ( 1 VDD )
+ )
+ ( /4CFA8ADC 1pin P5 VCC
+  ( 1 VCC )
+ )
+ ( /4CFA8ADE 1pin P6 U_out
+  ( 1 /U_out )
+ )
+ ( /4CFA8C92 TESTPOINT P7 U_in
+  ( 1 /capt_in )
+ )
+ ( /4CFA8CA9 TESTPOINT P8 U_int
+  ( 1 /U_int )
+ )
+ ( /4CFA8CB2 TESTPOINT P9 U_seuil
+  ( 1 N-000009 )
+ )
+ ( /4CFA8A0E R3 R1 1k
+  ( 1 GND )
+  ( 2 N-000003 )
+ )
+ ( /4CFA8A08 R3 R2 1k
+  ( 1 GND )
+  ( 2 N-000002 )
+ )
+ ( /4CFA84A4 PIN_ARRAY_3X1 RV1 1k
+  ( 1 /capt_in )
+  ( 2 GND )
+  ( 3 ? )
+ )
+ ( /4CFA846A PIN_ARRAY_3X1 RV2 20k
+  ( 1 GND )
+  ( 2 N-000009 )
+  ( 3 VCC )
+ )
+ ( /4CFA8397 8DIP-ELL300 U1 TL082
+  ( 1 /U_int )
+  ( 2 /U_int )
+  ( 3 /capt_in )
+  ( 4 GND )
+  ( 5 /U_int )
+  ( 6 N-000009 )
+  ( 7 /U_out )
+  ( 8 VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
