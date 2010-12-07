@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 04/12/2010 19:50:32
+EESchema Schematic File Version 2  date 07/12/2010 16:36:07
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,8 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_vitesse-cache
-EELAYER 23  0
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
