@@ -1,6 +1,6 @@
-update=12/12/2010 18:00:54
+update=12/12/2010 18:03:51
 version=1
-last_client=kicad
+last_client=pcbnew
 [eeschema]
 version=1
 LibDir=..\\..\\Librairies
@@ -73,6 +73,8 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=236
@@ -107,5 +109,3 @@ LibName11=drone
 LibName12=muonde
 LibName13=supports
 LibName14=symbioz
-[general]
-version=1
