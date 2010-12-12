@@ -1,6 +1,8 @@
-update=12/12/2010 18:37:39
+update=12/12/2010 23:02:29
 version=1
 last_client=pcbnew
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=..\\..\\Librairies
@@ -73,13 +75,11 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
-PadDrlX=236
-PadDimH=750
-PadDimV=750
+PadDrlX=1200
+PadDimH=3500
+PadDimV=3500
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
