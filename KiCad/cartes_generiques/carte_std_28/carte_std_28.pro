@@ -1,16 +1,6 @@
-update=08/12/2010 18:27:15
+update=12/12/2010 15:39:44
 version=1
 last_client=pcbnew
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
 [general]
 version=1
 [eeschema]
@@ -80,11 +70,16 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=symbioz
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=236
+PadDimH=750
+PadDimV=750
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
@@ -97,9 +92,9 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=carte_std_28.net
 [pcbnew/libraries]
-LibDir=
+LibDir=..\\..\\Modules
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -110,3 +105,7 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
+LibName11=drone
+LibName12=muonde
+LibName13=supports
+LibName14=symbioz

@@ -1,0 +1,27 @@
+PCBNEW-LibDoc----V1  26/1/2003-14:37:03
+#
+$MODULE he10-16df
+Li he10-16df
+Cd Connecteur HE10 16 contacts droit femelle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-16dm
+Li he10-16dm
+Cd Connecteur HE10 16 contacts droit mâle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-10df
+Li he10-10df
+Cd Connecteur HE10 10 contacts droit femelle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-10dm
+Li he10-10dm
+Cd Connecteur HE10 10 contacts droit mâle
+Kw CONN HE10
+$EndMODULE
+#
+$EndLIBDOC
