@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  12/12/2010 16:12:33
+# EESchema Netlist Version 1.1 created  12/12/2010 22:49:37
 (
  ( /4D04E109 $noname  MECA3 5mm {Lib=CONN_1}
   (    1 ? )
@@ -48,8 +48,8 @@
   (    2 /CANH )
  )
  ( /4CFE6D2D $noname  K1 RS232 {Lib=CONN_3}
-  (    1 N-000001 )
-  (    2 N-000044 )
+  (    1 N-000043 )
+  (    2 N-000001 )
   (    3 GND )
  )
  ( /4B2790FC $noname  R3 47K {Lib=R}
@@ -94,31 +94,31 @@
  )
  ( /4BF24245 $noname  C14 1u {Lib=CAPAPOL}
   (    1 GND )
-  (    2 N-000018 )
+  (    2 N-000019 )
  )
  ( /4BF24244 $noname  C10 1u {Lib=CAPAPOL}
-  (    1 N-000017 )
-  (    2 N-000016 )
+  (    1 N-000018 )
+  (    2 N-000017 )
  )
  ( /4BF24243 $noname  C9 1u {Lib=CAPAPOL}
-  (    1 N-000015 )
-  (    2 N-000014 )
+  (    1 N-000016 )
+  (    2 N-000015 )
  )
  ( /4BF24242 $noname  U4 MAX232 {Lib=MAX232}
-  (    1 N-000015 )
+  (    1 N-000016 )
   (    2 N-000020 )
-  (    3 N-000014 )
-  (    4 N-000017 )
-  (    5 N-000016 )
-  (    6 N-000018 )
+  (    3 N-000015 )
+  (    4 N-000018 )
+  (    5 N-000017 )
+  (    6 N-000019 )
   (    7 ? )
   (    8 ? )
   (    9 ? )
   (   10 ? )
   (   11 /TX )
   (   12 /RX )
-  (   13 N-000044 )
-  (   14 N-000001 )
+  (   13 N-000001 )
+  (   14 N-000043 )
   (   15 GND )
   (   16 VCC )
  )
@@ -181,9 +181,9 @@
   (    2 GND )
  )
  ( /453CD743 $noname  U1 7805 {Lib=7805}
-  (    1 +12V )
-  (    2 GND )
-  (    3 VCC )
+  (   VI +12V )
+  (   VO VCC )
+  (  GND GND )
  )
  ( /453CACE9 $noname  U3 ICD {Lib=CNT_RJ12}
   (    1 /Mclr )
@@ -207,151 +207,232 @@
  )
 )
 *
+{ Allowed footprints by component:
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C16
+ CP*
+ SM*
+$endlist
+$component C13
+ CP*
+ SM*
+$endlist
+$component C14
+ CP*
+ SM*
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C9
+ CP*
+ SM*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C6
+ CP*
+ SM*
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ CP*
+ SM*
+$endlist
+$component C12
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$endfootprintlist
+}
 { Pin List by Nets
 Net 1 "" ""
- K1 1
- U4 14
+ K1 2
+ U4 13
 Net 6 "/RB1" "RB1"
  U5 22
  MEZZA1 6
-Net 7 "/RB5" "RB5"
- U3 6
+Net 7 "/Mclr" "Mclr"
+ R3 1
+ U5 1
+ U3 1
+Net 8 "/RB5" "RB5"
  U5 26
-Net 8 "/RB0" "RB0"
- U5 21
+ U3 6
+Net 9 "/RB0" "RB0"
  MEZZA1 5
-Net 9 "/RA4" "RA4"
- U5 6
+ U5 21
+Net 10 "/RA4" "RA4"
  MEZZA1 3
-Net 10 "VCC" "VCC"
- C13 2
+ U5 6
+Net 11 "VCC" "VCC"
  C16 1
  C15 1
+ D1 1
  C5 1
  C11 1
  C12 1
- R3 2
  C3 1
- D1 1
- U5 20
- C4 1
  U2 3
- U1 3
+ C4 1
+ U1 VO
  U3 2
- MEZZA2 9
+ R3 2
+ U5 20
  U4 16
- MEZZA1 9
  C6 1
-Net 11 "+12V" "+12V"
- U1 1
- P1 1
+ MEZZA1 9
+ MEZZA2 9
+ C13 2
+Net 12 "+12V" "+12V"
+ U1 VI
  C1 1
- MEZZA1 8
- C2 1
+ P1 1
  MEZZA2 8
-Net 12 "/RC4" "RC4"
- MEZZA2 6
+ C2 1
+ MEZZA1 8
+Net 13 "/RC4" "RC4"
  U5 15
-Net 14 "" ""
+ MEZZA2 6
+Net 15 "" ""
  C9 2
  U4 3
-Net 15 "" ""
+Net 16 "" ""
  C9 1
  U4 1
-Net 16 "" ""
+Net 17 "" ""
  C10 2
  U4 5
-Net 17 "" ""
+Net 18 "" ""
  C10 1
  U4 4
-Net 18 "" ""
- C14 2
+Net 19 "" ""
  U4 6
-Net 19 "GND" "GND"
- U5 19
- K1 3
- U5 8
- C5 2
- C11 2
- C12 2
- C3 2
- C4 2
- P1 2
- C2 2
- C1 2
- U1 2
- U3 3
- C8 2
- C7 2
- U2 2
- U2 5
- C15 2
- C16 2
- C14 1
- MEZZA2 10
- MEZZA1 10
- R2 1
- R1 2
- C6 2
- U4 15
+ C14 2
 Net 20 "" ""
- U4 2
  C13 1
+ U4 2
 Net 21 "/TX" "TX"
- U4 11
  U5 17
+ U4 11
 Net 22 "/RX" "RX"
  U5 18
  U4 12
 Net 23 "" ""
- R1 1
  D1 2
+ R1 1
 Net 24 "/RC0" "RC0"
- U5 11
  MEZZA2 3
+ U5 11
 Net 25 "/RC2" "RC2"
  U5 13
  MEZZA1 7
 Net 26 "/RC1" "RC1"
- U5 12
  MEZZA2 4
+ U5 12
 Net 27 "" ""
  R2 2
  U2 8
-Net 28 "/CANRX" "CANRX"
- U2 4
- U5 24
+Net 28 "/CANTX" "CANTX"
+ U5 23
+ U2 1
 Net 29 "/RC3" "RC3"
  MEZZA2 5
  U5 14
 Net 30 "" ""
  U5 10
- C8 1
  X1 2
+ C8 1
 Net 31 "" ""
- C7 1
  U5 9
  X1 1
+ C7 1
 Net 32 "/RB6" "RB6"
  U3 5
  U5 27
 Net 33 "/RB7" "RB7"
- U5 28
  U3 4
+ U5 28
 Net 34 "/RA5" "RA5"
- MEZZA1 4
  U5 7
+ MEZZA1 4
 Net 35 "/RC5" "RC5"
  U5 16
  MEZZA2 7
 Net 36 "/CANH" "CANH"
- U2 7
  P3 2
+ U2 7
  P2 2
 Net 37 "/CANL" "CANL"
- U2 6
- P2 1
  P3 1
+ P2 1
+ U2 6
 Net 38 "/RA0" "RA0"
  U5 2
  MEZZA1 1
@@ -364,15 +445,38 @@ Net 40 "/RA2" "RA2"
 Net 41 "/RA3" "RA3"
  MEZZA2 2
  U5 5
-Net 42 "/CANTX" "CANTX"
- U5 23
- U2 1
-Net 43 "/Mclr" "Mclr"
- R3 1
- U5 1
- U3 1
-Net 44 "" ""
- K1 2
- U4 13
+Net 42 "/CANRX" "CANRX"
+ U2 4
+ U5 24
+Net 43 "" ""
+ U4 14
+ K1 1
+Net 47 "GND" "GND"
+ U4 15
+ U5 19
+ C15 2
+ C16 2
+ C5 2
+ C11 2
+ C12 2
+ C3 2
+ C4 2
+ P1 2
+ C2 2
+ C1 2
+ U1 GND
+ U3 3
+ C8 2
+ C7 2
+ U2 2
+ U2 5
+ K1 3
+ U5 8
+ C6 2
+ R1 2
+ R2 1
+ C14 1
+ MEZZA1 10
+ MEZZA2 10
 }
 #End
