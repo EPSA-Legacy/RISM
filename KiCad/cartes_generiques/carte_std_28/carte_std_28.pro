@@ -1,8 +1,6 @@
-update=12/12/2010 16:01:57
+update=12/12/2010 18:00:54
 version=1
-last_client=pcbnew
-[general]
-version=1
+last_client=kicad
 [eeschema]
 version=1
 LibDir=..\\..\\Librairies
@@ -109,3 +107,5 @@ LibName11=drone
 LibName12=muonde
 LibName13=supports
 LibName14=symbioz
+[general]
+version=1
