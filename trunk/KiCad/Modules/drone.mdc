@@ -1,0 +1,15 @@
+PCBNEW-LibDoc----V1  4/2/2003-12:51:48
+#
+$MODULE idg500
+Li idg500
+Cd Bornier d'alimentation 4 pins
+Kw DEV
+$EndMODULE
+#
+$MODULE recepteur
+Li recepteur
+Cd Bornier d'alimentation 4 pins
+Kw DEV
+$EndMODULE
+#
+$EndLIBDOC
