@@ -1,12 +1,22 @@
-update=06/01/2011 18:33:08
+update=11/01/2011 19:44:04
 last_client=pcbnew
 [general]
 version=1
 RootSch=carte_convertisseur.sch
 BoardNm=carte_convertisseur.brd
+[common]
+NetDir=
+[cvpcb]
+version=1
+NetITyp=0
+NetIExt=.net
+PkgIExt=.pkg
+NetType=0
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
-LibDir=
+LibDir=..\\..\\Librairies
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15
@@ -34,9 +44,11 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-PenMin=20
 SimCmd=
 UseNetN=0
+LabSize=60
+PrintMonochrome=1
+ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=power
 LibName2=/solaris/data3/projet/pe1/Fizzy/2009/Convertisseur/nouveau composant/elcc
@@ -64,16 +76,6 @@ LibName23=display
 LibName24=cypress
 LibName25=siliconi
 LibName26=contrib
-[common]
-NetDir=
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -91,7 +93,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=carte_convertisseur.net
 [pcbnew/libraries]
 LibDir=
 LibName1=supports
