@@ -1,0 +1,50 @@
+# EESchema Netlist Version 1.1 created  01/02/2011 12:00:47
+(
+ ( /4D47E2CA C1V7 C1 100u
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /4D47E25F C1 C2 27p
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /4D47E274 C1 C3 27p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D47E2F6 C1V7 C4 10u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D47E3E3 $noname$ P1 ALIM
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /4D47E242 $noname$ U1 7805
+  ( GND GND )
+  ( VI N-000002 )
+  ( VO VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ CP*
+ SM*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$endfootprintlist
+}

@@ -1,0 +1,45 @@
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 01/02/2011 12:00:47
+
+BeginCmp
+TimeStamp = /4D47E2CA;
+Reference = C1;
+ValeurCmp = 100u;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D47E25F;
+Reference = C2;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D47E274;
+Reference = C3;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D47E2F6;
+Reference = C4;
+ValeurCmp = 10u;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D47E3E3;
+Reference = P1;
+ValeurCmp = ALIM;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D47E242;
+Reference = U1;
+ValeurCmp = 7805;
+IdModule  = ;
+EndCmp
+
+EndListe
