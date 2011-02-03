@@ -1,50 +1,521 @@
-# EESchema Netlist Version 1.1 created  01/02/2011 12:00:47
+# EESchema Netlist Version 1.1 created  03/02/2011 10:40:27
 (
- ( /4D47E2CA C1V7 C1 100u
-  ( 1 N-000002 )
-  ( 2 GND )
+ ( /4D4A62E0 $noname  J4 CONVERTISSEUR {Lib=DB25}
+  (    1 /Imot1 )
+  (    2 /Imot2 )
+  (    3 /Isc1 )
+  (    4 /Isc2 )
+  (    5 /Umot1 )
+  (    6 /Umot2 )
+  (    7 /Usc1 )
+  (    8 /Tconv )
+  (    9 /PWM1 )
+  (   10 /PWM2 )
+  (   11 /Enable1 )
+  (   12 /Enable2 )
+  (   13 /Derr1 )
+  (   14 /Derr2 )
+  (   15 GND )
+  (   16 GND )
+  (   17 GND )
+  (   18 GND )
+  (   19 GND )
+  (   20 GND )
+  (   21 GND )
+  (   22 GND )
+  (   23 GND )
+  (   24 GND )
+  (   25 GND )
  )
- ( /4D47E25F C1 C2 27p
-  ( 1 N-000002 )
-  ( 2 GND )
+ ( /4D4A5969 $noname  J2 TDB {Lib=DB9}
+  (    1 /Boost )
+  (    2 /Frein )
+  (    3 /Mode_Elec )
+  (    4 /SecuCr )
+  (    5 /SecuPl )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 /SecuVi )
  )
- ( /4D47E274 C1 C3 27p
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4D4A57F5 $noname  J1 VITESSE {Lib=DB9}
+  (    1 /W1 )
+  (    2 /W2 )
+  (    3 GND )
+  (    4 GND )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 GND )
  )
- ( /4D47E2F6 C1V7 C4 10u
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4D483DE5 $noname  P5 BRASAGE_R {Lib=CONN_30}
+  (    1 /SecuPl )
+  (    2 /SecuVi )
+  (    3 /SecuCr )
+  (    4 /Mode_Elec )
+  (    5 /Frein )
+  (    6 /Boost )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 /W1 )
+  (   12 /W2 )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 /Derr1 )
+  (   18 /Enable2 )
+  (   19 /Enable1 )
+  (   20 /PWM2 )
+  (   21 /PWM1 )
+  (   22 /Tconv )
+  (   23 /Usc1 )
+  (   24 /Umot2 )
+  (   25 /Umot1 )
+  (   26 /Isc2 )
+  (   27 /Isc1 )
+  (   28 /Imot2 )
+  (   29 /Derr2 )
+  (   30 /Imot1 )
  )
- ( /4D47E3E3 $noname$ P1 ALIM
-  ( 1 N-000002 )
-  ( 2 GND )
+ ( /4D4832B5 $noname  P4 BRASSAGE_L {Lib=CONN_30}
+  (    1 /IO0 )
+  (    2 /DACH3 )
+  (    3 /ADCH5 )
+  (    4 /ADCH3 )
+  (    5 /ADCH1 )
+  (    6 /ADCH7 )
+  (    7 /SPWM5 )
+  (    8 /SCAP2 )
+  (    9 /SCAP1 )
+  (   10 /SCAP4 )
+  (   11 /RTS_(\RTS) )
+  (   12 /SCAP3 )
+  (   13 /IO1 )
+  (   14 /DACH4 )
+  (   15 /ADCH6 )
+  (   16 /ADCH4 )
+  (   17 /ADCH2 )
+  (   18 /ADCH8 )
+  (   19 /SPWM8 )
+  (   20 /SPWM9 )
+  (   21 /ST2PWM )
+  (   22 /ST3PWM )
+  (   23 /SSCLK )
+  (   24 /SSTE )
+  (   25 /SSOMI )
+  (   26 /CTS_(\CTS) )
+  (   27 /SSIMO )
+  (   28 /ST1PWM )
+  (   29 /SPWM7 )
+  (   30 GND )
  )
- ( /4D47E242 $noname$ U1 7805
-  ( GND GND )
-  ( VI N-000002 )
-  ( VO VCC )
+ ( /4D482689 $noname  P3 DSPACE8_P1B {Lib=CONN_25X2}
+  (    1 GND )
+  (    2 ? )
+  (    3 /SSIMO )
+  (    4 ? )
+  (    5 /ST1PWM )
+  (    6 /SPWM7 )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 /IO1 )
+  (   13 GND )
+  (   14 /DACH4 )
+  (   15 GND )
+  (   16 /ADCH6 )
+  (   17 GND )
+  (   18 /CTS_(\CTS) )
+  (   19 /SSOMI )
+  (   20 /SSCLK )
+  (   21 /ST2PWM )
+  (   22 /SPWM8 )
+  (   23 ? )
+  (   24 ? )
+  (   25 GND )
+  (   26 ? )
+  (   27 ? )
+  (   28 ? )
+  (   29 ? )
+  (   30 GND )
+  (   31 ? )
+  (   32 GND )
+  (   33 /ADCH4 )
+  (   34 ? )
+  (   35 ? )
+  (   36 /SSTE )
+  (   37 /ST3PWM )
+  (   38 /SPWM9 )
+  (   39 GND )
+  (   40 ? )
+  (   41 ? )
+  (   42 ? )
+  (   43 ? )
+  (   44 ? )
+  (   45 GND )
+  (   46 ? )
+  (   47 GND )
+  (   48 /ADCH8 )
+  (   49 GND )
+  (   50 /ADCH2 )
+ )
+ ( /4D482684 $noname  P2 DSPACE_P1A {Lib=CONN_25X2}
+  (    1 GND )
+  (    2 ? )
+  (    3 /SCAP3 )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 /IO0 )
+  (   13 GND )
+  (   14 /DACH3 )
+  (   15 GND )
+  (   16 /ADCH5 )
+  (   17 GND )
+  (   18 /RTS_(\RTS) )
+  (   19 /SCAP4 )
+  (   20 /SCAP1 )
+  (   21 /SPWM5 )
+  (   22 ? )
+  (   23 ? )
+  (   24 ? )
+  (   25 GND )
+  (   26 ? )
+  (   27 ? )
+  (   28 ? )
+  (   29 ? )
+  (   30 GND )
+  (   31 ? )
+  (   32 GND )
+  (   33 /ADCH3 )
+  (   34 ? )
+  (   35 ? )
+  (   36 /SCAP2 )
+  (   37 ? )
+  (   38 ? )
+  (   39 GND )
+  (   40 ? )
+  (   41 ? )
+  (   42 ? )
+  (   43 ? )
+  (   44 ? )
+  (   45 GND )
+  (   46 ? )
+  (   47 GND )
+  (   48 /ADCH7 )
+  (   49 GND )
+  (   50 /ADCH1 )
+ )
+ ( /4D4823B1 $noname  R1 350 {Lib=R}
+  (    1 VCC )
+  (    2 N-000077 )
+ )
+ ( /4D4822C9 $noname  D1 ROUGE {Lib=LED}
+  (    1 N-000077 )
+  (    2 GND )
+ )
+ ( /4D47E3E3 $noname  P1 ALIM {Lib=CONN_2}
+  (    1 N-000068 )
+  (    2 GND )
+ )
+ ( /4D47E2F6 $noname  C4 10u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D47E2CA $noname  C1 100u {Lib=CP}
+  (    1 N-000068 )
+  (    2 GND )
+ )
+ ( /4D47E274 $noname  C3 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D47E25F $noname  C2 27p {Lib=C}
+  (    1 N-000068 )
+  (    2 GND )
+ )
+ ( /4D47E242 $noname  U1 7805 {Lib=7805}
+  (  GND GND )
+  (   VI N-000068 )
+  (   VO VCC )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
+$component J4
+ DB25*
+$endlist
+$component J2
+ DB9*
+$endlist
+$component J1
+ DB9*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component C4
  CP*
  SM*
 $endlist
-$component C2
+$component C1
+ CP*
  SM*
- C?
- C1-1
 $endlist
 $component C3
  SM*
  C?
  C1-1
 $endlist
-$component C4
- CP*
+$component C2
  SM*
+ C?
+ C1-1
 $endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 34 "/SecuPl" "SecuPl"
+ P5 1
+ J2 5
+Net 35 "/SecuCr" "SecuCr"
+ P5 3
+ J2 4
+Net 36 "/Frein" "Frein"
+ J2 2
+ P5 5
+Net 41 "/W1" "W1"
+ J1 1
+ P5 11
+Net 42 "GND" "GND"
+ C2 2
+ U1 GND
+ P3 13
+ J4 17
+ J4 16
+ P3 32
+ P2 49
+ P2 39
+ P2 47
+ P2 17
+ P3 45
+ P3 25
+ P3 30
+ P3 1
+ P3 17
+ P3 47
+ P3 39
+ P3 49
+ J4 19
+ J4 18
+ J1 3
+ J1 4
+ J1 5
+ J1 6
+ J4 22
+ P3 15
+ J4 15
+ J4 25
+ J4 23
+ J4 24
+ J1 7
+ J1 8
+ J1 9
+ P4 30
+ J2 6
+ J2 7
+ J2 8
+ P2 32
+ P2 13
+ P2 15
+ P2 25
+ P2 45
+ J4 20
+ J4 21
+ P1 2
+ P2 1
+ P2 30
+ D1 2
+ C4 2
+ C3 2
+ C1 2
+Net 46 "/ADCH3" "ADCH3"
+ P2 33
+ P4 4
+Net 48 "/DACH3" "DACH3"
+ P4 2
+ P2 14
+Net 53 "/ADCH5" "ADCH5"
+ P2 16
+ P4 3
+Net 55 "/SCAP2" "SCAP2"
+ P2 36
+ P4 8
+Net 57 "/SCAP3" "SCAP3"
+ P4 12
+ P2 3
+Net 60 "/SCAP1" "SCAP1"
+ P2 20
+ P4 9
+Net 62 "/ADCH1" "ADCH1"
+ P4 5
+ P2 50
+Net 63 "/SPWM5" "SPWM5"
+ P4 7
+ P2 21
+Net 66 "/IO0" "IO0"
+ P4 1
+ P2 12
+Net 67 "VCC" "VCC"
+ U1 VO
+ C4 1
+ R1 1
+ C3 1
+Net 68 "" ""
+ P1 1
+ C2 1
+ U1 VI
+ C1 1
+Net 71 "/RTS (\RTS)" "RTS (\RTS)"
+ P2 18
+ P4 11
+Net 74 "/ADCH7" "ADCH7"
+ P2 48
+ P4 6
+Net 75 "/SCAP4" "SCAP4"
+ P2 19
+ P4 10
+Net 77 "" ""
+ D1 1
+ R1 2
+Net 78 "/SSIMO" "SSIMO"
+ P4 27
+ P3 3
+Net 79 "/ST1PWM" "ST1PWM"
+ P4 28
+ P3 5
+Net 80 "/SPWM7" "SPWM7"
+ P4 29
+ P3 6
+Net 81 "/SSCLK" "SSCLK"
+ P3 20
+ P4 23
+Net 82 "/ADCH6" "ADCH6"
+ P3 16
+ P4 15
+Net 83 "/SSTE" "SSTE"
+ P4 24
+ P3 36
+Net 84 "/ST3PWM" "ST3PWM"
+ P3 37
+ P4 22
+Net 85 "/CTS (\CTS)" "CTS (\CTS)"
+ P4 26
+ P3 18
+Net 86 "/SPWM9" "SPWM9"
+ P4 20
+ P3 38
+Net 87 "/ADCH8" "ADCH8"
+ P3 48
+ P4 18
+Net 88 "/SSOMI" "SSOMI"
+ P4 25
+ P3 19
+Net 89 "/ADCH2" "ADCH2"
+ P4 17
+ P3 50
+Net 90 "/ST2PWM" "ST2PWM"
+ P3 21
+ P4 21
+Net 91 "/IO1" "IO1"
+ P3 12
+ P4 13
+Net 92 "/SPWM8" "SPWM8"
+ P3 22
+ P4 19
+Net 93 "/ADCH4" "ADCH4"
+ P3 33
+ P4 16
+Net 94 "/DACH4" "DACH4"
+ P4 14
+ P3 14
+Net 95 "/Derr1" "Derr1"
+ J4 13
+ P5 17
+Net 96 "/Umot1" "Umot1"
+ P5 25
+ J4 5
+Net 97 "/Usc1" "Usc1"
+ J4 7
+ P5 23
+Net 98 "/PWM1" "PWM1"
+ P5 21
+ J4 9
+Net 99 "/Enable1" "Enable1"
+ P5 19
+ J4 11
+Net 100 "/Isc1" "Isc1"
+ P5 27
+ J4 3
+Net 101 "/Derr2" "Derr2"
+ P5 29
+ J4 14
+Net 102 "/Imot1" "Imot1"
+ J4 1
+ P5 30
+Net 103 "/Imot2" "Imot2"
+ J4 2
+ P5 28
+Net 104 "/Boost" "Boost"
+ P5 6
+ J2 1
+Net 105 "/Mode Elec" "Mode Elec"
+ P5 4
+ J2 3
+Net 106 "/SecuVi" "SecuVi"
+ P5 2
+ J2 9
+Net 107 "/W2" "W2"
+ J1 2
+ P5 12
+Net 108 "/Enable2" "Enable2"
+ J4 12
+ P5 18
+Net 109 "/PWM2" "PWM2"
+ P5 20
+ J4 10
+Net 110 "/Tconv" "Tconv"
+ J4 8
+ P5 22
+Net 111 "/Umot2" "Umot2"
+ J4 6
+ P5 24
+Net 112 "/Isc2" "Isc2"
+ J4 4
+ P5 26
+}
+#End
