@@ -2,8 +2,8 @@ update=06/02/2011 16:09:11
 last_client=pcbnew
 [general]
 version=1
-RootSch=carte_alim_convert.sch
-BoardNm=carte_alim_convert.brd
+RootSch=carte_convertisseur_drivers.sch
+BoardNm=carte_convertisseur_drivers.brd
 [common]
 NetDir=
 [eeschema]
@@ -88,7 +88,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=carte_alim_convert.net
+LastNetListRead=carte_convertisseur_drivers.net
 [pcbnew/libraries]
 LibDir=..\\..\\Modules
 LibName1=supports
