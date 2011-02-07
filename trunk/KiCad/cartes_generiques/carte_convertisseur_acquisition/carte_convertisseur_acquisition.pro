@@ -1,4 +1,4 @@
-update=07/02/2011 18:59:17
+update=07/02/2011 19:09:24
 last_client=pcbnew
 [general]
 version=1
@@ -71,7 +71,7 @@ version=1
 NetIExt=net
 [pcbnew]
 version=1
-PadDrlX=310
+PadDrlX=320
 PadDimH=750
 PadDimV=750
 BoardThickness=630
