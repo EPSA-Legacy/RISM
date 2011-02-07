@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 06/02/2011 02:19:21
+EESchema Schematic File Version 2  date 07/02/2011 18:11:37
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,7 +35,7 @@ EELAYER END
 $Descr A3 16535 11700
 Sheet 1 1
 Title "carte interface dSpace"
-Date "6 feb 2011"
+Date "7 feb 2011"
 Rev "1.0"
 Comp "EPSA Bencho"
 Comment1 ""
@@ -1865,13 +1865,13 @@ Text Label 15500 1450 2    60   ~ 0
 Mode Elec
 Text Label 15500 1350 2    60   ~ 0
 SecuCr
-Text Label 15500 1250 2    60   ~ 0
-SecuVi
 Text Label 15500 1150 2    60   ~ 0
+SecuVi
+Text Label 15500 1250 2    60   ~ 0
 SecuPl
-Text Label 15500 2050 2    60   ~ 0
-W2
 Text Label 15500 1950 2    60   ~ 0
+W2
+Text Label 15500 2050 2    60   ~ 0
 W1
 Text Notes 10450 5450 0    60   ~ 0
 Connecteur Carte Convertisseur
