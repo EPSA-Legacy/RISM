@@ -1,9 +1,9 @@
-update=07/02/2011 16:12:19
+update=07/02/2011 17:49:35
 last_client=pcbnew
 [general]
 version=1
-RootSch=carte_convertisseur.sch
-BoardNm=carte_convertisseur.brd
+RootSch=carte_convertisseur_acquisition.sch
+BoardNm=carte_convertisseur_acquisition.brd
 [common]
 NetDir=
 [eeschema]
@@ -71,9 +71,9 @@ version=1
 NetIExt=net
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=310
+PadDimH=750
+PadDimV=750
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800
@@ -86,7 +86,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=carte_convertisseur.net
+LastNetListRead=carte_convertisseur_acquisition.net
 [pcbnew/libraries]
 LibDir=..\\..\\Modules
 LibName1=symbioz
@@ -98,8 +98,6 @@ LibName6=divers
 LibName7=led
 LibName8=libcms
 LibName9=muonde
-LibName10=pilou
-LibName11=pin_array
-LibName12=sockets
-LibName13=supports
-LibName14=valves
+LibName10=pin_array
+LibName11=sockets
+LibName12=valves
