@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/02/2011 17:30:48
+EESchema Schematic File Version 2  date 07/02/2011 18:54:55
 LIBS:power
 LIBS:symbioz
 LIBS:device
@@ -23,7 +23,7 @@ LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:contrib
-LIBS:carte_convertisseur-cache
+LIBS:carte_convertisseur_acquisition-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
@@ -37,6 +37,76 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_1 MECA1
+U 1 1 4D5031D5
+P 4150 1350
+F 0 "MECA1" H 4300 1350 40  0000 C CNN
+F 1 "5mm" H 4100 1390 30  0001 C CNN
+	1    4150 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MECA2
+U 1 1 4D5031D4
+P 4150 1500
+F 0 "MECA2" H 4300 1500 40  0000 C CNN
+F 1 "5mm" H 4100 1540 30  0001 C CNN
+	1    4150 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MECA3
+U 1 1 4D5031D3
+P 4150 1650
+F 0 "MECA3" H 4300 1650 40  0000 C CNN
+F 1 "5mm" H 4100 1690 30  0001 C CNN
+	1    4150 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MECA4
+U 1 1 4D5031D2
+P 4150 1800
+F 0 "MECA4" H 4300 1800 40  0000 C CNN
+F 1 "5mm" H 4100 1840 30  0001 C CNN
+	1    4150 1800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4000 1350
+NoConn ~ 4000 1500
+NoConn ~ 4000 1650
+Text Notes 3800 1200 0    60   ~ 0
+Trous mécaniques
+NoConn ~ 4000 2100
+$Comp
+L CONN_1 MECA6
+U 1 1 4D5031D1
+P 4150 2100
+F 0 "MECA6" H 4300 2100 40  0000 C CNN
+F 1 "5mm" H 4100 2140 30  0001 C CNN
+	1    4150 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 MECA5
+U 1 1 4D5031D0
+P 4150 1950
+F 0 "MECA5" H 4300 1950 40  0000 C CNN
+F 1 "5mm" H 4100 1990 30  0001 C CNN
+	1    4150 1950
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4000 1800
+NoConn ~ 4000 1950
+Wire Notes Line
+	4650 2200 4650 1100
+Wire Notes Line
+	4650 2200 3750 2200
+Wire Notes Line
+	3750 2200 3750 1100
+Wire Notes Line
+	3750 1100 4650 1100
 Wire Notes Line
 	1450 9300 7150 9300
 Wire Notes Line
@@ -1544,7 +1614,7 @@ L R R17
 U 1 1 4D3E7AA0
 P 2450 6450
 F 0 "R17" V 2530 6450 50  0000 C CNN
-F 1 "62" V 2450 6450 50  0000 C CNN
+F 1 "33" V 2450 6450 50  0000 C CNN
 	1    2450 6450
 	1    0    0    -1  
 $EndComp

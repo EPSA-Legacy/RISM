@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 07/02/2011 17:50:09
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 07/02/2011 18:54:51
 
 BeginCmp
 TimeStamp = /4D356636;
@@ -400,6 +400,48 @@ IdModule  = D4;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D5031D5;
+Reference = MECA1;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D5031D4;
+Reference = MECA2;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D5031D3;
+Reference = MECA3;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D5031D2;
+Reference = MECA4;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D5031D0;
+Reference = MECA5;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D5031D1;
+Reference = MECA6;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
 TimeStamp = /4D359DE0;
 Reference = P1;
 ValeurCmp = ISc1_O;
@@ -633,7 +675,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4D3E7AA0;
 Reference = R17;
-ValeurCmp = 62;
+ValeurCmp = 33;
 IdModule  = R5;
 EndCmp
 
