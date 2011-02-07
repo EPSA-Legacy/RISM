@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  05/02/2011 17:59:45
+PCBNEW-LibDoc----V1  07/02/2011 17:49:31
 #
 $MODULE he10-16df
 Li he10-16df
@@ -22,6 +22,54 @@ $MODULE he10-10dm
 Li he10-10dm
 Cd Connecteur HE10 10 contacts droit mâle
 Kw CONN HE10
+$EndMODULE
+#
+$MODULE R3
+Li R3
+Cd Resitance 3 pas
+Kw R
+$EndMODULE
+#
+$MODULE C1
+Li C1
+Cd Condensateur e = 1 pas
+Kw C
+$EndMODULE
+#
+$MODULE C1V5
+Li C1V5
+Cd Condensateur e = 1 pas
+Kw C
+$EndMODULE
+#
+$MODULE C2
+Li C2
+Cd Condensateur = 2 pas
+Kw C
+$EndMODULE
+#
+$MODULE LEDV
+Li LEDV
+Cd Led verticale diam 6mm
+Kw LED DEV
+$EndMODULE
+#
+$MODULE C2V8
+Li C2V8
+Cd Condensateur polarise
+Kw CP
+$EndMODULE
+#
+$MODULE D4
+Li D4
+Cd Diode 4 pas
+Kw DIODE DEV
+$EndMODULE
+#
+$MODULE TO39
+Li TO39
+Cd Transistor TO38
+Kw TO38
 $EndMODULE
 #
 $EndLIBDOC
