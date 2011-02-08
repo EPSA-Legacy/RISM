@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/02/2011 18:11:37
+EESchema Schematic File Version 2  date 08/02/2011 19:10:59
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,7 +35,7 @@ EELAYER END
 $Descr A3 16535 11700
 Sheet 1 1
 Title "carte interface dSpace"
-Date "7 feb 2011"
+Date "8 feb 2011"
 Rev "1.0"
 Comp "EPSA Bencho"
 Comment1 ""
@@ -1586,7 +1586,7 @@ L SW_PUSH SW2
 U 1 1 4D4AD7AE
 P 1800 4100
 F 0 "SW2" H 1950 4210 50  0000 C CNN
-F 1 "BOOST" H 1800 4020 50  0000 C CNN
+F 1 "FREIN" H 1800 4020 50  0000 C CNN
 	1    1800 4100
 	1    0    0    -1  
 $EndComp
@@ -1595,7 +1595,7 @@ L SW_PUSH SW1
 U 1 1 4D4AD7AB
 P 1800 4450
 F 0 "SW1" H 1950 4560 50  0000 C CNN
-F 1 "FREIN" H 1800 4370 50  0000 C CNN
+F 1 "BOOST" H 1800 4370 50  0000 C CNN
 	1    1800 4450
 	1    0    0    -1  
 $EndComp
