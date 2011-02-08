@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  07/02/2011 18:11:42
+# EESchema Netlist Version 1.1 created  08/02/2011 19:11:04
 (
  ( /4D4D8DBB $noname  C11 27p {Lib=C}
   (    1 +12V )
@@ -198,11 +198,11 @@
   (    1 N-000040 )
   (    2 GND )
  )
- ( /4D4AD7AE $noname  SW2 BOOST {Lib=SW_PUSH}
+ ( /4D4AD7AE $noname  SW2 FREIN {Lib=SW_PUSH}
   (    1 VCC )
   (    2 /Frein )
  )
- ( /4D4AD7AB $noname  SW1 FREIN {Lib=SW_PUSH}
+ ( /4D4AD7AB $noname  SW1 BOOST {Lib=SW_PUSH}
   (    1 VCC )
   (    2 /Boost )
  )
