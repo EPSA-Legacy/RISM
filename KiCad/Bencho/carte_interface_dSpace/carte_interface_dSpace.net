@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  10/02/2011 16:57:03
+# EESchema Netlist Version 1.1 created  10/02/2011 21:46:45
 (
  ( /4D4D8DBB $noname  C11 27p {Lib=C}
   (    1 +12V )
@@ -33,19 +33,19 @@
   (   VI +12V )
   (   VO VCC )
  )
- ( /4D4B3E7C $noname  R24 5k {Lib=R}
+ ( /4D4B3E7C $noname  R24 10k {Lib=R}
   (    1 GND )
   (    2 N-000135 )
  )
- ( /4D4B3E7B $noname  R27 10k {Lib=R}
+ ( /4D4B3E7B $noname  R27 20k {Lib=R}
   (    1 N-000135 )
   (    2 /Isc2+ )
  )
- ( /4D4B3E7A $noname  R30 10k {Lib=R}
+ ( /4D4B3E7A $noname  R30 20k {Lib=R}
   (    1 N-000136 )
   (    2 /Isc2- )
  )
- ( /4D4B3E79 $noname  R33 5k {Lib=R}
+ ( /4D4B3E79 $noname  R33 10k {Lib=R}
   (    1 /Isc2 )
   (    2 N-000136 )
  )
@@ -65,51 +65,51 @@
   (   13 N-000136 )
   (   14 /Isc2 )
  )
- ( /4D4B3E73 $noname  R10 5k {Lib=R}
+ ( /4D4B3E73 $noname  R10 10k {Lib=R}
   (    1 GND )
   (    2 N-000129 )
  )
- ( /4D4B3E72 $noname  R11 10k {Lib=R}
+ ( /4D4B3E72 $noname  R11 20k {Lib=R}
   (    1 N-000129 )
   (    2 /Imot1+ )
  )
- ( /4D4B3E71 $noname  R12 10k {Lib=R}
+ ( /4D4B3E71 $noname  R12 20k {Lib=R}
   (    1 N-000130 )
   (    2 /Imot1- )
  )
- ( /4D4B3E70 $noname  R13 5k {Lib=R}
+ ( /4D4B3E70 $noname  R13 10k {Lib=R}
   (    1 /Imot1 )
   (    2 N-000130 )
  )
- ( /4D4B3E67 $noname  R21 5k {Lib=R}
+ ( /4D4B3E67 $noname  R21 10k {Lib=R}
   (    1 /Imot2 )
   (    2 N-000143 )
  )
- ( /4D4B3E66 $noname  R19 10k {Lib=R}
+ ( /4D4B3E66 $noname  R19 20k {Lib=R}
   (    1 N-000143 )
   (    2 /Imot2- )
  )
- ( /4D4B3E65 $noname  R17 10k {Lib=R}
+ ( /4D4B3E65 $noname  R17 20k {Lib=R}
   (    1 N-000139 )
   (    2 /Imot2+ )
  )
- ( /4D4B3E64 $noname  R15 5k {Lib=R}
+ ( /4D4B3E64 $noname  R15 10k {Lib=R}
   (    1 GND )
   (    2 N-000139 )
  )
- ( /4D4B3E63 $noname  R23 5k {Lib=R}
+ ( /4D4B3E63 $noname  R23 10k {Lib=R}
   (    1 GND )
   (    2 N-000140 )
  )
- ( /4D4B3E62 $noname  R26 10k {Lib=R}
+ ( /4D4B3E62 $noname  R26 20k {Lib=R}
   (    1 N-000140 )
   (    2 /Isc1+ )
  )
- ( /4D4B3E61 $noname  R29 10k {Lib=R}
+ ( /4D4B3E61 $noname  R29 20k {Lib=R}
   (    1 N-000141 )
   (    2 /Isc1- )
  )
- ( /4D4B3E60 $noname  R32 5k {Lib=R}
+ ( /4D4B3E60 $noname  R32 10k {Lib=R}
   (    1 /Isc1 )
   (    2 N-000141 )
  )
@@ -126,35 +126,35 @@
   (   10 N-000137 )
   (   11 -12V )
  )
- ( /4D4B3E57 $noname  R31 5k {Lib=R}
+ ( /4D4B3E57 $noname  R31 10k {Lib=R}
   (    1 /Umot2 )
   (    2 N-000142 )
  )
- ( /4D4B3E56 $noname  R28 10k {Lib=R}
+ ( /4D4B3E56 $noname  R28 20k {Lib=R}
   (    1 N-000142 )
   (    2 /Umot2- )
  )
- ( /4D4B3E55 $noname  R25 10k {Lib=R}
+ ( /4D4B3E55 $noname  R25 20k {Lib=R}
   (    1 N-000137 )
   (    2 /Umot2+ )
  )
- ( /4D4B3E54 $noname  R22 5k {Lib=R}
+ ( /4D4B3E54 $noname  R22 10k {Lib=R}
   (    1 GND )
   (    2 N-000137 )
  )
- ( /4D4B3E43 $noname  R14 5k {Lib=R}
+ ( /4D4B3E43 $noname  R14 10k {Lib=R}
   (    1 GND )
   (    2 N-000138 )
  )
- ( /4D4B3E42 $noname  R16 10k {Lib=R}
+ ( /4D4B3E42 $noname  R16 20k {Lib=R}
   (    1 N-000138 )
   (    2 /Umot1+ )
  )
- ( /4D4B3E41 $noname  R18 10k {Lib=R}
+ ( /4D4B3E41 $noname  R18 20k {Lib=R}
   (    1 N-000032 )
   (    2 /Umot1- )
  )
- ( /4D4B3E40 $noname  R20 5k {Lib=R}
+ ( /4D4B3E40 $noname  R20 10k {Lib=R}
   (    1 /Umot1 )
   (    2 N-000032 )
  )
@@ -166,19 +166,19 @@
   (    1 /SecuVi )
   (    2 N-000034 )
  )
- ( /4D4ADCB6 $noname  R4 5k {Lib=R}
+ ( /4D4ADCB6 $noname  R4 10k {Lib=R}
   (    1 /Usc )
   (    2 N-000127 )
  )
- ( /4D4ADC7F $noname  R6 10k {Lib=R}
+ ( /4D4ADC7F $noname  R6 20k {Lib=R}
   (    1 N-000127 )
   (    2 /Usc- )
  )
- ( /4D4ADC7C $noname  R5 10k {Lib=R}
+ ( /4D4ADC7C $noname  R5 20k {Lib=R}
   (    1 N-000030 )
   (    2 /Usc+ )
  )
- ( /4D4ADC79 $noname  R7 5k {Lib=R}
+ ( /4D4ADC79 $noname  R7 10k {Lib=R}
   (    1 GND )
   (    2 N-000030 )
  )
