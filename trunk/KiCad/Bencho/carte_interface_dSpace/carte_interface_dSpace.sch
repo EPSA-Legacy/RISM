@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 08/02/2011 19:10:59
+EESchema Schematic File Version 2  date 10/02/2011 16:14:40
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,7 +35,7 @@ EELAYER END
 $Descr A3 16535 11700
 Sheet 1 1
 Title "carte interface dSpace"
-Date "8 feb 2011"
+Date "10 feb 2011"
 Rev "1.0"
 Comp "EPSA Bencho"
 Comment1 ""
@@ -1979,39 +1979,39 @@ F 1 "BRASAGE_R" V 14500 2400 60  0000 C CNN
 	1    14450 2400
 	-1   0    0    -1  
 $EndComp
-Text Label 12950 3150 0    60   ~ 0
+Text Label 12950 2750 0    60   ~ 0
 SPWM7
 Text Label 12950 2950 0    60   ~ 0
 ST1PWM
-Text Label 12950 2650 0    60   ~ 0
-SSIMO
-Text Label 12950 2450 0    60   ~ 0
-CTS (\CTS)
-Text Label 12950 2550 0    60   ~ 0
-SSOMI
-Text Label 12950 2350 0    60   ~ 0
-SSTE
-Text Label 12950 2750 0    60   ~ 0
-SSCLK
-Text Label 12950 2250 0    60   ~ 0
-ST3PWM
-Text Label 12950 2850 0    60   ~ 0
-ST2PWM
-Text Label 12950 2150 0    60   ~ 0
-SPWM9
-Text Label 12950 3050 0    60   ~ 0
-SPWM8
-Text Label 12950 3750 0    60   ~ 0
-ADCH8
-Text Label 12950 3650 0    60   ~ 0
-ADCH2
-Text Label 12950 3550 0    60   ~ 0
-ADCH4
-Text Label 12950 3450 0    60   ~ 0
-ADCH6
-Text Label 12950 3350 0    60   ~ 0
-DACH4
 Text Label 12950 3250 0    60   ~ 0
+SSIMO
+Text Label 12950 3450 0    60   ~ 0
+CTS (\CTS)
+Text Label 12950 3350 0    60   ~ 0
+SSOMI
+Text Label 12950 3550 0    60   ~ 0
+SSTE
+Text Label 12950 3150 0    60   ~ 0
+SSCLK
+Text Label 12950 3650 0    60   ~ 0
+ST3PWM
+Text Label 12950 3050 0    60   ~ 0
+ST2PWM
+Text Label 12950 3750 0    60   ~ 0
+SPWM9
+Text Label 12950 2850 0    60   ~ 0
+SPWM8
+Text Label 12950 2150 0    60   ~ 0
+ADCH8
+Text Label 12950 2250 0    60   ~ 0
+ADCH2
+Text Label 12950 2350 0    60   ~ 0
+ADCH4
+Text Label 12950 2450 0    60   ~ 0
+ADCH6
+Text Label 12950 2550 0    60   ~ 0
+DACH4
+Text Label 12950 2650 0    60   ~ 0
 IO1
 $Comp
 L GND #PWR047
@@ -2022,29 +2022,29 @@ F 1 "GND" H 13500 3830 30  0001 C CNN
 	1    13500 3900
 	1    0    0    -1  
 $EndComp
-Text Label 12950 1250 0    60   ~ 0
-SCAP3
-Text Label 12950 1050 0    60   ~ 0
-RTS (\RTS)
-Text Label 12950 1150 0    60   ~ 0
-SCAP4
-Text Label 12950 1350 0    60   ~ 0
-SCAP1
-Text Label 12950 950  0    60   ~ 0
-SCAP2
-Text Label 12950 1450 0    60   ~ 0
-SPWM5
-Text Label 12950 2050 0    60   ~ 0
-ADCH7
-Text Label 12950 1950 0    60   ~ 0
-ADCH1
-Text Label 12950 1850 0    60   ~ 0
-ADCH3
 Text Label 12950 1750 0    60   ~ 0
-ADCH5
+SCAP3
+Text Label 12950 1950 0    60   ~ 0
+RTS (\RTS)
+Text Label 12950 1850 0    60   ~ 0
+SCAP4
 Text Label 12950 1650 0    60   ~ 0
-DACH3
+SCAP1
+Text Label 12950 2050 0    60   ~ 0
+SCAP2
 Text Label 12950 1550 0    60   ~ 0
+SPWM5
+Text Label 12950 950  0    60   ~ 0
+ADCH7
+Text Label 12950 1050 0    60   ~ 0
+ADCH1
+Text Label 12950 1150 0    60   ~ 0
+ADCH3
+Text Label 12950 1250 0    60   ~ 0
+ADCH5
+Text Label 12950 1350 0    60   ~ 0
+DACH3
+Text Label 12950 1450 0    60   ~ 0
 IO0
 $Comp
 L CONN_30 P4

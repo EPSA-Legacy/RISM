@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 05/02/2011 18:53:22
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 10/02/2011 16:52:44
 
 BeginCmp
 TimeStamp = /4D47E2CA;
@@ -179,14 +179,14 @@ BeginCmp
 TimeStamp = /4D482684;
 Reference = P2;
 ValeurCmp = DSPACE_P1A;
-IdModule  = DB50FC;
+IdModule  = DB50MC;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D482689;
 Reference = P3;
 ValeurCmp = DSPACE8_P1B;
-IdModule  = DB50FC;
+IdModule  = DB50MC;
 EndCmp
 
 BeginCmp
@@ -451,14 +451,14 @@ EndCmp
 BeginCmp
 TimeStamp = /4D4AD7AB;
 Reference = SW1;
-ValeurCmp = FREIN;
+ValeurCmp = BOOST;
 IdModule  = SW_PUSH_SMALL;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D4AD7AE;
 Reference = SW2;
-ValeurCmp = BOOST;
+ValeurCmp = FREIN;
 IdModule  = SW_PUSH_SMALL;
 EndCmp
 

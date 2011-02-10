@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  08/02/2011 19:11:04
+# EESchema Netlist Version 1.1 created  10/02/2011 16:57:03
 (
  ( /4D4D8DBB $noname  C11 27p {Lib=C}
   (    1 +12V )
@@ -331,35 +331,35 @@
   (   30 -12V )
  )
  ( /4D4832B5 $noname  P4 BRASSAGE_L {Lib=CONN_30}
-  (    1 /SCAP2 )
-  (    2 /RTS_(\RTS) )
-  (    3 /SCAP4 )
-  (    4 /SCAP3 )
-  (    5 /SCAP1 )
-  (    6 /SPWM5 )
-  (    7 /IO0 )
-  (    8 /DACH3 )
-  (    9 /ADCH5 )
-  (   10 /ADCH3 )
-  (   11 /ADCH1 )
-  (   12 /ADCH7 )
-  (   13 /SPWM9 )
-  (   14 /ST3PWM )
-  (   15 /SSTE )
-  (   16 /CTS_(\CTS) )
-  (   17 /SSOMI )
-  (   18 /SSIMO )
-  (   19 /SSCLK )
-  (   20 /ST2PWM )
+  (    1 /ADCH7 )
+  (    2 /ADCH1 )
+  (    3 /ADCH3 )
+  (    4 /ADCH5 )
+  (    5 /DACH3 )
+  (    6 /IO0 )
+  (    7 /SPWM5 )
+  (    8 /SCAP1 )
+  (    9 /SCAP3 )
+  (   10 /SCAP4 )
+  (   11 /RTS_(\RTS) )
+  (   12 /SCAP2 )
+  (   13 /ADCH8 )
+  (   14 /ADCH2 )
+  (   15 /ADCH4 )
+  (   16 /ADCH6 )
+  (   17 /DACH4 )
+  (   18 /IO1 )
+  (   19 /SPWM7 )
+  (   20 /SPWM8 )
   (   21 /ST1PWM )
-  (   22 /SPWM8 )
-  (   23 /SPWM7 )
-  (   24 /IO1 )
-  (   25 /DACH4 )
-  (   26 /ADCH6 )
-  (   27 /ADCH4 )
-  (   28 /ADCH2 )
-  (   29 /ADCH8 )
+  (   22 /ST2PWM )
+  (   23 /SSCLK )
+  (   24 /SSIMO )
+  (   25 /SSOMI )
+  (   26 /CTS_(\CTS) )
+  (   27 /SSTE )
+  (   28 /ST3PWM )
+  (   29 /SPWM9 )
   (   30 GND )
  )
  ( /4D482689 $noname  P3 DSPACE8_P1B {Lib=CONN_25X2}
@@ -964,8 +964,8 @@ Net 29 "/Usc+" "Usc+"
  R5 2
 Net 30 "" ""
  R7 2
- R5 1
  U3 3
+ R5 1
 Net 31 "" ""
  R3 2
  D3 1
@@ -974,31 +974,31 @@ Net 32 "" ""
  R20 2
  U3 6
 Net 33 "/Umot1-" "Umot1-"
- J4 4
  R18 2
+ J4 4
 Net 34 "" ""
- D4 1
  R9 2
+ D4 1
 Net 35 "" ""
  D2 2
  R2 2
 Net 36 "" ""
- U2 VI
  P6 1
  C6 1
  C5 2
+ U2 VI
 Net 37 "/Imot2" "Imot2"
- R21 1
  U4 7
+ R21 1
  P5 20
 Net 38 "/Imot1" "Imot1"
- U4 1
  R13 1
+ U4 1
  P5 19
 Net 39 "/Isc2" "Isc2"
- R33 1
  P5 22
  U4 14
+ R33 1
 Net 40 "" ""
  R8 2
  D5 1
@@ -1016,133 +1016,131 @@ Net 44 "/Isc2+" "Isc2+"
  R27 2
  J4 5
 Net 45 "/Isc1+" "Isc1+"
- R26 2
  J4 7
+ R26 2
 Net 46 "/Umot2-" "Umot2-"
  R28 2
  J4 2
 Net 79 "" ""
- D1 1
  R1 2
+ D1 1
 Net 80 "" ""
  U1 VI
  P1 1
- C1 1
  C2 1
-Net 98 "/ST2PWM" "ST2PWM"
- P4 20
- P3 21
-Net 99 "/ST1PWM" "ST1PWM"
- P3 5
+ C1 1
+Net 98 "/ST1PWM" "ST1PWM"
  P4 21
-Net 100 "/SPWM7" "SPWM7"
- P3 6
+ P3 5
+Net 99 "/ST2PWM" "ST2PWM"
+ P3 21
+ P4 22
+Net 100 "/SSCLK" "SSCLK"
  P4 23
-Net 101 "/ST3PWM" "ST3PWM"
- P3 37
- P4 14
-Net 102 "/SSTE" "SSTE"
- P3 36
- P4 15
-Net 103 "/CTS (\CTS)" "CTS (\CTS)"
- P4 16
- P3 18
-Net 104 "/SSOMI" "SSOMI"
- P4 17
- P3 19
-Net 105 "/SSIMO" "SSIMO"
- P3 3
- P4 18
-Net 106 "/SSCLK" "SSCLK"
  P3 20
- P4 19
-Net 107 "/ADCH2" "ADCH2"
+Net 101 "/SSIMO" "SSIMO"
+ P3 3
+ P4 24
+Net 102 "/SSOMI" "SSOMI"
+ P4 25
+ P3 19
+Net 103 "/CTS (\CTS)" "CTS (\CTS)"
+ P4 26
+ P3 18
+Net 104 "/SSTE" "SSTE"
+ P3 36
+ P4 27
+Net 105 "/ST3PWM" "ST3PWM"
+ P3 37
  P4 28
+Net 106 "/SPWM7" "SPWM7"
+ P4 19
+ P3 6
+Net 107 "/ADCH2" "ADCH2"
+ P4 14
  P3 50
 Net 108 "/ADCH8" "ADCH8"
- P4 29
+ P4 13
  P3 48
 Net 109 "/SPWM9" "SPWM9"
  P3 38
- P4 13
+ P4 29
 Net 110 "/SPWM8" "SPWM8"
- P4 22
+ P4 20
  P3 22
 Net 111 "/ADCH6" "ADCH6"
- P4 26
+ P4 16
  P3 16
 Net 112 "/DACH4" "DACH4"
- P4 25
  P3 14
+ P4 17
 Net 113 "/IO1" "IO1"
- P4 24
+ P4 18
  P3 12
 Net 114 "/ADCH4" "ADCH4"
+ P4 15
  P3 33
- P4 27
-Net 115 "/ADCH7" "ADCH7"
- P2 48
- P4 12
-Net 116 "/ADCH1" "ADCH1"
- P2 50
+Net 115 "/RTS (\RTS)" "RTS (\RTS)"
  P4 11
-Net 117 "/SCAP2" "SCAP2"
- P4 1
- P2 36
-Net 118 "/RTS (\RTS)" "RTS (\RTS)"
- P4 2
  P2 18
-Net 119 "/SCAP4" "SCAP4"
- P2 19
- P4 3
-Net 120 "/SCAP3" "SCAP3"
- P4 4
- P2 3
-Net 121 "/SCAP1" "SCAP1"
- P2 20
- P4 5
-Net 122 "/SPWM5" "SPWM5"
- P4 6
- P2 21
-Net 123 "/IO0" "IO0"
- P2 12
- P4 7
-Net 124 "/DACH3" "DACH3"
- P4 8
- P2 14
-Net 125 "/ADCH5" "ADCH5"
- P2 16
- P4 9
-Net 126 "/ADCH3" "ADCH3"
+Net 116 "/SCAP2" "SCAP2"
+ P2 36
+ P4 12
+Net 117 "/ADCH7" "ADCH7"
+ P4 1
+ P2 48
+Net 118 "/ADCH1" "ADCH1"
+ P4 2
+ P2 50
+Net 119 "/ADCH3" "ADCH3"
  P2 33
+ P4 3
+Net 120 "/ADCH5" "ADCH5"
+ P4 4
+ P2 16
+Net 121 "/DACH3" "DACH3"
+ P4 5
+ P2 14
+Net 122 "/IO0" "IO0"
+ P2 12
+ P4 6
+Net 123 "/SPWM5" "SPWM5"
+ P4 7
+ P2 21
+Net 124 "/SCAP1" "SCAP1"
+ P4 8
+ P2 20
+Net 125 "/SCAP3" "SCAP3"
+ P2 3
+ P4 9
+Net 126 "/SCAP4" "SCAP4"
+ P2 19
  P4 10
 Net 127 "" ""
  U3 2
- R6 1
  R4 2
+ R6 1
 Net 128 "GND" "GND"
- P3 47
- P3 17
+ P2 1
+ P3 49
  J1 9
  J1 8
  J1 7
- P3 39
- P3 49
- P2 1
  J1 6
- J1 5
+ P3 1
  R22 1
  R14 1
- P3 1
+ P3 15
+ P3 25
+ P3 45
  D4 2
  R15 1
  R23 1
- P3 15
+ P3 17
  D3 2
- P3 25
+ P3 47
  R7 1
- P3 45
- P5 14
+ P3 39
  P3 32
  C1 2
  P5 13
@@ -1159,6 +1157,7 @@ Net 128 "GND" "GND"
  P2 39
  P2 47
  P2 17
+ J1 5
  J1 4
  J1 3
  J2 8
@@ -1173,62 +1172,63 @@ Net 128 "GND" "GND"
  P2 30
  C2 2
  C3 2
- R10 1
+ P5 14
  D5 2
  C6 2
  P7 1
  U1 GND
- P3 30
+ R10 1
  U5 GND
  R24 1
- C8 1
  C5 1
  U2 GND
  C7 1
+ C8 1
+ P3 30
  D2 1
 Net 129 "" ""
  R11 1
  R10 2
  U4 3
 Net 130 "" ""
+ R12 1
  U4 2
  R13 2
- R12 1
 Net 135 "" ""
  R24 2
- R27 1
  U4 12
+ R27 1
 Net 136 "" ""
+ R33 2
  U4 13
  R30 1
- R33 2
 Net 137 "" ""
- R22 2
  R25 1
  U3 10
+ R22 2
 Net 138 "" ""
- R14 2
  U3 5
  R16 1
+ R14 2
 Net 139 "" ""
- R15 2
  U4 5
  R17 1
+ R15 2
 Net 140 "" ""
- R26 1
- R23 2
  U4 10
+ R23 2
+ R26 1
 Net 141 "" ""
  U4 9
  R32 2
  R29 1
 Net 142 "" ""
- U3 9
- R31 2
  R28 1
+ R31 2
+ U3 9
 Net 143 "" ""
- U4 6
  R21 2
  R19 1
+ U4 6
 }
 #End
