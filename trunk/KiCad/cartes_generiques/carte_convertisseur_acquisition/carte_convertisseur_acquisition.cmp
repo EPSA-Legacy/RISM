@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20080825c) date = 8/2/2011-15:23:34
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 14/02/2011 21:21:09
 
 BeginCmp
 TimeStamp = /4D356636;
@@ -11,7 +11,7 @@ BeginCmp
 TimeStamp = /4D3E7A9A;
 Reference = C2;
 ValeurCmp = 100n;
-IdModule  = C2;
+IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -414,7 +414,7 @@ IdModule  = 1pin;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D5031D3;
+TimeStamp = /4D598E4A;
 Reference = MECA3;
 ValeurCmp = 5mm;
 IdModule  = 1pin;
@@ -445,7 +445,7 @@ BeginCmp
 TimeStamp = /4D359DE0;
 Reference = P1;
 ValeurCmp = ISc1_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
@@ -459,105 +459,105 @@ BeginCmp
 TimeStamp = /4D4A6539;
 Reference = P3;
 ValeurCmp = ISc2_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D359DE2;
 Reference = P4;
 ValeurCmp = IMot1_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D359DE7;
 Reference = P5;
 ValeurCmp = IMot2_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D359DED;
 Reference = P6;
 ValeurCmp = USc_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D359DF0;
 Reference = P7;
 ValeurCmp = UMot1_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D359E02;
 Reference = P8;
 ValeurCmp = UMot2_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D3E7B24;
 Reference = P9;
 ValeurCmp = Temp1;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D3E83FC;
 Reference = P10;
 ValeurCmp = Temp_O;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /3E32C95B;
 Reference = P11;
 ValeurCmp = ALIM;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D3E8815;
 Reference = P12;
 ValeurCmp = ALIM;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4BB1BC7C;
 Reference = P13;
 ValeurCmp = IMot1_I;
-IdModule  = SIL-4;
+IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4BC318EA;
 Reference = P14;
 ValeurCmp = IMot2_I;
-IdModule  = SIL-4;
+IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4BC31A3A;
 Reference = P15;
 ValeurCmp = ISc1_I;
-IdModule  = SIL-4;
+IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D4A632A;
 Reference = P16;
 ValeurCmp = ISc2_I;
-IdModule  = SIL-4;
+IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D5014EC;
 Reference = P17;
 ValeurCmp = Temp2;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 08/02/2011 23:42:57
+EESchema Schematic File Version 2  date 14/02/2011 21:19:28
 LIBS:power
 LIBS:symbioz
 LIBS:device
@@ -23,12 +23,13 @@ LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:contrib
-EELAYER 24  0
+LIBS:carte_convertisseur_acquisition-cache
+EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 Sheet 1 1
 Title "Carte convertisseur"
-Date "8 feb 2011"
+Date "14 feb 2011"
 Rev "2.2"
 Comp "EPSA - SymbioZ"
 Comment1 ""
@@ -36,6 +37,16 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 4000 1650
+$Comp
+L CONN_1 MECA3
+U 1 1 4D598E4A
+P 4150 1650
+F 0 "MECA3" H 4300 1650 40  0000 C CNN
+F 1 "5mm" H 4100 1690 30  0001 C CNN
+	1    4150 1650
+	1    0    0    -1  
+$EndComp
 $Comp
 L CONN_1 MECA1
 U 1 1 4D5031D5
