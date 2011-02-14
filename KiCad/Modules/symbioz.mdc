@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  10/02/2011 16:51:46
+PCBNEW-LibDoc----V1  14/02/2011 18:54:12
 #
 $MODULE he10-16df
 Li he10-16df
@@ -70,6 +70,18 @@ $MODULE TO39
 Li TO39
 Cd Transistor TO38
 Kw TO38
+$EndMODULE
+#
+$MODULE KK_2
+Li KK_2
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_4
+Li KK_4
+Cd Connecteurs 2 pins
+Kw CONN DEV
 $EndMODULE
 #
 $EndLIBDOC
