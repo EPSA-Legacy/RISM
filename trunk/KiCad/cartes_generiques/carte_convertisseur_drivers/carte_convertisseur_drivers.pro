@@ -1,5 +1,5 @@
-update=07/02/2011 17:44:47
-last_client=cvpcb
+update=10/02/2011 18:50:30
+last_client=pcbnew
 [general]
 version=1
 RootSch=carte_convertisseur_drivers.sch
@@ -66,6 +66,11 @@ LibName21=display
 LibName22=cypress
 LibName23=siliconi
 LibName24=contrib
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=1200
@@ -85,6 +90,7 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=carte_convertisseur_drivers.net
 [pcbnew/libraries]
+LibDir=..\\..\\Modules
 LibName1=symbioz
 LibName2=muonde
 LibName3=connect
@@ -93,9 +99,3 @@ LibName5=pin_array
 LibName6=divers
 LibName7=libcms
 LibName8=display
-LibDir=..\\..\\Modules
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
