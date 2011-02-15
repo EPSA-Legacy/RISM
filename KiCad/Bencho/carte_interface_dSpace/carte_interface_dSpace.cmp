@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 15/02/2011 00:47:06
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 15/02/2011 11:38:47
 
 BeginCmp
 TimeStamp = /4D47E2CA;
@@ -200,35 +200,35 @@ BeginCmp
 TimeStamp = /4D59AC98;
 Reference = P8;
 ValeurCmp = TdB;
-IdModule  = SIL-8;
+IdModule  = KK_8;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D59AC54;
+TimeStamp = /4D5A5721;
 Reference = P9;
 ValeurCmp = Vitesse;
-IdModule  = PIN_ARRAY_2X1;
+IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D59ADB8;
 Reference = P10;
 ValeurCmp = Convertisseur_I;
-IdModule  = SIL-8;
+IdModule  = KK_8;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D59ADB3;
 Reference = P11;
 ValeurCmp = Convertisseur_U;
-IdModule  = SIL-8;
+IdModule  = KK_8;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D59ADBA;
 Reference = P12;
 ValeurCmp = Convertisseur_PWM;
-IdModule  = SIL-8;
+IdModule  = KK_8;
 EndCmp
 
 BeginCmp
