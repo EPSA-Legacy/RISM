@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  15/02/2011 01:03:55
+PCBNEW-LibDoc----V1  15/02/2011 11:56:55
 #
 $MODULE he10-16df
 Li he10-16df
@@ -80,6 +80,12 @@ $EndMODULE
 #
 $MODULE KK_4
 Li KK_4
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_8
+Li KK_8
 Cd Connecteurs 2 pins
 Kw CONN DEV
 $EndMODULE
