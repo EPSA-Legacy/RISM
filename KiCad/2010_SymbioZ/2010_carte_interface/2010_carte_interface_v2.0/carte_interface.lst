@@ -1,0 +1,73 @@
+EESchema (20080825c)  >> Creation date: 15/4/2010-19:59:35
+
+#Cmp ( ordre = Reference )
+| C1         17p         
+| C2         17p         
+| C3         10u         
+| C4         10u         
+| C5         17p         
+| C6         1u          
+| D1         RED         
+| J1         CONVERT     
+| J2         TDB         
+| J3         VITESSE     
+| K1         SC2         
+| P1         ALIM        
+| P2         SC1         
+| P3         SC3         
+| P4         KLARIC      
+| P9         CALC_IN     
+| P10        CALC_OUT    
+| P11        CONT_4      
+| P12        CONT_3      
+| P13        CONT_2      
+| P14        CONT_1      
+| R1         1k          
+| R2         1k          
+| R3         1k          
+| R4         2.3k        
+| R5         1k          
+| R6         3.5k        
+| R7         1k          
+| R8         3.5k        
+| R9         500         
+| U1         7805        
+| U2         LM324       
+#End Cmp
+
+#Cmp ( ordre = Valeur )
+| 10u          C3        
+| 10u          C4        
+| 17p          C1        
+| 17p          C2        
+| 17p          C5        
+| 1k           R1        
+| 1k           R2        
+| 1k           R3        
+| 1k           R5        
+| 1k           R7        
+| 1u           C6        
+| 2.3k         R4        
+| 3.5k         R6        
+| 3.5k         R8        
+| 500          R9        
+| 7805         U1        
+| ALIM         P1        
+| CALC_IN      P9        
+| CALC_OUT     P10       
+| CONT_1       P14       
+| CONT_2       P13       
+| CONT_3       P12       
+| CONT_4       P11       
+| CONVERT      J1        
+| KLARIC       P4        
+| LM324        U2        
+| RED          D1        
+| SC1          P2        
+| SC2          K1        
+| SC3          P3        
+| TDB          J2        
+| VITESSE      J3        
+#End Cmp
+
+#End List

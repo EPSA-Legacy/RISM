@@ -1,0 +1,129 @@
+Cmp-Mod V01 Created by Cvpcb (2006-08-28) date = 14/4/2010-16:34:04
+
+BeginCmp
+TimeStamp = 4BC49579;
+Reference = C1;
+ValeurCmp = 10u;
+IdModule  = C2V10;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49575;
+Reference = C2;
+ValeurCmp = 17p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC499DB;
+Reference = C3;
+ValeurCmp = 17p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC499D7;
+Reference = C4;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC496E1;
+Reference = D1;
+ValeurCmp = RED;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4959D;
+Reference = J1;
+ValeurCmp = DB9;
+IdModule  = DB9FC;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49509;
+Reference = P1;
+ValeurCmp = Alim;
+IdModule  = ALIM_TYCO;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49511;
+Reference = P2;
+ValeurCmp = VitD;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49510;
+Reference = P3;
+ValeurCmp = VitG;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49A9B;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4AAC5;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49A98;
+Reference = R3;
+ValeurCmp = 22k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4AAC4;
+Reference = R4;
+ValeurCmp = 22k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49A94;
+Reference = R5;
+ValeurCmp = 330;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4AAC3;
+Reference = R6;
+ValeurCmp = 330;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC49588;
+Reference = R7;
+ValeurCmp = 500;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4956E;
+Reference = U1;
+ValeurCmp = 7805;
+IdModule  = TO220;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BC4B468;
+Reference = U2;
+ValeurCmp = LM324;
+IdModule  = 14DIP-ELL300;
+EndCmp
+
+EndListe

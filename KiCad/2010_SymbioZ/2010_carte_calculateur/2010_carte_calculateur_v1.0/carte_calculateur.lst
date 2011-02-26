@@ -1,0 +1,117 @@
+EESchema (2006-08-28)  >> Creation date: 15/4/2010-09:15:26
+
+#Cmp ( ordre = Reference )
+| C0         27p         
+| C1         1u          
+| C10        27p         
+| C11        1u          
+| C12        27p         
+| C13        1u          
+| C14        27p         
+| C15        1u          
+| C18        27p         
+| C19        10u         
+| C2         27p         
+| C20        27p         
+| C21        27p         
+| C22        27p         
+| C23        27p         
+| C24        27p         
+| C25        1u          
+| C26        27p         
+| C27        1u          
+| C3         1u          
+| C4         27p         
+| C5         1u          
+| C6         27p         
+| C7         1u          
+| C8         27p         
+| C9         1u          
+| D0         LED         
+| P0         Connecteur entrées
+| P1         Connecteur sorties
+| P2         CONN_1      
+| P3         CONN_1      
+| R0         1K          
+| R23        47K         
+| R24        47K         
+| RV1        POT         
+| RV10       POT         
+| RV2        POT         
+| RV3        POT         
+| RV4        POT         
+| RV5        POT         
+| RV6        POT         
+| RV7        POT         
+| RV8        POT         
+| RV9        POT         
+| U0         LM324AN     
+| U1         LM324AN     
+| U2         LM324AN     
+| U4         7805        
+| U5         PIC Sécurité
+| U6         PIC Commande
+| U7         RJ12 Commande
+| U8         RJ12 Securite
+| X0         20MHZ       
+| X1         20MHZ       
+#End Cmp
+
+#Cmp ( ordre = Valeur )
+| 10u          C19       
+| 1K           R0        
+| 1u           C1        
+| 1u           C11       
+| 1u           C13       
+| 1u           C15       
+| 1u           C25       
+| 1u           C27       
+| 1u           C3        
+| 1u           C5        
+| 1u           C7        
+| 1u           C9        
+| 20MHZ        X0        
+| 20MHZ        X1        
+| 27p          C0        
+| 27p          C10       
+| 27p          C12       
+| 27p          C14       
+| 27p          C18       
+| 27p          C2        
+| 27p          C20       
+| 27p          C21       
+| 27p          C22       
+| 27p          C23       
+| 27p          C24       
+| 27p          C26       
+| 27p          C4        
+| 27p          C6        
+| 27p          C8        
+| 47K          R23       
+| 47K          R24       
+| 7805         U4        
+| CONN_1       P2        
+| CONN_1       P3        
+| Connecteur entrées P0        
+| Connecteur sorties P1        
+| LED          D0        
+| LM324AN      U0        
+| LM324AN      U1        
+| LM324AN      U2        
+| PIC Commande U6        
+| PIC Sécurité U5        
+| POT          RV1       
+| POT          RV10      
+| POT          RV2       
+| POT          RV3       
+| POT          RV4       
+| POT          RV5       
+| POT          RV6       
+| POT          RV7       
+| POT          RV8       
+| POT          RV9       
+| RJ12 Commande U7        
+| RJ12 Securite U8        
+#End Cmp
+
+#End List

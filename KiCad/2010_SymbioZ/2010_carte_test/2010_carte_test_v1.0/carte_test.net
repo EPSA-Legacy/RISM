@@ -1,0 +1,330 @@
+# EESchema Netlist Version 1.0 generee le  23/4/2010-12:07:48
+(
+ ( 4BD18D6A $noname  P8 DIL16 {Lib=DIL16}
+  (    1 VCC )
+  (    2 VCC )
+  (    3 VCC )
+  (    4 VCC )
+  (    5 VCC )
+  (    6 VCC )
+  (    7 VCC )
+  (    8  ? )
+  (    9  ? )
+  (   10 RB4_1 )
+  (   11 RC5_1 )
+  (   12 RC4_1 )
+  (   13 RC3_1 )
+  (   14 RC2_1 )
+  (   15 RC1_1 )
+  (   16 RC0_1 )
+ )
+ ( 4BCF26DD $noname  R10 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000007 )
+ )
+ ( 4BCF26DC $noname  D9 RED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000007 )
+ )
+ ( 4BCF1D99 $noname  R5 10k {Lib=R}
+  (    1 GND )
+  (    2 RC4_1 )
+ )
+ ( 4BCF1E81 $noname  P7 CONN_1 {Lib=CONN_1}
+  (    1 RB4_1 )
+ )
+ ( 4BCF1E78 $noname  P6 CONN_1 {Lib=CONN_1}
+  (    1 RC5_1 )
+ )
+ ( 4BCF1E6F $noname  P5 CONN_1 {Lib=CONN_1}
+  (    1 RC4_1 )
+ )
+ ( 4BCF1E67 $noname  P4 CONN_1 {Lib=CONN_1}
+  (    1 RC3_1 )
+ )
+ ( 4BCF1E5E $noname  P3 CONN_1 {Lib=CONN_1}
+  (    1 RC2_1 )
+ )
+ ( 4BCF1E52 $noname  P2 CONN_1 {Lib=CONN_1}
+  (    1 RC1_1 )
+ )
+ ( 4BCF1E3E $noname  P1 CONN_1 {Lib=CONN_1}
+  (    1 RC0_1 )
+ )
+ ( 4BCF1D9D $noname  R7 10k {Lib=R}
+  (    1 GND )
+  (    2 RB4_1 )
+ )
+ ( 4BCF1D9B $noname  R6 10k {Lib=R}
+  (    1 GND )
+  (    2 RC5_1 )
+ )
+ ( 4BCF1D8F $noname  R4 10k {Lib=R}
+  (    1 GND )
+  (    2 RC3_1 )
+ )
+ ( 4BCF1D8D $noname  R3 10k {Lib=R}
+  (    1 GND )
+  (    2 RC2_1 )
+ )
+ ( 4BCF1D86 $noname  R2 10k {Lib=R}
+  (    1 GND )
+  (    2 RC1_1 )
+ )
+ ( 4BCF1D63 $noname  R1 10k {Lib=R}
+  (    1 GND )
+  (    2 RC0_1 )
+ )
+ ( 4BCF153C $noname  1K9 R {Lib=R}
+  (    1 GND )
+  (    2 N-000023 )
+ )
+ ( 4BCF153B $noname  D7 green {Lib=LED}
+  (    1 RB1_1 )
+  (    2 N-000023 )
+ )
+ ( 4BCF1539 $noname  1K8 R {Lib=R}
+  (    1 GND )
+  (    2 N-000024 )
+ )
+ ( 4BCF1538 $noname  D6 green {Lib=LED}
+  (    1 RB0_1 )
+  (    2 N-000024 )
+ )
+ ( 4BCF1536 $noname  1K7 R {Lib=R}
+  (    1 GND )
+  (    2 N-000025 )
+ )
+ ( 4BCF1535 $noname  D5 green {Lib=LED}
+  (    1 RA5_1 )
+  (    2 N-000025 )
+ )
+ ( 4BCF1533 $noname  1K6 R {Lib=R}
+  (    1 GND )
+  (    2 N-000026 )
+ )
+ ( 4BCF1532 $noname  D4 green {Lib=LED}
+  (    1 RA4_1 )
+  (    2 N-000026 )
+ )
+ ( 4BCF1518 $noname  1K5 R {Lib=R}
+  (    1 GND )
+  (    2 N-000027 )
+ )
+ ( 4BCF1517 $noname  D3 green {Lib=LED}
+  (    1 RA3_1 )
+  (    2 N-000027 )
+ )
+ ( 4BCF1515 $noname  1K4 R {Lib=R}
+  (    1 GND )
+  (    2 N-000028 )
+ )
+ ( 4BCF1514 $noname  D10 green {Lib=LED}
+  (    1 RA2_1 )
+  (    2 N-000028 )
+ )
+ ( 4BCF14F9 $noname  1K3 R {Lib=R}
+  (    1 GND )
+  (    2 N-000029 )
+ )
+ ( 4BCF14F8 $noname  D2 green {Lib=LED}
+  (    1 RA1_1 )
+  (    2 N-000029 )
+ )
+ ( 4BCF14E9 $noname  R9 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000030 )
+ )
+ ( 4BCF14E8 $noname  D8 RED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000030 )
+ )
+ ( 4BCD89CF $noname  1K1 R {Lib=R}
+  (    1 GND )
+  (    2 N-000031 )
+ )
+ ( 4BCD89CE $noname  D1 green {Lib=LED}
+  (    1 RA0_1 )
+  (    2 N-000031 )
+ )
+ ( 4B20D4E0 $noname  HE1 HE10-10 {Lib=HE10-10}
+  (    1 VCC )
+  (    2 GND )
+  (    3 +12V )
+  (    4 RB4_1 )
+  (    5 RC2_1 )
+  (    6 RC3_1 )
+  (    7 RC1_1 )
+  (    8 RC5_1 )
+  (    9 RC0_1 )
+  (   10 RC4_1 )
+ )
+ ( 4B20D4B5 $noname  HE2 HE10-10 {Lib=HE10-10}
+  (    1 VCC )
+  (    2 GND )
+  (    3 RA3_1 )
+  (    4 RB0_1 )
+  (    5 RA2_1 )
+  (    6 RB1_1 )
+  (    7 RA1_1 )
+  (    8 RA5_1 )
+  (    9 RA0_1 )
+  (   10 RA4_1 )
+ )
+)
+*
+{ Pin List by Nets
+Net 4 "VCC"
+ P8 7
+ P8 6
+ P8 5
+ P8 4
+ P8 3
+ P8 2
+ P8 1
+ #PWR25 1
+ #FLG4 1
+ D9 1
+ #PWR24 1
+ #PWR23 1
+ D8 1
+ #PWR22 1
+ #PWR21 1
+ #FLG1 1
+ HE1 1
+ HE2 1
+Net 5 "+12V"
+ #PWR1 1
+ #FLG3 1
+ HE1 3
+Net 6 "GND"
+ #PWR20 1
+ R10 1
+ R5 1
+ #PWR19 1
+ R7 1
+ #PWR18 1
+ R6 1
+ #PWR17 1
+ #PWR16 1
+ R4 1
+ #PWR15 1
+ R3 1
+ #PWR14 1
+ R2 1
+ #PWR13 1
+ R1 1
+ #PWR12 1
+ 1K9 1
+ #PWR11 1
+ 1K8 1
+ #PWR10 1
+ 1K7 1
+ #PWR9 1
+ 1K6 1
+ #PWR8 1
+ 1K5 1
+ #PWR7 1
+ 1K4 1
+ #PWR6 1
+ 1K3 1
+ #PWR5 1
+ R9 1
+ #PWR4 1
+ 1K1 1
+ #PWR3 1
+ #FLG2 1
+ #PWR2 1
+ HE1 2
+ HE2 2
+Net 7 ""
+ R10 2
+ D9 2
+Net 8 "RB1_1"
+ D7 1
+ HE2 6
+Net 9 "RB0_1"
+ D6 1
+ HE2 4
+Net 10 "RA5_1"
+ D5 1
+ HE2 8
+Net 11 "RA4_1"
+ D4 1
+ HE2 10
+Net 12 "RA3_1"
+ D3 1
+ HE2 3
+Net 13 "RA2_1"
+ D10 1
+ HE2 5
+Net 14 "RA1_1"
+ D2 1
+ HE2 7
+Net 15 "RA0_1"
+ D1 1
+ HE2 9
+Net 16 "RB4_1"
+ P8 10
+ P7 1
+ R7 2
+ HE1 4
+Net 17 "RC5_1"
+ P8 11
+ P6 1
+ R6 2
+ HE1 8
+Net 18 "RC4_1"
+ P8 12
+ R5 2
+ P5 1
+ HE1 10
+Net 19 "RC3_1"
+ P8 13
+ P4 1
+ R4 2
+ HE1 6
+Net 20 "RC2_1"
+ P8 14
+ P3 1
+ R3 2
+ HE1 5
+Net 21 "RC1_1"
+ P8 15
+ P2 1
+ R2 2
+ HE1 7
+Net 22 "RC0_1"
+ P8 16
+ P1 1
+ R1 2
+ HE1 9
+Net 23 ""
+ 1K9 2
+ D7 2
+Net 24 ""
+ 1K8 2
+ D6 2
+Net 25 ""
+ 1K7 2
+ D5 2
+Net 26 ""
+ 1K6 2
+ D4 2
+Net 27 ""
+ 1K5 2
+ D3 2
+Net 28 ""
+ 1K4 2
+ D10 2
+Net 29 ""
+ 1K3 2
+ D2 2
+Net 30 ""
+ R9 2
+ D8 2
+Net 31 ""
+ 1K1 2
+ D1 2
+}
+#End

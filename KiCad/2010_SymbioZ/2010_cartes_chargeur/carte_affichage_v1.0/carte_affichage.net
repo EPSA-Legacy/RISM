@@ -1,0 +1,66 @@
+( { Netlist by Cvpcb (2006-08-28), date = 22/4/2010-14:46:33 }
+ ( 4BC48425 LEDV D1 Jaune
+  ( 1 +12V )
+  ( 2 N-000005 )
+ )
+ ( 4BC4842E LEDV D2 Vert
+  ( 1 +12V )
+  ( 2 N-000003 )
+ )
+ ( 4BC48433 LEDV D3 Rouge
+  ( 1 VS_1 )
+  ( 2 N-000002 )
+ )
+ ( 4BC779CA LEDV D4 Bleu
+  ( 1 ref1_1 )
+  ( 2 GND )
+ )
+ ( 4BC779C1 LEDV D5 Bleu
+  ( 1 ref2_1 )
+  ( 2 ref1_1 )
+ )
+ ( 4BC779D1 LEDV D6 Bleu
+  ( 1 ref3_1 )
+  ( 2 ref2_1 )
+ )
+ ( 4BC793A7 SIL-4 P1 Connect
+  ( 1 N-000004 )
+  ( 2 ref3_1 )
+  ( 3 ref2_1 )
+  ( 4 ref1_1 )
+ )
+ ( 4BC79390 SIL-3 P2 Main
+  ( 1 VS_1 )
+  ( 2 +12V )
+  ( 3 GND )
+ )
+ ( 4BC77A25 R3 R5 5.6k
+  ( 1 N-000004 )
+  ( 2 +12V )
+ )
+ ( 4BC779E6 R3 R61 2.8k
+  ( 1 ref1_1 )
+  ( 2 GND )
+ )
+ ( 4BC779ED R3 R62 2.8k
+  ( 1 ref2_1 )
+  ( 2 ref1_1 )
+ )
+ ( 4BC779F2 R3 R63 2.8k
+  ( 1 ref3_1 )
+  ( 2 ref2_1 )
+ )
+ ( 4BC4849B R3 R71 1k
+  ( 1 GND )
+  ( 2 N-000005 )
+ )
+ ( 4BC484A9 R3 R72 1k
+  ( 1 VS_1 )
+  ( 2 N-000003 )
+ )
+ ( 4BC484B3 R3 R73 1k
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+)
+*

@@ -1,0 +1,96 @@
+( { Netlist by Cvpcb (2006-08-28), date = 12/4/2010-11:40:25 }
+ ( 4BA89266 C2V10 C1 10u
+  ( 1 N-000014 )
+  ( 2 GND )
+ )
+ ( 4BA8926D C1 C2 17p
+  ( 1 N-000014 )
+  ( 2 GND )
+ )
+ ( 4BC1DE5B C1V5 C3 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( 4BC1DE57 C1 C4 17p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( 4BC2E71B LEDV D1 RED
+  ( 1 VCC )
+  ( 2 N-000002 )
+ )
+ ( 4BC1E016 DB9MC J1 DB9
+  ( 1 Boost_1 )
+  ( 2 Frein_1 )
+  ( 3 MElec_1 )
+  ( 4 SCritS_1 )
+  ( 5 SSurchS_1 )
+  ( 6 SDechS_1 )
+  ( 7 GND )
+  ( 8 GND )
+  ( 9 GND )
+ )
+ ( 4BA89234 ALIM_TYCO P1 Alim
+  ( 1 N-000014 )
+  ( 2 GND )
+ )
+ ( 4BBAFA69 bornier2 P2 Vsc_l
+  ( 1 SDech_1 )
+  ( 2 GND )
+ )
+ ( 4BBAFA7A bornier2 P3 Vsc_h
+  ( 1 SSurch_1 )
+  ( 2 GND )
+ )
+ ( 4BBAFA7D bornier2 P4 Critic
+  ( 1 SCrit_1 )
+  ( 2 GND )
+ )
+ ( 4BBAFA7F bornier2 P5 Mode
+  ( 1 VCC )
+  ( 2 MElec_1 )
+ )
+ ( 4BBAFACF bornier2 P6 Frein
+  ( 1 VCC )
+  ( 2 Frein_1 )
+ )
+ ( 4BBAFAD1 bornier2 P7 Boost
+  ( 1 VCC )
+  ( 2 Boost_1 )
+ )
+ ( 4BA886BA R3 R1 10k
+  ( 1 GND )
+  ( 2 Boost_1 )
+ )
+ ( 4BBADCFB R3 R2 10k
+  ( 1 GND )
+  ( 2 Frein_1 )
+ )
+ ( 4BBADCFF R3 R3 10k
+  ( 1 GND )
+  ( 2 MElec_1 )
+ )
+ ( 4BC2E72A R3 R4 500
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( 4BA89278 TO220 U1 7805
+  ( 1 N-000014 )
+  ( 2 GND )
+  ( 3 VCC )
+ )
+ ( 4BBAF5D3 14DIP-ELL300 U2 LM324
+  ( 1 SCrit_1 )
+  ( 2 SCrit_1 )
+  ( 3 SCritS_1 )
+  ( 4 VCC )
+  ( 5 SSurchS_1 )
+  ( 6 SSurch_1 )
+  ( 7 SSurch_1 )
+  ( 8 SDech_1 )
+  ( 9 SDech_1 )
+  ( 10 SDechS_1 )
+  ( 11 GND )
+ )
+)
+*
