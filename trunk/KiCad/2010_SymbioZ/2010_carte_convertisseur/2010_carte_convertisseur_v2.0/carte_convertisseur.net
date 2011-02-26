@@ -1,0 +1,970 @@
+# EESchema Netlist Version 1.0 generee le  18/1/2003-08:38:28
+(
+ ( 3E28994D $noname  P9 ToDriver2 {Lib=HE10-14}
+  (    1  ? )
+  (    2 Enable2_1 )
+  (    3 Err2_1 )
+  (    4 PWM2_1 )
+  (    5  ? )
+  (    6  ? )
+  (    7  ? )
+  (    8 VAA )
+  (    9 VAA )
+  (   10 GND )
+  (   11 GND )
+  (   12  ? )
+  (   13  ? )
+  (   14  ? )
+ )
+ ( 3E289928 $noname  P8 ToDriver1 {Lib=HE10-14}
+  (    1  ? )
+  (    2 Enable1_1 )
+  (    3 Err1_1 )
+  (    4 PWM1_1 )
+  (    5  ? )
+  (    6  ? )
+  (    7  ? )
+  (    8 VAA )
+  (    9 VAA )
+  (   10 GND )
+  (   11 GND )
+  (   12  ? )
+  (   13  ? )
+  (   14  ? )
+ )
+ ( 3E27F23C $noname  D15 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 TConv_1 )
+ )
+ ( 3E27F23B $noname  R36 100 {Lib=R}
+  (    1 TConv_1 )
+  (    2 N-000018 )
+ )
+ ( 3E27E7D5 $noname  U12 TRACO_20WIN_DUAL {Lib=TRACO_20WIN_DUAL}
+  (    1 +12V )
+  (    2 GND )
+  (    3 VAA )
+  (    4 GND )
+  (    5 -VAA )
+  (    6  ? )
+ )
+ ( 3E27E004 $noname  U4 LM224N {Lib=LM324}
+  (    1 N-000024 )
+  (    2 N-000025 )
+  (    3 N-000028 )
+  (    4 +12V )
+  (    5 TempIn_1 )
+  (    6 N-000027 )
+  (    7 N-000026 )
+  (    8 N-000029 )
+  (    9 N-000003 )
+  (   10 N-000002 )
+  (   11 GND )
+  (   12 N-000029 )
+  (   13 N-000018 )
+  (   14 N-000018 )
+ )
+ ( 3E27DF4C $noname  R21 20k {Lib=R}
+  (    1 N-000029 )
+  (    2 N-000003 )
+ )
+ ( 3E27DF45 $noname  R11 10k {Lib=R}
+  (    1 N-000003 )
+  (    2 N-000024 )
+ )
+ ( 3E27DF43 $noname  R10 10k {Lib=R}
+  (    1 N-000002 )
+  (    2 N-000026 )
+ )
+ ( 3E27DF3C $noname  R20 20k {Lib=R}
+  (    1 N-000024 )
+  (    2 N-000025 )
+ )
+ ( 3E27DF36 $noname  R19 20k {Lib=R}
+  (    1 N-000026 )
+  (    2 N-000027 )
+ )
+ ( 3E27DF34 $noname  R18 20k {Lib=R}
+  (    1 GND )
+  (    2 N-000002 )
+ )
+ ( 3E27DF14 $noname  R9 10k {Lib=R}
+  (    1 N-000028 )
+  (    2 GND )
+ )
+ ( 3E27DF0F $noname  R16 12k {Lib=R}
+  (    1 +12V )
+  (    2 N-000028 )
+ )
+ ( 3E27DF05 $noname  R8 10k {Lib=R}
+  (    1 N-000025 )
+  (    2 N-000027 )
+ )
+ ( 3E27C89F $noname  C8 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27C891 $noname  C7 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27C88E $noname  C6 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27C88B $noname  C5 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27C5DC $noname  D13 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000031 )
+ )
+ ( 3E27C5DB $noname  D12 10V {Lib=ZENER}
+  (    1 ISc2_1 )
+  (    2 N-000031 )
+ )
+ ( 3E27C5DA $noname  R7 100 {Lib=R}
+  (    1 ISc2_1 )
+  (    2 N-000035 )
+ )
+ ( 3E27C5D9 $noname  D11 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000033 )
+ )
+ ( 3E27C5D3 $noname  D10 10V {Lib=ZENER}
+  (    1 ISc1_1 )
+  (    2 N-000033 )
+ )
+ ( 3E27C5D2 $noname  R6 100 {Lib=R}
+  (    1 ISc1_1 )
+  (    2 N-000036 )
+ )
+ ( 3E27C5D1 $noname  U11 LM358 {Lib=LM358}
+  (    1 N-000035 )
+  (    2 N-000035 )
+  (    3 N-000042 )
+  (    4 -VAA )
+  (    5 ISc2In_1 )
+  (    6 N-000034 )
+  (    7 N-000034 )
+  (    8 VAA )
+ )
+ ( 3E27C5CF $noname  U10 LM358 {Lib=LM358}
+  (    1 N-000037 )
+  (    2 N-000037 )
+  (    3 ISc1In_1 )
+  (    4 -VAA )
+  (    5 N-000040 )
+  (    6 N-000036 )
+  (    7 N-000036 )
+  (    8 VAA )
+ )
+ ( 3E27C5CD $noname  R32 R {Lib=R}
+  (    1 N-000040 )
+  (    2 N-000037 )
+ )
+ ( 3E27C5CC $noname  C14 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000040 )
+ )
+ ( 3E27C5CB $noname  R31 R {Lib=R}
+  (    1 N-000042 )
+  (    2 N-000034 )
+ )
+ ( 3E27C5CA $noname  C13 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000042 )
+ )
+ ( 3E27C5C2 $noname  D9 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000043 )
+ )
+ ( 3E27C5C1 $noname  D8 10V {Lib=ZENER}
+  (    1 IMot2_1 )
+  (    2 N-000043 )
+ )
+ ( 3E27C5C0 $noname  R5 100 {Lib=R}
+  (    1 IMot2_1 )
+  (    2 N-000047 )
+ )
+ ( 3E27C5BF $noname  D7 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000045 )
+ )
+ ( 3E27C5B9 $noname  D6 10V {Lib=ZENER}
+  (    1 IMot1_1 )
+  (    2 N-000045 )
+ )
+ ( 3E27C5B8 $noname  R4 100 {Lib=R}
+  (    1 IMot1_1 )
+  (    2 N-000048 )
+ )
+ ( 3E27C5B7 $noname  U9 LM358 {Lib=LM358}
+  (    1 N-000047 )
+  (    2 N-000047 )
+  (    3 N-000054 )
+  (    4 -VAA )
+  (    5 IMot2In_1 )
+  (    6 N-000046 )
+  (    7 N-000046 )
+  (    8 VAA )
+ )
+ ( 3E27C5B5 $noname  U8 LM358 {Lib=LM358}
+  (    1 N-000050 )
+  (    2 N-000050 )
+  (    3 IMot1In_1 )
+  (    4 -VAA )
+  (    5 N-000049 )
+  (    6 N-000048 )
+  (    7 N-000048 )
+  (    8 VAA )
+ )
+ ( 3E27C5B3 $noname  R30 R {Lib=R}
+  (    1 N-000049 )
+  (    2 N-000050 )
+ )
+ ( 3E27C5B2 $noname  C12 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000049 )
+ )
+ ( 3E27C5B1 $noname  R29 R {Lib=R}
+  (    1 N-000054 )
+  (    2 N-000046 )
+ )
+ ( 3E27C5B0 $noname  C11 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000054 )
+ )
+ ( 3E27C230 $noname  D5 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 USc_1 )
+ )
+ ( 3E27C22F $noname  R3 100 {Lib=R}
+  (    1 USc_1 )
+  (    2 N-000055 )
+ )
+ ( 3E27C228 $noname  D4 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000057 )
+ )
+ ( 3E27C226 $noname  D3 10V {Lib=ZENER}
+  (    1 UMot2_1 )
+  (    2 N-000057 )
+ )
+ ( 3E27C225 $noname  R2 100 {Lib=R}
+  (    1 UMot2_1 )
+  (    2 N-000062 )
+ )
+ ( 3E27AB22 $noname  U7 LM358 {Lib=LM358}
+  (    1 N-000060 )
+  (    2 N-000060 )
+  (    3 UScIn_1 )
+  (    4 -VAA )
+  (    5 N-000068 )
+  (    6 N-000055 )
+  (    7 N-000055 )
+  (    8 VAA )
+ )
+ ( 3E27C1AD $noname  D2 10V {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000059 )
+ )
+ ( 3E27BFE4 $noname  C4 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27BFBF $noname  C3 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 3E27ABD3 $noname  D1 10V {Lib=ZENER}
+  (    1 UMot1_1 )
+  (    2 N-000059 )
+ )
+ ( 3E27ABA0 $noname  R1 100 {Lib=R}
+  (    1 UMot1_1 )
+  (    2 N-000063 )
+ )
+ ( 3E27AAF7 $noname  U6 LM358 {Lib=LM358}
+  (    1 N-000061 )
+  (    2 N-000061 )
+  (    3 UMot2In_1 )
+  (    4 -VAA )
+  (    5 N-000073 )
+  (    6 N-000062 )
+  (    7 N-000062 )
+  (    8 VAA )
+ )
+ ( 3E27AA97 $noname  U5 LM358 {Lib=LM358}
+  (    1 N-000064 )
+  (    2 N-000064 )
+  (    3 UMot1In_1 )
+  (    4 -VAA )
+  (    5 N-000071 )
+  (    6 N-000063 )
+  (    7 N-000063 )
+  (    8 VAA )
+ )
+ ( 4BC35876 $noname  C10 1u {Lib=CAPAPOL}
+  (    1 VAA )
+  (    2 -VAA )
+ )
+ ( 4BC3585D $noname  C9 1u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BC3545E $noname  C18 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000029 )
+ )
+ ( 4BC3517D $noname  R22 240 {Lib=R}
+  (    1 TempIn_1 )
+  (    2 +12V )
+ )
+ ( 4BC33972 $noname  R35 R {Lib=R}
+  (    1 N-000068 )
+  (    2 N-000060 )
+ )
+ ( 4BC33970 $noname  C17 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000068 )
+ )
+ ( 4BC3394E $noname  R34 R {Lib=R}
+  (    1 N-000071 )
+  (    2 N-000064 )
+ )
+ ( 4BC3394C $noname  C16 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000071 )
+ )
+ ( 4BC33727 $noname  R33 R {Lib=R}
+  (    1 N-000073 )
+  (    2 N-000061 )
+ )
+ ( 4BC33725 $noname  C15 330n {Lib=C}
+  (    1 GND )
+  (    2 N-000073 )
+ )
+ ( 4BC33365 $noname  R25 330 {Lib=R}
+  (    1 UScIn_1 )
+  (    2 GND )
+ )
+ ( 4BC33346 $noname  R24 330 {Lib=R}
+  (    1 UMot2In_1 )
+  (    2 GND )
+ )
+ ( 4BC3333B $noname  R23 330 {Lib=R}
+  (    1 GND )
+  (    2 UMot1In_1 )
+ )
+ ( 4BC33006 $noname  R17 15k {Lib=R}
+  (    1 N-000079 )
+  (    2 N-000076 )
+ )
+ ( 4BC32FEA $noname  R28 7,5k {Lib=R}
+  (    1 N-000080 )
+  (    2 N-000077 )
+ )
+ ( 4BC32FD6 $noname  R27 7,5k {Lib=R}
+  (    1 N-000081 )
+  (    2 N-000078 )
+ )
+ ( 4BC31A3A $noname  P4 ISc1 {Lib=CONN_4}
+  (    1 VAA )
+  (    2 -VAA )
+  (    3 ISc1In_1 )
+  (    4 GND )
+ )
+ ( 4BC31917 $noname  P5 ISc2 {Lib=CONN_4}
+  (    1 VAA )
+  (    2 -VAA )
+  (    3 ISc2In_1 )
+  (    4 GND )
+ )
+ ( 4BC31913 $noname  R15 10k {Lib=R}
+  (    1 GND )
+  (    2 ISc2In_1 )
+ )
+ ( 4BC318F7 $noname  R14 10k {Lib=R}
+  (    1 GND )
+  (    2 ISc1In_1 )
+ )
+ ( 4BC318EA $noname  P3 IMot2 {Lib=CONN_4}
+  (    1 VAA )
+  (    2 -VAA )
+  (    3 IMot2In_1 )
+  (    4 GND )
+ )
+ ( 4BC318E9 $noname  R13 10k {Lib=R}
+  (    1 GND )
+  (    2 IMot2In_1 )
+ )
+ ( 4BC31533 $noname  P7 Temp2 {Lib=CONN_2}
+  (    1 N-000074 )
+  (    2 GND )
+ )
+ ( 4BC31529 $noname  P6 Temp1 {Lib=CONN_2}
+  (    1 TempIn_1 )
+  (    2 N-000074 )
+ )
+ ( 4BC310F8 $noname  P1 ALIM {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BC2EC2F $noname  J1 DB25 {Lib=DB25}
+  (    1 IMot1_1 )
+  (    2 IMot2_1 )
+  (    3 ISc1_1 )
+  (    4 ISc2_1 )
+  (    5 UMot1_1 )
+  (    6 UMot2_1 )
+  (    7 USc_1 )
+  (    8 TConv_1 )
+  (    9 PWM1_1 )
+  (   10 PWM2_1 )
+  (   11 Enable1_1 )
+  (   12 Enable2_1 )
+  (   13 Err1_1 )
+  (   14 Err2_1 )
+  (   15 GND )
+  (   16 GND )
+  (   17 GND )
+  (   18 GND )
+  (   19 GND )
+  (   20 GND )
+  (   21 GND )
+  (   22 GND )
+  (   23 GND )
+  (   24 GND )
+  (   25 GND )
+ )
+ ( 4BB1C53A $noname  U3 LEM_USc {Lib=LEM_LV-25P}
+  (    1 UScIn_1 )
+  (    2 VAA )
+  (    3 -VAA )
+  (    4 N-000075 )
+  (    5 N-000076 )
+ )
+ ( 4BB1C52B $noname  U2 LEM_Umot2 {Lib=LEM_LV-25P}
+  (    1 UMot2In_1 )
+  (    2 VAA )
+  (    3 -VAA )
+  (    4 N-000075 )
+  (    5 N-000077 )
+ )
+ ( 4BB1C49D $noname  P10 UConv {Lib=CONN_4}
+  (    1 N-000081 )
+  (    2 N-000080 )
+  (    3 N-000079 )
+  (    4 N-000075 )
+ )
+ ( 4BB1BFAA $noname  D14 JAUNE {Lib=LED}
+  (    1 +12V )
+  (    2 N-000022 )
+ )
+ ( 4BB1BF2F $noname  R26 500 {Lib=R}
+  (    1 GND )
+  (    2 N-000022 )
+ )
+ ( 4BB1BE69 $noname  C1 10u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BB1BE5D $noname  C2 17p {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BB1BC7C $noname  P2 IMot1 {Lib=CONN_4}
+  (    1 VAA )
+  (    2 -VAA )
+  (    3 IMot1In_1 )
+  (    4 GND )
+ )
+ ( 4BB1A0F9 $noname  U1 LEM_Umot1 {Lib=LEM_LV-25P}
+  (    1 UMot1In_1 )
+  (    2 VAA )
+  (    3 -VAA )
+  (    4 N-000075 )
+  (    5 N-000078 )
+ )
+ ( 4B9F4180 $noname  R12 10k {Lib=R}
+  (    1 GND )
+  (    2 IMot1In_1 )
+ )
+)
+*
+{ Pin List by Nets
+Net 2 ""
+ R10 1
+ R18 2
+ U4 10
+Net 3 ""
+ R21 2
+ R11 1
+ U4 9
+Net 18 ""
+ R36 2
+ U4 14
+ U4 13
+Net 19 "+12V"
+ #PWR6 1
+ #PWR5 1
+ U12 1
+ #PWR4 1
+ #PWR3 1
+ #PWR2 1
+ U4 4
+ #PWR1 1
+ R16 1
+ U4 4
+ U4 4
+ U4 4
+ #PWR8 1
+ C9 1
+ R22 2
+ #FLG2 1
+ P1 1
+ #PWR7 1
+ D14 1
+ C1 1
+ C2 1
+Net 20 "GND"
+ P9 10
+ P9 11
+ P8 10
+ P8 11
+ D15 1
+ #PWR46 1
+ #PWR45 1
+ #PWR44 1
+ #PWR43 1
+ #PWR42 1
+ #PWR41 1
+ #PWR40 1
+ #PWR39 1
+ U12 4
+ U12 2
+ #PWR38 1
+ #PWR37 1
+ #PWR36 1
+ U4 11
+ R18 1
+ R9 2
+ U4 11
+ U4 11
+ U4 11
+ #PWR35 1
+ D13 1
+ D11 1
+ #PWR34 1
+ C14 1
+ C13 1
+ #PWR33 1
+ D9 1
+ D7 1
+ #PWR32 1
+ C12 1
+ C11 1
+ #PWR31 1
+ D5 1
+ #PWR30 1
+ D4 1
+ D2 1
+ #PWR29 1
+ #PWR61 1
+ #PWR60 1
+ #PWR59 1
+ C9 2
+ C18 1
+ #PWR58 1
+ #FLG1 1
+ C17 1
+ C16 1
+ C15 1
+ #PWR57 1
+ R25 2
+ R24 2
+ R23 1
+ P4 4
+ P5 4
+ R15 1
+ #PWR56 1
+ R14 1
+ #PWR55 1
+ P3 4
+ R13 1
+ #PWR54 1
+ P7 2
+ P1 2
+ J1 15
+ J1 16
+ J1 17
+ J1 18
+ J1 19
+ J1 20
+ J1 21
+ J1 22
+ J1 23
+ J1 24
+ J1 25
+ #PWR53 1
+ #PWR52 1
+ #PWR51 1
+ #PWR50 1
+ #PWR49 1
+ #PWR48 1
+ R26 1
+ C1 2
+ C2 2
+ P2 4
+ R12 1
+ #PWR47 1
+Net 21 "-VAA"
+ #PWR21 1
+ U12 5
+ #PWR20 1
+ C8 2
+ #PWR19 1
+ C7 2
+ #PWR18 1
+ C6 2
+ #PWR17 1
+ C5 2
+ #PWR16 1
+ U11 4
+ U11 4
+ U10 4
+ U10 4
+ #PWR15 1
+ #PWR14 1
+ U9 4
+ U9 4
+ U8 4
+ U8 4
+ U7 4
+ #PWR13 1
+ C4 2
+ #PWR12 1
+ C3 2
+ #PWR11 1
+ #PWR10 1
+ #PWR9 1
+ U7 4
+ U6 4
+ U6 4
+ U5 4
+ U5 4
+ #PWR28 1
+ #PWR27 1
+ C10 2
+ P4 2
+ P5 2
+ #PWR26 1
+ #PWR25 1
+ #PWR24 1
+ P3 2
+ #PWR23 1
+ #PWR22 1
+ U3 3
+ U2 3
+ P2 2
+ U1 3
+Net 22 ""
+ D14 2
+ R26 2
+Net 24 ""
+ R11 2
+ R20 1
+ U4 1
+Net 25 ""
+ R20 2
+ R8 1
+ U4 2
+Net 26 ""
+ R10 2
+ R19 1
+ U4 7
+Net 27 ""
+ R19 2
+ R8 2
+ U4 6
+Net 28 ""
+ R9 1
+ R16 2
+ U4 3
+Net 29 ""
+ U4 12
+ R21 1
+ U4 8
+ C18 2
+Net 30 "VAA"
+ P9 8
+ P9 9
+ P8 8
+ P8 9
+ U12 3
+ #PWR74 1
+ C8 1
+ #PWR73 1
+ C7 1
+ #PWR72 1
+ C6 1
+ #PWR71 1
+ C5 1
+ #PWR70 1
+ #PWR69 1
+ U11 8
+ U11 8
+ U10 8
+ U10 8
+ #PWR68 1
+ #PWR67 1
+ U9 8
+ U9 8
+ U8 8
+ U8 8
+ U7 8
+ #PWR66 1
+ C4 1
+ #PWR65 1
+ C3 1
+ #PWR64 1
+ #PWR63 1
+ #PWR62 1
+ U7 8
+ U6 8
+ U6 8
+ U5 8
+ U5 8
+ #PWR85 1
+ #PWR84 1
+ C10 1
+ P4 1
+ P5 1
+ #PWR83 1
+ #PWR82 1
+ #PWR81 1
+ P3 1
+ #PWR80 1
+ #PWR79 1
+ #PWR78 1
+ #PWR77 1
+ #PWR76 1
+ U3 2
+ U2 2
+ #PWR75 1
+ P2 1
+ U1 2
+Net 31 ""
+ D13 2
+ D12 2
+Net 32 "ISc2_1"
+ D12 1
+ R7 1
+ J1 4
+Net 33 ""
+ D11 2
+ D10 2
+Net 34 ""
+ U11 7
+ U11 6
+ R31 2
+Net 35 ""
+ R7 2
+ U11 1
+ U11 2
+Net 36 ""
+ R6 2
+ U10 7
+ U10 6
+Net 37 ""
+ U10 1
+ U10 2
+ R32 2
+Net 38 "ISc1In_1"
+ U10 3
+ P4 3
+ R14 2
+Net 39 "ISc1_1"
+ D10 1
+ R6 1
+ J1 3
+Net 40 ""
+ U10 5
+ R32 1
+ C14 2
+Net 41 "ISc2In_1"
+ U11 5
+ P5 3
+ R15 2
+Net 42 ""
+ U11 3
+ R31 1
+ C13 2
+Net 43 ""
+ D9 2
+ D8 2
+Net 44 "IMot2_1"
+ D8 1
+ R5 1
+ J1 2
+Net 45 ""
+ D7 2
+ D6 2
+Net 46 ""
+ U9 7
+ U9 6
+ R29 2
+Net 47 ""
+ R5 2
+ U9 1
+ U9 2
+Net 48 ""
+ R4 2
+ U8 7
+ U8 6
+Net 49 ""
+ U8 5
+ R30 1
+ C12 2
+Net 50 ""
+ U8 1
+ U8 2
+ R30 2
+Net 51 "IMot1In_1"
+ U8 3
+ P2 3
+ R12 2
+Net 52 "IMot1_1"
+ D6 1
+ R4 1
+ J1 1
+Net 53 "IMot2In_1"
+ U9 5
+ P3 3
+ R13 2
+Net 54 ""
+ U9 3
+ R29 1
+ C11 2
+Net 55 ""
+ R3 2
+ U7 7
+ U7 6
+Net 56 "USc_1"
+ D5 2
+ R3 1
+ J1 7
+Net 57 ""
+ D4 2
+ D3 2
+Net 58 "UMot2_1"
+ D3 1
+ R2 1
+ J1 6
+Net 59 ""
+ D2 2
+ D1 2
+Net 60 ""
+ U7 1
+ U7 2
+ R35 2
+Net 61 ""
+ U6 1
+ U6 2
+ R33 2
+Net 62 ""
+ R2 2
+ U6 7
+ U6 6
+Net 63 ""
+ R1 2
+ U5 7
+ U5 6
+Net 64 ""
+ U5 1
+ U5 2
+ R34 2
+Net 65 "TConv_1"
+ D15 2
+ R36 1
+ J1 8
+Net 66 "TempIn_1"
+ U4 5
+ R22 1
+ P6 1
+Net 67 "UScIn_1"
+ U7 3
+ R25 1
+ U3 1
+Net 68 ""
+ U7 5
+ R35 1
+ C17 2
+Net 69 "UMot1In_1"
+ U5 3
+ R23 2
+ U1 1
+Net 70 "UMot1_1"
+ D1 1
+ R1 1
+ J1 5
+Net 71 ""
+ U5 5
+ R34 1
+ C16 2
+Net 72 "UMot2In_1"
+ U6 3
+ R24 1
+ U2 1
+Net 73 ""
+ U6 5
+ R33 1
+ C15 2
+Net 74 ""
+ P7 1
+ P6 2
+Net 75 ""
+ U3 4
+ U2 4
+ P10 4
+ U1 4
+Net 76 ""
+ R17 2
+ U3 5
+Net 77 ""
+ R28 2
+ U2 5
+Net 78 ""
+ R27 2
+ U1 5
+Net 79 ""
+ R17 1
+ P10 3
+Net 80 ""
+ R28 1
+ P10 2
+Net 81 ""
+ R27 1
+ P10 1
+Net 82 "Err2_1"
+ P9 3
+ J1 14
+Net 83 "PWM2_1"
+ P9 4
+ J1 10
+Net 84 "Enable2_1"
+ P9 2
+ J1 12
+Net 85 "Err1_1"
+ P8 3
+ J1 13
+Net 86 "PWM1_1"
+ P8 4
+ J1 9
+Net 87 "Enable1_1"
+ P8 2
+ J1 11
+}
+#End

@@ -1,0 +1,480 @@
+# EESchema Netlist Version 1.0 generee le  22/4/2010-16:57:22
+(
+ ( 4BD077B3 $noname  P3 CAN {Lib=CONN_8}
+  (    1 GND )
+  (    2 GND )
+  (    3 GND )
+  (    4 CANL_1 )
+  (    5 CANH_1 )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+ )
+ ( 4BD0779C $noname  P2 CAN {Lib=CONN_8}
+  (    1 GND )
+  (    2 GND )
+  (    3 GND )
+  (    4 CANL_1 )
+  (    5 CANH_1 )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+ )
+ ( 4BCECBB4 $noname  C18 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4BCECBB3 $noname  C20 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4BCECBB1 $noname  C17 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4BCECBB0 $noname  C19 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4BCEA8E9 $noname  HE1 HE10-16 {Lib=HE10-16}
+  (    1 +12V )
+  (    2 RD0_1 )
+  (    3 GND )
+  (    4 RD1_1 )
+  (    5 VCC )
+  (    6 RD2_1 )
+  (    7 RB4_1 )
+  (    8 RD3_1 )
+  (    9 RB1_1 )
+  (   10 RC4_1 )
+  (   11 RB0_1 )
+  (   12 RC5_1 )
+  (   13 RD7_1 )
+  (   14 RD4_1 )
+  (   15 RD6_1 )
+  (   16 RD5_1 )
+ )
+ ( 4BCEA5D3 $noname  HE2 HE10-16 {Lib=HE10-16}
+  (    1 +12V )
+  (    2 RA0_1 )
+  (    3 GND )
+  (    4 RA1_1 )
+  (    5 VCC )
+  (    6 RA2_1 )
+  (    7 RC3_1 )
+  (    8 RA3_1 )
+  (    9 RC2_1 )
+  (   10 RA4_1 )
+  (   11 RC1_1 )
+  (   12 RA5_1 )
+  (   13 RC0_1 )
+  (   14 RE0_1 )
+  (   15 RE2_1 )
+  (   16 RE1_1 )
+ )
+ ( 4BCEA449 $noname  P4 SERIE {Lib=CONN_2}
+  (    1 RC7_1 )
+  (    2 RC6_1 )
+ )
+ ( 4BCEA1F1 $noname  C16 27p {Lib=C}
+  (    1 N-000035 )
+  (    2 GND )
+ )
+ ( 4BCEA1F0 $noname  C15 27p {Lib=C}
+  (    1 N-000036 )
+  (    2 GND )
+ )
+ ( 4BCEA1EF $noname  X1 QUARTZ {Lib=CRYSTAL}
+  (    1 N-000036 )
+  (    2 N-000035 )
+ )
+ ( 4BCDDD48 $noname  U4 PIC18F4580 {Lib=PIC18F4580}
+  (    1 Mclr_1 )
+  (    2 RA0_1 )
+  (    3 RA1_1 )
+  (    4 RA2_1 )
+  (    5 RA3_1 )
+  (    6 RA4_1 )
+  (    7 RA5_1 )
+  (    8 RE0_1 )
+  (    9 RE1_1 )
+  (   10 RE2_1 )
+  (   11 VCC )
+  (   12 GND )
+  (   13 N-000036 )
+  (   14 N-000035 )
+  (   15 RC0_1 )
+  (   16 RC1_1 )
+  (   17 RC2_1 )
+  (   18 RC3_1 )
+  (   19 RD0_1 )
+  (   20 RD1_1 )
+  (   21 RD2_1 )
+  (   22 RD3_1 )
+  (   23 RC4_1 )
+  (   24 RC5_1 )
+  (   25 RC6_1 )
+  (   26 RC7_1 )
+  (   27 RD4_1 )
+  (   28 RD5_1 )
+  (   29 RD6_1 )
+  (   30 RD7_1 )
+  (   31 GND )
+  (   32 VCC )
+  (   33 RB0_1 )
+  (   34 RB1_1 )
+  (   35 CANTX_1 )
+  (   36 CANRX_1 )
+  (   37 RB4_1 )
+  (   38 RB5_1 )
+  (   39 RB6_1 )
+  (   40 RB7_1 )
+ )
+ ( 4BCE9FE7 $noname  R5 47k {Lib=R}
+  (    1 Mclr_1 )
+  (    2 VCC )
+ )
+ ( 4BCD78F1 $noname  GND3 CONN_1 {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 4BCD78F0 $noname  GND2 CONN_1 {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 4BCD78EF $noname  GND1 CONN_1 {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 4B27919F $noname  R2 1K {Lib=R}
+  (    1 GND )
+  (    2 N-000045 )
+ )
+ ( 4B279151 $noname  R4 xxK {Lib=R}
+  (    1 CANH_1 )
+  (    2 CANL_1 )
+ )
+ ( 4B279141 $noname  R1 1K {Lib=R}
+  (    1 VCC )
+  (    2 N-000046 )
+ )
+ ( 4B2128A6 $noname  C6 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B2128A5 $noname  C14 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B2128A0 $noname  C5 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B21289F $noname  C13 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B21289C $noname  C4 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B21289B $noname  C12 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B21288B $noname  C3 10u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B21288A $noname  C11 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B211E6C $noname  P1 ALIM {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4B20D3E3 $noname  C2 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 4B20D3E2 $noname  C10 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( 47B197F8 $noname  U2 CAN_MCP2551 {Lib=CAN_MCP2551}
+  (    1 CANTX_1 )
+  (    2 GND )
+  (    3 VCC )
+  (    4 CANRX_1 )
+  (    5 GND )
+  (    6 CANL_1 )
+  (    7 CANH_1 )
+  (    8 N-000045 )
+ )
+ ( 45F6A8F9 $noname  D1 rouge {Lib=LED}
+  (    1 N-000046 )
+  (    2 GND )
+ )
+ ( 453CDC72 $noname  C1 10u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 453CDC47 $noname  C9 27p {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 453CD743 $noname  U1 7805 {Lib=7805}
+  (    1 +12V )
+  (    2 GND )
+  (    3 VCC )
+ )
+ ( 453CACE9 $noname  U3 ICD {Lib=CNT_RJ12}
+  (    1 Mclr_1 )
+  (    2 VCC )
+  (    3 GND )
+  (    4 RB7_1 )
+  (    5 RB6_1 )
+  (    6 RB5_1 )
+ )
+)
+*
+{ Pin List by Nets
+Net 2 "GND"
+ #PWR24 1
+ #PWR23 1
+ P3 8
+ P3 7
+ P3 6
+ P3 3
+ P3 2
+ P3 1
+ P2 8
+ P2 7
+ P2 6
+ P2 3
+ P2 2
+ P2 1
+ #PWR22 1
+ C18 2
+ C20 2
+ #PWR21 1
+ C17 2
+ C19 2
+ #PWR20 1
+ #PWR19 1
+ HE1 3
+ HE2 3
+ #PWR18 1
+ C16 2
+ C15 2
+ #PWR17 1
+ #PWR16 1
+ U4 31
+ U4 12
+ #PWR15 1
+ GND3 1
+ GND2 1
+ GND1 1
+ R2 1
+ #PWR14 1
+ C6 2
+ C14 2
+ #PWR13 1
+ C5 2
+ C13 2
+ #PWR12 1
+ C4 2
+ C12 2
+ #PWR11 1
+ C3 2
+ C11 2
+ P1 2
+ #FLG2 1
+ #PWR10 1
+ C2 2
+ C10 2
+ #PWR9 1
+ #PWR8 1
+ #PWR7 1
+ #PWR6 1
+ U2 2
+ U2 5
+ #PWR5 1
+ D1 2
+ #PWR4 1
+ C1 2
+ C9 2
+ U1 2
+ U3 3
+Net 3 "CANH_1"
+ P3 5
+ P2 5
+ R4 1
+ U2 7
+Net 4 "CANL_1"
+ P3 4
+ P2 4
+ R4 2
+ U2 6
+Net 5 "+12V"
+ #PWR3 1
+ #PWR2 1
+ HE1 1
+ HE2 1
+ #PWR1 1
+ P1 1
+ #FLG1 1
+ C1 1
+ C9 1
+ U1 1
+Net 6 "VCC"
+ C18 1
+ C20 1
+ C17 1
+ C19 1
+ #PWR34 1
+ #PWR33 1
+ HE1 5
+ HE2 5
+ #PWR32 1
+ #PWR31 1
+ #PWR30 1
+ U4 32
+ U4 11
+ R5 2
+ #PWR29 1
+ #PWR28 1
+ #PWR27 1
+ #PWR26 1
+ #PWR25 1
+ R1 1
+ C6 1
+ C14 1
+ C5 1
+ C13 1
+ C4 1
+ C12 1
+ C3 1
+ C11 1
+ C2 1
+ C10 1
+ U2 3
+ U1 3
+ U3 2
+Net 7 "Mclr_1"
+ U4 1
+ R5 1
+ U3 1
+Net 8 "RB0_1"
+ HE1 11
+ U4 33
+Net 9 "RD7_1"
+ HE1 13
+ U4 30
+Net 10 "RD6_1"
+ HE1 15
+ U4 29
+Net 11 "RB4_1"
+ HE1 7
+ U4 37
+Net 12 "RB1_1"
+ HE1 9
+ U4 34
+Net 13 "RD5_1"
+ HE1 16
+ U4 28
+Net 14 "RD4_1"
+ HE1 14
+ U4 27
+Net 15 "RC5_1"
+ HE1 12
+ U4 24
+Net 16 "RC4_1"
+ HE1 10
+ U4 23
+Net 17 "RD3_1"
+ HE1 8
+ U4 22
+Net 18 "RD2_1"
+ HE1 6
+ U4 21
+Net 19 "RE2_1"
+ HE2 15
+ U4 10
+Net 20 "RE1_1"
+ HE2 16
+ U4 9
+Net 21 "RE0_1"
+ HE2 14
+ U4 8
+Net 22 "RC7_1"
+ P4 1
+ U4 26
+Net 23 "RC6_1"
+ P4 2
+ U4 25
+Net 24 "RB5_1"
+ U4 38
+ U3 6
+Net 25 "CANTX_1"
+ U4 35
+ U2 1
+Net 26 "CANRX_1"
+ U4 36
+ U2 4
+Net 27 "RB6_1"
+ U4 39
+ U3 5
+Net 28 "RB7_1"
+ U4 40
+ U3 4
+Net 29 "RD1_1"
+ HE1 4
+ U4 20
+Net 30 "RD0_1"
+ HE1 2
+ U4 19
+Net 31 "RC3_1"
+ HE2 7
+ U4 18
+Net 32 "RC2_1"
+ HE2 9
+ U4 17
+Net 33 "RC1_1"
+ HE2 11
+ U4 16
+Net 34 "RC0_1"
+ HE2 13
+ U4 15
+Net 35 ""
+ C16 1
+ X1 2
+ U4 14
+Net 36 ""
+ C15 1
+ X1 1
+ U4 13
+Net 37 "RA4_1"
+ HE2 10
+ U4 6
+Net 39 "RA5_1"
+ HE2 12
+ U4 7
+Net 40 "RA3_1"
+ HE2 8
+ U4 5
+Net 41 "RA2_1"
+ HE2 6
+ U4 4
+Net 42 "RA1_1"
+ HE2 4
+ U4 3
+Net 43 "RA0_1"
+ HE2 2
+ U4 2
+Net 45 ""
+ R2 2
+ U2 8
+Net 46 ""
+ R1 2
+ D1 1
+}
+#End

@@ -1,0 +1,136 @@
+Cmp-Mod V01 Created by Cvpcb (2006-08-28) date = 25/1/2003-10:07:34
+
+BeginCmp
+TimeStamp = 3E1F9710;
+Reference = GND1;
+ValeurCmp = Meca;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9711;
+Reference = GND2;
+ValeurCmp = Meca;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9712;
+Reference = GND3;
+ValeurCmp = Meca;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9718;
+Reference = GND4;
+ValeurCmp = Meca;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9719;
+Reference = GND5;
+ValeurCmp = Meca;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9720;
+Reference = HE1;
+ValeurCmp = HE10-16;
+IdModule  = he10-16df;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1F9721;
+Reference = HE2;
+ValeurCmp = HE10-16;
+IdModule  = he10-16df;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA2E5;
+Reference = JP1;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA393;
+Reference = JP2;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA396;
+Reference = JP3;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA397;
+Reference = JP4;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA399;
+Reference = JP5;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E1FA39B;
+Reference = JP6;
+ValeurCmp = JUMPER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E2E5FEB;
+Reference = P1;
+ValeurCmp = COMMON;
+IdModule  = he10-16dm;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E2E5FEA;
+Reference = P2;
+ValeurCmp = DSPACE;
+IdModule  = he10-16dm;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E2E6027;
+Reference = P3;
+ValeurCmp = DSPIC;
+IdModule  = he10-16dm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BB1ACA3;
+Reference = P4;
+ValeurCmp = INTFCE_1;
+IdModule  = he10-16df;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BB1ACE1;
+Reference = P5;
+ValeurCmp = INTFCE_2;
+IdModule  = he10-16df;
+EndCmp
+
+BeginCmp
+TimeStamp = 3E32614F;
+Reference = P6;
+ValeurCmp = HE10-10;
+IdModule  = he10-10dm;
+EndCmp
+
+EndListe

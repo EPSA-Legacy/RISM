@@ -1,0 +1,41 @@
+# EESchema Netlist Version 1.0 generee le  14/5/2010-18:14:15
+(
+ ( 4BED8C1A $noname  P2 CONN_2 {Lib=CONN_2}
+  (    1 N-000003 )
+  (    2 N-000002 )
+ )
+ ( 4BED8C18 $noname  R3 3,3k {Lib=R}
+  (    1 N-000004 )
+  (    2 N-000005 )
+ )
+ ( 4BED8C16 $noname  R2 3,3k {Lib=R}
+  (    1 N-000005 )
+  (    2 N-000002 )
+ )
+ ( 4BED8C0F $noname  P1 CONN_2 {Lib=CONN_2}
+  (    1 N-000004 )
+  (    2 N-000003 )
+ )
+ ( 4BED8BFE $noname  R1 10k {Lib=R}
+  (    1 N-000002 )
+  (    2 N-000003 )
+ )
+)
+*
+{ Pin List by Nets
+Net 2 ""
+ P2 2
+ R2 2
+ R1 1
+Net 3 ""
+ P2 1
+ P1 2
+ R1 2
+Net 4 ""
+ R3 1
+ P1 1
+Net 5 ""
+ R3 2
+ R2 1
+}
+#End

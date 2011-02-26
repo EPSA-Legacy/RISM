@@ -1,0 +1,68 @@
+( { Netlist by Cvpcb (2006-08-28), date = 18/1/2003-11:12:13 }
+ ( 4BD7F806 C1 C1 17p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( 4BD7F83F C2V10 C2 10u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( 3E293654 C1V5 C3 1u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( 4BD7F860 LEDV D1 JAUNE
+  ( 1 +12V )
+  ( 2 N-000003 )
+ )
+ ( 4BE91446 DB9MC J1 DB9
+  ( 1 Int1_1 )
+  ( 2 ? )
+  ( 3 Int2_1 )
+  ( 4 ? )
+  ( 5 GND )
+  ( 6 GND )
+  ( 7 GND )
+  ( 8 GND )
+  ( 9 GND )
+ )
+ ( 4BD7F1A2 ALIM_TYCO P1 Alim
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( 4BE066C7 bornier2 P2 CONN_2
+  ( 1 Rel13_1 )
+  ( 2 Rel14_1 )
+ )
+ ( 4BE066D8 bornier2 P3 CONN_2
+  ( 1 Rel23_1 )
+  ( 2 Rel24_1 )
+ )
+ ( 4BE07DFF Relais51890 P4 CONN_4
+  ( 1 Rel11_1 )
+  ( 2 GND )
+  ( 3 Rel13_1 )
+  ( 4 Rel14_1 )
+ )
+ ( 4BE07E22 Relais51890 P5 CONN_4
+  ( 1 Rel21_1 )
+  ( 2 GND )
+  ( 3 Rel23_1 )
+  ( 4 Rel24_1 )
+ )
+ ( 4BD7F87A R3 R1 500
+  ( 1 GND )
+  ( 2 N-000003 )
+ )
+ ( 3E292F07 8DIP-ELL300 U1 LM358
+  ( 1 Rel11_1 )
+  ( 2 Rel11_1 )
+  ( 3 Int1_1 )
+  ( 4 GND )
+  ( 5 Int2_1 )
+  ( 6 Rel21_1 )
+  ( 7 Rel21_1 )
+  ( 8 +12V )
+ )
+)
+*

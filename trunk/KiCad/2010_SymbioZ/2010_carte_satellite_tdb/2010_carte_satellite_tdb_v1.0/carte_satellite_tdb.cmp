@@ -1,0 +1,185 @@
+Cmp-Mod V01 Created by Cvpcb (2006-08-28) date = 21/5/2010-02:03:50
+
+BeginCmp
+TimeStamp = 4BF57F33;
+Reference = C1;
+ValeurCmp = 10u;
+IdModule  = C2V10;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57F32;
+Reference = C2;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF59B83;
+Reference = C3;
+ValeurCmp = 10u;
+IdModule  = C2V10;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF59B7D;
+Reference = C4;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF595AC;
+Reference = J1;
+ValeurCmp = DB25;
+IdModule  = DB25FC;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF5DA92;
+Reference = J2;
+ValeurCmp = DB9;
+IdModule  = DB9FC;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF24F99;
+Reference = JP1;
+ValeurCmp = LT_6V;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF24F9A;
+Reference = JP2;
+ValeurCmp = LT_GND;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF24FA6;
+Reference = JP3;
+ValeurCmp = BI_6V;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF24FA7;
+Reference = JP4;
+ValeurCmp = BI_GND;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57886;
+Reference = JP5;
+ValeurCmp = R_GND;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57898;
+Reference = JP6;
+ValeurCmp = G_GND;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57F37;
+Reference = P1;
+ValeurCmp = ALIM;
+IdModule  = ALIM_TYCO;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF5986E;
+Reference = P2;
+ValeurCmp = Charge;
+IdModule  = bornier6;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF5987F;
+Reference = P3;
+ValeurCmp = Temp;
+IdModule  = bornier6;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF251FE;
+Reference = R1;
+ValeurCmp = RVAR;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF2521F;
+Reference = R2;
+ValeurCmp = RVAR;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A0C0;
+Reference = U1;
+ValeurCmp = 7-SEG-RV;
+IdModule  = 7-seg-RV_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A0CE;
+Reference = U2;
+ValeurCmp = 7-SEG-RV;
+IdModule  = 7-seg-RV_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A0E7;
+Reference = U3;
+ValeurCmp = 7-SEG-RV;
+IdModule  = 7-seg-RV_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A114;
+Reference = U5;
+ValeurCmp = BCD_4011;
+IdModule  = 16DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A11B;
+Reference = U6;
+ValeurCmp = BCD_4011;
+IdModule  = 16DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF1A124;
+Reference = U7;
+ValeurCmp = BCD_4011;
+IdModule  = 16DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57730;
+Reference = U8;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF5773B;
+Reference = U9;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = 4BF57F31;
+Reference = U10;
+ValeurCmp = 7806;
+IdModule  = LM78XX;
+EndCmp
+
+EndListe

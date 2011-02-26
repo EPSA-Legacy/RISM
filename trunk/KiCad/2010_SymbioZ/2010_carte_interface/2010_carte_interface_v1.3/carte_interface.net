@@ -1,0 +1,500 @@
+# EESchema Netlist Version 1.0 generee le  11/1/2003-08:04:57
+(
+ ( 3E1FA39B $noname  JP6 JUMPER {Lib=JUMPER}
+  (    1 SecuVi_1 )
+  (    2 RD5_1 )
+ )
+ ( 3E1FA399 $noname  JP5 JUMPER {Lib=JUMPER}
+  (    1 Frein_1 )
+  (    2 RD1_1 )
+ )
+ ( 3E1FA397 $noname  JP4 JUMPER {Lib=JUMPER}
+  (    1 SecuPl_1 )
+  (    2 RD4_1 )
+ )
+ ( 3E1FA396 $noname  JP3 JUMPER {Lib=JUMPER}
+  (    1 SecuCr_1 )
+  (    2 RD3_1 )
+ )
+ ( 3E1FA393 $noname  JP2 JUMPER {Lib=JUMPER}
+  (    1 Mode Elec_1 )
+  (    2 RD2_1 )
+ )
+ ( 3E1FA2E5 $noname  JP1 JUMPER {Lib=JUMPER}
+  (    1 Boost_1 )
+  (    2 RD0_1 )
+ )
+ ( 3E1F9721 $noname  HE2 HE10-16 {Lib=HE10-16}
+  (    1  ? )
+  (    2 RA0_1 )
+  (    3 VCC )
+  (    4 RA1_1 )
+  (    5 GND )
+  (    6 RA2_1 )
+  (    7 RC4_1 )
+  (    8 RA3_1 )
+  (    9 RC5_1 )
+  (   10 RA4_1 )
+  (   11 RC3_1 )
+  (   12 RA5_1 )
+  (   13 RC2_1 )
+  (   14 RE2_1 )
+  (   15 RC1_1 )
+  (   16 RC0_1 )
+ )
+ ( 3E1F9720 $noname  HE1 HE10-16 {Lib=HE10-16}
+  (    1 +12V )
+  (    2 RD0_1 )
+  (    3  ? )
+  (    4 RD1_1 )
+  (    5 GND )
+  (    6 RD2_1 )
+  (    7 RB4_1 )
+  (    8 RD3_1 )
+  (    9 RB1_1 )
+  (   10 RD4_1 )
+  (   11 RB0_1 )
+  (   12 RD5_1 )
+  (   13 RE1_1 )
+  (   14 RD6_1 )
+  (   15 RE0_1 )
+  (   16 RD7_1 )
+ )
+ ( 3E1F9719 $noname  GND5 Meca {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 3E1F9718 $noname  GND4 Meca {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 3E1F9715 $noname  R9 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000019 )
+ )
+ ( 3E1F9714 $noname  D1 RED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000019 )
+ )
+ ( 3E1F9712 $noname  GND3 Meca {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 3E1F9711 $noname  GND2 Meca {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 3E1F9710 $noname  GND1 Meca {Lib=CONN_1}
+  (    1 GND )
+ )
+ ( 3E1F9257 $noname  J4 RELAIS {Lib=DB9}
+  (    1 RE0_1 )
+  (    2 RE1_1 )
+  (    3 RA4_1 )
+  (    4 RC5_1 )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 GND )
+ )
+ ( 4BC2183C $noname  C6 1u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BC2183B $noname  C5 17p {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( 4BC2093E $noname  U2 LM324 {Lib=LM324}
+  (    1 SgnKlaric_1 )
+  (    2 N-000021 )
+  (    3 N-000020 )
+  (    4 +12V )
+  (    5 Tsc2_1 )
+  (    6 RB1_1 )
+  (    7 RB1_1 )
+  (   11 GND )
+ )
+ ( 4BC1D831 $noname  J3 VITESSE {Lib=DB9}
+  (    1 W1_1 )
+  (    2 W2_1 )
+  (    3 GND )
+  (    4 GND )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 GND )
+ )
+ ( 4BC1D2F5 $noname  J2 TDB {Lib=DB9}
+  (    1 Boost_1 )
+  (    2 Frein_1 )
+  (    3 Mode Elec_1 )
+  (    4 SecuCr_1 )
+  (    5 SecuPl_1 )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
+  (    9 SecuVi_1 )
+ )
+ ( 4BC1CFBC $noname  J1 CONVERT {Lib=DB25}
+  (    1 RA0_1 )
+  (    2 RA1_1 )
+  (    3 RA2_1 )
+  (    4 RA3_1 )
+  (    5 RA5_1 )
+  (    6 RE2_1 )
+  (    7 RB0_1 )
+  (    8 RB4_1 )
+  (    9 PWM1_1 )
+  (   10 PWM2_1 )
+  (   11 RD7_1 )
+  (   12 RD6_1 )
+  (   13 RC0_1 )
+  (   14 RC1_1 )
+  (   15 GND )
+  (   16 GND )
+  (   17 GND )
+  (   18 GND )
+  (   19 GND )
+  (   20 GND )
+  (   21 GND )
+  (   22 GND )
+  (   23 GND )
+  (   24 GND )
+  (   25 GND )
+ )
+ ( 4BB23D9B $noname  P2 KLARIC {Lib=CONN_2}
+  (    1 SgnKlaric_1 )
+  (    2 GND )
+ )
+ ( 4BB23C87 $noname  P4 SC2 {Lib=CONN_3}
+  (    1 RC3_1 )
+  (    2 GND )
+  (    3 Tsc2_1 )
+ )
+ ( 4BB23C6D $noname  P3 SC3 {Lib=CONN_2}
+  (    1 RC4_1 )
+  (    2 GND )
+ )
+ ( 4BB23C5E $noname  P5 SC1 {Lib=CONN_2}
+  (    1 RC2_1 )
+  (    2 GND )
+ )
+ ( 4BB1ACE1 $noname  CALC2 CALC_OUT {Lib=HE10-16}
+  (    1 Frein_1 )
+  (    2 Boost_1 )
+  (    3 SecuCr_1 )
+  (    4 Mode Elec_1 )
+  (    5 SecuVi_1 )
+  (    6 SecuPl_1 )
+  (    7 PWM2_1 )
+  (    8 PWM1_1 )
+  (    9 RD6_1 )
+  (   10 RD7_1 )
+  (   11 RE1_1 )
+  (   12 RE0_1 )
+  (   13 RC5_1 )
+  (   14 RA4_1 )
+  (   15 GND )
+  (   16 +12V )
+ )
+ ( 4BB1ACA3 $noname  CALC1 CALC_IN {Lib=HE10-16}
+  (    1 RA1_1 )
+  (    2 RA0_1 )
+  (    3 RA3_1 )
+  (    4 RA2_1 )
+  (    5 RE2_1 )
+  (    6 RA5_1 )
+  (    7 RC1_1 )
+  (    8 RC0_1 )
+  (    9 RB1_1 )
+  (   10 RB0_1 )
+  (   11 RC3_1 )
+  (   12 RC2_1 )
+  (   13 W1_1 )
+  (   14 RC4_1 )
+  (   15 RB4_1 )
+  (   16 W2_1 )
+ )
+ ( 4B9627F7 $noname  R8 3.5k {Lib=R}
+  (    1 N-000021 )
+  (    2 SgnKlaric_1 )
+ )
+ ( 4B961BDA $noname  R7 1k {Lib=R}
+  (    1 RB1_1 )
+  (    2 N-000021 )
+ )
+ ( 4B961BC1 $noname  R6 3.5k {Lib=R}
+  (    1 GND )
+  (    2 N-000020 )
+ )
+ ( 4B961BC0 $noname  R5 1k {Lib=R}
+  (    1 VCC )
+  (    2 N-000020 )
+ )
+ ( 4B961B86 $noname  R4 2.3k {Lib=R}
+  (    1 Tsc2_1 )
+  (    2 VCC )
+ )
+ ( 4B961B10 $noname  R3 1k {Lib=R}
+  (    1 RC4_1 )
+  (    2 VCC )
+ )
+ ( 4B961AFD $noname  R2 1k {Lib=R}
+  (    1 RC3_1 )
+  (    2 VCC )
+ )
+ ( 4B961AB8 $noname  R1 1k {Lib=R}
+  (    1 RC2_1 )
+  (    2 VCC )
+ )
+)
+*
+{ Pin List by Nets
+Net 4 "RD0_1"
+ JP1 2
+ HE1 2
+Net 5 "RD1_1"
+ JP5 2
+ HE1 4
+Net 6 "RD2_1"
+ JP2 2
+ HE1 6
+Net 7 "RD3_1"
+ JP3 2
+ HE1 8
+Net 8 "RD4_1"
+ JP4 2
+ HE1 10
+Net 9 "RD5_1"
+ JP6 2
+ HE1 12
+Net 10 "SecuVi_1"
+ JP6 1
+ J2 9
+ CALC2 5
+Net 11 "SecuPl_1"
+ JP4 1
+ J2 5
+ CALC2 6
+Net 12 "SecuCr_1"
+ JP3 1
+ J2 4
+ CALC2 3
+Net 13 "Mode Elec_1"
+ JP2 1
+ J2 3
+ CALC2 4
+Net 14 "Frein_1"
+ JP5 1
+ J2 2
+ CALC2 1
+Net 15 "Boost_1"
+ JP1 1
+ J2 1
+ CALC2 2
+Net 16 "+12V"
+ #PWR6 1
+ #PWR5 1
+ #PWR4 1
+ #PWR3 1
+ #FLG1 1
+ HE1 1
+ #PWR1 1
+ C6 1
+ C5 1
+ U2 4
+ U2 4
+ CALC2 16
+Net 17 "VCC"
+ #FLG2 1
+ HE2 3
+ #PWR26 1
+ #PWR24 1
+ D1 1
+ #PWR28 1
+ #PWR27 1
+ R5 1
+ R4 2
+ R3 2
+ R2 2
+ R1 2
+Net 18 "GND"
+ #FLG3 1
+ HE2 5
+ HE1 5
+ #PWR11 1
+ #PWR10 1
+ GND5 1
+ GND4 1
+ #PWR9 1
+ R9 1
+ #PWR8 1
+ GND3 1
+ GND2 1
+ GND1 1
+ #PWR7 1
+ J4 6
+ J4 7
+ J4 8
+ J4 9
+ J4 5
+ #PWR23 1
+ C6 2
+ C5 2
+ U2 11
+ U2 11
+ #PWR22 1
+ #PWR21 1
+ #PWR20 1
+ #PWR19 1
+ #PWR18 1
+ #PWR17 1
+ #PWR16 1
+ #PWR15 1
+ #PWR14 1
+ J3 6
+ J3 7
+ J3 3
+ J3 8
+ J3 4
+ J3 9
+ J3 5
+ #PWR13 1
+ J2 6
+ J2 7
+ J2 8
+ #PWR12 1
+ J1 15
+ J1 16
+ J1 17
+ J1 18
+ J1 19
+ J1 20
+ J1 21
+ J1 22
+ J1 23
+ J1 24
+ J1 25
+ P2 2
+ P4 2
+ P3 2
+ P5 2
+ CALC2 15
+ R6 1
+Net 19 ""
+ R9 2
+ D1 2
+Net 20 ""
+ U2 3
+ R6 2
+ R5 2
+Net 21 ""
+ U2 2
+ R8 1
+ R7 2
+Net 22 "RC2_1"
+ HE2 13
+ P5 1
+ CALC1 12
+ R1 1
+Net 23 "W2_1"
+ J3 2
+ CALC1 16
+Net 24 "W1_1"
+ J3 1
+ CALC1 13
+Net 25 "RC5_1"
+ HE2 9
+ J4 4
+ CALC2 13
+Net 26 "RA4_1"
+ HE2 10
+ J4 3
+ CALC2 14
+Net 27 "RE1_1"
+ HE1 13
+ J4 2
+ CALC2 11
+Net 28 "RE0_1"
+ HE1 15
+ J4 1
+ CALC2 12
+Net 29 "RC1_1"
+ HE2 15
+ J1 14
+ CALC1 7
+Net 30 "RC0_1"
+ HE2 16
+ J1 13
+ CALC1 8
+Net 31 "RD6_1"
+ HE1 14
+ J1 12
+ CALC2 9
+Net 32 "RD7_1"
+ HE1 16
+ J1 11
+ CALC2 10
+Net 33 "PWM2_1"
+ J1 10
+ CALC2 7
+Net 34 "PWM1_1"
+ J1 9
+ CALC2 8
+Net 35 "RB4_1"
+ HE1 7
+ J1 8
+ CALC1 15
+Net 36 "RB0_1"
+ HE1 11
+ J1 7
+ CALC1 10
+Net 37 "RE2_1"
+ HE2 14
+ J1 6
+ CALC1 5
+Net 38 "RA5_1"
+ HE2 12
+ J1 5
+ CALC1 6
+Net 39 "RA3_1"
+ HE2 8
+ J1 4
+ CALC1 3
+Net 40 "RA2_1"
+ HE2 6
+ J1 3
+ CALC1 4
+Net 41 "RA1_1"
+ HE2 4
+ J1 2
+ CALC1 1
+Net 42 "RA0_1"
+ HE2 2
+ J1 1
+ CALC1 2
+Net 43 "RB1_1"
+ HE1 9
+ U2 7
+ U2 6
+ CALC1 9
+ R7 1
+Net 44 "Tsc2_1"
+ U2 5
+ P4 3
+ R4 1
+Net 45 "SgnKlaric_1"
+ U2 1
+ P2 1
+ R8 2
+Net 46 "RC4_1"
+ HE2 7
+ P3 1
+ CALC1 14
+ R3 1
+Net 47 "RC3_1"
+ HE2 11
+ P4 1
+ CALC1 11
+ R2 1
+}
+#End
