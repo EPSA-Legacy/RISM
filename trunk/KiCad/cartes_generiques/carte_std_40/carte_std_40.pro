@@ -1,4 +1,4 @@
-update=26/02/2011 14:34:45
+update=26/02/2011 17:12:11
 last_client=eeschema
 [general]
 version=1
@@ -69,3 +69,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=C:\\Users\\Hugo\\Centrale Lyon\\EPSA\\Cartes Kicad\\Librairies\\symbioz
+LibName32=C:\\Users\\Pomy\\Desktop\\EPSA\\KiCad\\Librairies\\symbioz
