@@ -1,11 +1,16 @@
-update=27/02/2011 13:38:16
+update=28/02/2011 01:32:07
 version=1
 last_client=pcbnew
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
-LibDir=..\\KiCad\\Librairies
+LibDir=..\\..\\Librairies
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15
@@ -33,11 +38,7 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-SimCmd=
-UseNetN=0
 LabSize=60
-PrintMonochrome=1
-ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -70,11 +71,6 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=symbioz
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
