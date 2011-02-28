@@ -1,0 +1,140 @@
+# EESchema Netlist Version 1.1 created  28/02/2011 16:09:29
+(
+ ( /4D6BB8CC $noname  P2 CONTACT. {Lib=CONN_2}
+  (    1 GND )
+  (    2 N-000001 )
+ )
+ ( /4D6BB8A4 $noname  K3 C_CONT. {Lib=CONN_3}
+  (    1 N-000014 )
+  (    2 N-000001 )
+  (    3 N-000005 )
+ )
+ ( /4D6BADDB $noname  SW1 ARRET_URGENCE {Lib=SPST}
+  (    1 +12V )
+  (    2 N-000012 )
+ )
+ ( /4D6BA96F $noname  P1 PWR_IN {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4D6B9D2A $noname  K4 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000001 )
+  (    2 GND )
+  (    3 ? )
+  (    4 +12V )
+  (    5 N-000004 )
+ )
+ ( /4D6A1C1D $noname  P3 CONTACT. {Lib=CONN_2}
+  (    1 N-000005 )
+  (    2 GND )
+ )
+ ( /4D6A1ABA $noname  P4 PORTE {Lib=CONN_2}
+  (    1 +12V )
+  (    2 N-000006 )
+ )
+ ( /4B830353 $noname  D3 ROUGE {Lib=LED}
+  (    1 N-000004 )
+  (    2 GND )
+ )
+ ( /4B83034A $noname  D2 VERT {Lib=LED}
+  (    1 N-000014 )
+  (    2 GND )
+ )
+ ( /4B830193 $noname  SW2 ON {Lib=SW_PUSH}
+  (    1 +12V )
+  (    2 N-000014 )
+ )
+ ( /4B830109 $noname  K2 RELAIS-SPST-NO {Lib=RELAIS-SPST-NO}
+  (    1 N-000014 )
+  (    2 N-000014 )
+  (    3 N-000010 )
+  (    5 GND )
+ )
+ ( /4B830066 $noname  K1 RELAIS-SPST-NO {Lib=RELAIS-SPST-NO}
+  (    1 N-000010 )
+  (    2 /porte_fermée )
+  (    3 N-000012 )
+  (    5 GND )
+ )
+ ( /4B82FE16 $noname  R1 R {Lib=R}
+  (    1 GND )
+  (    2 N-000013 )
+ )
+ ( /4B82FE15 $noname  D4 ROUGE {Lib=LED}
+  (    1 N-000008 )
+  (    2 N-000013 )
+ )
+ ( /4B82FD15 $noname  K5 RELAIS-DPDT {Lib=RELAIS-DPDT}
+  (    1 N-000006 )
+  (    2 GND )
+  (    3 ? )
+  (    4 N-000008 )
+  (    5 +12V )
+  (    6 +12V )
+  (    7 /porte_fermée )
+  (    8 ? )
+ )
+ ( /4B82ACBD $noname  D1 JAUNE {Lib=LED}
+  (    1 +12V )
+  (    2 GND )
+ )
+)
+*
+{ Pin List by Nets
+Net 1 "" ""
+ K4 1
+ K3 2
+ P2 2
+Net 2 "GND" "GND"
+ R1 1
+ K1 5
+ K2 5
+ D1 2
+ K5 2
+ P2 1
+ D3 2
+ D2 2
+ P1 2
+ K4 2
+ P3 2
+Net 4 "" ""
+ K4 5
+ D3 1
+Net 5 "" ""
+ P3 1
+ K3 3
+Net 6 "" ""
+ K5 1
+ P4 2
+Net 8 "" ""
+ D4 1
+ K5 4
+Net 10 "" ""
+ K1 1
+ K2 3
+Net 11 "/porte fermée" "porte fermée"
+ K5 7
+ K1 2
+Net 12 "" ""
+ SW1 2
+ K1 3
+Net 13 "" ""
+ R1 2
+ D4 2
+Net 14 "" ""
+ D2 1
+ K3 1
+ SW2 2
+ K2 1
+ K2 2
+Net 15 "+12V" "+12V"
+ P1 1
+ SW1 1
+ P4 1
+ SW2 1
+ D1 1
+ K4 4
+ K5 6
+ K5 5
+}
+#End
