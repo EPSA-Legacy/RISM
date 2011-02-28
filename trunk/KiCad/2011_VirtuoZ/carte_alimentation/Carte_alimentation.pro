@@ -1,4 +1,4 @@
-update=28/02/2011 10:21:30
+update=28/02/2011 18:06:54
 version=1
 last_client=pcbnew
 [general]
@@ -38,7 +38,11 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
+SimCmd=
+UseNetN=0
 LabSize=60
+PrintMonochrome=1
+ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -71,6 +75,7 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=symbioz
+LibName32=epsa_relais
 [pcbnew]
 version=1
 PadDrlX=320
@@ -90,7 +95,7 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=Carte_alimentation.net
 [pcbnew/libraries]
-LibDir=..\\KiCad\\Modules
+LibDir=..\\..\\Modules
 LibName1=sockets
 LibName2=connect
 LibName3=discret

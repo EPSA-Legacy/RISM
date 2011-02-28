@@ -1,5 +1,15 @@
-# EESchema Netlist Version 1.1 created  27/02/2011 13:07:36
+# EESchema Netlist Version 1.1 created  28/02/2011 15:50:41
 (
+ ( /4D6BB067 $noname  P12 Bouton_coupe-circuit {Lib=CONN_2}
+  (    1 N-000029 )
+  (    2 N-000035 )
+ )
+ ( /4D6BB042 $noname  K1 Coupe-circuit {Lib=RELAIS-SPST-NO}
+  (    1 +12V )
+  (    2 GND )
+  (    3 N-000035 )
+  (    5 N-000029 )
+ )
  ( /4D6A3106 $noname  MECA4 CONN_1 {Lib=CONN_1}
   (    1 ? )
  )
@@ -12,14 +22,7 @@
  ( /4D6A2FA2 $noname  MECA1 CONN_1 {Lib=CONN_1}
   (    1 ? )
  )
- ( /4D6A13C3 $noname  U1 LM358 {Lib=LM358}
-  (    1 GND )
-  (    2 GND )
-  (    3 N-000009 )
-  (    4 GND )
-  (    8 +12V )
- )
- ( /4D692AA9 $noname  POT1 39k {Lib=POT}
+ ( /4D692AA9 $noname  POT1 47k {Lib=POT}
   (    1 +5V )
   (    2 /Vseuil- )
   (    3 GND )
@@ -32,52 +35,52 @@
   (    1 +12V )
   (    2 GND )
  )
- ( /4D692381 $noname  F11 FUSE {Lib=FUSE}
-  (    1 +12V )
-  (    2 N-000002 )
+ ( /4D692381 $noname  F11 10A {Lib=FUSE}
+  (    1 N-000035 )
+  (    2 N-000003 )
  )
- ( /4D69235F $noname  P11 CONN_2 {Lib=CONN_2}
-  (    1 N-000002 )
+ ( /4D69235F $noname  P11 Batterie {Lib=CONN_2}
+  (    1 N-000003 )
   (    2 GND )
  )
- ( /4D69210D $noname  F10 FUSE {Lib=FUSE}
+ ( /4D69210D $noname  F10 1A {Lib=FUSE}
   (    1 N-000007 )
   (    2 +12V )
  )
- ( /4D69210A $noname  F9 FUSE {Lib=FUSE}
-  (    1 N-000008 )
-  (    2 +12V )
- )
- ( /4D6920E3 $noname  F5 FUSE {Lib=FUSE}
+ ( /4D69210A $noname  F9 1A {Lib=FUSE}
   (    1 N-000006 )
   (    2 +12V )
  )
- ( /4D6920E2 $noname  F6 FUSE {Lib=FUSE}
-  (    1 N-000005 )
+ ( /4D6920E3 $noname  F5 1A {Lib=FUSE}
+  (    1 N-000008 )
   (    2 +12V )
  )
- ( /4D6920E1 $noname  F8 FUSE {Lib=FUSE}
-  (    1 N-000004 )
+ ( /4D6920E2 $noname  F6 1A {Lib=FUSE}
+  (    1 N-000009 )
   (    2 +12V )
  )
- ( /4D6920E0 $noname  F7 FUSE {Lib=FUSE}
-  (    1 N-000003 )
+ ( /4D6920E1 $noname  F8 1A {Lib=FUSE}
+  (    1 N-000010 )
   (    2 +12V )
  )
- ( /4D692095 $noname  F3 FUSE {Lib=FUSE}
-  (    1 N-000014 )
-  (    2 +12V )
- )
- ( /4D692094 $noname  F4 FUSE {Lib=FUSE}
-  (    1 N-000013 )
-  (    2 +12V )
- )
- ( /4D69208D $noname  F2 FUSE {Lib=FUSE}
+ ( /4D6920E0 $noname  F7 1A {Lib=FUSE}
   (    1 N-000011 )
   (    2 +12V )
  )
- ( /4D692065 $noname  F1 FUSE {Lib=FUSE}
-  (    1 N-000010 )
+ ( /4D692095 $noname  F3 1A {Lib=FUSE}
+  (    1 N-000012 )
+  (    2 +12V )
+ )
+ ( /4D692094 $noname  F4 1A {Lib=FUSE}
+  (    1 N-000013 )
+  (    2 +12V )
+ )
+ ( /4D69208D $noname  F2 1A {Lib=FUSE}
+  (    1 N-000014 )
+  (    2 +12V )
+ )
+ ( /4D692065 $noname  F1 1A {Lib=FUSE}
+  (    1 N-000015 )
   (    2 +12V )
  )
  ( /4D691A84 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
@@ -104,59 +107,51 @@
   (    9 ? )
   (   10 GND )
  )
- ( /4D69155A $noname  P9 CONN_2 {Lib=CONN_2}
-  (    1 N-000008 )
-  (    2 GND )
- )
- ( /4D691559 $noname  P10 CONN_2 {Lib=CONN_2}
-  (    1 N-000007 )
-  (    2 GND )
- )
- ( /4D691558 $noname  P5 CONN_2 {Lib=CONN_2}
+ ( /4D69155A $noname  P9 Carte_9 {Lib=CONN_2}
   (    1 N-000006 )
   (    2 GND )
  )
- ( /4D691557 $noname  P6 CONN_2 {Lib=CONN_2}
-  (    1 N-000005 )
+ ( /4D691559 $noname  P10 Carte_10 {Lib=CONN_2}
+  (    1 N-000007 )
   (    2 GND )
  )
- ( /4D691556 $noname  P8 CONN_2 {Lib=CONN_2}
-  (    1 N-000004 )
+ ( /4D691558 $noname  P5 Carte_5 {Lib=CONN_2}
+  (    1 N-000008 )
   (    2 GND )
  )
- ( /4D691555 $noname  P7 CONN_2 {Lib=CONN_2}
-  (    1 N-000003 )
+ ( /4D691557 $noname  P6 Carte_6 {Lib=CONN_2}
+  (    1 N-000009 )
   (    2 GND )
  )
- ( /4D691553 $noname  P3 CONN_2 {Lib=CONN_2}
-  (    1 N-000014 )
-  (    2 GND )
- )
- ( /4D691552 $noname  P4 CONN_2 {Lib=CONN_2}
-  (    1 N-000013 )
-  (    2 GND )
- )
- ( /4D69154D $noname  P2 CONN_2 {Lib=CONN_2}
-  (    1 N-000011 )
-  (    2 GND )
- )
- ( /4D691540 $noname  P1 CONN_2 {Lib=CONN_2}
+ ( /4D691556 $noname  P8 Carte_8 {Lib=CONN_2}
   (    1 N-000010 )
   (    2 GND )
  )
- ( /4D69111B $noname  C4 1u {Lib=CAPAPOL}
-  (    1 +12V )
+ ( /4D691555 $noname  P7 Carte_7 {Lib=CONN_2}
+  (    1 N-000011 )
   (    2 GND )
  )
- ( /4D691109 $noname  C3 17p {Lib=C}
-  (    1 +12V )
+ ( /4D691553 $noname  P3 Carte_3 {Lib=CONN_2}
+  (    1 N-000012 )
+  (    2 GND )
+ )
+ ( /4D691552 $noname  P4 Carte_4 {Lib=CONN_2}
+  (    1 N-000013 )
+  (    2 GND )
+ )
+ ( /4D69154D $noname  P2 Carte_2 {Lib=CONN_2}
+  (    1 N-000014 )
+  (    2 GND )
+ )
+ ( /4D691540 $noname  P1 Carte_1 {Lib=CONN_2}
+  (    1 N-000015 )
   (    2 GND )
  )
  ( /4D6910F2 $noname  R2 33k {Lib=R}
   (    1 /Uadapt )
-  (    2 N-000009 )
+  (    2 GND )
  )
- ( /4D6910EB $noname  R1 47k {Lib=R}
+ ( /4D6910EB $noname  R1 46k {Lib=R}
   (    1 +12V )
   (    2 /Uadapt )
  )
@@ -167,72 +162,13 @@ Net 1 "/Uadapt" "Uadapt"
  R2 1
  R1 2
  MEZZA1 1
-Net 2 "" ""
- P11 1
- F11 2
-Net 3 "" ""
- F7 1
- P7 1
-Net 4 "" ""
- F8 1
- P8 1
-Net 5 "" ""
- F6 1
- P6 1
-Net 6 "" ""
- F5 1
- P5 1
-Net 7 "" ""
- P10 1
- F10 1
-Net 8 "" ""
- P9 1
- F9 1
-Net 9 "" ""
- U1 3
- R2 2
-Net 10 "" ""
- P1 1
- F1 1
-Net 11 "" ""
- P2 1
- F2 1
-Net 12 "GND" "GND"
- MEZZA2 10
- P7 2
- P3 2
- P4 2
- U1 2
- U1 1
- U1 4
- POT1 3
- P9 2
- P10 2
- P5 2
- P6 2
- P8 2
- C2 2
- C1 2
- P11 2
- P2 2
- P1 2
- C4 2
- MEZZA1 10
- C3 2
-Net 13 "" ""
- F4 1
- P4 1
-Net 14 "" ""
- F3 1
- P3 1
-Net 26 "+5V" "+5V"
- MEZZA2 2
- MEZZA2 9
- POT1 1
-Net 28 "/Vseuil-" "Vseuil-"
- POT1 2
- MEZZA2 1
-Net 34 "+12V" "+12V"
+Net 2 "+12V" "+12V"
+ F10 2
+ C1 1
+ C2 1
+ MEZZA1 8
+ R1 1
+ K1 1
  F1 2
  F2 2
  F4 2
@@ -241,15 +177,72 @@ Net 34 "+12V" "+12V"
  F8 2
  F6 2
  F5 2
- F11 1
- C4 1
- R1 1
- C3 1
- C1 1
  F9 2
- MEZZA1 8
- F10 2
- U1 8
- C2 1
+Net 3 "" ""
+ P11 1
+ F11 2
+Net 6 "" ""
+ P9 1
+ F9 1
+Net 7 "" ""
+ F10 1
+ P10 1
+Net 8 "" ""
+ F5 1
+ P5 1
+Net 9 "" ""
+ F6 1
+ P6 1
+Net 10 "" ""
+ F8 1
+ P8 1
+Net 11 "" ""
+ P7 1
+ F7 1
+Net 12 "" ""
+ P3 1
+ F3 1
+Net 13 "" ""
+ P4 1
+ F4 1
+Net 14 "" ""
+ F2 1
+ P2 1
+Net 15 "" ""
+ F1 1
+ P1 1
+Net 16 "GND" "GND"
+ K1 2
+ POT1 3
+ MEZZA1 10
+ P9 2
+ P10 2
+ P5 2
+ P6 2
+ MEZZA2 10
+ P8 2
+ P7 2
+ P3 2
+ P4 2
+ P2 2
+ P1 2
+ R2 2
+ C2 2
+ C1 2
+ P11 2
+Net 25 "+5V" "+5V"
+ MEZZA2 2
+ MEZZA2 9
+ POT1 1
+Net 29 "" ""
+ P12 1
+ K1 5
+Net 34 "/Vseuil-" "Vseuil-"
+ MEZZA2 1
+ POT1 2
+Net 35 "" ""
+ K1 3
+ P12 2
+ F11 1
 }
 #End

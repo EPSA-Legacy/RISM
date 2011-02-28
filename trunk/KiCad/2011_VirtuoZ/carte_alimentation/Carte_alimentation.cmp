@@ -1,17 +1,17 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 27/02/2011 12:19:19
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 28/02/2011 15:44:58
 
 BeginCmp
 TimeStamp = /4D692392;
 Reference = C1;
 ValeurCmp = 1000u;
-IdModule  = C2V8;
+IdModule  = CP12;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D692397;
 Reference = C2;
 ValeurCmp = 1000u;
-IdModule  = C2V8;
+IdModule  = CP12;
 EndCmp
 
 BeginCmp
@@ -31,78 +31,85 @@ EndCmp
 BeginCmp
 TimeStamp = /4D692065;
 Reference = F1;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69208D;
 Reference = F2;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D692095;
 Reference = F3;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D692094;
 Reference = F4;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6920E3;
 Reference = F5;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6920E2;
 Reference = F6;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6920E0;
 Reference = F7;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6920E1;
 Reference = F8;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69210A;
 Reference = F9;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69210D;
 Reference = F10;
-ValeurCmp = FUSE;
+ValeurCmp = 1A;
 IdModule  = FUSE5-20;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D692381;
 Reference = F11;
-ValeurCmp = FUSE;
+ValeurCmp = 10A;
 IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB042;
+Reference = K1;
+ValeurCmp = Coupe-circuit;
+IdModule  = RELAIS_JS-M;
 EndCmp
 
 BeginCmp
@@ -150,91 +157,98 @@ EndCmp
 BeginCmp
 TimeStamp = /4D691540;
 Reference = P1;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_1;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69154D;
 Reference = P2;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_2;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691553;
 Reference = P3;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_3;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691552;
 Reference = P4;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_4;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691558;
 Reference = P5;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_5;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691557;
 Reference = P6;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_6;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691555;
 Reference = P7;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_7;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691556;
 Reference = P8;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_8;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69155A;
 Reference = P9;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_9;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D691559;
 Reference = P10;
-ValeurCmp = CONN_2;
+ValeurCmp = Carte_10;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D69235F;
 Reference = P11;
-ValeurCmp = CONN_2;
+ValeurCmp = Batterie;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB067;
+Reference = P12;
+ValeurCmp = Bouton_coupe-circuit;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D692AA9;
 Reference = POT1;
-ValeurCmp = 39k;
+ValeurCmp = 47k;
 IdModule  = RV2X4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6910EB;
 Reference = R1;
-ValeurCmp = 47k;
+ValeurCmp = 46k;
 IdModule  = R3;
 EndCmp
 
@@ -242,6 +256,13 @@ BeginCmp
 TimeStamp = /4D6910F2;
 Reference = R2;
 ValeurCmp = 33k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB12C;
+Reference = R3;
+ValeurCmp = 47k;
 IdModule  = R3;
 EndCmp
 
