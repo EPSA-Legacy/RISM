@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 27/02/2011 13:37:51
+EESchema Schematic File Version 2  date 28/02/2011 10:51:24
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,14 +29,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:symbioz
 LIBS:Carte_alimentation-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "Carte alimentation"
-Date "27 feb 2011"
+Date "28 feb 2011"
 Rev "0.8"
 Comp "EPSA - Virtuoz"
 Comment1 ""
@@ -362,8 +361,6 @@ F 1 "PWR_FLAG" H 3300 2580 30  0000 C CNN
 	1    3300 2350
 	-1   0    0    1   
 $EndComp
-Text Notes 5850 4550 0    60   ~ 0
-2.95V < Vseuil- <5V
 Text Notes 5400 3650 0    60   ~ 0
 Réglage seuil bas
 $Comp
@@ -380,7 +377,7 @@ L POT POT1
 U 1 1 4D692AA9
 P 5750 4300
 F 0 "POT1" H 5750 4200 50  0000 C CNN
-F 1 "39k" H 5750 4300 50  0000 C CNN
+F 1 "47k" H 5750 4300 50  0000 C CNN
 	1    5750 4300
 	0    1    1    0   
 $EndComp
@@ -976,7 +973,7 @@ L R R1
 U 1 1 4D6910EB
 P 9250 4100
 F 0 "R1" V 9330 4100 50  0000 C CNN
-F 1 "47k" V 9150 4100 50  0000 C CNN
+F 1 "46k" V 9150 4100 50  0000 C CNN
 	1    9250 4100
 	1    0    0    -1  
 $EndComp
