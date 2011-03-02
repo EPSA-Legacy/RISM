@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date lun. 28 févr. 2011 18:26:59 CET
+EESchema Schematic File Version 2  date mar. 01 mars 2011 10:35:06 CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "noname.sch"
-Date "28 feb 2011"
+Date "1 mar 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -260,11 +260,11 @@ P 8950 1150
 F 0 "P7" V 8900 1150 40  0000 C CNN
 F 1 "CONN_2" V 9000 1150 40  0000 C CNN
 	1    8950 1150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
-Text Label 6900 2050 1    60   ~ 0
+Text Label 6800 2050 1    60   ~ 0
 feux_stop
-Text Label 8100 2050 1    60   ~ 0
+Text Label 8000 2050 1    60   ~ 0
 feux_stop
 $Comp
 L CONN_4 P6
@@ -273,7 +273,7 @@ P 8050 1150
 F 0 "P6" V 8000 1150 50  0000 C CNN
 F 1 "CONN_4" V 8100 1150 50  0000 C CNN
 	1    8050 1150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L CONN_4 P5
@@ -282,7 +282,7 @@ P 6850 1150
 F 0 "P5" V 6800 1150 50  0000 C CNN
 F 1 "CONN_4" V 6900 1150 50  0000 C CNN
 	1    6850 1150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 Text Notes 4550 5900 0    60   ~ 0
 Trous méca
@@ -479,7 +479,7 @@ F 1 "PWR_FLAG" H 3050 2430 30  0000 C CNN
 $EndComp
 Text Label 7900 2050 1    60   ~ 0
 feux_arr
-Text Label 8000 2050 1    60   ~ 0
+Text Label 8100 2050 1    60   ~ 0
 clign_d
 $Comp
 L GND #PWR013
@@ -512,7 +512,7 @@ F 1 "GND" H 7000 1930 30  0001 C CNN
 	1    7000 2000
 	1    0    0    -1  
 $EndComp
-Text Label 6800 2050 1    60   ~ 0
+Text Label 6900 2050 1    60   ~ 0
 clign_g
 Text Label 6700 2050 1    60   ~ 0
 feux_arr
