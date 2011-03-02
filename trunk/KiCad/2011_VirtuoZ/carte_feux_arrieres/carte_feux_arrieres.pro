@@ -1,6 +1,6 @@
-update=28/02/2011 19:37:05
+update=mar. 01 mars 2011 10:35:15 CET
 version=1
-last_client=pcbnew
+last_client=kicad
 [eeschema]
 version=1
 LibDir=D:\\Scolaire\\ECL-1A\\EPSA\\Cartes Elec\\KiCad\\Librairies
@@ -73,8 +73,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 PadDrlX=320
@@ -106,3 +104,5 @@ LibName8=valves
 LibName9=led
 LibName10=dip_sockets
 LibName11=symbioz
+[general]
+version=1
