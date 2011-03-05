@@ -1,0 +1,66 @@
+Cmp-Mod V01 Created by CvPCB (2010-03-14)-final date = ven. 04 mars 2011 17:00:52 CET
+
+BeginCmp
+TimeStamp = /4D7107A4;
+Reference = P1;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D710890;
+Reference = P2;
+ValeurCmp = cmd_contact;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7107E1;
+Reference = P3;
+ValeurCmp = Contacteurs;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D710C5F;
+Reference = P4;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D710C67;
+Reference = P5;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D710C68;
+Reference = P6;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D710C6A;
+Reference = P7;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D71073F;
+Reference = U1;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D71074E;
+Reference = U2;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+EndListe
