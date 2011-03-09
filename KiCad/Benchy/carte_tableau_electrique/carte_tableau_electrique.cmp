@@ -1,0 +1,122 @@
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 09/03/2011 12:22:35
+
+BeginCmp
+TimeStamp = /4B82ACBD;
+Reference = D1;
+ValeurCmp = JAUNE;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B83034A;
+Reference = D2;
+ValeurCmp = VERT;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B830353;
+Reference = D3;
+ValeurCmp = ROUGE;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7754E4;
+Reference = D4;
+ValeurCmp = JAUNE;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B82FE15;
+Reference = D5;
+ValeurCmp = ROUGE;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B830066;
+Reference = K1;
+ValeurCmp = RELAIS-SPST-NO;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B830109;
+Reference = K2;
+ValeurCmp = RELAIS-SPST-NO;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6B9D2A;
+Reference = K3;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B82FD15;
+Reference = K4;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BA96F;
+Reference = P1;
+ValeurCmp = PWR_IN;
+IdModule  = JACK_ALIM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6A1ABA;
+Reference = P2;
+ValeurCmp = PORTE;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7752F3;
+Reference = P3;
+ValeurCmp = CTE_CONT;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D775349;
+Reference = P4;
+ValeurCmp = CONT+;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6A1C1D;
+Reference = P5;
+ValeurCmp = CONT-;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB8CC;
+Reference = P6;
+ValeurCmp = PRECHRG;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BADDB;
+Reference = SW1;
+ValeurCmp = ARRET_URGENCE;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B830193;
+Reference = SW2;
+ValeurCmp = ON;
+IdModule  = KK_2;
+EndCmp
+
+EndListe
