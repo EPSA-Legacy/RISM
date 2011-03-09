@@ -1,0 +1,346 @@
+# EESchema Netlist Version 1.1 created  28/02/2011 17:10:28
+(
+ ( /4D6BC08C $noname  P15 CONN_1 {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BC088 $noname  P14 CONN_1 {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BC081 $noname  P13 CONN_1 {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BC079 $noname  P12 CONN_1 {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BB7AA $noname  P9 conn_interface {Lib=CONN_4}
+  (    1 GND )
+  (    2 /W1 )
+  (    3 /W2 )
+  (    4 GND )
+ )
+ ( /4D6BB740 $noname  R4 R {Lib=R}
+  (    1 /W2 )
+  (    2 GND )
+ )
+ ( /4D6BB72A $noname  R3 R {Lib=R}
+  (    1 /W1 )
+  (    2 GND )
+ )
+ ( /4D6BB08C $noname  U5 REED_Phares_D {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Phares_D )
+  (    4 N-000036 )
+ )
+ ( /4D6BB215 $noname  P8 Incré_D {Lib=CONN_2}
+  (    1 +12V )
+  (    2 /W2 )
+ )
+ ( /4D6BB20D $noname  P7 Incré_G {Lib=CONN_2}
+  (    1 +12V )
+  (    2 /W1 )
+ )
+ ( /4D6BB08D $noname  P5 Phares {Lib=CONN_2}
+  (    1 N-000036 )
+  (    2 GND )
+ )
+ ( /4D6BB07D $noname  P6 Phares {Lib=CONN_2}
+  (    1 N-000014 )
+  (    2 GND )
+ )
+ ( /4D6BB07C $noname  U6 REED_Codes_D {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Codes_D )
+  (    4 N-000014 )
+ )
+ ( /4D6BB06D $noname  P4 Phares {Lib=CONN_2}
+  (    1 N-000016 )
+  (    2 GND )
+ )
+ ( /4D6BB06C $noname  U4 REED_Cligno_D {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Cligno_D )
+  (    4 N-000016 )
+ )
+ ( /4D6BB032 $noname  P1 Phares {Lib=CONN_2}
+  (    1 N-000015 )
+  (    2 GND )
+ )
+ ( /4D6BB031 $noname  U1 REED_Cligno_G {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Cligno_G )
+  (    4 N-000015 )
+ )
+ ( /4D6BB021 $noname  P3 Phares {Lib=CONN_2}
+  (    1 N-000001 )
+  (    2 GND )
+ )
+ ( /4D6BB020 $noname  U3 REED_Codes_G {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Codes_G )
+  (    4 N-000001 )
+ )
+ ( /4D6BA879 $noname  P2 Phares {Lib=CONN_2}
+  (    1 N-000010 )
+  (    2 GND )
+ )
+ ( /4D6BA834 $noname  U2 REED_Phares_G {Lib=REED9081_SYMBIOZ}
+  (    1 +12V )
+  (    2 GND )
+  (    3 /Phares_G )
+  (    4 N-000010 )
+ )
+ ( /4D6BA2F1 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /U2_out )
+  (    2 /Cligno_D )
+  (    3 /Phares_D )
+  (    4 /Codes_D )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 +12V )
+  (    9 ? )
+  (   10 GND )
+ )
+ ( /4D6BA2EC $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /U1_out )
+  (    2 /Cligno_G )
+  (    3 /Phares_G )
+  (    4 /Codes_G )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 VCC )
+  (   10 GND )
+ )
+ ( /4D516B6C $noname  P10 CAPT {Lib=CONN_2}
+  (    1 VDD )
+  (    2 /capt1_in )
+ )
+ ( /4D51649D $noname  C3 1u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D51649C $noname  C4 17p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D516497 $noname  U7 TL082 {Lib=TL082}
+  (    1 /AO_5V )
+  (    2 /AO_5V )
+  (    3 /capt1_in )
+  (    4 GND )
+  (    5 /capt2_in )
+  (    6 /AO_5V )
+  (    7 /AO_5V )
+  (    8 VCC )
+ )
+ ( /4D516496 $noname  U8 TL082 {Lib=TL082}
+  (    1 /U1_out )
+  (    2 /AO_5V )
+  (    3 /AO_5V )
+  (    4 GND )
+  (    5 /AO_5V )
+  (    6 /AO_5V )
+  (    7 /U2_out )
+  (    8 VCC )
+ )
+ ( /4D516490 $noname  R5 ? {Lib=R}
+  (    1 GND )
+  (    2 /capt1_in )
+ )
+ ( /4D51648F $noname  R7 ? {Lib=R}
+  (    1 /AO_5V )
+  (    2 GND )
+ )
+ ( /4D51648E $noname  R9 ? {Lib=R}
+  (    1 VCC )
+  (    2 /AO_5V )
+ )
+ ( /4D515C0E $noname  R10 ? {Lib=R}
+  (    1 VCC )
+  (    2 /AO_5V )
+ )
+ ( /4D515BFE $noname  R8 ? {Lib=R}
+  (    1 /AO_5V )
+  (    2 GND )
+ )
+ ( /4D515B9E $noname  R6 ? {Lib=R}
+  (    1 GND )
+  (    2 /capt2_in )
+ )
+ ( /4CFA8A0E $noname  R1 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000019 )
+ )
+ ( /4CFA8A0D $noname  D1 YELLOW {Lib=LED}
+  (    1 VDD )
+  (    2 N-000019 )
+ )
+ ( /4CFA8A09 $noname  D2 RED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000018 )
+ )
+ ( /4CFA8A08 $noname  R2 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000018 )
+ )
+ ( /4BC499DB $noname  C2 17p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4BC499D7 $noname  C1 1u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4BC49510 $noname  P11 CAPT {Lib=CONN_2}
+  (    1 VDD )
+  (    2 /capt2_in )
+ )
+)
+*
+{ Pin List by Nets
+Net 1 "" ""
+ U3 4
+ P3 1
+Net 2 "+12V" "+12V"
+ U1 1
+ U6 1
+ MEZZA2 8
+ U2 1
+ P7 1
+ U5 1
+ U4 1
+ P8 1
+ U3 1
+Net 10 "" ""
+ U2 4
+ P2 1
+Net 11 "GND" "GND"
+ R5 1
+ MEZZA2 10
+ R7 2
+ U7 4
+ U8 4
+ C4 2
+ C3 2
+ MEZZA1 10
+ R3 2
+ P9 1
+ R4 2
+ P9 4
+ U8 4
+ U5 2
+ U7 4
+ P6 2
+ P5 2
+ U3 2
+ P3 2
+ U1 2
+ P1 2
+ U2 2
+ P2 2
+ R2 1
+ R1 1
+ R6 1
+ R8 2
+ C1 2
+ C2 2
+ P4 2
+ U4 2
+ U6 2
+Net 12 "/U2_out" "U2_out"
+ U8 7
+ MEZZA2 1
+Net 14 "" ""
+ P6 1
+ U6 4
+Net 15 "" ""
+ P1 1
+ U1 4
+Net 16 "" ""
+ P4 1
+ U4 4
+Net 17 "VCC" "VCC"
+ R9 1
+ MEZZA1 9
+ C3 1
+ C4 1
+ U8 8
+ U7 8
+ C2 1
+ C1 1
+ R10 1
+ D2 1
+ U7 8
+ U8 8
+Net 18 "" ""
+ R2 2
+ D2 2
+Net 19 "" ""
+ R1 2
+ D1 2
+Net 20 "/capt2_in" "capt2_in"
+ P11 2
+ R6 2
+ U7 5
+Net 21 "/capt1_in" "capt1_in"
+ P10 2
+ R5 2
+ U7 3
+Net 22 "/Codes G" "Codes G"
+ U3 3
+ MEZZA1 4
+Net 23 "/Phares G" "Phares G"
+ MEZZA1 3
+ U2 3
+Net 24 "/Cligno G" "Cligno G"
+ U1 3
+ MEZZA1 2
+Net 25 "/U1_out" "U1_out"
+ U8 1
+ MEZZA1 1
+Net 26 "/Codes D" "Codes D"
+ U6 3
+ MEZZA2 4
+Net 27 "/Phares D" "Phares D"
+ U5 3
+ MEZZA2 3
+Net 28 "/Cligno D" "Cligno D"
+ U4 3
+ MEZZA2 2
+Net 29 "VDD" "VDD"
+ D1 1
+ P11 1
+ P10 1
+Net 30 "/AO 5V" "AO 5V"
+ U7 1
+ U7 2
+ U8 2
+ U8 3
+ R7 1
+ U8 5
+ U8 6
+ U7 6
+ U7 7
+ R9 2
+ R8 1
+ R10 2
+Net 35 "/W2" "W2"
+ R4 1
+ P9 3
+ P8 2
+Net 36 "" ""
+ U5 4
+ P5 1
+Net 37 "/W1" "W1"
+ P7 2
+ P9 2
+ R3 1
+}
+#End
