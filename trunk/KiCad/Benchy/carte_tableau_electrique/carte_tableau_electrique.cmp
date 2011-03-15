@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 09/03/2011 12:22:35
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 15/03/2011 18:19:48
 
 BeginCmp
 TimeStamp = /4B82ACBD;
@@ -39,35 +39,63 @@ BeginCmp
 TimeStamp = /4B830066;
 Reference = K1;
 ValeurCmp = RELAIS-SPST-NO;
-IdModule  = ;
+IdModule  = RELAIS_JS-M;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B830109;
 Reference = K2;
 ValeurCmp = RELAIS-SPST-NO;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6B9D2A;
-Reference = K3;
-ValeurCmp = RELAIS-SPDT;
-IdModule  = ;
+IdModule  = RELAIS_JS-M;
 EndCmp
 
 BeginCmp
 TimeStamp = /4B82FD15;
 Reference = K4;
 ValeurCmp = RELAIS-DPDT;
-IdModule  = ;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7F99F4;
+Reference = K5;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7F9F5E;
+Reference = MECA1;
+ValeurCmp = MECA;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7F9F8B;
+Reference = MECA2;
+ValeurCmp = MECA;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7F9F8C;
+Reference = MECA3;
+ValeurCmp = MECA;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7F9F8D;
+Reference = MECA4;
+ValeurCmp = MECA;
+IdModule  = 1pin;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6BA96F;
 Reference = P1;
 ValeurCmp = PWR_IN;
-IdModule  = JACK_ALIM;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
@@ -106,17 +134,17 @@ IdModule  = bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D6BADDB;
-Reference = SW1;
-ValeurCmp = ARRET_URGENCE;
-IdModule  = KK_4;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B830193;
 Reference = SW2;
 ValeurCmp = ON;
 IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B9E44C7;
+Reference = SW3;
+ValeurCmp = SW_DBL;
+IdModule  = bornier4;
 EndCmp
 
 EndListe
