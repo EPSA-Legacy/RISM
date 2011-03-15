@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 27/02/2011 12:33:02
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 01/03/2011 18:50:53
 
 BeginCmp
 TimeStamp = /453CDC47;
@@ -162,7 +162,7 @@ IdModule  = 1pin;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D6A2F50;
+TimeStamp = /4D6D296B;
 Reference = MECA4;
 ValeurCmp = 5mm;
 IdModule  = 1pin;
@@ -176,7 +176,7 @@ IdModule  = he10-16dm;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D6A1503;
+TimeStamp = /4D6D20AD;
 Reference = MEZZA2;
 ValeurCmp = MEZZA-16;
 IdModule  = he10-16dm;
@@ -225,7 +225,7 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /453CD743;
+TimeStamp = /4D6D2C16;
 Reference = U1;
 ValeurCmp = 7805;
 IdModule  = LM78XX;
