@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: ven. 04 mars 2011 18:02:25 CET
+EESchema-LIBRARY Version 2.3  Date: 17/03/2011 18:39:53
 #
 # 74LS04
 #
@@ -82,8 +82,8 @@ ENDDEF
 # CONN_1
 #
 DEF ~CONN_1 P 0 30 N N 1 F N
-F0 "P" 80 0 40 H V L CNN
-F1 "CONN_1" 0 55 30 H I C CNN
+F0 "P" 80 0 40 H V C CNN
+F1 "CONN_1" -50 40 30 H I C CNN
 DRAW
 C 0 0 31 0 1 0 N
 P 2 0 1 0  -30 0  -50 0 N

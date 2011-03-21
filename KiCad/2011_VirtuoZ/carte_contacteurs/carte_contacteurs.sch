@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date ven. 04 mars 2011 18:02:25 CET
+EESchema Schematic File Version 2  date 17/03/2011 18:39:53
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "4 mar 2011"
+Date "17 mar 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -44,113 +44,121 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 2350 4350 0    60   ~ 0
-Circuit Logique Etat contacteur +\n
+Wire Wire Line
+	4250 5100 4400 5100
+Wire Wire Line
+	4250 5200 4250 5100
+Wire Wire Line
+	2600 5200 4250 5200
+Wire Wire Line
+	4300 4900 4400 4900
 Wire Bus Line
-	2300 5550 2300 4250
+	2650 3100 2650 3900
 Wire Bus Line
-	2300 5550 6750 5550
+	2650 3900 5050 3900
 Wire Bus Line
-	6750 5550 6750 4250
-Wire Bus Line
-	6750 4250 2300 4250
-Wire Wire Line
-	5600 5000 6550 5000
-Wire Wire Line
-	4400 4900 3300 4900
-Wire Wire Line
-	3750 3450 3500 3450
-Wire Wire Line
-	3750 3550 2800 3550
-Wire Wire Line
-	6650 3200 7250 3200
-Wire Wire Line
-	6650 1900 7500 1900
-Wire Notes Line
-	9450 1400 8700 1400
-Wire Notes Line
-	9450 1400 9450 2250
-Wire Notes Line
-	9450 2250 8700 2250
-Wire Notes Line
-	8700 2250 8700 1400
-Wire Wire Line
-	2800 2450 3100 2450
-Wire Wire Line
-	3100 2450 3100 2650
-Wire Wire Line
-	3100 2650 3750 2650
-Wire Bus Line
-	2650 3150 2650 1250
-Wire Bus Line
-	5050 3150 5050 1250
-Wire Bus Line
-	5050 1250 2650 1250
-Wire Bus Line
-	7900 1300 5900 1300
-Wire Bus Line
-	7900 1300 7900 2300
-Wire Bus Line
-	7900 2300 5900 2300
-Wire Bus Line
-	5900 2300 5900 1300
-Wire Wire Line
-	3750 1850 3450 1850
-Wire Wire Line
-	6650 3000 7250 3000
-Wire Wire Line
-	3750 2550 3350 2550
-Wire Wire Line
-	3750 2750 3050 2750
-Connection ~ 3250 1650
-Wire Wire Line
-	3750 2450 3250 2450
-Wire Wire Line
-	3250 2450 3250 1650
-Wire Wire Line
-	3750 1650 3050 1650
-Wire Wire Line
-	3750 1950 3050 1950
-Wire Wire Line
-	3350 1750 3750 1750
-Wire Wire Line
-	6650 1800 7500 1800
-Wire Wire Line
-	6650 2000 7250 2000
-Wire Wire Line
-	6650 3100 7250 3100
-Wire Bus Line
-	7900 2700 5900 2700
-Wire Bus Line
-	7900 2700 7900 3400
-Wire Bus Line
-	7900 3400 5900 3400
-Wire Bus Line
-	5900 3400 5900 2700
-Wire Wire Line
-	3050 2300 3050 2450
-Connection ~ 3050 2450
-Wire Wire Line
-	6650 1700 7500 1700
-Wire Wire Line
-	2800 3250 3750 3250
+	5050 3900 5050 3100
 Wire Wire Line
 	3750 3350 2800 3350
 Wire Wire Line
-	4400 5250 4400 5100
+	2800 3250 3750 3250
 Wire Wire Line
-	3500 5250 2500 5250
+	6650 1700 7500 1700
+Connection ~ 3050 2450
+Wire Wire Line
+	3050 2300 3050 2450
 Wire Bus Line
-	5050 3100 5050 3900
+	5900 3400 5900 2700
 Wire Bus Line
-	5050 3900 2650 3900
+	5900 3400 7900 3400
 Wire Bus Line
-	2650 3900 2650 3100
+	7900 3400 7900 2700
+Wire Bus Line
+	7900 2700 5900 2700
+Wire Wire Line
+	6650 3100 7250 3100
+Wire Wire Line
+	6650 2000 7250 2000
+Wire Wire Line
+	6650 1800 7500 1800
+Wire Wire Line
+	3350 1750 3750 1750
+Wire Wire Line
+	3750 1950 3050 1950
+Wire Wire Line
+	3750 1650 3250 1650
+Wire Wire Line
+	3250 1650 3050 1650
+Wire Wire Line
+	3250 1650 3250 2450
+Wire Wire Line
+	3250 2450 3750 2450
+Connection ~ 3250 1650
+Wire Wire Line
+	3750 2750 3050 2750
+Wire Wire Line
+	3750 2550 3350 2550
+Wire Wire Line
+	6650 3000 7250 3000
+Wire Wire Line
+	3750 1850 3450 1850
+Wire Bus Line
+	5900 2300 5900 1300
+Wire Bus Line
+	5900 2300 7900 2300
+Wire Bus Line
+	7900 2300 7900 1300
+Wire Bus Line
+	7900 1300 5900 1300
+Wire Bus Line
+	5050 1250 2650 1250
+Wire Bus Line
+	5050 1250 5050 3150
+Wire Bus Line
+	2650 1250 2650 3150
+Wire Wire Line
+	3750 2650 3100 2650
+Wire Wire Line
+	3100 2650 3100 2450
+Wire Wire Line
+	3100 2450 3050 2450
+Wire Wire Line
+	3050 2450 2800 2450
+Wire Notes Line
+	8700 2250 8700 1400
+Wire Notes Line
+	8700 2250 9450 2250
+Wire Notes Line
+	9450 2250 9450 1400
+Wire Notes Line
+	9450 1400 8700 1400
+Wire Wire Line
+	6650 1900 7500 1900
+Wire Wire Line
+	6650 3200 7250 3200
+Wire Wire Line
+	3750 3550 2800 3550
+Wire Wire Line
+	3750 3450 3500 3450
+Wire Wire Line
+	5600 5000 6550 5000
+Wire Bus Line
+	6750 4250 2300 4250
+Wire Bus Line
+	6750 4250 6750 5550
+Wire Bus Line
+	6750 5550 2300 5550
+Wire Bus Line
+	2300 5550 2300 4250
+Wire Wire Line
+	2600 4900 3400 4900
+Text Notes 2350 4350 0    60   ~ 0
+Circuit Logique Etat contacteur +\n
 Text Label 6550 5000 2    60   ~ 0
 etat_contacteur+
-Text Label 2500 5250 0    60   ~ 0
+Text Label 2600 5200 0    60   ~ 0
 cmd_contacteur+
-Text Label 3300 4900 0    60   ~ 0
+Text Label 2600 4900 0    60   ~ 0
 cmd_precharge
 $Comp
 L 74LS08 U?
@@ -164,10 +172,10 @@ $EndComp
 $Comp
 L 74LS04 U?
 U 1 1 4D711A74
-P 3950 5250
-F 0 "U?" H 4145 5365 60  0000 C CNN
-F 1 "74LS04" H 4140 5125 60  0000 C CNN
-	1    3950 5250
+P 3850 4900
+F 0 "U?" H 4045 5015 60  0000 C CNN
+F 1 "74LS04" H 4040 4775 60  0000 C CNN
+	1    3850 4900
 	1    0    0    -1  
 $EndComp
 $Comp
