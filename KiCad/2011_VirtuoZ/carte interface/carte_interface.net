@@ -1,0 +1,275 @@
+# EESchema Netlist Version 1.1 created  22/03/2011 08:25:25
+(
+ ( /4D4D8CDE C1 C9 27p
+  ( 1 +12V )
+  ( 2 -12V )
+ )
+ ( /4D4D8CE4 C1V5 C10 1u
+  ( 1 +12V )
+  ( 2 -12V )
+ )
+ ( /4D4D8DBB C1 C11 27p
+  ( 1 +12V )
+  ( 2 -12V )
+ )
+ ( /4D4D8DBA C1V5 C12 1u
+  ( 1 +12V )
+  ( 2 -12V )
+ )
+ ( /4D822983 C1V7 C15 100u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4D81CE99 C1 C16 27p
+  ( 1 GND )
+  ( 2 +12V )
+ )
+ ( /4D4822C9 LEDV D1 JAUNE
+  ( 1 N-000025 )
+  ( 2 GND )
+ )
+ ( /4D4ACFF7 LEDV D2 JAUNE
+  ( 1 GND )
+  ( 2 N-000028 )
+ )
+ ( /4D4D830A 1pin MECA1 MECA
+  ( 1 ? )
+ )
+ ( /4D4D8333 1pin MECA2 MECA
+  ( 1 ? )
+ )
+ ( /4D4D8335 1pin MECA3 MECA
+  ( 1 ? )
+ )
+ ( /4D4D8336 1pin MECA4 MECA
+  ( 1 ? )
+ )
+ ( /4D59ADB8 KK_8 P10 Convertisseur_I
+  ( 1 /Isc1+ )
+  ( 2 /Isc1- )
+  ( 3 /Isc2+ )
+  ( 4 /Isc2- )
+  ( 5 /Imot1+ )
+  ( 6 /Imot1- )
+  ( 7 /Imot2+ )
+  ( 8 /Imot2- )
+ )
+ ( /4D59ADB3 KK_8 P11 Convertisseur_U
+  ( 1 /Usc+ )
+  ( 2 /Usc- )
+  ( 3 /Umot1+ )
+  ( 4 /Umot1- )
+  ( 5 /Umot2+ )
+  ( 6 /Umot2- )
+  ( 7 GND )
+  ( 8 GND )
+ )
+ ( /4D81CD22 KK_2 P12 CONN_2
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4D86FE6B KK_2 P13 CONN_2
+  ( 1 /Isc1 )
+  ( 2 GND )
+ )
+ ( /4D86FEC1 KK_2 P14 CONN_2
+  ( 1 /Isc2 )
+  ( 2 GND )
+ )
+ ( /4D86FECC KK_2 P15 CONN_2
+  ( 1 /Imot1 )
+  ( 2 GND )
+ )
+ ( /4D86FEC9 KK_2 P16 CONN_2
+  ( 1 /Imot2 )
+  ( 2 GND )
+ )
+ ( /4D86FEDC KK_2 P17 CONN_2
+  ( 1 /Usc )
+  ( 2 GND )
+ )
+ ( /4D86FED9 KK_2 P18 CONN_2
+  ( 1 /Umot1 )
+  ( 2 GND )
+ )
+ ( /4D86FED5 KK_2 P19 CONN_2
+  ( 1 /Umot2 )
+  ( 2 GND )
+ )
+ ( /4D7F98F3 KK_2 P21 CONN_2
+  ( 1 /T_klaric_MAB )
+  ( 2 GND )
+ )
+ ( /4D4823B1 R3 R1 1k
+  ( 1 +12V )
+  ( 2 N-000025 )
+ )
+ ( /4D4ACFF5 R3 R2 1k
+  ( 1 -12V )
+  ( 2 N-000028 )
+ )
+ ( /4D4ADCB6 R3 R4 10k
+  ( 1 /Usc )
+  ( 2 N-000047 )
+ )
+ ( /4D4ADC7C R3 R5 20k
+  ( 1 N-000031 )
+  ( 2 /Usc+ )
+ )
+ ( /4D4ADC7F R3 R6 20k
+  ( 1 N-000047 )
+  ( 2 /Usc- )
+ )
+ ( /4D4ADC79 R3 R7 10k
+  ( 1 GND )
+  ( 2 N-000031 )
+ )
+ ( /4D4B3E73 R3 R10 10k
+  ( 1 GND )
+  ( 2 N-000001 )
+ )
+ ( /4D4B3E72 R3 R11 20k
+  ( 1 N-000001 )
+  ( 2 /Imot1+ )
+ )
+ ( /4D4B3E71 R3 R12 20k
+  ( 1 N-000015 )
+  ( 2 /Imot1- )
+ )
+ ( /4D4B3E70 R3 R13 10k
+  ( 1 /Imot1 )
+  ( 2 N-000015 )
+ )
+ ( /4D4B3E43 R3 R14 10k
+  ( 1 GND )
+  ( 2 N-000041 )
+ )
+ ( /4D4B3E64 R3 R15 10k
+  ( 1 GND )
+  ( 2 N-000035 )
+ )
+ ( /4D4B3E42 R3 R16 20k
+  ( 1 N-000041 )
+  ( 2 /Umot1+ )
+ )
+ ( /4D4B3E65 R3 R17 20k
+  ( 1 N-000035 )
+  ( 2 /Imot2+ )
+ )
+ ( /4D4B3E41 R3 R18 20k
+  ( 1 N-000038 )
+  ( 2 /Umot1- )
+ )
+ ( /4D4B3E66 R3 R19 20k
+  ( 1 N-000045 )
+  ( 2 /Imot2- )
+ )
+ ( /4D4B3E40 R3 R20 10k
+  ( 1 /Umot1 )
+  ( 2 N-000038 )
+ )
+ ( /4D4B3E67 R3 R21 10k
+  ( 1 /Imot2 )
+  ( 2 N-000045 )
+ )
+ ( /4D4B3E54 R3 R22 10k
+  ( 1 GND )
+  ( 2 N-000042 )
+ )
+ ( /4D4B3E63 R3 R23 10k
+  ( 1 GND )
+  ( 2 N-000034 )
+ )
+ ( /4D4B3E7C R3 R24 10k
+  ( 1 GND )
+  ( 2 N-000008 )
+ )
+ ( /4D4B3E55 R3 R25 20k
+  ( 1 N-000042 )
+  ( 2 /Umot2+ )
+ )
+ ( /4D4B3E62 R3 R26 20k
+  ( 1 N-000034 )
+  ( 2 /Isc1+ )
+ )
+ ( /4D4B3E7B R3 R27 20k
+  ( 1 N-000008 )
+  ( 2 /Isc2+ )
+ )
+ ( /4D4B3E56 R3 R28 20k
+  ( 1 N-000044 )
+  ( 2 /Umot2- )
+ )
+ ( /4D4B3E61 R3 R29 20k
+  ( 1 N-000033 )
+  ( 2 /Isc1- )
+ )
+ ( /4D4B3E7A R3 R30 20k
+  ( 1 N-000005 )
+  ( 2 /Isc2- )
+ )
+ ( /4D4B3E57 R3 R31 10k
+  ( 1 /Umot2 )
+  ( 2 N-000044 )
+ )
+ ( /4D4B3E60 R3 R32 10k
+  ( 1 /Isc1 )
+  ( 2 N-000033 )
+ )
+ ( /4D4B3E79 R3 R33 10k
+  ( 1 /Isc2 )
+  ( 2 N-000005 )
+ )
+ ( /4D870EC2 R3 R34 10k
+  ( 1 N-000048 )
+  ( 2 GND )
+ )
+ ( /4D870EF6 R3 R35 10k
+  ( 1 /T_klaric )
+  ( 2 N-000048 )
+ )
+ ( /4D870BF3 DIP-14__300_ELL U3 LM358
+  ( 1 /Usc )
+  ( 2 N-000047 )
+  ( 3 N-000031 )
+  ( 4 +12V )
+  ( 5 N-000041 )
+  ( 6 N-000038 )
+  ( 7 /Umot1 )
+  ( 8 /Umot2 )
+  ( 9 N-000044 )
+  ( 10 N-000042 )
+  ( 11 -12V )
+  ( 12 /T_klaric_MAB )
+  ( 13 N-000048 )
+  ( 14 /T_klaric )
+ )
+ ( /4D4B3E78 DIP-14__300_ELL U4 LM358
+  ( 1 /Imot1 )
+  ( 2 N-000015 )
+  ( 3 N-000001 )
+  ( 4 +12V )
+  ( 5 N-000035 )
+  ( 6 N-000045 )
+  ( 7 /Imot2 )
+  ( 8 /Isc1 )
+  ( 9 N-000033 )
+  ( 10 N-000034 )
+  ( 11 -12V )
+  ( 12 N-000008 )
+  ( 13 N-000005 )
+  ( 14 /Isc2 )
+ )
+ ( /4D81CCF5 TRACO_8W_12V_DUAL U6 TRACO_8W_12V_DUAL
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 GND )
+  ( 9 GND )
+  ( 11 +12V )
+  ( 14 -12V )
+  ( 16 GND )
+  ( 22 +12V )
+  ( 23 +12V )
+ )
+)
+*
