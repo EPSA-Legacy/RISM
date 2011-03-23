@@ -1,0 +1,87 @@
+# EESchema Netlist Version 1.1 created  09/03/2011 17:09:47
+(
+ ( /4D77A0D8 $noname  P3 conn_frein {Lib=CONN_4}
+  (    1 /U1_frein )
+  (    2 /U2_frein )
+  (    3 GND )
+  (    4 GND )
+ )
+ ( /4D77A0C2 $noname  P2 conn_acc {Lib=CONN_4}
+  (    1 /U1_potentio )
+  (    2 /U2_potentio )
+  (    3 GND )
+  (    4 GND )
+ )
+ ( /4D779757 $noname  R1 R {Lib=R}
+  (    1 N-000017 )
+  (    2 /U_frein_main )
+ )
+ ( /4D77973A $noname  P1 conn_frein_main {Lib=CONN_2}
+  (    1 N-000017 )
+  (    2 GND )
+ )
+ ( /4D7796C4 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /U2_frein )
+  (    2 /U2_potentio )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 +12V )
+  (    9 ? )
+  (   10 GND )
+ )
+ ( /4D7796C0 $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /U1_potentio )
+  (    2 /U_frein_main )
+  (    3 ? )
+  (    4 /U1_frein )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 +5V )
+  (   10 GND )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 3 "GND" "GND"
+ MEZZA1 10
+ P3 4
+ MEZZA2 10
+ P3 3
+ P1 2
+ P2 4
+ P2 3
+Net 6 "/U1_potentio" "U1_potentio"
+ P2 1
+ MEZZA1 1
+Net 7 "/U2_potentio" "U2_potentio"
+ P2 2
+ MEZZA2 2
+Net 16 "/U_frein_main" "U_frein_main"
+ MEZZA1 2
+ R1 2
+Net 17 "" ""
+ R1 1
+ P1 1
+Net 19 "/U2_frein" "U2_frein"
+ MEZZA2 1
+ P3 2
+Net 20 "/U1_frein" "U1_frein"
+ P3 1
+ MEZZA1 4
+}
+#End
