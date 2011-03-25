@@ -1,0 +1,39 @@
+PCBNEW-LibDoc----V1  25/03/2011 21:09:19
+#
+$MODULE KK_2
+Li KK_2
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_4
+Li KK_4
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_8
+Li KK_8
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_8C
+Li KK_8C
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_2C
+Li KK_2C
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_4C
+Li KK_4C
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$EndLIBDOC

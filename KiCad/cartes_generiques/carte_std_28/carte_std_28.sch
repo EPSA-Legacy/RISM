@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 12/12/2010 22:49:13
+EESchema Schematic File Version 2  date 25/03/2011 21:40:31
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,12 +31,12 @@ LIBS:contrib
 LIBS:valves
 LIBS:symbioz
 LIBS:carte_std_28-cache
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "Carte standard 28"
-Date "12 dec 2010"
+Date "25 mar 2011"
 Rev "2.0"
 Comp "EPSA - SymbioZ"
 Comment1 ""
@@ -44,6 +44,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	10350 5750 10300 5750
+Wire Wire Line
+	10350 5850 10150 5850
+Wire Wire Line
+	10150 5850 10150 5650
 Wire Notes Line
 	2750 6250 2750 4950
 Wire Notes Line
@@ -56,11 +62,7 @@ Wire Wire Line
 	3500 5550 3050 5550
 Connection ~ 3050 5550
 Wire Wire Line
-	3250 5450 3250 5750
-Wire Wire Line
-	10350 5950 10350 6000
-Wire Wire Line
-	9950 5850 10350 5850
+	3250 5750 3250 5450
 Connection ~ 8350 3650
 Wire Wire Line
 	8350 3650 8350 3700
@@ -82,15 +84,15 @@ Wire Wire Line
 	5150 5500 5150 5200
 Connection ~ 10550 5450
 Wire Wire Line
-	10550 4950 10550 5500
+	10550 5500 10550 4950
 Connection ~ 10550 4950
 Wire Wire Line
-	10550 5450 10450 5450
+	10450 5450 10550 5450
 Wire Wire Line
-	9950 4550 10700 4550
+	10700 4550 9950 4550
 Connection ~ 10150 4550
 Wire Wire Line
-	10150 4500 10150 4550
+	10150 4550 10150 4500
 Wire Notes Line
 	3800 1800 800  1800
 Wire Notes Line
@@ -99,7 +101,7 @@ Wire Notes Line
 	3800 750  800  750 
 Connection ~ 3050 1100
 Wire Wire Line
-	2700 1100 3650 1100
+	3650 1100 2700 1100
 Connection ~ 2750 1100
 Connection ~ 1550 1500
 Wire Wire Line
@@ -196,7 +198,7 @@ Wire Wire Line
 Wire Wire Line
 	10550 1300 10800 1300
 Wire Wire Line
-	7850 2350 7900 2350
+	7900 2350 7850 2350
 Connection ~ 7900 2350
 Wire Wire Line
 	10550 1450 10800 1450
@@ -259,7 +261,7 @@ Wire Notes Line
 Wire Wire Line
 	3650 1500 3600 1500
 Wire Wire Line
-	2300 1400 2300 1550
+	2300 1550 2300 1400
 Wire Wire Line
 	6450 5800 6750 5800
 Wire Wire Line
@@ -280,7 +282,7 @@ Wire Wire Line
 Wire Wire Line
 	8600 1900 8350 1900
 Wire Wire Line
-	8300 2650 8600 2650
+	8600 2650 8300 2650
 Connection ~ 8350 2650
 Connection ~ 7900 2650
 Wire Wire Line
@@ -297,15 +299,15 @@ Connection ~ 10400 4550
 Wire Wire Line
 	10150 4950 9950 4950
 Wire Wire Line
-	10700 4950 10400 4950
+	10400 4950 10700 4950
 Wire Wire Line
-	9950 5150 10550 5150
+	10550 5150 9950 5150
 Connection ~ 10550 5150
 Wire Wire Line
 	5150 5200 4650 5200
 Connection ~ 4950 5200
 Wire Wire Line
-	4650 5600 5150 5600
+	5150 5600 4650 5600
 Connection ~ 4950 5600
 Wire Notes Line
 	7100 5050 4450 5050
@@ -317,7 +319,7 @@ Wire Wire Line
 	7900 3100 7850 3100
 Connection ~ 8500 3250
 Wire Wire Line
-	8200 3650 8500 3650
+	8500 3650 8200 3650
 Wire Notes Line
 	10900 750  10900 3800
 Wire Notes Line
@@ -325,13 +327,9 @@ Wire Notes Line
 Wire Notes Line
 	7750 3800 7750 750 
 Wire Wire Line
-	9950 5650 10350 5650
+	3050 5750 3050 5450
 Wire Wire Line
-	10350 5650 10350 5750
-Wire Wire Line
-	3050 5450 3050 5750
-Wire Wire Line
-	3250 5650 3500 5650
+	3500 5650 3250 5650
 Connection ~ 3250 5650
 Wire Notes Line
 	1800 6400 900  6400
@@ -341,6 +339,14 @@ Wire Notes Line
 	1800 6950 900  6950
 Wire Notes Line
 	900  6950 900  6400
+Wire Wire Line
+	9950 5850 10100 5850
+Wire Wire Line
+	10100 5850 10100 5950
+Wire Wire Line
+	10100 5950 10350 5950
+Wire Wire Line
+	10150 5650 9950 5650
 $Comp
 L CONN_1 MECA3
 U 1 1 4D04E109
@@ -409,11 +415,11 @@ $EndComp
 $Comp
 L GND #PWR01
 U 1 1 4CFE6D3F
-P 10350 6000
-F 0 "#PWR01" H 10350 6000 30  0001 C CNN
-F 1 "GND" H 10350 5930 30  0001 C CNN
-	1    10350 6000
-	1    0    0    -1  
+P 10300 5750
+F 0 "#PWR01" H 10300 5750 30  0001 C CNN
+F 1 "GND" H 10300 5680 30  0001 C CNN
+	1    10300 5750
+	0    1    1    0   
 $EndComp
 $Comp
 L CONN_3 K1
@@ -422,7 +428,7 @@ P 10700 5850
 F 0 "K1" V 10650 5850 50  0000 C CNN
 F 1 "RS232" V 10750 5850 40  0000 C CNN
 	1    10700 5850
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L GND #PWR02
