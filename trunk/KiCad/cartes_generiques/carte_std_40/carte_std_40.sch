@@ -1,4 +1,5 @@
-EESchema Schematic File Version 2  date 25/03/2011 17:01:45
+EESchema Schematic File Version 2  date 25/03/2011 21:27:22
+LIBS:symbioz
 LIBS:microcontrollers
 LIBS:74xx
 LIBS:adc-dac
@@ -40,13 +41,13 @@ LIBS:texas
 LIBS:opto
 LIBS:atmel
 LIBS:valves
-LIBS:symbioz
+LIBS:carte_std_40-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "Carte standard 40"
-Date "1 mar 2011"
+Date "25 mar 2011"
 Rev "1.0"
 Comp "EPSA - Générique"
 Comment1 ""
@@ -54,15 +55,16 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L 7805 U1
-U 1 1 4D6D2C16
-P 2300 1150
-F 0 "U1" H 2450 954 60  0000 C CNN
-F 1 "7805" H 2300 1350 60  0000 C CNN
-	1    2300 1150
-	1    0    0    -1  
-$EndComp
+Wire Wire Line
+	10050 6600 10050 6650
+Wire Wire Line
+	10050 6600 10000 6600
+Wire Wire Line
+	10450 6550 10100 6550
+Wire Wire Line
+	10100 6550 10100 6400
+Wire Wire Line
+	10100 6400 10000 6400
 Wire Notes Line
 	900  7050 900  6400
 Wire Notes Line
@@ -156,10 +158,6 @@ Wire Wire Line
 	3500 5650 3250 5650
 Wire Wire Line
 	3050 5450 3050 5750
-Wire Wire Line
-	10400 6500 10400 6400
-Wire Wire Line
-	10400 6400 10000 6400
 Wire Wire Line
 	6450 1850 6750 1850
 Wire Wire Line
@@ -307,10 +305,6 @@ Wire Wire Line
 	7050 2400 7050 3000
 Connection ~ 6600 1850
 Wire Wire Line
-	10000 6600 10400 6600
-Wire Wire Line
-	10400 6700 10400 6750
-Wire Wire Line
 	3250 5450 3250 5750
 Connection ~ 3050 5550
 Wire Wire Line
@@ -434,6 +428,19 @@ Wire Notes Line
 	11100 4300 6300 4300
 Wire Notes Line
 	6300 4300 6300 600 
+Wire Wire Line
+	10050 6650 10450 6650
+Wire Wire Line
+	10450 6450 10400 6450
+$Comp
+L 7805 U1
+U 1 1 4D6D2C16
+P 2300 1150
+F 0 "U1" H 2450 954 60  0000 C CNN
+F 1 "7805" H 2300 1350 60  0000 C CNN
+	1    2300 1150
+	1    0    0    -1  
+$EndComp
 NoConn ~ 1200 6950
 $Comp
 L CONN_1 MECA4
@@ -774,20 +781,20 @@ $EndComp
 $Comp
 L GND #PWR012
 U 1 1 4CFE6D3F
-P 10400 6750
-F 0 "#PWR012" H 10400 6750 30  0001 C CNN
-F 1 "GND" H 10400 6680 30  0001 C CNN
-	1    10400 6750
-	1    0    0    -1  
+P 10400 6450
+F 0 "#PWR012" H 10400 6450 30  0001 C CNN
+F 1 "GND" H 10400 6380 30  0001 C CNN
+	1    10400 6450
+	0    1    1    0   
 $EndComp
 $Comp
 L CONN_3 K1
 U 1 1 4CFE6D2D
-P 10750 6600
-F 0 "K1" V 10700 6600 50  0000 C CNN
-F 1 "RS232" V 10800 6600 40  0000 C CNN
-	1    10750 6600
-	1    0    0    -1  
+P 10800 6550
+F 0 "K1" V 10750 6550 50  0000 C CNN
+F 1 "RS232" V 10850 6550 40  0000 C CNN
+	1    10800 6550
+	1    0    0    1   
 $EndComp
 $Comp
 L VCC #PWR013

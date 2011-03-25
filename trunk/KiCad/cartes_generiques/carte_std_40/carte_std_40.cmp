@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 25/03/2011 17:39:40
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 25/03/2011 21:10:11
 
 BeginCmp
 TimeStamp = /453CDC47;
@@ -137,7 +137,7 @@ BeginCmp
 TimeStamp = /4CFE6D2D;
 Reference = K1;
 ValeurCmp = RS232;
-IdModule  = SIL-3;
+IdModule  = KK_4C;
 EndCmp
 
 BeginCmp
@@ -186,21 +186,21 @@ BeginCmp
 TimeStamp = /4B211E6C;
 Reference = P1;
 ValeurCmp = ALIM;
-IdModule  = SIL-2;
+IdModule  = KK_2C;
 EndCmp
 
 BeginCmp
 TimeStamp = /4CFE6DC8;
 Reference = P2;
 ValeurCmp = CAN1;
-IdModule  = SIL-2;
+IdModule  = KK_2C;
 EndCmp
 
 BeginCmp
 TimeStamp = /4CFE6DE3;
 Reference = P3;
 ValeurCmp = CAN2;
-IdModule  = SIL-2;
+IdModule  = KK_2C;
 EndCmp
 
 BeginCmp
