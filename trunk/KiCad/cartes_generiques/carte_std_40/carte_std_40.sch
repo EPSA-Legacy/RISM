@@ -1,43 +1,54 @@
-EESchema Schematic File Version 2  date 01/03/2011 18:26:12
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
+EESchema Schematic File Version 2  date 25/03/2011 17:01:45
 LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
+LIBS:74xx
+LIBS:adc-dac
 LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
 LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
+LIBS:brooktre
+LIBS:cmos_ieee
+LIBS:cmos4000
+LIBS:conn
+LIBS:connecteur_male_erni
+LIBS:contrib
 LIBS:cypress
+LIBS:device
+LIBS:digital-audio
+LIBS:display
+LIBS:dsp
+LIBS:elec-unifil
+LIBS:fusee_hermes
+LIBS:gennum
+LIBS:graphic
+LIBS:hc11
+LIBS:intel
+LIBS:interface
+LIBS:linear
+LIBS:memory
+LIBS:motorola
+LIBS:mpxv7025dp
+LIBS:philips
+LIBS:power
+LIBS:pspice
+LIBS:relais_reed_dip
 LIBS:siliconi
+LIBS:special
+LIBS:xilinx
+LIBS:transistors
+LIBS:regul
+LIBS:microchip
+LIBS:texas
 LIBS:opto
 LIBS:atmel
-LIBS:contrib
 LIBS:valves
 LIBS:symbioz
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "Carte standard 40"
 Date "1 mar 2011"
 Rev "1.0"
-Comp "EPSA - VirtuoZ"
+Comp "EPSA - Générique"
 Comment1 ""
 Comment2 ""
 Comment3 ""
