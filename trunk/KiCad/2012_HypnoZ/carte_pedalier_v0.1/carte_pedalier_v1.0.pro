@@ -1,13 +1,8 @@
-update=24/03/2011 18:08:54
+update=29/03/2011 18:57:58
 version=1
-last_client=eeschema
+last_client=cvpcb
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -27,7 +22,6 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=carte_pedalier_v0.1.net
 [pcbnew/libraries]
-LibDir=..\\KiCad\\Modules
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -39,6 +33,7 @@ LibName8=valves
 LibName9=led
 LibName10=dip_sockets
 LibName11=symbioz
+LibDir=..\\..\\Modules
 [eeschema]
 version=1
 LibDir=..\\..\\Librairies
@@ -102,3 +97,8 @@ LibName28=opto
 LibName29=atmel
 LibName30=contrib
 LibName31=valves
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 09/03/2011 16:49:26
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 29/03/2011 19:00:36
 
 BeginCmp
 TimeStamp = /4D7796C0;
@@ -8,38 +8,45 @@ IdModule  = he10-10d;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D7796C4;
-Reference = MEZZA2;
-ValeurCmp = MEZZA-10;
-IdModule  = he10-10d;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D77973A;
+TimeStamp = /4D920AA1;
 Reference = P1;
-ValeurCmp = conn_frein_main;
+ValeurCmp = Frein_Main;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D77A0C2;
+TimeStamp = /4D920C69;
 Reference = P2;
-ValeurCmp = conn_acc;
-IdModule  = KK_4;
+ValeurCmp = MECA;
+IdModule  = 1pin;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D77A0D8;
+TimeStamp = /4D920C6E;
 Reference = P3;
-ValeurCmp = conn_frein;
-IdModule  = KK_4;
+ValeurCmp = MECA;
+IdModule  = 1pin;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D779757;
+TimeStamp = /4D920C00;
 Reference = R1;
-ValeurCmp = R;
+ValeurCmp = 10K;
 IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D920AFF;
+Reference = RV1;
+ValeurCmp = Accel.;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D920B50;
+Reference = RV2;
+ValeurCmp = Freins;
+IdModule  = ;
 EndCmp
 
 EndListe
