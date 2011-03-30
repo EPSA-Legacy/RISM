@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  29/03/2011 19:00:36
+# EESchema Netlist Version 1.1 created  mar. 29 mars 2011 19:06:03 CEST
 (
  ( /4D7796C0 he10-10d MEZZA1 MEZZA-10
   ( 1 /Accelerateur )
@@ -26,12 +26,12 @@
   ( 1 /Frein_main )
   ( 2 GND )
  )
- ( /4D920AFF $noname$ RV1 Accel.
+ ( /4D920AFF KK_4 RV1 Accel.
   ( 1 VCC )
   ( 2 /Accelerateur )
   ( 3 GND )
  )
- ( /4D920B50 $noname$ RV2 Freins
+ ( /4D920B50 KK_4 RV2 Freins
   ( 1 VCC )
   ( 2 /Freins_pied )
   ( 3 GND )
