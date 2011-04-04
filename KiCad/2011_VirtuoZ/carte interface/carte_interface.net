@@ -1,275 +1,792 @@
-# EESchema Netlist Version 1.1 created  22/03/2011 08:25:25
+# EESchema Netlist Version 1.1 created  29/03/2011 16:58:01
 (
- ( /4D4D8CDE C1 C9 27p
-  ( 1 +12V )
-  ( 2 -12V )
+ ( /4D91EBB6 $noname  P23 Masse_MAB {Lib=CONN_8}
+  (    1 GND )
+  (    2 GND )
+  (    3 GND )
+  (    4 GND )
+  (    5 GND )
+  (    6 GND )
+  (    7 GND )
+  (    8 GND )
  )
- ( /4D4D8CE4 C1V5 C10 1u
-  ( 1 +12V )
-  ( 2 -12V )
+ ( /4D91EB68 $noname  P22 Alim_MAB {Lib=CONN_8}
+  (    1 +12C )
+  (    2 +12C )
+  (    3 +12C )
+  (    4 +12C )
+  (    5 +12C )
+  (    6 +12C )
+  (    7 +12C )
+  (    8 +12C )
  )
- ( /4D4D8DBB C1 C11 27p
-  ( 1 +12V )
-  ( 2 -12V )
+ ( /4D870EF6 $noname  R35 10k {Lib=R}
+  (    1 /T_klaric )
+  (    2 N-000048 )
  )
- ( /4D4D8DBA C1V5 C12 1u
-  ( 1 +12V )
-  ( 2 -12V )
+ ( /4D870EC2 $noname  R34 10k {Lib=R}
+  (    1 N-000048 )
+  (    2 GND )
  )
- ( /4D822983 C1V7 C15 100u
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4D870BF3 $noname  U3 LM358 {Lib=LM324}
+  (    1 /Usc )
+  (    2 N-000020 )
+  (    3 N-000028 )
+  (    4 +12V )
+  (    5 N-000039 )
+  (    6 N-000044 )
+  (    7 /Umot1 )
+  (    8 /Umot2 )
+  (    9 N-000037 )
+  (   10 N-000038 )
+  (   11 -12V )
+  (   12 /T_klaric_MAB )
+  (   13 N-000048 )
+  (   14 /T_klaric )
  )
- ( /4D81CE99 C1 C16 27p
-  ( 1 GND )
-  ( 2 +12V )
+ ( /4D86FEDC $noname  P17 CONN_2 {Lib=CONN_2}
+  (    1 /Usc )
+  (    2 GND )
  )
- ( /4D4822C9 LEDV D1 JAUNE
-  ( 1 N-000025 )
-  ( 2 GND )
+ ( /4D86FED9 $noname  P18 CONN_2 {Lib=CONN_2}
+  (    1 /Umot1 )
+  (    2 GND )
  )
- ( /4D4ACFF7 LEDV D2 JAUNE
-  ( 1 GND )
-  ( 2 N-000028 )
+ ( /4D86FED5 $noname  P19 CONN_2 {Lib=CONN_2}
+  (    1 /Umot2 )
+  (    2 GND )
  )
- ( /4D4D830A 1pin MECA1 MECA
-  ( 1 ? )
+ ( /4D86FECC $noname  P15 CONN_2 {Lib=CONN_2}
+  (    1 /Imot1 )
+  (    2 GND )
  )
- ( /4D4D8333 1pin MECA2 MECA
-  ( 1 ? )
+ ( /4D86FEC9 $noname  P16 CONN_2 {Lib=CONN_2}
+  (    1 /Imot2 )
+  (    2 GND )
  )
- ( /4D4D8335 1pin MECA3 MECA
-  ( 1 ? )
+ ( /4D86FEC1 $noname  P14 CONN_2 {Lib=CONN_2}
+  (    1 /Isc2 )
+  (    2 GND )
  )
- ( /4D4D8336 1pin MECA4 MECA
-  ( 1 ? )
+ ( /4D86FE6B $noname  P13 CONN_2 {Lib=CONN_2}
+  (    1 /Isc1 )
+  (    2 GND )
  )
- ( /4D59ADB8 KK_8 P10 Convertisseur_I
-  ( 1 /Isc1+ )
-  ( 2 /Isc1- )
-  ( 3 /Isc2+ )
-  ( 4 /Isc2- )
-  ( 5 /Imot1+ )
-  ( 6 /Imot1- )
-  ( 7 /Imot2+ )
-  ( 8 /Imot2- )
+ ( /4D822983 $noname  C15 100u {Lib=CP}
+  (    1 +12C )
+  (    2 GND )
  )
- ( /4D59ADB3 KK_8 P11 Convertisseur_U
-  ( 1 /Usc+ )
-  ( 2 /Usc- )
-  ( 3 /Umot1+ )
-  ( 4 /Umot1- )
-  ( 5 /Umot2+ )
-  ( 6 /Umot2- )
-  ( 7 GND )
-  ( 8 GND )
+ ( /4D81CE99 $noname  C16 27p {Lib=C}
+  (    1 GND )
+  (    2 +12C )
  )
- ( /4D81CD22 KK_2 P12 CONN_2
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4D81CD22 $noname  P12 ALIM {Lib=CONN_2}
+  (    1 +12C )
+  (    2 GND )
  )
- ( /4D86FE6B KK_2 P13 CONN_2
-  ( 1 /Isc1 )
-  ( 2 GND )
+ ( /4D81CCF5 $noname  U6 TRACO_8W_12V_DUAL {Lib=TRACO_8W_12V_DUAL}
+  (    1 ? )
+  (    2 GND )
+  (    3 GND )
+  (    9 GND )
+  (   11 +12V )
+  (   14 -12V )
+  (   16 GND )
+  (   22 +12C )
+  (   23 +12C )
  )
- ( /4D86FEC1 KK_2 P14 CONN_2
-  ( 1 /Isc2 )
-  ( 2 GND )
+ ( /4D7F98F3 $noname  P21 CONN_2 {Lib=CONN_2}
+  (    1 /T_klaric_MAB )
+  (    2 GND )
  )
- ( /4D86FECC KK_2 P15 CONN_2
-  ( 1 /Imot1 )
-  ( 2 GND )
+ ( /4D59ADB8 $noname  P10 Convertisseur_I {Lib=CONN_8}
+  (    1 /Isc1+ )
+  (    2 /Isc1- )
+  (    3 /Isc2+ )
+  (    4 /Isc2- )
+  (    5 /Imot1+ )
+  (    6 /Imot1- )
+  (    7 /Imot2+ )
+  (    8 /Imot2- )
  )
- ( /4D86FEC9 KK_2 P16 CONN_2
-  ( 1 /Imot2 )
-  ( 2 GND )
+ ( /4D59ADB3 $noname  P11 Convertisseur_U {Lib=CONN_8}
+  (    1 /Usc+ )
+  (    2 /Usc- )
+  (    3 /Umot1+ )
+  (    4 /Umot1- )
+  (    5 /Umot2+ )
+  (    6 /Umot2- )
+  (    7 GND )
+  (    8 GND )
  )
- ( /4D86FEDC KK_2 P17 CONN_2
-  ( 1 /Usc )
-  ( 2 GND )
+ ( /4D4D8DBB $noname  C11 27p {Lib=C}
+  (    1 +12V )
+  (    2 -12V )
  )
- ( /4D86FED9 KK_2 P18 CONN_2
-  ( 1 /Umot1 )
-  ( 2 GND )
+ ( /4D4D8DBA $noname  C12 1u {Lib=CP}
+  (    1 +12V )
+  (    2 -12V )
  )
- ( /4D86FED5 KK_2 P19 CONN_2
-  ( 1 /Umot2 )
-  ( 2 GND )
+ ( /4D4D8CE4 $noname  C10 1u {Lib=CP}
+  (    1 +12V )
+  (    2 -12V )
  )
- ( /4D7F98F3 KK_2 P21 CONN_2
-  ( 1 /T_klaric_MAB )
-  ( 2 GND )
+ ( /4D4D8CDE $noname  C9 27p {Lib=C}
+  (    1 +12V )
+  (    2 -12V )
  )
- ( /4D4823B1 R3 R1 1k
-  ( 1 +12V )
-  ( 2 N-000025 )
+ ( /4D4D8336 $noname  MECA4 MECA {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D4ACFF5 R3 R2 1k
-  ( 1 -12V )
-  ( 2 N-000028 )
+ ( /4D4D8335 $noname  MECA3 MECA {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D4ADCB6 R3 R4 10k
-  ( 1 /Usc )
-  ( 2 N-000047 )
+ ( /4D4D8333 $noname  MECA2 MECA {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D4ADC7C R3 R5 20k
-  ( 1 N-000031 )
-  ( 2 /Usc+ )
+ ( /4D4D830A $noname  MECA1 MECA {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D4ADC7F R3 R6 20k
-  ( 1 N-000047 )
-  ( 2 /Usc- )
+ ( /4D4B3E7C $noname  R24 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000005 )
  )
- ( /4D4ADC79 R3 R7 10k
-  ( 1 GND )
-  ( 2 N-000031 )
+ ( /4D4B3E7B $noname  R27 20k {Lib=R}
+  (    1 N-000005 )
+  (    2 /Isc2+ )
  )
- ( /4D4B3E73 R3 R10 10k
-  ( 1 GND )
-  ( 2 N-000001 )
+ ( /4D4B3E7A $noname  R30 20k {Lib=R}
+  (    1 N-000042 )
+  (    2 /Isc2- )
  )
- ( /4D4B3E72 R3 R11 20k
-  ( 1 N-000001 )
-  ( 2 /Imot1+ )
+ ( /4D4B3E79 $noname  R33 10k {Lib=R}
+  (    1 /Isc2 )
+  (    2 N-000042 )
  )
- ( /4D4B3E71 R3 R12 20k
-  ( 1 N-000015 )
-  ( 2 /Imot1- )
+ ( /4D4B3E78 $noname  U4 LM358 {Lib=LM324}
+  (    1 /Imot1 )
+  (    2 N-000043 )
+  (    3 N-000011 )
+  (    4 +12V )
+  (    5 N-000033 )
+  (    6 N-000035 )
+  (    7 /Imot2 )
+  (    8 /Isc1 )
+  (    9 N-000045 )
+  (   10 N-000034 )
+  (   11 -12V )
+  (   12 N-000005 )
+  (   13 N-000042 )
+  (   14 /Isc2 )
  )
- ( /4D4B3E70 R3 R13 10k
-  ( 1 /Imot1 )
-  ( 2 N-000015 )
+ ( /4D4B3E73 $noname  R10 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000011 )
  )
- ( /4D4B3E43 R3 R14 10k
-  ( 1 GND )
-  ( 2 N-000041 )
+ ( /4D4B3E72 $noname  R11 20k {Lib=R}
+  (    1 N-000011 )
+  (    2 /Imot1+ )
  )
- ( /4D4B3E64 R3 R15 10k
-  ( 1 GND )
-  ( 2 N-000035 )
+ ( /4D4B3E71 $noname  R12 20k {Lib=R}
+  (    1 N-000043 )
+  (    2 /Imot1- )
  )
- ( /4D4B3E42 R3 R16 20k
-  ( 1 N-000041 )
-  ( 2 /Umot1+ )
+ ( /4D4B3E70 $noname  R13 10k {Lib=R}
+  (    1 /Imot1 )
+  (    2 N-000043 )
  )
- ( /4D4B3E65 R3 R17 20k
-  ( 1 N-000035 )
-  ( 2 /Imot2+ )
+ ( /4D4B3E67 $noname  R21 10k {Lib=R}
+  (    1 /Imot2 )
+  (    2 N-000035 )
  )
- ( /4D4B3E41 R3 R18 20k
-  ( 1 N-000038 )
-  ( 2 /Umot1- )
+ ( /4D4B3E66 $noname  R19 20k {Lib=R}
+  (    1 N-000035 )
+  (    2 /Imot2- )
  )
- ( /4D4B3E66 R3 R19 20k
-  ( 1 N-000045 )
-  ( 2 /Imot2- )
+ ( /4D4B3E65 $noname  R17 20k {Lib=R}
+  (    1 N-000033 )
+  (    2 /Imot2+ )
  )
- ( /4D4B3E40 R3 R20 10k
-  ( 1 /Umot1 )
-  ( 2 N-000038 )
+ ( /4D4B3E64 $noname  R15 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000033 )
  )
- ( /4D4B3E67 R3 R21 10k
-  ( 1 /Imot2 )
-  ( 2 N-000045 )
+ ( /4D4B3E63 $noname  R23 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000034 )
  )
- ( /4D4B3E54 R3 R22 10k
-  ( 1 GND )
-  ( 2 N-000042 )
+ ( /4D4B3E62 $noname  R26 20k {Lib=R}
+  (    1 N-000034 )
+  (    2 /Isc1+ )
  )
- ( /4D4B3E63 R3 R23 10k
-  ( 1 GND )
-  ( 2 N-000034 )
+ ( /4D4B3E61 $noname  R29 20k {Lib=R}
+  (    1 N-000045 )
+  (    2 /Isc1- )
  )
- ( /4D4B3E7C R3 R24 10k
-  ( 1 GND )
-  ( 2 N-000008 )
+ ( /4D4B3E60 $noname  R32 10k {Lib=R}
+  (    1 /Isc1 )
+  (    2 N-000045 )
  )
- ( /4D4B3E55 R3 R25 20k
-  ( 1 N-000042 )
-  ( 2 /Umot2+ )
+ ( /4D4B3E57 $noname  R31 10k {Lib=R}
+  (    1 /Umot2 )
+  (    2 N-000037 )
  )
- ( /4D4B3E62 R3 R26 20k
-  ( 1 N-000034 )
-  ( 2 /Isc1+ )
+ ( /4D4B3E56 $noname  R28 20k {Lib=R}
+  (    1 N-000037 )
+  (    2 /Umot2- )
  )
- ( /4D4B3E7B R3 R27 20k
-  ( 1 N-000008 )
-  ( 2 /Isc2+ )
+ ( /4D4B3E55 $noname  R25 20k {Lib=R}
+  (    1 N-000038 )
+  (    2 /Umot2+ )
  )
- ( /4D4B3E56 R3 R28 20k
-  ( 1 N-000044 )
-  ( 2 /Umot2- )
+ ( /4D4B3E54 $noname  R22 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000038 )
  )
- ( /4D4B3E61 R3 R29 20k
-  ( 1 N-000033 )
-  ( 2 /Isc1- )
+ ( /4D4B3E43 $noname  R14 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000039 )
  )
- ( /4D4B3E7A R3 R30 20k
-  ( 1 N-000005 )
-  ( 2 /Isc2- )
+ ( /4D4B3E42 $noname  R16 20k {Lib=R}
+  (    1 N-000039 )
+  (    2 /Umot1+ )
  )
- ( /4D4B3E57 R3 R31 10k
-  ( 1 /Umot2 )
-  ( 2 N-000044 )
+ ( /4D4B3E41 $noname  R18 20k {Lib=R}
+  (    1 N-000044 )
+  (    2 /Umot1- )
  )
- ( /4D4B3E60 R3 R32 10k
-  ( 1 /Isc1 )
-  ( 2 N-000033 )
+ ( /4D4B3E40 $noname  R20 10k {Lib=R}
+  (    1 /Umot1 )
+  (    2 N-000044 )
  )
- ( /4D4B3E79 R3 R33 10k
-  ( 1 /Isc2 )
-  ( 2 N-000005 )
+ ( /4D4ADCB6 $noname  R4 10k {Lib=R}
+  (    1 /Usc )
+  (    2 N-000020 )
  )
- ( /4D870EC2 R3 R34 10k
-  ( 1 N-000048 )
-  ( 2 GND )
+ ( /4D4ADC7F $noname  R6 20k {Lib=R}
+  (    1 N-000020 )
+  (    2 /Usc- )
  )
- ( /4D870EF6 R3 R35 10k
-  ( 1 /T_klaric )
-  ( 2 N-000048 )
+ ( /4D4ADC7C $noname  R5 20k {Lib=R}
+  (    1 N-000028 )
+  (    2 /Usc+ )
  )
- ( /4D870BF3 DIP-14__300_ELL U3 LM358
-  ( 1 /Usc )
-  ( 2 N-000047 )
-  ( 3 N-000031 )
-  ( 4 +12V )
-  ( 5 N-000041 )
-  ( 6 N-000038 )
-  ( 7 /Umot1 )
-  ( 8 /Umot2 )
-  ( 9 N-000044 )
-  ( 10 N-000042 )
-  ( 11 -12V )
-  ( 12 /T_klaric_MAB )
-  ( 13 N-000048 )
-  ( 14 /T_klaric )
+ ( /4D4ADC79 $noname  R7 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000028 )
  )
- ( /4D4B3E78 DIP-14__300_ELL U4 LM358
-  ( 1 /Imot1 )
-  ( 2 N-000015 )
-  ( 3 N-000001 )
-  ( 4 +12V )
-  ( 5 N-000035 )
-  ( 6 N-000045 )
-  ( 7 /Imot2 )
-  ( 8 /Isc1 )
-  ( 9 N-000033 )
-  ( 10 N-000034 )
-  ( 11 -12V )
-  ( 12 N-000008 )
-  ( 13 N-000005 )
-  ( 14 /Isc2 )
+ ( /4D4ACFF7 $noname  D2 JAUNE {Lib=LED}
+  (    1 GND )
+  (    2 N-000031 )
  )
- ( /4D81CCF5 TRACO_8W_12V_DUAL U6 TRACO_8W_12V_DUAL
-  ( 1 ? )
-  ( 2 GND )
-  ( 3 GND )
-  ( 9 GND )
-  ( 11 +12V )
-  ( 14 -12V )
-  ( 16 GND )
-  ( 22 +12V )
-  ( 23 +12V )
+ ( /4D4ACFF5 $noname  R2 1k {Lib=R}
+  (    1 -12V )
+  (    2 N-000031 )
+ )
+ ( /4D4823B1 $noname  R1 1k {Lib=R}
+  (    1 +12V )
+  (    2 N-000025 )
+ )
+ ( /4D4822C9 $noname  D1 JAUNE {Lib=LED}
+  (    1 N-000025 )
+  (    2 GND )
  )
 )
 *
+{ Allowed footprints by component:
+$component R35
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R34
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C15
+ CP*
+ SM*
+$endlist
+$component C16
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C12
+ CP*
+ SM*
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component R24
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R27
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R30
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R33
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R26
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R29
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R32
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R31
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R28
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 5 "" ""
+ U4 12
+ R24 2
+ R27 1
+Net 6 "/Isc2" "Isc2"
+ R33 1
+ U4 14
+ P14 1
+Net 7 "-12V" "-12V"
+ U4 11
+ R2 1
+ U4 11
+ U3 11
+ U3 11
+ U3 11
+ U6 14
+ C11 2
+ U3 11
+ U4 11
+ C9 2
+ C12 2
+ U4 11
+ C10 2
+Net 8 "/Isc2+" "Isc2+"
+ P10 3
+ R27 2
+Net 9 "/Isc2-" "Isc2-"
+ P10 4
+ R30 2
+Net 10 "GND" "GND"
+ P15 2
+ R34 2
+ D1 2
+ R7 1
+ D2 1
+ R15 1
+ R23 1
+ R22 1
+ R14 1
+ P23 1
+ P23 2
+ P23 3
+ P23 4
+ P23 5
+ P23 6
+ P23 7
+ P23 8
+ P19 2
+ P18 2
+ P17 2
+ U6 16
+ U6 9
+ U6 3
+ U6 2
+ P12 2
+ P11 8
+ P11 7
+ P16 2
+ P14 2
+ R10 1
+ R24 1
+ P13 2
+ C15 2
+ C16 1
+ P21 2
+Net 11 "" ""
+ R10 2
+ R11 1
+ U4 3
+Net 12 "/Imot1+" "Imot1+"
+ P10 5
+ R11 2
+Net 13 "/Imot1-" "Imot1-"
+ R12 2
+ P10 6
+Net 14 "/Imot1" "Imot1"
+ P15 1
+ U4 1
+ R13 1
+Net 16 "/Imot2" "Imot2"
+ P16 1
+ R21 1
+ U4 7
+Net 17 "/Isc1" "Isc1"
+ P13 1
+ U4 8
+ R32 1
+Net 18 "/T_klaric_MAB" "T_klaric_MAB"
+ U3 12
+ P21 1
+Net 19 "/Usc" "Usc"
+ P17 1
+ U3 1
+ R4 1
+Net 20 "" ""
+ U3 2
+ R6 1
+ R4 2
+Net 21 "/Umot1" "Umot1"
+ P18 1
+ R20 1
+ U3 7
+Net 22 "/Umot1-" "Umot1-"
+ P11 4
+ R18 2
+Net 23 "/Umot2+" "Umot2+"
+ P11 5
+ R25 2
+Net 24 "/Isc1-" "Isc1-"
+ P10 2
+ R29 2
+Net 25 "" ""
+ R1 2
+ D1 1
+Net 26 "/Usc-" "Usc-"
+ R6 2
+ P11 2
+Net 27 "/Usc+" "Usc+"
+ R5 2
+ P11 1
+Net 28 "" ""
+ R5 1
+ U3 3
+ R7 2
+Net 29 "/Isc1+" "Isc1+"
+ R26 2
+ P10 1
+Net 30 "/Umot2-" "Umot2-"
+ P11 6
+ R28 2
+Net 31 "" ""
+ D2 2
+ R2 2
+Net 32 "/Imot2+" "Imot2+"
+ P10 7
+ R17 2
+Net 33 "" ""
+ R15 2
+ U4 5
+ R17 1
+Net 34 "" ""
+ R23 2
+ R26 1
+ U4 10
+Net 35 "" ""
+ R19 1
+ R21 2
+ U4 6
+Net 36 "/Imot2-" "Imot2-"
+ P10 8
+ R19 2
+Net 37 "" ""
+ U3 9
+ R31 2
+ R28 1
+Net 38 "" ""
+ R22 2
+ R25 1
+ U3 10
+Net 39 "" ""
+ R14 2
+ R16 1
+ U3 5
+Net 40 "/Umot1+" "Umot1+"
+ R16 2
+ P11 3
+Net 41 "/Umot2" "Umot2"
+ U3 8
+ R31 1
+ P19 1
+Net 42 "" ""
+ U4 13
+ R33 2
+ R30 1
+Net 43 "" ""
+ R12 1
+ U4 2
+ R13 2
+Net 44 "" ""
+ R20 2
+ U3 6
+ R18 1
+Net 45 "" ""
+ R29 1
+ R32 2
+ U4 9
+Net 46 "+12C" "+12C"
+ P22 5
+ P22 6
+ P22 7
+ P22 8
+ P22 4
+ P22 3
+ U6 23
+ U6 22
+ P12 1
+ C16 2
+ C15 1
+ P22 2
+ P22 1
+Net 47 "/T_klaric" "T_klaric"
+ U3 14
+ R35 1
+Net 48 "" ""
+ R35 2
+ R34 1
+ U3 13
+Net 49 "+12V" "+12V"
+ C10 1
+ U3 4
+ U3 4
+ U4 4
+ U6 11
+ C11 1
+ U3 4
+ C9 1
+ U4 4
+ U3 4
+ U4 4
+ U4 4
+ R1 1
+ C12 1
+}
+#End
