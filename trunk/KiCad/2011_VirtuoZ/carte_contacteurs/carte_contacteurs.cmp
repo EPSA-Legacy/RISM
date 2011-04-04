@@ -1,32 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-03-14)-final date = ven. 04 mars 2011 17:00:52 CET
-
-BeginCmp
-TimeStamp = /4D7107A4;
-Reference = P1;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D710890;
-Reference = P2;
-ValeurCmp = cmd_contact;
-IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D7107E1;
-Reference = P3;
-ValeurCmp = Contacteurs;
-IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D710C5F;
-Reference = P4;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 04/04/2011 14:39:33
 
 BeginCmp
 TimeStamp = /4D710C67;
@@ -50,6 +22,27 @@ IdModule  = 1pin;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D7116A0;
+Reference = P8;
+ValeurCmp = CONN_4;
+IdModule  = KK_4C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D99B720;
+Reference = P9;
+ValeurCmp = CONN_2;
+IdModule  = KK_2C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D99B846;
+Reference = P10;
+ValeurCmp = CONN_4;
+IdModule  = KK_4C;
+EndCmp
+
+BeginCmp
 TimeStamp = /4D71073F;
 Reference = U1;
 ValeurCmp = REED9081_SYMBIOZ;
@@ -61,6 +54,20 @@ TimeStamp = /4D71074E;
 Reference = U2;
 ValeurCmp = REED9081_SYMBIOZ;
 IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D711761;
+Reference = U3;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D99B988;
+Reference = U4;
+ValeurCmp = 4011;
+IdModule  = DIP-14__300_ELL;
 EndCmp
 
 EndListe
