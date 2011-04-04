@@ -1,110 +1,169 @@
-# EESchema Netlist Version 1.1 created  04/04/2011 15:10:33
+# EESchema Netlist Version 1.1 created  05/04/2011 00:04:48
 (
- ( /4D99B988 $noname  U4 4011 {Lib=4011}
-  (    1 /cmd_precharge )
-  (    2 /cmd_precharge )
-  (    3 N-000005 )
-  (    4 N-000004 )
-  (    5 N-000005 )
-  (    6 /cmd_contacteur+ )
-  (    7 GND )
-  (    8 N-000004 )
-  (    9 N-000004 )
-  (   10 /etat_contacteur+ )
-  (   14 VDD )
- )
- ( /4D99B846 $noname  P10 CONN_4 {Lib=CONN_4}
-  (    1 ? )
-  (    2 /precharge )
-  (    3 /contacteur- )
+ ( /4D9A32D3 $noname  U1 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
+  (    1 +12P )
+  (    2 /cmd_secu_cont+ )
+  (    3 GND )
   (    4 /contacteur+ )
  )
- ( /4D99B720 $noname  P9 CONN_2 {Lib=CONN_2}
-  (    1 VDD )
-  (    2 GND )
- )
- ( /4D711761 $noname  U3 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 VDD )
-  (    2 /cmd_precharge )
-  (    3 GND )
-  (    4 /precharge )
- )
- ( /4D7116A0 $noname  P8 CONN_4 {Lib=CONN_4}
-  (    1 /cmd_contacteur+ )
-  (    2 GND )
-  (    3 /cmd_contacteur- )
-  (    4 /cmd_precharge )
- )
- ( /4D710C6A $noname  P7 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D710C68 $noname  P6 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D710C67 $noname  P5 CONN_1 {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D71074E $noname  U2 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 VDD )
+ ( /4D9A32CB $noname  U3 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
+  (    1 +12P )
   (    2 /cmd_contacteur- )
   (    3 GND )
   (    4 /contacteur- )
  )
- ( /4D71073F $noname  U1 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 VDD )
-  (    2 /etat_contacteur+ )
-  (    3 GND )
+ ( /4D9A31A2 $noname  C3 1u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D9A319F $noname  C1 10u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D9A319C $noname  C2 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D9A3183 $noname  C4 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4D9A2FB9 $noname  U2 LM7805 {Lib=LM7805}
+  (  GND GND )
+  (   VI +12V )
+  (   VO VCC )
+ )
+ ( /4D9A28D3 $noname  MECA4 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D99B988 $noname  U5 4011 {Lib=4011}
+  (    1 /cmd_precharge )
+  (    2 /cmd_precharge )
+  (    3 N-000010 )
+  (    4 N-000015 )
+  (    5 N-000010 )
+  (    6 /cmd_contacteur+ )
+  (    7 GND )
+  (    8 N-000015 )
+  (    9 N-000015 )
+  (   10 /cmd_secu_cont+ )
+  (   14 VCC )
+ )
+ ( /4D99B846 $noname  P3 CONTACT. {Lib=CONN_4}
+  (    1 +12P )
+  (    2 /precharge )
+  (    3 /contacteur- )
   (    4 /contacteur+ )
+ )
+ ( /4D99B720 $noname  P2 ALIM {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4D711761 $noname  U4 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
+  (    1 +12P )
+  (    2 /cmd_precharge )
+  (    3 GND )
+  (    4 /precharge )
+ )
+ ( /4D7116A0 $noname  P1 INTERFACE {Lib=CONN_4}
+  (    1 /cmd_contacteur+ )
+  (    2 /cmd_contacteur- )
+  (    3 /cmd_precharge )
+  (    4 GND )
+ )
+ ( /4D710C6A $noname  MECA3 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D710C68 $noname  MECA2 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D710C67 $noname  MECA1 MECA {Lib=CONN_1}
+  (    1 ? )
  )
 )
 *
+{ Allowed footprints by component:
+$component C3
+ CP*
+ SM*
+$endlist
+$component C1
+ CP*
+ SM*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$endfootprintlist
+}
 { Pin List by Nets
 Net 1 "GND" "GND"
- P8 2
+ C2 2
+ C4 2
+ U2 GND
+ U4 3
+ P1 4
+ P2 2
+ U5 7
+ U5 7
+ U5 7
  U3 3
  U1 3
- U2 3
- U4 7
- P9 2
- U4 7
- U4 7
-Net 2 "/cmd_precharge" "cmd_precharge"
+ C3 2
+ C1 2
+Net 2 "VCC" "VCC"
+ U5 14
+ C3 1
+ C1 1
+ U5 14
+ C2 1
+ C4 1
+ U5 14
+ U2 VO
+Net 4 "/cmd_contacteur-" "cmd_contacteur-"
  U3 2
+ P1 2
+Net 5 "/cmd_precharge" "cmd_precharge"
+ U5 1
+ U5 2
  U4 2
- U4 1
- P8 4
-Net 3 "VDD" "VDD"
- U4 14
- U4 14
- P9 1
- U3 1
- U4 14
- U1 1
- U2 1
-Net 4 "" ""
+ P1 3
+Net 9 "/cmd_contacteur+" "cmd_contacteur+"
+ U5 6
+ P1 1
+Net 10 "" ""
+ U5 3
+ U5 5
+Net 11 "/precharge" "precharge"
+ P3 2
  U4 4
- U4 8
- U4 9
-Net 5 "" ""
- U4 5
- U4 3
-Net 7 "/contacteur-" "contacteur-"
- U2 4
- P10 3
-Net 8 "/contacteur+" "contacteur+"
- U1 4
- P10 4
-Net 9 "/cmd_contacteur-" "cmd_contacteur-"
- P8 3
- U2 2
-Net 10 "/precharge" "precharge"
- P10 2
+Net 12 "/contacteur-" "contacteur-"
  U3 4
-Net 14 "/etat_contacteur+" "etat_contacteur+"
+ P3 3
+Net 13 "/contacteur+" "contacteur+"
+ P3 4
+ U1 4
+Net 14 "/cmd_secu_cont+" "cmd_secu_cont+"
  U1 2
- U4 10
-Net 15 "/cmd_contacteur+" "cmd_contacteur+"
- P8 1
- U4 6
+ U5 10
+Net 15 "" ""
+ U5 9
+ U5 4
+ U5 8
+Net 16 "+12V" "+12V"
+ P2 1
+ U2 VI
+Net 17 "+12P" "+12P"
+ P3 1
+ U4 1
+ U3 1
+ U1 1
 }
 #End
