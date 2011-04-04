@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  25/03/2011 21:09:19
+PCBNEW-LibDoc----V1  04/04/2011 23:26:19
 #
 $MODULE KK_2
 Li KK_2
@@ -34,6 +34,12 @@ $MODULE KK_4C
 Li KK_4C
 Cd Connecteurs 2 pins
 Kw CONN DEV
+$EndMODULE
+#
+$MODULE MECA_5mm
+Li MECA_5mm
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
 $EndMODULE
 #
 $EndLIBDOC
