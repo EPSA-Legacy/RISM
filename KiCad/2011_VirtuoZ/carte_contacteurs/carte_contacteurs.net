@@ -1,5 +1,40 @@
-# EESchema Netlist Version 1.1 created  ven. 04 mars 2011 17:05:00 CET
+# EESchema Netlist Version 1.1 created  04/04/2011 15:10:33
 (
+ ( /4D99B988 $noname  U4 4011 {Lib=4011}
+  (    1 /cmd_precharge )
+  (    2 /cmd_precharge )
+  (    3 N-000005 )
+  (    4 N-000004 )
+  (    5 N-000005 )
+  (    6 /cmd_contacteur+ )
+  (    7 GND )
+  (    8 N-000004 )
+  (    9 N-000004 )
+  (   10 /etat_contacteur+ )
+  (   14 VDD )
+ )
+ ( /4D99B846 $noname  P10 CONN_4 {Lib=CONN_4}
+  (    1 ? )
+  (    2 /precharge )
+  (    3 /contacteur- )
+  (    4 /contacteur+ )
+ )
+ ( /4D99B720 $noname  P9 CONN_2 {Lib=CONN_2}
+  (    1 VDD )
+  (    2 GND )
+ )
+ ( /4D711761 $noname  U3 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
+  (    1 VDD )
+  (    2 /cmd_precharge )
+  (    3 GND )
+  (    4 /precharge )
+ )
+ ( /4D7116A0 $noname  P8 CONN_4 {Lib=CONN_4}
+  (    1 /cmd_contacteur+ )
+  (    2 GND )
+  (    3 /cmd_contacteur- )
+  (    4 /cmd_precharge )
+ )
  ( /4D710C6A $noname  P7 CONN_1 {Lib=CONN_1}
   (    1 ? )
  )
@@ -9,49 +44,67 @@
  ( /4D710C67 $noname  P5 CONN_1 {Lib=CONN_1}
   (    1 ? )
  )
- ( /4D710890 $noname  P2 cmd_contact {Lib=CONN_2}
-  (    1 GND )
-  (    2 /cmd_contacteur )
- )
- ( /4D7107E1 $noname  P3 Contacteurs {Lib=CONN_2}
-  (    1 /contacteur_2 )
-  (    2 /contacteur_1 )
- )
- ( /4D7107A4 $noname  P1 CONN_1 {Lib=CONN_1}
-  (    1 /Alim_contacteurs )
- )
  ( /4D71074E $noname  U2 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 /Alim_contacteurs )
-  (    2 /cmd_contacteur )
+  (    1 VDD )
+  (    2 /cmd_contacteur- )
   (    3 GND )
-  (    4 /contacteur_2 )
+  (    4 /contacteur- )
  )
  ( /4D71073F $noname  U1 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 /Alim_contacteurs )
-  (    2 /cmd_contacteur )
+  (    1 VDD )
+  (    2 /etat_contacteur+ )
   (    3 GND )
-  (    4 /contacteur_1 )
+  (    4 /contacteur+ )
  )
 )
 *
 { Pin List by Nets
-Net 4 "GND" "GND"
- P2 1
+Net 1 "GND" "GND"
+ P8 2
+ U3 3
  U1 3
  U2 3
-Net 5 "/cmd_contacteur" "cmd_contacteur"
- P2 2
- U2 2
- U1 2
-Net 6 "/contacteur_2" "contacteur_2"
- P3 1
- U2 4
-Net 7 "/contacteur_1" "contacteur_1"
- P3 2
- U1 4
-Net 8 "/Alim contacteurs" "Alim contacteurs"
+ U4 7
+ P9 2
+ U4 7
+ U4 7
+Net 2 "/cmd_precharge" "cmd_precharge"
+ U3 2
+ U4 2
+ U4 1
+ P8 4
+Net 3 "VDD" "VDD"
+ U4 14
+ U4 14
+ P9 1
+ U3 1
+ U4 14
  U1 1
  U2 1
- P1 1
+Net 4 "" ""
+ U4 4
+ U4 8
+ U4 9
+Net 5 "" ""
+ U4 5
+ U4 3
+Net 7 "/contacteur-" "contacteur-"
+ U2 4
+ P10 3
+Net 8 "/contacteur+" "contacteur+"
+ U1 4
+ P10 4
+Net 9 "/cmd_contacteur-" "cmd_contacteur-"
+ P8 3
+ U2 2
+Net 10 "/precharge" "precharge"
+ P10 2
+ U3 4
+Net 14 "/etat_contacteur+" "etat_contacteur+"
+ U1 2
+ U4 10
+Net 15 "/cmd_contacteur+" "cmd_contacteur+"
+ P8 1
+ U4 6
 }
 #End

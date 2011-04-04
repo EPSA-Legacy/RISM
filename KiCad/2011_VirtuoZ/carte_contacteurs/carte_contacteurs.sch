@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 17/03/2011 18:39:53
+EESchema Schematic File Version 2  date 04/04/2011 15:15:47
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "17 mar 2011"
+Date "4 apr 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,13 +45,25 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	4250 5100 4400 5100
+	6500 5200 6500 5300
 Wire Wire Line
-	4250 5200 4250 5100
+	5200 4800 5200 4700
 Wire Wire Line
-	2600 5200 4250 5200
+	3800 5100 3800 5200
+Wire Notes Line
+	2300 5650 2300 4150
+Wire Notes Line
+	2300 5650 8350 5650
+Wire Notes Line
+	8350 5650 8350 4150
+Wire Notes Line
+	8350 4150 2300 4150
 Wire Wire Line
-	4300 4900 4400 4900
+	6100 5000 6000 5000
+Wire Wire Line
+	4600 4900 4800 4900
+Wire Wire Line
+	1900 1950 1750 1950
 Wire Bus Line
 	2650 3100 2650 3900
 Wire Bus Line
@@ -78,7 +90,7 @@ Wire Bus Line
 Wire Wire Line
 	6650 3100 7250 3100
 Wire Wire Line
-	6650 2000 7250 2000
+	6650 1900 7250 1900
 Wire Wire Line
 	6650 1800 7500 1800
 Wire Wire Line
@@ -86,9 +98,7 @@ Wire Wire Line
 Wire Wire Line
 	3750 1950 3050 1950
 Wire Wire Line
-	3750 1650 3250 1650
-Wire Wire Line
-	3250 1650 3050 1650
+	3050 1650 3750 1650
 Wire Wire Line
 	3250 1650 3250 2450
 Wire Wire Line
@@ -121,9 +131,7 @@ Wire Wire Line
 Wire Wire Line
 	3100 2650 3100 2450
 Wire Wire Line
-	3100 2450 3050 2450
-Wire Wire Line
-	3050 2450 2800 2450
+	3100 2450 2800 2450
 Wire Notes Line
 	8700 2250 8700 1400
 Wire Notes Line
@@ -133,7 +141,7 @@ Wire Notes Line
 Wire Notes Line
 	9450 1400 8700 1400
 Wire Wire Line
-	6650 1900 7500 1900
+	6650 2000 7500 2000
 Wire Wire Line
 	6650 3200 7250 3200
 Wire Wire Line
@@ -141,48 +149,186 @@ Wire Wire Line
 Wire Wire Line
 	3750 3450 3500 3450
 Wire Wire Line
-	5600 5000 6550 5000
-Wire Bus Line
-	6750 4250 2300 4250
-Wire Bus Line
-	6750 4250 6750 5550
-Wire Bus Line
-	6750 5550 2300 5550
-Wire Bus Line
-	2300 5550 2300 4250
+	7300 5000 8250 5000
 Wire Wire Line
-	2600 4900 3400 4900
+	3400 4900 2600 4900
+Wire Wire Line
+	4400 5450 4400 5100
+Wire Wire Line
+	4400 5450 2600 5450
+Wire Wire Line
+	1750 2150 1900 2150
+Wire Notes Line
+	1150 2350 1150 1700
+Wire Notes Line
+	1150 2350 2250 2350
+Wire Notes Line
+	2250 2350 2250 1700
+Wire Notes Line
+	2250 1700 1150 1700
+Wire Wire Line
+	3400 5000 3400 4800
+Connection ~ 3400 4900
+Wire Wire Line
+	4400 5100 4800 5100
+Wire Wire Line
+	6100 5100 6100 4900
+Connection ~ 6100 5000
+Wire Wire Line
+	3800 4600 3800 4700
+Wire Wire Line
+	5200 5300 5200 5200
+Wire Wire Line
+	6500 4700 6500 4800
+$Comp
+L GND #PWR01
+U 1 1 4D99B9FD
+P 3800 5200
+F 0 "#PWR01" H 3800 5200 30  0001 C CNN
+F 1 "GND" H 3800 5130 30  0001 C CNN
+	1    3800 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 4D99B9FB
+P 5200 5300
+F 0 "#PWR02" H 5200 5300 30  0001 C CNN
+F 1 "GND" H 5200 5230 30  0001 C CNN
+	1    5200 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR03
+U 1 1 4D99B9EC
+P 3800 4600
+F 0 "#PWR03" H 3800 4700 30  0001 C CNN
+F 1 "VCC" H 3800 4700 30  0000 C CNN
+	1    3800 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR04
+U 1 1 4D99B9E9
+P 5200 4700
+F 0 "#PWR04" H 5200 4800 30  0001 C CNN
+F 1 "VCC" H 5200 4800 30  0000 C CNN
+	1    5200 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 4D99B9DD
+P 6500 5300
+F 0 "#PWR05" H 6500 5300 30  0001 C CNN
+F 1 "GND" H 6500 5230 30  0001 C CNN
+	1    6500 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR06
+U 1 1 4D99B9D8
+P 6500 4700
+F 0 "#PWR06" H 6500 4800 30  0001 C CNN
+F 1 "VCC" H 6500 4800 30  0000 C CNN
+	1    6500 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4011 U4
+U 3 1 4D99B988
+P 6700 5000
+F 0 "U4" H 6700 5050 60  0000 C CNN
+F 1 "4011" H 6700 4950 60  0000 C CNN
+	3    6700 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4011 U4
+U 2 1 4D99B972
+P 5400 5000
+F 0 "U4" H 5400 5050 60  0000 C CNN
+F 1 "4011" H 5400 4950 60  0000 C CNN
+	2    5400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4011 U4
+U 1 1 4D99B92B
+P 4000 4900
+F 0 "U4" H 4000 4950 60  0000 C CNN
+F 1 "4011" H 4000 4850 60  0000 C CNN
+	1    4000 4900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6650 3300
+$Comp
+L CONN_4 P10
+U 1 1 4D99B846
+P 6300 3150
+F 0 "P10" V 6250 3150 50  0000 C CNN
+F 1 "CONN_4" V 6350 3150 50  0000 C CNN
+	1    6300 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 4D99B745
+P 1900 1950
+F 0 "#PWR07" H 1900 1950 30  0001 C CNN
+F 1 "GND" H 1900 1880 30  0001 C CNN
+	1    1900 1950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L VCC #PWR08
+U 1 1 4D99B73F
+P 1900 2150
+F 0 "#PWR08" H 1900 2250 30  0001 C CNN
+F 1 "VCC" H 1900 2250 30  0000 C CNN
+	1    1900 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_2 P9
+U 1 1 4D99B720
+P 1400 2050
+F 0 "P9" V 1350 2050 40  0000 C CNN
+F 1 "CONN_2" V 1450 2050 40  0000 C CNN
+	1    1400 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L PWR_FLAG #FLG09
+U 1 1 4D99B6DE
+P 3250 1650
+F 0 "#FLG09" H 3250 1920 30  0001 C CNN
+F 1 "PWR_FLAG" H 3250 1880 30  0000 C CNN
+	1    3250 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR010
+U 1 1 4D99B676
+P 3050 1650
+F 0 "#PWR010" H 3050 1750 30  0001 C CNN
+F 1 "VCC" H 3050 1750 30  0000 C CNN
+	1    3050 1650
+	0    -1   -1   0   
+$EndComp
 Text Notes 2350 4350 0    60   ~ 0
 Circuit Logique Etat contacteur +\n
-Text Label 6550 5000 2    60   ~ 0
+Text Label 8250 5000 2    60   ~ 0
 etat_contacteur+
-Text Label 2600 5200 0    60   ~ 0
+Text Label 2600 5450 0    60   ~ 0
 cmd_contacteur+
 Text Label 2600 4900 0    60   ~ 0
 cmd_precharge
 $Comp
-L 74LS08 U?
-U 1 1 4D711A82
-P 5000 5000
-F 0 "U?" H 5000 5050 60  0000 C CNN
-F 1 "74LS08" H 5000 4950 60  0000 C CNN
-	1    5000 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74LS04 U?
-U 1 1 4D711A74
-P 3850 4900
-F 0 "U?" H 4045 5015 60  0000 C CNN
-F 1 "74LS04" H 4040 4775 60  0000 C CNN
-	1    3850 4900
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
+L GND #PWR011
 U 1 1 4D7117C5
 P 3500 3450
-F 0 "#PWR?" H 3500 3450 30  0001 C CNN
+F 0 "#PWR011" H 3500 3450 30  0001 C CNN
 F 1 "GND" H 3500 3380 30  0001 C CNN
 	1    3500 3450
 	0    1    1    0   
@@ -194,34 +340,25 @@ precharge
 Text Label 2800 3250 0    60   ~ 0
 Alim contacteurs
 $Comp
-L REED9081_SYMBIOZ U?
+L REED9081_SYMBIOZ U3
 U 1 1 4D711761
 P 4150 3400
-F 0 "U?" H 4200 3700 60  0000 C CNN
+F 0 "U3" H 4200 3700 60  0000 C CNN
 F 1 "REED9081_SYMBIOZ" H 4250 3100 60  0000 C CNN
 	1    4150 3400
 	1    0    0    -1  
 $EndComp
 Text Label 7250 3200 2    60   ~ 0
 precharge
-$Comp
-L CONN_3 K?
-U 1 1 4D71171F
-P 6300 3100
-F 0 "K?" V 6250 3100 50  0000 C CNN
-F 1 "CONN_3" V 6350 3100 40  0000 C CNN
-	1    6300 3100
-	-1   0    0    1   
-$EndComp
-Text Label 7500 1900 2    60   ~ 0
-cmd_precharge
 Text Label 7500 1700 2    60   ~ 0
+cmd_precharge
+Text Label 7500 1800 2    60   ~ 0
 cmd_contacteur-
 $Comp
-L CONN_4 P?
+L CONN_4 P8
 U 1 1 4D7116A0
 P 6300 1850
-F 0 "P?" V 6250 1850 50  0000 C CNN
+F 0 "P8" V 6250 1850 50  0000 C CNN
 F 1 "CONN_4" V 6350 1850 50  0000 C CNN
 	1    6300 1850
 	-1   0    0    1   
@@ -259,10 +396,10 @@ F 1 "CONN_1" H 9150 1855 30  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L PWR_FLAG #FLG01
+L PWR_FLAG #FLG012
 U 1 1 4D710A99
 P 3050 2300
-F 0 "#FLG01" H 3050 2570 30  0001 C CNN
+F 0 "#FLG012" H 3050 2570 30  0001 C CNN
 F 1 "PWR_FLAG" H 3050 2530 30  0000 C CNN
 	1    3050 2300
 	1    0    0    -1  
@@ -274,19 +411,19 @@ commande contacteurs
 Text Notes 6000 1450 0    60   ~ 0
 commande relais
 $Comp
-L GND #PWR02
+L GND #PWR013
 U 1 1 4D710936
 P 2800 2450
-F 0 "#PWR02" H 2800 2450 30  0001 C CNN
+F 0 "#PWR013" H 2800 2450 30  0001 C CNN
 F 1 "GND" H 2800 2380 30  0001 C CNN
 	1    2800 2450
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR03
+L GND #PWR014
 U 1 1 4D71091B
 P 3450 1850
-F 0 "#PWR03" H 3450 1850 30  0001 C CNN
+F 0 "#PWR014" H 3450 1850 30  0001 C CNN
 F 1 "GND" H 3450 1780 30  0001 C CNN
 	1    3450 1850
 	0    1    1    0   
@@ -300,15 +437,15 @@ contacteur-
 Text Label 3050 1950 0    60   ~ 0
 contacteur+
 $Comp
-L GND #PWR04
+L GND #PWR015
 U 1 1 4D7108BC
-P 7250 2000
-F 0 "#PWR04" H 7250 2000 30  0001 C CNN
-F 1 "GND" H 7250 1930 30  0001 C CNN
-	1    7250 2000
+P 7250 1900
+F 0 "#PWR015" H 7250 1900 30  0001 C CNN
+F 1 "GND" H 7250 1830 30  0001 C CNN
+	1    7250 1900
 	0    -1   -1   0   
 $EndComp
-Text Label 7500 1800 2    60   ~ 0
+Text Label 7500 2000 2    60   ~ 0
 cmd_contacteur+
 Text Label 3350 2550 0    60   ~ 0
 cmd_contacteur-
@@ -316,15 +453,6 @@ Text Label 3350 1750 0    60   ~ 0
 etat_contacteur+
 Text Label 3100 1650 0    60   ~ 0
 Alim contacteurs
-$Comp
-L CONN_1 P1
-U 1 1 4D7107A4
-P 2900 1650
-F 0 "P1" H 2980 1650 40  0000 L CNN
-F 1 "CONN_1" H 2900 1705 30  0001 C CNN
-	1    2900 1650
-	-1   0    0    1   
-$EndComp
 $Comp
 L REED9081_SYMBIOZ U2
 U 1 1 4D71074E
