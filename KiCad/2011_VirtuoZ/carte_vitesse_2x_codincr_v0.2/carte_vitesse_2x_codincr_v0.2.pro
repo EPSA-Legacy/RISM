@@ -1,13 +1,8 @@
-update=15/03/2011 16:44:38
+update=05/04/2011 11:53:00
 version=1
 last_client=pcbnew
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=..\\..\\Librairies
@@ -75,6 +70,11 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=symbioz
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -94,15 +94,18 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=carte_vitesse_2x_codincr_v0.2.net
 [pcbnew/libraries]
-LibDir=
-LibName1=sockets
-LibName2=connect
-LibName3=discret
-LibName4=pin_array
-LibName5=divers
-LibName6=libcms
-LibName7=display
-LibName8=valves
-LibName9=led
-LibName10=dip_sockets
-LibName11=C:\\EPSA\\Conception 1A\\KiCad\\KiCad\\Modules\\symbioz
+LibDir=..\\..\\Modules
+LibName1=epsa_connect
+LibName2=epsa_relais
+LibName3=symbioz
+LibName4=sockets
+LibName5=connect
+LibName6=discret
+LibName7=pin_array
+LibName8=divers
+LibName9=libcms
+LibName10=display
+LibName11=valves
+LibName12=led
+LibName13=dip_sockets
+LibName14=C:\\EPSA\\Conception 1A\\KiCad\\KiCad\\Modules\\symbioz
