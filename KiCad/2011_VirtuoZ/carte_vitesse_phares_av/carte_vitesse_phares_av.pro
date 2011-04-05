@@ -92,7 +92,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=carte_vitesse_2x_codincr_v0.2.net
+LastNetListRead=carte_vitesse_phares_av.net
 [pcbnew/libraries]
 LibDir=..\\..\\Modules
 LibName1=epsa_connect
