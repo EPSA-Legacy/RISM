@@ -1,6 +1,6 @@
-update=07/04/2011 13:20:57
+update=07/04/2011 17:06:54
 version=1
-last_client=pcbnew
+last_client=cvpcb
 [general]
 version=1
 [eeschema]
@@ -71,11 +71,6 @@ LibName29=opto
 LibName30=atmel
 LibName31=contrib
 LibName32=valves
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -95,7 +90,6 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=carte_tdb_v0.1.net
 [pcbnew/libraries]
-LibDir=..\\..\\Modules
 LibName1=epsa_connect
 LibName2=epsa_relais
 LibName3=symbioz
@@ -109,3 +103,12 @@ LibName10=display
 LibName11=valves
 LibName12=led
 LibName13=dip_sockets
+LibName14=E:/Documents/ECL/EPSA/KiCad/Modules/epsa_connect
+LibName15=E:/Documents/ECL/EPSA/KiCad/Modules/epsa_relais
+LibName16=E:/Documents/ECL/EPSA/KiCad/Modules/symbioz
+LibDir=../../Modules
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
