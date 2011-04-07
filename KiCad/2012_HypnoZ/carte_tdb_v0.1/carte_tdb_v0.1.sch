@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/04/2011 13:21:05
+EESchema Schematic File Version 2  date 07/04/2011 16:33:17
 LIBS:symbioz
 LIBS:epsa_relais
 LIBS:power
@@ -31,10 +31,10 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_tdb_v0.1-cache
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 1 1
 Title "noname.sch"
 Date "7 apr 2011"
@@ -621,7 +621,7 @@ L CONN_2 P17
 U 1 1 4D9D7C12
 P 10950 2600
 F 0 "P17" V 10900 2600 40  0000 C CNN
-F 1 "cmd+" V 11000 2600 40  0000 C CNN
+F 1 "cmd+_out" V 11000 2600 40  0000 C CNN
 	1    10950 2600
 	1    0    0    -1  
 $EndComp
@@ -654,7 +654,7 @@ L CONN_2 P16
 U 1 1 4D9D7AE0
 P 10900 800
 F 0 "P16" V 10850 800 40  0000 C CNN
-F 1 "erreur_3" V 10950 800 40  0000 C CNN
+F 1 "erreur_3_out" V 10950 800 40  0000 C CNN
 	1    10900 800 
 	1    0    0    -1  
 $EndComp
@@ -705,7 +705,7 @@ L CONN_2 P14
 U 1 1 4D9D7AC9
 P 8900 800
 F 0 "P14" V 8850 800 40  0000 C CNN
-F 1 "erreur_1" V 8950 800 40  0000 C CNN
+F 1 "erreur_1_out" V 8950 800 40  0000 C CNN
 	1    8900 800 
 	1    0    0    -1  
 $EndComp
@@ -732,7 +732,7 @@ L CONN_2 P15
 U 1 1 4D9D7AC6
 P 8900 1400
 F 0 "P15" V 8850 1400 40  0000 C CNN
-F 1 "erreur_2" V 8950 1400 40  0000 C CNN
+F 1 "erreur_2_out" V 8950 1400 40  0000 C CNN
 	1    8900 1400
 	1    0    0    -1  
 $EndComp
@@ -766,7 +766,7 @@ L CONN_2 P13
 U 1 1 4D9D7A5B
 P 5900 1050
 F 0 "P13" V 5850 1050 40  0000 C CNN
-F 1 "erreur_analog" V 5950 1050 40  0000 C CNN
+F 1 "erreur_analog_in" V 5950 1050 40  0000 C CNN
 	1    5900 1050
 	-1   0    0    1   
 $EndComp
@@ -779,7 +779,7 @@ L C C3
 U 1 1 4D9D77C3
 P 3400 2500
 F 0 "C3" H 3300 2600 50  0000 L CNN
-F 1 "100n" H 3300 2400 50  0000 L CNN
+F 1 "27p" H 3300 2400 50  0000 L CNN
 	1    3400 2500
 	0    1    1    0   
 $EndComp
@@ -842,7 +842,7 @@ L C C7
 U 1 1 4D9D77BB
 P 7900 3400
 F 0 "C7" H 7800 3500 50  0000 L CNN
-F 1 "100n" H 7800 3300 50  0000 L CNN
+F 1 "27p" H 7800 3300 50  0000 L CNN
 	1    7900 3400
 	0    1    1    0   
 $EndComp
@@ -851,7 +851,7 @@ L C C5
 U 1 1 4D9D77AD
 P 6650 3400
 F 0 "C5" H 6550 3500 50  0000 L CNN
-F 1 "100n" H 6550 3300 50  0000 L CNN
+F 1 "27p" H 6550 3300 50  0000 L CNN
 	1    6650 3400
 	0    1    1    0   
 $EndComp
@@ -1073,7 +1073,7 @@ L CONN_8 P12
 U 1 1 4D9D6BFF
 P 4250 3000
 F 0 "P12" V 4200 3000 60  0000 C CNN
-F 1 "commutateur 6pos" V 4300 3000 60  0000 C CNN
+F 1 "commutateur_6_pos_in" V 4300 3000 60  0000 C CNN
 	1    4250 3000
 	-1   0    0    1   
 $EndComp
@@ -1144,7 +1144,7 @@ L CONN_2 P11
 U 1 1 4D9D652C
 P 6250 6800
 F 0 "P11" V 6200 6800 40  0000 C CNN
-F 1 "pleins_feux" V 6300 6800 40  0000 C CNN
+F 1 "pleins_feux_out" V 6300 6800 40  0000 C CNN
 	1    6250 6800
 	1    0    0    -1  
 $EndComp
@@ -1171,7 +1171,7 @@ L CONN_2 P10
 U 1 1 4D9D6529
 P 6250 6200
 F 0 "P10" V 6200 6200 40  0000 C CNN
-F 1 "codes" V 6300 6200 40  0000 C CNN
+F 1 "codes_out" V 6300 6200 40  0000 C CNN
 	1    6250 6200
 	1    0    0    -1  
 $EndComp
@@ -1368,7 +1368,7 @@ L C C1
 U 1 1 4D9D6245
 P 5700 4450
 F 0 "C1" H 5600 4550 50  0000 L CNN
-F 1 "100n" H 5600 4350 50  0000 L CNN
+F 1 "27p" H 5600 4350 50  0000 L CNN
 	1    5700 4450
 	0    1    1    0   
 $EndComp
@@ -1412,7 +1412,7 @@ L CONN_2 P7
 U 1 1 4D9D6027
 P 4300 6350
 F 0 "P7" V 4250 6350 40  0000 C CNN
-F 1 "clign_g" V 4350 6350 40  0000 C CNN
+F 1 "clign_g_out" V 4350 6350 40  0000 C CNN
 	1    4300 6350
 	1    0    0    -1  
 $EndComp
@@ -1439,7 +1439,7 @@ L CONN_2 P8
 U 1 1 4D9D5F4E
 P 4300 6950
 F 0 "P8" V 4250 6950 40  0000 C CNN
-F 1 "clign_d" V 4350 6950 40  0000 C CNN
+F 1 "clign_d_out" V 4350 6950 40  0000 C CNN
 	1    4300 6950
 	1    0    0    -1  
 $EndComp
@@ -1488,7 +1488,7 @@ L CONN_2 P2
 U 1 1 4D9D5D00
 P 1000 7100
 F 0 "P2" V 950 7100 40  0000 C CNN
-F 1 "warning" V 1050 7100 40  0000 C CNN
+F 1 "warning_in" V 1050 7100 40  0000 C CNN
 	1    1000 7100
 	-1   0    0    1   
 $EndComp
@@ -1538,7 +1538,7 @@ L CONN_4 P1
 U 1 1 4D9D5BED
 P 1000 6400
 F 0 "P1" V 950 6400 50  0000 C CNN
-F 1 "clign" V 1050 6400 50  0000 C CNN
+F 1 "clign_in" V 1050 6400 50  0000 C CNN
 	1    1000 6400
 	-1   0    0    1   
 $EndComp
@@ -1553,7 +1553,7 @@ L CONN_2 P5
 U 1 1 4D9D5AD2
 P 1050 4750
 F 0 "P5" V 1000 4750 40  0000 C CNN
-F 1 "boost_analog" V 1100 4750 40  0000 C CNN
+F 1 "boost_analog_out" V 1100 4750 40  0000 C CNN
 	1    1050 4750
 	-1   0    0    -1  
 $EndComp
@@ -1562,7 +1562,7 @@ L CONN_2 P6
 U 1 1 4D9D5AD1
 P 1050 5200
 F 0 "P6" V 1000 5200 40  0000 C CNN
-F 1 "boost_input" V 1100 5200 40  0000 C CNN
+F 1 "boost_in" V 1100 5200 40  0000 C CNN
 	1    1050 5200
 	-1   0    0    -1  
 $EndComp
@@ -1665,7 +1665,7 @@ L CONN_2 P4
 U 1 1 4D9C8F0F
 P 1050 3400
 F 0 "P4" V 1000 3400 40  0000 C CNN
-F 1 "brake_input" V 1100 3400 40  0000 C CNN
+F 1 "brake_in" V 1100 3400 40  0000 C CNN
 	1    1050 3400
 	-1   0    0    -1  
 $EndComp
@@ -1674,7 +1674,7 @@ L CONN_2 P3
 U 1 1 4D9C8F0C
 P 1050 2950
 F 0 "P3" V 1000 2950 40  0000 C CNN
-F 1 "brake_analog" V 1100 2950 40  0000 C CNN
+F 1 "brake_analog_out" V 1100 2950 40  0000 C CNN
 	1    1050 2950
 	-1   0    0    -1  
 $EndComp
