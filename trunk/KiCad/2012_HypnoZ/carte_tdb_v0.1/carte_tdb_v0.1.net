@@ -1,0 +1,447 @@
+# EESchema Netlist Version 1.1 created  07/04/2011 16:34:50
+(
+ ( /4D9D6245 C1 C1 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4D9D632F C1V5 C2 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D9D77C3 C1 C3 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4D9D77C2 C1V5 C4 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D9D77AD C1 C5 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4D9D77AC C1V5 C6 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D9D77BB C1 C7 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4D9D77BC C1V5 C8 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D9C8E5B $noname$ MEZZA1 MEZZA-16
+  ( 1 /brake_in )
+  ( 2 ? )
+  ( 3 /boost_in )
+  ( 4 ? )
+  ( 5 /clign_g_in )
+  ( 6 ? )
+  ( 7 /clign_d_in )
+  ( 8 ? )
+  ( 9 /warning_in )
+  ( 10 ? )
+  ( 11 /codes_in )
+  ( 12 ? )
+  ( 13 /feux_in )
+  ( 14 +12V )
+  ( 15 VCC )
+  ( 16 GND )
+ )
+ ( /4D9C8ED8 $noname$ MEZZA2 MEZZA-16
+  ( 1 /comm_6pos_0 )
+  ( 2 ? )
+  ( 3 /comm_6pos_1 )
+  ( 4 ? )
+  ( 5 /comm_6pos_2 )
+  ( 6 ? )
+  ( 7 /erreur_1 )
+  ( 8 ? )
+  ( 9 /temoin_cmd+ )
+  ( 10 ? )
+  ( 11 ? )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 +12V )
+  ( 15 VCC )
+  ( 16 GND )
+ )
+ ( /4D9D5BED $noname$ P1 clign_in
+  ( 1 /clign_d_in )
+  ( 2 VCC )
+  ( 3 /clign_g_in )
+  ( 4 ? )
+ )
+ ( /4D9D5D00 $noname$ P2 warning_in
+  ( 1 VCC )
+  ( 2 /warning_in )
+ )
+ ( /4D9C8F0C $noname$ P3 brake_analog_out
+  ( 1 N-000021 )
+  ( 2 GND )
+ )
+ ( /4D9C8F0F $noname$ P4 brake_in
+  ( 1 N-000021 )
+  ( 2 VCC )
+ )
+ ( /4D9D5AD2 $noname$ P5 boost_analog_out
+  ( 1 N-000050 )
+  ( 2 GND )
+ )
+ ( /4D9D5AD1 $noname$ P6 boost_in
+  ( 1 N-000050 )
+  ( 2 VCC )
+ )
+ ( /4D9D6027 $noname$ P7 clign_g_out
+  ( 1 N-000045 )
+  ( 2 GND )
+ )
+ ( /4D9D5F4E $noname$ P8 clign_d_out
+  ( 1 N-000047 )
+  ( 2 GND )
+ )
+ ( /4D9D64B5 $noname$ P9 feux_in
+  ( 1 /feux_in )
+  ( 2 VCC )
+  ( 3 /codes_in )
+  ( 4 ? )
+ )
+ ( /4D9D6529 $noname$ P10 codes_out
+  ( 1 N-000014 )
+  ( 2 GND )
+ )
+ ( /4D9D652C $noname$ P11 pleins_feux_out
+  ( 1 N-000013 )
+  ( 2 GND )
+ )
+ ( /4D9D6BFF $noname$ P12 commutateur_6_pos_in
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 N-000058 )
+  ( 4 N-000004 )
+  ( 5 N-000005 )
+  ( 6 N-000006 )
+  ( 7 N-000020 )
+  ( 8 N-000002 )
+ )
+ ( /4D9D7A5B $noname$ P13 erreur_analog_in
+  ( 1 /erreur_3 )
+  ( 2 /erreur_2 )
+ )
+ ( /4D9D7AC9 $noname$ P14 erreur_1_out
+  ( 1 N-000055 )
+  ( 2 GND )
+ )
+ ( /4D9D7AC6 $noname$ P15 erreur_2_out
+  ( 1 N-000056 )
+  ( 2 GND )
+ )
+ ( /4D9D7AE0 $noname$ P16 erreur_3_out
+  ( 1 N-000052 )
+  ( 2 GND )
+ )
+ ( /4D9D7C12 $noname$ P17 cmd+_out
+  ( 1 N-000048 )
+  ( 2 GND )
+ )
+ ( /4D9D6029 TO92-EBC Q1 BC237
+  ( B /clign_g_out )
+  ( C N-000045 )
+  ( E +12V )
+ )
+ ( /4D9D5EFC TO92-EBC Q2 BC237
+  ( B /clign_d_out )
+  ( C N-000047 )
+  ( E +12V )
+ )
+ ( /4D9D6527 TO92-EBC Q3 BC237
+  ( B /codes_out )
+  ( C N-000014 )
+  ( E +12V )
+ )
+ ( /4D9D652E TO92-EBC Q4 BC237
+  ( B /feux_in )
+  ( C N-000013 )
+  ( E +12V )
+ )
+ ( /4D9D7ACB TO92-EBC Q5 BC237
+  ( B /erreur_1 )
+  ( C N-000055 )
+  ( E +12V )
+ )
+ ( /4D9D7AC4 TO92-EBC Q6 BC237
+  ( B /erreur_2 )
+  ( C N-000056 )
+  ( E +12V )
+ )
+ ( /4D9D7ADE TO92-EBC Q7 BC237
+  ( B /erreur_3 )
+  ( C N-000052 )
+  ( E +12V )
+ )
+ ( /4D9D7C14 TO92-EBC Q8 BC237
+  ( B /temoin_cmd+ )
+  ( C N-000048 )
+  ( E +12V )
+ )
+ ( /4D9D63F9 $noname$ R1 10k
+  ( 1 GND )
+  ( 2 /warning_in )
+ )
+ ( /4D9D5C9C $noname$ R2 10k
+  ( 1 GND )
+  ( 2 /clign_g_in )
+ )
+ ( /4D9D5C8D $noname$ R3 10k
+  ( 1 GND )
+  ( 2 /clign_d_in )
+ )
+ ( /4D9D595B $noname$ R4 10k
+  ( 1 N-000021 )
+  ( 2 GND )
+ )
+ ( /4D9D5ACD $noname$ R5 10k
+  ( 1 N-000050 )
+  ( 2 GND )
+ )
+ ( /4D9D64B3 $noname$ R6 10k
+  ( 1 GND )
+  ( 2 /codes_in )
+ )
+ ( /4D9D64B4 $noname$ R7 10k
+  ( 1 GND )
+  ( 2 /feux_in )
+ )
+ ( /4D9D6C4E $noname$ R8 10k
+  ( 1 VCC )
+  ( 2 N-000002 )
+ )
+ ( /4D9D6C58 $noname$ R9 10k
+  ( 1 VCC )
+  ( 2 N-000020 )
+ )
+ ( /4D9D6C5B $noname$ R10 10k
+  ( 1 VCC )
+  ( 2 N-000006 )
+ )
+ ( /4D9D6C5E $noname$ R11 10k
+  ( 1 VCC )
+  ( 2 N-000005 )
+ )
+ ( /4D9D6C60 $noname$ R12 10k
+  ( 1 VCC )
+  ( 2 N-000004 )
+ )
+ ( /4D9D6C62 $noname$ R13 10k
+  ( 1 VCC )
+  ( 2 N-000058 )
+ )
+ ( /4D9D5ACF $noname$ U1 TL082
+  ( 1 /brake_in )
+  ( 2 /brake_in )
+  ( 3 N-000021 )
+  ( 4 GND )
+  ( 5 N-000050 )
+  ( 6 /boost_in )
+  ( 7 /boost_in )
+  ( 8 VCC )
+ )
+ ( /4D9D6AE0 $noname$ U2 4071
+  ( 1 /clign_g_in )
+  ( 2 /warning_in )
+  ( 3 /clign_g_out )
+  ( 4 /clign_d_out )
+  ( 5 /warning_in )
+  ( 6 /clign_d_in )
+  ( 7 GND )
+  ( 8 /codes_in )
+  ( 9 /feux_in )
+  ( 10 /codes_out )
+  ( 14 VCC )
+ )
+ ( /4D9D70AC $noname$ U3 74LS348
+  ( 1 N-000005 )
+  ( 2 N-000004 )
+  ( 3 N-000058 )
+  ( 4 VCC )
+  ( 5 GND )
+  ( 6 N-000018 )
+  ( 7 N-000015 )
+  ( 8 GND )
+  ( 9 N-000019 )
+  ( 10 GND )
+  ( 11 N-000002 )
+  ( 12 N-000020 )
+  ( 13 N-000006 )
+  ( 14 ? )
+  ( 15 ? )
+  ( 16 VCC )
+ )
+ ( /4D9D768D $noname$ U4 4049
+  ( 1 VCC )
+  ( 2 /comm_6pos_0 )
+  ( 3 N-000019 )
+  ( 4 /comm_6pos_1 )
+  ( 5 N-000015 )
+  ( 6 /comm_6pos_2 )
+  ( 7 N-000018 )
+  ( 8 GND )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ CP*
+ SM*
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ CP*
+ SM*
+$endlist
+$component Q1
+ TO92-EBC
+$endlist
+$component Q2
+ TO92-EBC
+$endlist
+$component Q3
+ TO92-EBC
+$endlist
+$component Q4
+ TO92-EBC
+$endlist
+$component Q5
+ TO92-EBC
+$endlist
+$component Q6
+ TO92-EBC
+$endlist
+$component Q7
+ TO92-EBC
+$endlist
+$component Q8
+ TO92-EBC
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
