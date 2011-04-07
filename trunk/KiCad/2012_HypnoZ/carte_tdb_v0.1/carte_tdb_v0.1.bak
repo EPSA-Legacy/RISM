@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/04/2011 19:29:28
+EESchema Schematic File Version 2  date 07/04/2011 20:29:07
 LIBS:symbioz
 LIBS:epsa_relais
 LIBS:power
@@ -46,11 +46,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 5100 1400
+Wire Wire Line
+	1350 1600 1000 1600
+Wire Wire Line
+	1350 1200 1000 1200
 Wire Wire Line
 	3900 1200 3350 1200
-Wire Wire Line
-	2550 1500 2850 1500
 Wire Wire Line
 	1350 1300 1000 1300
 Wire Wire Line
@@ -542,16 +543,17 @@ Wire Wire Line
 Wire Wire Line
 	3900 1100 3350 1100
 Wire Wire Line
-	2550 1600 2850 1600
-Wire Wire Line
 	3900 1600 3350 1600
 Wire Wire Line
 	7050 6250 7100 6250
+Wire Wire Line
+	1350 1100 1000 1100
+Wire Wire Line
+	1000 1700 1350 1700
+NoConn ~ 2550 1600
+NoConn ~ 2550 1500
+NoConn ~ 5100 1400
 NoConn ~ 7050 6550
-NoConn ~ 1350 1700
-NoConn ~ 1350 1600
-NoConn ~ 1350 1200
-NoConn ~ 1350 1100
 NoConn ~ 3900 1500
 NoConn ~ 3900 1300
 NoConn ~ 9650 5500
@@ -876,11 +878,11 @@ F 1 "GND" H 6950 3480 30  0001 C CNN
 	1    6950 3550
 	0    -1   -1   0   
 $EndComp
-Text Label 1000 1500 0    60   ~ 0
-comm_6pos_2
-Text Label 1000 1400 0    60   ~ 0
-comm_6pos_1
 Text Label 1000 1300 0    60   ~ 0
+comm_6pos_2
+Text Label 1000 1200 0    60   ~ 0
+comm_6pos_1
+Text Label 1000 1100 0    60   ~ 0
 comm_6pos_0
 Text Label 8100 2500 2    60   ~ 0
 comm_6pos_1
@@ -1512,7 +1514,7 @@ Text Notes 800  4250 0    60   ~ 0
 Boost
 Text Notes 900  2500 0    60   ~ 0
 Freins
-Text Label 2850 1600 2    60   ~ 0
+Text Label 1000 1700 0    60   ~ 0
 boost_in
 $Comp
 L CONN_2 P5
@@ -1644,7 +1646,7 @@ F 1 "brake_analog_out" V 1100 2950 40  0000 C CNN
 	1    1050 2950
 	-1   0    0    -1  
 $EndComp
-Text Label 2850 1500 2    60   ~ 0
+Text Label 1000 1600 0    60   ~ 0
 brake_in
 $Comp
 L MEZZA-16 MEZZA2
