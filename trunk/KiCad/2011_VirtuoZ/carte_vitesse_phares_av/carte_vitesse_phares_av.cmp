@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 05/04/2011 22:44:27
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 16/04/2011 20:40:17
 
 BeginCmp
 TimeStamp = /4D51649D;
@@ -25,6 +25,20 @@ BeginCmp
 TimeStamp = /4D7F8C50;
 Reference = C4;
 ValeurCmp = 17p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9DD08;
+Reference = C5;
+ValeurCmp = 10u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9DD09;
+Reference = C6;
+ValeurCmp = 27p;
 IdModule  = C1;
 EndCmp
 
@@ -131,6 +145,48 @@ TimeStamp = /4D9A37ED;
 Reference = P10;
 ValeurCmp = alim_feux;
 IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9D6D0;
+Reference = Q1;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9D9D2;
+Reference = Q2;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9D93E;
+Reference = Q3;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9DA3E;
+Reference = Q4;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9D99F;
+Reference = Q5;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9DA5E;
+Reference = Q6;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
@@ -250,6 +306,13 @@ TimeStamp = /4D6BB06C;
 Reference = U8;
 ValeurCmp = REED_Cligno_D;
 IdModule  = REED9081_SYMBIOZ;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DA9DDE8;
+Reference = U9;
+ValeurCmp = 7805;
+IdModule  = LM78XX_2;
 EndCmp
 
 EndListe
