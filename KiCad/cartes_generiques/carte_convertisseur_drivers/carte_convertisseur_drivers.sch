@@ -1,8 +1,9 @@
-EESchema Schematic File Version 2  date 30/01/2011 22:46:43
-LIBS:power
-LIBS:symbioz
-LIBS:device
+EESchema Schematic File Version 2  date 16/04/2011 15:13:40
 LIBS:conn
+LIBS:symbioz
+LIBS:epsa_relais
+LIBS:power
+LIBS:device
 LIBS:linear
 LIBS:regul
 LIBS:74xx
@@ -23,13 +24,12 @@ LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:contrib
-LIBS:carte_alim_convert-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title "Carte alim convertisseur"
-Date "30 jan 2011"
+Date "16 apr 2011"
 Rev "1.0"
 Comp "EPSA - Générique"
 Comment1 ""
@@ -945,7 +945,7 @@ F 1 "10k" V 8750 1300 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Text Notes 3150 5050 0    60   ~ 0
-Connecteur vers \ncarte convertisseur acquisition
+Connecteur vers \ncarte interface
 Text Notes 7500 5650 0    60   ~ 0
 Protection Alimentation
 $Comp
