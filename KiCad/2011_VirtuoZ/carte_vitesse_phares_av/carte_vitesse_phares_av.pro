@@ -1,4 +1,4 @@
-update=16/04/2011 23:47:33
+update=17/04/2011 16:38:04
 version=1
 last_client=pcbnew
 [general]
@@ -78,8 +78,8 @@ EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDimH=750
+PadDimV=750
 BoardThickness=630
 SgPcb45=1
 TxtPcbV=800

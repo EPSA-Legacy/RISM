@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 16/04/2011 20:52:02
+EESchema Schematic File Version 2  date 17/04/2011 16:35:48
 LIBS:epsa_relais
 LIBS:symbioz
 LIBS:power
@@ -34,14 +34,13 @@ LIBS:valves
 LIBS:brooktre
 LIBS:cmos_ieee
 LIBS:elec-unifil
-LIBS:carte_interface-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 Sheet 1 1
 Title "carte interface MicroAutoBox"
 Date "16 apr 2011"
-Rev "1.0"
+Rev "2.0"
 Comp "EPSA Benchy"
 Comment1 ""
 Comment2 ""
