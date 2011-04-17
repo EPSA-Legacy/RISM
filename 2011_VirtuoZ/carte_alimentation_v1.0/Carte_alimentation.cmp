@@ -1,0 +1,164 @@
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 17/04/2011 15:22:06
+
+BeginCmp
+TimeStamp = /4D692392;
+Reference = C1;
+ValeurCmp = 1000u;
+IdModule  = CP12;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D692397;
+Reference = C2;
+ValeurCmp = 1000u;
+IdModule  = CP12;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D692381;
+Reference = F11;
+ValeurCmp = 10A;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB042;
+Reference = K1;
+ValeurCmp = Coupe-circuit;
+IdModule  = RELAIS_JS-M;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6A2FA2;
+Reference = MECA1;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6A2FA7;
+Reference = MECA2;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6A2FA9;
+Reference = MECA3;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691A80;
+Reference = MEZZA1;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691A84;
+Reference = MEZZA2;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691540;
+Reference = P1;
+ValeurCmp = Carte_1;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D69154D;
+Reference = P2;
+ValeurCmp = Carte_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691553;
+Reference = P3;
+ValeurCmp = Carte_3;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691552;
+Reference = P4;
+ValeurCmp = Carte_4;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691558;
+Reference = P5;
+ValeurCmp = Carte_5;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691557;
+Reference = P6;
+ValeurCmp = Carte_6;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691555;
+Reference = P7;
+ValeurCmp = Carte_7;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D691556;
+Reference = P8;
+ValeurCmp = Carte_8;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D69155A;
+Reference = P9;
+ValeurCmp = Carte_9;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D69235F;
+Reference = P11;
+ValeurCmp = Batterie;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB067;
+Reference = P12;
+ValeurCmp = Bouton_coupe-circuit;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D692AA9;
+Reference = POT1;
+ValeurCmp = 47k;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6910EB;
+Reference = R1;
+ValeurCmp = 46k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6910F2;
+Reference = R2;
+ValeurCmp = 33k;
+IdModule  = R3;
+EndCmp
+
+EndListe
