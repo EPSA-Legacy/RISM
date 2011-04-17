@@ -1,0 +1,360 @@
+# EESchema Netlist Version 1.1 created  17/04/2011 15:46:43
+(
+ ( /4D51649D C1V5 C1 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D51649C C1 C2 17p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D7F8C4F C1V5 C3 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D7F8C50 C1 C4 17p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4DA9DD08 C1V5 C5 10u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4DA9DD09 C1 C6 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4CFA8A0D LEDV D1 YELLOW
+  ( 1 +12V )
+  ( 2 N-000020 )
+ )
+ ( /4CFA8A09 LEDV D2 RED
+  ( 1 VCC )
+  ( 2 N-000019 )
+ )
+ ( /4D9A4309 LEDV D3 YELLOW
+  ( 1 +12P )
+  ( 2 N-000042 )
+ )
+ ( /4DAAEF07 MECA_5mm MECA1 MECA
+  ( 1 ? )
+ )
+ ( /4DAAEF12 MECA_5mm MECA2 MECA
+  ( 1 ? )
+ )
+ ( /4DAAEF13 MECA_5mm MECA3 MECA
+  ( 1 ? )
+ )
+ ( /4D6BA2EC he10-10df MEZZA1 MEZZA-10
+  ( 1 ? )
+  ( 2 /Phares_G )
+  ( 3 /W1_out )
+  ( 4 /Cligno_G )
+  ( 5 ? )
+  ( 6 /Codes_G )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 VCC )
+  ( 10 GND )
+ )
+ ( /4D6BA2F1 he10-10df MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 /Phares_D )
+  ( 3 /W2_out )
+  ( 4 /Cligno_D )
+  ( 5 ? )
+  ( 6 /Codes_D )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 ? )
+  ( 10 GND )
+ )
+ ( /4D6BB20D KK_2 P1 Incré_G
+  ( 1 +12V )
+  ( 2 /W1 )
+ )
+ ( /4D6BA879 KK_2 P2 Phares
+  ( 1 N-000032 )
+  ( 2 GNDPWR )
+ )
+ ( /4D6BB08D KK_2 P3 Phares
+  ( 1 N-000004 )
+  ( 2 GNDPWR )
+ )
+ ( /4D6BB215 KK_2 P4 Incré_D
+  ( 1 +12V )
+  ( 2 /W2 )
+ )
+ ( /4D6BB021 KK_2 P5 Phares
+  ( 1 N-000035 )
+  ( 2 GNDPWR )
+ )
+ ( /4D6BB07D KK_2 P6 Phares
+  ( 1 N-000025 )
+  ( 2 GNDPWR )
+ )
+ ( /4D6BB7AA KK_4 P7 conn_interface
+  ( 1 GND )
+  ( 2 /W1_out )
+  ( 3 /W2_out )
+  ( 4 GND )
+ )
+ ( /4D6BB032 KK_2 P8 Phares
+  ( 1 N-000021 )
+  ( 2 GNDPWR )
+ )
+ ( /4D6BB06D KK_2 P9 Phares
+  ( 1 N-000023 )
+  ( 2 GNDPWR )
+ )
+ ( /4D9A37ED KK_2 P10 alim_feux
+  ( 1 +12P )
+  ( 2 GNDPWR )
+ )
+ ( /4DA9D6D0 TO92DGS Q1 FET_N
+  ( D N-000044 )
+  ( G /Phares_G )
+  ( S GND )
+ )
+ ( /4DA9D9D2 TO92DGS Q2 FET_N
+  ( D N-000005 )
+  ( G /Phares_D )
+  ( S GND )
+ )
+ ( /4DA9D93E TO92DGS Q3 FET_N
+  ( D N-000046 )
+  ( G /Codes_G )
+  ( S GND )
+ )
+ ( /4DA9DA3E TO92DGS Q4 FET_N
+  ( D N-000026 )
+  ( G /Codes_D )
+  ( S GND )
+ )
+ ( /4DA9D99F TO92DGS Q5 FET_N
+  ( D N-000022 )
+  ( G /Cligno_G )
+  ( S GND )
+ )
+ ( /4DA9DA5E TO92DGS Q6 FET_N
+  ( D N-000024 )
+  ( G /Cligno_D )
+  ( S GND )
+ )
+ ( /4D51648F R3 R1 ?
+  ( 1 N-000037 )
+  ( 2 GND )
+ )
+ ( /4D51648E R3 R2 ?
+  ( 1 VCC )
+  ( 2 N-000037 )
+ )
+ ( /4D6BB72A R3 R3 R
+  ( 1 /W1 )
+  ( 2 GND )
+ )
+ ( /4D7F7D42 R3 R4 ?
+  ( 1 N-000036 )
+  ( 2 GND )
+ )
+ ( /4D7F7D43 R3 R5 ?
+  ( 1 VCC )
+  ( 2 N-000036 )
+ )
+ ( /4D6BB740 R3 R6 R
+  ( 1 /W2 )
+  ( 2 GND )
+ )
+ ( /4CFA8A0E R3 R7 1k
+  ( 1 GND )
+  ( 2 N-000020 )
+ )
+ ( /4CFA8A08 R3 R8 1k
+  ( 1 GND )
+  ( 2 N-000019 )
+ )
+ ( /4D9A430A R3 R9 1k
+  ( 1 GNDPWR )
+  ( 2 N-000042 )
+ )
+ ( /4D7F7D3D DIP-8__300_ELL U1 TL082
+  ( 1 N-000007 )
+  ( 2 N-000037 )
+  ( 3 /W1 )
+  ( 4 GND )
+  ( 5 /W2 )
+  ( 6 N-000036 )
+  ( 7 N-000008 )
+  ( 8 VCC )
+ )
+ ( /4D7F8B45 DIP-14__300_ELL U2 4069
+  ( 1 N-000007 )
+  ( 2 /W1_out )
+  ( 3 N-000008 )
+  ( 4 /W2_out )
+  ( 7 GND )
+  ( 14 VCC )
+ )
+ ( /4D6BA834 REED9081_SYMBIOZ U3 REED_Phares_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000044 )
+  ( 4 N-000032 )
+ )
+ ( /4D6BB08C REED9081_SYMBIOZ U4 REED_Phares_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000005 )
+  ( 4 N-000004 )
+ )
+ ( /4D6BB020 REED9081_SYMBIOZ U5 REED_Codes_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000046 )
+  ( 4 N-000035 )
+ )
+ ( /4D6BB07C REED9081_SYMBIOZ U6 REED_Codes_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000026 )
+  ( 4 N-000025 )
+ )
+ ( /4D6BB031 REED9081_SYMBIOZ U7 REED_Cligno_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000022 )
+  ( 4 N-000021 )
+ )
+ ( /4D6BB06C REED9081_SYMBIOZ U8 REED_Cligno_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000024 )
+  ( 4 N-000023 )
+ )
+ ( /4DA9DDE8 LM78XX_2 U9 7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO +5V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ CP*
+ SM*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ CP*
+ SM*
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D3
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
