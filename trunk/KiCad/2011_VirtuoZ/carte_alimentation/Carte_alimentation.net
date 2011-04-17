@@ -1,130 +1,123 @@
-# EESchema Netlist Version 1.1 created  16/04/2011 18:27:38
+# EESchema Netlist Version 1.1 created  17/04/2011 15:22:06
 (
- ( /4D6BB067 $noname  P12 Bouton_coupe-circuit {Lib=CONN_2}
-  (    1 N-000019 )
-  (    2 N-000020 )
+ ( /4D692392 CP12 C1 1000u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D6BB042 $noname  K1 Coupe-circuit {Lib=RELAIS-SPST-NO}
-  (    1 N-000020 )
-  (    2 N-000019 )
-  (    3 +12V )
-  (    5 GND )
+ ( /4D692397 CP12 C2 1000u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D6A2FA9 $noname  MECA3 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D692381 FUSE5-20 F11 10A
+  ( 1 N-000020 )
+  ( 2 N-000001 )
  )
- ( /4D6A2FA7 $noname  MECA2 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D6BB042 RELAIS_JS-M K1 Coupe-circuit
+  ( 1 N-000020 )
+  ( 2 N-000019 )
+  ( 3 +12V )
+  ( 5 GND )
  )
- ( /4D6A2FA2 $noname  MECA1 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D6A2FA2 MECA_5mm MECA1 CONN_1
+  ( 1 ? )
  )
- ( /4D692AA9 $noname  POT1 47k {Lib=POT}
-  (    1 +5V )
-  (    2 /Vseuil- )
-  (    3 GND )
+ ( /4D6A2FA7 MECA_5mm MECA2 CONN_1
+  ( 1 ? )
  )
- ( /4D692397 $noname  C2 1000u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D6A2FA9 MECA_5mm MECA3 CONN_1
+  ( 1 ? )
  )
- ( /4D692392 $noname  C1 1000u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691A80 he10-10df MEZZA1 MEZZA-10
+  ( 1 /Uadapt )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 ? )
+  ( 10 GND )
  )
- ( /4D692381 $noname  F11 10A {Lib=FUSE}
-  (    1 N-000020 )
-  (    2 N-000001 )
+ ( /4D691A84 he10-10df MEZZA2 MEZZA-10
+  ( 1 /Vseuil- )
+  ( 2 +5V )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 +5V )
+  ( 10 GND )
  )
- ( /4D69235F $noname  P11 Batterie {Lib=CONN_2}
-  (    1 N-000001 )
-  (    2 GND )
+ ( /4D691540 KK_2 P1 Carte_1
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691A84 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
-  (    1 /Vseuil- )
-  (    2 +5V )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 ? )
-  (    9 +5V )
-  (   10 GND )
+ ( /4D69154D KK_2 P2 Carte_2
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691A80 $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
-  (    1 /Uadapt )
-  (    2 ? )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 ? )
-  (   10 GND )
+ ( /4D691553 KK_2 P3 Carte_3
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D69155A $noname  P9 Carte_9 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691552 KK_2 P4 Carte_4
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691558 $noname  P5 Carte_5 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691558 KK_2 P5 Carte_5
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691557 $noname  P6 Carte_6 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691557 KK_2 P6 Carte_6
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691556 $noname  P8 Carte_8 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691555 KK_2 P7 Carte_7
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691555 $noname  P7 Carte_7 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D691556 KK_2 P8 Carte_8
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691553 $noname  P3 Carte_3 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D69155A KK_2 P9 Carte_9
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D691552 $noname  P4 Carte_4 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D69235F KK_2 P11 Batterie
+  ( 1 N-000001 )
+  ( 2 GND )
  )
- ( /4D69154D $noname  P2 Carte_2 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D6BB067 KK_2 P12 Bouton_coupe-circuit
+  ( 1 N-000019 )
+  ( 2 N-000020 )
  )
- ( /4D691540 $noname  P1 Carte_1 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D692AA9 RV2X4 POT1 47k
+  ( 1 +5V )
+  ( 2 /Vseuil- )
+  ( 3 GND )
  )
- ( /4D6910F2 $noname  R2 33k {Lib=R}
-  (    1 /Uadapt )
-  (    2 GND )
+ ( /4D6910EB R3 R1 46k
+  ( 1 +12V )
+  ( 2 /Uadapt )
  )
- ( /4D6910EB $noname  R1 46k {Lib=R}
-  (    1 +12V )
-  (    2 /Uadapt )
+ ( /4D6910F2 R3 R2 33k
+  ( 1 /Uadapt )
+  ( 2 GND )
  )
 )
 *
 { Allowed footprints by component:
-$component C2
- CP*
- SM*
-$endlist
 $component C1
  CP*
  SM*
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C2
+ CP*
+ SM*
 $endlist
 $component R1
  R?
@@ -133,62 +126,12 @@ $component R1
  R?-*
  SM1206
 $endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "" ""
- F11 2
- P11 1
-Net 2 "/Uadapt" "Uadapt"
- R1 2
- R2 1
- MEZZA1 1
-Net 4 "GND" "GND"
- K1 5
- C2 2
- MEZZA1 10
- P9 2
- P5 2
- MEZZA2 10
- P6 2
- R2 2
- P1 2
- P2 2
- P4 2
- P3 2
- P7 2
- P8 2
- POT1 3
- C1 2
- P11 2
-Net 5 "+12V" "+12V"
- K1 3
- C2 1
- MEZZA1 8
- P9 1
- P5 1
- P6 1
- P8 1
- P7 1
- P3 1
- P4 1
- P2 1
- P1 1
- R1 1
- C1 1
-Net 8 "+5V" "+5V"
- MEZZA2 9
- MEZZA2 2
- POT1 1
-Net 19 "" ""
- K1 2
- P12 1
-Net 20 "" ""
- F11 1
- P12 2
- K1 1
-Net 24 "/Vseuil-" "Vseuil-"
- MEZZA2 1
- POT1 2
-}
-#End

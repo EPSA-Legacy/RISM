@@ -1,297 +1,244 @@
-# EESchema Netlist Version 1.1 created  16/04/2011 21:09:13
+# EESchema Netlist Version 1.1 created  17/04/2011 15:46:43
 (
- ( /4DA9DDE8 $noname  U9 7805 {Lib=7805}
-  (   VI +12V )
-  (   VO +5V )
-  (  GND GND )
+ ( /4D51649D C1V5 C1 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4DA9DD09 $noname  C6 27p {Lib=C}
-  (    1 +5V )
-  (    2 GND )
+ ( /4D51649C C1 C2 17p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4DA9DD08 $noname  C5 10u {Lib=CP}
-  (    1 +5V )
-  (    2 GND )
+ ( /4D7F8C4F C1V5 C3 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4DA9DA5E $noname  Q6 FET_N {Lib=FET_N}
-  (    D N-000040 )
-  (    G /Cligno_D )
-  (    S GND )
+ ( /4D7F8C50 C1 C4 17p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4DA9DA3E $noname  Q4 FET_N {Lib=FET_N}
-  (    D N-000038 )
-  (    G /Codes_D )
-  (    S GND )
+ ( /4DA9DD08 C1V5 C5 10u
+  ( 1 +5V )
+  ( 2 GND )
  )
- ( /4DA9D9D2 $noname  Q2 FET_N {Lib=FET_N}
-  (    D N-000036 )
-  (    G /Phares_D )
-  (    S GND )
+ ( /4DA9DD09 C1 C6 27p
+  ( 1 +5V )
+  ( 2 GND )
  )
- ( /4DA9D99F $noname  Q5 FET_N {Lib=FET_N}
-  (    D N-000043 )
-  (    G /Cligno_G )
-  (    S GND )
+ ( /4CFA8A0D LEDV D1 YELLOW
+  ( 1 +12V )
+  ( 2 N-000020 )
  )
- ( /4DA9D93E $noname  Q3 FET_N {Lib=FET_N}
-  (    D N-000030 )
-  (    G /Codes_G )
-  (    S GND )
+ ( /4CFA8A09 LEDV D2 RED
+  ( 1 VCC )
+  ( 2 N-000019 )
  )
- ( /4DA9D6D0 $noname  Q1 FET_N {Lib=FET_N}
-  (    D N-000027 )
-  (    G /Phares_G )
-  (    S GND )
+ ( /4D9A4309 LEDV D3 YELLOW
+  ( 1 +12P )
+  ( 2 N-000042 )
  )
- ( /4D9A430A $noname  R9 1k {Lib=R}
-  (    1 GNDPWR )
-  (    2 N-000032 )
+ ( /4DAAEF07 MECA_5mm MECA1 MECA
+  ( 1 ? )
  )
- ( /4D9A4309 $noname  D3 YELLOW {Lib=LED}
-  (    1 +12P )
-  (    2 N-000032 )
+ ( /4DAAEF12 MECA_5mm MECA2 MECA
+  ( 1 ? )
  )
- ( /4D9A37ED $noname  P10 alim_feux {Lib=CONN_2}
-  (    1 +12P )
-  (    2 GNDPWR )
+ ( /4DAAEF13 MECA_5mm MECA3 MECA
+  ( 1 ? )
  )
- ( /4D7F8C50 $noname  C4 17p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4D6BA2EC he10-10df MEZZA1 MEZZA-10
+  ( 1 ? )
+  ( 2 /Phares_G )
+  ( 3 /W1_out )
+  ( 4 /Cligno_G )
+  ( 5 ? )
+  ( 6 /Codes_G )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4D7F8C4F $noname  C3 1u {Lib=CP}
-  (    1 VCC )
-  (    2 GND )
+ ( /4D6BA2F1 he10-10df MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 /Phares_D )
+  ( 3 /W2_out )
+  ( 4 /Cligno_D )
+  ( 5 ? )
+  ( 6 /Codes_D )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 ? )
+  ( 10 GND )
  )
- ( /4D7F8B45 $noname  U2 4069 {Lib=4069}
-  (    1 N-000006 )
-  (    2 /W1_out )
-  (    3 N-000007 )
-  (    4 /W2_out )
-  (    7 GND )
-  (   14 VCC )
+ ( /4D6BB20D KK_2 P1 Incré_G
+  ( 1 +12V )
+  ( 2 /W1 )
  )
- ( /4D7F7D43 $noname  R5 ? {Lib=R}
-  (    1 VCC )
-  (    2 N-000034 )
+ ( /4D6BA879 KK_2 P2 Phares
+  ( 1 N-000032 )
+  ( 2 GNDPWR )
  )
- ( /4D7F7D42 $noname  R4 ? {Lib=R}
-  (    1 N-000034 )
-  (    2 GND )
+ ( /4D6BB08D KK_2 P3 Phares
+  ( 1 N-000004 )
+  ( 2 GNDPWR )
  )
- ( /4D7F7D3D $noname  U1 TL082 {Lib=TL082}
-  (    1 N-000006 )
-  (    2 N-000033 )
-  (    3 /W1 )
-  (    4 GND )
-  (    5 /W2 )
-  (    6 N-000034 )
-  (    7 N-000007 )
-  (    8 VCC )
+ ( /4D6BB215 KK_2 P4 Incré_D
+  ( 1 +12V )
+  ( 2 /W2 )
  )
- ( /4D6BB7AA $noname  P7 conn_interface {Lib=CONN_4}
-  (    1 GND )
-  (    2 /W1_out )
-  (    3 /W2_out )
-  (    4 GND )
+ ( /4D6BB021 KK_2 P5 Phares
+  ( 1 N-000035 )
+  ( 2 GNDPWR )
  )
- ( /4D6BB740 $noname  R6 R {Lib=R}
-  (    1 /W2 )
-  (    2 GND )
+ ( /4D6BB07D KK_2 P6 Phares
+  ( 1 N-000025 )
+  ( 2 GNDPWR )
  )
- ( /4D6BB72A $noname  R3 R {Lib=R}
-  (    1 /W1 )
-  (    2 GND )
+ ( /4D6BB7AA KK_4 P7 conn_interface
+  ( 1 GND )
+  ( 2 /W1_out )
+  ( 3 /W2_out )
+  ( 4 GND )
  )
- ( /4D6BB08C $noname  U4 REED_Phares_D {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000036 )
-  (    4 N-000023 )
+ ( /4D6BB032 KK_2 P8 Phares
+  ( 1 N-000021 )
+  ( 2 GNDPWR )
  )
- ( /4D6BB215 $noname  P4 Incré_D {Lib=CONN_2}
-  (    1 +12V )
-  (    2 /W2 )
+ ( /4D6BB06D KK_2 P9 Phares
+  ( 1 N-000023 )
+  ( 2 GNDPWR )
  )
- ( /4D6BB20D $noname  P1 Incré_G {Lib=CONN_2}
-  (    1 +12V )
-  (    2 /W1 )
+ ( /4D9A37ED KK_2 P10 alim_feux
+  ( 1 +12P )
+  ( 2 GNDPWR )
  )
- ( /4D6BB08D $noname  P3 Phares {Lib=CONN_2}
-  (    1 N-000023 )
-  (    2 GNDPWR )
+ ( /4DA9D6D0 TO92DGS Q1 FET_N
+  ( D N-000044 )
+  ( G /Phares_G )
+  ( S GND )
  )
- ( /4D6BB07D $noname  P6 Phares {Lib=CONN_2}
-  (    1 N-000022 )
-  (    2 GNDPWR )
+ ( /4DA9D9D2 TO92DGS Q2 FET_N
+  ( D N-000005 )
+  ( G /Phares_D )
+  ( S GND )
  )
- ( /4D6BB07C $noname  U6 REED_Codes_D {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000038 )
-  (    4 N-000022 )
+ ( /4DA9D93E TO92DGS Q3 FET_N
+  ( D N-000046 )
+  ( G /Codes_G )
+  ( S GND )
  )
- ( /4D6BB06D $noname  P9 Phares {Lib=CONN_2}
-  (    1 N-000021 )
-  (    2 GNDPWR )
+ ( /4DA9DA3E TO92DGS Q4 FET_N
+  ( D N-000026 )
+  ( G /Codes_D )
+  ( S GND )
  )
- ( /4D6BB06C $noname  U8 REED_Cligno_D {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000040 )
-  (    4 N-000021 )
+ ( /4DA9D99F TO92DGS Q5 FET_N
+  ( D N-000022 )
+  ( G /Cligno_G )
+  ( S GND )
  )
- ( /4D6BB032 $noname  P8 Phares {Lib=CONN_2}
-  (    1 N-000020 )
-  (    2 GNDPWR )
+ ( /4DA9DA5E TO92DGS Q6 FET_N
+  ( D N-000024 )
+  ( G /Cligno_D )
+  ( S GND )
  )
- ( /4D6BB031 $noname  U7 REED_Cligno_G {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000043 )
-  (    4 N-000020 )
+ ( /4D51648F R3 R1 ?
+  ( 1 N-000037 )
+  ( 2 GND )
  )
- ( /4D6BB021 $noname  P5 Phares {Lib=CONN_2}
-  (    1 N-000029 )
-  (    2 GNDPWR )
+ ( /4D51648E R3 R2 ?
+  ( 1 VCC )
+  ( 2 N-000037 )
  )
- ( /4D6BB020 $noname  U5 REED_Codes_G {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000030 )
-  (    4 N-000029 )
+ ( /4D6BB72A R3 R3 R
+  ( 1 /W1 )
+  ( 2 GND )
  )
- ( /4D6BA879 $noname  P2 Phares {Lib=CONN_2}
-  (    1 N-000026 )
-  (    2 GNDPWR )
+ ( /4D7F7D42 R3 R4 ?
+  ( 1 N-000036 )
+  ( 2 GND )
  )
- ( /4D6BA834 $noname  U3 REED_Phares_G {Lib=REED9081_SYMBIOZ}
-  (    1 +12P )
-  (    2 +5V )
-  (    3 N-000027 )
-  (    4 N-000026 )
+ ( /4D7F7D43 R3 R5 ?
+  ( 1 VCC )
+  ( 2 N-000036 )
  )
- ( /4D6BA2F1 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
-  (    1 ? )
-  (    2 /Phares_D )
-  (    3 /W2_out )
-  (    4 /Cligno_D )
-  (    5 ? )
-  (    6 /Codes_D )
-  (    7 ? )
-  (    8 +12V )
-  (    9 ? )
-  (   10 GND )
+ ( /4D6BB740 R3 R6 R
+  ( 1 /W2 )
+  ( 2 GND )
  )
- ( /4D6BA2EC $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
-  (    1 ? )
-  (    2 /Phares_G )
-  (    3 /W1_out )
-  (    4 /Cligno_G )
-  (    5 ? )
-  (    6 /Codes_G )
-  (    7 ? )
-  (    8 ? )
-  (    9 VCC )
-  (   10 GND )
+ ( /4CFA8A0E R3 R7 1k
+  ( 1 GND )
+  ( 2 N-000020 )
  )
- ( /4D51649D $noname  C1 1u {Lib=CP}
-  (    1 VCC )
-  (    2 GND )
+ ( /4CFA8A08 R3 R8 1k
+  ( 1 GND )
+  ( 2 N-000019 )
  )
- ( /4D51649C $noname  C2 17p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4D9A430A R3 R9 1k
+  ( 1 GNDPWR )
+  ( 2 N-000042 )
  )
- ( /4D51648F $noname  R1 ? {Lib=R}
-  (    1 N-000033 )
-  (    2 GND )
+ ( /4D7F7D3D DIP-8__300_ELL U1 TL082
+  ( 1 N-000007 )
+  ( 2 N-000037 )
+  ( 3 /W1 )
+  ( 4 GND )
+  ( 5 /W2 )
+  ( 6 N-000036 )
+  ( 7 N-000008 )
+  ( 8 VCC )
  )
- ( /4D51648E $noname  R2 ? {Lib=R}
-  (    1 VCC )
-  (    2 N-000033 )
+ ( /4D7F8B45 DIP-14__300_ELL U2 4069
+  ( 1 N-000007 )
+  ( 2 /W1_out )
+  ( 3 N-000008 )
+  ( 4 /W2_out )
+  ( 7 GND )
+  ( 14 VCC )
  )
- ( /4CFA8A0E $noname  R7 1k {Lib=R}
-  (    1 GND )
-  (    2 N-000019 )
+ ( /4D6BA834 REED9081_SYMBIOZ U3 REED_Phares_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000044 )
+  ( 4 N-000032 )
  )
- ( /4CFA8A0D $noname  D1 YELLOW {Lib=LED}
-  (    1 +12V )
-  (    2 N-000019 )
+ ( /4D6BB08C REED9081_SYMBIOZ U4 REED_Phares_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000005 )
+  ( 4 N-000004 )
  )
- ( /4CFA8A09 $noname  D2 RED {Lib=LED}
-  (    1 VCC )
-  (    2 N-000018 )
+ ( /4D6BB020 REED9081_SYMBIOZ U5 REED_Codes_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000046 )
+  ( 4 N-000035 )
  )
- ( /4CFA8A08 $noname  R8 1k {Lib=R}
-  (    1 GND )
-  (    2 N-000018 )
+ ( /4D6BB07C REED9081_SYMBIOZ U6 REED_Codes_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000026 )
+  ( 4 N-000025 )
+ )
+ ( /4D6BB031 REED9081_SYMBIOZ U7 REED_Cligno_G
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000022 )
+  ( 4 N-000021 )
+ )
+ ( /4D6BB06C REED9081_SYMBIOZ U8 REED_Cligno_D
+  ( 1 +12P )
+  ( 2 +5V )
+  ( 3 N-000024 )
+  ( 4 N-000023 )
+ )
+ ( /4DA9DDE8 LM78XX_2 U9 7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO +5V )
  )
 )
 *
 { Allowed footprints by component:
-$component C6
- SM*
- C?
- C1-1
-$endlist
-$component C5
- CP*
- SM*
-$endlist
-$component R9
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component D3
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component C4
- SM*
- C?
- C1-1
-$endlist
-$component C3
- CP*
- SM*
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $component C1
  CP*
  SM*
@@ -301,26 +248,23 @@ $component C2
  C?
  C1-1
 $endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C3
+ CP*
+ SM*
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C4
+ SM*
+ C?
+ C1-1
 $endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C5
+ CP*
+ SM*
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
 $endlist
 $component D1
  LED-3MM
@@ -340,7 +284,72 @@ $component D2
  LED-1206
  LEDV
 $endlist
+$component D3
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
  R?
  SM0603
  SM0805
@@ -349,174 +358,3 @@ $component R8
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "/W1" "W1"
- P1 2
- U1 3
- R3 1
-Net 2 "/W2" "W2"
- P4 2
- U1 5
- R6 1
-Net 3 "GND" "GND"
- Q5 S
- Q3 S
- U2 7
- Q1 S
- R8 1
- R7 1
- MEZZA2 10
- U9 GND
- C6 2
- R1 2
- C5 2
- MEZZA1 10
- Q6 S
- C1 2
- C2 2
- C3 2
- Q4 S
- U2 7
- R6 2
- R3 2
- R4 2
- U1 4
- U1 4
- Q2 S
- P7 4
- P7 1
- C4 2
-Net 4 "+12V" "+12V"
- U9 VI
- D1 1
- MEZZA2 8
- P4 1
- P1 1
-Net 5 "GNDPWR" "GNDPWR"
- P10 2
- P2 2
- P3 2
- P6 2
- P8 2
- P5 2
- R9 1
- P9 2
-Net 6 "" ""
- U1 1
- U2 1
-Net 7 "" ""
- U1 7
- U2 3
-Net 8 "/W1_out" "W1_out"
- P7 2
- MEZZA1 3
- U2 2
-Net 9 "/W2_out" "W2_out"
- MEZZA2 3
- U2 4
- P7 3
-Net 18 "" ""
- D2 2
- R8 2
-Net 19 "" ""
- R7 2
- D1 2
-Net 20 "" ""
- P8 1
- U7 4
-Net 21 "" ""
- U8 4
- P9 1
-Net 22 "" ""
- P6 1
- U6 4
-Net 23 "" ""
- P3 1
- U4 4
-Net 24 "/Phares G" "Phares G"
- MEZZA1 2
- Q1 G
-Net 25 "/Codes G" "Codes G"
- Q3 G
- MEZZA1 6
-Net 26 "" ""
- P2 1
- U3 4
-Net 27 "" ""
- Q1 D
- U3 3
-Net 28 "+12P" "+12P"
- D3 1
- U5 1
- U3 1
- U6 1
- U8 1
- U7 1
- U4 1
- P10 1
-Net 29 "" ""
- P5 1
- U5 4
-Net 30 "" ""
- Q3 D
- U5 3
-Net 31 "VCC" "VCC"
- C3 1
- C2 1
- C1 1
- MEZZA1 9
- D2 1
- R2 1
- C4 1
- R5 1
- U2 14
- U2 14
- U1 8
- U1 8
-Net 32 "" ""
- R9 2
- D3 2
-Net 33 "" ""
- U1 2
- R1 1
- R2 2
-Net 34 "" ""
- R4 1
- U1 6
- R5 2
-Net 35 "/Phares D" "Phares D"
- MEZZA2 2
- Q2 G
-Net 36 "" ""
- Q2 D
- U4 3
-Net 37 "/Codes D" "Codes D"
- MEZZA2 6
- Q4 G
-Net 38 "" ""
- Q4 D
- U6 3
-Net 39 "/Cligno D" "Cligno D"
- MEZZA2 4
- Q6 G
-Net 40 "" ""
- U8 3
- Q6 D
-Net 41 "+5V" "+5V"
- U3 2
- U5 2
- U9 VO
- C6 1
- C5 1
- U4 2
- U7 2
- U8 2
- U6 2
-Net 42 "/Cligno G" "Cligno G"
- MEZZA1 4
- Q5 G
-Net 43 "" ""
- U7 3
- Q5 D
-}
-#End
