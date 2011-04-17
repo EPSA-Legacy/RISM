@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 04/04/2011 23:47:49
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 17/04/2011 16:03:22
 
 BeginCmp
 TimeStamp = /4D9A319F;
@@ -57,17 +57,17 @@ IdModule  = MECA_5mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D7116A0;
+TimeStamp = /4D99B720;
 Reference = P1;
-ValeurCmp = INTERFACE;
-IdModule  = KK_4C;
+ValeurCmp = ALIM;
+IdModule  = KK_2C;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D99B720;
+TimeStamp = /4D7116A0;
 Reference = P2;
-ValeurCmp = ALIM;
-IdModule  = KK_2C;
+ValeurCmp = INTERFACE;
+IdModule  = KK_4C;
 EndCmp
 
 BeginCmp
@@ -78,17 +78,38 @@ IdModule  = bornier4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D9A32D3;
-Reference = U1;
-ValeurCmp = REED9081_SYMBIOZ;
-IdModule  = REED9081_SYMBIOZ;
+TimeStamp = /4DAAEE53;
+Reference = Q1;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DAAEF3B;
+Reference = Q2;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4DAAEFA7;
+Reference = Q3;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D9A2FB9;
-Reference = U2;
+Reference = U1;
 ValeurCmp = LM7805;
 IdModule  = LM78XX_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D9A32D3;
+Reference = U2;
+ValeurCmp = REED9081_SYMBIOZ;
+IdModule  = REED9081_SYMBIOZ;
 EndCmp
 
 BeginCmp
@@ -106,9 +127,9 @@ IdModule  = REED9081_SYMBIOZ;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D99B988;
+TimeStamp = /4DAAE64B;
 Reference = U5;
-ValeurCmp = 4011;
+ValeurCmp = 4001;
 IdModule  = DIP-14__300_ELL;
 EndCmp
 
