@@ -1,5 +1,6 @@
-//		Carte Feux Arrière
+//		Carte Feux Arrières
 //		Version 1.0 - HDT - 02/03/2011
+//      Version 1.1 - HDT - 18/04/2011
 //
 
 #include <18F2580.h>
@@ -22,7 +23,6 @@ int1 clignd = false;
 int1 cligng = false;
 
 int1 clign_on = false;
-int1 timer2_active = false;
 
 int16 ms = 0;
 
@@ -73,14 +73,13 @@ void manageCAN()
 	{
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat))
 		{
-			if(rxId == FEUX_STOP_DATA_ID)        // on veut modifier les feux stop ? Utiliser rxData[0] pour activer ou désactiver les feux stop.
+			if(rxId == FEUX_ARR_DATA_ID)        // on veut modifier les feux arrière ? Utiliser rxData pour activer ou désactiver les feux.
+			{
                 feuxstop = rxData[0];
-            if(rxId == FEUX_ARR_DATA_ID)    // on veut modifier les feux arrière ? Utiliser rxData[0] pour activer ou désactiver les feux arrière.
-                feuxarr = rxData[0];
-            if(rxId == CLIGN_G_DATA_ID)     // on veut modifier le cligno gauche ? Utiliser rxData[0] pour activer ou désactiver le cligno gauche.
-                cligng = rxData[0];
-            if(rxId == CLIGN_D_DATA_ID)     // on veut modifier le cligno droit ? Utiliser rxData[0] pour activer ou désactiver le cligno droit.
-                clignd = rxData[0];
+                feuxarr = rxData[1];
+                cligng = rxData[2];
+                clignd = rxData[3];
+			}
 		}
 	}
 }
