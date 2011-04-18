@@ -1,7 +1,28 @@
-# EESchema Netlist Version 1.1 created  13/04/2011 19:05:48
+# EESchema Netlist Version 1.1 created  18/04/2011 13:18:01
 (
+ ( /4DA871D2 $noname  U5 7806 {Lib=7805}
+  (  GND GND )
+  (   VI +12V )
+  (   VO +6V )
+ )
+ ( /4DA73457 $noname  C16 10u {Lib=CP}
+  (    1 +6V )
+  (    2 GND )
+ )
+ ( /4DA73456 $noname  C15 27p {Lib=C}
+  (    1 GND )
+  (    2 +6V )
+ )
+ ( /4DA733D7 $noname  C13 27p {Lib=C}
+  (    1 GND )
+  (    2 +12V )
+ )
+ ( /4DA733D6 $noname  C14 100u {Lib=CP}
+  (    1 +12V )
+  (    2 GND )
+ )
  ( /4DA5A2D0 $noname  C7 10n {Lib=C}
-  (    1 N-000054 )
+  (    1 N-000058 )
   (    2 GND )
  )
  ( /4DA59B47 $noname  P6 erreur_analog_in {Lib=CONN_4}
@@ -12,10 +33,10 @@
  )
  ( /4DA59A24 $noname  C3 27p {Lib=C}
   (    1 GND )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4DA59A23 $noname  C4 1u {Lib=CP}
-  (    1 VCC )
+  (    1 +12V )
   (    2 GND )
  )
  ( /4DA59A20 $noname  U2 4071 {Lib=4071}
@@ -29,49 +50,49 @@
   (    8 /err_1_analog )
   (    9 /err_1_can )
   (   10 /erreur_1 )
-  (   14 VCC )
+  (   14 +12V )
  )
  ( /4DA5989F $noname  Q7 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000008 )
+  (    D N-000021 )
   (    G /temoin_cmd+ )
   (    S GND )
  )
  ( /4DA5988C $noname  Q8 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000064 )
+  (    D N-000023 )
   (    G /erreur_3 )
   (    S GND )
  )
  ( /4DA59875 $noname  Q6 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000059 )
+  (    D N-000025 )
   (    G /erreur_2 )
   (    S GND )
  )
  ( /4DA59866 $noname  Q5 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000061 )
+  (    D N-000027 )
   (    G /erreur_1 )
   (    S GND )
  )
  ( /4DA59826 $noname  Q4 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000048 )
+  (    D N-000052 )
   (    G /feux_in )
   (    S GND )
  )
  ( /4DA597C4 $noname  P4 clign_d_out {Lib=CONN_2}
-  (    1 N-000018 )
+  (    1 N-000019 )
   (    2 /clk )
  )
  ( /4DA597C3 $noname  Q2 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000018 )
+  (    D N-000019 )
   (    G /clign_d_out )
   (    S GND )
  )
  ( /4DA59508 $noname  Q3 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000049 )
+  (    D N-000053 )
   (    G /codes_out )
   (    S GND )
  )
  ( /4DA59507 $noname  Q1 MOSFET_N {Lib=MOSFET_N}
-  (    D N-000053 )
+  (    D N-000034 )
   (    G /clign_g_out )
   (    S GND )
  )
@@ -84,26 +105,26 @@
   (    2 +12V )
  )
  ( /4DA5683D $noname  C12 10u {Lib=CP}
-  (    1 N-000055 )
+  (    1 N-000031 )
   (    2 GND )
  )
  ( /4DA56756 $noname  R14 72k {Lib=R}
   (    1 +12V )
-  (    2 N-000055 )
+  (    2 N-000031 )
  )
  ( /4DA5674F $noname  R15 31k {Lib=R}
-  (    1 N-000055 )
-  (    2 N-000017 )
+  (    1 N-000031 )
+  (    2 N-000029 )
  )
  ( /4DA55FE6 $noname  U4 LM555N {Lib=LM555N}
   (    1 GND )
-  (    2 N-000055 )
+  (    2 N-000031 )
   (    3 /clk )
   (    4 +12V )
-  (    5 N-000054 )
-  (    6 N-000055 )
-  (    7 N-000017 )
-  (    8 VCC )
+  (    5 N-000058 )
+  (    6 N-000031 )
+  (    7 N-000029 )
+  (    8 +12V )
  )
  ( /4DA55F56 $noname  R7 10k {Lib=R}
   (    1 /boost_in )
@@ -130,80 +151,80 @@
   (    1 ? )
  )
  ( /4D9D7C12 $noname  P20 cmd+_out {Lib=CONN_2}
-  (    1 N-000008 )
-  (    2 +12V )
+  (    1 N-000021 )
+  (    2 +6V )
  )
  ( /4D9D7AE0 $noname  P21 erreur_3_out {Lib=CONN_2}
-  (    1 N-000064 )
-  (    2 +12V )
+  (    1 N-000023 )
+  (    2 +6V )
  )
  ( /4D9D7AC9 $noname  P14 erreur_1_out {Lib=CONN_2}
-  (    1 N-000061 )
-  (    2 +12V )
+  (    1 N-000027 )
+  (    2 +6V )
  )
  ( /4D9D7AC6 $noname  P15 erreur_2_out {Lib=CONN_2}
-  (    1 N-000059 )
-  (    2 +12V )
+  (    1 N-000025 )
+  (    2 +6V )
  )
  ( /4D9D77AD $noname  C8 27p {Lib=C}
   (    1 GND )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4D9D77AC $noname  C9 1u {Lib=CP}
-  (    1 VCC )
+  (    1 +12V )
   (    2 GND )
  )
  ( /4D9D70AC $noname  U3 74LS348 {Lib=74LS348}
-  (    1 N-000011 )
-  (    2 N-000056 )
-  (    3 N-000012 )
-  (    4 VCC )
+  (    1 N-000054 )
+  (    2 N-000065 )
+  (    3 N-000049 )
+  (    4 +12V )
   (    5 GND )
   (    6 /comm_6pos_2 )
   (    7 /comm_6pos_1 )
   (    8 GND )
   (    9 /comm_6pos_0 )
   (   10 GND )
-  (   11 N-000057 )
-  (   12 N-000013 )
-  (   13 N-000014 )
+  (   11 N-000064 )
+  (   12 N-000050 )
+  (   13 N-000015 )
   (   14 ? )
   (   15 ? )
-  (   16 VCC )
+  (   16 +12V )
  )
  ( /4D9D6C62 $noname  R13 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000012 )
+  (    1 +12V )
+  (    2 N-000049 )
  )
  ( /4D9D6C60 $noname  R12 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000056 )
+  (    1 +12V )
+  (    2 N-000065 )
  )
  ( /4D9D6C5E $noname  R11 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000011 )
+  (    1 +12V )
+  (    2 N-000054 )
  )
  ( /4D9D6C5B $noname  R10 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000014 )
+  (    1 +12V )
+  (    2 N-000015 )
  )
  ( /4D9D6C58 $noname  R9 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000013 )
+  (    1 +12V )
+  (    2 N-000050 )
  )
  ( /4D9D6C4E $noname  R8 10k {Lib=R}
-  (    1 VCC )
-  (    2 N-000057 )
+  (    1 +12V )
+  (    2 N-000064 )
  )
  ( /4D9D6BFF $noname  P13 commutateur_6_pos_in {Lib=CONN_8}
   (    1 ? )
   (    2 GND )
-  (    3 N-000012 )
-  (    4 N-000056 )
-  (    5 N-000011 )
-  (    6 N-000014 )
-  (    7 N-000013 )
-  (    8 N-000057 )
+  (    3 N-000049 )
+  (    4 N-000065 )
+  (    5 N-000054 )
+  (    6 N-000015 )
+  (    7 N-000050 )
+  (    8 N-000064 )
  )
  ( /4D9D6AE0 $noname  U1 4071 {Lib=4071}
   (    1 /clign_g_in )
@@ -216,18 +237,18 @@
   (    8 /warning_in )
   (    9 /clign_d_in )
   (   10 /clign_d_out )
-  (   14 VCC )
+  (   14 +12V )
  )
  ( /4D9D652C $noname  P12 pleins_feux_out {Lib=CONN_2}
-  (    1 N-000048 )
-  (    2 +12V )
+  (    1 N-000052 )
+  (    2 +6V )
  )
  ( /4D9D6529 $noname  P11 codes_out {Lib=CONN_2}
-  (    1 N-000049 )
-  (    2 +12V )
+  (    1 N-000053 )
+  (    2 +6V )
  )
  ( /4D9D64B5 $noname  P5 feux_in {Lib=CONN_4}
-  (    1 VCC )
+  (    1 +12V )
   (    2 /codes_in )
   (    3 /feux_in )
   (    4 ? )
@@ -245,20 +266,20 @@
   (    2 /warning_in )
  )
  ( /4D9D632F $noname  C2 1u {Lib=CP}
-  (    1 VCC )
+  (    1 +12V )
   (    2 GND )
  )
  ( /4D9D6245 $noname  C1 27p {Lib=C}
   (    1 GND )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4D9D6027 $noname  P3 clign_g_out {Lib=CONN_2}
-  (    1 N-000053 )
+  (    1 N-000034 )
   (    2 /clk )
  )
  ( /4D9D5D00 $noname  P2 warning_in {Lib=CONN_2}
   (    1 /warning_in )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4D9D5C9C $noname  R2 10k {Lib=R}
   (    1 GND )
@@ -269,7 +290,7 @@
   (    2 /clign_d_in )
  )
  ( /4D9D5BED $noname  P1 clign_in {Lib=CONN_4}
-  (    1 VCC )
+  (    1 +12V )
   (    2 /clign_d_in )
   (    3 /clign_g_in )
   (    4 ? )
@@ -280,7 +301,7 @@
  )
  ( /4D9D5AD1 $noname  P10 boost_in {Lib=CONN_2}
   (    1 /boost_in )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4D9D595B $noname  R6 10k {Lib=R}
   (    1 /brake_in )
@@ -288,7 +309,7 @@
  )
  ( /4D9C8F0F $noname  P8 brake_in {Lib=CONN_2}
   (    1 /brake_in )
-  (    2 VCC )
+  (    2 +12V )
  )
  ( /4D9C8F0C $noname  P7 brake_analog_out {Lib=CONN_2}
   (    1 /brake_in )
@@ -309,7 +330,7 @@
   (   12 ? )
   (   13 /err_2_can )
   (   14 +12V )
-  (   15 VCC )
+  (   15 +12V )
   (   16 GND )
  )
  ( /4D9C8E5B $noname  MEZZA1 MEZZA-16 {Lib=MEZZA-16}
@@ -327,12 +348,30 @@
   (   12 ? )
   (   13 /boost_in )
   (   14 +12V )
-  (   15 VCC )
+  (   15 +12V )
   (   16 GND )
  )
 )
 *
 { Allowed footprints by component:
+$component C16
+ CP*
+ SM*
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C13
+ SM*
+ C?
+ C1-1
+$endlist
+$component C14
+ CP*
+ SM*
+$endlist
 $component C7
  SM*
  C?
@@ -496,234 +535,245 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 7 "/temoin_cmd+" "temoin_cmd+"
- Q7 G
- MEZZA2 5
-Net 8 "" ""
- P20 1
- Q7 D
-Net 9 "/err_3_analog" "err_3_analog"
- U2 1
- P6 4
-Net 10 "/err_2_analog" "err_2_analog"
- P6 3
- U2 5
-Net 11 "" ""
- P13 5
- R11 2
- U3 1
-Net 12 "" ""
- U3 3
- R13 2
- P13 3
-Net 13 "" ""
- U3 12
- P13 7
- R9 2
-Net 14 "" ""
- R10 2
- P13 6
- U3 13
-Net 16 "+12V" "+12V"
- MEZZA2 14
- MEZZA1 14
- U4 4
- P15 2
- C11 1
- P11 2
- P14 2
- C10 2
- P12 2
- P21 2
- P20 2
- R14 1
-Net 17 "" ""
- R15 2
- U4 7
-Net 18 "" ""
- P4 1
- Q2 D
-Net 28 "/clk" "clk"
- U4 3
- P3 2
- P4 2
-Net 30 "/brake_in" "brake_in"
- P7 1
- P8 1
- R6 1
- MEZZA1 10
- C5 2
-Net 31 "/clign_d_out" "clign_d_out"
- Q2 G
- U1 10
-Net 32 "/comm_6pos_0" "comm_6pos_0"
- U3 9
- MEZZA1 1
-Net 33 "/comm_6pos_1" "comm_6pos_1"
- MEZZA1 3
- U3 7
-Net 34 "/comm_6pos_2" "comm_6pos_2"
- MEZZA1 5
- U3 6
-Net 37 "/boost_in" "boost_in"
- MEZZA1 13
- R7 1
- C6 2
- P9 1
- P10 1
-Net 38 "/clign_g_in" "clign_g_in"
- U1 1
- MEZZA2 2
- R2 2
- P1 3
-Net 39 "/clign_d_in" "clign_d_in"
- U1 9
- P1 2
- MEZZA2 4
- R3 2
-Net 41 "/warning_in" "warning_in"
- U1 2
- R1 2
- U1 8
- MEZZA2 7
- P2 1
-Net 43 "/err_1_can" "err_1_can"
- U2 9
- MEZZA2 9
-Net 44 "/err_2_can" "err_2_can"
- MEZZA2 13
- U2 6
-Net 45 "GND" "GND"
- Q7 S
- Q8 S
- C7 2
- U2 7
- Q5 S
- Q6 S
- C4 2
- C3 1
- P6 1
- U4 1
- P13 2
- C5 1
- Q1 S
- Q3 S
- U1 7
- Q2 S
- Q4 S
- C12 2
- C10 1
- C11 2
- U3 10
- U3 5
- P7 2
- R2 1
+Net 2 "GND" "GND"
  R3 1
- MEZZA1 16
- R6 2
+ C16 2
  P9 2
- C6 1
- MEZZA2 16
+ R6 2
+ R2 1
+ Q5 S
+ U4 1
+ U5 GND
  R7 2
- R1 1
- U3 8
+ C6 1
+ C7 2
+ C11 2
+ C10 1
+ C12 2
+ C14 2
+ C13 1
+ C15 1
  R5 1
  R4 1
- C8 1
- C1 1
+ P13 2
+ R1 1
  C2 2
+ C1 1
+ MEZZA1 16
+ P7 2
+ MEZZA2 16
+ U1 7
+ Q1 S
+ Q3 S
+ U3 8
+ Q2 S
+ C8 1
+ C5 1
  C9 2
-Net 46 "VCC" "VCC"
- P8 2
- C9 1
- C8 2
- P10 2
+ Q4 S
+ U3 10
+ C4 2
+ U3 5
+ Q6 S
+ C3 1
+ P6 1
+ Q8 S
+ U2 7
+ Q7 S
+Net 15 "" ""
+ U3 13
+ R10 2
+ P13 6
+Net 19 "" ""
+ P4 1
+ Q2 D
+Net 20 "/clk" "clk"
+ U4 3
+ P4 2
+ P3 2
+Net 21 "" ""
+ Q7 D
+ P20 1
+Net 22 "/temoin_cmd+" "temoin_cmd+"
+ MEZZA2 5
+ Q7 G
+Net 23 "" ""
+ Q8 D
+ P21 1
+Net 24 "/erreur_3" "erreur_3"
+ U2 3
+ Q8 G
+Net 25 "" ""
+ P15 1
+ Q6 D
+Net 26 "/erreur_2" "erreur_2"
+ U2 4
+ Q6 G
+Net 27 "" ""
+ Q5 D
+ P14 1
+Net 28 "/erreur_1" "erreur_1"
+ Q5 G
+ U2 10
+Net 29 "" ""
+ U4 7
+ R15 2
+Net 30 "+12V" "+12V"
+ C13 2
+ P5 1
+ U5 VI
+ C14 1
+ C3 2
+ C4 1
  U2 14
- R13 1
- R12 1
- R11 1
  R10 1
+ MEZZA1 14
+ P2 2
  R9 1
  R8 1
  U3 16
  U3 4
- C3 2
- C4 1
- U4 8
- MEZZA2 15
- C1 2
- P5 1
+ P10 2
  U1 14
- P2 2
- P1 1
+ MEZZA2 15
+ MEZZA2 14
+ R13 1
+ R12 1
+ P8 2
  MEZZA1 15
+ R11 1
+ C10 2
+ R14 1
+ C1 2
  C2 1
-Net 47 "/feux_in" "feux_in"
- U1 6
- R5 2
+ C11 1
+ U4 8
+ U4 4
+ C9 1
+ P1 1
+ C8 2
+Net 31 "" ""
+ U4 2
+ U4 6
+ C12 1
+ R14 2
+ R15 1
+Net 32 "/clign_d_in" "clign_d_in"
+ U1 9
+ P1 2
+ R3 2
+ MEZZA2 4
+Net 34 "" ""
+ P3 1
+ Q1 D
+Net 35 "/comm_6pos_0" "comm_6pos_0"
+ U3 9
+ MEZZA1 1
+Net 36 "/comm_6pos_1" "comm_6pos_1"
+ U3 7
+ MEZZA1 3
+Net 37 "/comm_6pos_2" "comm_6pos_2"
+ MEZZA1 5
+ U3 6
+Net 40 "/boost_in" "boost_in"
+ R7 1
+ C6 2
+ MEZZA1 13
+ P9 1
+ P10 1
+Net 42 "/warning_in" "warning_in"
+ R1 2
+ P2 1
+ U1 8
+ U1 2
+ MEZZA2 7
+Net 44 "/err_2_can" "err_2_can"
+ U2 6
+ MEZZA2 13
+Net 45 "/feux_in" "feux_in"
  P5 3
+ R5 2
+ U1 6
  Q4 G
  MEZZA2 3
-Net 48 "" ""
- P12 1
- Q4 D
-Net 49 "" ""
- P11 1
- Q3 D
-Net 50 "/codes_out" "codes_out"
- U1 4
- Q3 G
-Net 51 "/codes_in" "codes_in"
- MEZZA2 1
+Net 46 "/codes_in" "codes_in"
  P5 2
  U1 5
  R4 2
-Net 52 "/clign_g_out" "clign_g_out"
+ MEZZA2 1
+Net 47 "/codes_out" "codes_out"
+ U1 4
+ Q3 G
+Net 48 "/clign_d_out" "clign_d_out"
+ Q2 G
+ U1 10
+Net 49 "" ""
+ U3 3
+ P13 3
+ R13 2
+Net 50 "" ""
+ U3 12
+ P13 7
+ R9 2
+Net 51 "/clign_g_out" "clign_g_out"
  U1 3
  Q1 G
+Net 52 "" ""
+ Q4 D
+ P12 1
 Net 53 "" ""
- P3 1
- Q1 D
+ Q3 D
+ P11 1
 Net 54 "" ""
+ R11 2
+ P13 5
+ U3 1
+Net 55 "/clign_g_in" "clign_g_in"
+ R2 2
+ P1 3
+ U1 1
+ MEZZA2 2
+Net 56 "/err_1_analog" "err_1_analog"
+ U2 8
+ P6 2
+Net 57 "/brake_in" "brake_in"
+ R6 1
+ C5 2
+ MEZZA1 10
+ P8 1
+ P7 1
+Net 58 "" ""
  C7 1
  U4 5
-Net 55 "" ""
- R15 1
- R14 2
- C12 1
- U4 2
- U4 6
-Net 56 "" ""
- R12 2
- P13 4
- U3 2
-Net 57 "" ""
- P13 8
+Net 59 "/err_3_can" "err_3_can"
+ MEZZA2 11
+ U2 2
+Net 60 "/err_1_can" "err_1_can"
+ MEZZA2 9
+ U2 9
+Net 61 "+6V" "+6V"
+ U5 VO
+ C15 2
+ P20 2
+ P21 2
+ P14 2
+ P15 2
+ C16 1
+ P12 2
+ P11 2
+Net 62 "/err_2_analog" "err_2_analog"
+ U2 5
+ P6 3
+Net 63 "/err_3_analog" "err_3_analog"
+ P6 4
+ U2 1
+Net 64 "" ""
  U3 11
  R8 2
-Net 58 "/err_1_analog" "err_1_analog"
- P6 2
- U2 8
-Net 59 "" ""
- Q6 D
- P15 1
-Net 60 "/erreur_2" "erreur_2"
- U2 4
- Q6 G
-Net 61 "" ""
- P14 1
- Q5 D
-Net 62 "/erreur_1" "erreur_1"
- U2 10
- Q5 G
-Net 63 "/err_3_can" "err_3_can"
- U2 2
- MEZZA2 11
-Net 64 "" ""
- Q8 D
- P21 1
-Net 65 "/erreur_3" "erreur_3"
- Q8 G
- U2 3
+ P13 8
+Net 65 "" ""
+ P13 4
+ R12 2
+ U3 2
 }
 #End

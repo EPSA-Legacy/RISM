@@ -1,4 +1,4 @@
-update=mer. 13 avril 2011 10:22:48 CEST
+update=14/04/2011 20:40:15
 version=1
 last_client=eeschema
 [general]
@@ -74,11 +74,7 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-SimCmd=
-UseNetN=0
 LabSize=60
-PrintMonochrome=1
-ShowSheetReferenceAndTitleBlock=1
 [eeschema/libraries]
 LibName1=power
 LibName2=device
