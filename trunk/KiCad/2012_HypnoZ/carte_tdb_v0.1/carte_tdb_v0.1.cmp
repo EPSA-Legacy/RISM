@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 18/04/2011 15:11:23
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 17/04/2011 15:51:50
 
 BeginCmp
 TimeStamp = /4D9D6245;
@@ -46,7 +46,7 @@ BeginCmp
 TimeStamp = /4DA5A2D0;
 Reference = C7;
 ValeurCmp = 10n;
-IdModule  = C2;
+IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -95,7 +95,7 @@ BeginCmp
 TimeStamp = /4DA733D6;
 Reference = C14;
 ValeurCmp = 100u;
-IdModule  = C1V5;
+IdModule  = C2V10;
 EndCmp
 
 BeginCmp
@@ -109,35 +109,7 @@ BeginCmp
 TimeStamp = /4DA73457;
 Reference = C16;
 ValeurCmp = 10u;
-IdModule  = C1V5;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D9DCBF7;
-Reference = MECA1;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DAC3778;
-Reference = MECA2;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DAC3780;
-Reference = MECA3;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DAC377F;
-Reference = MECA4;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
+IdModule  = C1V7;
 EndCmp
 
 BeginCmp
@@ -260,6 +232,34 @@ IdModule  = KK_2;
 EndCmp
 
 BeginCmp
+TimeStamp = /4D9DCBF7;
+Reference = P16;
+ValeurCmp = MECA_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D9DCBFA;
+Reference = P17;
+ValeurCmp = MECA_2;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D9DCBFC;
+Reference = P18;
+ValeurCmp = MECA_3;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D9DCBFD;
+Reference = P19;
+ValeurCmp = MECA_4;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
 TimeStamp = /4D9D7C12;
 Reference = P20;
 ValeurCmp = cmd+_out;
@@ -270,13 +270,6 @@ BeginCmp
 TimeStamp = /4D9D7AE0;
 Reference = P21;
 ValeurCmp = erreur_3_out;
-IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DAC2A60;
-Reference = P22;
-ValeurCmp = T_Alim;
 IdModule  = KK_2;
 EndCmp
 
@@ -463,9 +456,9 @@ IdModule  = DIP-16__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DAC2E9A;
+TimeStamp = /4DA55FE6;
 Reference = U4;
-ValeurCmp = LM555CN;
+ValeurCmp = LM555N;
 IdModule  = DIP-8__300_ELL;
 EndCmp
 
