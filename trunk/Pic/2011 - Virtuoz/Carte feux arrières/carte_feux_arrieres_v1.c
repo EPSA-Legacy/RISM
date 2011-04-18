@@ -22,6 +22,8 @@ int1 feuxarr = false;
 int1 clignd = false;
 int1 cligng = false;
 
+// si cligng == clignd == true -> mode warning
+
 int1 clign_on = false;
 
 int16 ms = 0;
@@ -48,7 +50,7 @@ void main()
 	enable_interrupts(INT_TIMER2);
 	enable_interrupts(GLOBAL);
 
-	//setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
 	delay_ms(T_INIT_FEUX_ARR);
 	can_init();
 	can_set_baud();
@@ -62,7 +64,7 @@ void main()
 }
 
 #inline
-void manageCAN()
+void manageCAN()        //cette carte ne fait qu'écouter le CAN, elle n'a aucune donnée à envoyer.
 {
 	struct rx_stat rxStat;
 	int32 rxId;
