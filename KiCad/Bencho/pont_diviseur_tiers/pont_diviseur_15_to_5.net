@@ -1,12 +1,9 @@
-# EESchema Netlist Version 1.1 created  ven. 15 avril 2011 21:31:56 CEST
+# EESchema Netlist Version 1.1 created  19/04/2011 11:08:52
 (
- ( /4DA89BEF KK_2 P1 Output
+ ( /4DAD5092 bornier3 K1 CONN_3
   ( 1 GND )
   ( 2 /+5V )
- )
- ( /4DA89B0A KK_2 P2 Input
-  ( 1 GND )
-  ( 2 /+15V )
+  ( 3 /+15V )
  )
  ( /4DA89B51 R3 R1 20k
   ( 1 /+15V )
@@ -24,12 +21,14 @@ $component R1
  SM0603
  SM0805
  R?-*
+ SM1206
 $endlist
 $component R2
  R?
  SM0603
  SM0805
  R?-*
+ SM1206
 $endlist
 $endfootprintlist
 }
