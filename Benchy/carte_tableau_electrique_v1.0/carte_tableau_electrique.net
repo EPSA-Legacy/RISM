@@ -1,0 +1,101 @@
+# EESchema Netlist Version 1.1 created  15/03/2011 18:19:48
+(
+ ( /4B82ACBD KK_2 D1 JAUNE
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4B83034A KK_2 D2 VERT
+  ( 1 +12C )
+  ( 2 GND )
+ )
+ ( /4B830353 KK_2 D3 ROUGE
+  ( 1 N-000010 )
+  ( 2 GND )
+ )
+ ( /4D7754E4 KK_2 D4 JAUNE
+  ( 1 /Precharge )
+  ( 2 GND )
+ )
+ ( /4B82FE15 KK_2 D5 ROUGE
+  ( 1 N-000009 )
+  ( 2 GND )
+ )
+ ( /4B830066 RELAIS_JS-M K1 RELAIS-SPST-NO
+  ( 1 N-000012 )
+  ( 2 /porte_fermée )
+  ( 3 +12V )
+  ( 5 GND )
+ )
+ ( /4B830109 RELAIS_JS-M K2 RELAIS-SPST-NO
+  ( 1 +12C )
+  ( 2 +12C )
+  ( 3 N-000012 )
+  ( 5 GND )
+ )
+ ( /4B82FD15 RELAIS_DPDT K4 RELAIS-DPDT
+  ( 1 N-000008 )
+  ( 2 GND )
+  ( 3 ? )
+  ( 4 N-000009 )
+  ( 5 +12V )
+  ( 6 +12V )
+  ( 7 /porte_fermée )
+  ( 8 ? )
+ )
+ ( /4D7F99F4 RELAIS_SPDT K5 RELAIS-SPDT
+  ( 1 /Cont- )
+  ( 2 GND )
+  ( 3 +12C )
+  ( 4 ? )
+  ( 5 N-000010 )
+ )
+ ( /4D7F9F5E 1pin MECA1 MECA
+  ( 1 ? )
+ )
+ ( /4D7F9F8B 1pin MECA2 MECA
+  ( 1 ? )
+ )
+ ( /4D7F9F8C 1pin MECA3 MECA
+  ( 1 ? )
+ )
+ ( /4D7F9F8D 1pin MECA4 MECA
+  ( 1 ? )
+ )
+ ( /4D6BA96F bornier2 P1 PWR_IN
+  ( 1 N-000020 )
+  ( 2 N-000013 )
+ )
+ ( /4D6A1ABA bornier2 P2 PORTE
+  ( 1 +12V )
+  ( 2 N-000008 )
+ )
+ ( /4D7752F3 KK_4 P3 CTE_CONT
+  ( 1 /Precharge )
+  ( 2 /Cont- )
+  ( 3 N-000005 )
+  ( 4 +12C )
+ )
+ ( /4D775349 bornier2 P4 CONT+
+  ( 1 N-000005 )
+  ( 2 GND )
+ )
+ ( /4D6A1C1D bornier2 P5 CONT-
+  ( 1 /Cont- )
+  ( 2 GND )
+ )
+ ( /4D6BB8CC bornier2 P6 PRECHRG
+  ( 1 /Precharge )
+  ( 2 GND )
+ )
+ ( /4B830193 KK_2 SW2 ON
+  ( 1 +12V )
+  ( 2 +12C )
+ )
+ ( /4B9E44C7 bornier4 SW3 SW_DBL
+  ( 1 N-000020 )
+  ( 2 +12V )
+  ( 3 N-000013 )
+  ( 4 GND )
+ )
+)
+*
