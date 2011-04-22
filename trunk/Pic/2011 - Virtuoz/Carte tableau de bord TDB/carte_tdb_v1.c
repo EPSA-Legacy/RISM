@@ -1,6 +1,6 @@
 //		Carte Tableau de Bord
 //		Version 1.0 - HDT - 20/04/2011
-//
+//      Version 1.1 - HDT - 22/04/2011
 
 #include <18F2580.h>
 #include <can-18xxx8.c>
@@ -30,9 +30,21 @@
 // Variables utilisées
 
 int16 ms = 0;                   // incrément du timer
+int16 msboost = 0;
+int16 msbrake = 0;
+
+int16 periode_boost = 1000;     // période d'envoi du signal de boost, plus rapide en mode d'attente de ACK_BOOST
+int16 periode_brake = 1000;     // période d'envoi du signal de frein, plus rapide en mode d'attente de ACK_BRAKE
+
 int1 send_phares = false;       // autorisation d'envoyer la donnée des phares et clignos
+int1 send_boost = false;        // autorisation d'envoyer la donnée de boost
+int1 send_brake = false;        // autorisation d'envoyer la donnée de frein
+
 int8 state_phares = 0b00000000; // état des phares : 000 - warning - clign_g - clign_d - codes - feux.
+int1 state_boost = false;       // état boost.
+int1 state_brake = false;       // état frein.
 int8 newstate = 0b00000000;     // nouvel état pour comparer.
+
 
 // Fonctions
 
@@ -46,6 +58,8 @@ void internalLogic();
 void isr_timer2()
 {
 	 ms++;
+	 msboost++;
+	 msbrake++;
 }
 
 #org DEFAULT
@@ -86,11 +100,19 @@ void manageCAN()
 
 	if(can_kbhit())     // Une donnée est présente dans le buffer de réception du CAN
 	{
-		if(can_getd(rxId,&rxData[0],rxLen,rxStat))
+		if(can_getd(rxId,rxData,rxLen,rxStat))
 		{
-			if(rxId == XXX_ID)        // TODO : Le TdB reçoit des données ? Vérifier lesquelles
+			switch(rxId)    // TODO : Le TdB reçoit des données ? Vérifier lesquelles
 			{
+                case MAB_BOOST_ACK_ID:
+                    periode_boost = 1000;
+                    state_boost = false;
+                    break;
 
+                case MAB_BRAKE_ACK_ID:
+                    periode_brake = 1000;
+                    state_brake = false;
+                    break;
 			}
 		}
 	}
@@ -99,11 +121,22 @@ void manageCAN()
 	{
 	    if(send_phares)
 	    {
-	        txData[0] = FEUX;
-	        txData[1] = CODES|FEUX;
-	        txData[2] = CLIGN_G|WARNING;
-	        txData[3] = CLIGN_D|WARNING;
-	        can_putd(TDB_PHARES_AVT_ID,txData,8,1,false,false);
+	        txData[0] = input(FEUX);
+	        txData[1] = input(CODES)|input(FEUX);
+	        txData[2] = input(CLIGN_G)|input(WARNING);
+	        txData[3] = input(CLIGN_D)|input(WARNING);
+	        can_putd(TDB_PHARES_ID,txData,4,1,false,false);
+	    }
+
+	    if(send_boost)
+	    {
+	        txData[0] = state_boost;
+	        can_putd(TDB_BOOST_ID,txData,1,1,false,false);
+	    }
+	    if(send_brake)
+	    {
+	        txData[0] = state_brake;
+	        can_putd(TDB_BRAKE_ID,txData,1,1,false,false);
 	    }
 	}
 
@@ -112,7 +145,7 @@ void manageCAN()
 #inline
 void internalLogic()
 {
-    newstate = FEUX+2*CODES+4*CLIGN_D+8*CLIGN_G+16*WARNING;
+    newstate = input(FEUX)+2*input(CODES)+4*input(CLIGN_D)+8*input(CLIGN_G)+16*input(WARNING);
 
     if(ms >= 1000 || state_phares&newstate != 0b00000000)
     {
@@ -120,6 +153,27 @@ void internalLogic()
         state_phares = newstate;
         ms = 0;
     }
-	//TODO : Manager le changement d'état.
+
+    if(msboost >= periode_boost || input(BOOST))
+    {
+        send_boost = true;
+        if(input(BOOST))
+        {
+            state_boost = true;
+            periode_boost = 200;
+        }
+        msboost = 0;
+    }
+
+    if(msbrake >= periode_brake || input(BRAKE))
+    {
+        send_brake = true;
+        if(input(BRAKE))
+        {
+            state_brake = true;
+            periode_brake = 200;
+        }
+        msbrake = 0;
+    }
 }
 

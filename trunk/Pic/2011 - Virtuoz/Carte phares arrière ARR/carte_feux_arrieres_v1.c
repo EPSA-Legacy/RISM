@@ -74,14 +74,19 @@ void manageCAN()        //cette carte ne fait qu'écouter le CAN, elle n'a aucune
 
 	if(can_kbhit())     // Une donnée est présente dans le buffer de réception du CAN
 	{
-		if(can_getd(rxId,&rxData[0],rxLen,rxStat))
+		if(can_getd(rxId,rxData,rxLen,rxStat))
 		{
-			if(rxId == TDB_PHARES_ARR_ID)        // on veut modifier les feux arrière ? Utiliser rxData pour activer ou désactiver les feux.
+			switch(rxId)        // on veut modifier les feux arrière ? Utiliser rxData pour activer ou désactiver les feux.
 			{
-                feuxstop = rxData[0];
-                feuxarr = rxData[1];
-                cligng = rxData[2];
-                clignd = rxData[3];
+                case TDB_PHARES_ID:
+                    feuxarr = rxData[0];
+                    cligng = rxData[2];
+                    clignd = rxData[3];
+                    break;
+
+                case MAB_STOP_ID:
+                    feuxstop = rxData[0];
+                    break;
 			}
 		}
 	}
