@@ -4,3 +4,4 @@
 //ID des cartes pour le CAN
 
 #define TDB_PHARES_AVT_ID
+#define TDB_PHARES_ARR_ID

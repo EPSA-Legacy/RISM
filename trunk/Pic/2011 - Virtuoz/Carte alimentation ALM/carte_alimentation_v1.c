@@ -1,5 +1,6 @@
 //		Carte Alimentation
 //		Version 1.0 - HDT - 04/04/2011
+//      Version 1.1 - HDT - 21/04/2011
 //
 
 #include <18F2580.h>
@@ -8,6 +9,9 @@
 
 #define U_ADAPT         PIN_A0
 #define V_SEUIL         PIN_A2
+
+#define BATT_MAX
+#define BATT_MIN
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
@@ -38,7 +42,7 @@ void main()
 	enable_interrupts(INT_TIMER2);
 	enable_interrupts(GLOBAL);
 
-	//setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
 	can_init();
 	can_set_baud();
 
@@ -74,5 +78,6 @@ void manageCAN()
 void internalLogic()
 {
 	//TODO : Regarder datasheet de la batterie pour pouvoir calculer son état de charge à partir de Vseuil-.
+	//TODO : Le Vseuil+ est de 12,6V ramené en 0-5V.
 }
 

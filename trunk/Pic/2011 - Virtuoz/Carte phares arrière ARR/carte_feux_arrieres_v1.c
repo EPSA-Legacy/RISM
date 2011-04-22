@@ -1,6 +1,7 @@
 //		Carte Feux Arrières
 //		Version 1.0 - HDT - 02/03/2011
 //      Version 1.1 - HDT - 18/04/2011
+//      Version 1.2 - HDT - 22/04/2011
 //
 
 #include <18F2580.h>
@@ -25,6 +26,7 @@ int1 cligng = false;
 // si cligng == clignd == true -> mode warning
 
 int1 clign_on = false;
+int1 timer_active = false;
 
 int16 ms = 0;
 
@@ -39,7 +41,7 @@ void internalLogic();
 #int_timer2
 void isr_timer2()
 {
-	 ms++;
+	 if(timer_active)ms++;
 }
 
 #org DEFAULT
@@ -74,7 +76,7 @@ void manageCAN()        //cette carte ne fait qu'écouter le CAN, elle n'a aucune
 	{
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat))
 		{
-			if(rxId == FEUX_ARR_DATA_ID)        // on veut modifier les feux arrière ? Utiliser rxData pour activer ou désactiver les feux.
+			if(rxId == TDB_PHARES_ARR_ID)        // on veut modifier les feux arrière ? Utiliser rxData pour activer ou désactiver les feux.
 			{
                 feuxstop = rxData[0];
                 feuxarr = rxData[1];
@@ -91,20 +93,8 @@ void internalLogic()
 	output_bit(FEUX_STOP, feuxstop);            // si feuxstop est à true, allumer les feux stop, et inversement
 	output_bit(FEUX_ARR, feuxarr);              // si feuxarr est à true, allumer les feux arrière, et inversement
 
-	if(cligng|clignd)                           // si un clignotant est activé
-	{
-	    if(!timer2_active)                      // si le timer 2 n'a pas été mis en marche
-	    {
-	        setup_timer_2(T2_DIV_BY_4,79,16);   // Mettre en marche le timer 2 : interruption toutes les millisecondes
-            timer2_active = true;
-	    }
-	}
-	else                                        // si aucun clignotant n'est activé
-	{
-	    setup_timer_2(T2_DISABLED,79,16);       // Désactiver le timer 2
-	    ms = 0;
-	    timer2_active = false;
-	}
+	timer_active = cligng|clignd;
+	if(!timer_active)   ms = 0;
 
 	if(ms == 500)                               // 500 ms après l'activation du timer
 	{
