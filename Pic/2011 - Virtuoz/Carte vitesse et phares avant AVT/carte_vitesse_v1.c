@@ -24,6 +24,7 @@
 #define VITESSE_A       PIN_A4  //destiné à être envoyé par CAN
 #define VITESSE_B       PIN_C0  //destiné à être envoyé par CAN
 
+#define VITESSE_SEUIL   10
 #define CSTE_CAP_A      322
 #define CSTE_CAP_B      322
 
@@ -40,8 +41,9 @@ int8 contB = 0;
 int1 capA = false;
 int1 capB = false;
 
-int16 ms = 0;
-int8 ms_clign = 0;
+int32 msA = 0;
+int32 msB = 0;
+int16 ms_clign = 0;
 
 int1 phares = false;
 int1 codes = false;
@@ -49,15 +51,11 @@ int1 clignd = false;
 int1 cligng = false;
 
 int1 clign_on = false;
-int1 timer1_active = false;
+int1 timer_active = false;
+int1 mode_mesureA = true;        //true -> mode "rapide" (vitesseA > VITESSE_SEUIL), false -> mode "lent"
+int1 mode_mesureB = true;        //true -> mode "rapide" (vitesseB > VITESSE_SEUIL), false -> mode "lent"
 
 // Fonctions
-
-#inline
-void calculeVitesseA();
-
-#inline
-void calculeVitesseB();
 
 #inline
 void manageCAN();
@@ -68,7 +66,9 @@ void internalLogic();
 #int_timer2
 void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au bout d'une milliseconde
 {
-	 ms++;              // ajouter 1 ms.
+	 msA++;             // ajouter 1 ms.
+	 msB++;
+	 if(timer_active)   ms_clign++;
 }
 
 #org DEFAULT
@@ -82,8 +82,8 @@ void main()
 	enable_interrupts(INT_TIMER2);
 	enable_interrupts(GLOBAL);
 
-	setup_timer_0(RTCC_EXT_L_TO_H);
-	setup_timer_1(T1_EXTERNAL);
+	setup_timer_0(RTCC_EXT_L_TO_H);     //incrémente à chaque front montant (1 tour de roue)
+	setup_timer_1(T1_EXTERNAL);         //incrémente à chaque front montant (1 tour de roue)
 	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
 
 	can_init();
@@ -122,9 +122,9 @@ void manageCAN()
 	if (can_tbe())
     {
         if(rxId == VIT_AVG_ASK_ID)
-            can_putd(VIT_AVG_DATA_ID,&vitesseA,1,PRIORITY_VIT1,1,0);
+            can_putd(VIT_AVG_DATA_ID,&vitesseA,8,1,1,0);
         else if(rxId == VIT_AVD_ASK_ID)
-            can_putd(VIT_AVD_DATA_ID,&vitesseB,1,PRIORITY_VIT1,1,0);
+            can_putd(VIT_AVD_DATA_ID,&vitesseB,8,1,1,0);
     }
 }
 
@@ -136,21 +136,10 @@ void internalLogic()
     output_bit(CODES_D, codes);
 	output_bit(CODES_G, codes);            // si codes est à true, allumer le feu de codes gauche (resp. droit), et inversement
 
-	if(cligng|clignd)                       // si un clignotant est activé
-	{
-	    if(!timer1_active)
-	    {
-	        setup_timer_1(T1_DIV_BY_2);         // Régler le timer 1 : overflow toutes les 26,2 ms environ
-	        timer1_active = true;
-        }
-	}
-	else                                        // si aucun clignotant n'est activé
-	{
-	    setup_timer_1(T1_DISABLED);             // Désactiver le timer 1
-	    timer1_active = false;
-	}
+	timer_active = cligng|clignd;          // si des clignos doivent être allumés, on active le timer de clignotants (latence max. 1ms)
+	if(!timer_active)   ms_clign = 0;
 
-	if(ms_clign == 19)                          // environ 500 ms après l'activation du timer 1
+	if(ms_clign == 500)                          // environ 500 ms après l'activation du timer 1
 	{
 		ms_clign = 0;                           // repartir pour 500 ms
 		clign_on = !clign_on;                   // changer l'état d'allumage des clignotants
@@ -161,49 +150,33 @@ void internalLogic()
                                                 // allumer ou éteindre le cligno gauche s'il est activé
 	}
 
-	if(ms == 1000)
-	{
-		ms = 0;
-		calculeVitesseA();
-		calculeVitesseB();
-		contA = 0;
-		contB = 0;
-	}
+    //mode rapide
+    if(mode_mesure_A)
+    {
+        if(msA == 1000)
+        {
+            msA = 0;
+            vitesseA = (get_timer0() * CSTE_CAPT_A) / 100;
+            set_timer0(0);
+        }
+    }
+    else
+    {
+        // TODO : Mode lent. Comment mesurer le temps entre *deux impulsions consécutives* ?
+    }
 
-	//Capteur de vitesse A
-	if (input(VITESSE_A))
-	{
-		if(!capA)
-		{
-			capA = true;
-			contA++;
-		}
-	}
-	else
-		capA = false;
+    if(mode_mesure_B)
+    {
+        if(msB == 1000)
+        {
+            msB = 0;
+            vitesseB = (get_timer1() * CSTE_CAPT_B) / 100;
+            set_timer1(0);
+        }
+    }
+    else
+    {
+        // TODO : Mode lent. Comment mesurer le temps entre *deux impulsions consécutives* ?
+    }
 
-	//	Capteur de vitesse B
-	if (input(VITESSE_B))
-	{
-		if(capB == false)
-		{
-			capB = true;
-			contB++;
-		}
-	}
-	else
-		capB = false;
 }
-
-#inline
-void calculeVitesseA()
-{
-   vitesseA = (contA * CSTE_CAPT_A) / 100;
-}
-
-#inline
-void calculeVitesseB()
-{
-   vitesseB = (contB * CSTE_CAPT_B) / 100;
-}
-
