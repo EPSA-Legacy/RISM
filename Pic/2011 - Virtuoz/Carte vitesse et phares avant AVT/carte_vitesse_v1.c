@@ -3,6 +3,7 @@
 //		Version 1.0 - HDT - 08/03/2011
 //      Version 1.1 - HDT - 15/03/2011
 //      Version 1.2 - HDT - 20/04/2011
+//      Version 1.3 - HDT - 24/04/2011
 //
 
 // Vitesse : regarder toutes les secondes la valeur du timer puis remettre à zéro
@@ -41,9 +42,10 @@ int8 contB = 0;
 int1 capA = false;
 int1 capB = false;
 
-int32 msA = 0;
+int32 msA = 0;          //pour les mesures de vitesse
 int32 msB = 0;
-int16 ms_clign = 0;
+int16 ms_clign = 0;     //pour la période des clignotants
+int16 ms = 0;           //pour l'envoi régulier du signal de vitesse
 
 int1 phares = false;
 int1 codes = false;
@@ -54,6 +56,8 @@ int1 clign_on = false;
 int1 timer_active = false;
 int1 mode_mesureA = true;        //true -> mode "rapide" (vitesseA > VITESSE_SEUIL), false -> mode "lent"
 int1 mode_mesureB = true;        //true -> mode "rapide" (vitesseB > VITESSE_SEUIL), false -> mode "lent"
+
+int1 send_vitesse = false;
 
 // Fonctions
 
@@ -69,6 +73,7 @@ void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au b
 	 msA++;             // ajouter 1 ms.
 	 msB++;
 	 if(timer_active)   ms_clign++;
+	 ms++;
 }
 
 #org DEFAULT
@@ -121,10 +126,8 @@ void manageCAN()
 
 	if (can_tbe())
     {
-        if(rxId == VIT_AVG_ASK_ID)
-            can_putd(VIT_AVG_DATA_ID,&vitesseA,8,1,1,0);
-        else if(rxId == VIT_AVD_ASK_ID)
-            can_putd(VIT_AVD_DATA_ID,&vitesseB,8,1,1,0);
+        if(send_vitesse)
+            can_putd(AVT_VITESSE_ID,&vitesseA,8,1,1,0); //envoi de "vitesse" : moyenne des deux ?
     }
 }
 
@@ -162,7 +165,12 @@ void internalLogic()
     }
     else
     {
-        // TODO : Mode lent. Comment mesurer le temps entre *deux impulsions consécutives* ?
+        if(get_timer0() >= 1)
+        {
+            vitesseA = (CSTE_CAPT_A * 10 * get_timer0()) / msA;
+            msA = 0;
+            set_timer0(0);
+        }
     }
 
     if(mode_mesure_B)
@@ -176,7 +184,20 @@ void internalLogic()
     }
     else
     {
-        // TODO : Mode lent. Comment mesurer le temps entre *deux impulsions consécutives* ?
+        if(get_timer1() >= 1)
+        {
+            vitesseB = (CSTE_CAPT_B * 10 * get_timer1()) / msB;
+            msB = 0;
+            set_timer1(0);
+        }
     }
 
+    if(ms >= 500)
+    {
+        send_vitesse = true;
+        ms = 0;
+    }
+
+    mode_mesure_A = (vitesseA > VITESSE_SEUIL);
+    mode_mesure_B = (vitesseB > VITESSE_SEUIL);
 }
