@@ -1,124 +1,101 @@
-# EESchema Netlist Version 1.1 created  mar. 01 mars 2011 10:07:11 CET
+# EESchema Netlist Version 1.1 created  25/04/2011 17:50:09
 (
- ( /4D6BB5D2 $noname  P7 CONN_2 {Lib=CONN_2}
-  (    1 GND )
-  (    2 /feux_stop )
+ ( /4D6A198E he10-10df MEZZA1 MEZZA-10
+  ( 1 /cmd_feux_arr )
+  ( 2 /cmd_clign_g )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4D6BB579 $noname  P6 CONN_4 {Lib=CONN_4}
-  (    1 GND )
-  (    2 /clign_d )
-  (    3 /feux_stop )
-  (    4 /feux_arr )
+ ( /4D6A1993 he10-10df MEZZA2 MEZZA-10
+  ( 1 /cmd_clign_d )
+  ( 2 /cmd_feux_stop )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 GND )
  )
- ( /4D6BB56F $noname  P5 CONN_4 {Lib=CONN_4}
-  (    1 GND )
-  (    2 /clign_g )
-  (    3 /feux_stop )
-  (    4 /feux_arr )
+ ( /4D6BB48A 1pin P1 CONN_1
+  ( 1 ? )
  )
- ( /4D6BB492 $noname  P3 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D6BB48F 1pin P2 CONN_1
+  ( 1 ? )
  )
- ( /4D6BB48F $noname  P2 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D6BB492 1pin P3 CONN_1
+  ( 1 ? )
  )
- ( /4D6BB48A $noname  P1 CONN_1 {Lib=CONN_1}
-  (    1 ? )
+ ( /4D6BB56F KK_4 P5 CONN_4
+  ( 1 GNDPWR )
+  ( 2 /clign_g )
+  ( 3 /feux_stop )
+  ( 4 /feux_arr )
  )
- ( /4D6BB403 $noname  U4 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 +12V )
-  (    2 /cmd_feux_stop )
-  (    3 GND )
-  (    4 /feux_stop )
+ ( /4D6BB579 KK_4 P6 CONN_4
+  ( 1 GNDPWR )
+  ( 2 /clign_d )
+  ( 3 /feux_stop )
+  ( 4 /feux_arr )
  )
- ( /4D6BA815 $noname  U3 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 +12V )
-  (    2 /cmd_clign_d )
-  (    3 GND )
-  (    4 /clign_d )
+ ( /4D6BB5D2 KK_2 P7 CONN_2
+  ( 1 GND )
+  ( 2 /feux_stop )
  )
- ( /4D6BA812 $noname  U2 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 +12V )
-  (    2 /cmd_clign_g )
-  (    3 GND )
-  (    4 /clign_g )
+ ( /4DB595FB KK_2 P8 CONN_2
+  ( 1 +12P )
+  ( 2 GNDPWR )
  )
- ( /4D6BA80D $noname  U1 REED9081_SYMBIOZ {Lib=REED9081_SYMBIOZ}
-  (    1 +12V )
-  (    2 /cmd_feux_arr )
-  (    3 GND )
-  (    4 /feux_arr )
+ ( /4DB584EB TO92DGS Q1 FET_N
+  ( D N-000021 )
+  ( G /cmd_feux_arr )
+  ( S GND )
  )
- ( /4D6A1993 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
-  (    1 /cmd_clign_d )
-  (    2 /cmd_feux_stop )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 ? )
-  (   10 GND )
+ ( /4DB586AD TO92DGS Q2 FET_N
+  ( D N-000009 )
+  ( G /cmd_clign_g )
+  ( S GND )
  )
- ( /4D6A198E $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
-  (    1 /cmd_feux_arr )
-  (    2 /cmd_clign_g )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 ? )
-  (   10 GND )
+ ( /4DB586F4 TO92DGS Q3 FET_N
+  ( D N-000004 )
+  ( G /cmd_clign_d )
+  ( S GND )
+ )
+ ( /4DB58716 TO92DGS Q4 FET_N
+  ( D N-000003 )
+  ( G /cmd_feux_stop )
+  ( S GND )
+ )
+ ( /4D6BA80D REED9081_SYMBIOZ U1 REED9081_SYMBIOZ
+  ( 1 +12P )
+  ( 2 VCC )
+  ( 3 N-000021 )
+  ( 4 /feux_arr )
+ )
+ ( /4DB586AE REED9081_SYMBIOZ U2 REED9081_SYMBIOZ
+  ( 1 +12P )
+  ( 2 VCC )
+  ( 3 N-000009 )
+  ( 4 /clign_g )
+ )
+ ( /4DB586F3 REED9081_SYMBIOZ U3 REED9081_SYMBIOZ
+  ( 1 +12P )
+  ( 2 VCC )
+  ( 3 N-000004 )
+  ( 4 /clign_d )
+ )
+ ( /4DB58717 REED9081_SYMBIOZ U4 REED9081_SYMBIOZ
+  ( 1 +12P )
+  ( 2 VCC )
+  ( 3 N-000003 )
+  ( 4 /feux_stop )
  )
 )
 *
-{ Pin List by Nets
-Net 1 "/clign_g" "clign_g"
- P5 2
- U2 4
-Net 2 "/feux_arr" "feux_arr"
- P6 4
- U1 4
- P5 4
-Net 3 "/cmd_feux_arr" "cmd_feux_arr"
- MEZZA1 1
- U1 2
-Net 7 "/cmd_feux_stop" "cmd_feux_stop"
- U4 2
- MEZZA2 2
-Net 8 "/feux_stop" "feux_stop"
- U4 4
- P5 3
- P6 3
- P7 2
-Net 9 "+12V" "+12V"
- U1 1
- U2 1
- MEZZA2 8
- U4 1
- MEZZA1 8
- U3 1
-Net 10 "/cmd_clign_d" "cmd_clign_d"
- MEZZA2 1
- U3 2
-Net 11 "/clign_d" "clign_d"
- P6 2
- U3 4
-Net 12 "/cmd_clign_g" "cmd_clign_g"
- MEZZA1 2
- U2 2
-Net 25 "GND" "GND"
- P6 1
- U2 3
- P5 1
- U3 3
- U4 3
- U1 3
- MEZZA1 10
- P7 1
- MEZZA2 10
-}
-#End
