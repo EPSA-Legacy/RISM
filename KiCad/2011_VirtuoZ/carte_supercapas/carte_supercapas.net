@@ -1,50 +1,95 @@
-# EESchema Netlist Version 1.1 created  05/04/2011 22:44:27
+# EESchema Netlist Version 1.1 created  25/04/2011 15:54:37
 (
- ( /4D51649D C1V5 C1 1u
-  ( 1 VCC )
-  ( 2 GND )
- )
- ( /4D51649C C1 C2 17p
-  ( 1 VCC )
-  ( 2 GND )
- )
- ( /4D7F8C4F C1V5 C3 1u
-  ( 1 VCC )
-  ( 2 GND )
- )
- ( /4D7F8C50 C1 C4 17p
-  ( 1 VCC )
-  ( 2 GND )
- )
- ( /4CFA8A0D LEDV D1 YELLOW
+ ( /4DA4827B C1V5 C1 1u
   ( 1 +12V )
-  ( 2 N-000019 )
+  ( 2 GND )
  )
- ( /4CFA8A09 LEDV D2 RED
+ ( /4DA4827C C1 C2 100n
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DB5467F C1V5 C3 1u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DB54680 C1 C4 100n
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DA480D8 C1 C5 330n
+  ( 1 N-000032 )
+  ( 2 GND )
+ )
+ ( /4DA483B6 C1 C6 330n
+  ( 1 N-000034 )
+  ( 2 GND )
+ )
+ ( /4DB5469A C1V5 C7 1u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DB54699 C1 C8 100n
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DA592B6 C1 C9 330n
+  ( 1 N-000038 )
+  ( 2 GND )
+ )
+ ( /4DA592AB C1 C10 330n
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /4DA476C4 C1V5 C11 1u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DA4767B C1 C12 100n
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4DA598BC LEDV D1 RED
+  ( 1 VCC )
+  ( 2 N-000015 )
+ )
+ ( /4DA59953 LEDV D2 RED
+  ( 1 VCC )
+  ( 2 N-000016 )
+ )
+ ( /4DA5995D LEDV D3 RED
+  ( 1 VCC )
+  ( 2 N-000018 )
+ )
+ ( /4DA5995C LEDV D4 RED
   ( 1 VCC )
   ( 2 N-000017 )
  )
- ( /4D9A4309 LEDV D3 YELLOW
-  ( 1 +12P )
-  ( 2 N-000031 )
+ ( /4DA45D63 1pin MECA1 CONN_1
+  ( 1 ? )
+ )
+ ( /4DA45D9D 1pin MECA2 CONN_1
+  ( 1 ? )
+ )
+ ( /4DA45DA4 1pin MECA3 CONN_1
+  ( 1 ? )
  )
  ( /4D6BA2EC he10-10df MEZZA1 MEZZA-10
-  ( 1 /W1_out )
-  ( 2 /Phares_G )
-  ( 3 /W2_out )
-  ( 4 /Cligno_G )
+  ( 1 /err_SC3 )
+  ( 2 /err_SC2 )
+  ( 3 /err_SC4 )
+  ( 4 /err_SC1 )
   ( 5 ? )
-  ( 6 /Codes_G )
+  ( 6 ? )
   ( 7 ? )
   ( 8 ? )
   ( 9 VCC )
   ( 10 GND )
  )
  ( /4D6BA2F1 he10-10df MEZZA2 MEZZA-10
-  ( 1 ? )
-  ( 2 /Cligno_D )
-  ( 3 /Phares_D )
-  ( 4 /Codes_D )
+  ( 1 /TS2 )
+  ( 2 /TS3 )
+  ( 3 /TS4 )
+  ( 4 /TS1 )
   ( 5 ? )
   ( 6 ? )
   ( 7 ? )
@@ -52,137 +97,115 @@
   ( 9 ? )
   ( 10 GND )
  )
- ( /4D6BB20D KK_2 P1 Incré_G
-  ( 1 +12V )
-  ( 2 /W1 )
+ ( /4DB5427D KK_4C P1 CONN_4
+  ( 1 /err_SC1 )
+  ( 2 /err_SC2 )
+  ( 3 /err_SC3 )
+  ( 4 /err_SC4 )
  )
- ( /4D6BA879 KK_2 P2 Phares
-  ( 1 N-000028 )
-  ( 2 GNDPWR )
- )
- ( /4D6BB08D KK_2 P3 Phares
-  ( 1 N-000004 )
-  ( 2 GNDPWR )
- )
- ( /4D6BB215 KK_2 P4 Incré_D
-  ( 1 +12V )
-  ( 2 /W2 )
- )
- ( /4D6BB021 KK_2 P5 Phares
-  ( 1 N-000023 )
-  ( 2 GNDPWR )
- )
- ( /4D6BB07D KK_2 P6 Phares
-  ( 1 N-000003 )
-  ( 2 GNDPWR )
- )
- ( /4D6BB7AA KK_4 P7 conn_interface
-  ( 1 GND )
-  ( 2 /W1_out )
-  ( 3 /W2_out )
-  ( 4 GND )
- )
- ( /4D6BB032 KK_2 P8 Phares
-  ( 1 N-000025 )
-  ( 2 GNDPWR )
- )
- ( /4D6BB06D KK_2 P9 Phares
-  ( 1 N-000002 )
-  ( 2 GNDPWR )
- )
- ( /4D9A37ED KK_2 P10 alim_feux
-  ( 1 +12P )
-  ( 2 GNDPWR )
- )
- ( /4D51648F R3 R1 ?
-  ( 1 N-000033 )
+ ( /4DA47B9C KK_2C P2 Temp1
+  ( 1 /Temp_supercap1 )
   ( 2 GND )
  )
- ( /4D51648E R3 R2 ?
-  ( 1 VCC )
-  ( 2 N-000033 )
- )
- ( /4D6BB72A R3 R3 R
-  ( 1 /W1 )
+ ( /4DB54682 KK_2C P3 Temp2
+  ( 1 /Temp_supercap2 )
   ( 2 GND )
  )
- ( /4D7F7D42 R3 R4 ?
-  ( 1 N-000034 )
+ ( /4DB54697 KK_2C P4 Temp3
+  ( 1 /Temp_supercap3 )
   ( 2 GND )
  )
- ( /4D7F7D43 R3 R5 ?
-  ( 1 VCC )
-  ( 2 N-000034 )
- )
- ( /4D6BB740 R3 R6 R
-  ( 1 /W2 )
+ ( /4DA475A3 KK_2C P5 Temp4
+  ( 1 /Temp_supercap4 )
   ( 2 GND )
  )
- ( /4CFA8A0E R3 R7 1k
-  ( 1 GND )
-  ( 2 N-000019 )
+ ( /4DB57C87 KK_2C P6 Klaric
+  ( 1 /TS1 )
+  ( 2 GND )
  )
- ( /4CFA8A08 R3 R8 1k
-  ( 1 GND )
+ ( /4DA59832 R3 R1 1k
+  ( 1 /err_SC1 )
+  ( 2 N-000015 )
+ )
+ ( /4DA59954 R3 R2 1k
+  ( 1 /err_SC2 )
+  ( 2 N-000016 )
+ )
+ ( /4DA4827D R3 R3 33
+  ( 1 N-000029 )
+  ( 2 /Temp_supercap1 )
+ )
+ ( /4DA5995E R3 R4 1k
+  ( 1 /err_SC3 )
+  ( 2 N-000018 )
+ )
+ ( /4DA5995B R3 R5 1k
+  ( 1 /err_SC4 )
   ( 2 N-000017 )
  )
- ( /4D9A430A R3 R9 1k
-  ( 1 GNDPWR )
-  ( 2 N-000031 )
+ ( /4DB54681 R3 R6 33
+  ( 1 N-000035 )
+  ( 2 /Temp_supercap2 )
  )
- ( /4D7F7D3D DIP-8__300_ELL U1 TL082
-  ( 1 N-000008 )
-  ( 2 N-000033 )
-  ( 3 /W1 )
-  ( 4 GND )
-  ( 5 /W2 )
-  ( 6 N-000034 )
-  ( 7 N-000009 )
-  ( 8 VCC )
+ ( /4DA48138 R3 R7 R
+  ( 1 N-000032 )
+  ( 2 /Temp_supercap1 )
  )
- ( /4D7F8B45 DIP-14__300_ELL U2 4069
-  ( 1 N-000008 )
-  ( 2 /W1_out )
-  ( 3 N-000009 )
-  ( 4 /W2_out )
-  ( 7 GND )
-  ( 14 VCC )
+ ( /4DA483B5 R3 R8 R
+  ( 1 N-000034 )
+  ( 2 /Temp_supercap3 )
  )
- ( /4D6BA834 REED9081_SYMBIOZ U3 REED_Phares_G
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Phares_G )
-  ( 4 N-000028 )
+ ( /4DB54698 R3 R9 33
+  ( 1 N-000036 )
+  ( 2 /Temp_supercap3 )
  )
- ( /4D6BB08C REED9081_SYMBIOZ U4 REED_Phares_D
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Phares_D )
-  ( 4 N-000004 )
+ ( /4DA592B5 R3 R10 R
+  ( 1 N-000038 )
+  ( 2 /Temp_supercap2 )
  )
- ( /4D6BB020 REED9081_SYMBIOZ U5 REED_Codes_G
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Codes_G )
-  ( 4 N-000023 )
+ ( /4DA592AC R3 R11 R
+  ( 1 N-000006 )
+  ( 2 /Temp_supercap4 )
  )
- ( /4D6BB07C REED9081_SYMBIOZ U6 REED_Codes_D
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Codes_D )
-  ( 4 N-000003 )
+ ( /4DA475AC R3 R12 33
+  ( 1 N-000031 )
+  ( 2 /Temp_supercap4 )
  )
- ( /4D6BB031 REED9081_SYMBIOZ U7 REED_Cligno_G
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Cligno_G )
-  ( 4 N-000025 )
+ ( /4DA4827F TO39 U1 LM317
+  ( 1 +12V )
+  ( 2 /Temp_supercap1 )
+  ( 3 N-000029 )
  )
- ( /4D6BB06C REED9081_SYMBIOZ U8 REED_Cligno_D
-  ( 1 +12P )
-  ( 2 GND )
-  ( 3 /Cligno_D )
-  ( 4 N-000002 )
+ ( /4DB54683 TO39 U2 LM317
+  ( 1 +12V )
+  ( 2 /Temp_supercap2 )
+  ( 3 N-000035 )
+ )
+ ( /4DA59335 DIP-14__300_ELL U3 LM2902N
+  ( 1 /TS1 )
+  ( 2 /TS1 )
+  ( 3 N-000032 )
+  ( 4 VCC )
+  ( 5 N-000034 )
+  ( 6 /TS3 )
+  ( 7 /TS3 )
+  ( 8 /TS2 )
+  ( 9 /TS2 )
+  ( 10 N-000038 )
+  ( 11 GND )
+  ( 12 N-000006 )
+  ( 13 /TS4 )
+  ( 14 /TS4 )
+ )
+ ( /4DB54696 TO39 U4 LM317
+  ( 1 +12V )
+  ( 2 /Temp_supercap3 )
+  ( 3 N-000036 )
+ )
+ ( /4DA4759A TO39 U5 LM317
+  ( 1 +12V )
+  ( 2 /Temp_supercap4 )
+  ( 3 N-000031 )
  )
 )
 *
@@ -201,6 +224,44 @@ $component C3
  SM*
 $endlist
 $component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ CP*
+ SM*
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ CP*
+ SM*
+$endlist
+$component C12
  SM*
  C?
  C1-1
@@ -224,6 +285,15 @@ $component D2
  LEDV
 $endlist
 $component D3
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D4
  LED-3MM
  LED-5MM
  LED-10MM
@@ -289,6 +359,27 @@ $component R8
  SM1206
 $endlist
 $component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
  R?
  SM0603
  SM0805
