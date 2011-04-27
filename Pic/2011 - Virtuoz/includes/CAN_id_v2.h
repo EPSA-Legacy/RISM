@@ -10,3 +10,8 @@
 #define MAB_STOP_ID         // feux stop (provient de la MicroAutoBox)
 #define MAB_BOOST_ACK_ID    // acknowledge de boost (provient de la MicroAutoBox)
 #define MAB_BRAKE_ACK_ID    // acknowledge de frein (provient de la MicroAutoBox)
+#define ALM_CHARGE_ID       // charge de la batterie (provient de la carte alim)
+#define SCP_ERR_ID          // erreurs de supercapas
+#define SCP_TEMP_ID         // température supercapas
+#define MAB_ERRSC_ACK_ID    // acknowledge d'erreurs supercapas (provient de la MicroAutoBox)
+
