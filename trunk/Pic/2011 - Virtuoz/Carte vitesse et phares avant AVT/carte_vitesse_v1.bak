@@ -36,6 +36,12 @@
 int8 vitesseA = 0; //donnée après calcul
 int8 vitesseB = 0; //donnée après calcul
 
+int8 contA = 0;
+int8 contB = 0;
+
+int1 capA = false;
+int1 capB = false;
+
 int32 msA = 0;          //pour les mesures de vitesse
 int32 msB = 0;
 int16 ms_clign = 0;     //pour la période des clignotants

@@ -44,7 +44,7 @@ void isr_timer2()
 #org DEFAULT
 void main()
 {
-   setup_adc_ports(ANALOG_RA3_REF);        //Les ports sont analogiques, RA3 (+5V) est la référence...
+   setup_adc_ports(ALL_ANALOG);        //Les ports sont analogiques, RA3 (+5V) est la référence...
 
    enable_interrupts(INT_TIMER2);
    enable_interrupts(GLOBAL);
@@ -64,22 +64,22 @@ void main()
 #inline
 void manageCAN()
 {
-   struct rx_stat rxStat;
+   /*struct rx_stat rxStat;
    int32 rxId;
    int8 rxData[8];
-   int8 rxLen;
+   int8 rxLen;*/
 
 
-   if(can_kbhit())     // Une donnée est présente dans le buffer de réception du CAN
+   /*if(can_kbhit())     // Une donnée est présente dans le buffer de réception du CAN
    {
       if(can_getd(rxId,&rxData[0],rxLen,rxStat))
       {
-         /*if(rxId == XXX_ID)        // TODO : reçoit-on une donnée pour la carte alim ? Pas sûr !
+         if(rxId == XXX_ID)        // TODO : reçoit-on une donnée pour la carte alim ? Pas sûr !
          {
 
-         }*/
+         }
       }
-   }
+   }*/
    if(can_tbe())
    {
        if(send_charge)

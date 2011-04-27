@@ -1,0 +1,55 @@
+
+ROM used: 1176 (4%)
+          1176 (4%) including unused fragments
+
+          1 Average locations per line
+          7 Average locations per statement
+
+RAM used: 27 (2%) at main() level
+          56 (4%) worst case
+
+Stack used: 3 worst case (out of 30 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  115    29  18  carte_supercapas_v1.c
+  361     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F2580.h
+  439   135  82  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.c
+  369     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.h
+   27     0   0  ..\includes\CAN_id_v2.h
+----- -----
+ 1311   164 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    216   9   2   733  4.3  can_init
+0     46   2   0   255  2.3  can_set_baud
+0     34   1   2    76  3.1  can_set_mode
+0    304  13  14  1112  6.4  can_set_id
+0    190   8  17  1026  7.9  can_putd
+0     12   1   0    13  1.0  isr_timer2
+0    220   9   0   216  2.3  MAIN
+ Inline        1   764  4.8  manageCAN
+ Inline        0     3  0.0  internalLogic
+
+Program metrics:
+    Functions               9
+    Statements              164
+    Comments                483
+    Volume (V)              6042
+    Difficilty (D)          34.1
+    Effort to implement (E) 206195
+    Time to implement (T)   3 hours, 11 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   8
+    Maintainability (MI)    43
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-0009C   150  0  
+0009E-07FFE  1022  31588  
+
+
+

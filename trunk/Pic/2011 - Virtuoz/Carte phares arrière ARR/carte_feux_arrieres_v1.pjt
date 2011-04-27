@@ -1,5 +1,5 @@
 [Directories]
-Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\includes;
 Library=
 LinkerScript=
 [defines]
@@ -38,7 +38,7 @@ BuildTool=
 OptionString=
 AdditionalOptionString=
 [mru-list]
-1=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte phares arrière ARR\carte_feux_arrieres_v1.c
+1=carte_feux_arrieres_v1.c
 [Windows]
 0=0000 %S 0 0 796 451 3 0
 [Units]
@@ -46,7 +46,7 @@ Link=0
 Count=1
 1=carte_feux_arrieres_v1.c
 [Opened Files]
-1=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte phares arrière ARR\carte_feux_arrieres_v1.c
-2=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte phares arrière ARR\CAN_id_v2.h
-3=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte phares arrière ARR\carte_feux_arrieres_v1.lst
+1=c:\users\hugo\centrale lyon\epsa\electronique virtuoz - programmation\2011 - virtuoz\carte phares arrière arr\carte_feux_arrieres_v1.c
+2=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte phares arrière ARR\carte_feux_arrieres_v1.lst
+3=
 4=

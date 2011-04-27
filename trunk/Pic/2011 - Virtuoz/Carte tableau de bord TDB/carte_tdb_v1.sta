@@ -1,0 +1,57 @@
+
+ROM used: 2414 (7%)
+          2414 (7%) including unused fragments
+
+          2 Average locations per line
+          11 Average locations per statement
+
+RAM used: 37 (2%) at main() level
+          82 (5%) worst case
+
+Stack used: 3 worst case (out of 30 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  190    75  36  carte_tdb_v1.c
+  439     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F4580.h
+  439   135  64  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.c
+  369     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.h
+   27     0   0  ..\includes\CAN_id_v2.h
+----- -----
+ 1464   210 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    216   4   2   733  4.3  can_init
+0     46   1   0   255  2.3  can_set_baud
+0     34   1   2    76  3.1  can_set_mode
+0    304   6  14  1112  6.4  can_set_id
+0    478  10  18   706  8.4  can_get_id
+0    190   4  17  1026  7.9  can_putd
+ Inline       14  1651  5.6  can_getd
+0     24   0   0    33  1.5  isr_timer2
+0    968  20   0   290  2.3  MAIN
+ Inline       16  1863  7.4  manageCAN
+ Inline        4   728  5.3  internalLogic
+
+Program metrics:
+    Functions               11
+    Statements              210
+    Comments                492
+    Volume (V)              12622
+    Difficilty (D)          53.8
+    Effort to implement (E) 678473
+    Time to implement (T)   10 hours, 28 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   26
+    Maintainability (MI)    46
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-0009C   150  0  
+0009E-07FFE  2260  30350  
+
+
+
