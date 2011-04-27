@@ -1,0 +1,29 @@
+ÀÄcarte_tdb_v1
+   ÃÄMAIN  0/968  Ram=0
+   ³  ÃÄ??0??
+   ³  ÃÄcan_init  0/216  Ram=2
+   ³  ³  ÃÄcan_set_mode  0/34  Ram=2
+   ³  ³  ÃÄcan_set_baud  0/46  Ram=0
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÃÄcan_set_id  0/304  Ram=14
+   ³  ³  ÀÄcan_set_mode  0/34  Ram=2
+   ³  ÃÄcan_set_baud  0/46  Ram=0
+   ³  ÃÄinternalLogic  (Inline)  Ram=4
+   ³  ÀÄmanageCAN  (Inline)  Ram=16
+   ³     ÃÄcan_getd  (Inline)  Ram=14
+   ³     ³  ÀÄcan_get_id  0/478  Ram=18
+   ³     ÃÄcan_putd  0/190  Ram=17
+   ³     ³  ÀÄcan_set_id  0/304  Ram=14
+   ³     ÃÄcan_putd  0/190  Ram=17
+   ³     ³  ÀÄcan_set_id  0/304  Ram=14
+   ³     ÃÄcan_putd  0/190  Ram=17
+   ³     ³  ÀÄcan_set_id  0/304  Ram=14
+   ³     ÀÄcan_putd  0/190  Ram=17
+   ³        ÀÄcan_set_id  0/304  Ram=14
+   ÀÄisr_timer2  0/24  Ram=0

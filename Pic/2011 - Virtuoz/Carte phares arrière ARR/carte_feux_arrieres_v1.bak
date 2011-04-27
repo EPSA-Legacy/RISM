@@ -84,13 +84,15 @@ void manageCAN()        //cette carte ne fait qu'écouter le CAN, elle n'a aucune
                clignd = rxData[3];
                break;
             
-            case MAB_STOP_ID :
+            case MAB_STOP_ID : 
                feuxstop = rxData[0];
                if(can_tbe())
                {
                   can_putd(ARR_STOP_ACK_ID,0,0,3,false,false);
                }
                break;
+               
+             case default:break;
          }
       }
    }

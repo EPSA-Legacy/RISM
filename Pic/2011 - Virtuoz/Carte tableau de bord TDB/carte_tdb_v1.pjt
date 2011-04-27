@@ -20,17 +20,17 @@ allwarnings=1
 stayupne=3
 stayupoe=0
 [PROJECT]
-Target=carte_alimentation_v1.hex
+Target=carte_tdb_v1.hex
 Development_Mode=
-Processor=0x2580
-Processor_Text=PIC18F2580
+Processor=0x4580
+Processor_Text=PIC18F4580
 ToolSuite=CCS
 [Target Data]
 BuildTool=C-COMPILER
-OptionString=+FS
+OptionString=+FH
 AdditionalOptionString=
 BuildRequired=1
-[carte_alimentation_v1.c]
+[carte_tdb_v1.c]
 Type=4
 Path=
 FileList=
@@ -38,15 +38,13 @@ BuildTool=
 OptionString=
 AdditionalOptionString=
 [mru-list]
-1=carte_alimentation_v1.c
+1=carte_tdb_v1.c
 [Windows]
 0=0000 %S 0 0 796 451 3 0
 [Units]
 Link=0
 Count=1
-1=carte_alimentation_v1.c
+1=carte_tdb_v1.c
 [Opened Files]
-1=c:\users\hugo\centrale lyon\epsa\electronique virtuoz - programmation\2011 - virtuoz\carte alimentation alm\carte_alimentation_v1.c
-2=c:\users\hugo\centrale lyon\epsa\electronique virtuoz - programmation\2011 - virtuoz\carte alimentation alm\carte_alimentation_v1.lst
-3=
-4=
+1=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\Carte tableau de bord TDB\carte_tdb_v1.c
+2=

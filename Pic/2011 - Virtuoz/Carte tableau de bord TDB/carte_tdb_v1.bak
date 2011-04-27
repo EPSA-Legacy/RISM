@@ -2,7 +2,7 @@
 //      Version 1.0 - HDT - 20/04/2011
 //      Version 1.1 - HDT - 22/04/2011
 
-#include <18F4580.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id_v2.h>
 
