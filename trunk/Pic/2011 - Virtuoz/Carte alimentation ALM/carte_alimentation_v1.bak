@@ -74,10 +74,10 @@ void manageCAN()
    {
       if(can_getd(rxId,&rxData[0],rxLen,rxStat))
       {
-         /*if(rxId == XXX_ID)        // TODO : reçoit-on une donnée pour la carte alim ? Pas sûr !
+         if(rxId == XXX_ID)        // TODO : reçoit-on une donnée pour la carte alim ? Pas sûr !
          {
 
-         }*/
+         }
       }
    }
    if(can_tbe())
