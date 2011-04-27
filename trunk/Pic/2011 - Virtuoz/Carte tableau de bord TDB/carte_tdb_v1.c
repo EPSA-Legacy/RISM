@@ -113,6 +113,12 @@ void manageCAN()
                     periode_brake = 1000;
                     state_brake = false;
                     break;
+
+                case MAB_ERR_ID:
+                    output_bit(ERR_1,rxData[0]);
+                    output_bit(ERR_2,rxData[1]);
+                    output_bit(ERR_3,rxData[2]);
+                    break;
 			}
 		}
 	}

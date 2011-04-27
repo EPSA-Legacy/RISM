@@ -10,8 +10,8 @@
 #define U_ADAPT         PIN_A0
 #define V_SEUIL         PIN_A2
 
-#define BATT_MAX
-#define BATT_MIN
+#define BATT_MAX        192     //en 8bits. En 16bits : 49282
+#define BATT_MIN        175     //en 8bits. En 16bits : 44957
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
@@ -19,6 +19,13 @@
 // Variables utilisées
 
 int16 ms = 0;
+int16 tension_courante = BATT_MAX;
+int8 charge_courante = 100;
+int8 i = 0;
+int1 send_charge = false;
+
+const int8 charges[] = {100,90,80,70,60,50,40,30,20,15,10,5,2,0};
+const int8 charges_reelles[] = {100,95,90,85,75,70,65,55,45,35,25,15,5,0};
 
 // Fonctions
 
@@ -62,6 +69,7 @@ void manageCAN()
 	int8 rxData[8];
 	int8 rxLen;
 
+
 	if(can_kbhit())     // Une donnée est présente dans le buffer de réception du CAN
 	{
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat))
@@ -72,12 +80,32 @@ void manageCAN()
 			}
 		}
 	}
+	if(can_tbe())
+	{
+	    if(send_charge)
+	    {
+	        can_putd(ALM_CHARGE_ID,&charge_courante,8,1,false,false);
+	    }
+	}
 }
 
 #inline
 void internalLogic()
 {
-	//TODO : Regarder datasheet de la batterie pour pouvoir calculer son état de charge à partir de Vseuil-.
-	//TODO : Le Vseuil+ est de 12,6V ramené en 0-5V.
+	tension_courante = read_adc();
+	i = 0;
+
+	while(tension_courante < charges_reelles[i]*(BATT_MAX-BATT_MIN)+BATT_MIN)
+	{
+	    i++;
+	}
+
+	charge_courante = charges[i];
+
+	if(ms >= 2000)
+	{
+	    send_charge = true;
+	    ms = 0;
+    }
 }
 
