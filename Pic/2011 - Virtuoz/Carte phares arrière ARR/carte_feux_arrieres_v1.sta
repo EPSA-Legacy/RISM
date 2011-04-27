@@ -1,0 +1,56 @@
+
+ROM used: 1744 (5%)
+          1744 (5%) including unused fragments
+
+          1 Average locations per line
+          10 Average locations per statement
+
+RAM used: 27 (2%) at main() level
+          71 (5%) worst case
+
+Stack used: 3 worst case (out of 30 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  121    32  19  carte_feux_arrieres_v1.c
+  361     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F2580.h
+  439   135  81  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.c
+  369     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18xxx8.h
+   24     0   0  CAN_id_v2.h
+----- -----
+ 1314   167 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    216   6   2   733  4.3  can_init
+0     46   1   0   255  2.3  can_set_baud
+0     34   1   2    76  3.1  can_set_mode
+0    304   9  14  1112  6.4  can_set_id
+0    478  14  18   706  8.4  can_get_id
+ Inline       14  1620  6.2  can_getd
+0     16   0   0    24  1.7  isr_timer2
+0    496  14   0   169  2.2  MAIN
+ Inline       14   366  6.3  manageCAN
+ Inline        1   310  4.6  internalLogic
+
+Program metrics:
+    Functions               10
+    Statements              167
+    Comments                497
+    Volume (V)              7950
+    Difficilty (D)          45.5
+    Effort to implement (E) 362052
+    Time to implement (T)   5 hours, 35 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   13
+    Maintainability (MI)    41
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-0009C   150  0  
+0009E-07FFE  1590  31020  
+
+
+
