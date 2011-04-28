@@ -19,6 +19,11 @@ int i;
 #org DEFAULT
 void main()
 {
+    struct rx_stat rxStat;
+    int32 rxId;
+    int8 rxData[8];
+    int8 rxLen;
+
     while(true)
     {
         for(i=0;i<8;i++)
@@ -29,6 +34,16 @@ void main()
         if(can_tbe())
         {
             can_putd(1,s,8,1,false,false);
+        }
+
+        if(can_kbhit())
+        {
+            can_getd(rxId,rxData,rxLen,rxStat);
+			if(rxId == 2)
+			{
+                for(i=0;i<rxLen;i++)
+                    putc(s[i]);
+			}
         }
     }
 }
