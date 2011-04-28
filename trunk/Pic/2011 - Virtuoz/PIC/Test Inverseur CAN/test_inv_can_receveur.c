@@ -31,14 +31,16 @@ void main()
 			can_getd(rxId,rxData,rxLen,rxStat);
 			if(rxId == 1)
 			{
-			    for(i=0;i<8;i++)
+			    for(i=0;i<rxLen;i++)
                 {
-                    s[7-i] = rxData[i];
+                    s[rxLen-1-i] = rxData[i];
+                }
+
+                if(can_tbe())
+                {
+                    can_putd(2,s,rxLen,1,false,false);
                 }
 			}
 		}
-
-		for(i=0;i<8;i++)
-            putc(s[i]);
     }
 }
