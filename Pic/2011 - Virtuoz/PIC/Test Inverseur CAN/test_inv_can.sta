@@ -1,0 +1,46 @@
+
+ROM used: 616 (2%)
+          616 (2%) including unused fragments
+
+          1 Average locations per line
+          4 Average locations per statement
+
+RAM used: 16 (1%) at main() level
+          42 (3%) worst case
+
+Stack used: 2 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   35     8   6  test_inv_can.c
+  298     0   0  ..\..\..\..\..\..\..\..\PROGRA~2\PICC\devices\18F258.h
+  439   135  94  ..\..\..\..\..\..\..\..\PROGRA~2\PICC\drivers\can-18xxx8.c
+  369     0   0  ..\..\..\..\..\..\..\..\PROGRA~2\PICC\drivers\can-18xxx8.h
+----- -----
+ 1141   143 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    306  25  14  1112  6.4  can_set_id
+0    192  16  17  1026  7.9  can_putd
+0    114   9   2   304  6.4  MAIN
+
+Program metrics:
+    Functions               3
+    Statements              143
+    Comments                443
+    Volume (V)              3016
+    Difficilty (D)          21.1
+    Effort to implement (E) 63717
+    Time to implement (T)   59 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   7
+    Maintainability (MI)    71
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   612  32152  
+
+
+
