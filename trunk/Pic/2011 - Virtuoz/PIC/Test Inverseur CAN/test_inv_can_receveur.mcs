@@ -1,0 +1,23 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=test_inv_can_receveur.ESYM
+Folder=Intermediary
+[File001]
+Location=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\PIC\Test Inverseur CAN\test_inv_can_receveur.o
+Folder=Intermediary
+[File002]
+Location=test_inv_can_receveur.HEX
+Folder=Output
+[File003]
+Location=test_inv_can_receveur.LST
+Folder=Output
+[File004]
+Location=test_inv_can_receveur.ERR
+Folder=Output
+[File005]
+Location=test_inv_can_receveur.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files (x86)\PICC\Ccsc.exe
