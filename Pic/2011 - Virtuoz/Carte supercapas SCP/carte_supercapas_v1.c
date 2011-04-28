@@ -1,4 +1,4 @@
-//      Carte Supercapaas
+//      Carte Supercapas
 //      Version 1.0 - HDT -26/04/2011
 //
 
