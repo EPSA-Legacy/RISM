@@ -1,39 +1,25 @@
-//      Carte Feux Arrières
-//      Version 1.0 - HDT - 02/03/2011
-//      Version 1.1 - HDT - 18/04/2011
-//      Version 1.2 - HDT - 22/04/2011
+//      Carte Test
+//      Version 1.0 - HDT - 28/04/2011
 //
 
 #include <18F2580.h>
-#include <can-18xxx8.c>
-#include "CAN_id_v2.h"
-
-#define FEUX_STOP       PIN_A0
-#define FEUX_ARR        PIN_A1
-#define CLIGN_ARG       PIN_A2
-#define CLIGN_ARD       PIN_A3
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
+#use rs232
 
 // Variables utilisées
 
-int1 feuxstop = false;
-int1 feuxarr = false;
-int1 clignd = false;
-int1 cligng = false;
+
 
 // si cligng == clignd == true -> mode warning
 
-int1 clign_on = false;
-int1 timer_active = false;
 
-int16 ms = 0;
 
 // Fonctions
 
 #inline
-void manageCAN();
+void manageRS232();
 
 #inline
 void internalLogic();
@@ -60,7 +46,7 @@ void main()
    while(TRUE)
    {
       internalLogic();
-      manageCAN();
+      manageRS232();
    }
 }
 
@@ -83,15 +69,15 @@ void manageCAN()        //cette carte ne fait qu'écouter le CAN, elle n'a aucune
                cligng = rxData[2];
                clignd = rxData[3];
                break;
-            
-            case MAB_STOP_ID : 
+
+            case MAB_STOP_ID :
                feuxstop = rxData[0];
                if(can_tbe())
                {
                   can_putd(ARR_STOP_ACK_ID,0,0,3,false,false);
                }
                break;
-               
+
          }
       }
    }

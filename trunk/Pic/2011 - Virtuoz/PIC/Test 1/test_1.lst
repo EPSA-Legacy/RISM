@@ -1,0 +1,76 @@
+CCS PCH C Compiler, Version 4.057, 32216               28-avr.-11 14:45
+
+               Filename: C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\PIC\Test 1\test_1.lst
+
+               ROM used: 58 bytes (0%)
+                         Largest free fragment is 32710
+               RAM used: 6 (0%) at main() level
+                         6 (0%) worst case
+               Stack:    0 locations
+
+*
+0000:  GOTO   0004
+.................... //      Carte Test 
+.................... //      Version 1.0 - HDT - 28/04/2011 
+.................... // 
+....................  
+.................... #include <18F2580.h> 
+.................... //////// Standard Header file for the PIC18F2580 device //////////////// 
+.................... #device PIC18F2580 
+.................... #list 
+....................  
+....................  
+.................... #fuses HS,NOPROTECT,NOLVP,NOWDT 
+.................... #use delay(clock=20000000) 
+.................... #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7) 
+....................  
+.................... // Variables utilisées 
+....................  
+.................... char c; 
+....................  
+.................... // Fonctions 
+....................  
+.................... #org DEFAULT 
+.................... void main() 
+.................... { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  CLRF   FEA
+000A:  CLRF   FE9
+000C:  BSF    FB8.3
+000E:  MOVLW  2A
+0010:  MOVWF  FAF
+0012:  MOVLW  00
+0014:  MOVWF  FB0
+0016:  MOVLW  A6
+0018:  MOVWF  FAC
+001A:  MOVLW  90
+001C:  MOVWF  FAB
+001E:  MOVF   FC1,W
+0020:  ANDLW  C0
+0022:  IORLW  0F
+0024:  MOVWF  FC1
+....................    while(1) 
+....................    { 
+....................       c = getc(); 
+0026:  BTFSS  F9E.5
+0028:  BRA    0026
+002A:  MOVFF  FAE,05
+....................    putc(c); 
+002E:  MOVF   05,W
+0030:  BTFSS  F9E.4
+0032:  BRA    0030
+0034:  MOVWF  FAD
+....................    } 
+0036:  BRA    0026
+.................... } 
+0038:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 0200   HS NOIESO NOFCMEN RESERVED
+   Word  2: 1E1E   BROWNOUT NOWDT BORV21 PUT WDT32768
+   Word  3: 8200   PBADEN NOLPT1OSC MCLR RESERVED
+   Word  4: 0081   STVREN NODEBUG NOLVP BBSIZ1K NOXINST RESERVED
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB
