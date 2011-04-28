@@ -1,3 +1,2 @@
->>> Warning 203 "test_1.c" Line 21(1,1): Condition always TRUE
       Memory usage:   ROM=0%      RAM=0% - 0%
-      0 Errors,  1 Warnings.
+      0 Errors,  0 Warnings.

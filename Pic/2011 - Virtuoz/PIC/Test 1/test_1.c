@@ -2,7 +2,7 @@
 //      Version 1.0 - HDT - 28/04/2011
 //
 
-#include <18F2580.h>
+#include <18F258.h>
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
