@@ -21,7 +21,7 @@ stayupoe=0
 [PROJECT]
 Target=test_1.hex
 Development_Mode=
-Processor=0x2580
+Processor=0x8258
 Processor_Text=PIC18F2580
 ToolSuite=CCS
 [Target Data]
@@ -29,6 +29,7 @@ BuildTool=C-COMPILER
 OptionString=+FH
 AdditionalOptionString=
 BuildRequired=1
+FileList=test_1.c
 [test_1.c]
 Type=4
 Path=
@@ -40,11 +41,10 @@ AdditionalOptionString=
 1=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\PIC\Test 1\test_1.c
 [Windows]
 0=0000 %S 0 0 796 451 3 0
-[Units]
-Link=0
-Count=1
-1=test_1.c
 [Opened Files]
 1=C:\Users\Hugo\Centrale Lyon\EPSA\Electronique Virtuoz - Programmation\2011 - Virtuoz\PIC\Test 1\test_1.c
 2=
 3=
+[Units]
+Count=1
+1=test_1.c (main)
