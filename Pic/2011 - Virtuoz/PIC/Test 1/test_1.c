@@ -17,9 +17,9 @@ char c;
 #org DEFAULT
 void main()
 {
-   while(1)
-   {
-      c = getc();
-   putc(c);
-   }
+    while(true)
+    {
+        c = getc();
+        putc(c);
+    }
 }
