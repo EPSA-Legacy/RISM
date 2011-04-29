@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 29/04/2011 16:38:33
+EESchema Schematic File Version 2  date 29/04/2011 16:54:13
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -44,6 +44,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 5100 1700
 Text Notes 5600 1750 0    60   ~ 0
 modes dédiés
 Wire Wire Line
@@ -318,8 +319,6 @@ Wire Wire Line
 	2550 2050 2550 1800
 Wire Wire Line
 	5100 1800 5100 2050
-Wire Wire Line
-	5100 1700 5300 1700
 Wire Wire Line
 	3900 1800 3700 1800
 Wire Wire Line
@@ -2122,15 +2121,6 @@ F 0 "MEZZA2" H 4500 1900 70  0000 C CNN
 F 1 "MEZZA-16" H 4500 1000 70  0000 C CNN
 	1    4500 1450
 	1    0    0    -1  
-$EndComp
-$Comp
-L +12V #PWR8
-U 1 1 4D9C8ED7
-P 5300 1700
-F 0 "#PWR8" H 5300 1650 20  0001 C CNN
-F 1 "+12V" H 5300 1800 30  0000 C CNN
-	1    5300 1700
-	0    1    1    0   
 $EndComp
 $Comp
 L GND #PWR15
