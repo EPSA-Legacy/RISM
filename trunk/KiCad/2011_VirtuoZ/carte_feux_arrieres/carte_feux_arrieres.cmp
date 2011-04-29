@@ -1,4 +1,25 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 25/04/2011 17:50:09
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 29/04/2011 17:19:38
+
+BeginCmp
+TimeStamp = /4D6BB48A;
+Reference = MECA1;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB48F;
+Reference = MECA2;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D6BB492;
+Reference = MECA3;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
 
 BeginCmp
 TimeStamp = /4D6A198E;
@@ -15,51 +36,30 @@ IdModule  = he10-10df;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D6BB48A;
-Reference = P1;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB48F;
-Reference = P2;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB492;
-Reference = P3;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
 TimeStamp = /4D6BB56F;
 Reference = P5;
-ValeurCmp = CONN_4;
+ValeurCmp = bloc_g;
 IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6BB579;
 Reference = P6;
-ValeurCmp = CONN_4;
+ValeurCmp = bloc_d;
 IdModule  = KK_4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6BB5D2;
 Reference = P7;
-ValeurCmp = CONN_2;
+ValeurCmp = barre;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DB595FB;
 Reference = P8;
-ValeurCmp = CONN_2;
+ValeurCmp = ALIM;
 IdModule  = KK_2;
 EndCmp
 

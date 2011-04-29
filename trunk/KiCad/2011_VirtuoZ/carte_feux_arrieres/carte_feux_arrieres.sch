@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 25/04/2011 19:20:50
+EESchema Schematic File Version 2  date 29/04/2011 17:18:59
 LIBS:symbioz
 LIBS:power
 LIBS:device
@@ -30,14 +30,15 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:carte_feux_arrieres-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
-Title "noname.sch"
-Date "25 apr 2011"
-Rev ""
-Comp ""
+Title "Carte phares arrières"
+Date "29 apr 2011"
+Rev "v1.0"
+Comp "EPSA - VirtuoZ"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -314,7 +315,7 @@ L CONN_2 P8
 U 1 1 4DB595FB
 P 10150 1150
 F 0 "P8" V 10100 1150 40  0000 C CNN
-F 1 "CONN_2" V 10200 1150 40  0000 C CNN
+F 1 "ALIM" V 10200 1150 40  0000 C CNN
 	1    10150 1150
 	0    -1   -1   0   
 $EndComp
@@ -509,7 +510,7 @@ L CONN_2 P7
 U 1 1 4D6BB5D2
 P 8950 1150
 F 0 "P7" V 8900 1150 40  0000 C CNN
-F 1 "CONN_2" V 9000 1150 40  0000 C CNN
+F 1 "barre" V 9000 1150 40  0000 C CNN
 	1    8950 1150
 	0    1    -1   0   
 $EndComp
@@ -522,7 +523,7 @@ L CONN_4 P6
 U 1 1 4D6BB579
 P 8050 1150
 F 0 "P6" V 8000 1150 50  0000 C CNN
-F 1 "CONN_4" V 8100 1150 50  0000 C CNN
+F 1 "bloc_d" V 8100 1150 50  0000 C CNN
 	1    8050 1150
 	0    1    -1   0   
 $EndComp
@@ -531,7 +532,7 @@ L CONN_4 P5
 U 1 1 4D6BB56F
 P 6850 1150
 F 0 "P5" V 6800 1150 50  0000 C CNN
-F 1 "CONN_4" V 6900 1150 50  0000 C CNN
+F 1 "bloc_g" V 6900 1150 50  0000 C CNN
 	1    6850 1150
 	0    1    -1   0   
 $EndComp
@@ -541,29 +542,29 @@ NoConn ~ 4900 6400
 NoConn ~ 4900 6250
 NoConn ~ 4900 6100
 $Comp
-L CONN_1 P3
+L CONN_1 MECA3
 U 1 1 4D6BB492
 P 5200 6400
-F 0 "P3" H 5280 6400 40  0000 L CNN
-F 1 "CONN_1" H 5200 6455 30  0001 C CNN
+F 0 "MECA3" H 5280 6400 40  0000 L CNN
+F 1 "MECA" H 5200 6455 30  0001 C CNN
 	1    5200 6400
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P2
+L CONN_1 MECA2
 U 1 1 4D6BB48F
 P 5200 6250
-F 0 "P2" H 5280 6250 40  0000 L CNN
-F 1 "CONN_1" H 5200 6305 30  0001 C CNN
+F 0 "MECA2" H 5280 6250 40  0000 L CNN
+F 1 "MECA" H 5200 6305 30  0001 C CNN
 	1    5200 6250
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P1
+L CONN_1 MECA1
 U 1 1 4D6BB48A
 P 5200 6100
-F 0 "P1" H 5280 6100 40  0000 L CNN
-F 1 "CONN_1" H 5200 6155 30  0001 C CNN
+F 0 "MECA1" H 5280 6100 40  0000 L CNN
+F 1 "MECA" H 5200 6155 30  0001 C CNN
 	1    5200 6100
 	1    0    0    -1  
 $EndComp
