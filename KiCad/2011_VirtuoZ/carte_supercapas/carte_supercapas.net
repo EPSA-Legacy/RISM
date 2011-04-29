@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  25/04/2011 15:54:37
+# EESchema Netlist Version 1.1 created  29/04/2011 19:31:59
 (
  ( /4DA4827B C1V5 C1 1u
   ( 1 +12V )
@@ -64,13 +64,13 @@
   ( 1 VCC )
   ( 2 N-000017 )
  )
- ( /4DA45D63 1pin MECA1 CONN_1
+ ( /4DA45D63 MECA_5mm MECA1 CONN_1
   ( 1 ? )
  )
- ( /4DA45D9D 1pin MECA2 CONN_1
+ ( /4DA45D9D MECA_5mm MECA2 CONN_1
   ( 1 ? )
  )
- ( /4DA45DA4 1pin MECA3 CONN_1
+ ( /4DA45DA4 MECA_5mm MECA3 CONN_1
   ( 1 ? )
  )
  ( /4D6BA2EC he10-10df MEZZA1 MEZZA-10
