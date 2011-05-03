@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 30/04/2011 15:46:19
+EESchema Schematic File Version 2  date mar. 03 mai 2011 19:57:48 CEST
 LIBS:epsa_relais
 LIBS:symbioz
 LIBS:power
@@ -31,12 +31,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 1 1
 Title "noname.sch"
-Date "30 apr 2011"
+Date "3 may 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -44,22 +45,21 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L GND #PWR?
-U 1 1 4DBC0F12
-P 6250 3600
-F 0 "#PWR?" H 6250 3600 30  0001 C CNN
-F 1 "GND" H 6250 3530 30  0001 C CNN
-	1    6250 3600
-	0    -1   -1   0   
-$EndComp
-Connection ~ 6150 3600
+Connection ~ 6250 3600
 Wire Wire Line
-	6150 3600 6250 3600
-Connection ~ 6150 3850
-Connection ~ 6150 3650
-Connection ~ 6150 3450
-Connection ~ 6150 3250
+	6250 3600 6400 3600
+Connection ~ 6250 3350
+Wire Wire Line
+	6150 3350 6250 3350
+Connection ~ 6250 3550
+Wire Wire Line
+	6150 3550 6250 3550
+Connection ~ 6250 3750
+Wire Wire Line
+	6150 3750 6250 3750
+Connection ~ 6250 3950
+Wire Wire Line
+	6150 3950 6250 3950
 Wire Wire Line
 	5650 3950 5550 3950
 Wire Wire Line
@@ -146,12 +146,33 @@ Wire Wire Line
 	5550 3850 5650 3850
 Wire Wire Line
 	5550 4050 5650 4050
-Connection ~ 6150 3350
-Connection ~ 6150 3550
-Connection ~ 6150 3750
 Wire Wire Line
-	6150 4050 6150 3150
-Connection ~ 6150 3950
+	6150 3150 6250 3150
+Wire Wire Line
+	6250 3150 6250 4050
+Wire Wire Line
+	6250 4050 6150 4050
+Wire Wire Line
+	6150 3850 6250 3850
+Connection ~ 6250 3850
+Wire Wire Line
+	6150 3650 6250 3650
+Connection ~ 6250 3650
+Wire Wire Line
+	6150 3450 6250 3450
+Connection ~ 6250 3450
+Wire Wire Line
+	6150 3250 6250 3250
+Connection ~ 6250 3250
+$Comp
+L GND #PWR?
+U 1 1 4DBC0F12
+P 6400 3600
+F 0 "#PWR?" H 6400 3600 30  0001 C CNN
+F 1 "GND" H 6400 3530 30  0001 C CNN
+	1    6400 3600
+	0    -1   -1   0   
+$EndComp
 $Comp
 L R R?
 U 1 1 4DBC0E98
