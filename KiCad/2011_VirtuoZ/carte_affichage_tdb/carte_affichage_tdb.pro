@@ -1,4 +1,4 @@
-update=jeu. 05 mai 2011 18:07:08 CEST
+update=jeu. 05 mai 2011 19:16:23 CEST
 version=1
 last_client=eeschema
 [general]
@@ -76,7 +76,7 @@ RptD_Y=100
 RptLab=1
 LabSize=60
 [eeschema/libraries]
-LibName1=verrous_octo_D
+LibName1=epsa_cmos
 LibName2=epsa_relais
 LibName3=symbioz
 LibName4=power
