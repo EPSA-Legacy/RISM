@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date jeu. 05 mai 2011 19:16:26 CEST
+EESchema Schematic File Version 2  date jeu. 05 mai 2011 19:30:18 CEST
 LIBS:epsa_cmos
 LIBS:epsa_relais
 LIBS:symbioz
@@ -250,7 +250,7 @@ P 10700 5150
 F 0 "Q?" H 10603 5400 70  0000 C CNN
 F 1 "FET_P" H 10553 4903 60  0000 C CNN
 	1    10700 5150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -259,7 +259,7 @@ P 9850 5150
 F 0 "Q?" H 9753 5400 70  0000 C CNN
 F 1 "FET_P" H 9703 4903 60  0000 C CNN
 	1    9850 5150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -268,7 +268,7 @@ P 10700 4550
 F 0 "Q?" H 10603 4800 70  0000 C CNN
 F 1 "FET_P" H 10553 4303 60  0000 C CNN
 	1    10700 4550
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -277,7 +277,7 @@ P 9850 4550
 F 0 "Q?" H 9753 4800 70  0000 C CNN
 F 1 "FET_P" H 9703 4303 60  0000 C CNN
 	1    9850 4550
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -286,7 +286,7 @@ P 10700 3950
 F 0 "Q?" H 10603 4200 70  0000 C CNN
 F 1 "FET_P" H 10553 3703 60  0000 C CNN
 	1    10700 3950
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -295,7 +295,7 @@ P 9850 3950
 F 0 "Q?" H 9753 4200 70  0000 C CNN
 F 1 "FET_P" H 9703 3703 60  0000 C CNN
 	1    9850 3950
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -304,7 +304,7 @@ P 10700 3350
 F 0 "Q?" H 10603 3600 70  0000 C CNN
 F 1 "FET_P" H 10553 3103 60  0000 C CNN
 	1    10700 3350
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -313,7 +313,7 @@ P 9850 3350
 F 0 "Q?" H 9753 3600 70  0000 C CNN
 F 1 "FET_P" H 9703 3103 60  0000 C CNN
 	1    9850 3350
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L GND #PWR?
@@ -430,7 +430,7 @@ P 9850 850
 F 0 "Q?" H 9753 1100 70  0000 C CNN
 F 1 "FET_P" H 9703 603 60  0000 C CNN
 	1    9850 850 
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -439,7 +439,7 @@ P 10700 850
 F 0 "Q?" H 10603 1100 70  0000 C CNN
 F 1 "FET_P" H 10553 603 60  0000 C CNN
 	1    10700 850 
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -448,7 +448,7 @@ P 9850 1450
 F 0 "Q?" H 9753 1700 70  0000 C CNN
 F 1 "FET_P" H 9703 1203 60  0000 C CNN
 	1    9850 1450
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -457,7 +457,7 @@ P 10700 1450
 F 0 "Q?" H 10603 1700 70  0000 C CNN
 F 1 "FET_P" H 10553 1203 60  0000 C CNN
 	1    10700 1450
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -466,7 +466,7 @@ P 9850 2050
 F 0 "Q?" H 9753 2300 70  0000 C CNN
 F 1 "FET_P" H 9703 1803 60  0000 C CNN
 	1    9850 2050
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -475,7 +475,7 @@ P 10700 2050
 F 0 "Q?" H 10603 2300 70  0000 C CNN
 F 1 "FET_P" H 10553 1803 60  0000 C CNN
 	1    10700 2050
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -484,7 +484,7 @@ P 9850 2650
 F 0 "Q?" H 9753 2900 70  0000 C CNN
 F 1 "FET_P" H 9703 2403 60  0000 C CNN
 	1    9850 2650
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -493,7 +493,7 @@ P 10700 2650
 F 0 "Q?" H 10603 2900 70  0000 C CNN
 F 1 "FET_P" H 10553 2403 60  0000 C CNN
 	1    10700 2650
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 Text Label 10200 850  1    60   ~ 0
 a2
@@ -1193,7 +1193,7 @@ P 4300 7350
 F 0 "Q?" H 4203 7600 70  0000 C CNN
 F 1 "FET_P" H 4153 7103 60  0000 C CNN
 	1    4300 7350
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1202,7 +1202,7 @@ P 3450 7350
 F 0 "Q?" H 3353 7600 70  0000 C CNN
 F 1 "FET_P" H 3303 7103 60  0000 C CNN
 	1    3450 7350
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1211,7 +1211,7 @@ P 4300 6750
 F 0 "Q?" H 4203 7000 70  0000 C CNN
 F 1 "FET_P" H 4153 6503 60  0000 C CNN
 	1    4300 6750
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1220,7 +1220,7 @@ P 3450 6750
 F 0 "Q?" H 3353 7000 70  0000 C CNN
 F 1 "FET_P" H 3303 6503 60  0000 C CNN
 	1    3450 6750
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1229,7 +1229,7 @@ P 4300 6150
 F 0 "Q?" H 4203 6400 70  0000 C CNN
 F 1 "FET_P" H 4153 5903 60  0000 C CNN
 	1    4300 6150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1238,7 +1238,7 @@ P 3450 6150
 F 0 "Q?" H 3353 6400 70  0000 C CNN
 F 1 "FET_P" H 3303 5903 60  0000 C CNN
 	1    3450 6150
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1247,7 +1247,7 @@ P 4300 5550
 F 0 "Q?" H 4203 5800 70  0000 C CNN
 F 1 "FET_P" H 4153 5303 60  0000 C CNN
 	1    4300 5550
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L FET_P Q?
@@ -1256,7 +1256,7 @@ P 3450 5550
 F 0 "Q?" H 3353 5800 70  0000 C CNN
 F 1 "FET_P" H 3303 5303 60  0000 C CNN
 	1    3450 5550
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L GND #PWR?
