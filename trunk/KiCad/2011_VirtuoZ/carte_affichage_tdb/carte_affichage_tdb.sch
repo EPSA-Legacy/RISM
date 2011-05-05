@@ -1,5 +1,5 @@
-EESchema Schematic File Version 2  date jeu. 05 mai 2011 19:09:07 CEST
-LIBS:verrous_octo_D
+EESchema Schematic File Version 2  date jeu. 05 mai 2011 19:16:26 CEST
+LIBS:epsa_cmos
 LIBS:epsa_relais
 LIBS:symbioz
 LIBS:power
