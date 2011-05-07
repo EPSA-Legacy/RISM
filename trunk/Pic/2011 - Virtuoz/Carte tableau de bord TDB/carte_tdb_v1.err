@@ -1,3 +1,0 @@
->>> Warning 214 "carte_tdb_v1.c" Line 160(1,1): Operator precedance rules may not be as intended, use () to clarify
-      Memory usage:   ROM=7%      RAM=2% - 5%
-      0 Errors,  1 Warnings.
