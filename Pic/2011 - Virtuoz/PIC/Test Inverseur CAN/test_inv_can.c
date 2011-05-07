@@ -11,7 +11,7 @@
 
 // Variables utilisées
 
-char s[8];
+char s[5] = "toto";
 int i;
 
 // Fonctions
@@ -24,19 +24,22 @@ void main()
     int8 rxData[8];
     int8 rxLen;
 
+	can_init();
+	can_set_baud();
+
     while(true)
     {
-        for(i=0;i<8;i++)
+        /*for(i=0;i<8;i++)
 		{
             s[i] = getc();
-		}
+		}*/
 
         if(can_tbe())
         {
-            can_putd(1,s,8,1,false,false);
+            can_putd(1,s,5,1,false,false);
         }
 
-        if(can_kbhit())
+        /*if(can_kbhit())
         {
             can_getd(rxId,rxData,rxLen,rxStat);
 			if(rxId == 2)
@@ -44,6 +47,9 @@ void main()
                 for(i=0;i<rxLen;i++)
                     putc(s[i]);
 			}
-        }
+        }*/
+		
+		output_toggle(PIN_B0);
+		delay_ms(100);
     }
 }
