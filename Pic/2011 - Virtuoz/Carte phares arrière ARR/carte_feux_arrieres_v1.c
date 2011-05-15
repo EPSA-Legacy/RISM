@@ -5,7 +5,7 @@
 
 #include <18F258.h>
 #include <can-18xxx8.c>
-#include <CAN_id.h>
+#include <CAN_id_v2.h>
 
 #define FEUX_STOP       PIN_A0
 #define FEUX_ARR        PIN_A1
@@ -90,21 +90,6 @@ void internalLogic()
 {
 	output_bit(FEUX_STOP, feuxstop);            // si feuxstop est à true, allumer les feux stop, et inversement
 	output_bit(FEUX_ARR, feuxarr);              // si feuxarr est à true, allumer les feux arrière, et inversement
-
-	if(cligng|clignd)                           // si un clignotant est activé
-	{
-	    if(!timer2_active)                      // si le timer 2 n'a pas été mis en marche
-	    {
-	        setup_timer_2(T2_DIV_BY_4,79,16);   // Mettre en marche le timer 2 : interruption toutes les millisecondes
-            timer2_active = true;
-	    }
-	}
-	else                                        // si aucun clignotant n'est activé
-	{
-	    setup_timer_2(T2_DISABLED,79,16);       // Désactiver le timer 2
-	    ms = 0;
-	    timer2_active = false;
-	}
 
 	if(ms == 500)                               // 500 ms après l'activation du timer
 	{

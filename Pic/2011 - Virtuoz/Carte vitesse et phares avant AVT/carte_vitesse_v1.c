@@ -14,7 +14,7 @@
 
 #include <18F2580.h>
 #include <can-18xxx8.c>
-#include <CAN_id_v2.h>
+#include "CAN_id_v2.h"
 
 #define PHARES_G        PIN_A1  //réceptionné par CAN
 #define PHARES_D        PIN_A3  //réceptionné par CAN
@@ -25,16 +25,18 @@
 #define VITESSE_A       PIN_A4  //destiné à être envoyé par CAN
 #define VITESSE_B       PIN_C0  //destiné à être envoyé par CAN
 
-#define VITESSE_SEUIL   10
-#define CSTE_CAPT_A      322
-#define CSTE_CAPT_B      322
+#define SPEED_THRESHOLD	 	10
+#define CST_CAPT_A			322
+#define CST_CAPT_B      	322
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
 
+enum SpeedMode { LOW_SPEED, HIGH_SPEED };
+
 // Variables utilisées
-int8 vitesseA = 0; //donnée après calcul
-int8 vitesseB = 0; //donnée après calcul
+int8 speedA = 0; //donnée après calcul
+int8 speedB = 0; //donnée après calcul
 
 int32 msA = 0;          //pour les mesures de vitesse
 int32 msB = 0;
@@ -48,10 +50,10 @@ int1 cligng = false;
 
 int1 clign_on = false;
 int1 timer_active = false;
-int1 mode_mesureA = true;        //true -> mode "rapide" (vitesseA > VITESSE_SEUIL), false -> mode "lent"
-int1 mode_mesureB = true;        //true -> mode "rapide" (vitesseB > VITESSE_SEUIL), false -> mode "lent"
+SpeedMode measuringModeA = LOW_SPEED;        //mode "lent" par défaut
+SpeedMode measuringModeB = LOW_SPEED;        //mode "lent" par défaut
 
-int1 send_vitesse = false;
+int1 sendSpeed = false;
 
 // Fonctions
 
@@ -66,7 +68,7 @@ void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au b
 {
     msA++;             // ajouter 1 ms.
     msB++;
-    if(timer_active)   ms_clign++;
+    ms_clign++;
     ms++;
 }
 
@@ -120,8 +122,8 @@ void manageCAN()
 
    if (can_tbe())
     {
-        if(send_vitesse)
-            can_putd(AVT_VITESSE_ID,&vitesseA,8,1,1,0); //envoi de "vitesse" : moyenne des deux ?
+        if(sendSpeed)
+            can_putd(AVT_VITESSE_ID,&speedA,8,1,1,0); //envoi de "vitesse" : moyenne des deux ?
     }
 }
 
@@ -130,11 +132,8 @@ void internalLogic()
 {
    output_bit(PHARES_D, phares);
    output_bit(PHARES_G, phares);          // si phares est à true, allumer le phare avant gauche (resp. droit), et inversement
-    output_bit(CODES_D, codes);
+   output_bit(CODES_D, codes);
    output_bit(CODES_G, codes);            // si codes est à true, allumer le feu de codes gauche (resp. droit), et inversement
-
-   timer_active = cligng|clignd;          // si des clignos doivent être allumés, on active le timer de clignotants (latence max. 1ms)
-   if(!timer_active)   ms_clign = 0;
 
    if(ms_clign == 500)                          // environ 500 ms après l'activation du timer 1
    {
@@ -148,12 +147,12 @@ void internalLogic()
    }
 
     //mode rapide
-    if(mode_mesureA)
+    if(measuringModeA == HIGH_SPEED)
     {
-        if(msA == 1000)
+        if(msA == 500)		//TODO : defines
         {
             msA = 0;
-            vitesseA = (get_timer0() * CSTE_CAPT_A) / 100;
+            speedA = (get_timer0() * CST_CAPT_A) / 100;
             set_timer0(0);
         }
     }
@@ -161,18 +160,18 @@ void internalLogic()
     {
         if(get_timer0() >= 1)
         {
-            vitesseA = (CSTE_CAPT_A * 10 * get_timer0()) / msA;
+            speedA = (CST_CAPT_A * 10 * get_timer0()) / msA;
             msA = 0;
             set_timer0(0);
         }
     }
 
-    if(mode_mesureB)
+    if(measuringModeB == HIGH_SPEED)
     {
-        if(msB == 1000)
+        if(msB == 500)
         {
             msB = 0;
-            vitesseB = (get_timer1() * CSTE_CAPT_B) / 100;
+            speedB = (get_timer1() * CST_CAPT_B) / 100;
             set_timer1(0);
         }
     }
@@ -180,7 +179,7 @@ void internalLogic()
     {
         if(get_timer1() >= 1)
         {
-            vitesseB = (CSTE_CAPT_B * 10 * get_timer1()) / msB;
+            speedB = (CST_CAPT_B * 10 * get_timer1()) / msB;
             msB = 0;
             set_timer1(0);
         }
@@ -188,10 +187,10 @@ void internalLogic()
 
     if(ms >= 500)
     {
-        send_vitesse = true;
+        sendSpeed = true;
         ms = 0;
     }
 
-    mode_mesureA = (vitesseA > VITESSE_SEUIL);
-    mode_mesureB = (vitesseB > VITESSE_SEUIL);
+    measuringModeA = (speedA > SPEED_THRESHOLD) ? HIGH_SPEED : LOW_SPEED;
+    measuringModeB = (speedB > SPEED_THRESHOLD) ? HIGH_SPEED : LOW_SPEED;
 }
