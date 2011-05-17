@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  13/05/2011 18:11:03
+# EESchema Netlist Version 1.1 created  16/05/2011 23:01:19
 (
  ( /4DCA89A1 C1 C1 27p
   ( 1 +12V )
@@ -32,7 +32,43 @@
   ( 1 +6V )
   ( 2 GND )
  )
- ( /4DCD39B0 DB25MD J1 DB25
+ ( /4D9C8E5B he10-16df MEZZA1 MEZZA-16
+  ( 1 /sel_bg_1 )
+  ( 2 /cmd_v )
+  ( 3 /sel_7seg_3 )
+  ( 4 /cmd_r )
+  ( 5 /sel_bg_12 )
+  ( 6 /sel_7seg_2 )
+  ( 7 /sel_bg_2 )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 /bouton_2_ )
+  ( 11 ? )
+  ( 12 /bouton_1_ )
+  ( 13 ? )
+  ( 14 +12V )
+  ( 15 VCC )
+  ( 16 GND )
+ )
+ ( /4D9C8ED8 he10-16df MEZZA2 MEZZA-16
+  ( 1 /data_7 )
+  ( 2 /data_8 )
+  ( 3 /data_6 )
+  ( 4 /data_9 )
+  ( 5 /data_5 )
+  ( 6 /data_10 )
+  ( 7 /data_4 )
+  ( 8 /sel_7seg_1 )
+  ( 9 /data_3 )
+  ( 10 ? )
+  ( 11 /data_2 )
+  ( 12 ? )
+  ( 13 /data_1 )
+  ( 14 +12V )
+  ( 15 VCC )
+  ( 16 GND )
+ )
+ ( /4DCEF0CD KK_16 P1 CONN_8X2
   ( 1 /a1_ )
   ( 2 /b1_ )
   ( 3 /c1_ )
@@ -41,79 +77,52 @@
   ( 6 /f1_ )
   ( 7 /g1_ )
   ( 8 /h1_ )
-  ( 9 /a3_ )
-  ( 10 /b3_ )
-  ( 11 /c3_ )
-  ( 12 /d3_ )
-  ( 13 /e3_ )
-  ( 14 /a2_ )
+  ( 9 /h2_ )
+  ( 10 /g2_ )
+  ( 11 /f2_ )
+  ( 12 /e2_ )
+  ( 13 /d2_ )
+  ( 14 /c2_ )
   ( 15 /b2_ )
-  ( 16 /c2_ )
-  ( 17 /d2_ )
-  ( 18 /e2_ )
-  ( 19 /f2_ )
-  ( 20 /g2_ )
-  ( 21 /h2_ )
-  ( 22 /f3_ )
-  ( 23 /g3_ )
-  ( 24 /h3_ )
-  ( 25 ? )
+  ( 16 /a2_ )
  )
- ( /4DCD39B4 DB25MD J2 DB25
-  ( 1 /bg_1_1_ )
-  ( 2 /bg_1_2_ )
-  ( 3 /bg_1_3_ )
-  ( 4 /bg_1_4_ )
-  ( 5 /bg_1_5_ )
-  ( 6 /bg_1_6_ )
-  ( 7 /bg_1_7_ )
-  ( 8 /bg_1_8_ )
-  ( 9 /bg_1_9_ )
-  ( 10 /bg_1_10_ )
-  ( 11 ? )
-  ( 12 GND )
-  ( 13 /GND_vert_ )
-  ( 14 /bg_2_1_ )
-  ( 15 /bg_2_2_ )
-  ( 16 /bg_2_3_ )
-  ( 17 /bg_2_4_ )
-  ( 18 /bg_2_5_ )
-  ( 19 /bg_2_6_ )
-  ( 20 /bg_2_7_ )
-  ( 21 /bg_2_8_ )
-  ( 22 /bg_2_9_ )
-  ( 23 /bg_2_10_ )
-  ( 24 GND )
-  ( 25 /GND_rouge_ )
+ ( /4DCEF0CE KK_16 P2 CONN_8X2
+  ( 1 /bouton_1_ )
+  ( 2 /bouton_2_ )
+  ( 3 /GND_rouge_ )
+  ( 4 /GND_vert_ )
+  ( 5 /g3_ )
+  ( 6 /f3_ )
+  ( 7 /e3_ )
+  ( 8 /d3_ )
+  ( 9 /c3_ )
+  ( 10 /b3_ )
+  ( 11 /a3_ )
+  ( 12 /bg_2_10_ )
+  ( 13 /bg_2_9_ )
+  ( 14 /bg_1_10_ )
+  ( 15 /bg_1_9_ )
+  ( 16 GND )
  )
- ( /4DCD47AB DB25MD J3 DB25
-  ( 1 /bg_1_1 )
-  ( 2 /bg_1_2 )
-  ( 3 /bg_1_3 )
-  ( 4 /bg_1_4 )
-  ( 5 /bg_1_5 )
-  ( 6 /bg_1_6 )
-  ( 7 /bg_1_7 )
-  ( 8 /bg_1_8 )
-  ( 9 /bg_1_9 )
-  ( 10 /bg_1_10 )
-  ( 11 ? )
-  ( 12 GND )
-  ( 13 /GND_vert )
-  ( 14 /bg_2_1 )
-  ( 15 /bg_2_2 )
-  ( 16 /bg_2_3 )
-  ( 17 /bg_2_4 )
-  ( 18 /bg_2_5 )
-  ( 19 /bg_2_6 )
-  ( 20 /bg_2_7 )
-  ( 21 /bg_2_8 )
-  ( 22 /bg_2_9 )
-  ( 23 /bg_2_10 )
-  ( 24 GND )
-  ( 25 /GND_rouge )
+ ( /4DCEF0D0 KK_16 P3 CONN_8X2
+  ( 1 /bg_1_8_ )
+  ( 2 /bg_1_7_ )
+  ( 3 /bg_1_6_ )
+  ( 4 /bg_1_5_ )
+  ( 5 /bg_1_4_ )
+  ( 6 /bg_1_3_ )
+  ( 7 /bg_1_2_ )
+  ( 8 /bg_1_1_ )
+  ( 9 /bg_2_1_ )
+  ( 10 /bg_2_2_ )
+  ( 11 /bg_2_3_ )
+  ( 12 /bg_2_4_ )
+  ( 13 /bg_2_5_ )
+  ( 14 /bg_2_6_ )
+  ( 15 /bg_2_7_ )
+  ( 16 /bg_2_8_ )
  )
- ( /4DCD47AC DB25MD J4 DB25
+ ( /4DD153B5 KK_16 P4 CONN_8X2
   ( 1 /a1 )
   ( 2 /b1 )
   ( 3 /c1 )
@@ -122,59 +131,62 @@
   ( 6 /f1 )
   ( 7 /g1 )
   ( 8 /h1 )
-  ( 9 /a3 )
-  ( 10 /b3 )
-  ( 11 /c3 )
-  ( 12 /d3 )
-  ( 13 /e3 )
-  ( 14 /a2 )
+  ( 9 /h2 )
+  ( 10 /g2 )
+  ( 11 /f2 )
+  ( 12 /e2 )
+  ( 13 /d2 )
+  ( 14 /c2 )
   ( 15 /b2 )
-  ( 16 /c2 )
-  ( 17 /d2 )
-  ( 18 /e2 )
-  ( 19 /f2 )
-  ( 20 /g2 )
-  ( 21 /h2 )
-  ( 22 /f3 )
-  ( 23 /g3 )
-  ( 24 /h3 )
-  ( 25 ? )
+  ( 16 /a2 )
  )
- ( /4D9C8E5B he10-16df MEZZA1 MEZZA-16
-  ( 1 /cmd_r )
-  ( 2 /cmd_v )
-  ( 3 /sel_7seg_1 )
-  ( 4 /sel_7seg_2 )
-  ( 5 /sel_7seg_3 )
-  ( 6 /bit_7seg_1 )
-  ( 7 /bit_7seg_2 )
-  ( 8 /bit_7seg_3 )
-  ( 9 /bit_7seg_4 )
-  ( 10 /bit_7seg_5 )
-  ( 11 /bit_7seg_6 )
-  ( 12 /bit_7seg_7 )
-  ( 13 /bit_7seg_8 )
-  ( 14 +12V )
-  ( 15 VCC )
+ ( /4DD153B4 KK_16 P5 CONN_8X2
+  ( 1 /bouton_1 )
+  ( 2 /bouton_2 )
+  ( 3 /GND_rouge )
+  ( 4 /GND_vert )
+  ( 5 /g3 )
+  ( 6 /f3 )
+  ( 7 /e3 )
+  ( 8 /d3 )
+  ( 9 /c3 )
+  ( 10 /b3 )
+  ( 11 /a3 )
+  ( 12 /bg_2_10 )
+  ( 13 /bg_2_9 )
+  ( 14 /bg_1_10 )
+  ( 15 /bg_1_9 )
   ( 16 GND )
  )
- ( /4D9C8ED8 he10-16df MEZZA2 MEZZA-16
-  ( 1 /sel_bg_1 )
-  ( 2 /sel_bg_2 )
-  ( 3 /bit_bg_1 )
-  ( 4 /bit_bg_2 )
-  ( 5 /bit_bg_3 )
-  ( 6 /bit_bg_4 )
-  ( 7 /bit_bg_5 )
-  ( 8 /bit_bg_6 )
-  ( 9 /bit_bg_7 )
-  ( 10 /bit_bg_8 )
-  ( 11 /bit_bg_9 )
-  ( 12 /bit_bg_10 )
-  ( 13 ? )
-  ( 14 ? )
-  ( 15 VCC )
-  ( 16 GND )
+ ( /4DD153B2 KK_16 P6 CONN_8X2
+  ( 1 /bg_1_8 )
+  ( 2 /bg_1_7 )
+  ( 3 /bg_1_6 )
+  ( 4 /bg_1_5 )
+  ( 5 /bg_1_4 )
+  ( 6 /bg_1_3 )
+  ( 7 /bg_1_2 )
+  ( 8 /bg_1_1 )
+  ( 9 /bg_2_1 )
+  ( 10 /bg_2_2 )
+  ( 11 /bg_2_3 )
+  ( 12 /bg_2_4 )
+  ( 13 /bg_2_5 )
+  ( 14 /bg_2_6 )
+  ( 15 /bg_2_7 )
+  ( 16 /bg_2_8 )
+ )
+ ( /4DD01B7A 1pin P7 CONN_1
+  ( 1 ? )
+ )
+ ( /4DD01B80 1pin P8 CONN_1
+  ( 1 ? )
+ )
+ ( /4DD01B81 1pin P9 CONN_1
+  ( 1 ? )
+ )
+ ( /4DD01B82 1pin P10 CONN_1
+  ( 1 ? )
  )
  ( /4DBC06F5 TO92DGS Q1 FET_N
   ( D /GND_rouge_ )
@@ -188,227 +200,190 @@
  )
  ( /4DC2D2E8 FET_P_DIP4 Q3 FET_P
   ( D /a2_ )
-  ( G N-000149 )
+  ( G N-000151 )
   ( S +6V )
  )
  ( /4DC2D2E6 FET_P_DIP4 Q4 FET_P
   ( D /c2_ )
-  ( G N-000167 )
+  ( G N-000006 )
   ( S +6V )
  )
  ( /4DC2D2E4 FET_P_DIP4 Q5 FET_P
   ( D /e2_ )
-  ( G N-000169 )
+  ( G N-000008 )
   ( S +6V )
  )
  ( /4DC2D2E2 FET_P_DIP4 Q6 FET_P
   ( D /g2_ )
-  ( G N-000170 )
+  ( G N-000010 )
   ( S +6V )
  )
  ( /4DC2D353 FET_P_DIP4 Q7 FET_P
   ( D /a3_ )
-  ( G N-000158 )
+  ( G N-000154 )
   ( S +6V )
  )
  ( /4DC2D355 FET_P_DIP4 Q8 FET_P
   ( D /c3_ )
-  ( G N-000018 )
+  ( G N-000123 )
   ( S +6V )
  )
  ( /4DC2D357 FET_P_DIP4 Q9 FET_P
   ( D /e3_ )
-  ( G N-000020 )
+  ( G N-000125 )
   ( S +6V )
  )
  ( /4DC2D359 FET_P_DIP4 Q10 FET_P
   ( D /g3_ )
-  ( G N-000022 )
+  ( G N-000126 )
   ( S +6V )
  )
  ( /4DC2CE87 FET_P_DIP4 Q11 FET_P
-  ( D /a1_ )
-  ( G N-000106 )
+  ( D /h1_ )
+  ( G N-000044 )
   ( S +6V )
  )
  ( /4DC2CF08 FET_P_DIP4 Q12 FET_P
-  ( D /c1_ )
-  ( G N-000173 )
+  ( D /f1_ )
+  ( G N-000088 )
   ( S +6V )
  )
  ( /4DC2CF12 FET_P_DIP4 Q13 FET_P
-  ( D /e1_ )
-  ( G N-000175 )
+  ( D /d1_ )
+  ( G N-000090 )
   ( S +6V )
  )
  ( /4DC2CF1D FET_P_DIP4 Q14 FET_P
-  ( D /g1_ )
-  ( G N-000177 )
+  ( D /b1_ )
+  ( G N-000092 )
   ( S +6V )
  )
  ( /4DC2D2E7 FET_P_DIP4 Q15 FET_P
   ( D /b2_ )
-  ( G N-000197 )
+  ( G N-000150 )
   ( S +6V )
  )
  ( /4DC2D2E5 FET_P_DIP4 Q16 FET_P
   ( D /d2_ )
-  ( G N-000168 )
+  ( G N-000007 )
   ( S +6V )
  )
  ( /4DC2D2E3 FET_P_DIP4 Q17 FET_P
   ( D /f2_ )
-  ( G N-000191 )
+  ( G N-000009 )
   ( S +6V )
  )
  ( /4DC2D2E1 FET_P_DIP4 Q18 FET_P
   ( D /h2_ )
-  ( G N-000171 )
+  ( G N-000011 )
   ( S +6V )
  )
  ( /4DC2D354 FET_P_DIP4 Q19 FET_P
   ( D /b3_ )
-  ( G N-000159 )
+  ( G N-000153 )
   ( S +6V )
  )
  ( /4DC2D356 FET_P_DIP4 Q20 FET_P
   ( D /d3_ )
-  ( G N-000019 )
+  ( G N-000124 )
   ( S +6V )
  )
  ( /4DC2D358 FET_P_DIP4 Q21 FET_P
   ( D /f3_ )
-  ( G N-000021 )
-  ( S +6V )
- )
- ( /4DC2D35A FET_P_DIP4 Q22 FET_P
-  ( D /h3_ )
-  ( G N-000023 )
+  ( G N-000152 )
   ( S +6V )
  )
  ( /4DC2CEB5 FET_P_DIP4 Q23 FET_P
-  ( D /b1_ )
-  ( G N-000107 )
+  ( D /g1_ )
+  ( G N-000045 )
   ( S +6V )
  )
  ( /4DC2CF0D FET_P_DIP4 Q24 FET_P
-  ( D /d1_ )
-  ( G N-000174 )
+  ( D /e1_ )
+  ( G N-000089 )
   ( S +6V )
  )
  ( /4DC2CF18 FET_P_DIP4 Q25 FET_P
-  ( D /f1_ )
-  ( G N-000196 )
+  ( D /c1_ )
+  ( G N-000091 )
   ( S +6V )
  )
  ( /4DC2CF22 FET_P_DIP4 Q26 FET_P
-  ( D /h1_ )
-  ( G N-000178 )
+  ( D /a1_ )
+  ( G N-000146 )
   ( S +6V )
  )
- ( /4DC18A29 R3 R1 510
+ ( /4DD1903D R3 R1 510
   ( 1 GND )
-  ( 2 N-000104 )
- )
- ( /4DC18A28 R3 R2 510
-  ( 1 GND )
-  ( 2 N-000100 )
- )
- ( /4DC18A27 R3 R3 510
-  ( 1 GND )
-  ( 2 N-000101 )
- )
- ( /4DC18A26 R3 R4 510
-  ( 1 GND )
-  ( 2 N-000102 )
- )
- ( /4DC18A25 R3 R5 510
-  ( 1 GND )
-  ( 2 N-000103 )
- )
- ( /4DC18A24 R3 R6 510
-  ( 1 GND )
-  ( 2 N-000139 )
- )
- ( /4DC18A23 R3 R7 510
-  ( 1 GND )
-  ( 2 N-000138 )
- )
- ( /4DC18A22 R3 R8 510
-  ( 1 GND )
-  ( 2 N-000137 )
- )
- ( /4DC18A21 R3 R9 510
-  ( 1 GND )
-  ( 2 N-000136 )
+  ( 2 N-000155 )
  )
  ( /4DC18A20 R3 R10 510
   ( 1 GND )
-  ( 2 N-000135 )
- )
- ( /4DCA9EE7 R3 R11 510
-  ( 1 GND )
-  ( 2 N-000015 )
- )
- ( /4DCA9EE8 R3 R12 510
-  ( 1 GND )
-  ( 2 N-000017 )
- )
- ( /4DCA9EE9 R3 R13 510
-  ( 1 GND )
-  ( 2 N-000065 )
- )
- ( /4DCA9EEA R3 R14 510
-  ( 1 GND )
-  ( 2 N-000066 )
- )
- ( /4DCA9EEB R3 R15 510
-  ( 1 GND )
-  ( 2 N-000067 )
- )
- ( /4DCA9EEC R3 R16 510
-  ( 1 GND )
-  ( 2 N-000068 )
- )
- ( /4DCA9EED R3 R17 510
-  ( 1 GND )
-  ( 2 N-000069 )
- )
- ( /4DCA9EEE R3 R18 510
-  ( 1 GND )
-  ( 2 N-000070 )
- )
- ( /4DCA9EEF R3 R19 510
-  ( 1 GND )
-  ( 2 N-000071 )
- )
- ( /4DCA9EF0 R3 R20 510
-  ( 1 GND )
-  ( 2 N-000072 )
+  ( 2 N-000112 )
  )
  ( /4DCAAFB7 R3 R21 50
   ( 1 +6V )
-  ( 2 N-000179 )
+  ( 2 N-000147 )
  )
  ( /4DCAAFE0 R3 R22 50
   ( 1 +6V )
-  ( 2 N-000048 )
+  ( 2 N-000016 )
  )
- ( /4DC2D05A LM78XX_2 U1 LM7806
+ ( /4DCEE4A4 R3 R23 1k
+  ( 1 /bouton_1_ )
+  ( 2 VCC )
+ )
+ ( /4DCEE4C5 R3 R24 1k
+  ( 1 /bouton_2_ )
+  ( 2 VCC )
+ )
+ ( /4DD18FDD r_pack9 RR1 510
+  ( 1 GND )
+  ( 2 N-000073 )
+  ( 3 N-000113 )
+  ( 4 N-000114 )
+  ( 5 N-000115 )
+  ( 6 N-000068 )
+  ( 7 N-000069 )
+  ( 8 N-000070 )
+  ( 9 N-000071 )
+  ( 10 N-000072 )
+ )
+ ( /4DD1903B r_pack9 RR2 510
+  ( 1 GND )
+  ( 2 N-000164 )
+  ( 3 N-000159 )
+  ( 4 N-000160 )
+  ( 5 N-000158 )
+  ( 6 N-000161 )
+  ( 7 N-000157 )
+  ( 8 N-000162 )
+  ( 9 N-000156 )
+  ( 10 N-000163 )
+ )
+ ( /4DCEE2BD Switch_multicomp_TS0B SW1 SW_PUSH
+  ( 1 /bouton_1 )
+  ( 2 GND )
+ )
+ ( /4DCEE2C1 Switch_multicomp_TS0B SW2 SW_PUSH
+  ( 1 /bouton_2 )
+  ( 2 GND )
+ )
+ ( /4DC2D05A LM78XXV U1 LM7806
   ( GND GND )
   ( VI +12V )
-  ( VO N-000179 )
+  ( VO N-000147 )
  )
  ( /4DCA97D0 DIP-20__300_ELL U2 M74HC563B1R
   ( 1 GND )
-  ( 2 /bit_bg_1 )
-  ( 3 /bit_bg_2 )
-  ( 4 /bit_bg_3 )
-  ( 5 /bit_bg_4 )
-  ( 6 /bit_bg_5 )
-  ( 7 /bit_bg_6 )
-  ( 8 /bit_bg_7 )
-  ( 9 /bit_bg_8 )
+  ( 2 /data_1 )
+  ( 3 /data_2 )
+  ( 4 /data_3 )
+  ( 5 /data_4 )
+  ( 6 /data_5 )
+  ( 7 /data_6 )
+  ( 8 /data_7 )
+  ( 9 /data_8 )
   ( 10 GND )
   ( 11 /sel_bg_1 )
   ( 12 /bg_1_8_ )
@@ -423,74 +398,96 @@
  )
  ( /4DCA97D6 DIP-20__300_ELL U3 M74HC563B1R
   ( 1 GND )
-  ( 2 /bit_bg_9 )
-  ( 3 /bit_bg_10 )
-  ( 4 ? )
-  ( 5 ? )
+  ( 2 /data_9 )
+  ( 3 /data_10 )
+  ( 4 /data_9 )
+  ( 5 /data_10 )
   ( 6 ? )
   ( 7 ? )
   ( 8 ? )
   ( 9 ? )
   ( 10 GND )
-  ( 11 /sel_bg_1 )
+  ( 11 /sel_bg_12 )
   ( 12 ? )
   ( 13 ? )
   ( 14 ? )
   ( 15 ? )
-  ( 16 ? )
-  ( 17 ? )
+  ( 16 /bg_2_10_ )
+  ( 17 /bg_2_9_ )
   ( 18 /bg_1_10_ )
   ( 19 /bg_1_9_ )
   ( 20 +6V )
  )
- ( /4DCAAFE8 LM78XX_2 U4 LM7806
+ ( /4DCAAFE8 LM78XXV U4 LM7806
   ( GND GND )
   ( VI +12V )
-  ( VO N-000048 )
+  ( VO N-000016 )
+ )
+ ( /4DCED07D DIP-20__300_ELL U5 M74HC563B1R
+  ( 1 GND )
+  ( 2 /data_1 )
+  ( 3 /data_2 )
+  ( 4 /data_3 )
+  ( 5 /data_4 )
+  ( 6 /data_5 )
+  ( 7 /data_6 )
+  ( 8 /data_7 )
+  ( 9 /data_8 )
+  ( 10 GND )
+  ( 11 /sel_7seg_2 )
+  ( 12 N-000011 )
+  ( 13 N-000010 )
+  ( 14 N-000009 )
+  ( 15 N-000008 )
+  ( 16 N-000007 )
+  ( 17 N-000006 )
+  ( 18 N-000150 )
+  ( 19 N-000151 )
+  ( 20 VCC )
  )
  ( /4DCAA27D DIP-20__300_ELL U6 M74HC563B1R
   ( 1 GND )
-  ( 2 /bit_bg_1 )
-  ( 3 /bit_bg_2 )
-  ( 4 /bit_bg_3 )
-  ( 5 /bit_bg_4 )
-  ( 6 /bit_bg_5 )
-  ( 7 /bit_bg_6 )
-  ( 8 /bit_bg_7 )
-  ( 9 /bit_bg_8 )
+  ( 2 /data_8 )
+  ( 3 /data_7 )
+  ( 4 /data_6 )
+  ( 5 /data_5 )
+  ( 6 /data_4 )
+  ( 7 /data_3 )
+  ( 8 /data_2 )
+  ( 9 /data_1 )
   ( 10 GND )
   ( 11 /sel_bg_2 )
-  ( 12 /bg_2_8_ )
-  ( 13 /bg_2_7_ )
-  ( 14 /bg_2_6_ )
-  ( 15 /bg_2_5_ )
-  ( 16 /bg_2_4_ )
-  ( 17 /bg_2_3_ )
-  ( 18 /bg_2_2_ )
-  ( 19 /bg_2_1_ )
+  ( 12 /bg_2_1_ )
+  ( 13 /bg_2_2_ )
+  ( 14 /bg_2_3_ )
+  ( 15 /bg_2_4_ )
+  ( 16 /bg_2_5_ )
+  ( 17 /bg_2_6_ )
+  ( 18 /bg_2_7_ )
+  ( 19 /bg_2_8_ )
   ( 20 +6V )
  )
- ( /4DCAA27C DIP-20__300_ELL U7 M74HC563B1R
+ ( /4DCED091 DIP-20__300_ELL U7 M74HC563B1R
   ( 1 GND )
-  ( 2 /bit_bg_9 )
-  ( 3 /bit_bg_10 )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 ? )
+  ( 2 /data_1 )
+  ( 3 /data_2 )
+  ( 4 /data_3 )
+  ( 5 /data_4 )
+  ( 6 /data_5 )
+  ( 7 /data_6 )
+  ( 8 /data_7 )
+  ( 9 /data_8 )
   ( 10 GND )
-  ( 11 /sel_bg_2 )
+  ( 11 /sel_7seg_3 )
   ( 12 ? )
-  ( 13 ? )
-  ( 14 ? )
-  ( 15 ? )
-  ( 16 ? )
-  ( 17 ? )
-  ( 18 /bg_2_10_ )
-  ( 19 /bg_2_9_ )
-  ( 20 +6V )
+  ( 13 N-000126 )
+  ( 14 N-000152 )
+  ( 15 N-000125 )
+  ( 16 N-000124 )
+  ( 17 N-000123 )
+  ( 18 N-000153 )
+  ( 19 N-000154 )
+  ( 20 VCC )
  )
  ( /4DC18A2A DIP-20__300_ELL U8 BARGRAPHE_10LED
   ( 1 /bg_1_1 )
@@ -503,16 +500,16 @@
   ( 8 /bg_1_8 )
   ( 9 /bg_1_9 )
   ( 10 /bg_1_10 )
-  ( 11 N-000135 )
-  ( 12 N-000136 )
-  ( 13 N-000137 )
-  ( 14 N-000138 )
-  ( 15 N-000139 )
-  ( 16 N-000103 )
-  ( 17 N-000102 )
-  ( 18 N-000101 )
-  ( 19 N-000100 )
-  ( 20 N-000104 )
+  ( 11 N-000112 )
+  ( 12 N-000072 )
+  ( 13 N-000071 )
+  ( 14 N-000070 )
+  ( 15 N-000069 )
+  ( 16 N-000068 )
+  ( 17 N-000115 )
+  ( 18 N-000114 )
+  ( 19 N-000113 )
+  ( 20 N-000073 )
  )
  ( /4DCA9EE6 DIP-20__300_ELL U9 BARGRAPHE_10LED
   ( 1 /bg_2_1 )
@@ -525,16 +522,16 @@
   ( 8 /bg_2_8 )
   ( 9 /bg_2_9 )
   ( 10 /bg_2_10 )
-  ( 11 N-000072 )
-  ( 12 N-000071 )
-  ( 13 N-000070 )
-  ( 14 N-000069 )
-  ( 15 N-000068 )
-  ( 16 N-000067 )
-  ( 17 N-000066 )
-  ( 18 N-000065 )
-  ( 19 N-000017 )
-  ( 20 N-000015 )
+  ( 11 N-000155 )
+  ( 12 N-000163 )
+  ( 13 N-000156 )
+  ( 14 N-000162 )
+  ( 15 N-000157 )
+  ( 16 N-000161 )
+  ( 17 N-000158 )
+  ( 18 N-000160 )
+  ( 19 N-000159 )
+  ( 20 N-000164 )
  )
  ( /4DBC05AB 7-seg-RV_SYMBIOZ U10 7-SEG-RV
   ( 1 /GND_rouge )
@@ -560,70 +557,26 @@
   ( 9 /f2 )
   ( 10 /g2 )
  )
- ( /4DC2D2EC DIP-20__300_ELL U12 M74HC563B1R
+ ( /4DCED09D DIP-20__300_ELL U12 M74HC563B1R
   ( 1 GND )
-  ( 2 /bit_7seg_1 )
-  ( 3 /bit_7seg_2 )
-  ( 4 /bit_7seg_3 )
-  ( 5 /bit_7seg_4 )
-  ( 6 /bit_7seg_5 )
-  ( 7 /bit_7seg_6 )
-  ( 8 /bit_7seg_7 )
-  ( 9 /bit_7seg_8 )
+  ( 2 /data_8 )
+  ( 3 /data_7 )
+  ( 4 /data_6 )
+  ( 5 /data_5 )
+  ( 6 /data_4 )
+  ( 7 /data_3 )
+  ( 8 /data_2 )
+  ( 9 /data_1 )
   ( 10 GND )
   ( 11 /sel_7seg_1 )
-  ( 12 N-000171 )
-  ( 13 N-000170 )
-  ( 14 N-000191 )
-  ( 15 N-000169 )
-  ( 16 N-000168 )
-  ( 17 N-000167 )
-  ( 18 N-000197 )
-  ( 19 N-000149 )
-  ( 20 VCC )
- )
- ( /4DC2D34F DIP-20__300_ELL U13 M74HC563B1R
-  ( 1 GND )
-  ( 2 /bit_7seg_1 )
-  ( 3 /bit_7seg_2 )
-  ( 4 /bit_7seg_3 )
-  ( 5 /bit_7seg_4 )
-  ( 6 /bit_7seg_5 )
-  ( 7 /bit_7seg_6 )
-  ( 8 /bit_7seg_7 )
-  ( 9 /bit_7seg_8 )
-  ( 10 GND )
-  ( 11 /sel_7seg_2 )
-  ( 12 N-000023 )
-  ( 13 N-000022 )
-  ( 14 N-000021 )
-  ( 15 N-000020 )
-  ( 16 N-000019 )
-  ( 17 N-000018 )
-  ( 18 N-000159 )
-  ( 19 N-000158 )
-  ( 20 VCC )
- )
- ( /4DC2CB35 DIP-20__300_ELL U14 M74HC563B1R
-  ( 1 GND )
-  ( 2 /bit_7seg_1 )
-  ( 3 /bit_7seg_2 )
-  ( 4 /bit_7seg_3 )
-  ( 5 /bit_7seg_4 )
-  ( 6 /bit_7seg_5 )
-  ( 7 /bit_7seg_6 )
-  ( 8 /bit_7seg_7 )
-  ( 9 /bit_7seg_8 )
-  ( 10 GND )
-  ( 11 /sel_7seg_3 )
-  ( 12 N-000178 )
-  ( 13 N-000177 )
-  ( 14 N-000196 )
-  ( 15 N-000175 )
-  ( 16 N-000174 )
-  ( 17 N-000173 )
-  ( 18 N-000107 )
-  ( 19 N-000106 )
+  ( 12 N-000146 )
+  ( 13 N-000092 )
+  ( 14 N-000091 )
+  ( 15 N-000090 )
+  ( 16 N-000089 )
+  ( 17 N-000088 )
+  ( 18 N-000045 )
+  ( 19 N-000044 )
   ( 20 VCC )
  )
  ( /4DC18A65 7-seg-RV_SYMBIOZ U15 7-SEG-RV
@@ -634,7 +587,7 @@
   ( 5 /GND_vert )
   ( 6 /b3 )
   ( 7 /a3 )
-  ( 8 /h3 )
+  ( 8 ? )
   ( 9 /f3 )
   ( 10 /g3 )
  )
@@ -677,18 +630,6 @@ $component C8
  CP*
  SM*
 $endlist
-$component J1
- DB25*
-$endlist
-$component J2
- DB25*
-$endlist
-$component J3
- DB25*
-$endlist
-$component J4
- DB25*
-$endlist
 $component R1
  R?
  SM0603
@@ -696,133 +637,7 @@ $component R1
  R?-*
  SM1206
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R8
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R9
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R12
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R13
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R14
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R15
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R16
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R17
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R18
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R19
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R20
  R?
  SM0603
  SM0805
@@ -837,6 +652,20 @@ $component R21
  SM1206
 $endlist
 $component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R24
  R?
  SM0603
  SM0805
