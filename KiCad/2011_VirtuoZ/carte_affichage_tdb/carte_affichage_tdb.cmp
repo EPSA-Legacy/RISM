@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 21/05/2011 00:18:29
+Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 26/05/2011 00:21:40
 
 BeginCmp
 TimeStamp = /4DCA89A1;
@@ -71,6 +71,13 @@ IdModule  = C1;
 EndCmp
 
 BeginCmp
+TimeStamp = /4DDD80AE;
+Reference = D1;
+ValeurCmp = RED;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
 TimeStamp = /4DD01B7A;
 Reference = MECA1;
 ValeurCmp = MECA;
@@ -115,42 +122,42 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCEF0CD;
 Reference = P1;
-ValeurCmp = CONN_8X2;
+ValeurCmp = 7seg_1_&_2;
 IdModule  = KK_16;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCEF0CE;
 Reference = P2;
-ValeurCmp = CONN_8X2;
+ValeurCmp = 7seg_3_&_masses;
 IdModule  = KK_16;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCEF0D0;
 Reference = P3;
-ValeurCmp = CONN_8X2;
+ValeurCmp = Bargraphes;
 IdModule  = KK_16;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DD153B5;
 Reference = P4;
-ValeurCmp = CONN_8X2;
+ValeurCmp = 7seg_1_&_2;
 IdModule  = KK_16;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DD153B4;
 Reference = P5;
-ValeurCmp = CONN_8X2;
+ValeurCmp = 7seg_3_&_masses;
 IdModule  = KK_16;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DD153B2;
 Reference = P6;
-ValeurCmp = CONN_8X2;
+ValeurCmp = Bargraphes;
 IdModule  = KK_16;
 EndCmp
 
@@ -158,14 +165,14 @@ BeginCmp
 TimeStamp = /4DBC06F5;
 Reference = Q1;
 ValeurCmp = FET_N;
-IdModule  = TO92DGS;
+IdModule  = TO220GDS;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DBC06EF;
 Reference = Q2;
 ValeurCmp = FET_N;
-IdModule  = TO92DGS;
+IdModule  = TO220GDS;
 EndCmp
 
 BeginCmp
@@ -337,6 +344,13 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
+TimeStamp = /4DDD80AA;
+Reference = R2;
+ValeurCmp = 520;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
 TimeStamp = /4DC18A20;
 Reference = R10;
 ValeurCmp = 510;
@@ -347,28 +361,28 @@ BeginCmp
 TimeStamp = /4DCAAFB7;
 Reference = R21;
 ValeurCmp = 50;
-IdModule  = R3;
+IdModule  = R5;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCAAFE0;
 Reference = R22;
 ValeurCmp = 50;
-IdModule  = R3;
+IdModule  = R5;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCEE4A4;
 Reference = R23;
 ValeurCmp = 1k;
-IdModule  = R3;
+IdModule  = R4-LARGE_PADS;
 EndCmp
 
 BeginCmp
 TimeStamp = /4DCEE4C5;
 Reference = R24;
 ValeurCmp = 1k;
-IdModule  = R3;
+IdModule  = R4-LARGE_PADS;
 EndCmp
 
 BeginCmp
@@ -409,13 +423,6 @@ EndCmp
 BeginCmp
 TimeStamp = /4DCA97D0;
 Reference = U2;
-ValeurCmp = M74HC563B1R;
-IdModule  = DIP-20__300_ELL;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DCA97D6;
-Reference = U3;
 ValeurCmp = M74HC563B1R;
 IdModule  = DIP-20__300_ELL;
 EndCmp
