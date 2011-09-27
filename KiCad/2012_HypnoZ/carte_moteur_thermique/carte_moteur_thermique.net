@@ -1,0 +1,192 @@
+# EESchema Netlist Version 1.1 created  jeu. 01 sept. 2011 17:13:26 CEST
+(
+ ( /4E5F936E $noname  C2 1u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4E5F9365 $noname  C1 27p {Lib=C}
+  (    1 GND )
+  (    2 VCC )
+ )
+ ( /4E5F8FC8 $noname  U1 LM358 {Lib=LM358}
+  (    1 /Temp_moteur_th )
+  (    2 /+2.5V )
+  (    3 N-000003 )
+  (    4 GND )
+  (    5 N-000025 )
+  (    6 /+2.5V )
+  (    7 /Vitesse_moteur_th )
+  (    8 VCC )
+ )
+ ( /4E5F8F41 $noname  R2 10k {Lib=R}
+  (    1 GND )
+  (    2 /+2.5V )
+ )
+ ( /4E5F8F3B $noname  R1 10k {Lib=R}
+  (    1 /+2.5V )
+  (    2 VCC )
+ )
+ ( /4E5F8DF3 $noname  D2 DIODE {Lib=DIODE}
+  (    1 /Compte_tours )
+  (    2 N-000021 )
+ )
+ ( /4E5F8DEA $noname  D1 DIODE {Lib=DIODE}
+  (    1 /T_moteur )
+  (    2 N-000022 )
+ )
+ ( /4E5F8CDA $noname  R6 10k {Lib=R}
+  (    1 N-000025 )
+  (    2 GND )
+ )
+ ( /4E5F8CCD $noname  R5 14k {Lib=R}
+  (    1 N-000025 )
+  (    2 N-000021 )
+ )
+ ( /4E5F8CBD $noname  R3 10k {Lib=R}
+  (    1 GND )
+  (    2 N-000003 )
+ )
+ ( /4E5F8CAA $noname  R4 14k {Lib=R}
+  (    1 N-000003 )
+  (    2 N-000022 )
+ )
+ ( /4E5F8C3F $noname  P1 Entrees {Lib=CONN_2}
+  (    1 /Compte_tours )
+  (    2 /T_moteur )
+ )
+ ( /4E5F88F2 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+ )
+ ( /4E5F88EF $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /Temp_moteur_th )
+  (    2 /Vitesse_moteur_th )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 +12V )
+  (    9 VCC )
+  (   10 GND )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C2
+ CP*
+ SM*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ U1 4
+ R6 2
+ R2 1
+ MEZZA1 10
+ C1 1
+ C2 2
+ R3 1
+Net 2 "VCC" "VCC"
+ MEZZA1 9
+ C2 1
+ C1 2
+ R1 2
+ U1 8
+Net 3 "" ""
+ R3 2
+ R4 1
+ U1 3
+Net 4 "/Vitesse_moteur_th" "Vitesse_moteur_th"
+ U1 7
+ MEZZA1 2
+Net 13 "/Temp_moteur_th" "Temp_moteur_th"
+ U1 1
+ MEZZA1 1
+Net 20 "/Compte tours" "Compte tours"
+ D2 1
+ P1 1
+Net 21 "" ""
+ D2 2
+ R5 2
+Net 22 "" ""
+ D1 2
+ R4 2
+Net 24 "/+2.5V" "+2.5V"
+ U1 2
+ R2 2
+ R1 1
+ U1 6
+Net 25 "" ""
+ U1 5
+ R6 1
+ R5 1
+Net 26 "/T moteur" "T moteur"
+ D1 1
+ P1 2
+}
+#End
