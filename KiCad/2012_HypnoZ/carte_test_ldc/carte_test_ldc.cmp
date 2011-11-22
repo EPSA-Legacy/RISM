@@ -1,0 +1,108 @@
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 08/11/2011 16:12:39
+
+BeginCmp
+TimeStamp = /4E7A0E2F;
+Reference = P1;
+ValeurCmp = HE10-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4E7A0E32;
+Reference = P2;
+ValeurCmp = HE10-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4E81C4B6;
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4E81C4BD;
+Reference = P4;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4E81C4C1;
+Reference = P5;
+ValeurCmp = CONN_1;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB9395D;
+Reference = P6;
+ValeurCmp = CONN_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB92D67;
+Reference = P7;
+ValeurCmp = CONN_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB93973;
+Reference = P8;
+ValeurCmp = CONN_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB93976;
+Reference = P9;
+ValeurCmp = CONN_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB92CDA;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB93804;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB92CD5;
+Reference = RV1;
+ValeurCmp = POT;
+IdModule  = POT_CMS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB93744;
+Reference = RV2;
+ValeurCmp = POT;
+IdModule  = POT_CMS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB937B7;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PUSH;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EB93802;
+Reference = SW2;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PUSH;
+EndCmp
+
+EndListe
