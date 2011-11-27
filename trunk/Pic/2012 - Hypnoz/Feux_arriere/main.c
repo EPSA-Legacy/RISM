@@ -5,8 +5,9 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Feux Arrières                                    //
-//		Version 1.0 - BLD - 24/10/2011                         //
-//                                                             //
+//		Version 1.00  - BLD - 24/10/2011                       //
+//      Version 1.01  - BLD - 27/10/2011 -> renommage variable //    
+//			                                                   //
 /////////////////////////////////////////////////////////////////
 
 #include <18F258.h>
@@ -33,16 +34,16 @@
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int16 sec=0;                          // contient les secondes du uptime
-unsigned int8 clign=0;                         // variable temporelle pour le clignotant
+unsigned int8 clign_ms=0;                         // variable temporelle pour leclign_msotant
 
 int16 tmp=0;						           // variable temporaire
 
 int1 blinkl_ack=0;                             // flag valant 1 lorsqu'il faut envoyer l'accusé de réception du message BLINK_ORDER_LEFT
 int1 blinkr_ack=0;                             // flag valant 1 lorsqu'il faut envoyer l'accusé de réception du message BLINK_ORDER_RIGHT
 int1 light_ack=0;                              // flag valant 1 lorsqu'il faut envoyer l'accusé de réception du message LIGHT_ORDER
-int1 blink_left=0;                             // état du clignotant gauche 1=>commandé 0=>éteint
-int1 blink_right=0;                            // état du clignotant droit 1=>commandé 0=>éteint
-int1 blink_status=0;                           // variable toggle à la fréquence des clignotants
+int1 blink_left=0;                             // état duclign_msotant gauche 1=>commandé 0=>éteint
+int1 blink_right=0;                            // état duclign_msotant droit 1=>commandé 0=>éteint
+int1 blink_status=0;                           // variable toggle à la fréquence desclign_msotants
 int1 brake=0;                                  // état des feux stops
 int1 light=0;                                  // état des feux de croisement
 
@@ -62,7 +63,7 @@ void internalLogic();
 void isr_timer2()
 {
 	 ms++;
-     clign++;
+    clign_ms++;
      if(ms>=1000)
 	 {
 		ms=0;
@@ -139,13 +140,13 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 				case BLINK_ORDER_LEFT:
 				{		
 					blinkl_ack=1;                  // On place le flag à 1 pour envoyer l'accusé de réception ultérieurement
-					blink_left=rxData[0];          // On change l'état du clignotant gauche
+					blink_left=rxData[0];          // On change l'état duclign_msotant gauche
 					break;
 				}
 				case BLINK_ORDER_RIGHT:
 				{
                     blinkr_ack=1;                  // On place le flag à 1 pour envoyer l'accusé de réception ultérieurement
-					blink_right=rxData[0];         // On change l'état du clignotant droit
+					blink_right=rxData[0];         // On change l'état duclign_msotant droit
 					break;
 				}
 				case LIGHT_ORDER:
@@ -194,13 +195,13 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	output_bit(FEUX, light);                              // si light est à true, allumer les feux arrière, et inversement
 
 	
-	if(clign >= 650)                                      // 650 ms = +- 1.5Hz après l'activation du timer = frequence des clignotants
+	if(clign_ms >= 650)                                   // 650 ms = +- 1.5Hz après l'activation du timer = frequence desclign_msotants
 	{
-		clign = 0;                                        // repartir pour 500 ms
-		blink_status = !blink_status ;                    // changer l'état d'allumage des clignotants
+		clign_ms = 0;                                     // repartir pour 500 ms
+		blink_status = !blink_status ;                    // changer l'état d'allumage desclign_msotants
 
-		output_bit(CLIGN_R, blink_status && blink_right); // allumer ou éteindre le cligno droit s'il est activé
-		output_bit(CLIGN_L, blink_status && blink_left);  // allumer ou éteindre le cligno gauche s'il est activé
+		output_bit(CLIGN_R, blink_status && blink_right); // allumer ou éteindre le clignotant droit s'il est activé
+		output_bit(CLIGN_L, blink_status && blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
 	}
 }
 
@@ -212,7 +213,7 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(BLINK_LEFT_BACK_ACK,blink_left,1,0,false,false); //emission de l'accusé de réception
+			r=can_putd(BLINK_LEFT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			blinkl_ack=0; // on a plus besoin d'envoyer l'accusé de réception
 			#ifdef DEBUG
 				restart_wdt();
@@ -230,7 +231,7 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(BLINK_RIGHT_BACK_ACK,blink_right,1,0,false,false); //emission de l'accusé de réception
+			r=can_putd(BLINK_RIGHT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			blinkr_ack=0; // on a plus besoin d'envoyer l'accusé de réception
 			#ifdef DEBUG
 				restart_wdt();
@@ -248,7 +249,7 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(LIGHT_BACK_ACK,light,1,0,false,false); //emission de l'accusé de réception
+			r=can_putd(LIGHT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			light_ack=0; // on a plus besoin d'envoyer l'accusé de réception
 			#ifdef DEBUG
 				restart_wdt();
