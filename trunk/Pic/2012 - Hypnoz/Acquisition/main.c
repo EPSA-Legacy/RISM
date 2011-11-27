@@ -8,6 +8,7 @@
 //		Version 1.00 - BLD - 20/11/2011                        //
 //		Version 1.01 - BLD - 27/11/2011 -> mesure en 16bits    //
 //      Version 1.02 - BLD - 27/11/2011 -> ADC non blocant     //
+//      Version 1.03 - BLD - 27/11/2011 -> Trace mode		   //
 //                                                             //
 //      													   //
 /////////////////////////////////////////////////////////////////
@@ -49,9 +50,20 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE_ALL 1
+#define TRACE_TENSION 1
+#define TRACE_COURANT 1
+#define TRACE_MOT 1
+#define TRACE_SC 1
+#define TRACE_CONV 1
+#define TRACE_CAN 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,WDT
+#endif
+
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -182,7 +194,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TENSION_MOT1_CHANNEL:
 			{
 				umot1=(int16)((data/205)*ku_mot);											 // umot1 est désormais en volt
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_MOT || TRACE_TENSION || TRACE_ALL)
 					restart_wdt();
 	 				tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Tension Mot 1 : %Ld V", tmp,umot1);
@@ -192,7 +204,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TENSION_MOT2_CHANNEL:
 			{
 				umot2=(int16)((data/205)*ku_mot);										     // umot2 est désormais en volt
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_MOT || TRACE_TENSION || TRACE_ALL)
 					restart_wdt();
 	 				tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Tension Mot 2 : %Ld V", tmp,umot2);
@@ -202,7 +214,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TENSION_SC_CHANNEL:
 			{
 				usc=(int16)((data/205)*ku_sc);											     // usc est désormais en volt
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_SC || TRACE_TENSION || TRACE_ALL)
 					restart_wdt();
 	 				tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Tension SC : %Ld V", tmp,usc);
@@ -212,7 +224,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TENSION_CONV_CHANNEL:
 			{
 				uconv=(int16)((data/205)*ku_conv);										     // uconv est désormais en volt
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_CONV || TRACE_TENSION || TRACE_ALL)
 					restart_wdt();
 	   				tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Tension Convertisseur : %Ld V", tmp,uconv);
@@ -222,7 +234,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case COURANT_MOT1_CHANNEL:
 			{
 				imot1=(int16)((data/205)*ki_mot);											 // imot1 est désormais en ampère
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_MOT || TRACE_COURANT || TRACE_ALL)
 					restart_wdt();
 				    tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Courant Mot 1 : %Ld A", tmp,imot1);
@@ -232,7 +244,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case COURANT_MOT2_CHANNEL:
 			{
 				imot2=(int16)((data/205)*ki_mot);					 						 // imot2 est désormais en ampère
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_MOT || TRACE_COURANT || TRACE_ALL)
 					restart_wdt();
 	 				tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Courant Mot 2 : %Ld A", tmp,imot2);
@@ -242,7 +254,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case COURANT_SC_CHANNEL:
 			{
 				isc=(int16)((data/205)*ki_sc);						  						 // iconv est désormais en ampère
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_SC || TRACE_COURANT || TRACE_ALL)
 					restart_wdt();
 	   	 			tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Courant SC : %Ld A", tmp,isc);
@@ -252,7 +264,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TEMP_CONVERT_CHANNEL:
 			{
 				tconv=(int16)((data/205)*kt_conv);					  						 // tconv est désormais en °C
-				#ifdef DEBUG_VERBOSE
+				#if (TRACE_CONV || TRACE_ALL)
 					restart_wdt();
 				    tmp=ms+1000*sec;
 					printf("[%Lu] - ADC INFO - Temperature Convertisseur : %Ld C", tmp,tconv);
@@ -293,7 +305,7 @@ void sendCAN()
 			r=can_putd(VOLTAGE_DATA,txdata,txLen,0,false,false); // emission des données
 			tension_reemit_ms=0;								  // maz du compteur de temps d'emission
 		
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				if(r!=0xFF)
 				{
 					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
@@ -314,7 +326,7 @@ void sendCAN()
 		{
 			r=can_putd(CURRENT_DATA,txdata,txLen,0,false,false); // emission des données
 			courant_reemit_ms=0;								  // maz du compteur de temps d'emission
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				if(r!=0xFF)
 				{
 					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
