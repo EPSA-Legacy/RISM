@@ -187,7 +187,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	// on vérifie que la conversion est achevée
 	if(adc_done==1)
 	{
-		data=read_adc();								                                     // on lit la valeur convertie
+		data=read_adc(ADC_READ_ONLY);								                         // on lit la valeur convertie
 
 		switch(current_adc_channel)						                                     // on inscrit la valeur dans la bonne variable
 		{
