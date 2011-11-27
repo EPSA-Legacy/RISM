@@ -10,7 +10,7 @@ Library=
 LinkerScript=
 
 [Target Data]
-FileList=main.c;
+FileList=main.c
 BuildTool=C-COMPILER
 OptionString=+FH
 AdditionalOptionString=
