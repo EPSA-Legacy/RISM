@@ -5,7 +5,9 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Tableau de Bord                                  //
-//		Version 1.0 - BLD - 16/11/2011                         //
+//		Version 1.00 - BLD - 16/11/2011                        //
+//		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //	
+//		Version 1.02 - BLD - 27/11/2011 -> trace modes         //		
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -27,9 +29,17 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE_ALLLIGHT	1
+#define TRACE_WARN 1
+#define TRACE_BLINK 1
+#define TRACE_LIGHT 1
+#define TRACE_CAN 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,WDT
+#endif
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -44,15 +54,15 @@ int8 blinkl=0;								   // état des clignotants gauches 1 si actif 0 sinon
 int8 blinkr=0;								   // état des clignotants droits 1 si actif 0 sinon
 int8 light=0;								   // état des feux 0=éteint 1=code 2=phares 
 int8 warn=0;								   // état des warning 1=activé, 0=éteint
-int8 blinkfrontrack=0;						   // ACK clignotant avant droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-int8 blinkbackrack=0;                          // ACK clignotant arrière droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-int8 blinkfrontlack=0;						   // ACK clignotant avant gauche vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-int8 blinkbacklack=0;                          // ACK clignotant arrière gauche vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-int8 lightfrontack=0;						   // ACK feux avant vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-int8 lightbackack=0;						   // ACK feux arrière vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
-unsigned int16 light_reemit=0;				   // temps depuis la dernière émission du message
-unsigned int16 blinkr_reemit=0;				   // temps depuis la dernière émission du message
-unsigned int16 blinkl_reemit=0;	               // temps depuis la dernière émission du message
+int8 blinkfrontrack_count=0;						   // ACK clignotant avant droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+int8 blinkbackrack_count=0;                          // ACK clignotant arrière droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+int8 blinkfrontlack_count=0;						   // ACK clignotant avant gauche vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+int8 blinkbacklack_count=0;                          // ACK clignotant arrière gauche vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+int8 lightfrontack_count=0;						   // ACK feux avant vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+int8 lightbacktack_count=0;						   // ACK feux arrière vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
+unsigned int16 light_reemit_ms=0;				   // temps depuis la dernière émission du message
+unsigned int16 blinkr_reemit_ms=0;				   // temps depuis la dernière émission du message
+unsigned int16 blinkl_reemit_ms=0;	               // temps depuis la dernière émission du message
 
 
 // Prototypes de fonctions
@@ -71,9 +81,9 @@ void internalLogic();
 void isr_timer2()
 {
 	 ms++;
-     light_reemit++;
-	 blinkr_reemit++;
-	 blinkl_reemit++;
+     light_reemit_ms++;
+	 blinkr_reemit_ms++;
+	 blinkl_reemit_ms++;
      if(ms>=1000)
 	 {
 		ms=0;
@@ -145,42 +155,42 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 				case BLINK_RIGHT_BACK_ACK:
 				{	
 					if(rxData[0]==blinkr) 		   // il s'agit bien d'un accusé de réception pour l'état courant du clignotant arrière droit	
-					blinkbackrack=0;			   // On ne doit plus envoyer le message 
+					blinkbackrack_count=0;			   // On ne doit plus envoyer le message 
 					break;
 				}
 				case BLINK_LEFT_BACK_ACK:
 				{	
 					if(rxData[0]==blinkl) 		   // il s'agit bien d'un accusé de réception pour l'état courant du clignotant arrière gauche
-						blinkbacklack=0;	  	   // On ne doit plus envoyer le message 
+						blinkbacklack_count=0;	  	   // On ne doit plus envoyer le message 
 					break;
 				}
 				case BLINK_RIGHT_FRONT_ACK:
 				{	
 					if(rxData[0]==blinkr) 		   // il s'agit bien d'un accusé de réception pour l'état courant du clignotant avant droit	
-						blinkfrontrack=0;		   // On ne doit plus envoyer le message 
+						blinkfrontrack_count=0;		   // On ne doit plus envoyer le message 
 					break;
 				}
 				case BLINK_LEFT_FRONT_ACK:
 				{	
 					if(rxData[0]==blinkl) 		   // il s'agit bien d'un accusé de réception pour l'état courant du clignotant avant gauche	
-						blinkfrontlack=0;	   	   // On ne doit plus envoyer le message 
+						blinkfrontlack_count=0;	   	   // On ne doit plus envoyer le message 
 					break;
 				}
 				case LIGHT_FRONT_ACK:
 				{	
 					if(rxData[0]==light) 		   // il s'agit bien d'un accusé de réception pour l'état courant du feux
-						lightfrontack=0;	   	   // On ne doit plus envoyer le message 
+						lightfrontack_count=0;	   	   // On ne doit plus envoyer le message 
 					break;
 				}
 				case LIGHT_BACK_ACK:
 				{	
 					if(rxData[0]==light) 		   // il s'agit bien d'un accusé de réception pour l'état courant du feux
-						lightbackack=0;			   // On ne doit plus envoyer le message 
+						lightbacktack_count=0;			   // On ne doit plus envoyer le message 
 					break;
 				}
 			}
 
-		#ifdef DEBUG
+		#ifdef TRACE_ALLLIGHT
 			restart_wdt();
 			tmp=ms+1000*sec;
 			if((rxId==BLINK_RIGHT_BACK_ACK) && rxLen>=1)
@@ -208,14 +218,14 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 				printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
 			}
 		#endif
-		#ifdef DEBUG_VERBOSE
+		#ifdef TRACE_CAN
 			tmp=ms+1000*sec;
 			printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 		#endif
 		}
 		else
 		{
-		#ifdef DEBUG_VERBOSE
+		#ifdef TRACE_CAN
 			restart_wdt();
 	        tmp=ms+1000*sec;
 			printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
@@ -237,13 +247,13 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		warn=data;								// on affecte la nouvelle valeur
 		blinkl=data;							// on affecte l'état correspondant au clignotant gauche
 		blinkr=data;							// on affecte l'état correspondant au clignotant droit
-		blinkbacklack=5;						// on prévoit d'envoyer 5 messages au maximum
-		blinkfrontlack=5;						// on prévoit d'envoyer 5 messages au maximum
-		blinkbackrack=5;						// on prévoit d'envoyer 5 messages au maximum
-		blinkfrontlack=5;						// on prévoit d'envoyer 5 messages au maximum
-		blinkl_reemit=TR_BLIGHT+1;				// on force l'emission du message dès que possible
-		blinkr_reemit=TR_BLIGHT+1;				// on force l'emission du message dès que possible
-		#ifdef DEBUG
+		blinkbacklack_count=5;						// on prévoit d'envoyer 5 messages au maximum
+		blinkfrontlack_count=5;						// on prévoit d'envoyer 5 messages au maximum
+		blinkbackrack_count=5;						// on prévoit d'envoyer 5 messages au maximum
+		blinkfrontlack_count=5;						// on prévoit d'envoyer 5 messages au maximum
+		blinkl_reemit_ms=TR_BLIGHT+1;				// on force l'emission du message dès que possible
+		blinkr_reemit_ms=TR_BLIGHT+1;				// on force l'emission du message dès que possible
+		#if (TRACE_WARN || TRACE_ALLLIGHT)
 			restart_wdt();
 			tmp=ms+1000*sec;
 			if(blinkl==1)
@@ -262,10 +272,10 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		if(data!=blinkl)
 		{
 			blinkl=data;									  // on change l'état du clignotant droit
-			blinkbacklack=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkfrontlack=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkl_reemit= TR_BLIGHT+1;						  // on force l'émission instantannée
-			#ifdef DEBUG
+			blinkbacklack_count=5;								  // on prévoit d'envoyer 5 fois le message
+			blinkfrontlack_count=5;								  // on prévoit d'envoyer 5 fois le message
+			blinkl_reemit_ms= TR_BLIGHT+1;						  // on force l'émission instantannée
+			#if (TRACE_BLINK || TRACE_ALLLIGHT)
 				restart_wdt();
 				tmp=ms+1000*sec;
 				if(blinkl==1)
@@ -281,10 +291,10 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		if(data!=blinkr)
 		{
 			blinkr=data;									  // on change l'état du clignotant droit
-			blinkbackrack=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkfrontrack=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkr_reemit= TR_BLIGHT+1;						  // on force l'émission instantannée
-			#ifdef DEBUG
+			blinkbackrack_count=5;								  // on prévoit d'envoyer 5 fois le message
+			blinkfrontrack_count=5;								  // on prévoit d'envoyer 5 fois le message
+			blinkr_reemit_ms= TR_BLIGHT+1;						  // on force l'émission instantannée
+			#if  (TRACE_BLINK || TRACE_ALLLIGHT)
 				restart_wdt();
 				tmp=ms+1000*sec;
 				if(blinkl==1)
@@ -300,10 +310,10 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	if(data==1)										      // les feux sont en mode code
 	{
 		light=data;                                       // on change l'état du feu
-		lightfrontack=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
-		lightbackack=5;									  // on prévoit d'envoyer 5 fois le message au maximum
-		light_reemit=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
-		#ifdef DEBUG
+		lightfrontack_count=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
+		lightbacktack_count=5;									  // on prévoit d'envoyer 5 fois le message au maximum
+		light_reemit_ms=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
+		#if  (TRACE_LIGHT || TRACE_ALLLIGHT)
 			restart_wdt();
 	        tmp=ms+1000*sec;
 			if(light==1)
@@ -314,9 +324,9 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	{
 		data=input(FEUX);
 		light=data;                                       // on change l'état du feu
-		lightfrontack=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
-		lightbackack=5;									  // on prévoit d'envoyer 5 fois le message au maximum
-		light_reemit=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
+		lightfrontack_count=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
+		lightbacktack_count=5;									  // on prévoit d'envoyer 5 fois le message au maximum
+		light_reemit_ms=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
 		#ifdef DEBUG
 			restart_wdt();
 	        tmp=ms+1000*sec;
@@ -335,21 +345,21 @@ void sendCAN()
 
 	//GESTION DES CLIGNOTANTS GAUCHES
 
-	if((blinkbacklack>=1 || blinkfrontlack>=1) && blinkl_reemit>=TR_BLINK)
+	if((blinkbacklack_count>=1 || blinkfrontlack_count>=1) && blinkl_reemit_ms>=TR_BLINK)
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(BLINK_ORDER_LEFT,&blinkl,1,0,false,false); 			//emission de l'ordre d'éclairage des clignotants gauches
-			if(blinkbacklack>=1)
+			if(blinkbacklack_count>=1)
 			{
-				blinkbacklack--;		     								//on décrémente le nombre de réemission restante
+				blinkbacklack_count--;		     								//on décrémente le nombre de réemission restante
 			}
-			if(blinkfrontlack>=1)
+			if(blinkfrontlack_count>=1)
 			{
-				blinkfrontlack--;											//on décrémente le nombre de réémission restante
+				blinkfrontlack_count--;											//on décrémente le nombre de réémission restante
 			}
-			blinkl_reemit=0;								 				//maz du compteur de temps d'emission
-			#ifdef DEBUG
+			blinkl_reemit_ms=0;								 				//maz du compteur de temps d'emission
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -364,21 +374,21 @@ void sendCAN()
 
 	//GESTION DES CLIGNOTANTS DROITS
 
-	if((blinkbackrack>=1 || blinkfrontrack>=1) && blinkr_reemit>=TR_BLINK)
+	if((blinkbackrack_count>=1 || blinkfrontrack_count>=1) && blinkr_reemit_ms>=TR_BLINK)
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(BLINK_ORDER_RIGHT,&blinkr,1,0,false,false); 			//emission de l'ordre d'éclairage des clignotants droits
-			if(blinkbackrack>=1)
+			if(blinkbackrack_count>=1)
 			{
-				blinkbackrack--;		     								//on décrémente le nombre de réemission restante
+				blinkbackrack_count--;		     								//on décrémente le nombre de réemission restante
 			}
-			if(blinkfrontrack>=1)
+			if(blinkfrontrack_count>=1)
 			{
-				blinkfrontrack--;											//on décrémente le nombre de réémission restante
+				blinkfrontrack_count--;											//on décrémente le nombre de réémission restante
 			}
-			blinkr_reemit=0;								 				//maz du compteur de temps d'emission
-			#ifdef DEBUG
+			blinkr_reemit_ms=0;								 				//maz du compteur de temps d'emission
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -393,21 +403,21 @@ void sendCAN()
 
 	// GESTION DES CODES et FEUX
 
-	if((lightfrontack>=1 || lightbackack>=1) && light_reemit>=TR_LIGHT)
+	if((lightfrontack_count>=1 || lightbacktack_count>=1) && light_reemit_ms>=TR_LIGHT)
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(LIGHT_ORDER,&light,1,0,false,false); 		    	//emission de l'ordre d'éclairage des feux
-			if(lightfrontack>=1)
+			if(lightfrontack_count>=1)
 			{
-				lightfrontack--;		     								//on décrémente le nombre de réemission restante
+				lightfrontack_count--;		     								//on décrémente le nombre de réemission restante
 			}
-			if(lightbackack>=1)
+			if(lightbacktack_count>=1)
 			{
-				lightbackack--;										     	//on décrémente le nombre de réémission restante
+				lightbacktack_count--;										     	//on décrémente le nombre de réémission restante
 			}
-			light_reemit=0;								 				//maz du compteur de temps d'emission
-			#ifdef DEBUG
+			light_reemit_ms=0;								 				//maz du compteur de temps d'emission
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
