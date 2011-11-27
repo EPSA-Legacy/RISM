@@ -7,6 +7,7 @@
 //		Carte Acquisition                                      //
 //		Version 1.00 - BLD - 20/11/2011                        //
 //		Version 1.01 - BLD - 27/11/2011 -> mesure en 16bits    //
+//      Version 1.02 - BLD - 27/11/2011 -> ADC non blocant     //
 //                                                             //
 //      													   //
 /////////////////////////////////////////////////////////////////
@@ -43,6 +44,9 @@
 #define ki_sc                   1
 #define kt_conv                 1
 
+// Constantes diverses
+#define ADC_NB_CHANNEL			8              // Nombre de canaux différents utilisés sur le convertisseur A/N
+
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
 #define DEBUG_VERBOSE 1
@@ -57,7 +61,6 @@ unsigned int16 ms=0;                           // les ms du uptime compté à l'ai
 unsigned int16 sec=0;                          // contient les secondes du uptime
 
 int16 tmp=0;						           // variable temporaire
-
 int16 umot1=0;                				   // valeur de la tension convertie en volt aux bornes du moteur1
 int16 umot2=0;         						   // valeur de la tension convertie en volt aux bornes du moteur2
 int16 usc=0;                       			   // valeur de la tension aux bornes des supercapacités 1unité=2volt (plage=0-512V)
@@ -66,6 +69,8 @@ int16 imot1=0;                           	   // valeur du courant traversant le 
 int16 imot2=0;								   // valeur du courant traversant le moteur2
 int16 isc=0;								   // valeur du courant traversant les supercapas
 int16 tconv=0;								   // temperature du convertisseur
+int8  current_adc_channel=0;				   // contient le canal de l'ADC actuellement en cours de lecture
+int1 adc_done=0;							   // vaut 1 lorsque la conversion analogique/numérique est finie
 unsigned int16 tension_reemit_ms=0;		       // temps depuis la dernière émission du message contenant les tensions
 unsigned int16 courant_reemit_ms=0;			   // temps depuis la dernière émission du message contenant les courants
 
@@ -75,7 +80,6 @@ void sendCAN();
 
 #inline
 void internalLogic();
-
 
 // Méthode d'interruption du timer 2
 #int_timer2
@@ -90,21 +94,30 @@ void isr_timer2()
 		sec++;
 	 }
 }
+#int_ad 
+void adc_handler()
+{
+	adc_done=1;
+}
 
 #org DEFAULT
 void main()
 {
 	//initialisation du PIC
-	setup_adc(ADC_CLOCK_INTERNAL);      //le temps de conversion sera de2-6 µs cf include du PIC
-	setup_adc_ports(AN0_TO_AN6);        //on gère toutes les entrées A0,A1,A3,A4,A5,E0,E1 comme analogiques
-	set_adc_channel(0);					//on se met sur la voie 0 par défaut
+	setup_adc(ADC_CLOCK_INTERNAL);            //le temps de conversion sera de2-6 µs cf include du PIC
+	setup_adc_ports(AN0_TO_AN6);              //on gère toutes les entrées A0,A1,A3,A4,A5,E0,E1 comme analogiques
+	set_adc_channel(TENSION_MOT1_CHANNEL);    //on se met sur la voie 0 par défaut
+	read_adc(ADC_START_ONLY);		          //on démarre le convertisseur analogique numérique en mode non bloquant
+	current_adc_channel=TENSION_MOT1_CHANNEL; //on mémorise le channel sur lequel on commence à mesurer
 
-	enable_interrupts(INT_TIMER2);      //configuration des interruptions
-	enable_interrupts(GLOBAL);
+	enable_interrupts(INT_TIMER2);            //configuration des interruptions
+	enable_interrupts(INT_AD);
+	enable_interrupts(GLOBAL); 
+	
 
-	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
-	can_init();							//initialise le CAN
-	can_set_baud();						//obsolète à priori à tester
+	setup_timer_2(T2_DIV_BY_4,79,16);         //setup up timer2 to interrupt every 1ms
+	can_init();						          //initialise le CAN
+	can_set_baud();					          //obsolète à priori à tester
 	restart_wdt();
 
 	#ifdef DEBUG
@@ -141,99 +154,124 @@ void main()
 void internalLogic() //Fonction en charge de la gestion des fonctionnalités de la carte
 {
 	int16 data;
+	int8 channel_list[ADC_NB_CHANNEL];
+	int1 done;
 
 	// RQ : data contient le nombre de pas de mesure atteint par rapport à la tension de référence (ici 5V). 
 	// Le ADC marche sur 10 bits on a donc un pas de mesure de 4mV
 
-	// GESTION DE LA TENSION MOTEUR 1
-	set_adc_channel(TENSION_MOT1_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	umot1=(int16)((data/205)*ku_mot);					  // Umot1 est désormais en volt
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Mot 1 : %Ld V", tmp,umot1);
-	#endif
 
-	// GESTION DE LA TENSION MOTEUR 2
-	set_adc_channel(TENSION_MOT2_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	umot2=(int16)((data/205)*ku_mot);					  // Umot2 est désormais en volt
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Mot 2 : %Ld V", tmp,umot2);
-	#endif
+	// On renseigne la liste de parcours des canaux de l'ADC
 
-	// GESTION DE LA TENSION SUPERCAPACITES
-	set_adc_channel(TENSION_SC_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	usc=(int16)((data/205)*ku_sc);						  // Usc est désormais en /2volts
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension SC : %Ld V", tmp,usc*2);
-	#endif
+	channel_list[0]=TENSION_MOT1_CHANNEL;
+	channel_list[1]=TENSION_MOT2_CHANNEL;
+	channel_list[2]=TENSION_SC_CHANNEL;
+	channel_list[3]=TENSION_CONV_CHANNEL;
+	channel_list[4]=COURANT_MOT1_CHANNEL;
+	channel_list[5]=COURANT_MOT2_CHANNEL;
+	channel_list[6]=COURANT_SC_CHANNEL;
+	channel_list[7]=TEMP_CONVERT_CHANNEL;
 
-	// GESTION DE LA TENSION CONVERTISSEUR
-	set_adc_channel(TENSION_CONV_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	uconv=(int16)((data/205)*ku_conv);					  // Uconv est désormais en volt
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Convertisseur : %Ld V", tmp,uconv);
-	#endif
+	// on vérifie que la conversion est achevée
+	if(adc_done==1)
+	{
+		data=read_adc();								                                     // on lit la valeur convertie
 
-	// GESTION DU COURANT MOTEUR 1
-	set_adc_channel(COURANT_MOT1_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	imot1=(int16)((data/205)*ki_mot);				      // imot1 est désormais en ampère
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant Mot 1 : %Ld A", tmp,imot1);
-	#endif
-
-	// GESTION DU COURANT MOTEUR 2
-	set_adc_channel(COURANT_MOT2_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	imot2=(int16)((data/205)*ki_mot);					  // imot2 est désormais en ampère
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant Mot 2 : %Ld A", tmp,imot2);
-	#endif
-
-	// GESTION DU COURANT SUPERCAPACITES
-	set_adc_channel(COURANT_SC_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	isc=(int16)((data/205)*ki_sc);						  // iconv est désormais en ampère
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant SC : %Ld A", tmp,isc);
-	#endif
-
-	// GESTION DE LA TEMPERATURE
-	set_adc_channel(TEMP_CONVERT_CHANNEL);				  // on se place sur le canal de lecture correspondant 
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	tconv=(int16)((data/205)*kt_conv);					  // tconv est désormais en °C
-	#ifdef DEBUG_VERBOSE
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Temperature Convertisseur : %Ld C", tmp,tconv);
-	#endif
-
-
+		switch(current_adc_channel)						                                     // on inscrit la valeur dans la bonne variable
+		{
+			case TENSION_MOT1_CHANNEL:
+			{
+				umot1=(int16)((data/205)*ku_mot);											 // umot1 est désormais en volt
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	 				tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Tension Mot 1 : %Ld V", tmp,umot1);
+				#endif
+				break;
+			}
+			case TENSION_MOT2_CHANNEL:
+			{
+				umot2=(int16)((data/205)*ku_mot);										     // umot2 est désormais en volt
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	 				tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Tension Mot 2 : %Ld V", tmp,umot2);
+				#endif
+				break;
+			}
+			case TENSION_SC_CHANNEL:
+			{
+				usc=(int16)((data/205)*ku_sc);											     // usc est désormais en volt
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	 				tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Tension SC : %Ld V", tmp,usc);
+				#endif
+				break;
+			}
+			case TENSION_CONV_CHANNEL:
+			{
+				uconv=(int16)((data/205)*ku_conv);										     // uconv est désormais en volt
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	   				tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Tension Convertisseur : %Ld V", tmp,uconv);
+				#endif
+				break;
+			}
+			case COURANT_MOT1_CHANNEL:
+			{
+				imot1=(int16)((data/205)*ki_mot);											 // imot1 est désormais en ampère
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+				    tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Courant Mot 1 : %Ld A", tmp,imot1);
+				#endif
+				break;
+			}
+			case COURANT_MOT2_CHANNEL:
+			{
+				imot2=(int16)((data/205)*ki_mot);					 						 // imot2 est désormais en ampère
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	 				tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Courant Mot 2 : %Ld A", tmp,imot2);
+				#endif
+				break;
+			}
+			case COURANT_SC_CHANNEL:
+			{
+				isc=(int16)((data/205)*ki_sc);						  						 // iconv est désormais en ampère
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+	   	 			tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Courant SC : %Ld A", tmp,isc);
+				#endif
+				break;
+			}
+			case TEMP_CONVERT_CHANNEL:
+			{
+				tconv=(int16)((data/205)*kt_conv);					  						 // tconv est désormais en °C
+				#ifdef DEBUG_VERBOSE
+					restart_wdt();
+				    tmp=ms+1000*sec;
+					printf("[%Lu] - ADC INFO - Temperature Convertisseur : %Ld C", tmp,tconv);
+				#endif
+				break;
+			}
+		}
+	
+		current_adc_channel++; 																 // on passe sur le canal suivant
+		if(current_adc_channel>=ADC_NB_CHANNEL)												 // on a déjà passé tout les channels donc on revient au premier
+		{
+			current_adc_channel=0;
+		}
+		
+		set_adc_channel(current_adc_channel);											     // on se place sur le canal de lecture correspondant 
+		delay_us(20);																		 // on patiente 20µs que le ADC soit prêt
+		read_adc(ADC_START_ONLY);		         											 // on démarre le convertisseur analogique numérique en mode non bloquant
+		adc_done=0;																			 // on remet à 0 la variable d'interruption
+	}
 }
 
 #inline
