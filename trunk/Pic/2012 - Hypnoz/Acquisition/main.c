@@ -5,7 +5,8 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Acquisition                                      //
-//		Version 1.0 - BLD - 20/11/2011                         //
+//		Version 1.00 - BLD - 20/11/2011                        //
+//		Version 1.01 - BLD - 27/11/2011 -> mesure en 16bits    //
 //                                                             //
 //      													   //
 /////////////////////////////////////////////////////////////////
@@ -57,15 +58,16 @@ unsigned int16 sec=0;                          // contient les secondes du uptim
 
 int16 tmp=0;						           // variable temporaire
 
-int8 umot1=0;                				   // valeur de la tension convertie en volt aux bornes du moteur1
-int8 umot2=0;         						   // valeur de la tension convertie en volt aux bornes du moteur2
-int8 usc=0;                       			   // valeur de la tension aux bornes des supercapacités 1unité=2volt (plage=0-512V)
-int8 uconv=0;                 				   // valeur de la tension envoyé au convertisseur
-int8 imot1=0;                           	   // valeur du courant traversant le moteur1
-int8 imot2=0;								   // valeur du courant traversant le moteur2
-int8 isc=0;									   // valeur du courant traversant les supercapas
-int8 tconv=0;								   // temperature du convertisseur
-unsigned int16 electric_reemit=0;		       // temps depuis la dernière émission du message
+int16 umot1=0;                				   // valeur de la tension convertie en volt aux bornes du moteur1
+int16 umot2=0;         						   // valeur de la tension convertie en volt aux bornes du moteur2
+int16 usc=0;                       			   // valeur de la tension aux bornes des supercapacités 1unité=2volt (plage=0-512V)
+int16 uconv=0;                 				   // valeur de la tension envoyé au convertisseur
+int16 imot1=0;                           	   // valeur du courant traversant le moteur1
+int16 imot2=0;								   // valeur du courant traversant le moteur2
+int16 isc=0;								   // valeur du courant traversant les supercapas
+int16 tconv=0;								   // temperature du convertisseur
+unsigned int16 tension_reemit_ms=0;		       // temps depuis la dernière émission du message contenant les tensions
+unsigned int16 courant_reemit_ms=0;			   // temps depuis la dernière émission du message contenant les courants
 
 // Prototypes de fonctions
 #inline
@@ -80,7 +82,8 @@ void internalLogic();
 void isr_timer2()
 {
 	 ms++;
-	 electric_reemit++;
+	 tension_reemit_ms++;
+	 courant_reemit_ms++;
      if(ms>=1000)
 	 {
 		ms=0;
@@ -146,88 +149,88 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	set_adc_channel(TENSION_MOT1_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	umot1=(int)(data*0.004*ku_mot);						  // Umot1 est désormais en volt
+	umot1=(int16)((data/205)*ku_mot);					  // Umot1 est désormais en volt
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Mot 1 : %d V", tmp,umot1);
+		printf("[%Lu] - ADC INFO - Tension Mot 1 : %Ld V", tmp,umot1);
 	#endif
 
 	// GESTION DE LA TENSION MOTEUR 2
 	set_adc_channel(TENSION_MOT2_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	umot2=(int)(data*0.004*ku_mot);						  // Umot2 est désormais en volt
+	umot2=(int16)((data/205)*ku_mot);					  // Umot2 est désormais en volt
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Mot 2 : %d V", tmp,umot2);
+		printf("[%Lu] - ADC INFO - Tension Mot 2 : %Ld V", tmp,umot2);
 	#endif
 
 	// GESTION DE LA TENSION SUPERCAPACITES
 	set_adc_channel(TENSION_SC_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	usc=(int)(data*0.004*ku_sc);						  // Usc est désormais en /2volts
+	usc=(int16)((data/205)*ku_sc);						  // Usc est désormais en /2volts
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension SC : %d V", tmp,usc*2);
+		printf("[%Lu] - ADC INFO - Tension SC : %Ld V", tmp,usc*2);
 	#endif
 
 	// GESTION DE LA TENSION CONVERTISSEUR
 	set_adc_channel(TENSION_CONV_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	uconv=(int)(data*0.004*ku_conv);					  // Uconv est désormais en volt
+	uconv=(int16)((data/205)*ku_conv);					  // Uconv est désormais en volt
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Tension Convertisseur : %d V", tmp,uconv);
+		printf("[%Lu] - ADC INFO - Tension Convertisseur : %Ld V", tmp,uconv);
 	#endif
 
 	// GESTION DU COURANT MOTEUR 1
 	set_adc_channel(COURANT_MOT1_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	imot1=(int)(data*0.004*ki_mot);						  // imot1 est désormais en ampère
+	imot1=(int16)((data/205)*ki_mot);				      // imot1 est désormais en ampère
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant Mot 1 : %d A", tmp,imot1);
+		printf("[%Lu] - ADC INFO - Courant Mot 1 : %Ld A", tmp,imot1);
 	#endif
 
 	// GESTION DU COURANT MOTEUR 2
 	set_adc_channel(COURANT_MOT2_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	imot2=(int)(data*0.004*ki_mot);						  // imot2 est désormais en ampère
+	imot2=(int16)((data/205)*ki_mot);					  // imot2 est désormais en ampère
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant Mot 2 : %d A", tmp,imot2);
+		printf("[%Lu] - ADC INFO - Courant Mot 2 : %Ld A", tmp,imot2);
 	#endif
 
 	// GESTION DU COURANT SUPERCAPACITES
 	set_adc_channel(COURANT_SC_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	isc=(int)(data*0.004*ki_sc);						  // iconv est désormais en ampère
+	isc=(int16)((data/205)*ki_sc);						  // iconv est désormais en ampère
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Courant SC : %d A", tmp,isc);
+		printf("[%Lu] - ADC INFO - Courant SC : %Ld A", tmp,isc);
 	#endif
 
 	// GESTION DE LA TEMPERATURE
 	set_adc_channel(TEMP_CONVERT_CHANNEL);				  // on se place sur le canal de lecture correspondant 
 	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
 	data=read_adc(ADC_START_AND_READ);				      // on lit la valeur 
-	tconv=(int)(data*0.004*kt_conv);					  // tconv est désormais en °C
+	tconv=(int16)((data/205)*kt_conv);					  // tconv est désormais en °C
 	#ifdef DEBUG_VERBOSE
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Temperature Convertisseur : %d C", tmp,tconv);
+		printf("[%Lu] - ADC INFO - Temperature Convertisseur : %Ld C", tmp,tconv);
 	#endif
 
 
@@ -237,33 +240,51 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 void sendCAN()
 {
 	int r;
-	int8 txdata[8];
+	int8 txdata[8];											 										  // tableau contenant le paquet des courants à émettre
     int8 txLen=8;
 
-	if(electric_reemit>=TR_ELECTRIC)
+	if(tension_reemit_ms>=TR_ELECTRIC)
 	{
-		//on remplit le paquet d'emmission
+		//on remplit le paquet d'emission
 		txdata[0]=umot1;
-		txdata[1]=umot2;
-		txdata[2]=usc;
-		txdata[3]=uconv;
-		txdata[4]=imot1;
-		txdata[5]=imot2;
-		txdata[6]=isc;
-		txdata[7]=tconv;
-		if(can_tbe()) // on vérifie que le buffer d'emmission est libre
+		txdata[2]=umot2;
+		txdata[4]=usc;
+		txdata[6]=uconv;
+		if(can_tbe())                                             // on vérifie que le buffer d'emmission est libre
 		{
-			r=can_putd(ELECTRIC_DATA,txdata,txLen,0,false,false); // emission des données
-			electric_reemit=0;									  // maz du compteur de temps d'emission
-		}
-		#ifdef DEBUG_VERBOSE
+			r=can_putd(VOLTAGE_DATA,txdata,txLen,0,false,false); // emission des données
+			tension_reemit_ms=0;								  // maz du compteur de temps d'emission
+		
+			#ifdef DEBUG_VERBOSE
 				if(r!=0xFF)
 				{
 					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
 				}
 				else
 					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-		#endif
+			#endif
+		}
+	}
+	if(courant_reemit_ms>=TR_ELECTRIC)
+	{
+		//on remplit le paquet d'emission
+		txdata[0]=imot1;
+		txdata[2]=imot2;
+		txdata[4]=isc;
+		txdata[6]=tconv;
+		if(can_tbe())                                             // on vérifie que le buffer d'emmission est libre
+		{
+			r=can_putd(CURRENT_DATA,txdata,txLen,0,false,false); // emission des données
+			courant_reemit_ms=0;								  // maz du compteur de temps d'emission
+			#ifdef DEBUG_VERBOSE
+				if(r!=0xFF)
+				{
+					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
+				}
+				else
+					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
+			#endif
+		}
 	}
 }
 
