@@ -28,7 +28,8 @@
 #define BATTERY_STATUS        20 // Message contenant la charge de la batterie
 #define ACCELERATOR_ERR       21 // Non implémenté
 #define SPEED_ERR             22 // Non implémenté
-#define ELECTRIC_DATA		  23 // Message contenant les informations électriques provenant de la carte acquisition
+#define VOLTAGE_DATA		  23 // Message contenant les informations électriques en tension provenant de la carte acquisition
+#define CURRENT_DATA		  24 // Message contenant les informations électriques en courant provenant de la carte acquisition
 
 
 //Temps de réemission entre les messages (en ms)
