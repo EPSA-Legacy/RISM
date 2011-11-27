@@ -5,7 +5,8 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Alimentation                                     //
-//		Version 1.0 - BLD - 25/10/2011                         //
+//		Version 1.00 - BLD - 25/10/2011                        //
+//		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -19,6 +20,9 @@
 #define BATTERY_PLUS            PIN_A0
 #define BATTERY_GROUND          PIN_A3
 
+// Rapport du pont diviseur de tension
+#define ku	3								   // il faut multiplier la tension mesurée par 3
+
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
 #define DEBUG_VERBOSE 1
@@ -31,11 +35,10 @@
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int16 sec=0;                          // contient les secondes du uptime
-unsigned int32 charge=0;                       // variable contenant la dernière valeur de la charge de la batterie
-unsigned int8 emit_time=0;					   // compteur temporelle depuis la dernière emission
+unsigned int16 charge=0;                       // variable contenant la dernière valeur de la charge de la batterie
+unsigned int16 battery_reemit_ms=0;			   // compteur temporelle depuis la dernière emission
 int16 tmp=0;						           // variable temporaire
 
-int1 battery_emit=0;                           // flag valant 1 lorsqu'il faut envoyer le message message BATTERY_STATUS
 
 // Prototypes de fonctions
 #inline
@@ -50,7 +53,7 @@ void internalLogic();
 void isr_timer2()
 {
 	 ms++;
-	 emit_time++;
+	 battery_reemit_ms++;
      if(ms>=1000)
 	 {
 		ms=0;
@@ -121,10 +124,9 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	//CONVERSION : On envoit la tension en mV:
 	//Principe : voltage contient le nombre de pas de mesures on multiplie donc par la valeur du pas : 4mV et par le rapport du pont diviseur
 
-	voltage=(int)(data*4*3);
+	voltage=(int)(data*4*ku);
 	if(abs(voltage-charge)>50) // si la charge à varié de plus de 50mV depuis le dernier envoi
 	{
-		battery_emit=1;
 		charge=voltage;
 		#ifdef DEBUG
 			restart_wdt();
@@ -132,9 +134,8 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			printf("[%Lu] - Battery_emit=1 due to a too large gap",tmp);
 		#endif
  	}
-	else if(emit_time >= TR_BATTERY) // si le message n'a pas été envoyé depuis longtemps
+	else if(battery_reemit_ms >= TR_BATTERY) // si le message n'a pas été envoyé depuis longtemps
 	{
-		battery_emit=1;
 		charge=voltage;
 		#ifdef DEBUG
 			restart_wdt();
@@ -148,19 +149,19 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 void sendCAN()
 {
 	int r;
-	if(battery_emit==1)
+	if(battery_reemit_ms>=TR_BATTERY)
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(BATTERY_STATUS,charge,32,0,false,false); //emission du message
-			battery_emit=0;                                     // on a plus besoin d'envoyer le message
-			emit_time=0;                                        // on remet à zéro la date d'émission
+							                                    // on a plus besoin d'envoyer le message
+			battery_reemit_ms=0;                                        // on remet à zéro la date d'émission
 			#ifdef DEBUG
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
 				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BATTERY_STATUS,32,charge);
+//					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BATTERY_STATUS,32,charge);
 				}
 				else
 					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
