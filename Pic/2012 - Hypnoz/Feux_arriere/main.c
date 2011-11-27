@@ -6,7 +6,8 @@
 //                                                             //
 //		Carte Feux Arrières                                    //
 //		Version 1.00  - BLD - 24/10/2011                       //
-//      Version 1.01  - BLD - 27/10/2011 -> renommage variable //    
+//      Version 1.01  - BLD - 27/11/2011 -> renommage variable //    
+//	    Version 1.02  - BLD - 27/11/2011 -> trace debug        //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
 
@@ -24,9 +25,14 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE 1
+#define TRACE_CAN 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#endif
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -163,7 +169,7 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 					break;
 				}
 			}
-		#ifdef DEBUG
+		#ifdef TRACE
 			restart_wdt();
 			tmp=ms+1000*sec;
 			if((rxId==BRAKE_ORDER || rxId==BLINK_ORDER_LEFT || rxId==BLINK_ORDER_RIGHT || rxId==LIGHT_ORDER) && rxLen>=1)
@@ -171,14 +177,14 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 				printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
 			}
 		#endif
-		#ifdef DEBUG_VERBOSE
+		#ifdef TRACE_CAN
 			tmp=ms+1000*sec;
 			printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 		#endif
 		}
 		else
 		{
-		#ifdef DEBUG_VERBOSE
+		#ifdef TRACE_CAN
 			restart_wdt();
 	        tmp=ms+1000*sec;
 			printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
@@ -202,6 +208,11 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 
 		output_bit(CLIGN_R, blink_status && blink_right); // allumer ou éteindre le clignotant droit s'il est activé
 		output_bit(CLIGN_L, blink_status && blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
+		#ifdef TRACE
+			restart_wdt();
+	        tmp=ms+1000*sec;
+			printf("[%Lu] - INFO - Blink status has been toggled", tmp);	
+		#endif
 	}
 }
 
@@ -215,7 +226,7 @@ void sendCAN()
 		{
 			r=can_putd(BLINK_LEFT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			blinkl_ack=0; // on a plus besoin d'envoyer l'accusé de réception
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -233,7 +244,7 @@ void sendCAN()
 		{
 			r=can_putd(BLINK_RIGHT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			blinkr_ack=0; // on a plus besoin d'envoyer l'accusé de réception
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -251,7 +262,7 @@ void sendCAN()
 		{
 			r=can_putd(LIGHT_BACK_ACK,null,0,0,false,false); //emission de l'accusé de réception
 			light_ack=0; // on a plus besoin d'envoyer l'accusé de réception
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
