@@ -5,10 +5,10 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Pédalier                                         //
-//		Version 1.0 - BLD - 26/10/2011                         //
-//                                                             //
-//      #TODO:Virer le park_ack car plus de frein à main       //
-//		#TODO:Mettre le frein à pieds en binaire               //
+//		Version 1.00 - BLD - 26/10/2011                        //
+//      Version 1.01 - BLD - 27/11/2011 -> frein en binaire    //
+//      												       //
+//													           //
 /////////////////////////////////////////////////////////////////
 
 #include <18F258.h>
@@ -41,9 +41,9 @@ int16 tmp=0;						           // variable temporaire
 
 unsigned int16 accelerator=0;                  // position de la pédale d'accélérateur codé sur 10bits en proportionnel
 unsigned int16 accelerator_reemit_ms=0;        // date d'emission du dernier message ACCELERATOR_DATA
-unsigned int16 brake=0;                        // position de la pédale de frein 0 si levée 1111111111 si enfoncée
+unsigned int8 brake=0;                         // position de la pédale de frein 0 si levée 1 si enfoncée
 unsigned int16 brake_reemit_ms=0;              // date d'emission du dernier message BRAKE_ORDER
-int8 brake_status=0;                           // état du frein 1 si enfoncé 0 sinon
+//int8 brake_status=0;                           // état du frein 1 si enfoncé 0 sinon
 int8 park=0;								   // état du frein à main 1 si enfoncée, 0 sinon
 int8 park_reemit_count=0;				       // vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
 unsigned int16 park_reemit_ms=0;		       // temps depuis la dernière émission du message
@@ -141,30 +141,30 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 				case PARK_ACK:
 				{	
 					if(rxData[0]==park) 		   // il s'agit bien d'un accusé de réception pour l'état courant du frein	
-						park_reemit_count=0;			   	   // On ne doit plus envoyer le message 
+						park_reemit_count=0;	   // On ne doit plus envoyer le message 
 					break;
 				}
 			}
-		#ifdef DEBUG
-			restart_wdt();
-			tmp=ms+1000*sec;
-			if((rxId==PARK_ORDER) && rxLen>=1)
-			{
-				printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
-			}
-		#endif
-		#ifdef DEBUG_VERBOSE
-			tmp=ms+1000*sec;
-			printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
-		#endif
+			#ifdef DEBUG
+				restart_wdt();
+				tmp=ms+1000*sec;
+				if((rxId==PARK_ORDER) && rxLen>=1)
+				{
+					printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
+				}
+			#endif
+			#ifdef DEBUG_VERBOSE
+				tmp=ms+1000*sec;
+				printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
+			#endif
 		}
 		else
 		{
-		#ifdef DEBUG_VERBOSE
-			restart_wdt();
-	        tmp=ms+1000*sec;
-			printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
-		#endif
+			#ifdef DEBUG_VERBOSE
+				restart_wdt();
+	    	    tmp=ms+1000*sec;
+				printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
+			#endif
 		}
 	}
 }
@@ -180,8 +180,8 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	if(data!=park)										  // l'état du frein à main à changer
 	{
 		park=data;                                        // on change l'état du frein
-		park_reemit_count=5;                                        // on prévoit d'envoyer 5 fois le message au maximum
-		park_reemit_ms=TR_PARK+1;							  // force l'envoi du message le plus rapidement possible
+		park_reemit_count=5;                              // on prévoit d'envoyer 5 fois le message au maximum
+		park_reemit_ms=TR_PARK+1;						  // force l'envoi du message le plus rapidement possible
 		#ifdef DEBUG
 			restart_wdt();
 	        tmp=ms+1000*sec;
@@ -194,33 +194,16 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 
 	// GESTION DE LA PEDALE DE FREIN
 
-	set_adc_channel(BRAKE_CHANNEL);						  // on se place sur le canal de lecture correspondant au frein
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	brake=read_adc(ADC_START_AND_READ);				      // on lit la valeur du frein
-	if(brake >20)    									  // #TODO constante à adapter avec des tests
+	data=input(BRAKE_PIN);								  // on lit l'état du frein
+	if(data!=brake)
 	{
-		brake_status=1;                                   // on appuye sur le frein
-		#ifdef DEBUG_VERBOSE
-			restart_wdt();
-	        tmp=ms+1000*sec;
-			printf("[%Lu] - ADC INFO - Brake is active ", tmp);
-		#endif
+		brake_reemit_ms=TR_BRAKE+1;						  // si l'état du frein change on force l'émission de l'info
 	}
-	else
-	{
-		brake_status=0;                                   // le frein est relaché
-		#ifdef DEBUG_VERBOSE
-			restart_wdt();
-	        tmp=ms+1000*sec;
-			printf("[%Lu] - ADC INFO - Brake is not active ", tmp);
-		#endif
-	}
-
-
+	brake=data;
 	#ifdef DEBUG
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Brake Status : %Lu ", tmp,brake);
+		printf("[%Lu] - INFO - Brake Status : %d ", tmp,brake);
 	#endif
 
 	// GESTION DE LA PEDALE D'ACCELERATEUR
@@ -269,14 +252,14 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(BRAKE_ORDER,&brake_status,1,0,false,false); //emission de l'ordre d'éclairage des feux stops
+			r=can_putd(BRAKE_ORDER,&brake,1,0,false,false); //emission de l'ordre d'éclairage des feux stops
 			brake_reemit_ms=0;								          //maz du compteur de temps d'emission
 			#ifdef DEBUG
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
 				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BRAKE_ORDER,1,brake_status);
+					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BRAKE_ORDER,1,brake);
 				}
 				else
 					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
