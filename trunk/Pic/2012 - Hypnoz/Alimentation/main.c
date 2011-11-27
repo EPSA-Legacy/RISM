@@ -8,7 +8,8 @@
 //		Version 1.00 - BLD - 25/10/2011                        //
 //		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //
 //		Version 1.02 - BLD - 27/11/2011 -> ADC interrupt + 16b //
-//                                                             //
+//		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   //             
+//                                                             //                                                
 /////////////////////////////////////////////////////////////////
 
 #include <18F258.h>
@@ -26,9 +27,15 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE_CAN 1
+#define TRACE_CHARGE 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,WDT
+#endif
+
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -138,7 +145,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		charge=(int16)(data*4*ku);				  // voltage contient désormais la charge de la batterie en mV
 		adc_done=0;								  // On remet à zéro la lecture de l'ADC
 		read_adc(ADC_START_ONLY);				  // On lance une nouvelle acquisition
-		#ifdef DEBUG
+		#ifdef TRACE_CHARGE
 			restart_wdt();
 			tmp=sec*1000+ms;
 			printf("[%Lu] - ADC INFO - BATTERY= %Lu mV",tmp,charge);
@@ -156,12 +163,12 @@ void sendCAN()
 		{
 			r=can_putd(BATTERY_STATUS,charge,2,0,false,false);          // emission du message
 			battery_reemit_ms=0;                                        // on remet à zéro la date d'émission
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
 				{
-//					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BATTERY_STATUS,32,charge);
+					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%Lu",tmp, r, BATTERY_STATUS,32,charge);
 				}
 				else
 					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
