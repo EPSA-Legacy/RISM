@@ -8,6 +8,7 @@
 //		Version 1.00 - BLD - 26/10/2011                        //
 //      Version 1.01 - BLD - 27/11/2011 -> frein en binaire    //
 //      Version 1.02 - BLD - 27/11/2011 -> ADC_interrupt       //
+//		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   // 
 //													           //
 /////////////////////////////////////////////////////////////////
 
@@ -26,9 +27,18 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE_ALL 1
+#define TRACE_PARK 1
+#define TRACE_BRAKE 1
+#define TRACE_ACC 1
+#define TRACE_CAN 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,WDT
+#endif
+
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -155,22 +165,22 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 					break;
 				}
 			}
-			#ifdef DEBUG
+			#if (TRACE_PARK || TRACE_ALL)
 				restart_wdt();
 				tmp=ms+1000*sec;
 				if((rxId==PARK_ORDER) && rxLen>=1)
 				{
-					printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
+					printf("\r\n [%Lu] - CAN RX PARK ACK- ID=%u - DATA=%u", tmp,rxId,rxData[0]);
 				}
 			#endif
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				tmp=ms+1000*sec;
 				printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 			#endif
 		}
 		else
 		{
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				restart_wdt();
 	    	    tmp=ms+1000*sec;
 				printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
@@ -192,7 +202,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		park=data;                                        // on change l'état du frein
 		park_reemit_count=5;                              // on prévoit d'envoyer 5 fois le message au maximum
 		park_reemit_ms=TR_PARK+1;						  // force l'envoi du message le plus rapidement possible
-		#ifdef DEBUG
+		#if (TRACE_PARK || TRACE_ALL)
 			restart_wdt();
 	        tmp=ms+1000*sec;
 			if(park==1)
@@ -210,10 +220,17 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		brake_reemit_ms=TR_BRAKE+1;						  // si l'état du frein change on force l'émission de l'info
 	}
 	brake=data;
-	#ifdef DEBUG
+	#if (TRACE_BRAKE || TRACE_ALL)
 		restart_wdt();
 	    tmp=ms+1000*sec;
-		printf("[%Lu] - INFO - Brake Status : %d ", tmp,brake);
+		if(brake==1)
+		{
+			printf("[%Lu] - INFO - Brake is now enable", tmp);
+		}
+		else
+		{
+			printf("[%Lu] - INFO - Brake is now disable", tmp);
+		}
 	#endif
 
 	// GESTION DE LA PEDALE D'ACCELERATEUR
@@ -223,7 +240,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		accelerator=read_adc(ADC_READ_ONLY);		      // on lit la valeur de l'accélérateur
 		adc_done=0;
 		read_adc(ADC_START_ONLY);
-		#ifdef DEBUG
+		#if (TRACE_ACC || TRACE_ALL)
 			restart_wdt();
 	    	tmp=ms+1000*sec;
 			printf("[%Lu] - ADC INFO - Accelerator Status : %Lu ", tmp,accelerator);
@@ -246,7 +263,7 @@ void sendCAN()
 			r=can_putd(PARK_ORDER,&park,1,0,false,false); //emission de l'ordre d'affichage du voyant de frein
 			park_reemit_count--; 								 //on décrémente le nombre de réemission restante
 			park_reemit_ms=0;								 //maz du compteur de temps d'emission
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -267,7 +284,7 @@ void sendCAN()
 		{
 			r=can_putd(BRAKE_ORDER,&brake,1,0,false,false); //emission de l'ordre d'éclairage des feux stops
 			brake_reemit_ms=0;								          //maz du compteur de temps d'emission
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
@@ -289,7 +306,7 @@ void sendCAN()
 		{
 			r=can_putd(ACCELERATOR_DATA,&accelerator,2,0,false,false); //emission des infos sur l'accélérateur
 			accelerator_reemit_ms=0;							            //maz du compteur de temps d'emission
-			#ifdef DEBUG
+			#ifdef TRACE_CAN
 				restart_wdt();
 				tmp=1000*sec+ms;
 				if (r != 0xFF)
