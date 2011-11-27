@@ -7,7 +7,7 @@
 //		Carte Pédalier                                         //
 //		Version 1.00 - BLD - 26/10/2011                        //
 //      Version 1.01 - BLD - 27/11/2011 -> frein en binaire    //
-//      												       //
+//      Version 1.02 - BLD - 27/11/2011 -> ADC_interrupt       //
 //													           //
 /////////////////////////////////////////////////////////////////
 
@@ -43,10 +43,10 @@ unsigned int16 accelerator=0;                  // position de la pédale d'accélé
 unsigned int16 accelerator_reemit_ms=0;        // date d'emission du dernier message ACCELERATOR_DATA
 unsigned int8 brake=0;                         // position de la pédale de frein 0 si levée 1 si enfoncée
 unsigned int16 brake_reemit_ms=0;              // date d'emission du dernier message BRAKE_ORDER
-//int8 brake_status=0;                           // état du frein 1 si enfoncé 0 sinon
 int8 park=0;								   // état du frein à main 1 si enfoncée, 0 sinon
 int8 park_reemit_count=0;				       // vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
 unsigned int16 park_reemit_ms=0;		       // temps depuis la dernière émission du message
+int1 adc_done=0;							   // vaut 1 si une lecture valide est disponible 0 sinon
 
 
 // Prototypes de fonctions
@@ -75,20 +75,30 @@ void isr_timer2()
 	 }
 }
 
+//Méthode d'interruption de l'ADC
+#int_ad
+void adc_handler()
+{
+	adc_done=1;
+}
+
 #org DEFAULT
 void main()
 {
 	//initialisation du PIC
-	setup_adc(ADC_CLOCK_INTERNAL);      //le temps de conversion sera de2-6 µs cf include du PIC
-	setup_adc_ports(AN0_AN1_AN3);       //on gère toutes les entrées A0,A1,A3 comme analogiques
-	set_adc_channel(0);					//on se met sur la voie 0 par défaut
+	setup_adc(ADC_CLOCK_INTERNAL);          //le temps de conversion sera de2-6 µs cf include du PIC
+	setup_adc_ports(AN0);       	    	//on gère toutes l'entrée A0 comme analogique
+	set_adc_channel(ACCELERATOR_CHANNEL);	//on se met sur la voie 0 par défaut
+	delay_us(20);				    		//on temporise pour laisser le temps nécessaire à la sélection du canal
+	read_adc(ADC_START_ONLY);		    	//on lance la lecture sur le convertisseur analogique numérique
 
-	enable_interrupts(INT_TIMER2);      //configuration des interruptions
+	enable_interrupts(INT_TIMER2);          //configuration des interruptions
+	enable_interrupts(INT_AD);
 	enable_interrupts(GLOBAL);
 
-	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
-	can_init();							//initialise le CAN
-	can_set_baud();						//obsolète à priori à tester
+	setup_timer_2(T2_DIV_BY_4,79,16);       //setup up timer2 to interrupt every 1ms
+	can_init();						     	//initialise le CAN
+	can_set_baud();					    	//obsolète à priori à tester
 	restart_wdt();
 
 	#ifdef DEBUG
@@ -208,15 +218,18 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 
 	// GESTION DE LA PEDALE D'ACCELERATEUR
 
-	set_adc_channel(ACCELERATOR_CHANNEL);		     	  // on se place sur le canal de lecture correspondant à l'accélérateur
-	delay_us(20);										  // on patiente 20µs que le ADC soit prêt
-	accelerator=read_adc(ADC_START_AND_READ);		      // on lit la valeur de l'accélérateur
-	
-	#ifdef DEBUG
-		restart_wdt();
-	    tmp=ms+1000*sec;
-		printf("[%Lu] - ADC INFO - Accelerator Status : %Lu ", tmp,accelerator);
-	#endif
+	if(adc_done==1)
+	{
+		accelerator=read_adc(ADC_READ_ONLY);		      // on lit la valeur de l'accélérateur
+		adc_done=0;
+		read_adc(ADC_START_ONLY);
+		#ifdef DEBUG
+			restart_wdt();
+	    	tmp=ms+1000*sec;
+			printf("[%Lu] - ADC INFO - Accelerator Status : %Lu ", tmp,accelerator);
+		#endif
+	}
+
 }
 
 #inline
@@ -274,7 +287,7 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(ACCELERATOR_DATA,&accelerator,16,0,false,false); //emission des infos sur l'accélérateur
+			r=can_putd(ACCELERATOR_DATA,&accelerator,2,0,false,false); //emission des infos sur l'accélérateur
 			accelerator_reemit_ms=0;							            //maz du compteur de temps d'emission
 			#ifdef DEBUG
 				restart_wdt();
