@@ -5,7 +5,8 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Tablet PC                                        //
-//		Version 1.0 - BLD - 24/10/2011                         //
+//		Version 1.00 - BLD - 24/10/2011                        //
+//		Version 1.01 - BLD - 29/11/2011 -> Trace mode          //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -17,9 +18,14 @@
 
 //Mode debug commenter la ligne pour l'enlever
 #define DEBUG 1
-#define DEBUG_VERBOSE 1
+#define TRACE_CAN 1
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#ifdef DEBUG
+	#fuses HS,NOPROTECT,NOLVP,NOWDT
+#else
+	#fuses HS,NOPROTECT,NOLVP,WDT
+#endif
+
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -109,14 +115,14 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 			}
 			printf("/r/n");
 
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				tmp=ms+1000*sec;
 				printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 			#endif
 		}
 		else
 		{
-			#ifdef DEBUG_VERBOSE
+			#ifdef TRACE_CAN
 				restart_wdt();
 	   	        tmp=ms+1000*sec;
 				printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
