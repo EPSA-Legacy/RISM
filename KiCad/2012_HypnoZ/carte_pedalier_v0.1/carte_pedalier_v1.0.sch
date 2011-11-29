@@ -1,4 +1,5 @@
-EESchema Schematic File Version 2  date 29/03/2011 19:01:31
+EESchema Schematic File Version 2  date 29/11/2011 14:52:36
+LIBS:epsa_relais
 LIBS:symbioz
 LIBS:power
 LIBS:device
@@ -30,9 +31,10 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 1 1
 Title "carte pedalier v0.1"
 Date "29 mar 2011"
@@ -253,11 +255,11 @@ NoConn ~ 4950 2300
 Text Label 3250 2300 0    60   ~ 0
 Frein_main
 Text Notes 1350 5800 0    60   ~ 0
-Potentiomètre frein
+PotentiomÃ¨tre frein
 Text Notes 5200 4650 0    60   ~ 0
-Frein à main
+Frein Ã  main
 Text Notes 1350 4650 0    60   ~ 0
-Potentiomètre accélérateur
+PotentiomÃ¨tre accÃ©lÃ©rateur
 Text Notes 3050 1750 0    60   ~ 0
 Connecteurs MEZZA
 Text Label 5500 2100 2    60   ~ 0
