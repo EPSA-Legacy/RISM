@@ -1,0 +1,170 @@
+# EESchema Netlist Version 1.1 created  06/12/2011 17:31:43
+(
+ ( /4EDE419D $noname  U3 LEM {Lib=LEM}
+  (    1 -VAA )
+  (    2 VAA )
+  (    3 /Uconv )
+  (    4 N-000020 )
+  (    5 N-000019 )
+ )
+ ( /4EDE419A $noname  R3 R {Lib=R}
+  (    1 N-000018 )
+  (    2 N-000020 )
+ )
+ ( /4EDE4199 $noname  P4 Conv {Lib=CONN_2}
+  (    1 N-000018 )
+  (    2 N-000019 )
+ )
+ ( /4EDE4198 $noname  P6 SC {Lib=CONN_2}
+  (    1 N-000016 )
+  (    2 N-000008 )
+ )
+ ( /4EDE4197 $noname  R4 R {Lib=R}
+  (    1 N-000016 )
+  (    2 N-000009 )
+ )
+ ( /4EDE4194 $noname  U4 LEM {Lib=LEM}
+  (    1 -VAA )
+  (    2 VAA )
+  (    3 /Usc )
+  (    4 N-000009 )
+  (    5 N-000008 )
+ )
+ ( /4EDE416B $noname  U2 LEM {Lib=LEM}
+  (    1 -VAA )
+  (    2 VAA )
+  (    3 /Umot2 )
+  (    4 N-000004 )
+  (    5 N-000003 )
+ )
+ ( /4EDE4168 $noname  R2 R {Lib=R}
+  (    1 N-000002 )
+  (    2 N-000004 )
+ )
+ ( /4EDE4167 $noname  P3 Mot2 {Lib=CONN_2}
+  (    1 N-000002 )
+  (    2 N-000003 )
+ )
+ ( /4EDE414E $noname  P1 Mot1 {Lib=CONN_2}
+  (    1 N-000001 )
+  (    2 N-000011 )
+ )
+ ( /4EDE411F $noname  R1 R {Lib=R}
+  (    1 N-000001 )
+  (    2 N-000012 )
+ )
+ ( /4EDE3FAA $noname  P5 Mesures {Lib=CONN_4}
+  (    1 /Umot1 )
+  (    2 /Umot2 )
+  (    3 /Uconv )
+  (    4 /Usc )
+ )
+ ( /4EDE3FA2 $noname  P2 Alim {Lib=CONN_4}
+  (    1 VAA )
+  (    2 GND )
+  (    3 -VAA )
+  (    4 ? )
+ )
+ ( /4EDE3F77 $noname  U1 LEM {Lib=LEM}
+  (    1 -VAA )
+  (    2 VAA )
+  (    3 /Umot1 )
+  (    4 N-000012 )
+  (    5 N-000011 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "" ""
+ R1 1
+ P1 1
+Net 2 "" ""
+ P3 1
+ R2 1
+Net 3 "" ""
+ P3 2
+ U2 5
+Net 4 "" ""
+ R2 2
+ U2 4
+Net 5 "/Umot2" "Umot2"
+ P5 2
+ U2 3
+Net 6 "VAA" "VAA"
+ U3 2
+ P2 1
+ U4 2
+ U2 2
+ U1 2
+Net 7 "-VAA" "-VAA"
+ U2 1
+ U1 1
+ P2 3
+ U3 1
+ U4 1
+Net 8 "" ""
+ U4 5
+ P6 2
+Net 9 "" ""
+ R4 2
+ U4 4
+Net 10 "/Usc" "Usc"
+ U4 3
+ P5 4
+Net 11 "" ""
+ U1 5
+ P1 2
+Net 12 "" ""
+ R1 2
+ U1 4
+Net 14 "/Umot1" "Umot1"
+ U1 3
+ P5 1
+Net 15 "/Uconv" "Uconv"
+ P5 3
+ U3 3
+Net 16 "" ""
+ R4 1
+ P6 1
+Net 18 "" ""
+ P4 1
+ R3 1
+Net 19 "" ""
+ U3 5
+ P4 2
+Net 20 "" ""
+ U3 4
+ R3 2
+}
+#End
