@@ -8,7 +8,8 @@
 //		Version 1.00 - BLD - 25/10/2011                        //
 //		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //
 //		Version 1.02 - BLD - 27/11/2011 -> ADC interrupt + 16b //
-//		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   //             
+//		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   // 
+//      Version 1.04 - BLD - 13/12/2011 -> correction sendCAN  //            
 //                                                             //                                                
 /////////////////////////////////////////////////////////////////
 
@@ -161,7 +162,7 @@ void sendCAN()
 	{
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			r=can_putd(BATTERY_STATUS,charge,2,0,false,false);          // emission du message
+			r=can_putd(BATTERY_STATUS,&charge,2,0,false,false);          // emission du message
 			battery_reemit_ms=0;                                        // on remet à zéro la date d'émission
 			#ifdef TRACE_CAN
 				restart_wdt();
