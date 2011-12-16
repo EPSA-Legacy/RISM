@@ -40,7 +40,7 @@
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int16 sec=0;                          // contient les secondes du uptime
-unsigned int8 clign_ms=0;                         // variable temporelle pour leclign_msotant
+unsigned int16 clign_ms=0;                         // variable temporelle pour leclign_msotant
 
 int16 tmp=0;						           // variable temporaire
 
@@ -86,7 +86,7 @@ void main()
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
 	enable_interrupts(GLOBAL);
 
-	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,250,5);   //setup up timer2 to interrupt every 1ms
 	can_init();							//initialise le CAN
 	can_set_baud();						//obsolète à priori à tester
 	restart_wdt();
@@ -113,6 +113,7 @@ void main()
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
+		
 		restart_wdt();
 		listenCAN();
 
@@ -200,14 +201,14 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	output_bit(FEUX_STOP, brake);                         // si brake est à true, allumer les feux stop, et inversement
 	output_bit(FEUX, light);                              // si light est à true, allumer les feux arrière, et inversement
 
-	
+
 	if(clign_ms >= 650)                                   // 650 ms = +- 1.5Hz après l'activation du timer = frequence desclign_msotants
 	{
 		clign_ms = 0;                                     // repartir pour 500 ms
 		blink_status = !blink_status ;                    // changer l'état d'allumage desclign_msotants
-
-		output_bit(CLIGN_R, blink_status && blink_right); // allumer ou éteindre le clignotant droit s'il est activé
-		output_bit(CLIGN_L, blink_status && blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
+		
+		output_bit(CLIGN_R, blink_status & blink_right); // allumer ou éteindre le clignotant droit s'il est activé
+		output_bit(CLIGN_L, blink_status & blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
 		#ifdef TRACE
 			restart_wdt();
 	        tmp=ms+1000*sec;
