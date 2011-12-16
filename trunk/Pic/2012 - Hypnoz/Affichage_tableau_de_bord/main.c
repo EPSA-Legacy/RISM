@@ -138,8 +138,8 @@ void main()
 	can_init();							//initialise le CAN
 	can_set_baud();						//obsolète à priori à tester
 	displaymode=DISPLAYSPEED;			//par défaut on affiche la vitesse
-	output_pin(GREEN,0);				//on éteint le vert
-	output_pin(RED,1);					//on éclaire en rouge
+	output_bit(GREEN,0);				//on éteint le vert
+	output_bit(RED,1);					//on éclaire en rouge
 	restart_wdt();
 
 	#ifdef DEBUG
