@@ -8,6 +8,7 @@
 //		Version 1.00  - BLD - 24/10/2011                       //
 //      Version 1.01  - BLD - 27/11/2011 -> renommage variable //    
 //	    Version 1.02  - BLD - 27/11/2011 -> trace debug        //
+//		Version 1.03  - BLD - 18/12/2011 -> recalibrage timer  //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
 
