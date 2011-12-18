@@ -8,11 +8,10 @@
 //		Version 1.00 - BLD - 16/11/2011                        //
 //		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //	
 //		Version 1.02 - BLD - 27/11/2011 -> trace modes         //		
+//		Version 1.03 - BLD - 18/12/2011 -> recalibrage timer   //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
-
-// TODO: Gerer les warnings
 
 #include <18F258.h>
 #include <can-18xxx8.c>
@@ -100,7 +99,7 @@ void main()
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
 	enable_interrupts(GLOBAL);
 
-	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,250,5);   //setup up timer2 to interrupt every 1ms
 	can_init();							//initialise le CAN
 	can_set_baud();						//obsolète à priori à tester
 	restart_wdt();
@@ -251,8 +250,8 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		blinkfrontlack_count=5;						// on prévoit d'envoyer 5 messages au maximum
 		blinkbackrack_count=5;						// on prévoit d'envoyer 5 messages au maximum
 		blinkfrontlack_count=5;						// on prévoit d'envoyer 5 messages au maximum
-		blinkl_reemit_ms=TR_BLIGHT+1;				// on force l'emission du message dès que possible
-		blinkr_reemit_ms=TR_BLIGHT+1;				// on force l'emission du message dès que possible
+		blinkl_reemit_ms=TR_BLINK+1;				// on force l'emission du message dès que possible
+		blinkr_reemit_ms=TR_BLINK+1;				// on force l'emission du message dès que possible
 		#if (TRACE_WARN || TRACE_ALLLIGHT)
 			restart_wdt();
 			tmp=ms+1000*sec;
@@ -274,7 +273,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			blinkl=data;									  // on change l'état du clignotant droit
 			blinkbacklack_count=5;								  // on prévoit d'envoyer 5 fois le message
 			blinkfrontlack_count=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkl_reemit_ms= TR_BLIGHT+1;						  // on force l'émission instantannée
+			blinkl_reemit_ms= TR_BLINK+1;						  // on force l'émission instantannée
 			#if (TRACE_BLINK || TRACE_ALLLIGHT)
 				restart_wdt();
 				tmp=ms+1000*sec;
@@ -293,7 +292,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			blinkr=data;									  // on change l'état du clignotant droit
 			blinkbackrack_count=5;								  // on prévoit d'envoyer 5 fois le message
 			blinkfrontrack_count=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkr_reemit_ms= TR_BLIGHT+1;						  // on force l'émission instantannée
+			blinkr_reemit_ms= TR_BLINK+1;						  // on force l'émission instantannée
 			#if  (TRACE_BLINK || TRACE_ALLLIGHT)
 				restart_wdt();
 				tmp=ms+1000*sec;
@@ -429,8 +428,5 @@ void sendCAN()
 			#endif
 		}
 	}
-
-
-
 }
 

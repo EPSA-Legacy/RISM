@@ -6,9 +6,10 @@
 //                                                             //
 //		Carte Affichage Tableau de bord                        //
 //		Version 1.00  - BLD - 29/11/2011                       //
+//		Version 1.01  - BLD - 18/12/2011 -> recalibrage timer  //
 //      													   //    
 //	    												       //
-//			                                                    //
+//			                                                   //
 /////////////////////////////////////////////////////////////////
 
 #include <18F4580.h>
@@ -134,7 +135,7 @@ void main()
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
 	enable_interrupts(GLOBAL);
 
-	setup_timer_2(T2_DIV_BY_4,79,16);   //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,250,5);   //setup up timer2 to interrupt every 1ms
 	can_init();							//initialise le CAN
 	can_set_baud();						//obsolète à priori à tester
 	displaymode=DISPLAYSPEED;			//par défaut on affiche la vitesse

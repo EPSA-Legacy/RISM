@@ -9,6 +9,7 @@
 //		Version 1.01 - BLD - 27/11/2011 -> mesure en 16bits    //
 //      Version 1.02 - BLD - 27/11/2011 -> ADC non blocant     //
 //      Version 1.03 - BLD - 27/11/2011 -> Trace mode		   //
+//      Version 1.04 - BLD - 18/12/2011 -> recalibrage timer   //
 //                                                             //
 //      													   //
 /////////////////////////////////////////////////////////////////
@@ -127,7 +128,7 @@ void main()
 	enable_interrupts(GLOBAL); 
 	
 
-	setup_timer_2(T2_DIV_BY_4,79,16);         //setup up timer2 to interrupt every 1ms
+	setup_timer_2(T2_DIV_BY_4,250,5);         //setup up timer2 to interrupt every 1ms
 	can_init();						          //initialise le CAN
 	can_set_baud();					          //obsolète à priori à tester
 	restart_wdt();
