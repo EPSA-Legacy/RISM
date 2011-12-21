@@ -16,11 +16,11 @@
 #fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
-#use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
+#use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
 
 // Variables globales
 
-unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
+unsigned int32 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int8 clock=0;						   // contient une variable temporelle incrémentée tous les 0,1 ms
 unsigned int32 sec=0;                          // contient les secondes du uptime
 
@@ -40,9 +40,8 @@ void isr_timer2()
 	 	ms++;
 		clock=0;
 	 }
-     if(ms>=1000)
+     if(ms%1000==0)
 	 {
-		ms=0;
 		sec++;
 	 }
 }
@@ -92,14 +91,14 @@ void main()
 	{
 		restart_wdt();
 		flag=false;
-		printf("###########################################\n");
-		printf("## Bienvenue dans le programme test_init ##\n");
-		printf("###########################################\n");
-		printf("\n Menu \n");
-		printf("[1] Test des sorties \n");
-		printf("[2] Echo RS232 \n");
-		printf("[3] Caracterisation Watchdog \n");
-		printf("\n Choix : ");
+		printf("########################################### \r\n");
+		printf("## Bienvenue dans le programme test_init ## \r\n");
+		printf("########################################### \r\n");
+		printf("  Menu  \r\n");
+		printf("[1] Test des sorties  \r\n");
+		printf("[2] Echo RS232  \r\n");
+		printf("[3] Caracterisation Watchdog  \r\n");
+		printf(" \r\n Choix : ");
 		while(flag==false)
 		{
 			restart_wdt();
@@ -137,10 +136,10 @@ void output_check() //Fonction en charge du test des sorties du PIC
 
 	sec_init=sec;
 
-	printf("Descriptif du test : \n");
-	printf("Les ports vont succesivement passe de l'etat haut a l'etat bas \n");
-	printf("La frequence de changement est le Hertz et il y a 7 cycles complets\n");
-	printf("Le test va bientôt commencer...\n");
+	printf("Descriptif du test : ");
+	printf("Les ports vont succesivement passe de l'etat haut a l'etat bas ");
+	printf("La frequence de changement est le Hertz et il y a 7 cycles complets ");
+	printf("Le test va bientôt commencer...");
 
 	restart_wdt();
 	output_bit(PIN_A0,0);
@@ -170,7 +169,7 @@ void output_check() //Fonction en charge du test des sorties du PIC
 	restart_wdt();
 	delay_ms(20);
 	
-	printf("Démarrage du test \n");	
+	printf("Démarrage du test \r\n");	
 
 	while(sec-sec_init<=21)
 	{	
@@ -237,9 +236,9 @@ void echo_rs232()
 	char c;
 	restart_wdt();	
 
-	printf("Descriptif du test : \n");
-	printf("Les microcontrolleur lit le port RS232 et le recopie en sortie sur le meme port \n");
-	printf("Pour quitter le test presser la touche q \n");
+	printf("Descriptif du test : \r\n");
+	printf("Les microcontrolleur lit le port RS232 et le recopie en sortie sur le meme port \r\n");
+	printf("Pour quitter le test presser la touche q \r\n");
 	printf("Début du programme 'echo'");
 	
 	while(c!='q')
@@ -250,7 +249,6 @@ void echo_rs232()
 			c = getc();
 			putc(c);
 		}
-		delay_ms(5);	
 	}
 
 }
@@ -261,7 +259,6 @@ void check_watchdog()
 	int32 ms_init=0;
 	int16 duree=1; 
 	restart_wdt();
-	ms=-5000;				// pour éviter un dépassement de la variable à ms=1000
 	ms_init=ms;
 	while(true)	
 	{
@@ -269,7 +266,7 @@ void check_watchdog()
 		{
 			restart_wdt();
 			printf("duree wdt superieur a : %Ld ms",duree);
-			duree++;
+			duree= duree+10;
 			restart_wdt();
 			ms_init=ms;
 		}
