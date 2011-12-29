@@ -41,7 +41,7 @@
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int16 sec=0;                          // contient les secondes du uptime
-unsigned int16 clign_ms=0;                         // variable temporelle pour leclign_msotant
+unsigned int16 clign_ms=0;                     // variable temporelle pour leclign_msotant
 
 int16 tmp=0;						           // variable temporaire
 
