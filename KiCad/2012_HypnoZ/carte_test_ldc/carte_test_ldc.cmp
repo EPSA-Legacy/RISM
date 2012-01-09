@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 08/11/2011 16:12:39
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 06/12/2011 17:58:08
 
 BeginCmp
 TimeStamp = /4E7A0E2F;
@@ -81,28 +81,28 @@ BeginCmp
 TimeStamp = /4EB92CD5;
 Reference = RV1;
 ValeurCmp = POT;
-IdModule  = POT_CMS;
+IdModule  = Potentiometre_3310P;
 EndCmp
 
 BeginCmp
 TimeStamp = /4EB93744;
 Reference = RV2;
 ValeurCmp = POT;
-IdModule  = POT_CMS;
+IdModule  = Potentiometre_3310P;
 EndCmp
 
 BeginCmp
 TimeStamp = /4EB937B7;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = SW_PUSH;
+IdModule  = Switch_multicomp_TS0B;
 EndCmp
 
 BeginCmp
 TimeStamp = /4EB93802;
 Reference = SW2;
 ValeurCmp = SW_PUSH;
-IdModule  = SW_PUSH;
+IdModule  = Switch_multicomp_TS0B;
 EndCmp
 
 EndListe
