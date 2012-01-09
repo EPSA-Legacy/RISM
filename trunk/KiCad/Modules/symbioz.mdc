@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  16/04/2011 18:53:14
+PCBNEW-LibDoc----V1  10/01/2012 00:31:05
 #
 $MODULE he10-16df
 Li he10-16df
@@ -15,12 +15,6 @@ $EndMODULE
 $MODULE he10-10df
 Li he10-10df
 Cd Connecteur HE10 10 contacts droit femelle
-Kw CONN HE10
-$EndMODULE
-#
-$MODULE he10-10dm
-Li he10-10dm
-Cd Connecteur HE10 10 contacts droit mâle
 Kw CONN HE10
 $EndMODULE
 #
@@ -82,6 +76,12 @@ $MODULE LM78XX_2
 Li LM78XX_2
 Cd Regulateur TO220 serie LM78xx
 Kw TR TO220
+$EndMODULE
+#
+$MODULE he10-10dm
+Li he10-10dm
+Cd Connecteur HE10 10 contacts droit mâle
+Kw CONN HE10
 $EndMODULE
 #
 $EndLIBDOC
