@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  08/11/2011 16:12:39
+# EESchema Netlist Version 1.1 created  06/12/2011 17:58:08
 (
  ( /4E7A0E2F he10-10df P1 HE10-10
   ( 1 /Pot_acc )
@@ -50,30 +50,30 @@
   ( 2 GND )
  )
  ( /4EB92CDA R3 R1 R
-  ( 1 VCC )
+  ( 1 GND )
   ( 2 /Int_boost )
  )
  ( /4EB93804 R3 R2 R
-  ( 1 VCC )
+  ( 1 GND )
   ( 2 /Int_frein )
  )
- ( /4EB92CD5 POT_CMS RV1 POT
+ ( /4EB92CD5 Potentiometre_3310P RV1 POT
   ( 1 VCC )
   ( 2 /Pot_acc )
   ( 3 GND )
  )
- ( /4EB93744 POT_CMS RV2 POT
+ ( /4EB93744 Potentiometre_3310P RV2 POT
   ( 1 VCC )
   ( 2 /Pot_mot )
   ( 3 GND )
  )
- ( /4EB937B7 SW_PUSH SW1 SW_PUSH
+ ( /4EB937B7 Switch_multicomp_TS0B SW1 SW_PUSH
   ( 1 /Int_boost )
-  ( 2 GND )
+  ( 2 VCC )
  )
- ( /4EB93802 SW_PUSH SW2 SW_PUSH
+ ( /4EB93802 Switch_multicomp_TS0B SW2 SW_PUSH
   ( 1 /Int_frein )
-  ( 2 GND )
+  ( 2 VCC )
  )
 )
 *

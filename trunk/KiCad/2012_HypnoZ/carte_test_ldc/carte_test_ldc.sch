@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 08/11/2011 16:12:43
+EESchema Schematic File Version 2  date 22/11/2011 16:04:09
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,14 +29,12 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_test_ldc-cache
-EELAYER 25  0
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-encoding utf-8
 Sheet 1 1
 Title ""
-Date "8 nov 2011"
+Date "22 nov 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -267,11 +265,11 @@ $EndComp
 $Comp
 L VCC #PWR07
 U 1 1 4EB93803
-P 6000 4000
-F 0 "#PWR07" H 6000 4100 30  0001 C CNN
-F 1 "VCC" H 6000 4100 30  0000 C CNN
-	1    6000 4000
-	1    0    0    -1  
+P 6000 5650
+F 0 "#PWR07" H 6000 5750 30  0001 C CNN
+F 1 "VCC" H 6000 5750 30  0000 C CNN
+	1    6000 5650
+	-1   0    0    1   
 $EndComp
 $Comp
 L SW_PUSH SW2
@@ -285,11 +283,11 @@ $EndComp
 $Comp
 L GND #PWR08
 U 1 1 4EB93801
-P 6000 5650
-F 0 "#PWR08" H 6000 5650 30  0001 C CNN
-F 1 "GND" H 6000 5580 30  0001 C CNN
-	1    6000 5650
-	1    0    0    -1  
+P 6000 4000
+F 0 "#PWR08" H 6000 4000 30  0001 C CNN
+F 1 "GND" H 6000 3930 30  0001 C CNN
+	1    6000 4000
+	-1   0    0    1   
 $EndComp
 Text Label 6550 4700 2    60   ~ 0
 Int_frein
@@ -298,11 +296,11 @@ Int_boost
 $Comp
 L GND #PWR09
 U 1 1 4EB937CC
-P 5250 5650
-F 0 "#PWR09" H 5250 5650 30  0001 C CNN
-F 1 "GND" H 5250 5580 30  0001 C CNN
-	1    5250 5650
-	1    0    0    -1  
+P 5250 4000
+F 0 "#PWR09" H 5250 4000 30  0001 C CNN
+F 1 "GND" H 5250 3930 30  0001 C CNN
+	1    5250 4000
+	-1   0    0    1   
 $EndComp
 $Comp
 L SW_PUSH SW1
@@ -316,11 +314,11 @@ $EndComp
 $Comp
 L VCC #PWR010
 U 1 1 4EB9377D
-P 5250 4000
-F 0 "#PWR010" H 5250 4100 30  0001 C CNN
-F 1 "VCC" H 5250 4100 30  0000 C CNN
-	1    5250 4000
-	1    0    0    -1  
+P 5250 5650
+F 0 "#PWR010" H 5250 5750 30  0001 C CNN
+F 1 "VCC" H 5250 5750 30  0000 C CNN
+	1    5250 5650
+	-1   0    0    1   
 $EndComp
 $Comp
 L POT RV2
