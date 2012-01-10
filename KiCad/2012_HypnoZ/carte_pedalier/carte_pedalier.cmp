@@ -1,0 +1,241 @@
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 13/12/2011 22:27:39
+
+BeginCmp
+TimeStamp = /4EE75B63;
+Reference = C1;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75B87;
+Reference = C2;
+ValeurCmp = 100u;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE760F5;
+Reference = C3;
+ValeurCmp = 330n;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE763AF;
+Reference = C4;
+ValeurCmp = 100n;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE763B1;
+Reference = C5;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75E0B;
+Reference = D1;
+ValeurCmp = JAUNE;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75E36;
+Reference = D2;
+ValeurCmp = JAUNE;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE76285;
+Reference = D3;
+ValeurCmp = 10V;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE76281;
+Reference = D4;
+ValeurCmp = 10V;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE761F3;
+Reference = D5;
+ValeurCmp = 10V;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE761F9;
+Reference = D6;
+ValeurCmp = 10V;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D7796C0;
+Reference = MEZZA1;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE758B8;
+Reference = MEZZA2;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D920AA1;
+Reference = P1;
+ValeurCmp = Frein_Main_in;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D920C69;
+Reference = P2;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE758E2;
+Reference = P4;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75911;
+Reference = P5;
+ValeurCmp = Frein_ped_in;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE758E0;
+Reference = P6;
+ValeurCmp = MECA;
+IdModule  = MECA_5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75FCD;
+Reference = P7;
+ValeurCmp = Acc_out;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE764BA;
+Reference = P8;
+ValeurCmp = Frein_out;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE77370;
+Reference = P9;
+ValeurCmp = Acc_in;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D920C00;
+Reference = R1;
+ValeurCmp = 10K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75CDC;
+Reference = R2;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75E37;
+Reference = R3;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE7590F;
+Reference = R4;
+ValeurCmp = 10K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE7627D;
+Reference = R5;
+ValeurCmp = 100;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE760D6;
+Reference = R6;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE761EE;
+Reference = R7;
+ValeurCmp = 100;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75FA2;
+Reference = R8;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75F8D;
+Reference = R9;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75ED5;
+Reference = R10;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75EF6;
+Reference = R11;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE75A68;
+Reference = U1;
+ValeurCmp = TRACO_8W_12V_DUAL;
+IdModule  = TRACO_8W_12V_DUAL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EE7C329;
+Reference = U2;
+ValeurCmp = LM324;
+IdModule  = DIP-8__300_ELL;
+EndCmp
+
+EndListe
