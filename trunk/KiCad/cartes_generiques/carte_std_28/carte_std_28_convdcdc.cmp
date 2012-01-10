@@ -1,0 +1,227 @@
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 10/01/2012 11:24:18
+
+BeginCmp
+TimeStamp = /4B2128A5;
+Reference = C5;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B2128A6;
+Reference = C6;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /453CA280;
+Reference = C7;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /453CA28F;
+Reference = C8;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF24243;
+Reference = C9;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF24244;
+Reference = C10;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B21289C;
+Reference = C11;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B21289B;
+Reference = C12;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF24246;
+Reference = C13;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF24245;
+Reference = C14;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF244DE;
+Reference = C15;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF244D6;
+Reference = C16;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A4F;
+Reference = C?;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A4E;
+Reference = C?;
+ValeurCmp = 100u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A47;
+Reference = C?;
+ValeurCmp = 10u;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A48;
+Reference = C?;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A4C;
+Reference = D?;
+ValeurCmp = RED;
+IdModule  = LED-3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4CFE6D2D;
+Reference = K1;
+ValeurCmp = RS232;
+IdModule  = KK_4C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D04E0EC;
+Reference = MECA1;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D04E103;
+Reference = MECA2;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4D04E109;
+Reference = MECA3;
+ValeurCmp = 5mm;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4CFE6387;
+Reference = MEZZA1;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10dm-3d;
+EndCmp
+
+BeginCmp
+TimeStamp = /4CFE638A;
+Reference = MEZZA2;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10dm-3d;
+EndCmp
+
+BeginCmp
+TimeStamp = /4CFE6DC8;
+Reference = P2;
+ValeurCmp = CAN1;
+IdModule  = KK_2C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4CFE6DE3;
+Reference = P3;
+ValeurCmp = CAN2;
+IdModule  = KK_2C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A49;
+Reference = P?;
+ValeurCmp = ALIM;
+IdModule  = KK_2C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B27919F;
+Reference = R2;
+ValeurCmp = 1K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4B2790FC;
+Reference = R3;
+ValeurCmp = 47K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A46;
+Reference = R?;
+ValeurCmp = 1K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BF24242;
+Reference = U4;
+ValeurCmp = MAX232;
+IdModule  = DIP-16__300_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F0B2A7E;
+Reference = U?;
+ValeurCmp = TMH_1205S;
+IdModule  = TMH_1205S;
+EndCmp
+
+BeginCmp
+TimeStamp = /453CA252;
+Reference = X1;
+ValeurCmp = 10M;
+IdModule  = HC-18UV;
+EndCmp
+
+EndListe
