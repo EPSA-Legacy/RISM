@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  10/01/2012 11:24:18
+# EESchema Netlist Version 1.1 created  10/01/2012 17:51:26
 (
  ( /4B2128A5 C1 C5 27p
   ( 1 VCC )
@@ -9,20 +9,20 @@
   ( 2 GND )
  )
  ( /453CA280 C1 C7 27p
-  ( 1 N-000030 )
+  ( 1 N-000032 )
   ( 2 GND )
  )
  ( /453CA28F C1 C8 27p
-  ( 1 N-000029 )
+  ( 1 N-000031 )
   ( 2 GND )
  )
  ( /4BF24243 C1V5 C9 1u
-  ( 1 N-000011 )
-  ( 2 N-000010 )
+  ( 1 N-000012 )
+  ( 2 N-000011 )
  )
  ( /4BF24244 C1V5 C10 1u
-  ( 1 N-000013 )
-  ( 2 N-000012 )
+  ( 1 N-000014 )
+  ( 2 N-000013 )
  )
  ( /4B21289C C1V5 C11 1u
   ( 1 VCC )
@@ -33,12 +33,12 @@
   ( 2 GND )
  )
  ( /4BF24246 C1V5 C13 1u
-  ( 1 N-000009 )
+  ( 1 N-000010 )
   ( 2 VCC )
  )
  ( /4BF24245 C1V5 C14 1u
   ( 1 GND )
-  ( 2 N-000014 )
+  ( 2 N-000015 )
  )
  ( /4BF244DE C1 C15 27p
   ( 1 VCC )
@@ -48,29 +48,29 @@
   ( 1 VCC )
   ( 2 GND )
  )
- ( /4F0B2A4F C1 C? 27p
+ ( /4F0B2A4F C1 C17 27p
   ( 1 +12V )
   ( 2 GND )
  )
- ( /4F0B2A4E C1 C? 100u
+ ( /4F0B2A4E C1V5 C18 100u
   ( 1 +12V )
   ( 2 GND )
  )
- ( /4F0B2A47 C1 C? 10u
+ ( /4F0B2A47 C1V5 C19 10u
   ( 1 VCC )
   ( 2 GND )
  )
- ( /4F0B2A48 C1 C? 27p
+ ( /4F0B2A48 C1 C20 27p
   ( 1 VCC )
   ( 2 GND )
  )
- ( /4F0B2A4C LED-3MM D? RED
+ ( /4F0B2A4C LEDV D1 RED
   ( 1 VCC )
-  ( 2 N-000046 )
+  ( 2 N-000043 )
  )
  ( /4CFE6D2D KK_4C K1 RS232
-  ( 1 N-000006 )
-  ( 2 N-000016 )
+  ( 1 N-000007 )
+  ( 2 N-000006 )
   ( 3 GND )
  )
  ( /4D04E0EC 1pin MECA1 5mm
@@ -83,25 +83,25 @@
   ( 1 ? )
  )
  ( /4CFE6387 he10-10dm-3d MEZZA1 MEZZA-10
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
+  ( 1 /RA0 )
+  ( 2 /RA1 )
+  ( 3 /RA4 )
+  ( 4 /RA5 )
+  ( 5 /RB0 )
+  ( 6 /RB1 )
+  ( 7 /RC2 )
   ( 8 +12V )
   ( 9 VCC )
   ( 10 GND )
  )
  ( /4CFE638A he10-10dm-3d MEZZA2 MEZZA-10
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
+  ( 1 /RA2 )
+  ( 2 /RA3 )
+  ( 3 /RC0 )
+  ( 4 /RC1 )
+  ( 5 /RC3 )
+  ( 6 /RC4 )
+  ( 7 /RC5 )
   ( 8 +12V )
   ( 9 VCC )
   ( 10 GND )
@@ -114,147 +114,97 @@
   ( 1 /CANL )
   ( 2 /CANH )
  )
- ( /4F0B2A49 KK_2C P? ALIM
+ ( /4F0B2A49 KK_2C P4 ALIM
   ( 1 +12V )
   ( 2 GND )
  )
  ( /4B27919F R3 R2 1K
   ( 1 GND )
-  ( 2 ? )
+  ( 2 N-000039 )
  )
  ( /4B2790FC R3 R3 47K
-  ( 1 ? )
+  ( 1 /Mclr )
   ( 2 VCC )
  )
- ( /4F0B2A46 R3 R? 1K
-  ( 1 N-000046 )
+ ( /4F0B2A46 R3 R4 1K
+  ( 1 N-000043 )
   ( 2 GND )
  )
+ ( /47B197F8 DIP-8__300_ELL U2 CAN_MCP2551
+  ( 1 /CANTX )
+  ( 2 GND )
+  ( 3 VCC )
+  ( 4 /CANRX )
+  ( 5 GND )
+  ( 6 /CANL )
+  ( 7 /CANH )
+  ( 8 N-000039 )
+ )
+ ( /453CACE9 RJ12_V U3 ICD
+  ( 1 /Mclr )
+  ( 2 VCC )
+  ( 3 GND )
+  ( 4 /RB7 )
+  ( 5 /RB6 )
+  ( 6 /RB5 )
+ )
  ( /4BF24242 DIP-16__300_ELL U4 MAX232
-  ( 1 N-000011 )
-  ( 2 N-000009 )
-  ( 3 N-000010 )
-  ( 4 N-000013 )
-  ( 5 N-000012 )
-  ( 6 N-000014 )
+  ( 1 N-000012 )
+  ( 2 N-000010 )
+  ( 3 N-000011 )
+  ( 4 N-000014 )
+  ( 5 N-000013 )
+  ( 6 N-000015 )
   ( 7 ? )
   ( 8 ? )
   ( 9 ? )
   ( 10 ? )
-  ( 11 ? )
-  ( 12 ? )
-  ( 13 N-000006 )
-  ( 14 N-000016 )
+  ( 11 /TX )
+  ( 12 /RX )
+  ( 13 N-000007 )
+  ( 14 N-000006 )
   ( 15 GND )
   ( 16 VCC )
  )
- ( /4F0B2A7E TMH_1205S U? TMH_1205S
+ ( /4CFE7057 DIP-28__300_ELL U5 PIC18F258
+  ( 1 /Mclr )
+  ( 2 /RA0 )
+  ( 3 /RA1 )
+  ( 4 /RA2 )
+  ( 5 /RA3 )
+  ( 6 /RA4 )
+  ( 7 /RA5 )
+  ( 8 GND )
+  ( 9 N-000032 )
+  ( 10 N-000031 )
+  ( 11 /RC0 )
+  ( 12 /RC1 )
+  ( 13 /RC2 )
+  ( 14 /RC3 )
+  ( 15 /RC4 )
+  ( 16 /RC5 )
+  ( 17 /TX )
+  ( 18 /RX )
+  ( 19 GND )
+  ( 20 VCC )
+  ( 21 /RB0 )
+  ( 22 /RB1 )
+  ( 23 /CANTX )
+  ( 24 /CANRX )
+  ( 25 ? )
+  ( 26 /RB5 )
+  ( 27 /RB6 )
+  ( 28 /RB7 )
+ )
+ ( /4F0B2A7E TMH_1205S U6 TMH_1205S
   ( 1 +12V )
   ( 2 GND )
   ( 4 GND )
   ( 6 VCC )
  )
  ( /453CA252 HC-18UV X1 10M
-  ( 1 N-000030 )
-  ( 2 N-000029 )
+  ( 1 N-000032 )
+  ( 2 N-000031 )
  )
 )
 *
-{ Allowed footprints by component:
-$component C5
- SM*
- C?
- C1-1
-$endlist
-$component C6
- CP*
- SM*
-$endlist
-$component C7
- SM*
- C?
- C1-1
-$endlist
-$component C8
- SM*
- C?
- C1-1
-$endlist
-$component C9
- CP*
- SM*
-$endlist
-$component C10
- CP*
- SM*
-$endlist
-$component C11
- CP*
- SM*
-$endlist
-$component C12
- SM*
- C?
- C1-1
-$endlist
-$component C13
- CP*
- SM*
-$endlist
-$component C14
- CP*
- SM*
-$endlist
-$component C15
- SM*
- C?
- C1-1
-$endlist
-$component C16
- CP*
- SM*
-$endlist
-$component C?
- SM*
- C?
- C1-1
- CP*
- SM*
- SM*
- C?
- C1-1
- CP*
- SM*
-$endlist
-$component D?
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R?
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$endfootprintlist
-}
