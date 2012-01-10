@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 09/01/2012 19:11:18
+EESchema Schematic File Version 2  date 10/01/2012 14:41:58
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -33,6 +33,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:symbioz
+LIBS:carte_std_28-cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
