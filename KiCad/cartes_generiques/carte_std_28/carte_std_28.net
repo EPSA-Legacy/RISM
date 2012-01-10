@@ -1,172 +1,228 @@
-# EESchema Netlist Version 1.1 created  09/01/2012 23:18:12
+# EESchema Netlist Version 1.1 created  10/01/2012 11:24:18
 (
- ( /4F0B2A7E $noname  U? TMH_1205S {Lib=TMH_1205S}
-  (    1 +12V )
-  (    2 GND )
-  (    4 GND )
-  (    6 VCC )
+ ( /4B2128A5 C1 C5 27p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4F0B2A4F $noname  C? 27p {Lib=C}
-  (    1 +12V )
-  (    2 GND )
+ ( /4B2128A6 C1V5 C6 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4F0B2A4E $noname  C? 100u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
+ ( /453CA280 C1 C7 27p
+  ( 1 N-000030 )
+  ( 2 GND )
  )
- ( /4F0B2A4C $noname  D? RED {Lib=LED}
-  (    1 VCC )
-  (    2 N-000046 )
+ ( /453CA28F C1 C8 27p
+  ( 1 N-000029 )
+  ( 2 GND )
  )
- ( /4F0B2A49 $noname  P? ALIM {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /4BF24243 C1V5 C9 1u
+  ( 1 N-000011 )
+  ( 2 N-000010 )
  )
- ( /4F0B2A48 $noname  C? 27p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4BF24244 C1V5 C10 1u
+  ( 1 N-000013 )
+  ( 2 N-000012 )
  )
- ( /4F0B2A47 $noname  C? 10u {Lib=CAPAPOL}
-  (    1 VCC )
-  (    2 GND )
+ ( /4B21289C C1V5 C11 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4F0B2A46 $noname  R? 1K {Lib=R}
-  (    1 N-000046 )
-  (    2 GND )
+ ( /4B21289B C1 C12 27p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4D04E109 $noname  MECA3 5mm {Lib=CONN_1}
-  (    1 ? )
+ ( /4BF24246 C1V5 C13 1u
+  ( 1 N-000009 )
+  ( 2 VCC )
  )
- ( /4D04E103 $noname  MECA2 5mm {Lib=CONN_1}
-  (    1 ? )
+ ( /4BF24245 C1V5 C14 1u
+  ( 1 GND )
+  ( 2 N-000014 )
  )
- ( /4D04E0EC $noname  MECA1 5mm {Lib=CONN_1}
-  (    1 ? )
+ ( /4BF244DE C1 C15 27p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4CFE6DE3 $noname  P3 CAN2 {Lib=CONN_2}
-  (    1 /CANL )
-  (    2 /CANH )
+ ( /4BF244D6 C1V5 C16 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4CFE6DC8 $noname  P2 CAN1 {Lib=CONN_2}
-  (    1 /CANL )
-  (    2 /CANH )
+ ( /4F0B2A4F C1 C? 27p
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4CFE6D2D $noname  K1 RS232 {Lib=CONN_3}
-  (    1 N-000006 )
-  (    2 N-000016 )
-  (    3 GND )
+ ( /4F0B2A4E C1 C? 100u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4B2790FC $noname  R3 47K {Lib=R}
-  (    1 ? )
-  (    2 VCC )
+ ( /4F0B2A47 C1 C? 10u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4CFE638A $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
-  (    1 ? )
-  (    2 ? )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 VCC )
-  (   10 GND )
+ ( /4F0B2A48 C1 C? 27p
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4CFE6387 $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
-  (    1 ? )
-  (    2 ? )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 VCC )
-  (   10 GND )
+ ( /4F0B2A4C LED-3MM D? RED
+  ( 1 VCC )
+  ( 2 N-000046 )
  )
- ( /4BF244DE $noname  C15 27p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4CFE6D2D KK_4C K1 RS232
+  ( 1 N-000006 )
+  ( 2 N-000016 )
+  ( 3 GND )
  )
- ( /4BF244D6 $noname  C16 1u {Lib=CAPAPOL}
-  (    1 VCC )
-  (    2 GND )
+ ( /4D04E0EC 1pin MECA1 5mm
+  ( 1 ? )
  )
- ( /4BF24246 $noname  C13 1u {Lib=CAPAPOL}
-  (    1 N-000009 )
-  (    2 VCC )
+ ( /4D04E103 1pin MECA2 5mm
+  ( 1 ? )
  )
- ( /4BF24245 $noname  C14 1u {Lib=CAPAPOL}
-  (    1 GND )
-  (    2 N-000014 )
+ ( /4D04E109 1pin MECA3 5mm
+  ( 1 ? )
  )
- ( /4BF24244 $noname  C10 1u {Lib=CAPAPOL}
-  (    1 N-000013 )
-  (    2 N-000012 )
+ ( /4CFE6387 he10-10dm-3d MEZZA1 MEZZA-10
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4BF24243 $noname  C9 1u {Lib=CAPAPOL}
-  (    1 N-000011 )
-  (    2 N-000010 )
+ ( /4CFE638A he10-10dm-3d MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4BF24242 $noname  U4 MAX232 {Lib=MAX232}
-  (    1 N-000011 )
-  (    2 N-000009 )
-  (    3 N-000010 )
-  (    4 N-000013 )
-  (    5 N-000012 )
-  (    6 N-000014 )
-  (    7 ? )
-  (    8 ? )
-  (    9 ? )
-  (   10 ? )
-  (   11 ? )
-  (   12 ? )
-  (   13 N-000006 )
-  (   14 N-000016 )
-  (   15 GND )
-  (   16 VCC )
+ ( /4CFE6DC8 KK_2C P2 CAN1
+  ( 1 /CANL )
+  ( 2 /CANH )
  )
- ( /4B27919F $noname  R2 1K {Lib=R}
-  (    1 GND )
-  (    2 ? )
+ ( /4CFE6DE3 KK_2C P3 CAN2
+  ( 1 /CANL )
+  ( 2 /CANH )
  )
- ( /4B2128A6 $noname  C6 1u {Lib=CAPAPOL}
-  (    1 VCC )
-  (    2 GND )
+ ( /4F0B2A49 KK_2C P? ALIM
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4B2128A5 $noname  C5 27p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4B27919F R3 R2 1K
+  ( 1 GND )
+  ( 2 ? )
  )
- ( /4B21289C $noname  C11 1u {Lib=CAPAPOL}
-  (    1 VCC )
-  (    2 GND )
+ ( /4B2790FC R3 R3 47K
+  ( 1 ? )
+  ( 2 VCC )
  )
- ( /4B21289B $noname  C12 27p {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4F0B2A46 R3 R? 1K
+  ( 1 N-000046 )
+  ( 2 GND )
  )
- ( /453CA28F $noname  C8 27p {Lib=C}
-  (    1 N-000029 )
-  (    2 GND )
+ ( /4BF24242 DIP-16__300_ELL U4 MAX232
+  ( 1 N-000011 )
+  ( 2 N-000009 )
+  ( 3 N-000010 )
+  ( 4 N-000013 )
+  ( 5 N-000012 )
+  ( 6 N-000014 )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 ? )
+  ( 11 ? )
+  ( 12 ? )
+  ( 13 N-000006 )
+  ( 14 N-000016 )
+  ( 15 GND )
+  ( 16 VCC )
  )
- ( /453CA280 $noname  C7 27p {Lib=C}
-  (    1 N-000030 )
-  (    2 GND )
+ ( /4F0B2A7E TMH_1205S U? TMH_1205S
+  ( 1 +12V )
+  ( 2 GND )
+  ( 4 GND )
+  ( 6 VCC )
  )
- ( /453CA252 $noname  X1 10M {Lib=CRYSTAL}
-  (    1 N-000030 )
-  (    2 N-000029 )
+ ( /453CA252 HC-18UV X1 10M
+  ( 1 N-000030 )
+  ( 2 N-000029 )
  )
 )
 *
 { Allowed footprints by component:
-$component C?
+$component C5
  SM*
  C?
  C1-1
 $endlist
+$component C6
+ CP*
+ SM*
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C9
+ CP*
+ SM*
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C11
+ CP*
+ SM*
+$endlist
+$component C12
+ SM*
+ C?
+ C1-1
+$endlist
+$component C13
+ CP*
+ SM*
+$endlist
+$component C14
+ CP*
+ SM*
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C16
+ CP*
+ SM*
+$endlist
 $component C?
+ SM*
+ C?
+ C1-1
+ CP*
+ SM*
+ SM*
+ C?
+ C1-1
  CP*
  SM*
 $endlist
@@ -179,16 +235,7 @@ $component D?
  LED-1206
  LEDV
 $endlist
-$component C?
- SM*
- C?
- C1-1
-$endlist
-$component C?
- CP*
- SM*
-$endlist
-$component R?
+$component R2
  R?
  SM0603
  SM0805
@@ -202,153 +249,12 @@ $component R3
  R?-*
  SM1206
 $endlist
-$component C15
- SM*
- C?
- C1-1
-$endlist
-$component C16
- CP*
- SM*
-$endlist
-$component C13
- CP*
- SM*
-$endlist
-$component C14
- CP*
- SM*
-$endlist
-$component C10
- CP*
- SM*
-$endlist
-$component C9
- CP*
- SM*
-$endlist
-$component R2
+$component R?
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component C6
- CP*
- SM*
-$endlist
-$component C5
- SM*
- C?
- C1-1
-$endlist
-$component C11
- CP*
- SM*
-$endlist
-$component C12
- SM*
- C?
- C1-1
-$endlist
-$component C8
- SM*
- C?
- C1-1
-$endlist
-$component C7
- SM*
- C?
- C1-1
-$endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 6 "" ""
- U4 13
- K1 1
-Net 9 "" ""
- U4 2
- C13 1
-Net 10 "" ""
- U4 3
- C9 2
-Net 11 "" ""
- U4 1
- C9 1
-Net 12 "" ""
- U4 5
- C10 2
-Net 13 "" ""
- U4 4
- C10 1
-Net 14 "" ""
- C14 2
- U4 6
-Net 15 "VCC" "VCC"
- C5 1
- C6 1
- C? 1
- C? 1
- D? 1
- C13 2
- U4 16
- C12 1
- C11 1
- C16 1
- U? 6
- MEZZA2 9
- MEZZA1 9
- R3 2
- C15 1
-Net 16 "" ""
- K1 2
- U4 14
-Net 17 "/CANL" "CANL"
- P2 1
- P3 1
-Net 18 "/CANH" "CANH"
- P3 2
- P2 2
-Net 22 "+12V" "+12V"
- C? 1
- P? 1
- C? 1
- U? 1
- MEZZA1 8
- MEZZA2 8
-Net 29 "" ""
- X1 2
- C8 1
-Net 30 "" ""
- X1 1
- C7 1
-Net 46 "" ""
- D? 2
- R? 1
-Net 47 "GND" "GND"
- K1 3
- C? 2
- C? 2
- C14 1
- MEZZA2 10
- MEZZA1 10
- C15 2
- C16 2
- U4 15
- C12 2
- C11 2
- C5 2
- C6 2
- R2 1
- P? 2
- C? 2
- C7 2
- C? 2
- R? 2
- C8 2
- U? 2
- U? 4
-}
-#End
