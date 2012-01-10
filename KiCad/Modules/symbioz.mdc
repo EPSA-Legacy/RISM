@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  10/01/2012 00:31:05
+PCBNEW-LibDoc----V1  10/01/2012 17:50:56
 #
 $MODULE he10-16df
 Li he10-16df
@@ -80,6 +80,12 @@ $EndMODULE
 #
 $MODULE he10-10dm
 Li he10-10dm
+Cd Connecteur HE10 10 contacts droit mâle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-10dm-3d
+Li he10-10dm-3d
 Cd Connecteur HE10 10 contacts droit mâle
 Kw CONN HE10
 $EndMODULE
