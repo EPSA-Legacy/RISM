@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  10/01/2012 17:51:26
+# EESchema Netlist Version 1.1 created  11/01/2012 14:54:46
 (
  ( /4B2128A5 C1 C5 27p
   ( 1 VCC )
@@ -140,7 +140,7 @@
   ( 7 /CANH )
   ( 8 N-000039 )
  )
- ( /453CACE9 RJ12_V U3 ICD
+ ( /453CACE9 RJ12_V_3D U3 ICD
   ( 1 /Mclr )
   ( 2 VCC )
   ( 3 GND )
