@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 10/01/2012 17:51:26
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 11/01/2012 14:54:46
 
 BeginCmp
 TimeStamp = /4B2128A5;
@@ -214,7 +214,7 @@ BeginCmp
 TimeStamp = /453CACE9;
 Reference = U3;
 ValeurCmp = ICD;
-IdModule  = RJ12_V;
+IdModule  = RJ12_V_3D;
 EndCmp
 
 BeginCmp
