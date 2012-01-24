@@ -5,7 +5,8 @@
 //                       Hypnoz 2012                           //
 //                                                             //
 //		Carte Vitesse                                          //
-//		Version 1.0 - BLD - 29/12/2011                         //
+//		Version 1.00 - BLD - 29/12/2011                        //
+//		Version 1.01 - BLD - 24/01/2012 -> update gestion feux // 
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -243,8 +244,8 @@ void internalLogic()
 	{
 		output_bit(PHARES_R,1);
 		output_bit(PHARES_L,1);  
-		output_bit(CODES_R,0);			  // On ne doit pas oublier d'éteindre les codes 
-		output_bit(CODES_L,0);    
+		output_bit(CODES_R,1);			  // On ne doit pas oublier d'allumer les codes 
+		output_bit(CODES_L,1);    
 		#if (TRACE_LIGHT || TRACE_ALL)
 			restart_wdt();
 	   		tmp=ms+1000*sec;
