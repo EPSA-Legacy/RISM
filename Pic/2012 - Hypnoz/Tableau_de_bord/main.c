@@ -9,6 +9,7 @@
 //		Version 1.01 - BLD - 27/11/2011 -> renommage variable  //	
 //		Version 1.02 - BLD - 27/11/2011 -> trace modes         //		
 //		Version 1.03 - BLD - 18/12/2011 -> recalibrage timer   //
+//		Version 1.04 - BLD - 24/01/2012 -> commande feu corr   //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -303,36 +304,47 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			#endif
 		}
 	}
+
 	// GESTION DES FEUX
 
-	data=input(CODE);									  // on lit l'état du feu
-	if(data==1)										      // les feux sont en mode code
+	data=input(CODE);									 	  // on lit l'état du feu
+	if(data==1 && light!=1)								      // les feux sont en mode code et ne l'étaient pas avant
 	{
-		light=data;                                       // on change l'état du feu
-		lightfrontack_count=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
-		lightbacktack_count=5;									  // on prévoit d'envoyer 5 fois le message au maximum
-		light_reemit_ms=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
+		light=1;                                              // on change l'état du feu
+		lightfrontack_count=5;                                // on prévoit d'envoyer 5 fois le message au maximum
+		lightbacktack_count=5;								  // on prévoit d'envoyer 5 fois le message au maximum
+		light_reemit_ms=TR_LIGHT+1;							  // on force l'émission du message
 		#if  (TRACE_LIGHT || TRACE_ALLLIGHT)
 			restart_wdt();
-	        tmp=ms+1000*sec;
-			if(light==1)
-				printf("[%Lu] - INFO - Light status has changed. Code is now enable ", tmp);
+	       	tmp=ms+1000*sec;
+			printf("[%Lu] - INFO - Light status has changed. Code is now enable ", tmp);
 		#endif
 	}
-	else
+
+	data=input(FEUX);
+	if(data==1 && light!=2)						   		      // si les feux sont actifs et qu'ils ne l'étaient pas avant
 	{
-		data=input(FEUX);
-		light=data;                                       // on change l'état du feu
-		lightfrontack_count=5;                                  // on prévoit d'envoyer 5 fois le message au maximum
-		lightbacktack_count=5;									  // on prévoit d'envoyer 5 fois le message au maximum
-		light_reemit_ms=TR_LIGHT+1;						  // force l'envoi du message le plus rapidement possible
-		#ifdef DEBUG
+		light=2;                                              // on change l'état du feu
+		lightfrontack_count=5;                                // on prévoit d'envoyer 5 fois le message au maximum
+		lightbacktack_count=5;							      // on prévoit d'envoyer 5 fois le message au maximum
+		light_reemit_ms=TR_LIGHT+1;							  // on force l'émission du message
+		#ifdef (TRACE_LIGHT || TRACE_ALLLIGHT)
 			restart_wdt();
-	        tmp=ms+1000*sec;
-			if(light==1)
-				printf("[%Lu] - INFO - Light status has changed. Feux is now enable ", tmp);
-			else
-				printf("[%Lu] - INFO - Light status has changed. All light are shutdown ", tmp);
+	   	    tmp=ms+1000*sec;
+			printf("[%Lu] - INFO - Light status has changed. Feux is now enable ", tmp);
+		#endif
+	}
+
+	if(input(FEUX)==0 && input(CODE)==0 && light!=0)
+	{
+		light=0;
+		lightfrontack_count=5;                                // on prévoit d'envoyer 5 fois le message au maximum
+		lightbacktack_count=5;							      // on prévoit d'envoyer 5 fois le message au maximum
+		light_reemit_ms=TR_LIGHT+1;							  // on force l'émission du message
+		#ifdef (TRACE_LIGHT || TRACE_ALLLIGHT)
+			restart_wdt();
+	   	    tmp=ms+1000*sec;
+			printf("[%Lu] - INFO - Light status has changed. All light are shutdown ", tmp);
 		#endif
 	}
 }
