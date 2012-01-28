@@ -1,52 +1,4 @@
-PCBNEW-LibDoc----V1  11/01/2012 19:46:11
-#
-$MODULE he10-16df
-Li he10-16df
-Cd Connecteur HE10 16 contacts droit femelle
-Kw CONN HE10
-$EndMODULE
-#
-$MODULE he10-16dm
-Li he10-16dm
-Cd Connecteur HE10 16 contacts droit mâle
-Kw CONN HE10
-$EndMODULE
-#
-$MODULE he10-10df
-Li he10-10df
-Cd Connecteur HE10 10 contacts droit femelle
-Kw CONN HE10
-$EndMODULE
-#
-$MODULE R3
-Li R3
-Cd Resitance 3 pas
-Kw R
-$EndMODULE
-#
-$MODULE C1
-Li C1
-Cd Condensateur e = 1 pas
-Kw C
-$EndMODULE
-#
-$MODULE C1V5
-Li C1V5
-Cd Condensateur e = 1 pas
-Kw C
-$EndMODULE
-#
-$MODULE C2
-Li C2
-Cd Condensateur = 2 pas
-Kw C
-$EndMODULE
-#
-$MODULE LEDV
-Li LEDV
-Cd Led verticale diam 6mm
-Kw LED DEV
-$EndMODULE
+PCBNEW-LibDoc----V1  28/01/2012 21:18:09
 #
 $MODULE C2V8
 Li C2V8
@@ -78,16 +30,34 @@ Cd Regulateur TO220 serie LM78xx
 Kw TR TO220
 $EndMODULE
 #
-$MODULE he10-10dm
-Li he10-10dm
-Cd Connecteur HE10 10 contacts droit mâle
-Kw CONN HE10
+$MODULE R3
+Li R3
+Cd Resitance 3 pas
+Kw R
 $EndMODULE
 #
-$MODULE he10-10dm-3d
-Li he10-10dm-3d
-Cd Connecteur HE10 10 contacts droit mâle
-Kw CONN HE10
+$MODULE C1
+Li C1
+Cd Condensateur e = 1 pas
+Kw C
+$EndMODULE
+#
+$MODULE C2
+Li C2
+Cd Condensateur = 2 pas
+Kw C
+$EndMODULE
+#
+$MODULE C1V5
+Li C1V5
+Cd Condensateur e = 1 pas
+Kw C
+$EndMODULE
+#
+$MODULE LEDV
+Li LEDV
+Cd Led verticale diam 6mm
+Kw LED DEV
 $EndMODULE
 #
 $EndLIBDOC

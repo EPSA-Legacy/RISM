@@ -1,3 +1,9 @@
-PCBNEW-LibDoc----V1  11/01/2012 19:44:44
+PCBNEW-LibDoc----V1  28/01/2012 21:23:18
+#
+$MODULE M3_hole
+Li M3_hole
+Cd module 1 pin (ou trou mecanique de percage)
+Kw DEV
+$EndMODULE
 #
 $EndLIBDOC

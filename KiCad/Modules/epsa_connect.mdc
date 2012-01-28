@@ -1,22 +1,4 @@
-PCBNEW-LibDoc----V1  11/01/2012 19:45:33
-#
-$MODULE KK_2
-Li KK_2
-Cd Connecteurs 2 pins
-Kw CONN DEV
-$EndMODULE
-#
-$MODULE KK_4
-Li KK_4
-Cd Connecteurs 2 pins
-Kw CONN DEV
-$EndMODULE
-#
-$MODULE KK_8
-Li KK_8
-Cd Connecteurs 2 pins
-Kw CONN DEV
-$EndMODULE
+PCBNEW-LibDoc----V1  28/01/2012 21:15:20
 #
 $MODULE KK_8C
 Li KK_8C
@@ -42,10 +24,52 @@ Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
 $EndMODULE
 #
+$MODULE KK_2
+Li KK_2
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_4
+Li KK_4
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
+$MODULE KK_8
+Li KK_8
+Cd Connecteurs 2 pins
+Kw CONN DEV
+$EndMODULE
+#
 $MODULE KK_16
 Li KK_16
 Cd Connecteurs 2 pins
 Kw CONN DEV
+$EndMODULE
+#
+$MODULE he10-10df
+Li he10-10df
+Cd Connecteur HE10 10 contacts droit femelle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-10dm
+Li he10-10dm
+Cd Connecteur HE10 10 contacts droit mâle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-16df
+Li he10-16df
+Cd Connecteur HE10 16 contacts droit femelle
+Kw CONN HE10
+$EndMODULE
+#
+$MODULE he10-16dm
+Li he10-16dm
+Cd Connecteur HE10 16 contacts droit mâle
+Kw CONN HE10
 $EndMODULE
 #
 $EndLIBDOC
