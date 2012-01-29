@@ -1,210 +1,423 @@
-# EESchema Netlist Version 1.1 created  11/01/2012 14:54:46
+# EESchema Netlist Version 1.1 created  28/01/2012 22:34:57
 (
- ( /4B2128A5 C1 C5 27p
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F241D6A $noname  R1 1K {Lib=R}
+  (    1 VCC )
+  (    2 N-000046 )
  )
- ( /4B2128A6 C1V5 C6 1u
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F241D4E $noname  P1 TEMOIN {Lib=CONN_2}
+  (    1 N-000046 )
+  (    2 GND )
  )
- ( /453CA280 C1 C7 27p
-  ( 1 N-000032 )
-  ( 2 GND )
+ ( /4F0B2A7E $noname  U6 TMH_1205S {Lib=TMH_1205S}
+  (    1 +12V )
+  (    2 GND )
+  (    4 GND )
+  (    6 VCC )
  )
- ( /453CA28F C1 C8 27p
-  ( 1 N-000031 )
-  ( 2 GND )
+ ( /4F241B5F $noname  P6 ALIM21 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF24243 C1V5 C9 1u
-  ( 1 N-000012 )
-  ( 2 N-000011 )
+ ( /4F241B5E $noname  P7 ALIM22 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF24244 C1V5 C10 1u
-  ( 1 N-000014 )
-  ( 2 N-000013 )
+ ( /4F241B5D $noname  P8 ALIM23 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4B21289C C1V5 C11 1u
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F241B29 $noname  P4 ALIM13 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4B21289B C1 C12 27p
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F241B27 $noname  P3 ALIM12 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF24246 C1V5 C13 1u
-  ( 1 N-000010 )
-  ( 2 VCC )
+ ( /4F241B25 $noname  P2 ALIM11 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF24245 C1V5 C14 1u
-  ( 1 GND )
-  ( 2 N-000015 )
+ ( /4F0B2A4F $noname  C17 27p {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF244DE C1 C15 27p
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F0B2A4E $noname  C18 100u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4BF244D6 C1V5 C16 1u
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F0B2A4C $noname  D1 RED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000047 )
  )
- ( /4F0B2A4F C1 C17 27p
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4F0B2A48 $noname  C20 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
  )
- ( /4F0B2A4E C1V5 C18 100u
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4F0B2A47 $noname  C19 10u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
  )
- ( /4F0B2A47 C1V5 C19 10u
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4F0B2A46 $noname  R4 1K {Lib=R}
+  (    1 N-000047 )
+  (    2 GND )
  )
- ( /4F0B2A48 C1 C20 27p
-  ( 1 VCC )
-  ( 2 GND )
+ ( /4D04E109 $noname  MECA3 5mm {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4F0B2A4C LEDV D1 RED
-  ( 1 VCC )
-  ( 2 N-000043 )
+ ( /4D04E103 $noname  MECA2 5mm {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4CFE6D2D KK_4C K1 RS232
-  ( 1 N-000007 )
-  ( 2 N-000006 )
-  ( 3 GND )
+ ( /4D04E0EC $noname  MECA1 5mm {Lib=CONN_1}
+  (    1 ? )
  )
- ( /4D04E0EC 1pin MECA1 5mm
-  ( 1 ? )
+ ( /4CFE7057 $noname  U5 PIC18F258 {Lib=PIC18F258}
+  (    1 /Mclr )
+  (    2 /RA0 )
+  (    3 /RA1 )
+  (    4 /RA2 )
+  (    5 /RA3 )
+  (    6 /RA4 )
+  (    7 /RA5 )
+  (    8 GND )
+  (    9 N-000032 )
+  (   10 N-000031 )
+  (   11 /RC0 )
+  (   12 /RC1 )
+  (   13 /RC2 )
+  (   14 /RC3 )
+  (   15 /RC4 )
+  (   16 /RC5 )
+  (   17 /TX )
+  (   18 /RX )
+  (   19 GND )
+  (   20 VCC )
+  (   21 /RB0 )
+  (   22 /RB1 )
+  (   23 /CANTX )
+  (   24 /CANRX )
+  (   25 ? )
+  (   26 /RB5 )
+  (   27 /RB6 )
+  (   28 /RB7 )
  )
- ( /4D04E103 1pin MECA2 5mm
-  ( 1 ? )
+ ( /4CFE6DE3 $noname  P9 CAN2 {Lib=CONN_2}
+  (    1 /CANL )
+  (    2 /CANH )
  )
- ( /4D04E109 1pin MECA3 5mm
-  ( 1 ? )
+ ( /4CFE6DC8 $noname  P5 CAN1 {Lib=CONN_2}
+  (    1 /CANL )
+  (    2 /CANH )
  )
- ( /4CFE6387 he10-10dm-3d MEZZA1 MEZZA-10
-  ( 1 /RA0 )
-  ( 2 /RA1 )
-  ( 3 /RA4 )
-  ( 4 /RA5 )
-  ( 5 /RB0 )
-  ( 6 /RB1 )
-  ( 7 /RC2 )
-  ( 8 +12V )
-  ( 9 VCC )
-  ( 10 GND )
+ ( /4CFE6D2D $noname  K1 RS232 {Lib=CONN_3}
+  (    1 N-000041 )
+  (    2 N-000017 )
+  (    3 GND )
  )
- ( /4CFE638A he10-10dm-3d MEZZA2 MEZZA-10
-  ( 1 /RA2 )
-  ( 2 /RA3 )
-  ( 3 /RC0 )
-  ( 4 /RC1 )
-  ( 5 /RC3 )
-  ( 6 /RC4 )
-  ( 7 /RC5 )
-  ( 8 +12V )
-  ( 9 VCC )
-  ( 10 GND )
+ ( /4B2790FC $noname  R3 47K {Lib=R}
+  (    1 /Mclr )
+  (    2 VCC )
  )
- ( /4CFE6DC8 KK_2C P2 CAN1
-  ( 1 /CANL )
-  ( 2 /CANH )
+ ( /4CFE638A $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /RA2 )
+  (    2 /RA3 )
+  (    3 /RC0 )
+  (    4 /RC1 )
+  (    5 /RC3 )
+  (    6 /RC4 )
+  (    7 /RC5 )
+  (    8 +12V )
+  (    9 VCC )
+  (   10 GND )
  )
- ( /4CFE6DE3 KK_2C P3 CAN2
-  ( 1 /CANL )
-  ( 2 /CANH )
+ ( /4CFE6387 $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /RA0 )
+  (    2 /RA1 )
+  (    3 /RA4 )
+  (    4 /RA5 )
+  (    5 /RB0 )
+  (    6 /RB1 )
+  (    7 /RC2 )
+  (    8 +12V )
+  (    9 VCC )
+  (   10 GND )
  )
- ( /4F0B2A49 KK_2C P4 ALIM
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4BF244DE $noname  C15 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
  )
- ( /4B27919F R3 R2 1K
-  ( 1 GND )
-  ( 2 N-000039 )
+ ( /4BF244D6 $noname  C16 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
  )
- ( /4B2790FC R3 R3 47K
-  ( 1 /Mclr )
-  ( 2 VCC )
+ ( /4BF24246 $noname  C13 1u {Lib=CAPAPOL}
+  (    1 N-000010 )
+  (    2 VCC )
  )
- ( /4F0B2A46 R3 R4 1K
-  ( 1 N-000043 )
-  ( 2 GND )
+ ( /4BF24245 $noname  C14 1u {Lib=CAPAPOL}
+  (    1 GND )
+  (    2 N-000009 )
  )
- ( /47B197F8 DIP-8__300_ELL U2 CAN_MCP2551
-  ( 1 /CANTX )
-  ( 2 GND )
-  ( 3 VCC )
-  ( 4 /CANRX )
-  ( 5 GND )
-  ( 6 /CANL )
-  ( 7 /CANH )
-  ( 8 N-000039 )
+ ( /4BF24244 $noname  C10 1u {Lib=CAPAPOL}
+  (    1 N-000008 )
+  (    2 N-000007 )
  )
- ( /453CACE9 RJ12_V_3D U3 ICD
-  ( 1 /Mclr )
-  ( 2 VCC )
-  ( 3 GND )
-  ( 4 /RB7 )
-  ( 5 /RB6 )
-  ( 6 /RB5 )
+ ( /4BF24243 $noname  C9 1u {Lib=CAPAPOL}
+  (    1 N-000006 )
+  (    2 N-000005 )
  )
- ( /4BF24242 DIP-16__300_ELL U4 MAX232
-  ( 1 N-000012 )
-  ( 2 N-000010 )
-  ( 3 N-000011 )
-  ( 4 N-000014 )
-  ( 5 N-000013 )
-  ( 6 N-000015 )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 ? )
-  ( 10 ? )
-  ( 11 /TX )
-  ( 12 /RX )
-  ( 13 N-000007 )
-  ( 14 N-000006 )
-  ( 15 GND )
-  ( 16 VCC )
+ ( /4BF24242 $noname  U4 MAX232 {Lib=MAX232}
+  (    1 N-000006 )
+  (    2 N-000010 )
+  (    3 N-000005 )
+  (    4 N-000008 )
+  (    5 N-000007 )
+  (    6 N-000009 )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 /TX )
+  (   12 /RX )
+  (   13 N-000041 )
+  (   14 N-000017 )
+  (   15 GND )
+  (   16 VCC )
  )
- ( /4CFE7057 DIP-28__300_ELL U5 PIC18F258
-  ( 1 /Mclr )
-  ( 2 /RA0 )
-  ( 3 /RA1 )
-  ( 4 /RA2 )
-  ( 5 /RA3 )
-  ( 6 /RA4 )
-  ( 7 /RA5 )
-  ( 8 GND )
-  ( 9 N-000032 )
-  ( 10 N-000031 )
-  ( 11 /RC0 )
-  ( 12 /RC1 )
-  ( 13 /RC2 )
-  ( 14 /RC3 )
-  ( 15 /RC4 )
-  ( 16 /RC5 )
-  ( 17 /TX )
-  ( 18 /RX )
-  ( 19 GND )
-  ( 20 VCC )
-  ( 21 /RB0 )
-  ( 22 /RB1 )
-  ( 23 /CANTX )
-  ( 24 /CANRX )
-  ( 25 ? )
-  ( 26 /RB5 )
-  ( 27 /RB6 )
-  ( 28 /RB7 )
+ ( /4B27919F $noname  R2 1K {Lib=R}
+  (    1 GND )
+  (    2 N-000045 )
  )
- ( /4F0B2A7E TMH_1205S U6 TMH_1205S
-  ( 1 +12V )
-  ( 2 GND )
-  ( 4 GND )
-  ( 6 VCC )
+ ( /4B2128A6 $noname  C6 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
  )
- ( /453CA252 HC-18UV X1 10M
-  ( 1 N-000032 )
-  ( 2 N-000031 )
+ ( /4B2128A5 $noname  C5 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4B21289C $noname  C11 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4B21289B $noname  C12 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /47B197F8 $noname  U2 MCP2551 {Lib=CAN_MCP2551}
+  (    1 /CANTX )
+  (    2 GND )
+  (    3 VCC )
+  (    4 /CANRX )
+  (    5 GND )
+  (    6 /CANL )
+  (    7 /CANH )
+  (    8 N-000045 )
+ )
+ ( /453CACE9 $noname  U3 ICD {Lib=CNT_RJ12}
+  (    1 /Mclr )
+  (    2 VCC )
+  (    3 GND )
+  (    4 /RB7 )
+  (    5 /RB6 )
+  (    6 /RB5 )
+ )
+ ( /453CA28F $noname  C8 27p {Lib=C}
+  (    1 N-000031 )
+  (    2 GND )
+ )
+ ( /453CA280 $noname  C7 27p {Lib=C}
+  (    1 N-000032 )
+  (    2 GND )
+ )
+ ( /453CA252 $noname  X1 10M {Lib=CRYSTAL}
+  (    1 N-000032 )
+  (    2 N-000031 )
  )
 )
 *
+{ Pin List by Nets
+Net 3 "+12V" "+12V"
+ C18 1
+ C17 1
+ P2 1
+ P3 1
+ P4 1
+ P8 1
+ U6 1
+ P7 1
+ MEZZA1 8
+ P6 1
+ MEZZA2 8
+Net 5 "" ""
+ U4 3
+ C9 2
+Net 6 "" ""
+ U4 1
+ C9 1
+Net 7 "" ""
+ U4 5
+ C10 2
+Net 8 "" ""
+ C10 1
+ U4 4
+Net 9 "" ""
+ C14 2
+ U4 6
+Net 10 "" ""
+ C13 1
+ U4 2
+Net 11 "VCC" "VCC"
+ U2 3
+ U4 16
+ U3 2
+ C12 1
+ C11 1
+ C5 1
+ C6 1
+ D1 1
+ C15 1
+ C16 1
+ C13 2
+ MEZZA2 9
+ MEZZA1 9
+ U5 20
+ C20 1
+ C19 1
+ R1 1
+ U6 6
+ R3 2
+Net 17 "" ""
+ U4 14
+ K1 2
+Net 18 "/CANL" "CANL"
+ U2 6
+ P5 1
+ P9 1
+Net 19 "/CANH" "CANH"
+ P9 2
+ P5 2
+ U2 7
+Net 20 "/RB7" "RB7"
+ U5 28
+ U3 4
+Net 21 "/CANRX" "CANRX"
+ U5 24
+ U2 4
+Net 22 "/CANTX" "CANTX"
+ U5 23
+ U2 1
+Net 23 "/RC3" "RC3"
+ MEZZA2 5
+ U5 14
+Net 24 "/RC4" "RC4"
+ MEZZA2 6
+ U5 15
+Net 25 "/RC5" "RC5"
+ MEZZA2 7
+ U5 16
+Net 26 "/RA0" "RA0"
+ U5 2
+ MEZZA1 1
+Net 27 "/RA1" "RA1"
+ MEZZA1 2
+ U5 3
+Net 28 "/RA2" "RA2"
+ MEZZA2 1
+ U5 4
+Net 29 "/RA3" "RA3"
+ MEZZA2 2
+ U5 5
+Net 30 "/RA5" "RA5"
+ U5 7
+ MEZZA1 4
+Net 31 "" ""
+ U5 10
+ X1 2
+ C8 1
+Net 32 "" ""
+ C7 1
+ X1 1
+ U5 9
+Net 33 "/RB6" "RB6"
+ U3 5
+ U5 27
+Net 34 "/Mclr" "Mclr"
+ U3 1
+ U5 1
+ R3 1
+Net 35 "/RB5" "RB5"
+ U3 6
+ U5 26
+Net 36 "/RC0" "RC0"
+ U5 11
+ MEZZA2 3
+Net 37 "/RC2" "RC2"
+ MEZZA1 7
+ U5 13
+Net 38 "/RC1" "RC1"
+ U5 12
+ MEZZA2 4
+Net 39 "/RB0" "RB0"
+ MEZZA1 5
+ U5 21
+Net 40 "/RA4" "RA4"
+ U5 6
+ MEZZA1 3
+Net 41 "" ""
+ U4 13
+ K1 1
+Net 42 "/RX" "RX"
+ U4 12
+ U5 18
+Net 43 "/TX" "TX"
+ U4 11
+ U5 17
+Net 44 "/RB1" "RB1"
+ U5 22
+ MEZZA1 6
+Net 45 "" ""
+ U2 8
+ R2 2
+Net 46 "" ""
+ R1 2
+ P1 1
+Net 47 "" ""
+ R4 1
+ D1 2
+Net 48 "GND" "GND"
+ C16 2
+ C15 2
+ U3 3
+ P7 2
+ P8 2
+ P4 2
+ C7 2
+ R2 1
+ MEZZA2 10
+ C8 2
+ U2 2
+ C6 2
+ C5 2
+ C11 2
+ C12 2
+ MEZZA1 10
+ C14 1
+ P1 2
+ U6 2
+ U6 4
+ P6 2
+ K1 3
+ U2 5
+ P3 2
+ P2 2
+ C17 2
+ C18 2
+ C20 2
+ C19 2
+ R4 2
+ U5 8
+ U5 19
+ U4 15
+}
+#End
