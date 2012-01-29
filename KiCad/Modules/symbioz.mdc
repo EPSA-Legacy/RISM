@@ -1,4 +1,4 @@
-PCBNEW-LibDoc----V1  28/01/2012 21:18:09
+PCBNEW-LibDoc----V1  29/01/2012 21:05:40
 #
 $MODULE C2V8
 Li C2V8
@@ -48,16 +48,16 @@ Cd Condensateur = 2 pas
 Kw C
 $EndMODULE
 #
-$MODULE C1V5
-Li C1V5
-Cd Condensateur e = 1 pas
-Kw C
-$EndMODULE
-#
 $MODULE LEDV
 Li LEDV
 Cd Led verticale diam 6mm
 Kw LED DEV
+$EndMODULE
+#
+$MODULE C1V5
+Li C1V5
+Cd Condensateur e = 1 pas
+Kw C
 $EndMODULE
 #
 $EndLIBDOC

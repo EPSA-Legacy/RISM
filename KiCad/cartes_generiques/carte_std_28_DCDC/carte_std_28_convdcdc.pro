@@ -1,4 +1,4 @@
-update=29/01/2012 02:27:32
+update=29/01/2012 21:22:19
 version=1
 last_client=pcbnew
 [general]
@@ -94,7 +94,7 @@ VEgarde=0
 DrawLar=150
 EdgeLar=150
 TxtLar=120
-MSegLar=150
+MSegLar=100
 LastNetListRead=carte_std_28_convdcdc.net
 [pcbnew/libraries]
 LibDir=../../Modules;..\\..\\Modules\\old
