@@ -101,7 +101,49 @@
 #define TRACE_ACC			0		// Permet de suivre la position de la pédale acquise grâce à la carte pédalier
 
 
+//////////////////////////////////////////////////////////
+//				Définition des macros de log		    //
+//////////////////////////////////////////////////////////
+
+// How-to :
+//	loglevel : Niveau de log à partir duquel le message sera affiché (paramètre de configuration
+//	currentlevel : Niveau de log courant qui est géré au niveau du fichier.c
+//	trace_cond : Condition écrite exclusivement avec des variables de type TRACE_XXX pour pouvoir configurer les messages de log
+//	message : Message à afficher lorsque l'instruction est exécuté
+//	value : valeur du paramètre à afficher. Un semblant de généricité est réalisé en changeant le nom de la macro
 
 
-
-
+#define LOG(loglevel,currentlevel,trace_cond,message,sec,ms) { 						\
+		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
+			printf("[%Lu] - %s",sec*1000+ms,message);								\
+		#endif																		\
+		}																			\
+		
+		
+#define LOGD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
+		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
+			printf("[%Lu] - %s - %d",sec*1000+ms,message,value);					\
+		#endif																		\
+		}																			\
+		
+#define LOGU(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
+		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
+			printf("[%Lu] - %s - %u",sec*1000+ms,message,value);					\
+		#endif																		\
+		}																			\
+		
+#define LOGLD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
+		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
+			printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);					\
+		#endif																		\
+		}																			\
+		
+#define LOGLU(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
+		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
+			printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);					\
+		#endif																		\
+		}																			\
+		
+																				
+																				
+	
