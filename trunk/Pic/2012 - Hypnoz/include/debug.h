@@ -117,32 +117,32 @@
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
 			printf("[%Lu] - %s",sec*1000+ms,message);								\
 		#endif																		\
-		}																			\
+		}																			
 		
 		
 #define LOGD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
 			printf("[%Lu] - %s - %d",sec*1000+ms,message,value);					\
 		#endif																		\
-		}																			\
+		}																			
 		
 #define LOGU(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
 			printf("[%Lu] - %s - %u",sec*1000+ms,message,value);					\
 		#endif																		\
-		}																			\
+		}																			
 		
 #define LOGLD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
 			printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);					\
 		#endif																		\
-		}																			\
+		}																			
 		
 #define LOGLU(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
 			printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);					\
 		#endif																		\
-		}																			\
+		}																			
 		
 																				
 																				
