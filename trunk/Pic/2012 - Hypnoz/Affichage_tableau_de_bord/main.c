@@ -1,16 +1,17 @@
-/////////////////////////////////////////////////////////////////
-//															   //
-//					Ecurie Piston Sport Auto                   //
-//                                                             //
-//                       Hypnoz 2012                           //
-//                                                             //
-//		Carte Affichage Tableau de bord                        //
-//		Version 1.00  - BLD - 29/11/2011                       //
-//		Version 1.01  - BLD - 18/12/2011 -> recalibrage timer  //
-//      													   //    
-//	    												       //
-//			                                                   //
-/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+//															                   //
+//					Ecurie Piston Sport Auto                                   //
+//                                                                             //
+//                       Hypnoz 2012                                           //
+//                                                                             //
+//		Carte Affichage Tableau de bord                                        //
+//		Version 1.00  - BLD - 29/11/2011                                       //
+//		Version 1.01  - BLD - 18/12/2011 -> recalibrage timer                  //
+//		Version 1.02  - BLD - 07/02/2012 -> affichage RPM+charge sur bargraphe //
+//      													                   //    
+//	    												                       //
+//			                                                                   //
+/////////////////////////////////////////////////////////////////////////////////
 
 #include <18F4580.h>
 #include <can-18xxx8.c>
@@ -93,7 +94,9 @@ unsigned int16 ms=0;                           // les ms du uptime compté à l'ai
 unsigned int16 sec=0;                          // contient les secondes du uptime
 unsigned int16 rolling_ms=0;				   // variable contenant le temps depuis la dernière rotation d'affichage
 unsigned int1 displaymode=0;                   // variable permettant de savoir si l'on affiche la vitesse ou l'écran de démonstration HYPNOZ
-int8 speed=0;								   // variable contenant la vitesse courante en km/h.
+unsigned int16 speed=0;						   // variable contenant la vitesse courante en km/h.
+unsigned int16 rpm=0;						   // variable contenant le régime moteur en rpm (compris entre 0 à 6000 tr/min
+unsigned int16 charge=0;					   // variable contenant la charge des supercapacités en Volt
 int8 index=0;								   // variable contenant la position courante pour l'affichage déroulant
 int8 indexbar=0;							   // variable contenant le niveau courant des bargraphes dans le mode présentation
 int16 tmp=0;						           // variable temporaire
@@ -112,6 +115,12 @@ void displaynum2seg(int,int);
 
 #inline
 void displaynum2bar(int,int);
+
+#inline
+int convertrpm2bar(unsigned int16);
+
+#inline
+int convertcharge2bar(unsigned int16);
 
 
 // Méthode d'interruption du timer 2
@@ -192,6 +201,16 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 					speed=rxData[0];			   // On change met à jour la vitesse du véhicule
 					break;
 				}
+				case ENGINE_RPM:
+				{
+					rpm=rxData[0];
+					break;
+				}
+				case VOLTAGE_DATA:
+				{
+					rpm=rxData[4];
+					break;
+				}
 			}
 			#ifdef TRACE
 			restart_wdt();
@@ -224,6 +243,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	int8 dizaine=0;	                              // contient le chiffre des dizaines de la vitesse
 	int8 centaine=0;	                          // contient le chiffre des centaines de la vitesse
 	int8 message[MESSAGELENGTH];                  // contient l'odre d'affichage des lettres
+	int nblevel=0;								  // contient le nombre de niveau du bargraphe à afficher
 	int8 i=0;
 
 
@@ -243,8 +263,14 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		displaynum2seg(unite,SEGMENT1);
 		displaynum2seg(dizaine,SEGMENT2);
 		displaynum2seg(centaine,SEGMENT3);
-		displaynum2bar(5,BARAGRAPHE1);
-		displaynum2bar(4,BARAGRAPHE2);
+
+		// Gestion de l'affichage du régime moteur
+		nblevel=convertrpm2bar(rpm);
+		displaynum2bar(nblevel,BARAGRAPHE1);
+
+		// Gestion de la charge des supercapacités
+		nblevel=convertcharge2bar(charge);
+		displaynum2bar(nblevel,BARAGRAPHE2);
 	}
 	else if(displaymode==DISPLAYSHOW)			 // Si l'on souhaite afficher le nom du véhicule
 	{
@@ -925,4 +951,109 @@ void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les
 	{
 		output_bit(SELBAR2,1);
 	}
+}
+
+
+// Fonction convertissant le régime moteur en le bon nombre de niveau de bargraphe correspondant
+int convertrpm2bar(unsigned int16 regime)
+{
+	if(regime<100)
+	{
+		return 0;
+	}
+	else if(regime >=100 && regime<600)
+	{
+		return 1;
+	}
+	else if (regime>=600 && regime<1200)
+	{
+		return 2;
+	}
+	else if (regime>=1200 && regime<1800)
+	{
+		return 3;
+	}
+	else if (regime>=1800 && regime<2400)
+	{
+		return 4;
+	}
+	else if (regime>=2400 && regime<3000)
+	{
+		return 5;
+	}
+	else if (regime>=3000 && regime<3600)
+	{
+		return 6;
+	}
+	else if (regime>=3600 && regime<4200)
+	{
+		return 7;
+	}
+	else if (regime>=4200 && regime<4800)
+	{
+		return 8;
+	}
+	else if (regime>=4800 && regime<5400)
+	{
+		return 9;
+	}
+	else if (regime>=5400 && regime<8000)
+	{
+		return 10;
+	}
+	else										// si le régime moteur dépasse les 8000 tours ont met le bargraphe en erreur afin de signaler le pb
+		return 11;
+}
+
+
+
+// Fonction convertissant le régime moteur en le bon nombre de niveau de bargraphe correspondant
+int convertcharge2bar(unsigned int16 charge)
+{
+	if(charge<2)
+	{
+		return 0;
+	}
+	else if(charge >=2 &&  charge<25)
+	{
+		return 1;
+	}
+	else if (charge>=25 &&  charge<50)
+	{
+		return 2;
+	}
+	else if (charge>=50 &&  charge<75)
+	{
+		return 3;
+	}
+	else if (charge>=75 &&  charge<100)
+	{
+		return 4;
+	}
+	else if (charge>=100 &&  charge<125)
+	{
+		return 5;
+	}
+	else if (charge>=125&&  charge<150)
+	{
+		return 6;
+	}
+	else if (charge>=150 &&  charge<175)
+	{
+		return 7;
+	}
+	else if (charge>=175 &&  charge<200)
+	{
+		return 8;
+	}
+	else if (charge>=200&&  charge<225)
+	{
+		return 9;
+	}
+	else if (charge>=225 &&  charge<275)
+	{
+		return 10;
+	}
+	else										// si le régime moteur dépasse les 275 Volts  ont met le bargraphe en erreur afin de signaler le pb
+		return 11;
 }
