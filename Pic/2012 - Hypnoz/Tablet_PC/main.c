@@ -37,8 +37,7 @@
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int32 sec=0;                          // contient les secondes du uptime
-unsigned int32 tmp=0;						   // variable temporaire
-int flag_handshake=0;						   // flag de handshake vaut 1 si le tablet pc est connecté 0 sinon							
+unsigned int32 tmp=0;						   // variable temporaire						
 
 
 // Prototypes de fonctions
