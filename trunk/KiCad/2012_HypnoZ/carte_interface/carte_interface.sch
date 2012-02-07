@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 24/01/2012 22:46:08
+EESchema Schematic File Version 2  date 07/02/2012 15:38:36
 LIBS:epsa_cmos
 LIBS:epsa_relais
 LIBS:symbioz
@@ -39,7 +39,7 @@ $Descr A2 23400 16535
 encoding utf-8
 Sheet 1 1
 Title "EPSA - Hypnoz"
-Date "24 jan 2012"
+Date "7 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -47,6 +47,24 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 18500 10100
+NoConn ~ 18500 10000
+NoConn ~ 18500 9900
+$Comp
+L CONN_1 P31
+U 1 1 4F313743
+P 18650 10100
+F 0 "P31" H 18730 10100 40  0000 L CNN
+F 1 "CONN_1" H 18650 10155 30  0001 C CNN
+	1    18650 10100
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	19200 10200 18200 10200
+Wire Notes Line
+	19200 10200 19200 9700
+Wire Notes Line
+	19200 9700 18200 9700
 Wire Wire Line
 	3750 1650 3500 1650
 Wire Wire Line
@@ -1364,6 +1382,28 @@ Wire Wire Line
 	3500 1950 3750 1950
 Wire Wire Line
 	3500 1750 3750 1750
+Wire Notes Line
+	18200 9700 18200 10200
+Text Notes 18300 9800 0    60   ~ 0
+Trous mécaniques
+$Comp
+L CONN_1 P30
+U 1 1 4F3136EC
+P 18650 10000
+F 0 "P30" H 18730 10000 40  0000 L CNN
+F 1 "CONN_1" H 18650 10055 30  0001 C CNN
+	1    18650 10000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P29
+U 1 1 4F3136E7
+P 18650 9900
+F 0 "P29" H 18730 9900 40  0000 L CNN
+F 1 "CONN_1" H 18650 9955 30  0001 C CNN
+	1    18650 9900
+	1    0    0    -1  
+$EndComp
 Text Label 3500 1950 0    60   ~ 0
 ERR_2
 Text Label 3500 1850 0    60   ~ 0

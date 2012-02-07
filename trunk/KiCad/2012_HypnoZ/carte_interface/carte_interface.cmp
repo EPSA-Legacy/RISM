@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 24/01/2012 14:55:18
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 07/02/2012 15:40:15
 
 BeginCmp
 TimeStamp = /4EC8E707;
@@ -505,6 +505,27 @@ IdModule  = KK_2;
 EndCmp
 
 BeginCmp
+TimeStamp = /4F3136E7;
+Reference = P29;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3136EC;
+Reference = P30;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F313743;
+Reference = P31;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
 TimeStamp = /4EE75C35;
 Reference = R1;
 ValeurCmp = 1k;
@@ -981,35 +1002,35 @@ IdModule  = TO39;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F0C5742;
+TimeStamp = /4EDE2A07;
 Reference = U4;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F0C5776;
+TimeStamp = /4F0C5742;
 Reference = U5;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F0C5775;
+TimeStamp = /4F0C5776;
 Reference = U6;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDE2B70;
+TimeStamp = /4EDE2B63;
 Reference = U7;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDE2B68;
+TimeStamp = /4EDE2B70;
 Reference = U8;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
