@@ -8,6 +8,7 @@
 //		Version 1.00 - BLD - 24/10/2011                        //
 //		Version 1.01 - BLD - 29/11/2011 -> Trace mode          //
 //		Version 1.02 - BLD - 18/12/2011 -> recalibrage timer   //
+//		Version 1.03 - BLD - 07/02/2012 -> protocole tablet PC //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
@@ -30,11 +31,14 @@
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
+#define INIT_TRAME_DESCRIPTOR 255
+
 // Variables globales
 
 unsigned int16 ms=0;                           // les ms du uptime compté à l'aide de tmr2
 unsigned int32 sec=0;                          // contient les secondes du uptime
 unsigned int32 tmp=0;						   // variable temporaire
+int flag_handshake=0;						   // flag de handshake vaut 1 si le tablet pc est connecté 0 sinon							
 
 
 // Prototypes de fonctions
@@ -86,6 +90,7 @@ void main()
     #endif
 
 
+
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
@@ -108,13 +113,12 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 	{
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 		{
-			tmp=ms+1000*sec;
-			printf("/r/n [%Lu] - ID=%u - LEN=%u - DATA=",tmp,rxId,rxLen); //on envoie le message sur le bus série
+			putc(255);							   // on envoie le message de début de trame
+			putc(rxId);							   // on envoie l'ID
 			for(i=0;i<rxLen;i++)
 			{
-				printf("%c",rxData[i]);
+				putc(rxData[i]);				   // on envoie les données si besoin
 			}
-			printf("/r/n");
 
 			#ifdef TRACE_CAN
 				tmp=ms+1000*sec;
