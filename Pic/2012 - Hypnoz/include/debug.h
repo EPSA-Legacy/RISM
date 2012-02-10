@@ -49,6 +49,12 @@
 	#define RUN 0					// Aucun message n'est affiché (mode réservé pour la course)
 #endif
 
+//////////////////////////////////////////
+// Définition du niveau de log courant  //
+//////////////////////////////////////////
+
+#define CURRENT_LOG_LEVEL WARN
+
 //////////////////////////////////////////////////////////
 // Définition des constantes des paramètres de trace	//
 //////////////////////////////////////////////////////////
@@ -58,7 +64,7 @@
 #define TRACE_ALL_LIGHT		0		// Permet de suivre l'état de tous les feux avant et arrières
 #define TRACE_ALL_LIGHT_R	0		// Permet de suivre l'état de tous les feux arrières
 #define TRACE_ALL_LIGHT_F	0		// Permet de suivre l'état de tous les feux avant
-#define TRACE_ALL_CMD		0		// Permer de suivre l'état de toutes les commandes du tableau de bord
+#define TRACE_ALL_CMD		1		// Permer de suivre l'état de toutes les commandes du tableau de bord
 #define TRACE_PEDAL			0		// Permet de suivre l'intégralité des information issues de la carte pédalier.
 #define TRACE_CAN			0		// Permet d'afficher les données du CAN
 // Carte Acquisition
@@ -75,7 +81,6 @@
 #define TRACE_BLINK_BACK	0		// Permet de suivre l'état des clignotants
 #define TRACE_BLINK_RB		0		// Permet de suivre l'état des clignotants arrières droits
 #define TRACE_BLINK_LB		0		// Permet de suivre l'état des clignotants arrières gauches
-#define TRACE_BLINK_BACK	0		//¨Permet de suivre l'état des clignotants arrières en général
 // Carte Moteur
 #define TRACE_RPM			0		// Permet de suivre le régime moteur mesuré par la carte moteur
 // Carte Tableau de Bord
@@ -91,7 +96,6 @@
 #define TRACE_BLINK_FRONT	0		// Permet de suivre l'état des clignotants
 #define TRACE_BLINK_RF		0		// Permet de suivre l'état des clignotants avant droits
 #define TRACE_BLINK_LF		0		// Permet de suivre l'état des clignotants avant gauches
-#define TRACE_BLINK_FRONT	0		//¨Permet de suivre l'état des clignotants avant en général
 #define TRACE_SPEED			0		// Permet de suivre la mesure des informations issues des capteurs vitesse
 #define TRACE_SPEED_L		0		// Permet de suivre les informations issues du capteur de vitesse gauche
 #define TRACE_SPEED_R		0		// Permet de suivre les informations issues du capteur de vitesse droit
@@ -105,6 +109,7 @@
 //				Définition des macros de log		    //
 //////////////////////////////////////////////////////////
 
+// #TODO : Rédiger un nouveau howto
 // How-to :
 //	loglevel : Niveau de log à partir duquel le message sera affiché (paramètre de configuration
 //	currentlevel : Niveau de log courant qui est géré au niveau du fichier.c
@@ -113,24 +118,429 @@
 //	value : valeur du paramètre à afficher. Un semblant de généricité est réalisé en changeant le nom de la macro
 
 
-#define LOG(loglevel,currentlevel,trace_cond,message,sec,ms) { 						\
-		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
-			printf("[%Lu] - %s",sec*1000+ms,message);								\
-		#endif																		\
-		}																			
+// Fonction de logging sans valeur à afficher 
+
+#ifndef LOG_DEBUG
+	#ifdef DEBUG
+	#if CURRENT_LOG_LEVEL>=DEBUG
+		#define LOG_DEBUG(trace_cond,message,sec,ms) {           \
+				if(trace_cond==true)				            \
+			 	{									            \
+					printf("[%Lu] - %s",sec*1000+ms,message);	\
+				}												\
+		}
+	#else
+		#define LOG_DEBUG(trace_cond,message,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_DEVELOPMENT
+	#ifdef DEVELOPMENT
+	#if CURRENT_LOG_LEVEL>=DEVELOPMENT
+		#define LOG_DEVELOPMENT(trace_cond,message,sec,ms) {           \
+				if(trace_cond==true)				            \
+			 	{									            \
+					printf("[%Lu] - %s",sec*1000+ms,message);	\
+				}												\
+		}
+	#else
+		#define LOG_DEVELOPMENT(trace_cond,message,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_TESTING
+	#ifdef TESTING
+	#if CURRENT_LOG_LEVEL>=TESTING
+		#define LOG_TESTING(trace_cond,message,sec,ms) {           \
+				if(trace_cond==true)				            \
+			 	{									            \
+					printf("[%Lu] - %s",sec*1000+ms,message);	\
+				}												\
+		}
+	#else
+		#define LOG_TESTING(trace_cond,message,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_WARN
+	#ifdef WARN
+	#if CURRENT_LOG_LEVEL>=WARN
+		#define LOG_WARN(trace_cond,message,sec,ms) {           \
+				if(trace_cond==true)				            \
+			 	{									            \
+					printf("[%Lu] - %s",sec*1000+ms,message);	\
+				}												\
+		}
+	#else
+		#define LOG_WARN(trace_cond,message,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_ERROR
+	#ifdef ERROR
+	#if CURRENT_LOG_LEVEL>=ERROR
+		#define LOG_ERROR(trace_cond,message,sec,ms) {           \
+				if(trace_cond==true)				            \
+			 	{									            \
+					printf("[%Lu] - %s",sec*1000+ms,message);	\
+				}												\
+		}
+	#else
+		#define LOG_ERROR(trace_cond,message,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Fonction de logging d'un signed int8 ou int
+
+#ifndef LOG_DEBUG_D
+	#ifdef DEBUG
+	#if CURRENT_LOG_LEVEL>=DEBUG
+		#define LOG_DEBUG_D(trace_cond,message,value,sec,ms) {              \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %d",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEBUG_D(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_DEVELOPMENT_D
+	#ifdef DEVELOPMENT
+	#if CURRENT_LOG_LEVEL>=DEVELOPMENT
+		#define LOG_DEVELOPMENT_D(trace_cond,message,value,sec,ms) {        \
+				if(trace_cond==true)				            			\
+			 	{									           			    \
+					printf("[%Lu] - %s - %d",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEVELOPMENT_D(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_TESTING_D
+	#ifdef TESTING
+	#if CURRENT_LOG_LEVEL>=TESTING
+		#define LOG_TESTING_D(trace_cond,message,value,sec,ms) {            \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %d",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_TESTING_D(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_WARN_D
+	#ifdef WARN
+	#if CURRENT_LOG_LEVEL>=WARN
+		#define LOG_WARN_D(trace_cond,message,value,sec,ms) {       	    \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %d",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_WARN_D(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_ERROR_D
+	#ifdef ERROR
+	#if CURRENT_LOG_LEVEL>=ERROR
+		#define LOG_ERROR_D(trace_cond,message,value,sec,ms) {          	\
+				if(trace_cond==true)				            			\	
+			 	{									            			\
+					printf("[%Lu] - %s - %d",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_ERROR_D(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Fonction de logging d'un unsigned int8 
+
+#ifndef LOG_DEBUG_UD
+	#ifdef DEBUG
+	#if CURRENT_LOG_LEVEL>=DEBUG
+		#define LOG_DEBUG_UD(trace_cond,message,value,sec,ms) {              \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %u",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEBUG_UD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_DEVELOPMENT_UD
+	#ifdef DEVELOPMENT
+	#if CURRENT_LOG_LEVEL>=DEVELOPMENT
+		#define LOG_DEVELOPMENT_UD(trace_cond,message,value,sec,ms) {        \
+				if(trace_cond==true)				            			\
+			 	{									           			    \
+					printf("[%Lu] - %s - %u",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEVELOPMENT_UD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_TESTING_UD
+	#ifdef TESTING
+	#if CURRENT_LOG_LEVEL>=TESTING
+		#define LOG_TESTING_UD(trace_cond,message,value,sec,ms) {            \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %u",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_TESTING_UD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_WARN_UD
+	#ifdef WARN
+	#if CURRENT_LOG_LEVEL>=WARN
+		#define LOG_WARN_UD(trace_cond,message,value,sec,ms) {       	    \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %u",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_WARN_UD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_ERROR_UD
+	#ifdef ERROR
+	#if CURRENT_LOG_LEVEL>=ERROR
+		#define LOG_ERROR_UD(trace_cond,message,value,sec,ms) {          	\
+				if(trace_cond==true)				            			\	
+			 	{									            			\
+					printf("[%Lu] - %s - %u",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_ERROR_UD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Fonction de logging d'un int32
+
+#ifndef LOG_DEBUG_LD
+	#ifdef DEBUG
+	#if CURRENT_LOG_LEVEL>=DEBUG
+		#define LOG_DEBUG_LD(trace_cond,message,value,sec,ms) {              \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEBUG_LD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_DEVELOPMENT_LD
+	#ifdef DEVELOPMENT
+	#if CURRENT_LOG_LEVEL>=DEVELOPMENT
+		#define LOG_DEVELOPMENT_LD(trace_cond,message,value,sec,ms) {        \
+				if(trace_cond==true)				            			\
+			 	{									           			    \
+					printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEVELOPMENT_LD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_TESTING_LD
+	#ifdef TESTING
+	#if CURRENT_LOG_LEVEL>=TESTING
+		#define LOG_TESTING_LD(trace_cond,message,value,sec,ms) {            \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_TESTING_LD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_WARN_LD
+	#ifdef WARN
+	#if CURRENT_LOG_LEVEL>=WARN
+		#define LOG_WARN_LD(trace_cond,message,value,sec,ms) {       	    \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_WARN_LD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_ERROR_LD
+	#ifdef ERROR
+	#if CURRENT_LOG_LEVEL>=ERROR
+		#define LOG_ERROR_LD(trace_cond,message,value,sec,ms) {          	\
+				if(trace_cond==true)				            			\	
+			 	{									            			\
+					printf("[%Lu] - %s - %Ld",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_ERROR_LD(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif 
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Fonction de logging d'un unsigned int32
+
+#ifndef LOG_DEBUG_LU
+	#ifdef DEBUG
+	#if CURRENT_LOG_LEVEL>=DEBUG
+		#define LOG_DEBUG_LU(trace_cond,message,value,sec,ms) {              \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEBUG_LU(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_DEVELOPMENT_LU
+	#ifdef DEVELOPMENT
+	#if CURRENT_LOG_LEVEL>=DEVELOPMENT
+		#define LOG_DEVELOPMENT_LU(trace_cond,message,value,sec,ms) {        \
+				if(trace_cond==true)				            			\
+			 	{									           			    \
+					printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_DEVELOPMENT_LU(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_TESTING_LU
+	#ifdef TESTING
+	#if CURRENT_LOG_LEVEL>=TESTING
+		#define LOG_TESTING_LU(trace_cond,message,value,sec,ms) {            \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_TESTING_LU(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_WARN_LU
+	#ifdef WARN
+	#if CURRENT_LOG_LEVEL>=WARN
+		#define LOG_WARN_LU(trace_cond,message,value,sec,ms) {       	    \
+				if(trace_cond==true)				            			\
+			 	{									            			\
+					printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_WARN_LU(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+
+
+#ifndef LOG_ERROR_LU
+	#ifdef ERROR
+	#if CURRENT_LOG_LEVEL>=ERROR
+		#define LOG_ERROR_LU(trace_cond,message,value,sec,ms) {          	\
+				if(trace_cond==true)				            			\	
+			 	{									            			\
+					printf("[%Lu] - %s - %Lu",sec*1000+ms,message,value);	\
+				}															\
+		}
+	#else
+		#define LOG_ERROR_LU(trace_cond,message,value,sec,ms) { }
+	#endif
+	#endif
+#endif
+/*																		
 		
-		
-#define LOGD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
-		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
-			printf("[%Lu] - %s - %d",sec*1000+ms,message,value);					\
-		#endif																		\
-		}																			
-		
-#define LOGU(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
-		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
-			printf("[%Lu] - %s - %u",sec*1000+ms,message,value);					\
-		#endif																		\
-		}																			
+																		
 		
 #define LOGLD(loglevel,currentlevel,trace_cond,message,value,sec,ms) { 				\
 		#if	((currentlevel>=loglevel)&&((trace_cond==1)||(current_level==DEBUG)))	\
@@ -144,6 +554,6 @@
 		#endif																		\
 		}																			
 		
-																				
+	*/																			
 																				
 	
