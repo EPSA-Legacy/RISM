@@ -10,6 +10,7 @@
 //      Version 1.02 - BLD - 27/11/2011 -> ADC non blocant     //
 //      Version 1.03 - BLD - 27/11/2011 -> Trace mode		   //
 //      Version 1.04 - BLD - 18/12/2011 -> recalibrage timer   //
+//		Version 1.05 - BLD - 11/02/2012 -> encapsulation debug //
 //                                                             //
 //      													   //
 /////////////////////////////////////////////////////////////////
@@ -17,6 +18,7 @@
 #include <18F4580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
+#include <debug.h>
 
 //#define CAN_USE_EXTENDED_ID         FALSE
 
@@ -50,20 +52,17 @@
 #define ADC_NB_CHANNEL			8              // Nombre de canaux différents utilisés sur le convertisseur A/N
 
 //Mode debug commenter la ligne pour l'enlever
-#define DEBUG 1
+/*#define DEBUG 1
 #define TRACE_ALL 1
 #define TRACE_TENSION 1
 #define TRACE_COURANT 1
 #define TRACE_MOT 1
 #define TRACE_SC 1
 #define TRACE_CONV 1
+*/
 #define TRACE_CAN 1
 
-#ifdef DEBUG
-	#fuses HS,NOPROTECT,NOLVP,NOWDT
-#else
-	#fuses HS,NOPROTECT,NOLVP,WDT
-#endif
+#fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
@@ -117,6 +116,7 @@ void adc_handler()
 void main()
 {
 	//initialisation du PIC
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	setup_adc(ADC_CLOCK_INTERNAL);            //le temps de conversion sera de2-6 µs cf include du PIC
 	setup_adc_ports(AN0_TO_AN6);              //on gère toutes les entrées A0,A1,A3,A4,A5,E0,E1 comme analogiques
 	set_adc_channel(TENSION_MOT1_CHANNEL);    //on se met sur la voie 0 par défaut
@@ -133,28 +133,13 @@ void main()
 	can_set_baud();					          //obsolète à priori à tester
 	restart_wdt();
 
-	#ifdef DEBUG
-	   // Mise en évidence d'un problème lié au Watchdog
-   	   switch ( restart_cause() )
-       {
-          case WDT_TIMEOUT:
-          {
-             printf("\r\nRestarted processor because of watchdog timeout!\r\n");
-             break;
-          }
-          case NORMAL_POWER_UP:
-          {
-             printf("\r\nNormal power up! PIC initialized \r\n");
-             break;
-          }
-       }
-       restart_wdt();
-    #endif
+	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
 
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
+		LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in working loop",sec,ms)
 		restart_wdt();
 		internalLogic();
 
@@ -168,7 +153,8 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 {
 	int16 data;
 	int8 channel_list[ADC_NB_CHANNEL];
-	int1 done;
+
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
 
 	// RQ : data contient le nombre de pas de mesure atteint par rapport à la tension de référence (ici 5V). 
 	// Le ADC marche sur 10 bits on a donc un pas de mesure de 4mV
@@ -195,81 +181,57 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 			case TENSION_MOT1_CHANNEL:
 			{
 				umot1=(int16)((data/205)*ku_mot);											 // umot1 est désormais en volt
-				#if (TRACE_MOT || TRACE_TENSION || TRACE_ALL)
-					restart_wdt();
-	 				tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Tension Mot 1 : %Ld V", tmp,umot1);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is now voltage motor 1",sec,ms)
+				LOG_TESTING_LD(TRACE_MOT || TRACE_TENSION || TRACE_ALL,"ADC INFO - Voltage Motor 1 ",umot1,sec,ms)
 				break;
 			}
 			case TENSION_MOT2_CHANNEL:
 			{
 				umot2=(int16)((data/205)*ku_mot);										     // umot2 est désormais en volt
-				#if (TRACE_MOT || TRACE_TENSION || TRACE_ALL)
-					restart_wdt();
-	 				tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Tension Mot 2 : %Ld V", tmp,umot2);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is now voltage motor 2",sec,ms)
+				LOG_TESTING_LD(TRACE_MOT || TRACE_TENSION || TRACE_ALL,"ADC INFO - Voltage Motor 2 ",umot2,sec,ms)
 				break;
 			}
 			case TENSION_SC_CHANNEL:
 			{
 				usc=(int16)((data/205)*ku_sc);											     // usc est désormais en volt
-				#if (TRACE_SC || TRACE_TENSION || TRACE_ALL)
-					restart_wdt();
-	 				tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Tension SC : %Ld V", tmp,usc);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is now supercapacity voltage",sec,ms)
+				LOG_TESTING_LD(TRACE_SC || TRACE_TENSION || TRACE_ALL,"ADC INFO - Voltage SC ",usc,sec,ms)
 				break;
 			}
 			case TENSION_CONV_CHANNEL:
 			{
 				uconv=(int16)((data/205)*ku_conv);										     // uconv est désormais en volt
-				#if (TRACE_CONV || TRACE_TENSION || TRACE_ALL)
-					restart_wdt();
-	   				tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Tension Convertisseur : %Ld V", tmp,uconv);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is Voltage convertissor ",sec,ms)
+				LOG_TESTING_LD(TRACE_CONV || TRACE_TENSION || TRACE_ALL,"ADC INFO - Voltage Convertissor ",uconv,sec,ms)
 				break;
 			}
 			case COURANT_MOT1_CHANNEL:
 			{
 				imot1=(int16)((data/205)*ki_mot);											 // imot1 est désormais en ampère
-				#if (TRACE_MOT || TRACE_COURANT || TRACE_ALL)
-					restart_wdt();
-				    tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Courant Mot 1 : %Ld A", tmp,imot1);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is current mot1 ",sec,ms)
+				LOG_TESTING_LD(TRACE_MOT || TRACE_COURANT || TRACE_ALL,"ADC INFO - Current Motor 1 ",imot1,sec,ms)
 				break;
 			}
 			case COURANT_MOT2_CHANNEL:
 			{
 				imot2=(int16)((data/205)*ki_mot);					 						 // imot2 est désormais en ampère
-				#if (TRACE_MOT || TRACE_COURANT || TRACE_ALL)
-					restart_wdt();
-	 				tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Courant Mot 2 : %Ld A", tmp,imot2);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is current mot2 ",sec,ms)
+				LOG_TESTING_LD(TRACE_MOT || TRACE_COURANT || TRACE_ALL,"ADC INFO - Current Motor 2 ",imot2,sec,ms)
 				break;
 			}
 			case COURANT_SC_CHANNEL:
 			{
 				isc=(int16)((data/205)*ki_sc);						  						 // iconv est désormais en ampère
-				#if (TRACE_SC || TRACE_COURANT || TRACE_ALL)
-					restart_wdt();
-	   	 			tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Courant SC : %Ld A", tmp,isc);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is supercapacity current  ",sec,ms)
+				LOG_TESTING_LD(TRACE_SC || TRACE_COURANT || TRACE_ALL,"ADC INFO - Current supercapacity ",isc,sec,ms)
 				break;
 			}
 			case TEMP_CONVERT_CHANNEL:
 			{
 				tconv=(int16)((data/205)*kt_conv);					  						 // tconv est désormais en °C
-				#if (TRACE_CONV || TRACE_ALL)
-					restart_wdt();
-				    tmp=ms+1000*sec;
-					printf("[%Lu] - ADC INFO - Temperature Convertisseur : %Ld C", tmp,tconv);
-				#endif
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel is convertissor temperature  ",sec,ms)
+				LOG_TESTING_LD(TRACE_CONV || TRACE_ALL,"ADC INFO - Convertissor temperature ",tconv,sec,ms)
 				break;
 			}
 		}
@@ -277,6 +239,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		current_adc_channel++; 																 // on passe sur le canal suivant
 		if(current_adc_channel>=ADC_NB_CHANNEL)												 // on a déjà passé tout les channels donc on revient au premier
 		{
+			LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"ADC channel loop has been done. Reentering in a new cycle ",sec,ms)
 			current_adc_channel=0;
 		}
 		
@@ -294,8 +257,11 @@ void sendCAN()
 	int8 txdata[8];											 										  // tableau contenant le paquet des courants à émettre
     int8 txLen=8;
 
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in sendCAN",sec,ms)
+
 	if(tension_reemit_ms>=TR_ELECTRIC)
 	{
+		LOG_DEVELOPMENT(TRACE_EXEC||TRACE_ALL,"Reemit voltage time is over",sec,ms)
 		//on remplit le paquet d'emission
 		txdata[0]=umot1;
 		txdata[2]=umot2;
@@ -306,18 +272,12 @@ void sendCAN()
 			r=can_putd(VOLTAGE_DATA,txdata,txLen,0,false,false); // emission des données
 			tension_reemit_ms=0;								  // maz du compteur de temps d'emission
 		
-			#ifdef TRACE_CAN
-				if(r!=0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+			LOG_SEND_CAN(r,VOLTAGE_DATA,txLen,sec,ms)
 		}
 	}
 	if(courant_reemit_ms>=TR_ELECTRIC)
 	{
+		LOG_DEVELOPMENT(TRACE_EXEC||TRACE_ALL,"Reemit current time is over",sec,ms)
 		//on remplit le paquet d'emission
 		txdata[0]=imot1;
 		txdata[2]=imot2;
@@ -327,14 +287,7 @@ void sendCAN()
 		{
 			r=can_putd(CURRENT_DATA,txdata,txLen,0,false,false); // emission des données
 			courant_reemit_ms=0;								  // maz du compteur de temps d'emission
-			#ifdef TRACE_CAN
-				if(r!=0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, PARK_ORDER,1,txdata);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+	    	LOG_SEND_CAN(r,CURRENT_DATA,txLen,sec,ms)
 		}
 	}
 }
