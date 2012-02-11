@@ -51,17 +51,6 @@
 // Constantes diverses
 #define ADC_NB_CHANNEL			8              // Nombre de canaux différents utilisés sur le convertisseur A/N
 
-//Mode debug commenter la ligne pour l'enlever
-/*#define DEBUG 1
-#define TRACE_ALL 1
-#define TRACE_TENSION 1
-#define TRACE_COURANT 1
-#define TRACE_MOT 1
-#define TRACE_SC 1
-#define TRACE_CONV 1
-*/
-#define TRACE_CAN 1
-
 #fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)

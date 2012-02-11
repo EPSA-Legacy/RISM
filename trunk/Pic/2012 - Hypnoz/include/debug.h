@@ -30,7 +30,7 @@
 #endif
 
 #ifndef DEVELOPMENT
-	#define DEVELOPMENT 4			// Tous les messages à l'exception des données du CAN sont affichées
+	#define DEVELOPMENT 4			// Tous les messages à utiles au développement sont affichés
 #endif
 
 #ifndef TESTING

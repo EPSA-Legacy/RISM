@@ -10,13 +10,15 @@
 //		Version 1.02 - BLD - 27/11/2011 -> ADC interrupt + 16b //
 //		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   // 
 //      Version 1.04 - BLD - 13/12/2011 -> correction sendCAN  //    
-//		Version 1.05 - BLD - 18/12/2011 -> recalibrage timer   //        
+//		Version 1.05 - BLD - 18/12/2011 -> recalibrage timer   //      
+//		Version 1.06 - BLD - 11/12/2011 -> encapsulation debug //  
 //                                                             //                                                
 /////////////////////////////////////////////////////////////////
 
 #include <18F258.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
+#include <debug.h>
 
 //#define CAN_USE_EXTENDED_ID         FALSE
 
@@ -27,16 +29,8 @@
 // Rapport du pont diviseur de tension
 #define ku	3								   // il faut multiplier la tension mesurée par 3
 
-//Mode debug commenter la ligne pour l'enlever
-#define DEBUG 1
-#define TRACE_CAN 1
-#define TRACE_CHARGE 1
+#fuses HS,NOPROTECT,NOLVP,WDT
 
-#ifdef DEBUG
-	#fuses HS,NOPROTECT,NOLVP,NOWDT
-#else
-	#fuses HS,NOPROTECT,NOLVP,WDT
-#endif
 
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
@@ -82,6 +76,7 @@ void adc_handler()
 #org DEFAULT
 void main()
 {
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	//initialisation du PIC 
 	setup_adc(ADC_CLOCK_INTERNAL);		//le temps de conversion sera de2-6 µs cf include du PIC
 	setup_adc_ports(ALL_ANALOG);  		//on gère toutes les entrées comme étant de type analogique et on mesure les tensions par rapport à une ref 5V
@@ -103,28 +98,12 @@ void main()
 	can_set_baud();						//obsolète à priori à tester
 	restart_wdt();
 
-	#ifdef DEBUG
-	   // Mise en évidence d'un problème lié au Watchdog
-   	   switch ( restart_cause() )
-       {
-          case WDT_TIMEOUT:
-          {
-             printf("\r\nRestarted processor because of watchdog timeout!\r\n");
-             break;
-          }
-          case NORMAL_POWER_UP:
-          {
-             printf("\r\nNormal power up! PIC initialized \r\n");
-             break;
-          }
-       }
-       restart_wdt();
-    #endif
-
+	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
+		LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in working loop",sec,ms)
 		restart_wdt();
 		internalLogic();
 
@@ -138,6 +117,8 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 {
 	unsigned int16 data;		
 
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
+
 	//CONVERSION : On envoit la tension en mV:
 	//Principe : voltage contient le nombre de pas de mesures on multiplie donc par la valeur du pas : 4mV et par le rapport du pont diviseur
 	
@@ -147,11 +128,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		charge=(int16)(data*4*ku);				  // voltage contient désormais la charge de la batterie en mV
 		adc_done=0;								  // On remet à zéro la lecture de l'ADC
 		read_adc(ADC_START_ONLY);				  // On lance une nouvelle acquisition
-		#ifdef TRACE_CHARGE
-			restart_wdt();
-			tmp=sec*1000+ms;
-			printf("[%Lu] - ADC INFO - BATTERY= %Lu mV",tmp,charge);
-		#endif
+		LOG_TESTING_LU(TRACE_ALL||TRACE_CHARGE,"ADC INFO - Battery voltage ",charge,sec,ms)
 	}
 }
 
@@ -159,22 +136,17 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 void sendCAN()
 {
 	int r;
+
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in sendCAN",sec,ms)
+
 	if(battery_reemit_ms>=TR_BATTERY)
 	{
+		LOG_DEVELOPMENT(TRACE_EXEC||TRACE_ALL,"Reemit battery time is over",sec,ms)
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(BATTERY_STATUS,&charge,2,0,false,false);          // emission du message
 			battery_reemit_ms=0;                                        // on remet à zéro la date d'émission
-			#ifdef TRACE_CAN
-				restart_wdt();
-				tmp=1000*sec+ms;
-				if (r != 0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%Lu",tmp, r, BATTERY_STATUS,32,charge);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+ 			LOG_SEND_CAN(r,BATTERY_STATUS,2,sec,ms)
 		}
 	}
 }
