@@ -596,3 +596,24 @@
 	#endif
 	#endif
 #endif	
+
+// Fonction pour le listen CAN
+
+#ifndef LOG_LISTEN_CAN
+	#ifdef TRACE_CAN
+	#if TRACE_CAN==1
+		#define LOG_LISTEN_CAN(r,rxStat,rxId,rxLen,sec,ms) { 															\
+			if(r==1)																						\
+			{																								\
+				printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);				\
+			}																								\
+			else																							\
+			{																								\
+				printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);						\
+			}																								\
+		}								
+	#else
+		#define LOG_LISTEN_CAN(r,rxStat,rxId,rxLen,sec,ms) { }
+	#endif
+	#endif
+#endif	

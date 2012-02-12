@@ -144,6 +144,7 @@ void sendCAN()
 		LOG_DEVELOPMENT(TRACE_EXEC||TRACE_ALL,"Reemit battery time is over",sec,ms)
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for battery status",sec,ms)
 			r=can_putd(BATTERY_STATUS,&charge,2,0,false,false);          // emission du message
 			battery_reemit_ms=0;                                        // on remet à zéro la date d'émission
  			LOG_SEND_CAN(r,BATTERY_STATUS,2,sec,ms)

@@ -258,9 +258,9 @@ void sendCAN()
 		txdata[6]=uconv;
 		if(can_tbe())                                             // on vérifie que le buffer d'emmission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for voltage data",sec,ms)
 			r=can_putd(VOLTAGE_DATA,txdata,txLen,0,false,false); // emission des données
 			tension_reemit_ms=0;								  // maz du compteur de temps d'emission
-		
 			LOG_SEND_CAN(r,VOLTAGE_DATA,txLen,sec,ms)
 		}
 	}
@@ -274,6 +274,7 @@ void sendCAN()
 		txdata[6]=tconv;
 		if(can_tbe())                                             // on vérifie que le buffer d'emmission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for current data",sec,ms)
 			r=can_putd(CURRENT_DATA,txdata,txLen,0,false,false); // emission des données
 			courant_reemit_ms=0;								  // maz du compteur de temps d'emission
 	    	LOG_SEND_CAN(r,CURRENT_DATA,txLen,sec,ms)
