@@ -8,7 +8,7 @@
 //		Version 1.00  - BLD - 29/11/2011                                       //
 //		Version 1.01  - BLD - 18/12/2011 -> recalibrage timer                  //
 //		Version 1.02  - BLD - 07/02/2012 -> affichage RPM+charge sur bargraphe //
-//      													                   //    
+//      	Version 1.03  - BLD - 12/02/2012 -> encapsulation debug                   //    
 //	    												                       //
 //			                                                                   //
 /////////////////////////////////////////////////////////////////////////////////
@@ -16,6 +16,7 @@
 #include <18F4580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
+#include <debug.h>
 
 //#define CAN_USE_EXTENDED_ID         FALSE
 
@@ -72,18 +73,7 @@
 #define DASH			 107
 #define NOTHING			 108
 
-
-//Mode debug commenter la ligne pour l'enlever
-
-#define DEBUG 1
-#define TRACE 1
-#define TRACE_CAN 1
-
-#ifdef DEBUG
-	#fuses HS,NOPROTECT,NOLVP,NOWDT
-#else
-	#fuses HS,NOPROTECT,NOLVP,WDT
-#endif
+#fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
@@ -139,6 +129,7 @@ void isr_timer2()
 void main()
 {
 	//initialisation du PIC
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	setup_adc_ports(NO_ANALOGS);        //on gère toutes les entrées comme étant de type numérique
 
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
@@ -152,28 +143,12 @@ void main()
 	output_bit(RED,1);					//on éclaire en rouge
 	restart_wdt();
 
-	#ifdef DEBUG
-	   // Mise en évidence d'un problème lié au Watchdog
-   	   switch ( restart_cause() )
-       {
-          case WDT_TIMEOUT:
-          {
-             printf("\r\nRestarted processor because of watchdog timeout!\r\n");
-             break;
-          }
-          case NORMAL_POWER_UP:
-          {
-             printf("\r\nNormal power up! PIC initialized \r\n");
-             break;
-          }
-       }
-       restart_wdt();
-    #endif
-
+	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
+		LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in working loop",sec,ms)
 		restart_wdt();
 		listenCAN();
 
@@ -189,50 +164,40 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 	int32 rxId;
 	int8 rxData[8];
 	int8 rxLen;
+	int r=0;			// flag assurant la bonne lecture de la donnée sur le CAN
+
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in ListenCAN",sec,ms)
 
 	if(can_kbhit())                                // Une donnée est présente dans le buffer de réception du CAN
 	{
+		LOG_DEBUG(TRACE_CAN,"Something hit the CAN bus",sec,ms)
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 		{
+			LOG_DEVELOPMENT_LD(TRACE_CAN||TRACE_ALL,"CAN RX - ID ",rxId,sec,ms)
+			r=1;								   // On a effectivement lu quelque chose sur le CAN
 			switch(rxId)                           // en fonction de l'id on le traite spécifiquement
 			{
 				case SPEED_DATA:
 				{		
 					speed=rxData[0];			   // On change met à jour la vitesse du véhicule
+					LOG_TESTING(TRACE_ALL||TRACE_SPEED,"Speed data is  incomming from the CAN",sec,ms)
 					break;
 				}
 				case ENGINE_RPM:
 				{
 					rpm=rxData[0];
+					LOG_TESTING(TRACE_ALL||TRACE_RPM,"Engine_RPM is  incomming from the CAN",sec,ms)
 					break;
 				}
 				case VOLTAGE_DATA:
 				{
 					rpm=rxData[4];
+					LOG_TESTING(TRACE_ALL||TRACE_SC,"Supercapacity voltage is  incomming from the CAN",sec,ms)
 					break;
 				}
 			}
-			#ifdef TRACE
-			restart_wdt();
-			tmp=ms+1000*sec;
-			if((rxId==SPEED_DATA) && rxLen>=1)
-			{
-				printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
-			}
-			#endif
-			#ifdef TRACE_CAN
-			tmp=ms+1000*sec;
-			printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
-			#endif
 		}
-		else
-		{
-			#ifdef TRACE_CAN
-				restart_wdt();
-	   	 	    tmp=ms+1000*sec;
-				printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
-			#endif
-		}
+		LOG_LISTEN_CAN(r,rxStat,rxId,rxLen,sec,ms)
 	}
 }
 
@@ -246,9 +211,12 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	int nblevel=0;								  // contient le nombre de niveau du bargraphe à afficher
 	int8 i=0;
 
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
 
 	if(displaymode==DISPLAYSPEED)                 // Si l'on souhaite afficher la vitesse
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_DSPMODE,"Speed is currently displayed",sec,ms)
+		LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED,"Speed is ",speed,sec,ms)
 		centaine=speed%100;
 		dizaine=(speed-100*centaine)%10;
 		unite=(speed-100*centaine-10*dizaine);
@@ -265,23 +233,28 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		displaynum2seg(centaine,SEGMENT3);
 
 		// Gestion de l'affichage du régime moteur
+		LOG_TESTING_LU(TRACE_ALL||TRACE_RPM,"RPM is ",rpm,sec,ms)
 		nblevel=convertrpm2bar(rpm);
 		displaynum2bar(nblevel,BARAGRAPHE1);
 
 		// Gestion de la charge des supercapacités
+		LOG_TESTING_LD(TRACE_ALL||TRACE_RPM,"Supercapacity charge is ",charge,sec,ms)
 		nblevel=convertcharge2bar(charge);
 		displaynum2bar(nblevel,BARAGRAPHE2);
 	}
 	else if(displaymode==DISPLAYSHOW)			 // Si l'on souhaite afficher le nom du véhicule
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_DSPMODE,"Demonstration mode is enabled",sec,ms)
 		// Gestion des variables de défilement de l'afficheur
 		if(rolling_ms>=ROLLINGTIME) 			 // Si l'affichage a été assez long on se décale d'un cran.
 		{
+			LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"Screen has just scrolled",sec,ms)
 			rolling_ms=0; 						 // on remet le compteur temporel à zero
 			index++; 							 // on affiche l'élément suivant
 			indexbar++;							 // on incrément de 1 le niveau des baragraphes
 			if(index>=MESSAGELENGTH)
 			{
+				LOG_DEVELOPMENT(TRACE_ALL||TRACE_EXEC,"Scrolling matrix is over, reentering in a new cycle",sec,ms)
 				index=0;						 // on repart du début en cas de dépassement de la taille du tableau (ie affichage complet)		
 			}
 			if(indexbar>10)
@@ -329,7 +302,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 #inline 
 void displaynum2seg(int num,int seg)            //Fonction en charge de la gestion de l'affichage sur les 7 segments
 {
-
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in displaynum2seg",sec,ms)
 	//on met les bits de sélection à 0 pour éviter d'écrire sur la voie actuellement sélectionnée.
 	output_bit(SELBAR1,0);
 	output_bit(SELBAR2,0);
@@ -569,6 +542,7 @@ void displaynum2seg(int num,int seg)            //Fonction en charge de la gesti
 void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les baragraphes. 
 									 //Num doit âtre compris entre 0 et 10. Bar permet de sélectionner le baragraphe
 {
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in displaynum2bar",sec,ms)
 	//on met les bits de sélection à 0 pour éviter d'écrire sur la voie actuellement sélectionnée.
 	output_bit(SELBAR1,0);
 	output_bit(SELBAR2,0);
@@ -903,6 +877,7 @@ void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les
 	{
 		if(bar==BARAGRAPHE1)
 		{
+			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Baragraphe 1 is out of range",sec,ms)
 			output_bit(DATA1,1);
 			output_bit(DATA2,0);
 			output_bit(DATA3,0);
@@ -916,6 +891,7 @@ void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les
 		}
 		else if(bar==BARAGRAPHE2)
 		{
+			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Baragraphe 2 is out of range",sec,ms)
 			output_bit(DATA1,1);
 			output_bit(DATA2,0);
 			output_bit(DATA3,0);
@@ -929,6 +905,7 @@ void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les
 		}	
 		else  // Au cas d'une erreur dans la sélection on met tous les bits de données à 0
 		{
+			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Wrong selection bit for baragraphe",sec,ms)
 			output_bit(DATA1,0);
 			output_bit(DATA2,0);
 			output_bit(DATA3,0);
@@ -1002,7 +979,10 @@ int convertrpm2bar(unsigned int16 regime)
 		return 10;
 	}
 	else										// si le régime moteur dépasse les 8000 tours ont met le bargraphe en erreur afin de signaler le pb
+	{
+		LOG_WARN(TRACE_ALL||TRACE_EXEC||TRACE_RPM,"RPM rate is a bit too high",sec,ms)
 		return 11;
+	}
 }
 
 
@@ -1055,5 +1035,8 @@ int convertcharge2bar(unsigned int16 charge)
 		return 10;
 	}
 	else										// si le régime moteur dépasse les 275 Volts  ont met le bargraphe en erreur afin de signaler le pb
+	{
+		LOG_WARN(TRACE_ALL||TRACE_EXEC||TRACE_SC,"Supercapacity are overcharged",sec,ms)
 		return 11;
+	}
 }
