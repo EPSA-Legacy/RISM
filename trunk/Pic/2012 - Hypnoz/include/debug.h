@@ -76,6 +76,8 @@
 #define TRACE_CONV			0		// Permet d'afficher les données relatives au convertisseur provenant de la carte acquisition
 // Carte alimentation
 #define TRACE_CHARGE		0		// Permet d'afficher la mesure de la tension de la batterie à l'aide de la carte alimentation
+// Carte Affichage tableau de bord
+#define TRACE_DSPMODE		0		// Permet d'afficher le mode d'affichage en cours d'utilisation
 // Carte feux arrières
 #define TRACE_LIGHT_BACK	0  		// Permet de suivre l'état des feux et des codes à l'arrière
 #define TRACE_BRAKE_LIGHT	0		// Permet de suivre l'état des feux stops
