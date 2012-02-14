@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 26/05/2011 00:21:40
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 14/02/2012 15:35:17
 
 BeginCmp
 TimeStamp = /4DCA89A1;
@@ -159,6 +159,13 @@ TimeStamp = /4DD153B2;
 Reference = P6;
 ValeurCmp = Bargraphes;
 IdModule  = KK_16;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3A70AF;
+Reference = P7;
+ValeurCmp = Alim_MP;
+IdModule  = KK_2;
 EndCmp
 
 BeginCmp
