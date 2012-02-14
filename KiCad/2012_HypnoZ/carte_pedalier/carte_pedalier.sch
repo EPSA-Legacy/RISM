@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 03/01/2012 15:35:13
+EESchema Schematic File Version 2  date 14/02/2012 15:05:03
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -40,7 +40,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "carte pedalier v0.1"
-Date "3 jan 2012"
+Date "14 feb 2012"
 Rev ""
 Comp "EPSA Hypnoz"
 Comment1 ""
