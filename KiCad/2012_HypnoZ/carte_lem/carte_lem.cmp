@@ -1,0 +1,143 @@
+Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 02/02/2012 13:32:14
+
+BeginCmp
+TimeStamp = /4F15946B;
+Reference = C1;
+ValeurCmp = 1000u;
+IdModule  = C2V8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F159478;
+Reference = C2;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F1594EA;
+Reference = F1;
+ValeurCmp = 100mA;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F159517;
+Reference = F2;
+ValeurCmp = 100mA;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F15951A;
+Reference = F3;
+ValeurCmp = 100mA;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F15951E;
+Reference = F4;
+ValeurCmp = 100mA;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE414E;
+Reference = P1;
+ValeurCmp = Mot1;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F159438;
+Reference = P2;
+ValeurCmp = Conv;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4167;
+Reference = P3;
+ValeurCmp = Mot2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4199;
+Reference = P4;
+ValeurCmp = Conv;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE3FAA;
+Reference = P5;
+ValeurCmp = Mesures;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4198;
+Reference = P6;
+ValeurCmp = SC;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE411F;
+Reference = R1;
+ValeurCmp = 25k;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4168;
+Reference = R2;
+ValeurCmp = 25k;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE419A;
+Reference = R3;
+ValeurCmp = 25k;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4197;
+Reference = R4;
+ValeurCmp = 25k;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE3F77;
+Reference = U1;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE416B;
+Reference = U2;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE419D;
+Reference = U3;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4194;
+Reference = U4;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+EndListe
