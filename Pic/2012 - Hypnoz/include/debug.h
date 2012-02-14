@@ -66,6 +66,7 @@
 #define TRACE_ALL_LIGHT_F	0		// Permet de suivre l'état de tous les feux avant
 #define TRACE_ALL_CMD		1		// Permer de suivre l'état de toutes les commandes du tableau de bord
 #define TRACE_PEDAL			0		// Permet de suivre l'intégralité des information issues de la carte pédalier.
+#define TRACE_ACK			0		// Permet de suivre la bonne réception des accusés de réception des commandes du tableau de bord
 #define TRACE_CAN			1		// Permet d'afficher les données du CAN
 #define TRACE_EXEC			0		// Permet d'afficher les traces d'exécution
 // Carte Acquisition
