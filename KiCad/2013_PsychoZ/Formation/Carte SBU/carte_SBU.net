@@ -1,0 +1,206 @@
+# EESchema Netlist Version 1.1 created  16/02/2012 17:09:36
+(
+ ( /4F3D1D61 $noname  K1 RS132 {Lib=CONN_3}
+  (    1 N-000015 )
+  (    2 N-000014 )
+  (    3 GND )
+ )
+ ( /4F3D1C43 $noname  C7 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F3D1C39 $noname  C8 1u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F3D1C32 $noname  C6 1u {Lib=CP}
+  (    1 N-000011 )
+  (    2 VCC )
+ )
+ ( /4F3D1C2A $noname  C10 1u {Lib=CP}
+  (    1 GND )
+  (    2 N-000008 )
+ )
+ ( /4F3D1B92 $noname  C9 1u {Lib=CP}
+  (    1 N-000007 )
+  (    2 N-000006 )
+ )
+ ( /4F3D1B85 $noname  C5 1u {Lib=CP}
+  (    1 N-000005 )
+  (    2 N-000004 )
+ )
+ ( /4F3D1B30 $noname  U2 MAX232 {Lib=MAX232}
+  (    1 N-000005 )
+  (    2 N-000011 )
+  (    3 N-000004 )
+  (    4 N-000007 )
+  (    5 N-000006 )
+  (    6 N-000008 )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 N-000016 )
+  (   12 N-000016 )
+  (   13 N-000014 )
+  (   14 N-000015 )
+  (   15 GND )
+  (   16 VCC )
+ )
+ ( /4F3D18FA $noname  R1 510 {Lib=R}
+  (    1 GND )
+  (    2 N-000012 )
+ )
+ ( /4F3D18DC $noname  D1 LED {Lib=LED}
+  (    1 VCC )
+  (    2 N-000012 )
+ )
+ ( /4F3D163C $noname  P1 ALIM {Lib=CONN_2}
+  (    1 /12V )
+  (    2 GND )
+ )
+ ( /4F3D14F4 $noname  C4 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F3D14F0 $noname  C2 27p {Lib=C}
+  (    1 /12V )
+  (    2 GND )
+ )
+ ( /4F3D1453 $noname  C3 10u {Lib=CP}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F3D1418 $noname  C1 100u {Lib=CP}
+  (    1 /12V )
+  (    2 GND )
+ )
+ ( /4F3D138C $noname  U1 7805 {Lib=7805}
+  (  GND GND )
+  (   VI /12V )
+  (   VO VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ CP*
+ SM*
+$endlist
+$component C6
+ CP*
+ SM*
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C9
+ CP*
+ SM*
+$endlist
+$component C5
+ CP*
+ SM*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C1
+ CP*
+ SM*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ C3 2
+ K1 3
+ U1 GND
+ C1 2
+ C2 2
+ C4 2
+ P1 2
+ C10 1
+ U2 15
+ R1 1
+ C8 2
+ C7 2
+Net 4 "" ""
+ C5 2
+ U2 3
+Net 5 "" ""
+ C5 1
+ U2 1
+Net 6 "" ""
+ U2 5
+ C9 2
+Net 7 "" ""
+ C9 1
+ U2 4
+Net 8 "" ""
+ C10 2
+ U2 6
+Net 10 "VCC" "VCC"
+ C3 1
+ U1 VO
+ C7 1
+ C8 1
+ C6 2
+ U2 16
+ D1 1
+ C4 1
+Net 11 "" ""
+ C6 1
+ U2 2
+Net 12 "" ""
+ D1 2
+ R1 2
+Net 13 "/12V" "12V"
+ P1 1
+ U1 VI
+ C1 1
+ C2 1
+Net 14 "" ""
+ U2 13
+ K1 2
+Net 15 "" ""
+ U2 14
+ K1 1
+Net 16 "" ""
+ U2 11
+ U2 12
+}
+#End
