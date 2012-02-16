@@ -1,0 +1,115 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 16/02/2012 16:49:58
+
+BeginCmp
+TimeStamp = /4F3D1418;
+Reference = C1;
+ValeurCmp = 100u;
+IdModule  = C1V7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D14F0;
+Reference = C2;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1453;
+Reference = C3;
+ValeurCmp = 10u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D14F4;
+Reference = C4;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1B85;
+Reference = C5;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1C32;
+Reference = C6;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1C43;
+Reference = C7;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1C39;
+Reference = C8;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1B92;
+Reference = C9;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1C2A;
+Reference = C10;
+ValeurCmp = 1u;
+IdModule  = C1V5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D18DC;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1D61;
+Reference = K1;
+ValeurCmp = RS132;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D163C;
+Reference = P1;
+ValeurCmp = ALIM;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D18FA;
+Reference = R1;
+ValeurCmp = 510;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D138C;
+Reference = U1;
+ValeurCmp = 7805;
+IdModule  = LM78XX_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3D1B30;
+Reference = U2;
+ValeurCmp = MAX232;
+IdModule  = DIP-16__300_ELL;
+EndCmp
+
+EndListe
