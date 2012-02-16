@@ -7,20 +7,19 @@
 //		Carte Vitesse                                          //
 //		Version 1.00 - BLD - 29/12/2011                        //
 //		Version 1.01 - BLD - 24/01/2012 -> update gestion feux // 
+//		Version 1.02 - BLD - 16/02/2012 -> encapsulation debug //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
-// Vitesse : regarder toutes les secondes la valeur du timer puis remettre à zéro
-// OU
-// Si trop lent : regarder le temps entre deux fronts montants (critère : moins de X fronts montants/seconde
 
-// TODO : refaire la prog, timers en external pour la mesure de vitesse.
+// TODO : vérifier la prog, timers en external pour la mesure de vitesse.
 
 //#define CAN_USE_EXTENDED_ID         FALSE
 
 #include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
+#include <debug.h>
 
 // Assignation des sorties analogiques
 #define PHARES_L        PIN_A1  
@@ -29,8 +28,6 @@
 #define CODES_R         PIN_C4    
 #define CLIGN_L         PIN_A3  
 #define CLIGN_R			PIN_A4
-//#define VITESSE_A       PIN_A5  // destiné à être envoyé par CAN
-//#define VITESSE_B       PIN_C0  // destiné à être envoyé par CAN
 
 
 // OBSOLETE Définition des constantes caractéristiques du capteur de vitesse
@@ -41,6 +38,7 @@
 #define CST_CAPT_R      	322
 
 //Mode debug commenter la ligne pour l'enlever
+/*
 #define DEBUG 1
 #define TRACE 1
 #define TRACE_ALL 1
@@ -51,12 +49,11 @@
 #define TRACE_SPEED_ALL 1
 #define TRACE_SPEED_MODE 1
 #define TRACE_CAN 1
+*/
 
-#ifdef DEBUG
-	#fuses HS,NOPROTECT,NOLVP,NOWDT
-#else
-	#fuses HS,NOPROTECT,NOLVP,NOWDT
-#endif
+
+#fuses HS,NOPROTECT,NOLVP,WDT
+
 #use delay(clock=20000000)
 #use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
 
@@ -132,6 +129,7 @@ void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au b
 void main()
 {
 	//Initialisation du PIC
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	setup_adc_ports(NO_ANALOGS);
 	//A documenter
    	set_tris_a(0b00010000);
@@ -146,27 +144,12 @@ void main()
 
     can_init();
    
-	#ifdef DEBUG
-	   // Mise en évidence d'un problème lié au Watchdog
-   	   switch ( restart_cause() )
-       {
-          case WDT_TIMEOUT:
-          {
-             printf("\r\nRestarted processor because of watchdog timeout!\r\n");
-             break;
-          }
-          case NORMAL_POWER_UP:
-          {
-             printf("\r\nNormal power up! PIC initialized \r\n");
-             break;
-          }
-       }
-       restart_wdt();
-    #endif
+	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
     //  BOUCLE DE TRAVAIL
     while(true)
    	{
+		LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in working loop",sec,ms)
 		restart_wdt();
 		listenCAN();
 	
@@ -185,147 +168,117 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 	int32 rxId;
 	int8 rxData[8];
 	int8 rxLen;
+	int r=0;			// flag assurant la bonne lecture de la donnée sur le CAN
+
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in ListenCAN",sec,ms)
 
 	if(can_kbhit())                                // Une donnée est présente dans le buffer de réception du CAN
 	{
+		LOG_DEBUG(TRACE_CAN,"Something hit the CAN bus",sec,ms)
 		if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 		{
+			LOG_DEVELOPMENT_LD(TRACE_CAN||TRACE_ALL,"CAN RX - ID ",rxId,sec,ms)
+			r=1;								   // On a effectivement lu quelque chose sur le CAN
 			switch(rxId)                           // en fonction de l'id on le traite spécifiquement
 			{
 				case BLINK_ORDER_LEFT:
 				{		
 					blinkl_ack=1;                  // On place le flag à 1 pour envoyer l'accusé de réception ultérieurement
 					blink_left=rxData[0];          // On change l'état du clignotant gauche
+					LOG_TESTING_D(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_BLINK_FRONT||TRACE_BLINK_LF,"Blink order left incomming from the CAN is ",rxData[0],sec,ms)
 					break;
 				}
 				case BLINK_ORDER_RIGHT:
 				{
                     blinkr_ack=1;                  // On place le flag à 1 pour envoyer l'accusé de réception ultérieurement
 					blink_right=rxData[0];         // On change l'état du clignotant droit
+					LOG_TESTING_D(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_BLINK_FRONT||TRACE_BLINK_RF,"Blink order right incomming from the CAN is ",rxData[0],sec,ms)
 					break;
 				}
 				case LIGHT_ORDER:
 				{
 					light_ack=1;				   // On place le flag à 1 pour envoyer l'accusé de réception ultérieurement
 					light=rxData[0]; 			   // On éteint les feux
+					LOG_TESTING_D(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_LIGHT_FRONT,"Light incomming from the CAN is ",rxData[0],sec,ms)
 	  				break;
 				}
 			}
-			#ifdef TRACE
-				restart_wdt();
-				tmp=ms+1000*sec;
-				if((rxId==BLINK_ORDER_LEFT || rxId==BLINK_ORDER_RIGHT || rxId==LIGHT_ORDER) && rxLen>=1)
-				{
-					printf("\r\n [%Lu] - CAN RX - ID=%u - DATA=%u", tmp,rxId,rxData[0]);
-				}
-			#endif
-			#ifdef TRACE_CAN
-				tmp=ms+1000*sec;
-				printf("\r\n [%Lu] - CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u", tmp,rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
-			#endif
-		}
-		else
-		{
-			#ifdef TRACE_CAN
-				restart_wdt();
-	   		    tmp=ms+1000*sec;
-				printf("[%Lu] - CAN_DEBUG - FAIL on can_getd function", tmp);
-			#endif
-		}
+	    }
+		LOG_LISTEN_CAN(r,rxStat,rxId,rxLen,sec,ms)
 	}
 }
 
 #inline
 void internalLogic()
 {
-
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
 	// Gestion des feux
 	if(light==2)						  // On allume les phares
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_LIGHT_FRONT," LIGHT STATUS - Feux are enabled",sec,ms)
 		output_bit(PHARES_R,1);
 		output_bit(PHARES_L,1);  
 		output_bit(CODES_R,1);			  // On ne doit pas oublier d'allumer les codes 
 		output_bit(CODES_L,1);    
-		#if (TRACE_LIGHT || TRACE_ALL)
-			restart_wdt();
-	   		tmp=ms+1000*sec;
-			printf("[%Lu] - LIGHT STATUS - Feux are enabled", tmp);	
-		#endif
 	}
 	else if (light==1)					  // On allume les codes
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_LIGHT_FRONT," LIGHT STATUS - Codes are enabled",sec,ms)
 		output_bit(PHARES_R,0);			  // On ne doit pas oublier d'éteindre les feux 
 		output_bit(PHARES_L,0);  
 		output_bit(CODES_R,1);			  
 		output_bit(CODES_L,1);    
-		#if (TRACE_LIGHT || TRACE_ALL)
-			restart_wdt();
-	   		tmp=ms+1000*sec;
-			printf("[%Lu] - LIGHT STATUS - Codes are enabled", tmp);	
-		#endif
 	}
 	else								  // On éteint tout
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F||TRACE_LIGHT_FRONT," LIGHT STATUS - All light are off",sec,ms)
 		output_bit(PHARES_R,0);			 
 		output_bit(PHARES_L,0);  
 		output_bit(CODES_R,0);			  
 		output_bit(CODES_L,0);   
-		#if (TRACE_LIGHT || TRACE_ALL)
-			restart_wdt();
-	   		tmp=ms+1000*sec;
-			printf("[%Lu] - LIGHT STATUS - All light are off", tmp);	
-		#endif 
 	}	
     
 	// Gestion des clignotants
 	if(clign_ms >= 650)                                   // 650 ms = +- 1.5Hz après l'activation du timer = frequence desclign_msotants
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_ALL_LIGHT_F||TRACE_BLINK_FRONT,"Blink status has been toggled",sec,ms)
 		clign_ms = 0;                                     // repartir pour 500 ms
 		blink_status = !blink_status ;                    // changer l'état d'allumage desclign_msotants
 		
 		output_bit(CLIGN_R, blink_status & blink_right); // allumer ou éteindre le clignotant droit s'il est activé
 		output_bit(CLIGN_L, blink_status & blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
-		#if (TRACE_BLINK || TRACE_ALL)
-			restart_wdt();
-	        tmp=ms+1000*sec;
-			printf("[%Lu] - INFO - Blink status has been toggled", tmp);	
-		#endif
 	}
 
 	//Gestion de l'acquisition de la vitesse
     
 	//Explication :
-
+	// Vitesse : regarder toutes les secondes la valeur du timer puis remettre à zéro
+	// OU
+	// Si trop lent : regarder le temps entre deux fronts montants (critère : moins de X fronts montants/seconde
 
 
 	// ## Roue gauche ##
 	//		# Acquisition
     if(measuring_modeL == HIGH_SPEED)						       		   				// Si on est en mode de mesure rapide
     {
+		LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"Left wheel High_Speed measurement mode enabled",sec,ms)
         if(timeL_ms >= SAMPLING_SPEED_TIME)		
         {
             speedL = (int16)((get_timer0() * CST_CAPT_L) / 100); 						// On a désormais la vitesse en ??
             set_timer0(0);																// On remet le timer de la roue gauche à zéro
 			timeL_ms=0;																	// On remet le compteur de temps à 0.
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_LEFT || TRACE_ALL)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - HIGH SPEED LEFT - %Lu", tmp,speedL);
-			#endif
+			LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"LEFT - High_Speed_mode - ",speedL,sec,ms)
         }
     }
     else																				// Si on est en mode de mesure lent
     {
+		LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"Left wheel Low_Speed measurement mode enabled",sec,ms)
         if(get_timer0() >= 1)
         {
             speedL = (int16)((CST_CAPT_L * 10 * get_timer0()) / (timeL_ms+clock/10));	// On a désormais la vitesse en ??
             set_timer0(0);																// On remet le timer de la roue gauche à zéro
             timeL_ms = 0;																// On remet le compteur temporel à 0
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_LEFT || TRACE_ALL)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - LOW SPEED LEFT - %Lu", tmp,speedL);
-			#endif
+			LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"LEFT - Low_Speed_mode - ",speedL,sec,ms)
         }
     }
 	//		# Mise à jour du mode de mesure
@@ -335,21 +288,13 @@ void internalLogic()
 		{
 			measuring_modeL=LOW_SPEED;
 			speed_modeL_ms=0;															// on remet à zéro le compteur de changement de mode
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_LEFT || TRACE_SPEED_MODE)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - SPEED - Measurement left mode is now low_speed", tmp);
-			#endif
+			LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"LEFT - Changing measurement mode to low_speed",sec,ms)
 		}
 		else																			// Sinon on est en mode rapide 
 		{
 			measuring_modeL=HIGH_SPEED;
 			speed_modeL_ms=0;															// on remet le compteur de changement de mode à zéro
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_LEFT|| TRACE_SPEED_MODE)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - SPEED - Measurement left mode is now high_speed", tmp);
-			#endif
+			LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_L,"LEFT - Changing measurement mode to high_speed",sec,ms)
 		}
 	}
 
@@ -357,30 +302,24 @@ void internalLogic()
 	//		# Acquisition
     if(measuring_modeR == HIGH_SPEED)													// Si on est en mode de mesure rapide
     {
+		LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"Right wheel High_Speed measurement mode enabled",sec,ms)
         if(timeR_ms == 500)
         {
             speedR = (int16)((get_timer1() * CST_CAPT_R) / 100);						// On a désormais la vitesse en ??
             set_timer1(0);																// On remet le timer de la roue droite à zéro
 			timeR_ms = 0;															  	// On remet le compteur de temps à 0.
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_RIGHT || TRACE_ALL)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - HIGH SPEED RIGHT - %Lu", tmp,speedR);
-			#endif
+			LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"RIGHT - High_Speed_mode - ",speedR,sec,ms)
         }
     }
     else																			  	// Si on est en mode de mesure lent
     {
+		LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"Right wheel Low_Speed measurement mode enabled",sec,ms)
         if(get_timer1() >= 1)
         {
             speedR = (int16)((CST_CAPT_R * 10 * get_timer1()) / (timeR_ms+clock/10)); 	// On a désormais la vitesse en ??
             set_timer1(0); 															  	// On remet le timer de la roue droite à zéro
 			timeR_ms = 0;														      	// On remet le compteur de temps à 0.
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_RIGHT || TRACE_ALL)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - LOW SPEED RIGHT - %Lu", tmp,speedR);
-			#endif
+			LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"RIGHT - Low_Speed_mode - ",speedR,sec,ms)
         }
     }
 	//		# Mise à jour du mode de mesure
@@ -390,26 +329,18 @@ void internalLogic()
 		{
 			measuring_modeL=LOW_SPEED;
 			speed_modeR_ms=0;															// on remet à zéro le compteur de changement de mode
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_RIGHT || TRACE_SPEED_MODE)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - SPEED - Measurement right mode  is now low_speed", tmp);
-			#endif
+			LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"RIGHT - Changing measurement mode to low_speed",sec,ms)
 		}
 		else																			// Sinon on est en mode rapide 
 		{
 			measuring_modeL=HIGH_SPEED;
 			speed_modeR_ms=0;															// on remet le compteur de changement de mode à zéro
-			#if(TRACE_SPEED_ALL || TRACE_SPEED_RIGHT || TRACE_SPEED_MODE)
-				restart_wdt();
-	       		tmp=ms+1000*sec;
-				printf("[%Lu] - SPEED - Measurement right mode is now high_speed", tmp);
-			#endif
+			LOG_WARN(TRACE_ALL||TRACE_SPEED||TRACE_SPEED_R,"RIGHT - Changing measurement mode to high_speed",sec,ms)
 		}
 	}
 
 
-	// Gestion des dépassement de taille des variables
+	// Gestion des dépassements de taille des variables
 	if(speed_modeL_ms>=20000)
 	{
 		speed_modeL_ms=0;
@@ -421,7 +352,7 @@ void internalLogic()
 
 	// Calcul de la vitesse du véhicule
 	speed=(int16)((speedL+speedR)/2);
-
+	LOG_TESTING_LD(TRACE_ALL||TRACE_SPEED,"Speed value : ",speed,sec,ms)
 }
 
 #inline
@@ -429,76 +360,49 @@ void sendCAN()
 {
 	int r;
 
+	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in SendCAN",sec,ms)
 	if(speed_reemit_ms >= TR_SPEED)															// On envoie la vitesse si l'on a dépassé le reemit time
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_PARK,"Reemit speed time is over",sec,ms)
 		if(can_tbe()) 																		// On vérifie que le buffer d'emission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for speed ",sec,ms)
 			r=can_putd(SPEED_DATA,&speed,2,0,false,false); 									// Emission de la vitesse du véhicule
 			speed_reemit_ms=0; 																// on a plus besoin d'envoyer l'accusé de réception
-			#ifdef TRACE_CAN
-				restart_wdt();
-				tmp=1000*sec+ms;
-				if (r != 0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%Lu",tmp, r, SPEED_DATA,2,speed);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+			LOG_SEND_CAN(r,SPEED_DATA,2,sec,ms)
 		}
 	}
 	if(blinkl_ack==1)
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_BLINK_FRONT||TRACE_BLINK_LF||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F,"An ACK paquet for blink_left is still remaining",sec,ms)
 		if(can_tbe()) 																		// On vérifie que le buffer d'emission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for Blink_left_front_ack",sec,ms)
 			r=can_putd(BLINK_LEFT_FRONT_ACK,null,0,0,false,false); 							// Emission de l'accusé de réception
 			blinkl_ack=0; 																	// on a plus besoin d'envoyer l'accusé de réception
-			#ifdef TRACE_CAN
-				restart_wdt();
-				tmp=1000*sec+ms;
-				if (r != 0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BLINK_LEFT_FRONT_ACK,1,blink_left);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+			LOG_SEND_CAN(r,BLINK_LEFT_FRONT_ACK,0,sec,ms)
 		}
 	}
 	else if(blinkr_ack==1)
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_BLINK_FRONT||TRACE_BLINK_RF||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F,"An ACK paquet for blink_right is still remaining",sec,ms)
 		if(can_tbe()) 																		// On vérifie que le buffer d'emission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for Blink_right_front_ack",sec,ms)
 			r=can_putd(BLINK_RIGHT_FRONT_ACK,null,0,0,false,false);							// Emission de l'accusé de réception
 			blinkr_ack=0; 																	// On a plus besoin d'envoyer l'accusé de réception
-			#ifdef TRACE_CAN
-				restart_wdt();
-				tmp=1000*sec+ms;
-				if (r != 0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, BLINK_RIGHT_FRONT_ACK,1,blink_right);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+			LOG_SEND_CAN(r,BLINK_RIGHT_FRONT_ACK,0,sec,ms)
 		}
 	}
 	else if(light_ack==1)
 	{
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_ALL_LIGHT||TRACE_ALL_LIGHT_F,"An ACK paquet for light is still remaining",sec,ms)
 		if(can_tbe()) 																		// On vérifie que le buffer d'emission est libre
 		{
+			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for light_front_ack",sec,ms)
 			r=can_putd(LIGHT_FRONT_ACK,&light,1,0,false,false); 							//emission de l'accusé de réception
 			light_ack=0; 																	// on a plus besoin d'envoyer l'accusé de réception
-			#ifdef TRACE_CAN
-				restart_wdt();
-				tmp=1000*sec+ms;
-				if (r != 0xFF)
-				{
-					printf("\r\n [%Lu] - CAN TX - %u - ID=%u - LEN=%u - DATA=%u",tmp, r, LIGHT_FRONT_ACK,1,light);
-				}
-				else
-					printf("\r\n [%Lu] - CAN_DEBUG - FAIL on can_putd function \r\n",tmp);
-			#endif
+			LOG_SEND_CAN(r,LIGHT_FRONT_ACK,0,sec,ms)
 		}
 	}
 }
