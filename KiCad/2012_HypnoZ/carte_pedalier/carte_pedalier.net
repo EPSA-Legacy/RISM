@@ -1,206 +1,203 @@
-# EESchema Netlist Version 1.1 created  03/01/2012 15:35:21
+# EESchema Netlist Version 1.1 created  18/02/2012 00:16:55
 (
- ( /4F02FFB0 $noname  U2 LM358 {Lib=LM358}
-  (    1 N-000032 )
-  (    2 N-000029 )
-  (    3 GND )
-  (    4 -VAA )
-  (    5 N-000031 )
-  (    6 N-000030 )
-  (    7 N-000034 )
-  (    8 VAA )
+ ( /4EE75B63 C1 C1 27p
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4EE77370 $noname  P9 Acc_in {Lib=CONN_4}
-  (    1 GND )
-  (    2 GND )
-  (    3 /Uacc_in )
-  (    4 VCC )
+ ( /4EE75B87 C1V7 C2 100u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4EE760F5 $noname  C3 330n {Lib=C}
-  (    1 N-000031 )
-  (    2 GND )
+ ( /4EE760F5 C2 C3 330n
+  ( 1 N-000028 )
+  ( 2 GND )
  )
- ( /4EE760D6 $noname  R6 1k {Lib=R}
-  (    1 N-000031 )
-  (    2 /Uacc_in )
+ ( /4EE763AF C1 C4 100n
+  ( 1 VAA )
+  ( 2 -VAA )
  )
- ( /4EE75EF6 $noname  R11 1k {Lib=R}
-  (    1 GND )
-  (    2 N-000030 )
+ ( /4EE763B1 C1V5 C5 1u
+  ( 1 VAA )
+  ( 2 -VAA )
  )
- ( /4EE75ED5 $noname  R10 1k {Lib=R}
-  (    1 N-000034 )
-  (    2 N-000030 )
+ ( /4EE75E0B LEDV D1 JAUNE
+  ( 1 N-000002 )
+  ( 2 GND )
  )
- ( /4EE764BA $noname  P8 Frein_out {Lib=CONN_2}
-  (    1 /Frein )
-  (    2 GND )
+ ( /4EE75E36 LEDV D2 JAUNE
+  ( 1 GND )
+  ( 2 N-000005 )
  )
- ( /4EE763B1 $noname  C5 1u {Lib=CAPAPOL}
-  (    1 VAA )
-  (    2 -VAA )
+ ( /4EE76285 D4 D3 10V
+  ( 1 GND )
+  ( 2 N-000009 )
  )
- ( /4EE763AF $noname  C4 100n {Lib=C}
-  (    1 VAA )
-  (    2 -VAA )
+ ( /4EE76281 D4 D4 10V
+  ( 1 N-000008 )
+  ( 2 N-000009 )
  )
- ( /4EE76285 $noname  D3 10V {Lib=ZENER}
-  (    1 GND )
-  (    2 N-000009 )
+ ( /4EE761F3 D4 D5 10V
+  ( 1 N-000006 )
+  ( 2 N-000007 )
  )
- ( /4EE76281 $noname  D4 10V {Lib=ZENER}
-  (    1 N-000008 )
-  (    2 N-000009 )
+ ( /4EE761F9 D4 D6 10V
+  ( 1 GND )
+  ( 2 N-000007 )
  )
- ( /4EE7627D $noname  R5 100 {Lib=R}
-  (    1 N-000008 )
-  (    2 N-000034 )
+ ( /4D7796C0 he10-10df MEZZA1 MEZZA-10
+  ( 1 /Uacc_in )
+  ( 2 /Frein )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4EE761F9 $noname  D6 10V {Lib=ZENER}
-  (    1 GND )
-  (    2 N-000007 )
+ ( /4EE758B8 he10-10df MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 /Frein_main )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 VCC )
+  ( 10 GND )
  )
- ( /4EE761F3 $noname  D5 10V {Lib=ZENER}
-  (    1 N-000006 )
-  (    2 N-000007 )
+ ( /4D920AA1 KK_2 P1 Frein_Main_in
+  ( 1 VCC )
+  ( 2 /Frein_main )
  )
- ( /4EE761EE $noname  R7 100 {Lib=R}
-  (    1 N-000006 )
-  (    2 N-000032 )
+ ( /4EE75911 KK_2 P5 Frein_ped_in
+  ( 1 VCC )
+  ( 2 /Frein )
  )
- ( /4EE75FCD $noname  P7 Acc_out {Lib=CONN_2}
-  (    1 N-000008 )
-  (    2 N-000006 )
+ ( /4EE75FCD KK_2 P7 Acc_out
+  ( 1 N-000008 )
+  ( 2 N-000006 )
  )
- ( /4EE75FA2 $noname  R8 1k {Lib=R}
-  (    1 N-000029 )
-  (    2 N-000034 )
+ ( /4EE764BA KK_2 P8 Frein_out
+  ( 1 /Frein )
+  ( 2 GND )
  )
- ( /4EE75F8D $noname  R9 1k {Lib=R}
-  (    1 N-000032 )
-  (    2 N-000029 )
+ ( /4EE77370 KK_4 P9 Acc_in
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 /Uacc_in )
+  ( 4 VCC )
  )
- ( /4EE75E37 $noname  R3 1k {Lib=R}
-  (    1 -VAA )
-  (    2 N-000010 )
+ ( /4D920C00 R3 R1 10K
+  ( 1 /Frein_main )
+  ( 2 GND )
  )
- ( /4EE75E36 $noname  D2 JAUNE {Lib=LED}
-  (    1 GND )
-  (    2 N-000010 )
+ ( /4EE75CDC R3 R2 1k
+  ( 1 VAA )
+  ( 2 N-000002 )
  )
- ( /4EE75E0B $noname  D1 JAUNE {Lib=LED}
-  (    1 N-000001 )
-  (    2 GND )
+ ( /4EE75E37 R3 R3 1k
+  ( 1 -VAA )
+  ( 2 N-000005 )
  )
- ( /4EE75CDC $noname  R2 1k {Lib=R}
-  (    1 VAA )
-  (    2 N-000001 )
+ ( /4EE7590F R3 R4 10K
+  ( 1 /Frein )
+  ( 2 GND )
  )
- ( /4EE75B87 $noname  C2 100u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
+ ( /4EE7627D R3 R5 100
+  ( 1 N-000008 )
+  ( 2 N-000031 )
  )
- ( /4EE75B63 $noname  C1 27p {Lib=C}
-  (    1 +12V )
-  (    2 GND )
+ ( /4EE760D6 R3 R6 1k
+  ( 1 N-000028 )
+  ( 2 /Uacc_in )
  )
- ( /4EE75A68 $noname  U1 TRACO_8W_12V_DUAL {Lib=TRACO_8W_12V_DUAL}
-  (    1 ? )
-  (    2 GND )
-  (    3 GND )
-  (    9 GND )
-  (   11 -VAA )
-  (   14 VAA )
-  (   16 GND )
-  (   22 +12V )
-  (   23 +12V )
+ ( /4EE761EE R3 R7 100
+  ( 1 N-000006 )
+  ( 2 N-000029 )
  )
- ( /4EE75911 $noname  P5 Frein_ped_in {Lib=CONN_2}
-  (    1 VCC )
-  (    2 /Frein )
+ ( /4EE75FA2 R3 R8 1k
+  ( 1 N-000026 )
+  ( 2 N-000031 )
  )
- ( /4EE7590F $noname  R4 10K {Lib=R}
-  (    1 /Frein )
-  (    2 GND )
+ ( /4EE75F8D R3 R9 1k
+  ( 1 N-000029 )
+  ( 2 N-000026 )
  )
- ( /4EE758E2 $noname  P4 MECA {Lib=CONN_1}
-  (    1 ? )
+ ( /4EE75ED5 R3 R10 1k
+  ( 1 N-000031 )
+  ( 2 N-000027 )
  )
- ( /4EE758E0 $noname  P6 MECA {Lib=CONN_1}
-  (    1 ? )
+ ( /4EE75EF6 R3 R11 1k
+  ( 1 GND )
+  ( 2 N-000027 )
  )
- ( /4EE758B8 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
-  (    1 ? )
-  (    2 ? )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 /Frein_main )
-  (    7 ? )
-  (    8 ? )
-  (    9 VCC )
-  (   10 GND )
+ ( /4EE75A68 TRACO_8W_12V_DUAL U1 TRACO_8W_12V_DUAL
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 GND )
+  ( 9 GND )
+  ( 11 -VAA )
+  ( 14 VAA )
+  ( 16 GND )
+  ( 22 +12V )
+  ( 23 +12V )
  )
- ( /4D920C69 $noname  P2 MECA {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D920C00 $noname  R1 10K {Lib=R}
-  (    1 /Frein_main )
-  (    2 GND )
- )
- ( /4D920AA1 $noname  P1 Frein_Main_in {Lib=CONN_2}
-  (    1 VCC )
-  (    2 /Frein_main )
- )
- ( /4D7796C0 $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
-  (    1 /Uacc_in )
-  (    2 /Frein )
-  (    3 ? )
-  (    4 ? )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 +12V )
-  (    9 VCC )
-  (   10 GND )
+ ( /4F02FFB0 DIP-8__300_ELL U2 LM358
+  ( 1 N-000029 )
+  ( 2 N-000026 )
+  ( 3 GND )
+  ( 4 -VAA )
+  ( 5 N-000028 )
+  ( 6 N-000027 )
+  ( 7 N-000031 )
+  ( 8 VAA )
  )
 )
 *
 { Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
 $component C3
  SM*
  C?
  C1-1
 $endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C4
+ SM*
+ C?
+ C1-1
 $endlist
 $component C5
  CP*
  SM*
 $endlist
-$component C4
- SM*
- C?
- C1-1
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
 $endlist
 $component D3
  D?
@@ -212,6 +209,44 @@ $component D4
  SO*
  SM*
 $endlist
+$component D5
+ D?
+ SO*
+ SM*
+$endlist
+$component D6
+ D?
+ SO*
+ SM*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R5
  R?
  SM0603
@@ -219,15 +254,12 @@ $component R5
  R?-*
  SM1206
 $endlist
-$component D6
- D?
- SO*
- SM*
-$endlist
-$component D5
- D?
- SO*
- SM*
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $component R7
  R?
@@ -250,55 +282,14 @@ $component R9
  R?-*
  SM1206
 $endlist
-$component R3
+$component R10
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component D2
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component D1
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C2
- CP*
- SM*
-$endlist
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R1
+$component R11
  R?
  SM0603
  SM0805
@@ -307,105 +298,3 @@ $component R1
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "" ""
- R2 2
- D1 1
-Net 2 "GND" "GND"
- MEZZA2 10
- U1 16
- R4 2
- MEZZA1 10
- R1 2
- U2 3
- P8 2
- P9 1
- P9 2
- C3 2
- R11 1
- D3 1
- C1 2
- C2 2
- D1 2
- U1 9
- D6 1
- U1 3
- U1 2
- D2 1
-Net 3 "VAA" "VAA"
- C5 1
- C4 1
- U1 14
- R2 1
- U2 8
-Net 4 "-VAA" "-VAA"
- R3 1
- C5 2
- C4 2
- U1 11
- U2 4
-Net 6 "" ""
- P7 2
- R7 1
- D5 1
-Net 7 "" ""
- D6 2
- D5 2
-Net 8 "" ""
- D4 1
- R5 1
- P7 1
-Net 9 "" ""
- D4 2
- D3 2
-Net 10 "" ""
- R3 2
- D2 2
-Net 12 "VCC" "VCC"
- MEZZA1 9
- P9 4
- MEZZA2 9
- P5 1
- P1 1
-Net 13 "/Frein_main" "Frein_main"
- P1 2
- MEZZA2 6
- R1 1
-Net 21 "/Frein" "Frein"
- R4 1
- P8 1
- P5 2
- MEZZA1 2
-Net 29 "" ""
- U2 2
- R8 1
- R9 2
-Net 30 "" ""
- U2 6
- R10 2
- R11 2
-Net 31 "" ""
- U2 5
- R6 1
- C3 1
-Net 32 "" ""
- R9 1
- R7 2
- U2 1
-Net 33 "/Uacc_in" "Uacc_in"
- R6 2
- MEZZA1 1
- P9 3
-Net 34 "" ""
- R5 2
- U2 7
- R10 1
- R8 2
-Net 35 "+12V" "+12V"
- U1 22
- C1 1
- C2 1
- U1 23
- MEZZA1 8
-}
-#End
