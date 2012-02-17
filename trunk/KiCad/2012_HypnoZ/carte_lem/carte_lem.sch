@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 02/02/2012 13:21:55
+EESchema Schematic File Version 2  date 17/02/2012 19:53:51
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -33,16 +33,15 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_lem-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
-Title ""
-Date "2 feb 2012"
-Rev ""
-Comp ""
+Title "Carte mesure tension"
+Date "17 feb 2012"
+Rev "1.0"
+Comp "EPSA - HypnoZ"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -281,7 +280,7 @@ L R R3
 U 1 1 4EDE419A
 P 5050 5450
 F 0 "R3" V 5130 5450 50  0000 C CNN
-F 1 "25k" V 5050 5450 50  0000 C CNN
+F 1 "27k" V 5050 5450 50  0000 C CNN
 	1    5050 5450
 	0    1    1    0   
 $EndComp
@@ -308,7 +307,7 @@ L R R4
 U 1 1 4EDE4197
 P 5050 6100
 F 0 "R4" V 5130 6100 50  0000 C CNN
-F 1 "25k" V 5050 6100 50  0000 C CNN
+F 1 "27k" V 5050 6100 50  0000 C CNN
 	1    5050 6100
 	0    1    1    0   
 $EndComp
@@ -375,7 +374,7 @@ L R R2
 U 1 1 4EDE4168
 P 5050 4800
 F 0 "R2" V 5130 4800 50  0000 C CNN
-F 1 "25k" V 5050 4800 50  0000 C CNN
+F 1 "12k" V 5050 4800 50  0000 C CNN
 	1    5050 4800
 	0    1    1    0   
 $EndComp
@@ -402,7 +401,7 @@ L R R1
 U 1 1 4EDE411F
 P 5050 4150
 F 0 "R1" V 5130 4150 50  0000 C CNN
-F 1 "25k" V 5050 4150 50  0000 C CNN
+F 1 "12k" V 5050 4150 50  0000 C CNN
 	1    5050 4150
 	0    1    1    0   
 $EndComp
