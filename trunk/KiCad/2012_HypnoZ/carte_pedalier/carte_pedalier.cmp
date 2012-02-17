@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 13/12/2011 22:27:39
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 00:16:55
 
 BeginCmp
 TimeStamp = /4EE75B63;
@@ -99,31 +99,10 @@ IdModule  = KK_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4D920C69;
-Reference = P2;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4EE758E2;
-Reference = P4;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
 TimeStamp = /4EE75911;
 Reference = P5;
 ValeurCmp = Frein_ped_in;
 IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4EE758E0;
-Reference = P6;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
 EndCmp
 
 BeginCmp
@@ -232,9 +211,9 @@ IdModule  = TRACO_8W_12V_DUAL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EE7C329;
+TimeStamp = /4F02FFB0;
 Reference = U2;
-ValeurCmp = LM324;
+ValeurCmp = LM358;
 IdModule  = DIP-8__300_ELL;
 EndCmp
 
