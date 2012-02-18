@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-03-23 BZR 2918)-stable date = 07/02/2012 15:40:15
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 00:22:32
 
 BeginCmp
 TimeStamp = /4EC8E707;
@@ -502,27 +502,6 @@ TimeStamp = /4F15941F;
 Reference = P28;
 ValeurCmp = Alim;
 IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F3136E7;
-Reference = P29;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F3136EC;
-Reference = P30;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F313743;
-Reference = P31;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
 EndCmp
 
 BeginCmp

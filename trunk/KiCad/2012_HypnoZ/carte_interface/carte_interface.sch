@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 07/02/2012 15:38:36
+EESchema Schematic File Version 2  date 18/02/2012 00:29:38
 LIBS:epsa_cmos
 LIBS:epsa_relais
 LIBS:symbioz
@@ -39,7 +39,7 @@ $Descr A2 23400 16535
 encoding utf-8
 Sheet 1 1
 Title "EPSA - Hypnoz"
-Date "7 feb 2012"
+Date "17 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -47,24 +47,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 18500 10100
-NoConn ~ 18500 10000
-NoConn ~ 18500 9900
-$Comp
-L CONN_1 P31
-U 1 1 4F313743
-P 18650 10100
-F 0 "P31" H 18730 10100 40  0000 L CNN
-F 1 "CONN_1" H 18650 10155 30  0001 C CNN
-	1    18650 10100
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	19200 10200 18200 10200
-Wire Notes Line
-	19200 10200 19200 9700
-Wire Notes Line
-	19200 9700 18200 9700
+NoConn ~ 1750 2350
+NoConn ~ 3750 2350
 Wire Wire Line
 	3750 1650 3500 1650
 Wire Wire Line
@@ -892,8 +876,6 @@ Wire Wire Line
 Wire Wire Line
 	8100 2050 8100 2150
 Wire Wire Line
-	1750 2350 1650 2350
-Wire Wire Line
 	18200 6100 17800 6100
 Wire Wire Line
 	17800 5900 18200 5900
@@ -1105,8 +1087,6 @@ Wire Wire Line
 	4950 2250 5100 2250
 Wire Wire Line
 	4950 2350 5100 2350
-Wire Wire Line
-	3750 2350 3650 2350
 Wire Wire Line
 	18150 13150 18150 13200
 Wire Wire Line
@@ -1321,9 +1301,6 @@ Wire Wire Line
 Wire Wire Line
 	4950 2050 5400 2050
 Wire Wire Line
-	1700 2450 1700 2350
-Connection ~ 1700 2350
-Wire Wire Line
 	12550 2850 12550 2750
 Wire Wire Line
 	12550 2350 12550 2300
@@ -1382,28 +1359,6 @@ Wire Wire Line
 	3500 1950 3750 1950
 Wire Wire Line
 	3500 1750 3750 1750
-Wire Notes Line
-	18200 9700 18200 10200
-Text Notes 18300 9800 0    60   ~ 0
-Trous mécaniques
-$Comp
-L CONN_1 P30
-U 1 1 4F3136EC
-P 18650 10000
-F 0 "P30" H 18730 10000 40  0000 L CNN
-F 1 "CONN_1" H 18650 10055 30  0001 C CNN
-	1    18650 10000
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P29
-U 1 1 4F3136E7
-P 18650 9900
-F 0 "P29" H 18730 9900 40  0000 L CNN
-F 1 "CONN_1" H 18650 9955 30  0001 C CNN
-	1    18650 9900
-	1    0    0    -1  
-$EndComp
 Text Label 3500 1950 0    60   ~ 0
 ERR_2
 Text Label 3500 1850 0    60   ~ 0
@@ -2279,15 +2234,6 @@ NoConn ~ 2950 1750
 NoConn ~ 2950 1650
 NoConn ~ 1750 1650
 NoConn ~ 1750 1850
-$Comp
-L PWR_FLAG #FLG031
-U 1 1 4EDE254A
-P 1700 2450
-F 0 "#FLG031" H 1700 2720 30  0001 C CNN
-F 1 "PWR_FLAG" H 1700 2680 30  0000 C CNN
-	1    1700 2450
-	-1   0    0    1   
-$EndComp
 $Comp
 L PWR_FLAG #FLG032
 U 1 1 4EDE2530
@@ -3419,15 +3365,6 @@ F 1 "+12V" H 5100 2350 30  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR093
-U 1 1 4ECE58D8
-P 3650 2350
-F 0 "#PWR093" H 3650 2450 30  0001 C CNN
-F 1 "VCC" H 3650 2450 30  0000 C CNN
-	1    3650 2350
-	0    -1   -1   0   
-$EndComp
-$Comp
 L HE10-16 P4
 U 1 1 4ECE58D7
 P 4350 2000
@@ -4179,15 +4116,6 @@ P 7150 2050
 F 0 "#PWR0129" H 7150 2000 20  0001 C CNN
 F 1 "+12V" H 7150 2150 30  0000 C CNN
 	1    7150 2050
-	0    -1   -1   0   
-$EndComp
-$Comp
-L VCC #PWR0130
-U 1 1 4EC28E30
-P 1650 2350
-F 0 "#PWR0130" H 1650 2450 30  0001 C CNN
-F 1 "VCC" H 1650 2450 30  0000 C CNN
-	1    1650 2350
 	0    -1   -1   0   
 $EndComp
 $Comp
