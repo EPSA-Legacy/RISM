@@ -14,7 +14,9 @@
 #include <18F258.h>
 #include <can-18xxx8.c>
 
-#define MESSAGE_ID		1
+#define MAB_TO_PIC 1
+#define PIC_TO_MAB 2
+#define PONG 3
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
@@ -32,12 +34,14 @@ void isr_timer2()
 
 void main()
 {
-	int8 i=0;
+	unsigned int8 i=0;
 	int r=0;
 	struct rx_stat rxStat;
 	int32 rxId;
 	int8 rxData[8];
 	int8 rxLen;
+//	int pongflagemit=0;
+//	int pong=0;
 
 	//initialisation des interruptions
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
@@ -50,26 +54,26 @@ void main()
 	//  BOUCLE DE SAISIE
 	while(true)
 	{
+		delay_ms(200);
+		printf("\r\n Tick : %Lu ms \r\n \r\n",ms);
 		i++;
-		printf("\r\n Tick : %d",i);
-		delay_ms(100);
 		// Envoie sur le CAN
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
-			printf("\r\n CAN TX %d",i);
-			r=can_putd(MESSAGE_ID,&i,1,0,false,false); //emission du message de 8octets
+			printf("CAN TX %u \r\n",i);
+			r=can_putd(PIC_TO_MAB,&i,1,0,false,false); //emission du message de 8octets
 			if (r != 0xFF)
 			{
-				printf("\r\n CAN_TX - %u - ID=%u - LEN=1", r, MESSAGE_ID);
+				printf("CAN_TX - %u - ID=%u - LEN=1", r, PIC_TO_MAB);
 			}
 			else
 			{
-				printf("\r\n CAN_ERROR - FAIL on can_putd function \r\n");
+				printf("CAN_ERROR - FAIL on can_putd function \r\n");
 			}	
 		}
 		else
 		{
-			printf("\r\n Buffer d'emission plein");
+			printf("Buffer d'emission plein \r\n");
 		}
 
 		// On écoute le can et on retransmet sur le rs232
@@ -79,19 +83,26 @@ void main()
 			printf("CAN RX \r\n");
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-				if(rxId==MESSAGE_ID)
+				if(rxId==MAB_TO_PIC)
 				{
-					printf("%d",rxData[0]);	
+					printf("RX MAB_TO_PIC = %d \r\n",rxData[0]);
 				}
+/*				else if(rxId==PONG)
+				{
+					pong=rxData[0];
+					pong++;
+					pongflagemit=1;
+					printf("RX PONG = %d \r\n",rxData[0]);
+				}*/
 				else
 				{
-					printf("\r\nCAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u",rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
+					printf("CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u \r\n",rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 				}
 		
 			}
 			else
 			{
-				printf(" CAN_DEBUG - FAIL on can_getd function");
+				printf(" CAN_DEBUG - FAIL on can_getd function \r\n");
 			}
 		
 		}
