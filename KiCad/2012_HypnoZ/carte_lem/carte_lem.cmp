@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 01:44:06
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 14:37:05
 
 BeginCmp
 TimeStamp = /4F15946B;
@@ -29,24 +29,10 @@ IdModule  = KK_4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDE414E;
+TimeStamp = /4F3FA822;
 Reference = P3;
-ValeurCmp = Mot1;
-IdModule  = bornier2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4EDE4167;
-Reference = P4;
-ValeurCmp = Mot2;
-IdModule  = bornier2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4EDE4199;
-Reference = P5;
-ValeurCmp = Conv;
-IdModule  = bornier2;
+ValeurCmp = Tensions;
+IdModule  = bornier4;
 EndCmp
 
 BeginCmp
