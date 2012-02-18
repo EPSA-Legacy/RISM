@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  18/02/2012 01:44:06
+# EESchema Netlist Version 1.1 created  18/02/2012 14:37:05
 (
  ( /4F15946B C2V8 C1 1000u
   ( 1 VAA )
@@ -18,58 +18,52 @@
   ( 3 /Uconv )
   ( 4 /Usc )
  )
- ( /4EDE414E bornier2 P3 Mot1
-  ( 1 N-000015 )
-  ( 2 N-000014 )
- )
- ( /4EDE4167 bornier2 P4 Mot2
-  ( 1 N-000017 )
-  ( 2 N-000016 )
- )
- ( /4EDE4199 bornier2 P5 Conv
-  ( 1 N-000010 )
-  ( 2 N-000008 )
+ ( /4F3FA822 bornier4 P3 Tensions
+  ( 1 N-000016 )
+  ( 2 N-000013 )
+  ( 3 N-000015 )
+  ( 4 GNDPWR )
  )
  ( /4EDE4198 bornier2 P6 SC
-  ( 1 N-000007 )
+  ( 1 N-000001 )
   ( 2 N-000006 )
  )
  ( /4EDE411F R7 R1 12k
-  ( 1 N-000015 )
-  ( 2 N-000013 )
+  ( 1 N-000016 )
+  ( 2 N-000012 )
  )
  ( /4EDE4168 R7 R2 12k
-  ( 1 N-000017 )
-  ( 2 N-000018 )
+  ( 1 N-000013 )
+  ( 2 N-000011 )
  )
  ( /4EDE419A R7 R3 27k
-  ( 1 N-000010 )
-  ( 2 N-000009 )
+  ( 1 N-000015 )
+  ( 2 N-000008 )
  )
  ( /4EDE4197 R7 R4 27k
-  ( 1 N-000007 )
+  ( 1 N-000001 )
   ( 2 N-000005 )
  )
  ( /4EDE3F77 LEM-LV25 U1 LEM
   ( 1 -VAA )
   ( 2 VAA )
   ( 3 /Umot1 )
-  ( 4 N-000013 )
-  ( 5 N-000014 )
+  ( 4 N-000012 )
+  ( 5 GNDPWR )
  )
  ( /4EDE416B LEM-LV25 U2 LEM
   ( 1 -VAA )
   ( 2 VAA )
   ( 3 /Umot2 )
-  ( 4 N-000018 )
-  ( 5 N-000016 )
+  ( 4 N-000011 )
+  ( 5 GNDPWR )
  )
  ( /4EDE419D LEM-LV25 U3 LEM
   ( 1 -VAA )
   ( 2 VAA )
   ( 3 /Uconv )
-  ( 4 N-000009 )
-  ( 5 N-000008 )
+  ( 4 N-000008 )
+  ( 5 GNDPWR )
  )
  ( /4EDE4194 LEM-LV25 U4 LEM
   ( 1 -VAA )
