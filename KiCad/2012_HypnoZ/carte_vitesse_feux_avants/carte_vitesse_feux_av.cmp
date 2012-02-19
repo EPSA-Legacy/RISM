@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-01-22 BZR 2754)-stable date = 17/04/2011 15:46:43
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = dim. 19 fÃ©vr. 2012 21:36:33 CET
 
 BeginCmp
 TimeStamp = /4D51649D;
@@ -29,20 +29,6 @@ IdModule  = C1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DA9DD08;
-Reference = C5;
-ValeurCmp = 10u;
-IdModule  = C1V5;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DA9DD09;
-Reference = C6;
-ValeurCmp = 27p;
-IdModule  = C1;
-EndCmp
-
-BeginCmp
 TimeStamp = /4CFA8A0D;
 Reference = D1;
 ValeurCmp = YELLOW;
@@ -61,6 +47,90 @@ TimeStamp = /4D9A4309;
 Reference = D3;
 ValeurCmp = YELLOW;
 IdModule  = LEDV;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41306D;
+Reference = D4;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F412EDA;
+Reference = D5;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F413039;
+Reference = D6;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41310A;
+Reference = D7;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F413110;
+Reference = D8;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41310F;
+Reference = D9;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41306C;
+Reference = K1;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F412D34;
+Reference = K2;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41303A;
+Reference = K3;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41310B;
+Reference = K4;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F413111;
+Reference = K5;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F41310E;
+Reference = K6;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
 EndCmp
 
 BeginCmp
@@ -88,20 +158,20 @@ BeginCmp
 TimeStamp = /4D6BA2EC;
 Reference = MEZZA1;
 ValeurCmp = MEZZA-10;
-IdModule  = he10-10df;
+IdModule  = MEZZA-10-COMPACT;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6BA2F1;
 Reference = MEZZA2;
 ValeurCmp = MEZZA-10;
-IdModule  = he10-10df;
+IdModule  = MEZZA-10-COMPACT;
 EndCmp
 
 BeginCmp
 TimeStamp = /4D6BB20D;
 Reference = P1;
-ValeurCmp = Incré_G;
+ValeurCmp = ~;
 IdModule  = KK_2;
 EndCmp
 
@@ -122,7 +192,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4D6BB215;
 Reference = P4;
-ValeurCmp = Incré_D;
+ValeurCmp = ~;
 IdModule  = KK_2;
 EndCmp
 
@@ -176,7 +246,7 @@ IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DA9D9D2;
+TimeStamp = /4F413115;
 Reference = Q2;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
@@ -190,21 +260,21 @@ IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DA9DA3E;
+TimeStamp = /4F413114;
 Reference = Q4;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DA9D99F;
+TimeStamp = /4F41306F;
 Reference = Q5;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DA9DA5E;
+TimeStamp = /4F413108;
 Reference = Q6;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
@@ -285,55 +355,6 @@ TimeStamp = /4D7F8B45;
 Reference = U2;
 ValeurCmp = 4069;
 IdModule  = DIP-14__300_ELL;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BA834;
-Reference = U3;
-ValeurCmp = REED_Phares_G;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB08C;
-Reference = U4;
-ValeurCmp = REED_Phares_D;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB020;
-Reference = U5;
-ValeurCmp = REED_Codes_G;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB07C;
-Reference = U6;
-ValeurCmp = REED_Codes_D;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB031;
-Reference = U7;
-ValeurCmp = REED_Cligno_G;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BB06C;
-Reference = U8;
-ValeurCmp = REED_Cligno_D;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DA9DDE8;
-Reference = U9;
-ValeurCmp = 7805;
-IdModule  = LM78XX_2;
 EndCmp
 
 EndListe
