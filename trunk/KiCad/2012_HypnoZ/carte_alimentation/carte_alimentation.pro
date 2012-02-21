@@ -1,6 +1,6 @@
-update=21/02/2012 14:25:13
+update=21/02/2012 16:10:14
 version=1
-last_client=cvpcb
+last_client=eeschema
 [pcbnew]
 version=1
 PadDrlX=320
@@ -56,11 +56,11 @@ MaxLnkS=3
 ShowRat=0
 ShowMRa=1
 [pcbnew/libraries]
-LibName1=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Modules/epsa_cmos
-LibName2=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Modules/epsa_connect
-LibName3=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Modules/epsa_divers
-LibName4=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Modules/epsa_relais
-LibName5=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Modules/symbioz
+LibName1=epsa_cmos
+LibName2=epsa_connect
+LibName3=epsa_divers
+LibName4=epsa_relais
+LibName5=symbioz
 LibName6=sockets
 LibName7=connect
 LibName8=discret
@@ -71,12 +71,17 @@ LibName12=display
 LibName13=valves
 LibName14=led
 LibName15=dip_sockets
-LibDir=
+LibDir=../../Modules
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [eeschema]
 version=1
-LibDir=
+LibDir=../../Librairies
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15
@@ -106,10 +111,10 @@ RptD_Y=100
 RptLab=1
 LabSize=60
 [eeschema/libraries]
-LibName1=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Librairies/epsa_cmos
-LibName2=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Librairies/epsa_puissance
-LibName3=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Librairies/epsa_relais
-LibName4=C:/Users/Simon/Documents/Centrale/PE/EPSA Kicad/Librairies/symbioz
+LibName1=epsa_cmos
+LibName2=epsa_puissance
+LibName3=epsa_relais
+LibName4=symbioz
 LibName5=power
 LibName6=device
 LibName7=transistors
@@ -140,8 +145,3 @@ LibName31=opto
 LibName32=atmel
 LibName33=contrib
 LibName34=valves
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
