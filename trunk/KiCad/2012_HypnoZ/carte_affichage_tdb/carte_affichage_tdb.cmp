@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 22:02:04
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 20/02/2012 22:27:01
 
 BeginCmp
 TimeStamp = /4DCA89A1;
@@ -39,7 +39,7 @@ BeginCmp
 TimeStamp = /4DD6E845;
 Reference = C6;
 ValeurCmp = 27p;
-IdModule  = C1V8;
+IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -267,7 +267,7 @@ IdModule  = FET_P_DIP4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DC2D353;
+TimeStamp = /4F40EAC7;
 Reference = Q19;
 ValeurCmp = FET_P;
 IdModule  = FET_P_DIP4;
@@ -288,7 +288,7 @@ IdModule  = FET_P_DIP4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DC2D356;
+TimeStamp = /4F40EFD9;
 Reference = Q22;
 ValeurCmp = FET_P;
 IdModule  = FET_P_DIP4;
@@ -318,7 +318,7 @@ EndCmp
 BeginCmp
 TimeStamp = /4DDD80AA;
 Reference = R1;
-ValeurCmp = 520;
+ValeurCmp = 1k;
 IdModule  = R3;
 EndCmp
 
@@ -414,10 +414,10 @@ IdModule  = DIP-20__300_ELL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F3FCF46;
+TimeStamp = /4F42AB2C;
 Reference = U2;
-ValeurCmp = TMH_1205S;
-IdModule  = TMH_1205S;
+ValeurCmp = TSR_1-2465;
+IdModule  = TSR_1-2465;
 EndCmp
 
 BeginCmp
