@@ -8,7 +8,9 @@
 //		Version 1.00  - BLD - 29/11/2011                                       //
 //		Version 1.01  - BLD - 18/12/2011 -> recalibrage timer                  //
 //		Version 1.02  - BLD - 07/02/2012 -> affichage RPM+charge sur bargraphe //
-//      	Version 1.03  - BLD - 12/02/2012 -> encapsulation debug                   //    
+//      Version 1.03  - BLD - 12/02/2012 -> encapsulation debug                //  
+//      Version 1.04  - BLD - 23/02/2012 -> gestion bargraphe de 20            //  
+//		Version 1.05  - BLD - 23/02/2012 -> gestion de la couleur              //  
 //	    												                       //
 //			                                                                   //
 /////////////////////////////////////////////////////////////////////////////////
@@ -36,19 +38,18 @@
 #define DATA6			PIN_A5
 #define DATA7			PIN_E0
 #define DATA8			PIN_E1
-#define DATA9BAR1		PIN_E2
-#define DATA10BAR1		PIN_C0
-#define DATA9BAR2		PIN_C2
-#define DATA10BAR2		PIN_C3
-#define	SELBAR1			PIN_D4
-#define SELBAR2			PIN_C4
-#define SELSEG1			PIN_C1
-#define SELSEG2			PIN_D7
-#define SELSEG3			PIN_C1
-#define RED				PIN_E1
-#define GREEN			PIN_E2
-#define BUTTON1			PIN_B4
-#define BUTTON2			PIN_B1
+#define	SELBAR1_LOW		PIN_B1
+#define SELBAR1_HIGH	PIN_D3
+#define SELBAR2_LOW		PIN_B4
+#define SELBAR2_HIGH	PIN_D2
+#define SELBAR12_TOP	PIN_C4
+#define SELSEG1			PIN_E2
+#define SELSEG2			PIN_B0
+#define SELSEG3			PIN_C5
+#define RED				PIN_C1
+#define GREEN			PIN_C0
+#define BUTTON1			PIN_C3
+#define BUTTON2			PIN_C2
 
 // Constantes diverses
 #define DISPLAYSPEED	   1
@@ -87,9 +88,12 @@ unsigned int1 displaymode=0;                   // variable permettant de savoir 
 unsigned int16 speed=0;						   // variable contenant la vitesse courante en km/h.
 unsigned int16 rpm=0;						   // variable contenant le régime moteur en rpm (compris entre 0 à 6000 tr/min
 unsigned int16 charge=0;					   // variable contenant la charge des supercapacités en Volt
+unsigned int8 bar1num=0;					   // variable contenant la valeur actuellement affichée sur le bargraphe1
+unsigned int8 bar2num=0;					   // variable contenant la valeur actuellement affichée sur le bargraphe2
 int8 index=0;								   // variable contenant la position courante pour l'affichage déroulant
 int8 indexbar=0;							   // variable contenant le niveau courant des bargraphes dans le mode présentation
 int16 tmp=0;						           // variable temporaire
+
 
 
 
@@ -139,8 +143,8 @@ void main()
 	can_init();							//initialise le CAN
 	can_set_baud();						//obsolète à priori à tester
 	displaymode=DISPLAYSPEED;			//par défaut on affiche la vitesse
-	output_bit(GREEN,0);				//on éteint le vert
-	output_bit(RED,1);					//on éclaire en rouge
+	output_bit(GREEN,1);				//on éclaire le vert
+	output_bit(RED,0);					//on éteint en rouge
 	restart_wdt();
 
 	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
@@ -296,6 +300,23 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		displaynum2bar(indexbar,BARAGRAPHE1);
 		displaynum2bar(indexbar,BARAGRAPHE2);
 	}
+
+	// choix de la couleur d'affichage
+	if(speed<=50)	// Au dessous de 50kph on eclaire en vert
+	{
+		output_bit(GREEN,1);			
+		output_bit(RED,0);					
+	}
+	else if(speed>50 && speed<=90) // Entre 50 et 90 on eclaire en jaune
+	{
+		output_bit(GREEN,1);			
+		output_bit(RED,1);					
+	}
+	else // Au dessus de 90 on eclaire en rouge
+	{
+		output_bit(GREEN,0);				
+		output_bit(RED,1);					
+	}
 }
 
 
@@ -304,8 +325,11 @@ void displaynum2seg(int num,int seg)            //Fonction en charge de la gesti
 {
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in displaynum2seg",sec,ms)
 	//on met les bits de sélection à 0 pour éviter d'écrire sur la voie actuellement sélectionnée.
-	output_bit(SELBAR1,0);
-	output_bit(SELBAR2,0);
+	output_bit(SELBAR1_LOW,0);
+	output_bit(SELBAR1_HIGH,0);
+	output_bit(SELBAR2_LOW,0);
+	output_bit(SELBAR2_HIGH,0);
+	output_bit(SELBAR12_TOP,0);
 	output_bit(SELSEG1,0);
 	output_bit(SELSEG2,0);
 	output_bit(SELSEG3,0);
@@ -538,447 +562,390 @@ void displaynum2seg(int num,int seg)            //Fonction en charge de la gesti
 	}
 }
 
-#inline
-void displaynum2bar(int num,int bar) //Fonction en charge de l'affichage sur les baragraphes. 
-									 //Num doit âtre compris entre 0 et 10. Bar permet de sélectionner le baragraphe
+#inline 
+void displaynum2bar(int num,int bar)
 {
+	int1 data[24];				//Contient l'état des verrous logique dans l'ordre croissant
+	int1 topdatabar1[4];		//Contient l'état des bits de poids fort du dernier verrou
+	int1 topdatabar2[4];		//Contient l'état des bits de poids faible du dernier verrou
+	int i=0;
+
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in displaynum2bar",sec,ms)
 	//on met les bits de sélection à 0 pour éviter d'écrire sur la voie actuellement sélectionnée.
-	output_bit(SELBAR1,0);
-	output_bit(SELBAR2,0);
+	output_bit(SELBAR1_LOW,0);
+	output_bit(SELBAR1_HIGH,0);
+	output_bit(SELBAR2_LOW,0);
+	output_bit(SELBAR2_HIGH,0);
+	output_bit(SELBAR12_TOP,0);
 	output_bit(SELSEG1,0);
 	output_bit(SELSEG2,0);
 	output_bit(SELSEG3,0);
 
-	if(num<=10 && num>= 0) // La donnée à afficher est valide
+	//On initialise correctement les topdatabar[]
+	for(i=0;i<4;i++)
 	{
-		if(bar==BARAGRAPHE1)
+		topdatabar1[i]=0;
+		topdatabar2[i]=0;
+	}
+
+	switch(bar1num)
+	{
+		case 17:
 		{
-			switch(num)
-			{
-				case 0:
-				{
-					output_bit(DATA1,0);
-					output_bit(DATA2,0);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 1:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,0);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 2:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 3:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 4:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 5:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 6:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 7:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 8:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR1,0);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 9:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR1,1);
-					output_bit(DATA10BAR1,0);
-					break;
-				}
-				case 10:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR1,1);
-					output_bit(DATA10BAR1,1);
-					break;
-				}
-			}
+			topdatabar1[0]=1;
+			break;	
 		}
-		if(bar==BARAGRAPHE2)
+		case 18:
 		{
-			switch(num)
-			{
-				case 0:
-				{
-					output_bit(DATA1,0);
-					output_bit(DATA2,0);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 1:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,0);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 2:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,0);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 3:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,0);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 4:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,0);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 5:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,0);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 6:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,0);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 7:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,0);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 8:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR2,0);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 9:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR2,1);
-					output_bit(DATA10BAR2,0);
-					break;
-				}
-				case 10:
-				{
-					output_bit(DATA1,1);
-					output_bit(DATA2,1);
-					output_bit(DATA3,1);
-                	output_bit(DATA4,1);
-         	    	output_bit(DATA5,1);
-					output_bit(DATA6,1);
-					output_bit(DATA7,1);
-					output_bit(DATA8,1);
-					output_bit(DATA9BAR2,1);
-					output_bit(DATA10BAR2,1);
-					break;
-				}
-			}
+			topdatabar1[0]=1;
+			topdatabar1[1]=1;
+			break;	
+		}
+		case 19:
+		{
+			topdatabar1[0]=1;
+			topdatabar1[1]=1;
+			topdatabar1[2]=1;
+			break;	
+		}
+		case 20:
+		{
+			topdatabar1[0]=1;
+			topdatabar1[1]=1;
+			topdatabar1[2]=1;
+			topdatabar1[3]=1;
+			break;	
 		}
 	}
-	else				   // On allume que le premier et le dernier segment pour signaler l'erreur
+	switch(bar2num)
 	{
-		if(bar==BARAGRAPHE1)
+		case 17:
 		{
-			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Baragraphe 1 is out of range",sec,ms)
-			output_bit(DATA1,1);
-			output_bit(DATA2,0);
-			output_bit(DATA3,0);
-            output_bit(DATA4,0);
-            output_bit(DATA5,0);
-			output_bit(DATA6,0);
-			output_bit(DATA7,0);
-			output_bit(DATA8,0);
-			output_bit(DATA9BAR1,0);
-			output_bit(DATA10BAR1,1);
+			topdatabar2[0]=1;
+			break;	
 		}
-		else if(bar==BARAGRAPHE2)
+		case 18:
 		{
-			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Baragraphe 2 is out of range",sec,ms)
-			output_bit(DATA1,1);
-			output_bit(DATA2,0);
-			output_bit(DATA3,0);
-            output_bit(DATA4,0);
-            output_bit(DATA5,0);
-			output_bit(DATA6,0);
-			output_bit(DATA7,0);
-			output_bit(DATA8,0);
-			output_bit(DATA9BAR2,0);
-			output_bit(DATA10BAR2,1);
-		}	
-		else  // Au cas d'une erreur dans la sélection on met tous les bits de données à 0
+			topdatabar2[0]=1;
+			topdatabar2[1]=1;
+			break;	
+		}
+		case 19:
 		{
-			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Wrong selection bit for baragraphe",sec,ms)
-			output_bit(DATA1,0);
-			output_bit(DATA2,0);
-			output_bit(DATA3,0);
-            output_bit(DATA4,0);
-            output_bit(DATA5,0);
-			output_bit(DATA6,0);
-			output_bit(DATA7,0);
-			output_bit(DATA8,0);
-			output_bit(DATA9BAR1,0);
-			output_bit(DATA10BAR1,0);
+			topdatabar2[0]=1;
+			topdatabar2[1]=1;
+			topdatabar2[2]=1;
+			break;	
+		}
+		case 20:
+		{
+			topdatabar2[0]=1;
+			topdatabar2[1]=1;
+			topdatabar2[2]=1;
+			topdatabar2[3]=1;
+			break;	
 		}
 	}
 
-	// On gère les bits de sélection afin d'afficher le résultat sur le bon bargraphe
+	// On initialise le tableau date
+	for(i=0;i<24;i++)
+	{
+		data[i]=0;
+	}
+	// On remplit le tableau data
+	if(num<=20 && num>=0) // le numéro fourni en paramètre est affichable.
+	{
+		if(bar==BARAGRAPHE1)
+		{
+			for(i=1;i<=16;i++) // on initialise les deux données qui iront sur les verrous dédié
+			{	
+				if(i<=num)
+				{
+					data[i-1]=1;
+				}
+			}
+			// On met à jour les bits de poids fort en prenant soin de laisser l'initialisation de topdatabar2
+			switch(num)
+			{
+				case 17:
+				{
+					data[16]=1;
+					break;	
+				}
+				case 18:
+				{
+					data[16]=1;
+					data[17]=1;
+					break;	
+				}
+				case 19:
+				{
+					data[16]=1;
+					data[17]=1;
+					data[18]=1;
+					break;	
+				}
+				case 20:
+				{
+					data[16]=1;
+					data[17]=1;
+					data[18]=1;
+					data[19]=1;
+					break;	
+				}
+			}
+			// on recopie la valeur présente sur l'autre bargraphe dans les bits de poids faible
+			data[20]=topdatabar2[0];
+			data[21]=topdatabar2[1];
+			data[22]=topdatabar2[2];
+			data[23]=topdatabar2[3];	
+		}
+		else if (bar==BARAGRAPHE2)
+		{
+			for(i=1;i<=16;i++) // on initialise les deux données qui iront sur les verrous dédié
+			{	
+				if(i<=num)
+				{
+					data[i-1]=1;
+				}
+			}
+			// on recopie les bits de poids fort du baragraphe 1
+			data[16]=topdatabar1[0];
+			data[17]=topdatabar1[1];
+			data[18]=topdatabar1[2];
+			data[19]=topdatabar1[3];
+			// On met à jour les bits de poids faible 
+			switch(num)
+			{
+				case 17:
+				{
+					data[20]=1;
+					break;	
+				}
+				case 18:
+				{
+					data[20]=1;
+					data[21]=1;
+					break;	
+				}
+				case 19:
+				{
+					data[20]=1;
+					data[21]=1;
+					data[22]=1;
+					break;	
+				}
+				case 20:
+				{
+					data[20]=1;
+					data[21]=1;
+					data[22]=1;
+					data[23]=1;
+					break;	
+				}
+			}
+		}
+		else
+		{
+			LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Wrong selection of the baragraphe in displaynum2bar",sec,ms);
+		}
+	}
+	else // le numéro saisi n'est pas valide
+	{
+		LOG_ERROR(TRACE_ALL||TRACE_EXEC,"Data cannot be displayed because they are out of range",sec,ms);
+		data[7]=1;
+		data[8]=1;
+		data[10]=1;
+		data[11]=1;
+	}
+
+	// on affiche data sur le bon baragraphe
+
 	if(bar==BARAGRAPHE1)
 	{
-		output_bit(SELBAR1,1);
+
+		output_bit(DATA1,data[0]);
+		output_bit(DATA2,data[1]);
+		output_bit(DATA3,data[2]);
+        output_bit(DATA4,data[3]);
+        output_bit(DATA5,data[4]);
+		output_bit(DATA6,data[5]);
+		output_bit(DATA7,data[6]);
+		output_bit(DATA8,data[7]);
+
+		output_bit(SELBAR1_LOW,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR1_LOW,0);
+		delay_us(25);
+
+		output_bit(DATA1,data[8]);
+		output_bit(DATA2,data[9]);
+		output_bit(DATA3,data[10]);
+        output_bit(DATA4,data[11]);
+        output_bit(DATA5,data[12]);
+		output_bit(DATA6,data[13]);
+		output_bit(DATA7,data[14]);
+		output_bit(DATA8,data[15]);
+
+		output_bit(SELBAR1_HIGH,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR1_HIGH,0);
+		delay_us(25);
+
+		output_bit(DATA1,data[16]);
+		output_bit(DATA2,data[17]);
+		output_bit(DATA3,data[18]);
+        output_bit(DATA4,data[19]);
+        output_bit(DATA5,data[20]);
+		output_bit(DATA6,data[21]);
+		output_bit(DATA7,data[22]);
+		output_bit(DATA8,data[23]);
+
+		output_bit(SELBAR12_TOP,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR12_TOP,0);
+		delay_us(25);
+
+		bar1num=num;							// on met à jour la valeur actuellement affichée
 	}
 	else if(bar==BARAGRAPHE2)
 	{
-		output_bit(SELBAR2,1);
-	}
-}
 
+		output_bit(DATA1,data[0]);
+		output_bit(DATA2,data[1]);
+		output_bit(DATA3,data[2]);
+        output_bit(DATA4,data[3]);
+        output_bit(DATA5,data[4]);
+		output_bit(DATA6,data[5]);
+		output_bit(DATA7,data[6]);
+		output_bit(DATA8,data[7]);
+
+		output_bit(SELBAR2_LOW,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR2_LOW,0);
+		delay_us(25);
+
+		output_bit(DATA1,data[8]);
+		output_bit(DATA2,data[9]);
+		output_bit(DATA3,data[10]);
+        output_bit(DATA4,data[11]);
+        output_bit(DATA5,data[12]);
+		output_bit(DATA6,data[13]);
+		output_bit(DATA7,data[14]);
+		output_bit(DATA8,data[15]);
+
+		output_bit(SELBAR2_HIGH,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR2_HIGH,0);
+		delay_us(25);
+
+		output_bit(DATA1,data[16]);
+		output_bit(DATA2,data[17]);
+		output_bit(DATA3,data[18]);
+        output_bit(DATA4,data[19]);
+        output_bit(DATA5,data[20]);
+		output_bit(DATA6,data[21]);
+		output_bit(DATA7,data[22]);
+		output_bit(DATA8,data[23]);
+
+		output_bit(SELBAR12_TOP,1);
+		delay_us(25);							// on attend le temps de réponse du baragraphe
+		output_bit(SELBAR12_TOP,0);
+		delay_us(25);
+
+		bar2num=num;							// On met à jour la valeur affichée
+	}
+
+}
 
 // Fonction convertissant le régime moteur en le bon nombre de niveau de bargraphe correspondant
 int convertrpm2bar(unsigned int16 regime)
 {
-	if(regime<100)
+	if(regime >=10 && regime<100)
 	{
 		return 0;
 	}
-	else if(regime >=100 && regime<600)
+	else if(regime >=100 && regime<300)
 	{
 		return 1;
 	}
-	else if (regime>=600 && regime<1200)
+	else if (regime>=300 && regime<600)
 	{
 		return 2;
 	}
-	else if (regime>=1200 && regime<1800)
+	else if (regime>=600 && regime<900)
 	{
 		return 3;
 	}
-	else if (regime>=1800 && regime<2400)
+	else if (regime>=900 && regime<1200)
 	{
 		return 4;
 	}
-	else if (regime>=2400 && regime<3000)
+	else if (regime>=1200 && regime<1500)
 	{
 		return 5;
 	}
-	else if (regime>=3000 && regime<3600)
+	else if (regime>=1500 && regime<1800)
 	{
 		return 6;
 	}
-	else if (regime>=3600 && regime<4200)
+	else if (regime>=1800 && regime<2100)
 	{
 		return 7;
 	}
-	else if (regime>=4200 && regime<4800)
+	else if (regime>=2100 && regime<2400)
 	{
 		return 8;
 	}
-	else if (regime>=4800 && regime<5400)
+	else if (regime>=2400 && regime<2700)
 	{
 		return 9;
 	}
-	else if (regime>=5400 && regime<8000)
+	else if (regime>=2700 && regime<3000)
 	{
 		return 10;
 	}
-	else										// si le régime moteur dépasse les 8000 tours ont met le bargraphe en erreur afin de signaler le pb
+	else if (regime>=3000 && regime<3300)
+	{
+		return 11;
+	}
+	else if (regime>=3300 && regime<3600)
+	{
+		return 12;
+	}
+	else if (regime>=3600 && regime<3900)
+	{
+		return 13;
+	}
+	else if (regime>=3900 && regime<4200)
+	{
+		return 14;
+	}
+	else if (regime>=4200 && regime<4500)
+	{
+		return 15;
+	}
+	else if (regime>=4500 && regime<4800)
+	{
+		return 16;
+	}
+	else if (regime>=4800 && regime<5100)
+	{
+		return 17;
+	}
+	else if (regime>=5100 && regime<5400)
+	{
+		return 18;
+	}
+	else if (regime>=5400 && regime<5700)
+	{
+		return 19;
+	}
+	else if (regime>=5700 && regime<6500)
+	{
+		return 20;
+	}
+	else										// si le régime moteur dépasse les 6500 tours ont met le bargraphe en erreur afin de signaler le pb
 	{
 		LOG_WARN(TRACE_ALL||TRACE_EXEC||TRACE_RPM,"RPM rate is a bit too high",sec,ms)
 		return 11;
@@ -990,51 +957,91 @@ int convertrpm2bar(unsigned int16 regime)
 // Fonction convertissant le régime moteur en le bon nombre de niveau de bargraphe correspondant
 int convertcharge2bar(unsigned int16 charge)
 {
-	if(charge<2)
+	if(charge>=2 &&charge<6)
 	{
 		return 0;
 	}
-	else if(charge >=2 &&  charge<25)
+	else if(charge <=6 &&  charge<12)
 	{
 		return 1;
 	}
-	else if (charge>=25 &&  charge<50)
+	else if (charge>=12 &&  charge<24)
 	{
 		return 2;
 	}
-	else if (charge>=50 &&  charge<75)
+	else if (charge>=24 &&  charge<36)
 	{
 		return 3;
 	}
-	else if (charge>=75 &&  charge<100)
+	else if (charge>=36 &&  charge<48)
 	{
 		return 4;
 	}
-	else if (charge>=100 &&  charge<125)
+	else if (charge>=48 &&  charge<60)
 	{
 		return 5;
 	}
-	else if (charge>=125&&  charge<150)
+	else if (charge>=60&&  charge<72)
 	{
 		return 6;
 	}
-	else if (charge>=150 &&  charge<175)
+	else if (charge>=72 &&  charge<84)
 	{
 		return 7;
 	}
-	else if (charge>=175 &&  charge<200)
+	else if (charge>=84 &&  charge<96)
 	{
 		return 8;
 	}
-	else if (charge>=200&&  charge<225)
+	else if (charge>=96 &&  charge<108)
 	{
 		return 9;
 	}
-	else if (charge>=225 &&  charge<275)
+	else if (charge>=108 &&  charge<120)
 	{
 		return 10;
 	}
-	else										// si le régime moteur dépasse les 275 Volts  ont met le bargraphe en erreur afin de signaler le pb
+	else if (charge>=120 &&  charge<132)
+	{
+		return 11;
+	}
+	else if (charge>=132 &&  charge<144)
+	{
+		return 12;
+	}
+	else if (charge>=144 &&  charge<156)
+	{
+		return 13;
+	}
+	else if (charge>=156 &&  charge<168)
+	{
+		return 14;
+	}
+	else if (charge>=168 &&  charge<180)
+	{
+		return 15;
+	}
+	else if (charge>=180 &&  charge<192)
+	{
+		return 16;
+	}
+	else if (charge>=192 &&  charge<204)
+	{
+		return 17;
+	}
+	else if (charge>=204 &&  charge<216)
+	{
+		return 18;
+	}
+	else if (charge>=216 &&  charge<228)
+	{
+		return 19;
+	}
+	else if (charge>=228 && charge<260)
+	{
+		return 20;
+	}
+	else										// si le régime moteur dépasse les 260 Volts  ont met le bargraphe en erreur afin de signaler le pb
 	{
 		LOG_WARN(TRACE_ALL||TRACE_EXEC||TRACE_SC,"Supercapacity are overcharged",sec,ms)
 		return 11;
