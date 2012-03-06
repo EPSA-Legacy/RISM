@@ -40,6 +40,13 @@ void main()
 	int32 rxId;
 	int8 rxData[8];
 	int8 rxLen;
+	int32 * toto=0;
+	int8 txdata[8];	
+	int16 umot1=1;
+	int16 umot2=2;
+	int16 usc=3;
+	int16 uconv=4;
+
 //	int pongflagemit=0;
 //	int pong=0;
 
@@ -51,20 +58,26 @@ void main()
 	//initialisation du CAN
 	can_init();							//initialise le CAN
 
+
+	txdata[0]=umot1;
+	txdata[2]=umot2;
+	txdata[4]=usc;
+	txdata[6]=uconv;
 	//  BOUCLE DE SAISIE
 	while(true)
 	{
-		delay_ms(200);
 		printf("\r\n Tick : %Lu ms \r\n \r\n",ms);
 		i++;
+
 		// Envoie sur le CAN
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			printf("CAN TX %u \r\n",i);
-			r=can_putd(PIC_TO_MAB,&i,1,0,false,false); //emission du message de 8octets
+			printf("uconv : %Ld \r\n",uconv);
+			r=can_putd(23,txdata,8,0,false,false); //emission du message de 8octets
 			if (r != 0xFF)
 			{
-				printf("CAN_TX - %u - ID=%u - LEN=1", r, PIC_TO_MAB);
+//				printf("CAN_TX - %u - ID=%u - LEN=1", r, PIC_TO_MAB);
 			}
 			else
 			{
@@ -83,9 +96,10 @@ void main()
 			printf("CAN RX \r\n");
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-				if(rxId==MAB_TO_PIC)
+				if(rxId==MAB_TO_PIC || rxId==23)
 				{
-					printf("RX MAB_TO_PIC = %d \r\n",rxData[0]);
+					toto=rxData;
+					printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
 				}
 /*				else if(rxId==PONG)
 				{
@@ -96,7 +110,7 @@ void main()
 				}*/
 				else
 				{
-					printf("CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u \r\n",rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
+			//		printf("CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u \r\n",rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
 				}
 		
 			}
