@@ -1,0 +1,172 @@
+# EESchema Netlist Version 1.1 created  06/03/2012 14:31:47
+(
+ ( /4F5610CD C1 C1 27p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F5610D0 C1V5 C2 1u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F4D0704 D3 D1 DIODE
+  ( 1 N-000012 )
+  ( 2 N-000017 )
+ )
+ ( /4F560B1A D3 D2 DIODE
+  ( 1 N-000003 )
+  ( 2 N-000002 )
+ )
+ ( /4F4D06FC RELAIS_SPDT K1 RELAIS-SPDT
+  ( 1 N-000017 )
+  ( 2 GND )
+  ( 3 ? )
+  ( 4 +12V )
+  ( 5 N-000013 )
+ )
+ ( /4F560B1B RELAIS_SPDT K2 RELAIS-SPDT
+  ( 1 N-000002 )
+  ( 2 GND )
+  ( 3 ? )
+  ( 4 +12V )
+  ( 5 N-000018 )
+ )
+ ( /4F4CD49A KK_2 P1 Alim
+  ( 1 GND )
+  ( 2 +12V )
+ )
+ ( /4F4CD4BB KK_2 P2 Relais_seuil
+  ( 1 N-000013 )
+  ( 2 GND )
+ )
+ ( /4F4CE891 KK_4 P3 Commutateur
+  ( 1 /Usc )
+  ( 2 N-000015 )
+  ( 3 N-000009 )
+  ( 4 N-000014 )
+ )
+ ( /4F560B21 KK_2 P4 Relais_général
+  ( 1 N-000018 )
+  ( 2 GND )
+ )
+ ( /4F560D03 KK_2 P5 SC
+  ( 1 VSS )
+  ( 2 VAA )
+ )
+ ( /4F4CDA68 FET_P_DIP4 Q1 FET_N
+  ( D +12V )
+  ( G N-000010 )
+  ( S N-000017 )
+ )
+ ( /4F560B1F FET_P_DIP4 Q2 FET_N
+  ( D +12V )
+  ( G N-000008 )
+  ( S N-000002 )
+ )
+ ( /4F4D0708 R3 R1 220
+  ( 1 N-000012 )
+  ( 2 GND )
+ )
+ ( /4F4CD4B3 R7 R2 R
+  ( 1 VAA )
+  ( 2 /Usc )
+ )
+ ( /4F4CE20C R7 R3 R
+  ( 1 N-000014 )
+  ( 2 VSS )
+ )
+ ( /4F4CE20E R7 R4 R
+  ( 1 N-000009 )
+  ( 2 VSS )
+ )
+ ( /4F4CE211 R7 R5 R
+  ( 1 N-000015 )
+  ( 2 VSS )
+ )
+ ( /4F560B19 R3 R6 220
+  ( 1 N-000003 )
+  ( 2 GND )
+ )
+ ( /4F4CDA84 RV2X4 RV1 Seuil
+  ( 1 +12V )
+  ( 2 N-000011 )
+  ( 3 GND )
+ )
+ ( /4F560B1E RV2X4 RV2 Seuil
+  ( 1 +12V )
+  ( 2 N-000007 )
+  ( 3 GND )
+ )
+ ( /4F560B20 DIP-8__300_ELL U1 LM358
+  ( 1 N-000010 )
+  ( 2 N-000011 )
+  ( 3 /Usc )
+  ( 4 GND )
+  ( 5 /Usc )
+  ( 6 N-000007 )
+  ( 7 N-000008 )
+  ( 8 +12V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
