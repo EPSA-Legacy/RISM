@@ -1,132 +1,143 @@
-# EESchema Netlist Version 1.1 created  06/03/2012 14:31:47
+# EESchema Netlist Version 1.1 created  19/03/2012 13:20:54
 (
- ( /4F5610CD C1 C1 27p
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4F5F62F3 $noname  P3 Sel_sc {Lib=CONN_4}
+  (    1 ? )
+  (    2 /Vref )
+  (    3 N-000006 )
+  (    4 N-000017 )
  )
- ( /4F5610D0 C1V5 C2 1u
-  ( 1 +12V )
-  ( 2 GND )
+ ( /4F5F6157 $noname  RV3 Seuil_5 {Lib=POT}
+  (    1 +12V )
+  (    2 N-000006 )
+  (    3 GND )
  )
- ( /4F4D0704 D3 D1 DIODE
-  ( 1 N-000012 )
-  ( 2 N-000017 )
+ ( /4F5610D0 $noname  C2 1u {Lib=CAPAPOL}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4F560B1A D3 D2 DIODE
-  ( 1 N-000003 )
-  ( 2 N-000002 )
+ ( /4F5610CD $noname  C1 27p {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /4F4D06FC RELAIS_SPDT K1 RELAIS-SPDT
-  ( 1 N-000017 )
-  ( 2 GND )
-  ( 3 ? )
-  ( 4 +12V )
-  ( 5 N-000013 )
+ ( /4F560D03 $noname  P5 SC {Lib=CONN_2}
+  (    1 VSS )
+  (    2 VAA )
  )
- ( /4F560B1B RELAIS_SPDT K2 RELAIS-SPDT
-  ( 1 N-000002 )
-  ( 2 GND )
-  ( 3 ? )
-  ( 4 +12V )
-  ( 5 N-000018 )
+ ( /4F560B21 $noname  P4 Relais_général {Lib=CONN_2}
+  (    1 N-000004 )
+  (    2 GND )
  )
- ( /4F4CD49A KK_2 P1 Alim
-  ( 1 GND )
-  ( 2 +12V )
+ ( /4F560B20 $noname  U1 LM358 {Lib=LM358}
+  (    1 N-000008 )
+  (    2 N-000009 )
+  (    3 /Usc )
+  (    4 GND )
+  (    5 /Usc )
+  (    6 /Vref )
+  (    7 N-000001 )
+  (    8 +12V )
  )
- ( /4F4CD4BB KK_2 P2 Relais_seuil
-  ( 1 N-000013 )
-  ( 2 GND )
+ ( /4F560B1F $noname  Q2 FET_N {Lib=FET_N}
+  (    D +12V )
+  (    G N-000001 )
+  (    S N-000020 )
  )
- ( /4F4CE891 KK_4 P3 Commutateur
-  ( 1 /Usc )
-  ( 2 N-000015 )
-  ( 3 N-000009 )
-  ( 4 N-000014 )
+ ( /4F560B1E $noname  RV2 Seuil_4 {Lib=POT}
+  (    1 +12V )
+  (    2 N-000017 )
+  (    3 GND )
  )
- ( /4F560B21 KK_2 P4 Relais_général
-  ( 1 N-000018 )
-  ( 2 GND )
+ ( /4F560B1B $noname  K2 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000020 )
+  (    2 GND )
+  (    3 ? )
+  (    4 +12V )
+  (    5 N-000004 )
  )
- ( /4F560D03 KK_2 P5 SC
-  ( 1 VSS )
-  ( 2 VAA )
+ ( /4F560B1A $noname  D2 DIODE {Lib=DIODE}
+  (    1 N-000012 )
+  (    2 N-000020 )
  )
- ( /4F4CDA68 FET_P_DIP4 Q1 FET_N
-  ( D +12V )
-  ( G N-000010 )
-  ( S N-000017 )
+ ( /4F560B19 $noname  R6 220 {Lib=R}
+  (    1 N-000012 )
+  (    2 GND )
  )
- ( /4F560B1F FET_P_DIP4 Q2 FET_N
-  ( D +12V )
-  ( G N-000008 )
-  ( S N-000002 )
+ ( /4F4D0708 $noname  R1 220 {Lib=R}
+  (    1 N-000014 )
+  (    2 GND )
  )
- ( /4F4D0708 R3 R1 220
-  ( 1 N-000012 )
-  ( 2 GND )
+ ( /4F4D0704 $noname  D1 DIODE {Lib=DIODE}
+  (    1 N-000014 )
+  (    2 N-000011 )
  )
- ( /4F4CD4B3 R7 R2 R
-  ( 1 VAA )
-  ( 2 /Usc )
+ ( /4F4D06FC $noname  K1 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000011 )
+  (    2 GND )
+  (    3 ? )
+  (    4 +12V )
+  (    5 N-000010 )
  )
- ( /4F4CE20C R7 R3 R
-  ( 1 N-000014 )
-  ( 2 VSS )
+ ( /4F4CE211 $noname  R5 1.2k {Lib=R}
+  (    1 /Usc )
+  (    2 VSS )
  )
- ( /4F4CE20E R7 R4 R
-  ( 1 N-000009 )
-  ( 2 VSS )
+ ( /4F4CDA84 $noname  RV1 Seuil {Lib=POT}
+  (    1 +12V )
+  (    2 N-000009 )
+  (    3 GND )
  )
- ( /4F4CE211 R7 R5 R
-  ( 1 N-000015 )
-  ( 2 VSS )
+ ( /4F4CDA68 $noname  Q1 FET_N {Lib=FET_N}
+  (    D +12V )
+  (    G N-000008 )
+  (    S N-000011 )
  )
- ( /4F560B19 R3 R6 220
-  ( 1 N-000003 )
-  ( 2 GND )
+ ( /4F4CD4BB $noname  P2 Relais_seuil {Lib=CONN_2}
+  (    1 N-000010 )
+  (    2 GND )
  )
- ( /4F4CDA84 RV2X4 RV1 Seuil
-  ( 1 +12V )
-  ( 2 N-000011 )
-  ( 3 GND )
+ ( /4F4CD4B3 $noname  R2 28.8k {Lib=R}
+  (    1 VAA )
+  (    2 /Usc )
  )
- ( /4F560B1E RV2X4 RV2 Seuil
-  ( 1 +12V )
-  ( 2 N-000007 )
-  ( 3 GND )
- )
- ( /4F560B20 DIP-8__300_ELL U1 LM358
-  ( 1 N-000010 )
-  ( 2 N-000011 )
-  ( 3 /Usc )
-  ( 4 GND )
-  ( 5 /Usc )
-  ( 6 N-000007 )
-  ( 7 N-000008 )
-  ( 8 +12V )
+ ( /4F4CD49A $noname  P1 Alim {Lib=CONN_2}
+  (    1 GND )
+  (    2 +12V )
  )
 )
 *
 { Allowed footprints by component:
+$component C2
+ CP*
+ SM*
+$endlist
 $component C1
  SM*
  C?
  C1-1
 $endlist
-$component C2
- CP*
- SM*
+$component D2
+ D?
+ S*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $component D1
  D?
  S*
 $endlist
-$component D2
- D?
- S*
-$endlist
-$component R1
+$component R5
  R?
  SM0603
  SM0805
@@ -140,33 +151,83 @@ $component R2
  R?-*
  SM1206
 $endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "" ""
+ U1 7
+ Q2 G
+Net 2 "/Usc" "Usc"
+ U1 3
+ R2 2
+ U1 5
+ R5 1
+Net 4 "" ""
+ P4 1
+ K2 5
+Net 5 "/Vref" "Vref"
+ P3 2
+ U1 6
+Net 6 "" ""
+ RV3 2
+ P3 3
+Net 7 "VAA" "VAA"
+ R2 1
+ P5 2
+Net 8 "" ""
+ Q1 G
+ U1 1
+Net 9 "" ""
+ RV1 2
+ U1 2
+Net 10 "" ""
+ K1 5
+ P2 1
+Net 11 "" ""
+ Q1 S
+ K1 1
+ D1 2
+Net 12 "" ""
+ D2 1
+ R6 1
+Net 14 "" ""
+ R1 1
+ D1 1
+Net 15 "+12V" "+12V"
+ RV2 1
+ K2 4
+ P1 2
+ C1 1
+ Q2 D
+ U1 8
+ K1 4
+ C2 1
+ Q1 D
+ RV3 1
+ RV1 1
+Net 16 "VSS" "VSS"
+ R5 2
+ P5 1
+Net 17 "" ""
+ P3 4
+ RV2 2
+Net 19 "GND" "GND"
+ K2 2
+ P4 2
+ U1 4
+ RV2 3
+ C2 2
+ R6 2
+ R1 2
+ K1 2
+ RV3 3
+ C1 2
+ RV1 3
+ P2 2
+ P1 1
+Net 20 "" ""
+ Q2 S
+ D2 2
+ K2 1
+}
+#End
