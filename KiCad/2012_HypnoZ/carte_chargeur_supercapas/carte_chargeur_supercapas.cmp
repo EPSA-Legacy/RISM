@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 06/03/2012 14:31:47
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 13/03/2012 16:11:44
 
 BeginCmp
 TimeStamp = /4F5610CD;
@@ -57,9 +57,9 @@ IdModule  = KK_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F4CE891;
+TimeStamp = /4F5F62F3;
 Reference = P3;
-ValeurCmp = Commutateur;
+ValeurCmp = Sel_sc;
 IdModule  = KK_4;
 EndCmp
 
@@ -101,28 +101,14 @@ EndCmp
 BeginCmp
 TimeStamp = /4F4CD4B3;
 Reference = R2;
-ValeurCmp = R;
-IdModule  = R7;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F4CE20C;
-Reference = R3;
-ValeurCmp = R;
-IdModule  = R7;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F4CE20E;
-Reference = R4;
-ValeurCmp = R;
+ValeurCmp = 30k;
 IdModule  = R7;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F4CE211;
 Reference = R5;
-ValeurCmp = R;
+ValeurCmp = 1.2k;
 IdModule  = R7;
 EndCmp
 
@@ -143,7 +129,14 @@ EndCmp
 BeginCmp
 TimeStamp = /4F560B1E;
 Reference = RV2;
-ValeurCmp = Seuil;
+ValeurCmp = Seuil_4;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F6157;
+Reference = RV3;
+ValeurCmp = Seuil_5;
 IdModule  = RV2X4;
 EndCmp
 
