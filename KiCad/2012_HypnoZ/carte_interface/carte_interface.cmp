@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 00:22:32
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 13/03/2012 16:42:38
 
 BeginCmp
 TimeStamp = /4EC8E707;
@@ -19,20 +19,6 @@ TimeStamp = /4ECBA2D4;
 Reference = C3;
 ValeurCmp = 330n;
 IdModule  = C2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECBA114;
-Reference = C4;
-ValeurCmp = 1u;
-IdModule  = C1V5;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECBA111;
-Reference = C5;
-ValeurCmp = 27p;
-IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -456,16 +442,9 @@ IdModule  = KK_4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECBA11A;
+TimeStamp = /4F4CECE3;
 Reference = P22;
-ValeurCmp = Temp2;
-IdModule  = KK_2;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECBA11E;
-Reference = P23;
-ValeurCmp = Temp1;
+ValeurCmp = PT100;
 IdModule  = KK_2;
 EndCmp
 
@@ -533,9 +512,9 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ECBA10D;
+TimeStamp = /4F4CEDD0;
 Reference = R5;
-ValeurCmp = 33;
+ValeurCmp = 53k;
 IdModule  = R3;
 EndCmp
 
@@ -953,6 +932,48 @@ IdModule  = R3;
 EndCmp
 
 BeginCmp
+TimeStamp = /4F4CECEC;
+Reference = R65;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4CEDBE;
+Reference = R66;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4CEDC2;
+Reference = R67;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4CECF8;
+Reference = R68;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4CEE39;
+Reference = R69;
+ValeurCmp = 108;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4CEDDC;
+Reference = R70;
+ValeurCmp = 53k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
 TimeStamp = /4EDE33FC;
 Reference = RV1;
 ValeurCmp = 10k;
@@ -967,17 +988,10 @@ IdModule  = TRACO_8W_12V_DUAL;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDE29EF;
+TimeStamp = /4F4CEDB0;
 Reference = U2;
 ValeurCmp = LM324;
 IdModule  = DIP-14__300_ELL;
-EndCmp
-
-BeginCmp
-TimeStamp = /4ECBA104;
-Reference = U3;
-ValeurCmp = LM317;
-IdModule  = TO39;
 EndCmp
 
 BeginCmp
