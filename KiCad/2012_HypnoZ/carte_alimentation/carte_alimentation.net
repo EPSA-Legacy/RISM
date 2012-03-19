@@ -1,23 +1,43 @@
-# EESchema Netlist Version 1.1 created  06/03/2012 17:08:05
+# EESchema Netlist Version 1.1 created  13/03/2012 17:49:31
 (
- ( /4F42855F $noname  R3 1k {Lib=R}
-  (    1 N-000005 )
+ ( /4F5F77A2 $noname  P3 ALIM11 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4F5F77A1 $noname  P4 ALIM12 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4F5F77A0 $noname  P5 ALIM13 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4F5F779F $noname  P8 ALIM23 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4F5F779E $noname  P7 ALIM22 {Lib=CONN_2}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /4F5F779D $noname  P6 ALIM21 {Lib=CONN_2}
+  (    1 +12V )
   (    2 GND )
  )
  ( /4F42851E $noname  D1 DIODE {Lib=DIODE}
-  (    1 N-000005 )
-  (    2 N-000008 )
+  (    1 GND )
+  (    2 N-000003 )
  )
  ( /4F42808B $noname  K1 Relais_BP {Lib=RELAIS-SPDT}
   (    1 GND )
-  (    2 N-000008 )
+  (    2 N-000003 )
   (    3 ? )
   (    4 +12V )
   (    5 +12C )
  )
  ( /4F427FA9 $noname  P1 Tableau_de_bord {Lib=CONN_2}
   (    1 +12C )
-  (    2 N-000008 )
+  (    2 N-000003 )
  )
  ( /4F42795F $noname  RV1 V- {Lib=POT}
   (    1 +12V )
@@ -48,21 +68,9 @@
   (    9 ? )
   (   10 GND )
  )
- ( /4F426D10 $noname  P4 circuit_arriere {Lib=CONN_2}
-  (    1 N-000010 )
-  (    2 GND )
- )
- ( /4F426D05 $noname  P3 circuit_avant {Lib=CONN_2}
-  (    1 N-000011 )
-  (    2 GND )
- )
- ( /4F426CF8 $noname  F2 FUSE {Lib=FUSE}
-  (    1 +12V )
-  (    2 N-000010 )
- )
  ( /4F426CF4 $noname  F1 FUSE {Lib=FUSE}
-  (    1 +12V )
-  (    2 N-000011 )
+  (    1 N-000020 )
+  (    2 +12C )
  )
  ( /4F426C72 $noname  R2 4k {Lib=R}
   (    1 GND )
@@ -81,19 +89,12 @@
   (    2 GND )
  )
  ( /4F426BBA $noname  P2 Alim {Lib=CONN_2}
-  (    1 GND )
-  (    2 +12C )
+  (    1 N-000020 )
+  (    2 GND )
  )
 )
 *
 { Allowed footprints by component:
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $component D1
  D?
  S*
@@ -123,51 +124,53 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/Tens_batt" "Tens_batt"
- R2 2
- R1 1
- MEZZA1 1
-Net 2 "/Seuil" "Seuil"
- MEZZA2 1
- RV1 2
-Net 5 "" ""
- R3 1
- D1 1
-Net 7 "GND" "GND"
- P2 1
- C1 2
- C2 2
- MEZZA1 10
- P4 2
- MEZZA2 10
- RV1 3
- R3 2
- P3 2
- R2 1
- K1 1
-Net 8 "" ""
- P1 2
- D1 2
- K1 2
-Net 10 "" ""
- P4 1
- F2 2
-Net 11 "" ""
- P3 1
- F1 2
-Net 12 "+12V" "+12V"
- MEZZA2 8
- R1 2
- C2 1
- F1 1
- C1 1
- F2 1
- MEZZA1 8
- RV1 1
- K1 4
-Net 24 "+12C" "+12C"
- P2 2
+Net 2 "+12C" "+12C"
  P1 1
  K1 5
+ F1 2
+Net 3 "" ""
+ D1 2
+ K1 2
+ P1 2
+Net 4 "/Tens_batt" "Tens_batt"
+ MEZZA1 1
+ R2 2
+ R1 1
+Net 19 "+12V" "+12V"
+ P6 1
+ P4 1
+ P3 1
+ P7 1
+ P8 1
+ P5 1
+ RV1 1
+ C1 1
+ C2 1
+ R1 2
+ K1 4
+ MEZZA2 8
+ MEZZA1 8
+Net 20 "" ""
+ P2 1
+ F1 1
+Net 21 "/Seuil" "Seuil"
+ RV1 2
+ MEZZA2 1
+Net 22 "GND" "GND"
+ MEZZA2 10
+ P4 2
+ D1 1
+ P6 2
+ K1 1
+ P3 2
+ RV1 3
+ MEZZA1 10
+ P8 2
+ R2 1
+ P5 2
+ C2 2
+ C1 2
+ P7 2
+ P2 2
 }
 #End
