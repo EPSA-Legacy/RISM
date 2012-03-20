@@ -13,6 +13,7 @@
 
 #include <18F258.h>
 #include <can-18xxx8.c>
+#include <debug.h>
 
 #define MAB_TO_PIC 1
 #define PIC_TO_MAB 2
@@ -20,7 +21,7 @@
 
 #fuses HS,NOPROTECT,NOLVP,NOWDT
 #use delay(clock=20000000)
-#use rs232(baud=19600,xmit=PIN_C6,rcv=PIN_C7)
+#use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
 
 int32 ms; 
 
@@ -75,6 +76,7 @@ void main()
 			printf("CAN TX %u \r\n",i);
 			printf("uconv : %Ld \r\n",uconv);
 			r=can_putd(23,txdata,8,0,false,false); //emission du message de 8octets
+
 			if (r != 0xFF)
 			{
 //				printf("CAN_TX - %u - ID=%u - LEN=1", r, PIC_TO_MAB);
@@ -96,10 +98,11 @@ void main()
 			printf("CAN RX \r\n");
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-				if(rxId==MAB_TO_PIC || rxId==23)
+				if(rxId==MAB_TO_PIC || rxId==6)
 				{
 					toto=rxData;
 					printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
+					LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
 				}
 /*				else if(rxId==PONG)
 				{
