@@ -60,14 +60,14 @@
 //////////////////////////////////////////////////////////
 
 // Fonction de tracing génériques
-#define TRACE_ALL			1		// Condition globale permettant de passer tout les tests d'affichage à true exception faite de ceux du CAN
+#define TRACE_ALL			0		// Condition globale permettant de passer tout les tests d'affichage à true exception faite de ceux du CAN
 #define TRACE_ALL_LIGHT		0		// Permet de suivre l'état de tous les feux avant et arrières
 #define TRACE_ALL_LIGHT_R	0		// Permet de suivre l'état de tous les feux arrières
 #define TRACE_ALL_LIGHT_F	0		// Permet de suivre l'état de tous les feux avant
-#define TRACE_ALL_CMD		1		// Permer de suivre l'état de toutes les commandes du tableau de bord
+#define TRACE_ALL_CMD		0		// Permer de suivre l'état de toutes les commandes du tableau de bord
 #define TRACE_PEDAL			0		// Permet de suivre l'intégralité des information issues de la carte pédalier.
-#define TRACE_ACK			0		// Permet de suivre la bonne réception des accusés de réception des commandes du tableau de bord
-#define TRACE_CAN			1		// Permet d'afficher les données du CAN
+#define TRACE_ACK			1		// Permet de suivre la bonne réception des accusés de réception des commandes du tableau de bord
+#define TRACE_CAN			0		// Permet d'afficher les données du CAN
 #define TRACE_EXEC			0		// Permet d'afficher les traces d'exécution
 // Carte Acquisition
 #define TRACE_TENSION		0		// Permet d'afficher les tensions mesurées par la carte acquisition
@@ -82,9 +82,9 @@
 // Carte feux arrières
 #define TRACE_LIGHT_BACK	0  		// Permet de suivre l'état des feux et des codes à l'arrière
 #define TRACE_BRAKE_LIGHT	0		// Permet de suivre l'état des feux stops
-#define TRACE_BLINK_BACK	0		// Permet de suivre l'état des clignotants
-#define TRACE_BLINK_RB		0		// Permet de suivre l'état des clignotants arrières droits
-#define TRACE_BLINK_LB		0		// Permet de suivre l'état des clignotants arrières gauches
+#define TRACE_BLINK_BACK	1		// Permet de suivre l'état des clignotants
+#define TRACE_BLINK_RB		1		// Permet de suivre l'état des clignotants arrières droits
+#define TRACE_BLINK_LB		1		// Permet de suivre l'état des clignotants arrières gauches
 // Carte Moteur
 #define TRACE_RPM			0		// Permet de suivre le régime moteur mesuré par la carte moteur
 // Carte Tableau de Bord
@@ -106,7 +106,7 @@
 // Carte pédalier
 #define TRACE_BRAKE			0		//¨Permet de suivre l'état de la pédale de frein
 #define TRACE_PARK			0		// Permet de suivre l'état du frein de parking
-#define TRACE_ACC			0		// Permet de suivre la position de la pédale acquise grâce à la carte pédalier
+#define TRACE_ACC			1		// Permet de suivre la position de la pédale acquise grâce à la carte pédalier
 
 
 //////////////////////////////////////////////////////////
