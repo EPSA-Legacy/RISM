@@ -8,13 +8,14 @@
 //		Version 1.00 - BLD - 29/12/2011                        //
 //		Version 1.01 - BLD - 24/01/2012 -> update gestion feux // 
 //		Version 1.02 - BLD - 16/02/2012 -> encapsulation debug //
+//		Version 1.03 - BLD - 20/03/2012 -> patch extended id   //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
 
 // TODO : vérifier la prog, timers en external pour la mesure de vitesse.
 
-//#define CAN_USE_EXTENDED_ID         FALSE
+#define CAN_USE_EXTENDED_ID         FALSE
 
 #include <18F2580.h>
 #include <can-18xxx8.c>
@@ -55,7 +56,7 @@
 #fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
-#use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
+#use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
 
 // Définition de type
 

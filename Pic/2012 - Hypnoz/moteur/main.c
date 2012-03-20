@@ -9,8 +9,11 @@
 //		Version 1.01  - BLD - 14/02/2012 -> encapsulation debug//
 //		Version 1.02  - BLD - 14/02/2012 -> corr interruption  //
 //		Version 1.03  - BLD - 14/02/2012 -> calcul rpm v2	   //
+//		Version 1.04  - BLD - 20/03/2012 -> patch extended id  //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
+
+#define CAN_USE_EXTENDED_ID         FALSE
 
 #include <18F2580.h>
 #include <can-18xxx8.c>
@@ -24,7 +27,7 @@
 #fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
-#use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
+#use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
 
 
 
@@ -91,7 +94,6 @@ void main()
    setup_timer_2(T2_DIV_BY_4,250,1);		//interrupt every 0,2ms		
 
    can_init();
-   can_set_baud();
 
    CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 

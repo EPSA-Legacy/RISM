@@ -11,15 +11,17 @@
 //		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   // 
 //		Version 1.04 - BLD - 18/12/2011 -> recalibrage timer   //
 //		Version 1.05 - BLD - 11/02/2012 -> encapsulation debug //
+//		Version 1.06 - BLD - 20/03/2010 -> patch extended id   //
 //                                                             //
 /////////////////////////////////////////////////////////////////
+
+#define CAN_USE_EXTENDED_ID         FALSE
 
 #include <18F258.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 #include <debug.h>
 
-//#define CAN_USE_EXTENDED_ID         FALSE
 
 // Assignation des sorties analogiques
 #define ACCELERATOR_PIN         PIN_A0
@@ -31,7 +33,7 @@
 #fuses HS,NOPROTECT,NOLVP,WDT
 
 #use delay(clock=20000000)
-#use rs232(baud=115200,xmit=PIN_C6,rcv=PIN_C7)
+#use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
 
 // Variables globales
 
@@ -101,7 +103,6 @@ void main()
 
 	setup_timer_2(T2_DIV_BY_4,250,5);       //setup up timer2 to interrupt every 1ms
 	can_init();						     	//initialise le CAN
-	can_set_baud();					    	//obsolète à priori à tester
 	restart_wdt();
 
 	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
