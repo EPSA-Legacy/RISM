@@ -12,6 +12,8 @@
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
+// # To SOLVE => RA5 est à un +VCC ??.?? Le problème vient de trisa et trisb
+
 
 // TODO : vérifier la prog, timers en external pour la mesure de vitesse.
 
@@ -25,10 +27,10 @@
 // Assignation des sorties analogiques
 #define PHARES_L        PIN_A1  
 #define PHARES_R        PIN_A3  
-#define CODES_L         PIN_B1  
+#define CODES_L         PIN_B1 
 #define CODES_R         PIN_C4    
 #define CLIGN_L         PIN_A3  
-#define CLIGN_R			PIN_A4
+#define CLIGN_R			PIN_A4 
 
 
 // OBSOLETE Définition des constantes caractéristiques du capteur de vitesse
@@ -144,7 +146,7 @@ void main()
   	setup_timer_2(T2_DIV_BY_4,25,5);    //setup up timer2 to interrupt every 0.1ms
 
     can_init();
-   
+
 	CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
     //  BOUCLE DE TRAVAIL
@@ -245,10 +247,10 @@ void internalLogic()
 		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_ALL_LIGHT_F||TRACE_BLINK_FRONT,"Blink status has been toggled",sec,ms)
 		clign_ms = 0;                                     // repartir pour 500 ms
 		blink_status = !blink_status ;                    // changer l'état d'allumage desclign_msotants
-		
+	}	
 		output_bit(CLIGN_R, blink_status & blink_right); // allumer ou éteindre le clignotant droit s'il est activé
 		output_bit(CLIGN_L, blink_status & blink_left);  // allumer ou éteindre le clignotant gauche s'il est activé
-	}
+	
 
 	//Gestion de l'acquisition de la vitesse
     
@@ -364,11 +366,11 @@ void sendCAN()
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in SendCAN",sec,ms)
 	if(speed_reemit_ms >= TR_SPEED)															// On envoie la vitesse si l'on a dépassé le reemit time
 	{
-		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_PARK,"Reemit speed time is over",sec,ms)
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_SPEED,"Reemit speed time is over",sec,ms)
 		if(can_tbe()) 																		// On vérifie que le buffer d'emission est libre
 		{
 			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for speed ",sec,ms)
-			r=can_putd(SPEED_DATA,&speed,2,0,false,false); 									// Emission de la vitesse du véhicule
+		//	r=can_putd(SPEED_DATA,&speed,2,0,false,false); 									// Emission de la vitesse du véhicule
 			speed_reemit_ms=0; 																// on a plus besoin d'envoyer l'accusé de réception
 			LOG_SEND_CAN(r,SPEED_DATA,2,sec,ms)
 		}
