@@ -35,7 +35,7 @@
 //Temps de réemission entre les messages (en ms)
 #define TR_SPEED 10
 #define TR_ACCELERATOR 5
-#define TR_RPM 50
+#define TR_RPM 180				// Car une nouvelle valeur est calculé toutes les 200 ms
 #define TR_BRAKE 5
 #define TR_BLINK 200
 #define TR_PARK 500
