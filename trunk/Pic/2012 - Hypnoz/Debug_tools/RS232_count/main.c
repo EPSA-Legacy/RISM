@@ -48,7 +48,13 @@ void isr_timer2()
 void main()
 {
 	char reponse='a';
-	int1 flag=false;
+	int flag=255;
+	int id1=23;	
+	int id2=12;
+
+	int value1=15;
+	int value2=16;
+	int value3=17;
 	
 	//initialisation du PIC 
 	setup_adc(ADC_OFF);  		//on gère toutes les entrées comme étant de type analogique et on mesure les tensions par rapport à une ref 5V
@@ -85,7 +91,15 @@ void main()
 	//  BOUCLE DE TRAVAIL
 	while(TRUE)
 	{
-		
+		putc(flag);
+		putc(id1);
+		putc(value1);
+		putc(flag);
+		putc(id1);
+		putc(value2);
+		putc(flag);
+		putc(id2);
+		putc(value3);
 	}
 }
 

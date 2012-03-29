@@ -10,6 +10,7 @@
 //		Version 1.02  - BLD - 14/02/2012 -> corr interruption  //
 //		Version 1.03  - BLD - 14/02/2012 -> calcul rpm v2	   //
 //		Version 1.04  - BLD - 20/03/2012 -> patch extended id  //
+//		Version 2.00  - BLD - 28/03/2012 -> test unitaire OK   //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
 
@@ -38,11 +39,9 @@ unsigned int16 rpm_reemit_tm=0; //date d'emission du dernier message ACCELERATOR
 unsigned int16 clock=0;			//compte les coups d'horloge
 unsigned int16 ms=0;			//compte les ms du uptime
 unsigned int16 sec=0;			//compte les secondes de uptime
-int32 tmp=0;					//variable temporaire
 unsigned int32 begin_time=0;	//date du précédent allumage de la bougie unité = TIMEBASE
 unsigned int32 end_time=0;		//date de l'allumage de la bougie  = TIMEBASE
-int flag_overflow=1;			//vaut 0 sauf si il y a eu un dépassement de buffer
-
+int16 value_timer=0;			    
 
 
 // Prototypes de fonctions
@@ -53,31 +52,19 @@ void sendCAN();
 #inline
 void internalLogic();
 
-// Méthode d'interruption du timer0
-#int_timer0
-void isr_timer0() 			               // interruption engendrée lors de l'allumage d'une bougie
-{
-	begin_time=end_time;				   // on switche les date de début et de fin pour commencer un nouveau cycle
-	end_time=clock;
-	flag_overflow=0;
-	
-	// Test pour vérifier un overflow sur la variable ms
-	if(end_time<begin_time)                // on a eu un dépassement de la variable 
-	{
-		flag_overflow=1;				   // on empêche le calcul du régime moteur car il serait erroné
-	}
-}
 
 #int_timer2
 void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au bout d'une milliseconde
 {
 	clock++;			// on incrémente le compteur de 200µs
-	rpm_reemit_tm++;	
-	if(clock>=5000)
+	rpm_reemit_tm++;
+	if(clock==5000)
 	{
 		ms=0;
 		sec++;	
+		value_timer=get_timer0();
 		clock=0;
+		set_timer0(0);
 	}
 }
 
@@ -87,13 +74,16 @@ void main()
    // Initialisation du pic
    LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
    setup_adc_ports(NO_ANALOGS);
-   enable_interrupts(INT_TIMER2);
-   enable_interrupts(INT_TIMER0);
 
-   setup_timer_0(RTCC_EXT_L_TO_H);
-   setup_timer_2(T2_DIV_BY_4,250,1);		//interrupt every 0,2ms		
+   setup_timer_0(RTCC_DIV_1|RTCC_EXT_L_TO_H);
+   setup_timer_2(T2_DIV_BY_4,250,1);		//interrupt every 0,2ms	
+   enable_interrupts(INT_TIMER0);
+   enable_interrupts(INT_TIMER2);	
+   enable_interrupts(GLOBAL);
 
    can_init();
+   set_timer0(0);
+   value_timer=0;
 
    CHECK_PWUP								  //on vérifie que le démarrage est du à une mise sous tension et non un watchdog
 
@@ -110,10 +100,8 @@ void main()
 void internalLogic()
 {
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
-	if(flag_overflow==0)
-	{
-		rpm=(1/(end_time-begin_time))*60/MSTOTIMEBASE; // rpm contient le régime moteur
-	}
+	rpm=value_timer*120;
+	LOG_TESTING_LD(TRACE_ALL||TRACE_EXEC||TRACE_RPM,"RPM is now : ",rpm,sec,ms)
 }
 
 #inline
@@ -125,7 +113,7 @@ void sendCAN()
 
 	if(rpm_reemit_tm>=TR_RPM*MSTOTIMEBASE)
 	{
-		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_ACC,"Reemit rpm time is over",sec,ms)
+//		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_RPM,"Reemit rpm time is over",sec,ms)
 		if(can_tbe())                                             // On vérifie que le buffer d'emission est libre
 		{
 			r=can_putd(ENGINE_RPM,&rpm,2,0,false,false);          // emission du message

@@ -11,7 +11,7 @@
 
 #define CAN_USE_EXTENDED_ID         FALSE
 
-#include <18F258.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <debug.h>
 
@@ -41,7 +41,7 @@ void main()
 	int32 rxId;
 	int8 rxData[8];
 	int8 rxLen;
-	int32 * toto=0;
+	int16 * toto=0;
 	int8 txdata[8];	
 	int16 umot1=1;
 	int16 umot2=2;
@@ -71,25 +71,25 @@ void main()
 		i++;
 
 		// Envoie sur le CAN
-		if(can_tbe()) // On vérifie que le buffer d'emission est libre
-		{
-			printf("CAN TX %u \r\n",i);
-			printf("uconv : %Ld \r\n",uconv);
-			r=can_putd(23,txdata,8,0,false,false); //emission du message de 8octets
+//		if(can_tbe()) // On vérifie que le buffer d'emission est libre
+//		{
+//			printf("CAN TX %u \r\n",i);
+//			printf("uconv : %Ld \r\n",uconv);
+//			r=can_putd(23,txdata,8,0,false,false); //emission du message de 8octets
 
-			if (r != 0xFF)
-			{
+//			if (r != 0xFF)
+//			{
 //				printf("CAN_TX - %u - ID=%u - LEN=1", r, PIC_TO_MAB);
-			}
-			else
-			{
-				printf("CAN_ERROR - FAIL on can_putd function \r\n");
-			}	
-		}
-		else
-		{
-			printf("Buffer d'emission plein \r\n");
-		}
+//			}
+//			else
+//			{
+//				printf("CAN_ERROR - FAIL on can_putd function \r\n");
+//			}	
+//		}
+//		else
+//		{
+//			printf("Buffer d'emission plein \r\n");
+//		}
 
 		// On écoute le can et on retransmet sur le rs232
 
@@ -98,34 +98,16 @@ void main()
 			printf("CAN RX \r\n");
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-				if(rxId==MAB_TO_PIC || rxId==6)
-				{
 					toto=rxData;
 					printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
 					LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
-				}
-/*				else if(rxId==PONG)
-				{
-					pong=rxData[0];
-					pong++;
-					pongflagemit=1;
-					printf("RX PONG = %d \r\n",rxData[0]);
-				}*/
-				else
-				{
-			//		printf("CAN_DEBUG - BUFF=%u - ID=%u - LEN=%u - OVF=%u \r\n",rxStat.buffer, rxId, rxLen, rxStat.err_ovfl);
-				}
-		
-			}
-			else
-			{
-				printf(" CAN_DEBUG - FAIL on can_getd function \r\n");
-			}
-		
+
+
+			}	
 		}
 		else 
 		{
-			printf("\r\n Nothing hit the can bus");
+	//		printf("\r\n Nothing hit the can bus");
 		}
 	}
 }
