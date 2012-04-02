@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 14/03/2012 11:15:27
+EESchema Schematic File Version 2  date 27/03/2012 16:26:09
 LIBS:epsa_cmos
 LIBS:epsa_relais
 LIBS:symbioz
@@ -39,7 +39,7 @@ $Descr A2 23400 16535
 encoding utf-8
 Sheet 1 1
 Title "EPSA - Hypnoz"
-Date "14 mar 2012"
+Date "27 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -2880,7 +2880,7 @@ L R R49
 U 1 1 4EDA2F5E
 P 10550 12050
 F 0 "R49" V 10630 12050 50  0000 C CNN
-F 1 "330" V 10550 12050 50  0000 C CNN
+F 1 "470" V 10550 12050 50  0000 C CNN
 	1    10550 12050
 	-1   0    0    1   
 $EndComp
@@ -3037,7 +3037,7 @@ L R R45
 U 1 1 4EDA2F4D
 P 10550 10600
 F 0 "R45" V 10630 10600 50  0000 C CNN
-F 1 "330" V 10550 10600 50  0000 C CNN
+F 1 "470" V 10550 10600 50  0000 C CNN
 	1    10550 10600
 	-1   0    0    1   
 $EndComp
@@ -3140,7 +3140,7 @@ L R R53
 U 1 1 4EDA2F3A
 P 10550 13500
 F 0 "R53" V 10630 13500 50  0000 C CNN
-F 1 "330" V 10550 13500 50  0000 C CNN
+F 1 "470" V 10550 13500 50  0000 C CNN
 	1    10550 13500
 	-1   0    0    1   
 $EndComp
@@ -3791,7 +3791,7 @@ L R R57
 U 1 1 4ECCE09A
 P 10550 14950
 F 0 "R57" V 10630 14950 50  0000 C CNN
-F 1 "330" V 10550 14950 50  0000 C CNN
+F 1 "470" V 10550 14950 50  0000 C CNN
 	1    10550 14950
 	-1   0    0    1   
 $EndComp
