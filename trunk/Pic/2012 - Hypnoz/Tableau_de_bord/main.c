@@ -18,7 +18,7 @@
 #define CAN_USE_EXTENDED_ID         FALSE
 
 
-#include <18F258.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 #include <debug.h>
@@ -46,7 +46,6 @@ int16 tmp=0;						           // variable temporaire
 int8 blinkl=0;								   // état des clignotants gauches 1 si actif 0 sinon
 int8 blinkr=0;								   // état des clignotants droits 1 si actif 0 sinon
 int8 light=0;								   // état des feux 0=éteint 1=code 2=phares 
-int8 warnlight=0;							   // état des warning 1=activé, 0=éteint
 int8 blinkfrontrack_count=0;				   // ACK clignotant avant droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
 int8 blinkbackrack_count=0;                    // ACK clignotant arrière droit vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
 int8 blinkfrontlack_count=0;				   // ACK clignotant avant gauche vaut 0 si l'on a reçu un paquet d'accusé de réception, le nombre de réemmission restante sinon
@@ -90,6 +89,7 @@ void main()
 	//initialisation du PIC
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	setup_adc(ADC_OFF);                 //Pas de conversion numériques/analogiques
+
 
 	enable_interrupts(INT_TIMER2);      //configuration des interruptions
 	enable_interrupts(GLOBAL);
@@ -199,15 +199,14 @@ void listenCAN()        // Fonction assurant la réception des messages sur le CA
 #inline
 void internalLogic() //Fonction en charge de la gestion des fonctionnalités de la carte
 {
-	int8 data;
+	int1 data;
 
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in ListenCAN",sec,ms)
 	// GESTION DES WARNINGS
 
  	data=input(WARNING);
-	if(data!=warnlight)
+	if(data==1)
 	{
-		warnlight=data;								// on affecte la nouvelle valeur
 		blinkl=data;							    // on affecte l'état correspondant au clignotant gauche
 		blinkr=data;						    	// on affecte l'état correspondant au clignotant droit
 		blinkbacklack_count=5;						// on prévoit d'envoyer 5 messages au maximum
@@ -216,20 +215,19 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		blinkfrontlack_count=5;						// on prévoit d'envoyer 5 messages au maximum
 		blinkl_reemit_ms=TR_BLINK+1;				// on force l'emission du message dès que possible
 		blinkr_reemit_ms=TR_BLINK+1;				// on force l'emission du message dès que possible
-		LOG_TESTING_D(TRACE_ALL||TRACE_ALL_CMD||TRACE_CMD_WARNING,"Warning status has changed and is now",warnlight,sec,ms)
+		LOG_TESTING(TRACE_ALL||TRACE_ALL_CMD||TRACE_CMD_WARNING,"Warning status has changed and is now ON",sec,ms)
 	}
-
-	if(warnlight==0) // La gestion des clignotants est effective que en l'absence des warnings
+	else // La gestion des clignotants est effective que en l'absence des warnings
 	{
 		// GESTION DU CLINOTANT GAUCHE
-
-		data=input(CLIGNO_L);								  // on lit l'état du clignotant gauche
+	//	LOG_TESTING_D(TRACE_ALL||TRACE_ALL_CMD||TRACE_CMD_BLINK_L,"Blink left status has changed and is now",data,sec,ms)
+		data=input(CLIGNO_L);
 		if(data!=blinkl)
 		{
 			blinkl=data;									  // on change l'état du clignotant droit
-			blinkbacklack_count=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkfrontlack_count=5;								  // on prévoit d'envoyer 5 fois le message
-			blinkl_reemit_ms= TR_BLINK+1;						  // on force l'émission instantannée
+			blinkbacklack_count=5;							  // on prévoit d'envoyer 5 fois le message
+			blinkfrontlack_count=5;							  // on prévoit d'envoyer 5 fois le message
+			blinkl_reemit_ms= TR_BLINK+1;					  // on force l'émission instantannée
 			LOG_TESTING_D(TRACE_ALL||TRACE_ALL_CMD||TRACE_CMD_BLINK_L,"Blink left status has changed and is now",blinkl,sec,ms)
 		}
 
@@ -276,6 +274,7 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 		light_reemit_ms=TR_LIGHT+1;							  // on force l'émission du message
 		LOG_TESTING(TRACE_ALL||TRACE_ALL_CMD||TRACE_CMD_LIGHT||TRACE_CMD_FEUX,"Light status has changed. All light are shutdown  ",sec,ms)
 	}
+
 }
 
 #inline
