@@ -11,6 +11,7 @@
 //		Version 1.03  - BLD - 14/02/2012 -> calcul rpm v2	   //
 //		Version 1.04  - BLD - 20/03/2012 -> patch extended id  //
 //		Version 2.00  - BLD - 28/03/2012 -> test unitaire OK   //
+//		Version 2.01  - BLD - 03/04/2012 -> calcul plus rapide //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
 
@@ -39,9 +40,8 @@ unsigned int16 rpm_reemit_tm=0; //date d'emission du dernier message ACCELERATOR
 unsigned int16 clock=0;			//compte les coups d'horloge
 unsigned int16 ms=0;			//compte les ms du uptime
 unsigned int16 sec=0;			//compte les secondes de uptime
-unsigned int32 begin_time=0;	//date du précédent allumage de la bougie unité = TIMEBASE
-unsigned int32 end_time=0;		//date de l'allumage de la bougie  = TIMEBASE
 int16 value_timer=0;			    
+int16 tick=0;
 
 
 // Prototypes de fonctions
@@ -56,15 +56,24 @@ void internalLogic();
 #int_timer2
 void isr_timer2()       // lors de l'interruption du timer 2 (timer global) au bout d'une milliseconde
 {
-	clock++;			// on incrémente le compteur de 200µs
+	clock++;			// on incrémente le compteur clock est cadencé à 200µs
 	rpm_reemit_tm++;
-	if(clock==5000)
+	if(clock>=5)      // on incrémente le compteur de ms
+	{
+		ms++;
+		tick++;
+		clock=0;
+	}
+	if(tick>=250)		// on compte le nombre de coup moteurs sur un interval de 200ms;
+	{
+		value_timer=get_timer0();
+		set_timer0(0);
+		tick=0;
+	}
+	if(ms>=1000)
 	{
 		ms=0;
 		sec++;	
-		value_timer=get_timer0();
-		clock=0;
-		set_timer0(0);
 	}
 }
 
@@ -100,7 +109,7 @@ void main()
 void internalLogic()
 {
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in internalLogic",sec,ms)
-	rpm=value_timer*120;
+	rpm=value_timer*480;
 	LOG_TESTING_LD(TRACE_ALL||TRACE_EXEC||TRACE_RPM,"RPM is now : ",rpm,sec,ms)
 }
 
