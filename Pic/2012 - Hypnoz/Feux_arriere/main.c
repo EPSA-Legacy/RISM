@@ -15,7 +15,7 @@
 #define CAN_USE_EXTENDED_ID         FALSE
 
 
-#include <18F258.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 #include <debug.h>
