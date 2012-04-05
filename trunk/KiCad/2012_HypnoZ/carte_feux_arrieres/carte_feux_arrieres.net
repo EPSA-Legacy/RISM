@@ -1,101 +1,214 @@
-# EESchema Netlist Version 1.1 created  29/04/2011 17:19:38
+# EESchema Netlist Version 1.1 created  20/03/2012 17:08:40
 (
- ( /4D6BB48A MECA_5mm MECA1 MECA
-  ( 1 ? )
+ ( /4F68A572 $noname  K4 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000007 )
+  (    2 VCC )
+  (    3 ? )
+  (    4 /feux_stop )
+  (    5 +12P )
  )
- ( /4D6BB48F MECA_5mm MECA2 MECA
-  ( 1 ? )
+ ( /4F68A55C $noname  K3 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000036 )
+  (    2 VCC )
+  (    3 ? )
+  (    4 /clign_d )
+  (    5 +12P )
  )
- ( /4D6BB492 MECA_5mm MECA3 MECA
-  ( 1 ? )
+ ( /4F68A54D $noname  K2 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000002 )
+  (    2 VCC )
+  (    3 ? )
+  (    4 /clign_g )
+  (    5 +12P )
  )
- ( /4D6A198E he10-10df MEZZA1 MEZZA-10
-  ( 1 /cmd_feux_arr )
-  ( 2 /cmd_clign_g )
-  ( 3 ? )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 VCC )
-  ( 10 GND )
+ ( /4F68A533 $noname  K1 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000034 )
+  (    2 VCC )
+  (    3 ? )
+  (    4 /feux_arr )
+  (    5 +12P )
  )
- ( /4D6A1993 he10-10df MEZZA2 MEZZA-10
-  ( 1 /cmd_clign_d )
-  ( 2 /cmd_feux_stop )
-  ( 3 ? )
-  ( 4 ? )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 ? )
-  ( 9 ? )
-  ( 10 GND )
+ ( /4F689F0A $noname  Q4 FET_N {Lib=FET_N}
+  (    D N-000007 )
+  (    G /cmd_feux_stop )
+  (    S GND )
  )
- ( /4D6BB56F KK_4 P5 bloc_g
-  ( 1 GNDPWR )
-  ( 2 /clign_g )
-  ( 3 /feux_stop )
-  ( 4 /feux_arr )
+ ( /4F689F06 $noname  D4 DIODE {Lib=DIODE}
+  (    1 N-000007 )
+  (    2 VCC )
  )
- ( /4D6BB579 KK_4 P6 bloc_d
-  ( 1 GNDPWR )
-  ( 2 /clign_d )
-  ( 3 /feux_stop )
-  ( 4 /feux_arr )
+ ( /4F689ED1 $noname  D3 DIODE {Lib=DIODE}
+  (    1 N-000036 )
+  (    2 VCC )
  )
- ( /4D6BB5D2 KK_2 P7 barre
-  ( 1 GND )
-  ( 2 /feux_stop )
+ ( /4F689ECD $noname  Q3 FET_N {Lib=FET_N}
+  (    D N-000036 )
+  (    G /cmd_clign_d )
+  (    S GND )
  )
- ( /4DB595FB KK_2 P8 ALIM
-  ( 1 +12P )
-  ( 2 GNDPWR )
+ ( /4F689EAE $noname  Q2 FET_N {Lib=FET_N}
+  (    D N-000002 )
+  (    G /cmd_clign_g )
+  (    S GND )
  )
- ( /4DB584EB TO92DGS Q1 FET_N
-  ( D N-000021 )
-  ( G /cmd_feux_arr )
-  ( S GND )
+ ( /4F689EAA $noname  D2 DIODE {Lib=DIODE}
+  (    1 N-000002 )
+  (    2 VCC )
  )
- ( /4DB586AD TO92DGS Q2 FET_N
-  ( D N-000009 )
-  ( G /cmd_clign_g )
-  ( S GND )
+ ( /4F6899BB $noname  D1 DIODE {Lib=DIODE}
+  (    1 N-000034 )
+  (    2 VCC )
  )
- ( /4DB586F4 TO92DGS Q3 FET_N
-  ( D N-000004 )
-  ( G /cmd_clign_d )
-  ( S GND )
+ ( /4DB584EB $noname  Q1 FET_N {Lib=FET_N}
+  (    D N-000034 )
+  (    G /cmd_feux_arr )
+  (    S GND )
  )
- ( /4DB58716 TO92DGS Q4 FET_N
-  ( D N-000003 )
-  ( G /cmd_feux_stop )
-  ( S GND )
+ ( /4DB595FB $noname  P8 ALIM {Lib=CONN_2}
+  (    1 +12P )
+  (    2 GNDPWR )
  )
- ( /4D6BA80D REED9081_SYMBIOZ U1 REED9081_SYMBIOZ
-  ( 1 +12P )
-  ( 2 VCC )
-  ( 3 N-000021 )
-  ( 4 /feux_arr )
+ ( /4D6BB5D2 $noname  P7 barre {Lib=CONN_2}
+  (    1 GND )
+  (    2 /feux_stop )
  )
- ( /4DB586AE REED9081_SYMBIOZ U2 REED9081_SYMBIOZ
-  ( 1 +12P )
-  ( 2 VCC )
-  ( 3 N-000009 )
-  ( 4 /clign_g )
+ ( /4D6BB579 $noname  P6 bloc_d {Lib=CONN_4}
+  (    1 GNDPWR )
+  (    2 /clign_d )
+  (    3 /feux_stop )
+  (    4 /feux_arr )
  )
- ( /4DB586F3 REED9081_SYMBIOZ U3 REED9081_SYMBIOZ
-  ( 1 +12P )
-  ( 2 VCC )
-  ( 3 N-000004 )
-  ( 4 /clign_d )
+ ( /4D6BB56F $noname  P5 bloc_g {Lib=CONN_4}
+  (    1 GNDPWR )
+  (    2 /clign_g )
+  (    3 /feux_stop )
+  (    4 /feux_arr )
  )
- ( /4DB58717 REED9081_SYMBIOZ U4 REED9081_SYMBIOZ
-  ( 1 +12P )
-  ( 2 VCC )
-  ( 3 N-000003 )
-  ( 4 /feux_stop )
+ ( /4D6BB492 $noname  MECA3 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BB48F $noname  MECA2 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6BB48A $noname  MECA1 MECA {Lib=CONN_1}
+  (    1 ? )
+ )
+ ( /4D6A1993 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /cmd_feux_arr )
+  (    2 /cmd_clign_d )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 GND )
+ )
+ ( /4D6A198E $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
+  (    1 /cmd_clign_g )
+  (    2 /cmd_feux_stop )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 VCC )
+  (   10 GND )
  )
 )
 *
+{ Allowed footprints by component:
+$component D4
+ D?
+ S*
+$endlist
+$component D3
+ D?
+ S*
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "/cmd_feux_arr" "cmd_feux_arr"
+ Q1 G
+ MEZZA2 1
+Net 2 "" ""
+ D2 1
+ Q2 D
+ K2 1
+Net 5 "GNDPWR" "GNDPWR"
+ P8 2
+ P6 1
+ P5 1
+Net 6 "/feux_stop" "feux_stop"
+ P5 3
+ P6 3
+ K4 4
+ P7 2
+Net 7 "" ""
+ Q4 D
+ K4 1
+ D4 1
+Net 8 "/cmd_feux_stop" "cmd_feux_stop"
+ Q4 G
+ MEZZA1 2
+Net 9 "+12P" "+12P"
+ K4 5
+ K2 5
+ K3 5
+ K1 5
+ P8 1
+Net 10 "/cmd_clign_g" "cmd_clign_g"
+ MEZZA1 1
+ Q2 G
+Net 11 "/cmd_clign_d" "cmd_clign_d"
+ Q3 G
+ MEZZA2 2
+Net 22 "GND" "GND"
+ Q2 S
+ Q3 S
+ Q4 S
+ Q1 S
+ MEZZA2 10
+ MEZZA1 10
+ P7 1
+Net 24 "/feux_arr" "feux_arr"
+ P5 4
+ K1 4
+ P6 4
+Net 31 "/clign_g" "clign_g"
+ P5 2
+ K2 4
+Net 32 "/clign_d" "clign_d"
+ K3 4
+ P6 2
+Net 34 "" ""
+ K1 1
+ D1 1
+ Q1 D
+Net 35 "VCC" "VCC"
+ D1 2
+ MEZZA1 9
+ D3 2
+ K4 2
+ D4 2
+ K1 2
+ D2 2
+ K3 2
+ K2 2
+Net 36 "" ""
+ D3 1
+ K3 1
+ Q3 D
+}
+#End
