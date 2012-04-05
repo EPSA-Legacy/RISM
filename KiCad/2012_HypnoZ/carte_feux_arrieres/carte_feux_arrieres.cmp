@@ -1,4 +1,60 @@
-Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 29/04/2011 17:19:38
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 20/03/2012 16:43:59
+
+BeginCmp
+TimeStamp = /4F6899BB;
+Reference = D1;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F689EAA;
+Reference = D2;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F689ED1;
+Reference = D3;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F689F06;
+Reference = D4;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F68A533;
+Reference = K1;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F68A54D;
+Reference = K2;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F68A55C;
+Reference = K3;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F68A572;
+Reference = K4;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
 
 BeginCmp
 TimeStamp = /4D6BB48A;
@@ -71,52 +127,24 @@ IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DB586AD;
+TimeStamp = /4F689EAE;
 Reference = Q2;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DB586F4;
+TimeStamp = /4F689ECD;
 Reference = Q3;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4DB58716;
+TimeStamp = /4F689F0A;
 Reference = Q4;
 ValeurCmp = FET_N;
 IdModule  = TO92DGS;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D6BA80D;
-Reference = U1;
-ValeurCmp = REED9081_SYMBIOZ;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DB586AE;
-Reference = U2;
-ValeurCmp = REED9081_SYMBIOZ;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DB586F3;
-Reference = U3;
-ValeurCmp = REED9081_SYMBIOZ;
-IdModule  = REED9081_SYMBIOZ;
-EndCmp
-
-BeginCmp
-TimeStamp = /4DB58717;
-Reference = U4;
-ValeurCmp = REED9081_SYMBIOZ;
-IdModule  = REED9081_SYMBIOZ;
 EndCmp
 
 EndListe
