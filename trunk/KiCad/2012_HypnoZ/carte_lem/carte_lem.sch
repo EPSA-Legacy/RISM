@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 18/02/2012 14:44:38
+EESchema Schematic File Version 2  date 09/04/2012 15:02:19
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -40,7 +40,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Carte mesure tension"
-Date "18 feb 2012"
+Date "9 apr 2012"
 Rev "1.0"
 Comp "EPSA - HypnoZ"
 Comment1 ""
@@ -256,14 +256,10 @@ F 1 "ALIM" V 3200 2000 40  0000 C CNN
 	1    3150 2000
 	-1   0    0    -1  
 $EndComp
-Text Notes 9150 950  0    60   ~ 0
-0 250\n
 Text Notes 2800 1350 0    60   ~ 0
 Connexions carte interface
 Text Notes 2700 3700 0    60   ~ 0
 Mesure tensions
-Text Notes 8200 950  0    60   ~ 0
-Résistances X W\n
 $Comp
 L PWR_FLAG #FLG06
 U 1 1 4EDE4348
