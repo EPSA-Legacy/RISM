@@ -67,7 +67,7 @@ void main()
 	//  BOUCLE DE SAISIE
 	while(true)
 	{
-		printf("\r\n Tick : %Lu ms \r\n \r\n",ms);
+//		printf("\r\n Tick : %Lu ms \r\n \r\n",ms);
 		i++;
 
 		// Envoie sur le CAN
@@ -95,12 +95,16 @@ void main()
 
 		if(can_kbhit())
 		{
-			printf("CAN RX \r\n");
+			
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-					toto=rxData;
-					printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
-					LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
+					if(rxId==8 )
+					{
+						toto=rxData;
+						printf("RX ID %Lu - Len %d- Value = %d \r\n",rxId,rxLen,rxData[0]);
+			//			printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
+						LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
+					}
 
 
 			}	
