@@ -89,9 +89,9 @@
 #define TRACE_RPM			1		// Permet de suivre le régime moteur mesuré par la carte moteur
 // Carte Tableau de Bord
 #define TRACE_CMD_BLINK		0		// Permet de suivre les commandes des clignotants
-#define TRACE_CMD_BLINK_L	0		// Permet de suivre les commandes des clignotants gauches
+#define TRACE_CMD_BLINK_L	1		// Permet de suivre les commandes des clignotants gauches
 #define TRACE_CMD_BLINK_R	0		// Permet de suivre les commandes des clignotants droits
-#define TRACE_CMD_WARNING	0		// Permet de suivre la commande des warning
+#define TRACE_CMD_WARNING	1		// Permet de suivre la commande des warning
 #define TRACE_CMD_LIGHT		0		// Permet de suivre la commande des codes et des feux
 #define TRACE_CMD_CODE		0		// Permet de suivre la commande des codes
 #define TRACE_CMD_FEUX		0		// Permet de suivre la commande des feux
