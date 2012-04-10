@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-03 BZR 2988)-testing date = mar. 27 sept. 2011 15:01:24 CEST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 09/04/2012 16:43:35
 
 BeginCmp
 TimeStamp = /4D9A319F;
@@ -32,21 +32,21 @@ BeginCmp
 TimeStamp = /4E81BEFE;
 Reference = D1;
 ValeurCmp = DIODE;
-IdModule  = R3;
+IdModule  = D4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E81C33F;
 Reference = D2;
 ValeurCmp = DIODE;
-IdModule  = R3;
+IdModule  = D4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E81C382;
 Reference = D3;
 ValeurCmp = DIODE;
-IdModule  = R3;
+IdModule  = D4;
 EndCmp
 
 BeginCmp
@@ -68,34 +68,6 @@ TimeStamp = /4E81C380;
 Reference = K3;
 ValeurCmp = RELAIS-DPDT;
 IdModule  = RELAIS_DPDT;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D710C67;
-Reference = MECA1;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D710C68;
-Reference = MECA2;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D710C6A;
-Reference = MECA3;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D9A28D3;
-Reference = MECA4;
-ValeurCmp = MECA;
-IdModule  = MECA_5mm;
 EndCmp
 
 BeginCmp
@@ -157,42 +129,21 @@ EndCmp
 BeginCmp
 TimeStamp = /4E81C23A;
 Reference = R3;
-ValeurCmp = 1k;
-IdModule  = R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /4E81C0E3;
-Reference = R4;
-ValeurCmp = 220;
+ValeurCmp = 120;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E81C33D;
 Reference = R5;
-ValeurCmp = 1k;
-IdModule  = R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /4E81C33E;
-Reference = R6;
-ValeurCmp = 220;
+ValeurCmp = 120;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4E81C384;
 Reference = R7;
-ValeurCmp = 1k;
-IdModule  = R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /4E81C383;
-Reference = R8;
-ValeurCmp = 220;
+ValeurCmp = 120;
 IdModule  = R3;
 EndCmp
 

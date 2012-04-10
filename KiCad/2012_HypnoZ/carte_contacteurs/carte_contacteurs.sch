@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mar. 27 sept. 2011 19:43:25 CEST
+EESchema Schematic File Version 2  date 09/04/2012 16:59:34
 LIBS:epsa_relais
 LIBS:symbioz
 LIBS:power
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Carte contacteurs"
-Date "27 sep 2011"
+Date "9 apr 2012"
 Rev "2.0"
 Comp "EPSA - VirtuoZ"
 Comment1 ""
@@ -63,14 +63,14 @@ Wire Notes Line
 Wire Notes Line
 	700  1800 700  3350
 Wire Wire Line
-	3700 2400 3550 2400
+	3300 2400 3000 2400
 Wire Wire Line
 	1950 2400 2100 2400
 Wire Wire Line
 	3000 2850 3150 2850
 Connection ~ 8950 4350
 Wire Wire Line
-	8950 4350 8950 4450
+	8950 4450 8950 4350
 Wire Wire Line
 	9800 4350 8350 4350
 Wire Notes Line
@@ -134,14 +134,6 @@ Wire Wire Line
 	1350 1100 1350 1150
 Wire Wire Line
 	8500 5300 9100 5300
-Wire Notes Line
-	10200 4800 9450 4800
-Wire Notes Line
-	10200 4800 10200 5650
-Wire Notes Line
-	10200 5650 9450 5650
-Wire Notes Line
-	9450 5650 9450 4800
 Wire Wire Line
 	8500 5500 9100 5500
 Wire Wire Line
@@ -204,8 +196,6 @@ Wire Notes Line
 	9850 3850 9850 4650
 Wire Notes Line
 	9850 4650 7750 4650
-Wire Wire Line
-	3000 2400 3050 2400
 Wire Notes Line
 	700  3350 3850 3350
 Wire Wire Line
@@ -217,19 +207,19 @@ Wire Wire Line
 	2050 2000 2050 2400
 Connection ~ 2050 2400
 Wire Wire Line
-	2750 2000 3600 2000
+	2750 2000 3150 2000
 Wire Wire Line
-	3600 2000 3600 2400
-Connection ~ 3600 2400
+	3150 2000 3150 2400
+Connection ~ 3150 2400
 Wire Wire Line
 	1450 2250 850  2250
 Wire Wire Line
 	4750 2250 4150 2250
-Connection ~ 6900 2400
+Connection ~ 6400 2400
 Wire Wire Line
-	6900 2400 6900 2000
+	6400 2400 6400 2000
 Wire Wire Line
-	6900 2000 6050 2000
+	6400 2000 6050 2000
 Connection ~ 5350 2400
 Wire Wire Line
 	5350 2400 5350 2000
@@ -238,7 +228,7 @@ Wire Wire Line
 Wire Notes Line
 	4000 3350 7150 3350
 Wire Wire Line
-	6300 2400 6350 2400
+	6300 2400 6550 2400
 Wire Wire Line
 	4750 2750 4800 2750
 Wire Wire Line
@@ -249,8 +239,6 @@ Wire Wire Line
 	6300 2850 6450 2850
 Wire Wire Line
 	5250 2400 5400 2400
-Wire Wire Line
-	7000 2400 6850 2400
 Wire Notes Line
 	4000 3350 4000 1800
 Wire Notes Line
@@ -264,7 +252,7 @@ Wire Notes Line
 Wire Notes Line
 	7300 1800 7300 3350
 Wire Wire Line
-	10300 2400 10150 2400
+	9900 2400 9600 2400
 Wire Wire Line
 	8550 2400 8700 2400
 Wire Wire Line
@@ -275,8 +263,6 @@ Wire Wire Line
 	9600 3000 10350 3000
 Wire Wire Line
 	8050 2750 8100 2750
-Wire Wire Line
-	9600 2400 9650 2400
 Wire Notes Line
 	7300 3350 10450 3350
 Wire Wire Line
@@ -285,10 +271,10 @@ Wire Wire Line
 	8650 2000 8650 2400
 Connection ~ 8650 2400
 Wire Wire Line
-	9350 2000 10200 2000
+	9350 2000 9750 2000
 Wire Wire Line
-	10200 2000 10200 2400
-Connection ~ 10200 2400
+	9750 2000 9750 2400
+Connection ~ 9750 2400
 Wire Wire Line
 	8050 2250 7450 2250
 Wire Wire Line
@@ -342,18 +328,9 @@ L R R7
 U 1 1 4E81C384
 P 8050 2500
 F 0 "R7" V 8130 2500 50  0000 C CNN
-F 1 "1k" V 8050 2500 50  0000 C CNN
+F 1 "120" V 8050 2500 50  0000 C CNN
 	1    8050 2500
 	-1   0    0    1   
-$EndComp
-$Comp
-L R R8
-U 1 1 4E81C383
-P 9900 2400
-F 0 "R8" V 9980 2400 50  0000 C CNN
-F 1 "220" V 9900 2400 50  0000 C CNN
-	1    9900 2400
-	0    1    1    0   
 $EndComp
 $Comp
 L DIODE D3
@@ -367,11 +344,11 @@ $EndComp
 $Comp
 L +12V #PWR03
 U 1 1 4E81C381
-P 10300 2400
-F 0 "#PWR03" H 10300 2350 20  0001 C CNN
-F 1 "+12V" H 10300 2500 30  0000 C CNN
-	1    10300 2400
-	1    0    0    -1  
+P 9900 2400
+F 0 "#PWR03" H 9900 2350 20  0001 C CNN
+F 1 "+12V" H 9900 2500 30  0000 C CNN
+	1    9900 2400
+	0    1    1    0   
 $EndComp
 NoConn ~ 9600 2700
 NoConn ~ 8700 3000
@@ -460,11 +437,11 @@ NoConn ~ 6300 2700
 $Comp
 L +12V #PWR08
 U 1 1 4E81C340
-P 7000 2400
-F 0 "#PWR08" H 7000 2350 20  0001 C CNN
-F 1 "+12V" H 7000 2500 30  0000 C CNN
-	1    7000 2400
-	1    0    0    -1  
+P 6550 2400
+F 0 "#PWR08" H 6550 2350 20  0001 C CNN
+F 1 "+12V" H 6550 2500 30  0000 C CNN
+	1    6550 2400
+	0    1    1    0   
 $EndComp
 $Comp
 L DIODE D2
@@ -476,20 +453,11 @@ F 1 "DIODE" H 5850 1900 40  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R6
-U 1 1 4E81C33E
-P 6600 2400
-F 0 "R6" V 6680 2400 50  0000 C CNN
-F 1 "220" V 6600 2400 50  0000 C CNN
-	1    6600 2400
-	0    1    1    0   
-$EndComp
-$Comp
 L R R5
 U 1 1 4E81C33D
 P 4750 2500
 F 0 "R5" V 4830 2500 50  0000 C CNN
-F 1 "1k" V 4750 2500 50  0000 C CNN
+F 1 "120" V 4750 2500 50  0000 C CNN
 	1    4750 2500
 	-1   0    0    1   
 $EndComp
@@ -498,18 +466,9 @@ L R R3
 U 1 1 4E81C23A
 P 1450 2500
 F 0 "R3" V 1530 2500 50  0000 C CNN
-F 1 "1k" V 1450 2500 50  0000 C CNN
+F 1 "120" V 1450 2500 50  0000 C CNN
 	1    1450 2500
 	-1   0    0    1   
-$EndComp
-$Comp
-L R R4
-U 1 1 4E81C0E3
-P 3300 2400
-F 0 "R4" V 3380 2400 50  0000 C CNN
-F 1 "220" V 3300 2400 50  0000 C CNN
-	1    3300 2400
-	0    1    1    0   
 $EndComp
 $Comp
 L DIODE D1
@@ -523,11 +482,11 @@ $EndComp
 $Comp
 L +12V #PWR09
 U 1 1 4DB071D9
-P 3700 2400
-F 0 "#PWR09" H 3700 2350 20  0001 C CNN
-F 1 "+12V" H 3700 2500 30  0000 C CNN
-	1    3700 2400
-	1    0    0    -1  
+P 3300 2400
+F 0 "#PWR09" H 3300 2350 20  0001 C CNN
+F 1 "+12V" H 3300 2500 30  0000 C CNN
+	1    3300 2400
+	0    1    1    0   
 $EndComp
 NoConn ~ 3000 2700
 NoConn ~ 2100 3000
@@ -791,16 +750,6 @@ $EndComp
 Text Notes 950  950  2    60   ~ 0
 Alim
 $Comp
-L CONN_1 MECA4
-U 1 1 4D9A28D3
-P 9900 5450
-F 0 "MECA4" H 9980 5450 40  0000 L CNN
-F 1 "MECA" H 9900 5505 30  0001 C CNN
-	1    9900 5450
-	-1   0    0    1   
-$EndComp
-NoConn ~ 10050 5450
-$Comp
 L GND #PWR026
 U 1 1 4D99B9FD
 P 2800 4000
@@ -863,38 +812,6 @@ F 0 "P2" V 7950 4300 50  0000 C CNN
 F 1 "INTERFACE" V 8050 4300 50  0000 C CNN
 	1    8000 4300
 	-1   0    0    -1  
-$EndComp
-Text Notes 9500 4900 0    60   ~ 0
-Trous meca
-NoConn ~ 10050 5350
-NoConn ~ 10050 5250
-NoConn ~ 10050 5150
-$Comp
-L CONN_1 MECA3
-U 1 1 4D710C6A
-P 9900 5350
-F 0 "MECA3" H 9980 5350 40  0000 L CNN
-F 1 "MECA" H 9900 5405 30  0001 C CNN
-	1    9900 5350
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_1 MECA2
-U 1 1 4D710C68
-P 9900 5250
-F 0 "MECA2" H 9980 5250 40  0000 L CNN
-F 1 "MECA" H 9900 5305 30  0001 C CNN
-	1    9900 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_1 MECA1
-U 1 1 4D710C67
-P 9900 5150
-F 0 "MECA1" H 9980 5150 40  0000 L CNN
-F 1 "MECA" H 9900 5205 30  0001 C CNN
-	1    9900 5150
-	-1   0    0    1   
 $EndComp
 $Comp
 L PWR_FLAG #FLG029
