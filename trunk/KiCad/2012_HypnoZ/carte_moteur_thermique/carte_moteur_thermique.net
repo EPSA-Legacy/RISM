@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  mar. 13 déc. 2011 15:43:48 CET
+# EESchema Netlist Version 1.1 created  10/04/2012 14:48:05
 (
  ( /4E5F9365 C1 C1 27p
   ( 1 GND )
@@ -8,9 +8,17 @@
   ( 1 VCC )
   ( 2 GND )
  )
- ( /4EE75F1F D3 D1 DIODE
+ ( /4F842BED C1 C3 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4F842BEC C1V5 C4 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4EE75F1F D4 D1 DIODE
   ( 1 /bougie )
-  ( 2 N-000024 )
+  ( 2 N-000021 )
  )
  ( /4E5F88EF he10-10df MEZZA1 MEZZA-10
   ( 1 /Vitesse_moteur_th )
@@ -40,15 +48,6 @@
   ( 1 /bougie )
   ( 2 GND )
  )
- ( /4EE763E3 MECA_5mm P2 CONN_1
-  ( 1 ? )
- )
- ( /4EE763EA MECA_5mm P3 CONN_1
-  ( 1 ? )
- )
- ( /4EE763EC MECA_5mm P4 CONN_1
-  ( 1 ? )
- )
  ( /4E5F8F3B R3 R1 10k
   ( 1 /+2.5V )
   ( 2 VCC )
@@ -57,14 +56,18 @@
   ( 1 GND )
   ( 2 /+2.5V )
  )
- ( /4EE75F05 DIP-14__300_ELL U1 LM358
-  ( 1 N-000023 )
-  ( 2 N-000023 )
+ ( /4F842B64 DIP-8__300_ELL U1 LM324
+  ( 1 N-000024 )
+  ( 2 N-000024 )
+  ( 3 N-000021 )
+  ( 4 VCC )
+  ( 11 GND )
+ )
+ ( /4F8423DE DIP-8__300_ELL U2 TL082
+  ( 1 /Vitesse_moteur_th )
+  ( 2 /+2.5V )
   ( 3 N-000024 )
   ( 4 GND )
-  ( 5 N-000023 )
-  ( 6 /+2.5V )
-  ( 7 /Vitesse_moteur_th )
   ( 8 VCC )
  )
 )
@@ -76,6 +79,15 @@ $component C1
  C1-1
 $endlist
 $component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
  CP*
  SM*
 $endlist
