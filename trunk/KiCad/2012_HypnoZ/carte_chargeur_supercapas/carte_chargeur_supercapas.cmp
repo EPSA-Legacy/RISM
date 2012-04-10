@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 13/03/2012 16:11:44
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 10/04/2012 15:43:59
 
 BeginCmp
 TimeStamp = /4F5610CD;
@@ -15,17 +15,73 @@ IdModule  = C1V5;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F4D0704;
-Reference = D1;
-ValeurCmp = DIODE;
-IdModule  = D3;
+TimeStamp = /4F7AE990;
+Reference = C3;
+ValeurCmp = 100u;
+IdModule  = C1V8;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B1A;
+TimeStamp = /4F7AE986;
+Reference = C4;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F4D0704;
+Reference = D1;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B0A94;
 Reference = D2;
 ValeurCmp = DIODE;
-IdModule  = D3;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B0157;
+Reference = D3;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B14F2;
+Reference = D4;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B1305;
+Reference = D5;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F843362;
+Reference = D6;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F84325C;
+Reference = D7;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F84325F;
+Reference = D8;
+ValeurCmp = DIODE;
+IdModule  = D4;
 EndCmp
 
 BeginCmp
@@ -36,8 +92,36 @@ IdModule  = RELAIS_SPDT;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B1B;
+TimeStamp = /4F7B0A95;
 Reference = K2;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AF30F;
+Reference = K3;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F843003;
+Reference = K4;
+ValeurCmp = RELAIS-DPDT;
+IdModule  = RELAIS_DPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B14F1;
+Reference = K5;
+ValeurCmp = RELAIS-SPDT;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B1306;
+Reference = K6;
 ValeurCmp = RELAIS-SPDT;
 IdModule  = RELAIS_SPDT;
 EndCmp
@@ -45,35 +129,98 @@ EndCmp
 BeginCmp
 TimeStamp = /4F4CD49A;
 Reference = P1;
-ValeurCmp = Alim;
+ValeurCmp = Batterie;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F4CD4BB;
 Reference = P2;
+ValeurCmp = Relais_seuil_1;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AFF36;
+Reference = P3;
+ValeurCmp = Adapt_sect;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B0A9A;
+Reference = P4;
 ValeurCmp = Relais_seuil;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F5F62F3;
-Reference = P3;
-ValeurCmp = Sel_sc;
-IdModule  = KK_4;
+TimeStamp = /4F7AEF22;
+Reference = P5;
+ValeurCmp = Selection_SC;
+IdModule  = KK_8;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B21;
-Reference = P4;
-ValeurCmp = Relais_général;
+TimeStamp = /4F7AEA84;
+Reference = P6;
+ValeurCmp = SC;
 IdModule  = KK_2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560D03;
-Reference = P5;
-ValeurCmp = SC;
+TimeStamp = /4F7D9A05;
+Reference = P7;
+ValeurCmp = On/Off;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B14EC;
+Reference = P8;
+ValeurCmp = Sel_ch/dech;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B1636;
+Reference = P9;
+ValeurCmp = Relais_ch/dech;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B130B;
+Reference = P10;
+ValeurCmp = Relais_seuil_2;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC6FE;
+Reference = P11;
+ValeurCmp = Voyant_fin_charge;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC73F;
+Reference = P12;
+ValeurCmp = Voyant_seuil_1;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC899;
+Reference = P13;
+ValeurCmp = Voyant_fin_decharge;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC746;
+Reference = P14;
+ValeurCmp = Voyant_seuil_2;
 IdModule  = KK_2;
 EndCmp
 
@@ -81,55 +228,83 @@ BeginCmp
 TimeStamp = /4F4CDA68;
 Reference = Q1;
 ValeurCmp = FET_N;
-IdModule  = FET_P_DIP4;
+IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B1F;
+TimeStamp = /4F7B0A99;
 Reference = Q2;
 ValeurCmp = FET_N;
-IdModule  = FET_P_DIP4;
+IdModule  = TO92DGS;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F4D0708;
+TimeStamp = /4F7B130A;
+Reference = Q3;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC89C;
+Reference = Q4;
+ValeurCmp = FET_N;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AEA9D;
 Reference = R1;
-ValeurCmp = 220;
+ValeurCmp = 27k;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B02DF;
+Reference = R2;
+ValeurCmp = 120;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F4CD4B3;
-Reference = R2;
-ValeurCmp = 30k;
-IdModule  = R7;
+TimeStamp = /4F7DC789;
+Reference = R3;
+ValeurCmp = 1k;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F4CE211;
+TimeStamp = /4F7DC799;
+Reference = R4;
+ValeurCmp = 1k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC897;
 Reference = R5;
-ValeurCmp = 1.2k;
-IdModule  = R7;
+ValeurCmp = 1k;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B19;
+TimeStamp = /4F7DC7A5;
 Reference = R6;
-ValeurCmp = 220;
+ValeurCmp = 1k;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F4CDA84;
 Reference = RV1;
-ValeurCmp = Seuil;
+ValeurCmp = Regl_1;
 IdModule  = RV2X4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F560B1E;
 Reference = RV2;
-ValeurCmp = Seuil_4;
+ValeurCmp = Seuil_6;
 IdModule  = RV2X4;
 EndCmp
 
@@ -141,10 +316,66 @@ IdModule  = RV2X4;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F560B20;
+TimeStamp = /4F7AEEF6;
+Reference = RV4;
+ValeurCmp = Seuil_3;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AEEF7;
+Reference = RV5;
+ValeurCmp = Seuil_4;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AEF00;
+Reference = RV6;
+ValeurCmp = Seuil_1;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AEEFF;
+Reference = RV7;
+ValeurCmp = Seuil_2;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7B1309;
+Reference = RV8;
+ValeurCmp = Regl_2;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC89D;
+Reference = RV9;
+ValeurCmp = Regl_dech;
+IdModule  = RV2X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7DC89A;
 Reference = U1;
-ValeurCmp = LM358;
-IdModule  = DIP-8__300_ELL;
+ValeurCmp = LM324;
+IdModule  = DIP-14__300_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AE87E;
+Reference = U2;
+ValeurCmp = TRACO_8W_12V_DUAL;
+IdModule  = TRACO_8W_12V_DUAL;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F7AE7BF;
+Reference = U3;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
 EndCmp
 
 EndListe
