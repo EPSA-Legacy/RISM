@@ -1,67 +1,155 @@
-# EESchema Netlist Version 1.1 created  20/03/2012 17:08:40
+# EESchema Netlist Version 1.1 created  09/04/2012 18:10:13
 (
- ( /4F68A572 $noname  K4 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000007 )
+ ( /4F82FCDC $noname  P3 Capteur_2 {Lib=CONN_2}
+  (    1 /W2 )
+  (    2 +12V )
+ )
+ ( /4F82FCDA $noname  R10 ? {Lib=R}
+  (    1 GND )
+  (    2 /W2 )
+ )
+ ( /4F82FCA3 $noname  R9 ? {Lib=R}
+  (    1 GND )
+  (    2 /W1 )
+ )
+ ( /4F82FC6D $noname  P2 Capteur_1 {Lib=CONN_2}
+  (    1 /W1 )
+  (    2 +12V )
+ )
+ ( /4F82FC57 $noname  C3 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F82FC56 $noname  C4 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F82FC10 $noname  C2 1u {Lib=CAPAPOL}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F82FC0B $noname  C1 27p {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F82FB61 $noname  U1 TL082 {Lib=TL082}
+  (    1 N-000016 )
+  (    2 N-000043 )
+  (    3 /W1 )
+  (    4 GND )
+  (    5 /W2 )
+  (    6 N-000041 )
+  (    7 N-000013 )
+  (    8 VCC )
+ )
+ ( /4F82FB60 $noname  R7 10k {Lib=R}
+  (    1 VCC )
+  (    2 N-000041 )
+ )
+ ( /4F82FB5F $noname  R8 10k {Lib=R}
+  (    1 N-000041 )
+  (    2 GND )
+ )
+ ( /4F82FB5B $noname  U2 4069 {Lib=4069}
+  (    1 N-000013 )
+  (    2 N-000012 )
+  (    3 N-000016 )
+  (    4 N-000015 )
+  (    7 GND )
+  (   14 VCC )
+ )
+ ( /4F82FB50 $noname  P1 Vit_interface {Lib=CONN_4}
+  (    1 GND )
+  (    2 N-000015 )
+  (    3 N-000012 )
+  (    4 GND )
+ )
+ ( /4F82FA4C $noname  R6 10k {Lib=R}
+  (    1 N-000043 )
+  (    2 GND )
+ )
+ ( /4F82FA45 $noname  R5 10k {Lib=R}
+  (    1 VCC )
+  (    2 N-000043 )
+ )
+ ( /4F82F126 $noname  Q3 FET_N {Lib=FET_N}
+  (    D N-000004 )
+  (    G N-000006 )
+  (    S GND )
+ )
+ ( /4F82F123 $noname  D3 DIODE {Lib=DIODE}
+  (    1 N-000004 )
+  (    2 VCC )
+ )
+ ( /4F82F122 $noname  K3 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000004 )
   (    2 VCC )
   (    3 ? )
   (    4 /feux_stop )
   (    5 +12P )
  )
- ( /4F68A55C $noname  K3 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000036 )
+ ( /4F82F121 $noname  R3 120 {Lib=R}
+  (    1 N-000006 )
+  (    2 /cmd_feux_stop )
+ )
+ ( /4F82F120 $noname  R4 120 {Lib=R}
+  (    1 N-000010 )
+  (    2 /cmd_clign_d )
+ )
+ ( /4F82F11F $noname  K4 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000011 )
   (    2 VCC )
   (    3 ? )
   (    4 /clign_d )
   (    5 +12P )
  )
- ( /4F68A54D $noname  K2 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000002 )
+ ( /4F82F11E $noname  D4 DIODE {Lib=DIODE}
+  (    1 N-000011 )
+  (    2 VCC )
+ )
+ ( /4F82F11B $noname  Q4 FET_N {Lib=FET_N}
+  (    D N-000011 )
+  (    G N-000010 )
+  (    S GND )
+ )
+ ( /4F82F0AF $noname  Q2 FET_N {Lib=FET_N}
+  (    D N-000009 )
+  (    G N-000038 )
+  (    S GND )
+ )
+ ( /4F82F0AC $noname  D2 DIODE {Lib=DIODE}
+  (    1 N-000009 )
+  (    2 VCC )
+ )
+ ( /4F82F0AB $noname  K2 RELAIS-SPDT {Lib=RELAIS-SPDT}
+  (    1 N-000009 )
   (    2 VCC )
   (    3 ? )
   (    4 /clign_g )
   (    5 +12P )
  )
+ ( /4F82F0AA $noname  R2 120 {Lib=R}
+  (    1 N-000038 )
+  (    2 /cmd_clign_g )
+ )
+ ( /4F82F048 $noname  R1 120 {Lib=R}
+  (    1 N-000037 )
+  (    2 /cmd_feux_arr )
+ )
  ( /4F68A533 $noname  K1 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000034 )
+  (    1 N-000045 )
   (    2 VCC )
   (    3 ? )
   (    4 /feux_arr )
   (    5 +12P )
  )
- ( /4F689F0A $noname  Q4 FET_N {Lib=FET_N}
-  (    D N-000007 )
-  (    G /cmd_feux_stop )
-  (    S GND )
- )
- ( /4F689F06 $noname  D4 DIODE {Lib=DIODE}
-  (    1 N-000007 )
-  (    2 VCC )
- )
- ( /4F689ED1 $noname  D3 DIODE {Lib=DIODE}
-  (    1 N-000036 )
-  (    2 VCC )
- )
- ( /4F689ECD $noname  Q3 FET_N {Lib=FET_N}
-  (    D N-000036 )
-  (    G /cmd_clign_d )
-  (    S GND )
- )
- ( /4F689EAE $noname  Q2 FET_N {Lib=FET_N}
-  (    D N-000002 )
-  (    G /cmd_clign_g )
-  (    S GND )
- )
- ( /4F689EAA $noname  D2 DIODE {Lib=DIODE}
-  (    1 N-000002 )
-  (    2 VCC )
- )
  ( /4F6899BB $noname  D1 DIODE {Lib=DIODE}
-  (    1 N-000034 )
+  (    1 N-000045 )
   (    2 VCC )
  )
  ( /4DB584EB $noname  Q1 FET_N {Lib=FET_N}
-  (    D N-000034 )
-  (    G /cmd_feux_arr )
+  (    D N-000045 )
+  (    G N-000037 )
   (    S GND )
  )
  ( /4DB595FB $noname  P8 ALIM {Lib=CONN_2}
@@ -84,30 +172,21 @@
   (    3 /feux_stop )
   (    4 /feux_arr )
  )
- ( /4D6BB492 $noname  MECA3 MECA {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D6BB48F $noname  MECA2 MECA {Lib=CONN_1}
-  (    1 ? )
- )
- ( /4D6BB48A $noname  MECA1 MECA {Lib=CONN_1}
-  (    1 ? )
- )
  ( /4D6A1993 $noname  MEZZA2 MEZZA-10 {Lib=MEZZA-10}
   (    1 /cmd_feux_arr )
-  (    2 /cmd_clign_d )
+  (    2 /cmd_feux_stop )
   (    3 ? )
   (    4 ? )
   (    5 ? )
   (    6 ? )
   (    7 ? )
-  (    8 ? )
+  (    8 +12V )
   (    9 ? )
   (   10 GND )
  )
  ( /4D6A198E $noname  MEZZA1 MEZZA-10 {Lib=MEZZA-10}
   (    1 /cmd_clign_g )
-  (    2 /cmd_feux_stop )
+  (    2 /cmd_clign_d )
   (    3 ? )
   (    4 ? )
   (    5 ? )
@@ -120,17 +199,105 @@
 )
 *
 { Allowed footprints by component:
-$component D4
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D3
  D?
  S*
 $endlist
-$component D3
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D4
  D?
  S*
 $endlist
 $component D2
  D?
  S*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $component D1
  D?
@@ -139,76 +306,140 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/cmd_feux_arr" "cmd_feux_arr"
- Q1 G
- MEZZA2 1
-Net 2 "" ""
- D2 1
- Q2 D
- K2 1
-Net 5 "GNDPWR" "GNDPWR"
- P8 2
- P6 1
- P5 1
-Net 6 "/feux_stop" "feux_stop"
- P5 3
- P6 3
- K4 4
- P7 2
-Net 7 "" ""
- Q4 D
- K4 1
- D4 1
-Net 8 "/cmd_feux_stop" "cmd_feux_stop"
- Q4 G
- MEZZA1 2
-Net 9 "+12P" "+12P"
- K4 5
- K2 5
- K3 5
- K1 5
- P8 1
-Net 10 "/cmd_clign_g" "cmd_clign_g"
- MEZZA1 1
- Q2 G
-Net 11 "/cmd_clign_d" "cmd_clign_d"
- Q3 G
- MEZZA2 2
-Net 22 "GND" "GND"
- Q2 S
- Q3 S
- Q4 S
- Q1 S
- MEZZA2 10
- MEZZA1 10
- P7 1
-Net 24 "/feux_arr" "feux_arr"
- P5 4
- K1 4
- P6 4
-Net 31 "/clign_g" "clign_g"
- P5 2
- K2 4
-Net 32 "/clign_d" "clign_d"
- K3 4
- P6 2
-Net 34 "" ""
- K1 1
- D1 1
- Q1 D
-Net 35 "VCC" "VCC"
+Net 3 "VCC" "VCC"
+ R7 1
+ C2 1
+ C1 1
+ R5 1
+ U1 8
  D1 2
- MEZZA1 9
+ U2 14
+ K3 2
  D3 2
+ D2 2
+ K2 2
+ K1 2
+ C4 1
+ MEZZA1 9
+ C3 1
  K4 2
  D4 2
- K1 2
- D2 2
- K3 2
- K2 2
-Net 36 "" ""
- D3 1
+Net 4 "" ""
  K3 1
  Q3 D
+ D3 1
+Net 5 "+12P" "+12P"
+ P8 1
+ K4 5
+ K3 5
+ K1 5
+ K2 5
+Net 6 "" ""
+ R3 1
+ Q3 G
+Net 7 "GND" "GND"
+ P7 1
+ U1 4
+ C1 2
+ C2 2
+ C4 2
+ C3 2
+ R9 1
+ R10 1
+ MEZZA1 10
+ R6 2
+ Q4 S
+ Q2 S
+ R8 2
+ MEZZA2 10
+ P1 4
+ U2 7
+ P1 1
+ Q3 S
+ Q1 S
+Net 9 "" ""
+ K2 1
+ D2 1
+ Q2 D
+Net 10 "" ""
+ R4 1
+ Q4 G
+Net 11 "" ""
+ K4 1
+ Q4 D
+ D4 1
+Net 12 "" ""
+ U2 2
+ P1 3
+Net 13 "" ""
+ U2 1
+ U1 7
+Net 14 "/W1" "W1"
+ U1 3
+ R9 2
+ P2 1
+Net 15 "" ""
+ U2 4
+ P1 2
+Net 16 "" ""
+ U2 3
+ U1 1
+Net 17 "/feux_arr" "feux_arr"
+ K1 4
+ P5 4
+ P6 4
+Net 18 "/clign_g" "clign_g"
+ P5 2
+ K2 4
+Net 19 "/clign_d" "clign_d"
+ K4 4
+ P6 2
+Net 20 "/feux_stop" "feux_stop"
+ P7 2
+ P5 3
+ P6 3
+ K3 4
+Net 31 "/cmd_feux_stop" "cmd_feux_stop"
+ R3 2
+ MEZZA2 2
+Net 32 "/cmd_feux_arr" "cmd_feux_arr"
+ R1 2
+ MEZZA2 1
+Net 33 "/cmd_clign_d" "cmd_clign_d"
+ MEZZA1 2
+ R4 2
+Net 35 "/cmd_clign_g" "cmd_clign_g"
+ R2 2
+ MEZZA1 1
+Net 37 "" ""
+ R1 1
+ Q1 G
+Net 38 "" ""
+ R2 1
+ Q2 G
+Net 40 "GNDPWR" "GNDPWR"
+ P8 2
+ P5 1
+ P6 1
+Net 41 "" ""
+ U1 6
+ R8 1
+ R7 2
+Net 42 "+12V" "+12V"
+ P3 2
+ MEZZA2 8
+ P2 2
+Net 43 "" ""
+ R5 2
+ U1 2
+ R6 1
+Net 44 "/W2" "W2"
+ P3 1
+ U1 5
+ R10 2
+Net 45 "" ""
+ D1 1
+ K1 1
+ Q1 D
 }
 #End
