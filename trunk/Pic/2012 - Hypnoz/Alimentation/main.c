@@ -33,7 +33,7 @@
 // Rapport du pont diviseur de tension
 #define ku	3								   // il faut multiplier la tension mesurée par 3
 
-#fuses HS,NOPROTECT,NOLVP,NOWDT
+#fuses HS,NOPROTECT,NOLVP,WDT
 
 
 #use delay(clock=20000000)
@@ -127,7 +127,6 @@ void internalLogic() //Fonction en charge de la gestion des fonctionnalités de l
 	
 	if(adc_done==1)
 	{
-		delay_ms(200);
 		data=read_adc(ADC_READ_ONLY);			  // On lit la valeur correspondante
 		charge=(int16)(data*20*ku);				  // voltage contient désormais la charge de la batterie en mV
 		adc_done=0;								  // On remet à zéro la lecture de l'ADC
