@@ -10,6 +10,7 @@
 //	    Version 1.02  - BLD - 27/11/2011 -> trace debug        //
 //		Version 1.03  - BLD - 18/12/2011 -> recalibrage timer  //
 //      Version 1.04  - BLD - 12/02/2012 -> encapsulation debug//
+//		Version 2.00  - BLD - 11/04/2012 -> tests unitaires OK //
 //			                                                   //
 /////////////////////////////////////////////////////////////////
 #define CAN_USE_EXTENDED_ID         FALSE
