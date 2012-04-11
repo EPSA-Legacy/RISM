@@ -11,13 +11,14 @@
 //		Version 1.03 - BLD - 27/11/2011 -> Trace modes		   // 
 //		Version 1.04 - BLD - 18/12/2011 -> recalibrage timer   //
 //		Version 1.05 - BLD - 11/02/2012 -> encapsulation debug //
-//		Version 1.06 - BLD - 20/03/2010 -> patch extended id   //
+//		Version 1.06 - BLD - 20/03/2012 -> patch extended id   //
+//		Version 2.00 - BLD - 11/04/2012 -> test unitaires OK   //
 //                                                             //
 /////////////////////////////////////////////////////////////////
 
 #define CAN_USE_EXTENDED_ID         FALSE
 
-#include <18F258.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 #include <debug.h>
@@ -226,7 +227,7 @@ void sendCAN()
 
 	if(brake_reemit_ms>=TR_BRAKE)
 	{
-		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_BRAKE,"Reemit brake time is over",sec,ms)
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"Reemit brake time is over",sec,ms)
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for brake ",sec,ms)
@@ -241,7 +242,7 @@ void sendCAN()
 
 	if(accelerator_reemit_ms>=TR_ACCELERATOR)
 	{
-		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_ACC,"Reemit accelerator time is over",sec,ms)
+		LOG_TESTING(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"Reemit accelerator time is over",sec,ms)
 		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 		{
 			LOG_DEBUG(TRACE_ALL||TRACE_EXEC||TRACE_CAN,"CAN buffer emit is empty. Entering in emiting process for accelerator",sec,ms)
