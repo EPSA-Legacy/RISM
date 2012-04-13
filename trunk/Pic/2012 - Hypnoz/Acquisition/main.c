@@ -18,7 +18,7 @@
 
 #define CAN_USE_EXTENDED_ID         FALSE
 
-#include <18F4580.h>
+#include <18F458.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 #include <debug.h>
@@ -54,7 +54,7 @@
 // Constantes diverses
 #define ADC_NB_CHANNEL			8              // Nombre de canaux différents utilisés sur le convertisseur A/N
 
-#fuses HS,NOPROTECT,NOLVP,WDT
+#fuses HS,NOPROTECT,NOLVP,NOWDT
 
 #use delay(clock=20000000)
 #use rs232(baud=19200,xmit=PIN_C6,rcv=PIN_C7)
@@ -110,7 +110,8 @@ void main()
 	//initialisation du PIC
 	LOG_DEBUG(TRACE_EXEC||TRACE_ALL,"Entering in main fonction",sec,ms)
 	setup_adc(ADC_CLOCK_INTERNAL);            //le temps de conversion sera de2-6 µs cf include du PIC
-	setup_adc_ports(AN0_TO_AN6);              //on gère toutes les entrées A0,A1,A3,A4,A5,E0,E1 comme analogiques
+//	setup_adc_ports(AN0_TO_AN6);              //on gère toutes les entrées A0,A1,A3,A4,A5,E0,E1 comme analogiques
+	setup_adc_ports(ALL_ANALOG);
 	set_adc_channel(TENSION_MOT1_CHANNEL);    //on se met sur la voie 0 par défaut
 	read_adc(ADC_START_ONLY);		          //on démarre le convertisseur analogique numérique en mode non bloquant
 	current_adc_channel=TENSION_MOT1_CHANNEL; //on mémorise le channel sur lequel on commence à mesurer

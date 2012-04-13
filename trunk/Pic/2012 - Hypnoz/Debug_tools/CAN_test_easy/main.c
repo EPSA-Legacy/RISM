@@ -31,6 +31,11 @@ int32 ms;
 void isr_timer2()
 {
 	 ms++;
+	 if(ms>=60000)
+	 {
+		ms=0;
+		printf("Minute Tick");
+	 }
 }
 
 void main()
@@ -71,11 +76,13 @@ void main()
 		i++;
 
 		// Envoie sur le CAN
-//		if(can_tbe()) // On vérifie que le buffer d'emission est libre
+		if(can_tbe()) // On vérifie que le buffer d'emission est libre
 //		{
 //			printf("CAN TX %u \r\n",i);
 //			printf("uconv : %Ld \r\n",uconv);
-//			r=can_putd(23,txdata,8,0,false,false); //emission du message de 8octets
+
+/* TEST DEBIT FEUX ARRIERES */
+//			r=can_putd(6,input(PIN_A0),1,0,false,false); //emission du message de 8octets
 
 //			if (r != 0xFF)
 //			{
@@ -98,12 +105,19 @@ void main()
 			
 			if(can_getd(rxId,&rxData[0],rxLen,rxStat)) // on récupère le message
 			{
-					if(rxId==8 )
+					if(rxId==20)
 					{
-						toto=rxData;
-						printf("RX ID %Lu - Len %d- Value = %d \r\n",rxId,rxLen,rxData[0]);
-			//			printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
-						LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
+						toto=rxData[0];
+						printf("[%Lu] - RX ID %Lu - UMOT1 - Value = %Lu \r\n",ms,rxId,*toto);
+						toto=rxData[2];
+						printf("RX ID %Lu - UMOT2 - Value = %Lu \r\n",rxId,*toto);
+						toto=rxData[4];
+						printf("RX ID %Lu - USC - Value = %Lu \r\n",rxId,*toto);
+						toto=rxData[6];
+						printf("RX ID %Lu - UCONV - Value = %Lu \r\n",rxId,*toto);
+		//				printf("RX ID %Lu - Len %d- Value = %Ld \r\n",rxId,rxLen,*toto);
+		//				printf("%Ld \r\n",*toto);
+			//			LOG_TESTING_D(TRACE_ALL||TRACE_BRAKE_LIGHT,"Brake light status incomming from the CAN is ",rxData[0],ms*1000,ms)
 					}
 
 

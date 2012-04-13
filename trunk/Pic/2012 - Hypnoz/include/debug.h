@@ -53,7 +53,7 @@
 // Définition du niveau de log courant  //
 //////////////////////////////////////////
 
-#define CURRENT_LOG_LEVEL DEBUG
+#define CURRENT_LOG_LEVEL RUN
 
 //////////////////////////////////////////////////////////
 // Définition des constantes des paramètres de trace	//
@@ -82,16 +82,16 @@
 // Carte feux arrières
 #define TRACE_LIGHT_BACK	0  		// Permet de suivre l'état des feux et des codes à l'arrière
 #define TRACE_BRAKE_LIGHT	0		// Permet de suivre l'état des feux stops
-#define TRACE_BLINK_BACK	1		// Permet de suivre l'état des clignotants
-#define TRACE_BLINK_RB		1		// Permet de suivre l'état des clignotants arrières droits
-#define TRACE_BLINK_LB		1		// Permet de suivre l'état des clignotants arrières gauches
+#define TRACE_BLINK_BACK	0		// Permet de suivre l'état des clignotants
+#define TRACE_BLINK_RB		0		// Permet de suivre l'état des clignotants arrières droits
+#define TRACE_BLINK_LB		0		// Permet de suivre l'état des clignotants arrières gauches
 // Carte Moteur
-#define TRACE_RPM			1		// Permet de suivre le régime moteur mesuré par la carte moteur
+#define TRACE_RPM			0		// Permet de suivre le régime moteur mesuré par la carte moteur
 // Carte Tableau de Bord
 #define TRACE_CMD_BLINK		0		// Permet de suivre les commandes des clignotants
-#define TRACE_CMD_BLINK_L	1		// Permet de suivre les commandes des clignotants gauches
+#define TRACE_CMD_BLINK_L	0		// Permet de suivre les commandes des clignotants gauches
 #define TRACE_CMD_BLINK_R	0		// Permet de suivre les commandes des clignotants droits
-#define TRACE_CMD_WARNING	1		// Permet de suivre la commande des warning
+#define TRACE_CMD_WARNING	0		// Permet de suivre la commande des warning
 #define TRACE_CMD_LIGHT		0		// Permet de suivre la commande des codes et des feux
 #define TRACE_CMD_CODE		0		// Permet de suivre la commande des codes
 #define TRACE_CMD_FEUX		0		// Permet de suivre la commande des feux
@@ -106,7 +106,7 @@
 // Carte pédalier
 #define TRACE_BRAKE			0		//¨Permet de suivre l'état de la pédale de frein
 #define TRACE_PARK			0		// Permet de suivre l'état du frein de parking
-#define TRACE_ACC			1		// Permet de suivre la position de la pédale acquise grâce à la carte pédalier
+#define TRACE_ACC			0		// Permet de suivre la position de la pédale acquise grâce à la carte pédalier
 
 
 //////////////////////////////////////////////////////////

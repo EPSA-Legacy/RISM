@@ -1,7 +1,7 @@
 [PROJECT]
 Target=main.HEX
 Development_Mode=2
-Processor=0x4580
+Processor=0x8458
 ToolSuite=CCS
 
 [Directories]
