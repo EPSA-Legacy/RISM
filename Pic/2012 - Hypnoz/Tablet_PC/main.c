@@ -15,14 +15,14 @@
 
 #define CAN_USE_EXTENDED_ID         FALSE
 
-#include <18F258.h>
+#include <18F2580.h>
 #include <can-18xxx8.c>
 #include <CAN_id.h>
 
 
 //Mode debug commenter la ligne pour l'enlever
-#define DEBUG 1
-#define TRACE_CAN 1
+//#define DEBUG 1
+//#define TRACE_CAN 1
 
 #ifdef DEBUG
 	#fuses HS,NOPROTECT,NOLVP,NOWDT
