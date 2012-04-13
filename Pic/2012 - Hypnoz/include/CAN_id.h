@@ -27,6 +27,8 @@
 #define SPEED_ERR             19 // Non implémenté
 #define VOLTAGE_DATA	      20 // Message contenant les informations électriques en tension provenant de la carte acquisition
 #define CURRENT_DATA	      21 // Message contenant les informations électriques en courant provenant de la carte acquisition
+#define PARK_ORDER	      22 // Message informant que le frein à main est tiré
+#define PARK_ACK	      23 // Message accusant de la réception de PARK_ORDER
 
 
 //Temps de réemission entre les messages (en ms)
@@ -38,6 +40,6 @@
 #define TR_PARK 500
 #define TR_LIGHT 200
 // #define TR_BLIGHT 1
-#define TR_BATTERY 5000
-#define TR_ELECTRIC 10
+#define TR_BATTERY 100
+#define TR_ELECTRIC 50
 
