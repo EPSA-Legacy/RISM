@@ -1,11 +1,11 @@
-# EESchema Netlist Version 1.1 created  10/04/2012 15:43:59
+# EESchema Netlist Version 1.1 created  28/04/2012 19:04:57
 (
  ( /4F5610CD C1 C1 27p
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 GND )
  )
  ( /4F5610D0 C1V5 C2 1u
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 GND )
  )
  ( /4F7AE990 C1V8 C3 100u
@@ -16,51 +16,63 @@
   ( 1 +12V )
   ( 2 GND )
  )
- ( /4F4D0704 D4 D1 DIODE
-  ( 1 N-000049 )
-  ( 2 +12V )
+ ( /4F9C1D4C C2V10 C5 100u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4F7B0A94 D4 D2 DIODE
-  ( 1 N-000002 )
-  ( 2 +12V )
+ ( /4F9C1CE6 C1 C6 27p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F9C1D59 C1 C7 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9C1D5D C1V7 C8 10u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F4D0704 D4 D1 DIODE
+  ( 1 N-000037 )
+  ( 2 N-000052 )
+ )
+ ( /4F9C1B7E D4 D2 DIODE
+  ( 1 N-000060 )
+  ( 2 N-000023 )
  )
  ( /4F7B0157 D4 D3 DIODE
   ( 1 GND )
   ( 2 /Alim_secteur )
  )
- ( /4F7B14F2 D4 D4 DIODE
-  ( 1 GND )
-  ( 2 N-000013 )
- )
- ( /4F7B1305 D4 D5 DIODE
-  ( 1 N-000004 )
-  ( 2 +12V )
+ ( /4F9C1BA6 D4 D4 DIODE
+  ( 1 N-000058 )
+  ( 2 N-000054 )
  )
  ( /4F843362 D4 D6 DIODE
   ( 1 GND )
-  ( 2 N-000044 )
+  ( 2 N-000055 )
  )
  ( /4F84325C D4 D7 DIODE
   ( 1 /Batterie )
-  ( 2 N-000010 )
+  ( 2 N-000057 )
  )
  ( /4F84325F D4 D8 DIODE
   ( 1 /Secteur )
-  ( 2 N-000010 )
+  ( 2 N-000057 )
  )
  ( /4F4D06FC RELAIS_SPDT K1 RELAIS-SPDT
-  ( 1 N-000049 )
-  ( 2 +12V )
-  ( 3 N-000029 )
-  ( 4 N-000026 )
-  ( 5 +12V )
+  ( 1 N-000037 )
+  ( 2 N-000052 )
+  ( 3 ? )
+  ( 4 N-000056 )
+  ( 5 N-000052 )
  )
- ( /4F7B0A95 RELAIS_SPDT K2 RELAIS-SPDT
-  ( 1 N-000002 )
-  ( 2 +12V )
-  ( 3 N-000012 )
-  ( 4 N-000003 )
-  ( 5 +12V )
+ ( /4F9C1B7F RELAIS_SPDT K2 RELAIS-SPDT
+  ( 1 N-000060 )
+  ( 2 N-000023 )
+  ( 3 ? )
+  ( 4 N-000059 )
+  ( 5 N-000023 )
  )
  ( /4F7AF30F RELAIS_SPDT K3 RELAIS-SPDT
   ( 1 GND )
@@ -71,7 +83,7 @@
  )
  ( /4F843003 RELAIS_DPDT K4 RELAIS-DPDT
   ( 1 GND )
-  ( 2 N-000044 )
+  ( 2 N-000055 )
   ( 3 ? )
   ( 4 ? )
   ( 5 /Alim_secteur )
@@ -79,26 +91,19 @@
   ( 7 /Secteur )
   ( 8 /Batterie )
  )
- ( /4F7B14F1 RELAIS_SPDT K5 RELAIS-SPDT
-  ( 1 GND )
-  ( 2 N-000013 )
+ ( /4F9C1BA7 RELAIS_SPDT K5 RELAIS-SPDT
+  ( 1 N-000058 )
+  ( 2 N-000054 )
   ( 3 ? )
-  ( 4 N-000024 )
-  ( 5 +12V )
- )
- ( /4F7B1306 RELAIS_SPDT K6 RELAIS-SPDT
-  ( 1 N-000004 )
-  ( 2 +12V )
-  ( 3 N-000014 )
-  ( 4 N-000017 )
-  ( 5 +12V )
+  ( 4 N-000014 )
+  ( 5 N-000054 )
  )
  ( /4F4CD49A KK_2 P1 Batterie
   ( 1 /Batterie )
   ( 2 GND )
  )
  ( /4F4CD4BB KK_2 P2 Relais_seuil_1
-  ( 1 N-000026 )
+  ( 1 N-000056 )
   ( 2 GND )
  )
  ( /4F7AFF36 KK_2 P3 Adapt_sect
@@ -106,7 +111,7 @@
   ( 2 GND )
  )
  ( /4F7B0A9A KK_2 P4 Relais_seuil
-  ( 1 N-000003 )
+  ( 1 N-000059 )
   ( 2 GND )
  )
  ( /4F7AEF22 KK_8 P5 Selection_SC
@@ -120,145 +125,161 @@
   ( 8 /Vref )
  )
  ( /4F7AEA84 KK_2 P6 SC
-  ( 1 N-000037 )
-  ( 2 N-000036 )
+  ( 1 N-000047 )
+  ( 2 N-000045 )
  )
  ( /4F7D9A05 KK_2 P7 On/Off
-  ( 1 N-000044 )
-  ( 2 N-000010 )
+  ( 1 N-000055 )
+  ( 2 N-000057 )
  )
- ( /4F7B14EC KK_2 P8 Sel_ch/dech
-  ( 1 +12V )
-  ( 2 N-000013 )
- )
- ( /4F7B1636 KK_2 P9 Relais_ch/dech
-  ( 1 GND )
-  ( 2 N-000024 )
+ ( /4F9C1C40 KK_2 P8 Ch/Dech
+  ( 1 +5V )
+  ( 2 /ch/dech )
  )
  ( /4F7B130B KK_2 P10 Relais_seuil_2
-  ( 1 N-000017 )
+  ( 1 N-000014 )
   ( 2 GND )
  )
  ( /4F7DC6FE KK_2 P11 Voyant_fin_charge
-  ( 1 N-000012 )
-  ( 2 N-000015 )
+  ( 1 N-000059 )
+  ( 2 N-000018 )
  )
  ( /4F7DC73F KK_2 P12 Voyant_seuil_1
-  ( 1 N-000029 )
-  ( 2 N-000016 )
+  ( 1 N-000056 )
+  ( 2 N-000006 )
  )
  ( /4F7DC899 KK_2 P13 Voyant_fin_decharge
   ( 1 +12V )
-  ( 2 N-000041 )
+  ( 2 N-000002 )
  )
  ( /4F7DC746 KK_2 P14 Voyant_seuil_2
-  ( 1 N-000014 )
-  ( 2 N-000035 )
+  ( 1 ? )
+  ( 2 ? )
  )
  ( /4F4CDA68 TO92DGS Q1 FET_N
-  ( D N-000049 )
-  ( G N-000027 )
+  ( D N-000037 )
+  ( G N-000034 )
   ( S GND )
  )
- ( /4F7B0A99 TO92DGS Q2 FET_N
-  ( D N-000002 )
+ ( /4F9C1B80 TO92DGS Q2 FET_N
+  ( D N-000060 )
+  ( G N-000022 )
+  ( S GND )
+ )
+ ( /4F9C1BA8 TO92DGS Q3 FET_N
+  ( D N-000058 )
   ( G N-000020 )
   ( S GND )
  )
- ( /4F7B130A TO92DGS Q3 FET_N
-  ( D N-000004 )
-  ( G N-000023 )
-  ( S GND )
- )
  ( /4F7DC89C TO92DGS Q4 FET_N
-  ( D N-000046 )
-  ( G N-000039 )
+  ( D N-000003 )
+  ( G N-000008 )
   ( S GND )
  )
  ( /4F7AEA9D R7 R1 27k
-  ( 1 N-000038 )
-  ( 2 N-000037 )
+  ( 1 N-000046 )
+  ( 2 N-000047 )
  )
  ( /4F7B02DF R3 R2 120
   ( 1 GND )
   ( 2 /Usc )
  )
- ( /4F7DC789 R3 R3 1k
-  ( 1 N-000015 )
-  ( 2 GND )
+ ( /4F9C1B7A R3 R3 120
+  ( 1 N-000022 )
+  ( 2 ? )
  )
  ( /4F7DC799 R3 R4 1k
-  ( 1 N-000016 )
+  ( 1 N-000006 )
   ( 2 GND )
  )
  ( /4F7DC897 R3 R5 1k
-  ( 1 N-000041 )
-  ( 2 N-000046 )
+  ( 1 N-000002 )
+  ( 2 N-000003 )
  )
- ( /4F7DC7A5 R3 R6 1k
-  ( 1 N-000035 )
+ ( /4F9C1B7B R3 R6 1k
+  ( 1 N-000018 )
+  ( 2 GND )
+ )
+ ( /4F9C1B61 $noname$ R7 120
+  ( 1 N-000034 )
+  ( 2 ? )
+ )
+ ( /4F9C1C8A $noname$ R8 120
+  ( 1 N-000008 )
+  ( 2 N-000001 )
+ )
+ ( /4F9C1BA2 $noname$ R9 120
+  ( 1 N-000020 )
+  ( 2 ? )
+ )
+ ( /4F9C1BA3 $noname$ R10 1k
+  ( 1 ? )
+  ( 2 GND )
+ )
+ ( /4F9C1CC2 $noname$ R11 1k
+  ( 1 /ch/dech )
   ( 2 GND )
  )
  ( /4F4CDA84 RV2X4 RV1 Regl_1
-  ( 1 +12V )
-  ( 2 N-000028 )
+  ( 1 +5V )
+  ( 2 N-000033 )
   ( 3 GND )
  )
  ( /4F560B1E RV2X4 RV2 Seuil_6
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_6 )
   ( 3 GND )
  )
  ( /4F5F6157 RV2X4 RV3 Seuil_5
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_5 )
   ( 3 GND )
  )
  ( /4F7AEEF6 RV2X4 RV4 Seuil_3
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_3 )
   ( 3 GND )
  )
  ( /4F7AEEF7 RV2X4 RV5 Seuil_4
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_4 )
   ( 3 GND )
  )
  ( /4F7AEF00 RV2X4 RV6 Seuil_1
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_1 )
   ( 3 GND )
  )
  ( /4F7AEEFF RV2X4 RV7 Seuil_2
-  ( 1 +12V )
+  ( 1 +5V )
   ( 2 /seuil_2 )
   ( 3 GND )
  )
  ( /4F7B1309 RV2X4 RV8 Regl_2
-  ( 1 +12V )
-  ( 2 N-000022 )
+  ( 1 +5V )
+  ( 2 N-000011 )
   ( 3 GND )
  )
  ( /4F7DC89D RV2X4 RV9 Regl_dech
   ( 1 +12V )
-  ( 2 N-000040 )
+  ( 2 N-000010 )
   ( 3 GND )
  )
  ( /4F7DC89A DIP-14__300_ELL U1 LM324
-  ( 1 N-000020 )
+  ( 1 ? )
   ( 2 /Vref )
   ( 3 /Usc )
-  ( 4 +12V )
+  ( 4 +5V )
   ( 5 /Usc )
-  ( 6 N-000028 )
-  ( 7 N-000027 )
-  ( 8 N-000023 )
-  ( 9 N-000022 )
+  ( 6 N-000033 )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 N-000011 )
   ( 10 /Usc )
   ( 11 GND )
   ( 12 /Usc )
-  ( 13 N-000040 )
-  ( 14 N-000039 )
+  ( 13 N-000010 )
+  ( 14 N-000001 )
  )
  ( /4F7AE87E TRACO_8W_12V_DUAL U2 TRACO_8W_12V_DUAL
   ( 1 ? )
@@ -275,8 +296,13 @@
   ( 1 /Usc )
   ( 2 VAA )
   ( 3 -VAA )
-  ( 4 N-000036 )
-  ( 5 N-000038 )
+  ( 4 N-000045 )
+  ( 5 N-000046 )
+ )
+ ( /4F9C1CE2 $noname$ U4 7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO +5V )
  )
 )
 *
@@ -299,6 +325,24 @@ $component C4
  C?
  C1-1
 $endlist
+$component C5
+ CP*
+ SM*
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ CP*
+ SM*
+$endlist
 $component D1
  D?
  S*
@@ -312,10 +356,6 @@ $component D3
  S*
 $endlist
 $component D4
- D?
- S*
-$endlist
-$component D5
  D?
  S*
 $endlist
@@ -367,6 +407,41 @@ $component R5
  SM1206
 $endlist
 $component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
  R?
  SM0603
  SM0805
