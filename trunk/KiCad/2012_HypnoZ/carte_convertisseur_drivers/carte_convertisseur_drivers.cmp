@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 15:08:11
+Cmp-Mod V01 Created by CvPCB (2010-05-05 BZR 2356)-stable date = 05/05/2012 11:32:51
 
 BeginCmp
 TimeStamp = /3E33C602;
@@ -96,48 +96,6 @@ TimeStamp = /4BB1BFAA;
 Reference = D2;
 ValeurCmp = JAUNE;
 IdModule  = LEDV;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D42D1E8;
-Reference = MECA1;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D42D1EE;
-Reference = MECA2;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D42D1F2;
-Reference = MECA3;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D42D1F5;
-Reference = MECA4;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D45AA88;
-Reference = MECA5;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
-EndCmp
-
-BeginCmp
-TimeStamp = /4D45AA87;
-Reference = MECA6;
-ValeurCmp = 5mm;
-IdModule  = 1pin;
 EndCmp
 
 BeginCmp
@@ -288,13 +246,6 @@ IdModule  = LM78XX-TO92;
 EndCmp
 
 BeginCmp
-TimeStamp = /3E33C3AB;
-Reference = U2;
-ValeurCmp = TRACO_20WI_DUAL;
-IdModule  = TRACO_20WI;
-EndCmp
-
-BeginCmp
 TimeStamp = /4D42CE3D;
 Reference = U3;
 ValeurCmp = 4069;
@@ -320,6 +271,13 @@ TimeStamp = /4D429777;
 Reference = U6;
 ValeurCmp = HCPL2630;
 IdModule  = 8DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FA4EE48;
+Reference = U7;
+ValeurCmp = TRACO_20-2423WIN;
+IdModule  = TRACO_TEN_20-2423WIN;
 EndCmp
 
 EndListe
