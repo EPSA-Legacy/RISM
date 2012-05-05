@@ -1,290 +1,247 @@
-# EESchema Netlist Version 1.1 created  18/02/2012 15:13:15
+# EESchema Netlist Version 1.1 created  05/05/2012 11:32:51
 (
- ( /4D429777 $noname  U6 HCPL2630 {Lib=HCPL2630}
-  (    1 N-000016 )
-  (    2 VSS )
-  (    3 VSS )
-  (    4 N-000001 )
-  (    5 GND )
-  (    6 /Err2_OUT )
-  (    7 /Err1_OUT )
-  (    8 VCC )
+ ( /3E33C602 C2 C1 100n
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D42CE3D $noname  U3 4069 {Lib=4069}
-  (    1 /Err1 )
-  (    2 N-000020 )
-  (    3 /Err2 )
-  (    4 N-000017 )
-  (    5 N-000039 )
-  (    6 /INB2_OUT )
-  (    7 VSS )
-  (    8 /INB1_OUT )
-  (    9 N-000044 )
-  (   10 /PWM1_OUT )
-  (   11 N-000046 )
-  (   12 /PWM2_OUT )
-  (   13 N-000042 )
-  (   14 VDD )
+ ( /3E33C608 C2V10 C2 100u
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D42C91E $noname  R16 10k {Lib=R}
-  (    1 VCC )
-  (    2 /Err2_OUT )
+ ( /3E33C6A9 C2 C5 100n
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D42C8D1 $noname  R15 10k {Lib=R}
-  (    1 VCC )
-  (    2 /Err1_OUT )
+ ( /3E33C6B3 C2V10 C6 100u
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D42C854 $noname  R14 10k {Lib=R}
-  (    1 VDD )
-  (    2 N-000042 )
+ ( /4D429D46 C1V5 C7 1u
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4D42C84F $noname  R13 10k {Lib=R}
-  (    1 VDD )
-  (    2 N-000039 )
+ ( /4D429D45 C2 C8 100n
+  ( 1 VCC )
+  ( 2 GND )
  )
- ( /4D42C84A $noname  R12 10k {Lib=R}
-  (    1 VDD )
-  (    2 N-000046 )
+ ( /3E33FA26 C1V5 C9 1u
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D42C83F $noname  R11 10k {Lib=R}
-  (    1 VDD )
-  (    2 N-000044 )
+ ( /3E33FA2C C2 C10 100n
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D429D6E $noname  C12 100n {Lib=C}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D429D6D C1V5 C11 1u
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D429D6D $noname  C11 1u {Lib=CP}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D429D6E C2 C12 100n
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D429D66 $noname  C14 100n {Lib=C}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D429D65 C1V5 C13 1u
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D429D65 $noname  C13 1u {Lib=CP}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D429D66 C2 C14 100n
+  ( 1 VDD )
+  ( 2 VSS )
  )
- ( /4D429D46 $noname  C7 1u {Lib=CP}
-  (    1 VCC )
-  (    2 GND )
+ ( /3E32C9BD LEDV D1 RED
+  ( 1 VCC )
+  ( 2 N-000026 )
  )
- ( /4D429D45 $noname  C8 100n {Lib=C}
-  (    1 VCC )
-  (    2 GND )
+ ( /4BB1BFAA LEDV D2 JAUNE
+  ( 1 VDD )
+  ( 2 N-000019 )
  )
- ( /4D42977D $noname  R10 1k {Lib=R}
-  (    1 N-000001 )
-  (    2 N-000017 )
+ ( /3E32C95B SIL-2 P1 ALIM
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4D429775 $noname  R9 1k {Lib=R}
-  (    1 N-000016 )
-  (    2 N-000020 )
+ ( /3E289928 he10-14d P2 ToDriver1
+  ( 1 ? )
+  ( 2 /INB1_OUT )
+  ( 3 /Err1 )
+  ( 4 /PWM1_OUT )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 VDD )
+  ( 9 VDD )
+  ( 10 VSS )
+  ( 11 VSS )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 ? )
  )
- ( /4D3E92AE $noname  R3 10k {Lib=R}
-  (    1 VSS )
-  (    2 /Err2 )
+ ( /4D3E906B SIL-7 P3 Interface
+  ( 1 /INB1_IN )
+  ( 2 /PWM1_IN )
+  ( 3 /Err1_OUT )
+  ( 4 /INB2_IN )
+  ( 5 /PWM2_IN )
+  ( 6 /Err2_OUT )
+  ( 7 GND )
  )
- ( /4D3E92A5 $noname  R1 10k {Lib=R}
-  (    1 VSS )
-  (    2 /Err1 )
+ ( /3E33CFA1 he10-14d P4 ToDriver2
+  ( 1 ? )
+  ( 2 /INB2_OUT )
+  ( 3 /Err2 )
+  ( 4 /PWM2_OUT )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 VDD )
+  ( 9 VDD )
+  ( 10 VSS )
+  ( 11 VSS )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 ? )
  )
- ( /4D3E906B $noname  P3 Interface {Lib=CONN_7}
-  (    1 /INB1_IN )
-  (    2 /PWM1_IN )
-  (    3 /Err1_OUT )
-  (    4 /INB2_IN )
-  (    5 /PWM2_IN )
-  (    6 /Err2_OUT )
-  (    7 GND )
+ ( /4D3E92A5 R3 R1 10k
+  ( 1 VSS )
+  ( 2 /Err1 )
  )
- ( /3E33FA2C $noname  C10 100n {Lib=C}
-  (    1 VDD )
-  (    2 VSS )
+ ( /3E32C9BC R3 R2 500
+  ( 1 GND )
+  ( 2 N-000026 )
  )
- ( /3E33FA26 $noname  C9 1u {Lib=CP}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D3E92AE R3 R3 10k
+  ( 1 VSS )
+  ( 2 /Err2 )
  )
- ( /3E33E65C $noname  R8 360 {Lib=R}
-  (    1 N-000043 )
-  (    2 /PWM2_IN )
+ ( /4BB1BF2F R3 R4 500
+  ( 1 VSS )
+  ( 2 N-000019 )
  )
- ( /3E33E658 $noname  U5 HCPL2531 {Lib=HCPL2630}
-  (    1 N-000040 )
-  (    2 GND )
-  (    3 GND )
-  (    4 N-000043 )
-  (    5 VSS )
-  (    6 N-000042 )
-  (    7 N-000039 )
-  (    8 VDD )
+ ( /3E33E0F4 R3 R5 360
+  ( 1 N-000038 )
+  ( 2 /INB1_IN )
  )
- ( /3E33E656 $noname  R7 360 {Lib=R}
-  (    1 N-000040 )
-  (    2 /INB2_IN )
+ ( /3E33E650 R3 R6 360
+  ( 1 N-000040 )
+  ( 2 /PWM1_IN )
  )
- ( /3E33E650 $noname  R6 360 {Lib=R}
-  (    1 N-000041 )
-  (    2 /PWM1_IN )
+ ( /3E33E656 R3 R7 360
+  ( 1 N-000042 )
+  ( 2 /INB2_IN )
  )
- ( /3E33E64C $noname  U4 HCPL2531 {Lib=HCPL2630}
-  (    1 N-000041 )
-  (    2 GND )
-  (    3 GND )
-  (    4 N-000045 )
-  (    5 VSS )
-  (    6 N-000044 )
-  (    7 N-000046 )
-  (    8 VDD )
+ ( /3E33E65C R3 R8 360
+  ( 1 N-000029 )
+  ( 2 /PWM2_IN )
  )
- ( /3E33E0F4 $noname  R5 360 {Lib=R}
-  (    1 N-000045 )
-  (    2 /INB1_IN )
+ ( /4D429775 R3 R9 1k
+  ( 1 N-000005 )
+  ( 2 N-000010 )
  )
- ( /3E33CFA1 $noname  P4 ToDriver2 {Lib=HE10-14}
-  (    1 ? )
-  (    2 /INB2_OUT )
-  (    3 /Err2 )
-  (    4 /PWM2_OUT )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 VDD )
-  (    9 VDD )
-  (   10 VSS )
-  (   11 VSS )
-  (   12 ? )
-  (   13 ? )
-  (   14 ? )
+ ( /4D42977D R3 R10 1k
+  ( 1 N-000006 )
+  ( 2 N-000009 )
  )
- ( /3E33C6B3 $noname  C6 100u {Lib=CAPAPOL}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D42C83F R3 R11 10k
+  ( 1 VDD )
+  ( 2 N-000037 )
  )
- ( /3E33C6A9 $noname  C5 100n {Lib=C}
-  (    1 VDD )
-  (    2 VSS )
+ ( /4D42C84A R3 R12 10k
+  ( 1 VDD )
+  ( 2 N-000039 )
  )
- ( /3E33C608 $noname  C2 100u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D42C84F R3 R13 10k
+  ( 1 VDD )
+  ( 2 N-000041 )
  )
- ( /3E33C602 $noname  C1 100n {Lib=C}
-  (    1 +12V )
-  (    2 GND )
+ ( /4D42C854 R3 R14 10k
+  ( 1 VDD )
+  ( 2 N-000028 )
  )
- ( /3E33C3AB $noname  U2 TRACO_20WI_DUAL {Lib=TRACO_20WI_DUAL}
-  (    1 +12V )
-  (    2 GND )
-  (    3 ? )
-  (    4 VDD )
-  (    5 VSS )
-  (    6 ? )
-  (    7 ? )
+ ( /4D42C8D1 R3 R15 10k
+  ( 1 VCC )
+  ( 2 /Err1_OUT )
  )
- ( /3E32C9BD $noname  D1 RED {Lib=LED}
-  (    1 VCC )
-  (    2 N-000036 )
+ ( /4D42C91E R3 R16 10k
+  ( 1 VCC )
+  ( 2 /Err2_OUT )
  )
- ( /3E32C9BC $noname  R2 500 {Lib=R}
-  (    1 GND )
-  (    2 N-000036 )
+ ( /3E32C955 LM78XX-TO92 U1 7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO VCC )
  )
- ( /3E32C955 $noname  U1 7805 {Lib=7805}
-  (  GND GND )
-  (   VI +12V )
-  (   VO VCC )
+ ( /4D42CE3D 14DIP-ELL300 U3 4069
+  ( 1 /Err1 )
+  ( 2 N-000010 )
+  ( 3 /Err2 )
+  ( 4 N-000009 )
+  ( 5 N-000041 )
+  ( 6 /INB2_OUT )
+  ( 7 VSS )
+  ( 8 /INB1_OUT )
+  ( 9 N-000037 )
+  ( 10 /PWM1_OUT )
+  ( 11 N-000039 )
+  ( 12 /PWM2_OUT )
+  ( 13 N-000028 )
+  ( 14 VDD )
  )
- ( /3E32C95B $noname  P1 ALIM {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
+ ( /3E33E64C 8DIP-ELL300 U4 HCPL2531
+  ( 1 N-000040 )
+  ( 2 GND )
+  ( 3 GND )
+  ( 4 N-000038 )
+  ( 5 VSS )
+  ( 6 N-000037 )
+  ( 7 N-000039 )
+  ( 8 VDD )
  )
- ( /3E289928 $noname  P2 ToDriver1 {Lib=HE10-14}
-  (    1 ? )
-  (    2 /INB1_OUT )
-  (    3 /Err1 )
-  (    4 /PWM1_OUT )
-  (    5 ? )
-  (    6 ? )
-  (    7 ? )
-  (    8 VDD )
-  (    9 VDD )
-  (   10 VSS )
-  (   11 VSS )
-  (   12 ? )
-  (   13 ? )
-  (   14 ? )
+ ( /3E33E658 8DIP-ELL300 U5 HCPL2531
+  ( 1 N-000042 )
+  ( 2 GND )
+  ( 3 GND )
+  ( 4 N-000029 )
+  ( 5 VSS )
+  ( 6 N-000028 )
+  ( 7 N-000041 )
+  ( 8 VDD )
  )
- ( /4BB1BFAA $noname  D2 JAUNE {Lib=LED}
-  (    1 VDD )
-  (    2 N-000031 )
+ ( /4D429777 8DIP-ELL300 U6 HCPL2630
+  ( 1 N-000005 )
+  ( 2 VSS )
+  ( 3 VSS )
+  ( 4 N-000006 )
+  ( 5 GND )
+  ( 6 /Err2_OUT )
+  ( 7 /Err1_OUT )
+  ( 8 VCC )
  )
- ( /4BB1BF2F $noname  R4 500 {Lib=R}
-  (    1 VSS )
-  (    2 N-000031 )
+ ( /4FA4EE48 TRACO_TEN_20-2423WIN U7 TRACO_20-2423WIN
+  ( 1 +12V )
+  ( 2 GND )
+  ( 3 VDD )
+  ( 4 ? )
+  ( 5 VSS )
+  ( 6 ? )
  )
 )
 *
 { Allowed footprints by component:
-$component R16
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R15
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R14
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R13
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R12
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C12
+$component C1
  SM*
  C?
  C1-1
 $endlist
-$component C11
+$component C2
  CP*
  SM*
 $endlist
-$component C14
+$component C5
  SM*
  C?
  C1-1
 $endlist
-$component C13
+$component C6
  CP*
  SM*
 $endlist
@@ -297,85 +254,29 @@ $component C8
  C?
  C1-1
 $endlist
-$component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R9
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C9
+ CP*
+ SM*
 $endlist
 $component C10
  SM*
  C?
  C1-1
 $endlist
-$component C9
+$component C11
  CP*
  SM*
 $endlist
-$component R8
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C6
- CP*
- SM*
-$endlist
-$component C5
+$component C12
  SM*
  C?
  C1-1
 $endlist
-$component C2
+$component C13
  CP*
  SM*
 $endlist
-$component C1
+$component C14
  SM*
  C?
  C1-1
@@ -389,13 +290,6 @@ $component D1
  LED-1206
  LEDV
 $endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $component D2
  LED-3MM
  LED-5MM
@@ -405,7 +299,112 @@ $component D2
  LED-1206
  LEDV
 $endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R16
  R?
  SM0603
  SM0805
@@ -414,165 +413,3 @@ $component R4
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "" ""
- U6 4
- R10 1
-Net 4 "GND" "GND"
- U6 5
- U5 3
- C7 2
- C2 2
- U4 2
- R2 1
- U5 2
- C8 2
- U4 3
- U1 GND
- P1 2
- C1 2
- U2 2
- P3 7
-Net 5 "VCC" "VCC"
- D1 1
- U1 VO
- R16 1
- R15 1
- C8 1
- C7 1
- U6 8
-Net 10 "/PWM2_IN" "PWM2_IN"
- R8 2
- P3 5
-Net 11 "/INB1_IN" "INB1_IN"
- P3 1
- R5 2
-Net 12 "/PWM1_IN" "PWM1_IN"
- P3 2
- R6 2
-Net 13 "/INB2_IN" "INB2_IN"
- P3 4
- R7 2
-Net 14 "/Err1_OUT" "Err1_OUT"
- U6 7
- P3 3
- R15 2
-Net 15 "/Err2" "Err2"
- P4 3
- R3 2
- U3 3
-Net 16 "" ""
- U6 1
- R9 1
-Net 17 "" ""
- U3 4
- R10 2
-Net 18 "VSS" "VSS"
- U6 2
- P2 11
- C9 2
- U3 7
- R1 1
- R3 1
- C5 2
- U5 5
- C13 2
- P4 11
- P4 10
- C6 2
- U6 3
- U4 5
- C14 2
- P2 10
- C11 2
- C12 2
- R4 1
- U2 5
- C10 2
-Net 19 "VDD" "VDD"
- C10 1
- R14 1
- C6 1
- C5 1
- U2 4
- C14 1
- C12 1
- C11 1
- C13 1
- R12 1
- R11 1
- R13 1
- U3 14
- U5 8
- C9 1
- P4 9
- P2 9
- P2 8
- P4 8
- U4 8
- D2 1
-Net 20 "" ""
- U3 2
- R9 2
-Net 21 "/Err2_OUT" "Err2_OUT"
- R16 2
- P3 6
- U6 6
-Net 31 "" ""
- D2 2
- R4 2
-Net 34 "/PWM1_OUT" "PWM1_OUT"
- U3 10
- P2 4
-Net 35 "/INB1_OUT" "INB1_OUT"
- U3 8
- P2 2
-Net 36 "" ""
- R2 2
- D1 2
-Net 37 "/PWM2_OUT" "PWM2_OUT"
- P4 4
- U3 12
-Net 38 "/INB2_OUT" "INB2_OUT"
- P4 2
- U3 6
-Net 39 "" ""
- U5 7
- R13 2
- U3 5
-Net 40 "" ""
- R7 1
- U5 1
-Net 41 "" ""
- R6 1
- U4 1
-Net 42 "" ""
- R14 2
- U5 6
- U3 13
-Net 43 "" ""
- R8 1
- U5 4
-Net 44 "" ""
- U3 9
- R11 2
- U4 6
-Net 45 "" ""
- U4 4
- R5 1
-Net 46 "" ""
- U3 11
- R12 2
- U4 7
-Net 47 "/Err1" "Err1"
- R1 2
- U3 1
- P2 3
-Net 48 "+12V" "+12V"
- P1 1
- U2 1
- C1 1
- C2 1
- U1 VI
-}
-#End

@@ -1,4 +1,6 @@
-EESchema Schematic File Version 2  date 18/02/2012 15:13:11
+EESchema Schematic File Version 2  date 05/05/2012 11:10:08
+LIBS:epsa_cmos
+LIBS:epsa_puissance
 LIBS:conn
 LIBS:symbioz
 LIBS:epsa_relais
@@ -24,13 +26,12 @@ LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:contrib
-EELAYER 25  0
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-encoding utf-8
 Sheet 1 1
 Title "Carte alim convertisseur"
-Date "18 feb 2012"
+Date "5 may 2012"
 Rev "1.0"
 Comp "EPSA - Générique"
 Comment1 ""
@@ -38,6 +39,20 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 2400 1350
+NoConn ~ 3950 1350
+$Comp
+L TRACO_20-2423WIN U7
+U 1 1 4FA4EE48
+P 3200 1250
+F 0 "U7" H 3200 1000 60  0000 C CNN
+F 1 "TRACO_20-2423WIN" H 3200 1500 60  0000 C CNN
+	1    3200 1250
+	1    0    0    -1  
+$EndComp
+Connection ~ 4400 1550
+Wire Wire Line
+	4600 1550 4050 1550
 Wire Notes Line
 	1450 2750 1450 1900
 Wire Notes Line
@@ -53,7 +68,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 4100 8200 4150
 Wire Wire Line
-	4400 1500 4400 1550
+	4400 1550 4400 1600
 Wire Notes Line
 	10500 5150 6300 5150
 Wire Notes Line
@@ -101,7 +116,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 3500 3200 3500
 Wire Wire Line
-	4400 1050 4400 1100
+	4400 1100 4400 1150
 Wire Notes Line
 	3000 4900 3000 6300
 Wire Notes Line
@@ -151,10 +166,10 @@ Wire Notes Line
 Connection ~ 2100 1050
 Connection ~ 2100 1450
 Wire Wire Line
-	1350 1050 1350 1150
+	1350 1150 1350 1050
 Connection ~ 1700 1050
 Wire Wire Line
-	1350 1450 1350 1350
+	1350 1350 1350 1450
 Connection ~ 1700 1450
 Wire Notes Line
 	800  750  800  1800
@@ -196,23 +211,16 @@ Wire Wire Line
 Wire Wire Line
 	7300 1300 7350 1300
 Wire Wire Line
-	4050 1500 4050 1200
+	2400 1150 2400 1050
 Wire Wire Line
-	4050 1200 3950 1200
-Wire Wire Line
-	2400 1050 2400 1150
-Wire Wire Line
-	1350 1050 2400 1050
+	2400 1050 1350 1050
 Wire Wire Line
 	1350 1450 2350 1450
 Wire Wire Line
 	2350 1450 2350 1250
-Connection ~ 4400 1100
-Connection ~ 4400 1500
+Connection ~ 4400 1150
 Wire Wire Line
-	4600 1500 4050 1500
-Wire Wire Line
-	4600 1100 3950 1100
+	4600 1150 3950 1150
 Wire Wire Line
 	8450 1850 8450 1900
 Wire Wire Line
@@ -233,8 +241,7 @@ Wire Wire Line
 	7350 3300 7350 3350
 Wire Wire Line
 	7300 3100 7350 3100
-Connection ~ 4200 1500
-Connection ~ 4200 1100
+Connection ~ 4200 1150
 Wire Wire Line
 	1900 1450 1900 1500
 Wire Wire Line
@@ -362,6 +369,11 @@ Wire Notes Line
 	6550 5500 6550 6550
 Wire Wire Line
 	2000 2600 2000 2650
+Wire Wire Line
+	3950 1250 4050 1250
+Wire Wire Line
+	4050 1250 4050 1550
+Connection ~ 4200 1550
 $Comp
 L VDD #PWR01
 U 1 1 4D42D419
@@ -707,19 +719,19 @@ $EndComp
 $Comp
 L VDD #PWR038
 U 1 1 4D42D322
-P 4400 1050
-F 0 "#PWR038" H 4400 1150 30  0001 C CNN
-F 1 "VDD" H 4400 1160 30  0000 C CNN
-	1    4400 1050
+P 4400 1100
+F 0 "#PWR038" H 4400 1200 30  0001 C CNN
+F 1 "VDD" H 4400 1210 30  0000 C CNN
+	1    4400 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L VSS #PWR039
 U 1 1 4D42D31D
-P 4400 1550
-F 0 "#PWR039" H 4400 1550 30  0001 C CNN
-F 1 "VSS" H 4400 1480 30  0000 C CNN
-	1    4400 1550
+P 4400 1600
+F 0 "#PWR039" H 4400 1600 30  0001 C CNN
+F 1 "VSS" H 4400 1530 30  0000 C CNN
+	1    4400 1600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1089,15 +1101,6 @@ F 1 "PWR_FLAG" H 2350 1680 30  0000 C CNN
 	1    2350 1450
 	-1   0    0    1   
 $EndComp
-$Comp
-L PWR_FLAG #FLG051
-U 1 1 3E33EC0A
-P 4050 1500
-F 0 "#FLG051" H 4050 1770 30  0001 C CNN
-F 1 "PWR_FLAG" H 4050 1730 30  0000 C CNN
-	1    4050 1500
-	-1   0    0    1   
-$EndComp
 Text Notes 7850 1000 0    60   ~ 0
 Optocouplage
 $Comp
@@ -1166,9 +1169,6 @@ Text Label 10400 2000 2    60   ~ 0
 PWM1_OUT
 Text Label 6400 1900 0    60   ~ 0
 PWM1_IN
-NoConn ~ 3950 1300
-NoConn ~ 3950 1400
-NoConn ~ 2400 1350
 $Comp
 L R R5
 U 1 1 3E33E0F4
@@ -1215,19 +1215,19 @@ INB1_OUT
 $Comp
 L CAPAPOL C6
 U 1 1 3E33C6B3
-P 4600 1300
-F 0 "C6" H 4650 1400 50  0000 L CNN
-F 1 "100u" H 4650 1200 50  0000 L CNN
-	1    4600 1300
+P 4600 1350
+F 0 "C6" H 4650 1450 50  0000 L CNN
+F 1 "100u" H 4650 1250 50  0000 L CNN
+	1    4600 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C5
 U 1 1 3E33C6A9
-P 4200 1300
-F 0 "C5" H 4250 1400 50  0000 L CNN
-F 1 "100n" H 4250 1200 50  0000 L CNN
-	1    4200 1300
+P 4200 1350
+F 0 "C5" H 4250 1450 50  0000 L CNN
+F 1 "100n" H 4250 1250 50  0000 L CNN
+	1    4200 1350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1247,15 +1247,6 @@ F 0 "C1" H 1750 1350 50  0000 L CNN
 F 1 "100n" H 1750 1150 50  0000 L CNN
 	1    1700 1250
 	-1   0    0    -1  
-$EndComp
-$Comp
-L TRACO_20WI_DUAL U2
-U 1 1 3E33C3AB
-P 3200 1250
-F 0 "U2" H 3200 1000 60  0000 C CNN
-F 1 "TRACO_20WI_DUAL" H 3200 1500 60  0000 C CNN
-	1    3200 1250
-	1    0    0    -1  
 $EndComp
 NoConn ~ 2700 4100
 NoConn ~ 2700 4000
