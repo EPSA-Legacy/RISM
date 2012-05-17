@@ -1,442 +1,411 @@
-# EESchema Netlist Version 1.1 created  06/05/2012 15:36:50
+# EESchema Netlist Version 1.1 created  16/05/2012 18:26:57
 (
- ( /4FA0199D $noname  K3 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 GND )
-  (    2 /Alim_secteur )
-  (    3 /Alim_batterie )
-  (    4 /Alim_secteur )
-  (    5 +12V )
- )
- ( /4FA01963 $noname  K4 RELAIS-DPDT {Lib=RELAIS-DPDT}
-  (    1 GND )
-  (    2 N-000035 )
-  (    3 ? )
-  (    4 ? )
-  (    5 /Alim_secteur )
-  (    6 /Alim_batterie )
-  (    7 /Secteur )
-  (    8 /Batterie )
- )
- ( /4FA0050A $noname  P15 Voyant_charge {Lib=CONN_2}
-  (    1 N-000057 )
-  (    2 GND )
- )
- ( /4FA00509 $noname  P16 Voyant_decharge {Lib=CONN_2}
-  (    1 N-000061 )
-  (    2 GND )
- )
- ( /4FA00508 $noname  R5 120 {Lib=R}
-  (    1 N-000055 )
-  (    2 /ch/dech )
- )
- ( /4FA00505 $noname  D9 DIODE {Lib=DIODE}
-  (    1 N-000058 )
-  (    2 +12V )
- )
- ( /4FA00504 $noname  K6 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000058 )
-  (    2 +12V )
-  (    3 N-000061 )
-  (    4 N-000057 )
-  (    5 +12V )
- )
- ( /4FA00503 $noname  Q6 FET_N {Lib=FET_N}
-  (    D N-000058 )
-  (    G N-000055 )
-  (    S GND )
- )
- ( /4FA004BC $noname  P9 Voyant_chargement {Lib=CONN_2}
-  (    1 N-000009 )
-  (    2 GND )
- )
- ( /4FA00430 $noname  P18 Voyant_seuil_0 {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F9FFB30 $noname  D5 DIODE {Lib=DIODE}
-  (    1 /soo )
-  (    2 N-000056 )
- )
- ( /4F9FFB14 $noname  R4 120 {Lib=R}
-  (    1 N-000062 )
-  (    2 /ch/dech )
- )
- ( /4F9FFB12 $noname  Q5 FET_P {Lib=FET_P}
-  (    D N-000056 )
-  (    G N-000062 )
-  (    S +5V )
- )
- ( /4F9FF664 $noname  C12 1u {Lib=CAPAPOL}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9FF663 $noname  C11 27p {Lib=C}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9FF660 $noname  C9 27p {Lib=C}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9FF65F $noname  C10 1u {Lib=CAPAPOL}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9FF55A $noname  U6 4001 {Lib=4001}
-  (    1 N-000018 )
-  (    2 N-000018 )
-  (    3 /r2 )
-  (    4 N-000018 )
-  (    5 N-000019 )
-  (    6 N-000016 )
-  (    7 GND )
-  (    8 /s1 )
-  (    9 /ch/dech )
-  (   10 N-000020 )
-  (   11 /r1 )
-  (   12 N-000020 )
-  (   13 N-000020 )
-  (   14 +5V )
- )
- ( /4F9FF3E2 $noname  U5 4001 {Lib=4001}
-  (    1 /s1 )
-  (    2 N-000017 )
-  (    3 N-000019 )
-  (    4 N-000016 )
-  (    5 /ch/dech )
-  (    6 N-000015 )
-  (    7 GND )
-  (    8 /ch/dech )
-  (    9 /ch/dech )
-  (   10 N-000017 )
-  (   11 N-000015 )
-  (   12 /s2 )
-  (   13 /s2 )
-  (   14 +5V )
- )
- ( /4F9FF2C5 $noname  P17 Voyant_alim {Lib=CONN_2}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F9C1D5D $noname  C8 10u {Lib=CAPAPOL}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9C1D59 $noname  C7 27p {Lib=C}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F9C1D4C $noname  C5 100u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F9C1CE6 $noname  C6 27p {Lib=C}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F9C1CE2 $noname  U4 7805 {Lib=7805}
-  (  GND GND )
-  (   VI +12V )
-  (   VO +5V )
- )
- ( /4F9C1CC2 $noname  R11 1k {Lib=R}
-  (    1 /ch/dech )
-  (    2 GND )
- )
- ( /4F9C1C8A $noname  R8 120 {Lib=R}
-  (    1 N-000044 )
-  (    2 N-000034 )
- )
- ( /4F9C1C40 $noname  P8 Ch/Dech {Lib=CONN_2}
-  (    1 +5V )
-  (    2 /ch/dech )
- )
- ( /4F9C1BA8 $noname  Q3 FET_N {Lib=FET_N}
-  (    D N-000005 )
-  (    G N-000010 )
-  (    S GND )
- )
- ( /4F9C1BA7 $noname  K5 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000005 )
-  (    2 +12V )
-  (    3 ? )
-  (    4 N-000050 )
-  (    5 +12V )
- )
- ( /4F9C1BA6 $noname  D4 DIODE {Lib=DIODE}
-  (    1 N-000005 )
-  (    2 +12V )
- )
- ( /4F9C1BA2 $noname  R9 120 {Lib=R}
-  (    1 N-000010 )
-  (    2 /r2 )
- )
- ( /4F9C1B80 $noname  Q2 FET_N {Lib=FET_N}
-  (    D N-000012 )
-  (    G N-000013 )
-  (    S GND )
- )
- ( /4F9C1B7F $noname  K2 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000012 )
-  (    2 +12V )
-  (    3 N-000009 )
-  (    4 N-000007 )
-  (    5 +12V )
- )
- ( /4F9C1B7E $noname  D2 DIODE {Lib=DIODE}
-  (    1 N-000012 )
-  (    2 +12V )
- )
- ( /4F9C1B7A $noname  R3 120 {Lib=R}
-  (    1 N-000013 )
-  (    2 N-000056 )
- )
- ( /4F9C1B61 $noname  R7 120 {Lib=R}
-  (    1 N-000028 )
-  (    2 /r1 )
- )
- ( /4F7DC6FE $noname  P11 Voyant_seuil_oo {Lib=CONN_2}
-  (    1 N-000007 )
-  (    2 GND )
- )
- ( /4F7B0A9A $noname  P4 Relais_seuil_oo {Lib=CONN_2}
-  (    1 N-000007 )
-  (    2 GND )
- )
- ( /4F843362 $noname  D6 DIODE {Lib=DIODE}
-  (    1 GND )
-  (    2 N-000035 )
- )
- ( /4F84325F $noname  D8 DIODE {Lib=DIODE}
-  (    1 /Secteur )
-  (    2 N-000036 )
- )
- ( /4F84325C $noname  D7 DIODE {Lib=DIODE}
-  (    1 /Batterie )
-  (    2 N-000036 )
- )
- ( /4F7DC89C $noname  Q4 FET_N {Lib=FET_N}
-  (    D N-000043 )
-  (    G N-000044 )
-  (    S GND )
- )
- ( /4F7DC89D $noname  RV9 Regl_dech {Lib=POT}
-  (    1 +5V )
-  (    2 N-000045 )
-  (    3 GND )
- )
- ( /4F7DC89A $noname  U1 LM324 {Lib=LM324}
-  (    1 /soo )
-  (    2 /Vref )
-  (    3 /Usc )
-  (    4 +5V )
-  (    5 /Usc )
-  (    6 N-000038 )
-  (    7 /s1 )
-  (    8 /s2 )
-  (    9 N-000051 )
-  (   10 /Usc )
-  (   11 GND )
-  (   12 N-000045 )
-  (   13 /Usc )
-  (   14 N-000034 )
- )
- ( /4F7DC899 $noname  P13 Voyant_SC_vide {Lib=CONN_2}
-  (    1 +12V )
-  (    2 N-000043 )
- )
- ( /4F7DC746 $noname  P14 Voyant_seuil_2 {Lib=CONN_2}
-  (    1 N-000050 )
-  (    2 GND )
- )
- ( /4F7DC73F $noname  P12 Voyant_seuil_1 {Lib=CONN_2}
-  (    1 N-000052 )
-  (    2 GND )
- )
- ( /4F7D9A05 $noname  P7 On/Off {Lib=CONN_2}
-  (    1 N-000035 )
-  (    2 N-000036 )
- )
- ( /4F7B130B $noname  P10 Relais_seuil_2 {Lib=CONN_2}
-  (    1 N-000050 )
-  (    2 GND )
- )
- ( /4F7B1309 $noname  RV8 Regl_2 {Lib=POT}
-  (    1 +5V )
-  (    2 N-000051 )
-  (    3 GND )
- )
- ( /4F7B02DF $noname  R2 200 {Lib=R}
-  (    1 GND )
-  (    2 /Usc )
- )
- ( /4F7B0157 $noname  D3 DIODE {Lib=DIODE}
-  (    1 GND )
-  (    2 /Alim_secteur )
- )
- ( /4F7AFF36 $noname  P3 Adapt_sect {Lib=CONN_2}
-  (    1 /Secteur )
-  (    2 GND )
- )
- ( /4F7AEF22 $noname  P5 Selection_SC {Lib=CONN_8}
-  (    1 /seuil_1 )
-  (    2 /seuil_2 )
-  (    3 /seuil_3 )
-  (    4 /seuil_4 )
-  (    5 /seuil_5 )
-  (    6 /seuil_6 )
-  (    7 ? )
-  (    8 /Vref )
- )
- ( /4F7AEF00 $noname  RV6 Seuil_1 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_1 )
-  (    3 GND )
- )
- ( /4F7AEEFF $noname  RV7 Seuil_2 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_2 )
-  (    3 GND )
- )
- ( /4F7AEEF7 $noname  RV5 Seuil_4 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_4 )
-  (    3 GND )
- )
- ( /4F7AEEF6 $noname  RV4 Seuil_3 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_3 )
-  (    3 GND )
- )
- ( /4F7AEA9D $noname  R1 27k {Lib=R}
-  (    1 N-000032 )
-  (    2 N-000025 )
- )
- ( /4F7AEA84 $noname  P6 SC {Lib=CONN_2}
-  (    1 N-000025 )
-  (    2 N-000031 )
- )
- ( /4F7AE990 $noname  C3 100u {Lib=CAPAPOL}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F7AE986 $noname  C4 27p {Lib=C}
-  (    1 +12V )
-  (    2 GND )
- )
- ( /4F7AE87E $noname  U2 TRACO_8W_12V_DUAL {Lib=TRACO_8W_12V_DUAL}
-  (    1 ? )
-  (    2 GND )
-  (    3 GND )
-  (    9 GND )
-  (   11 -VAA )
-  (   14 VAA )
-  (   16 GND )
-  (   22 +12V )
-  (   23 +12V )
- )
- ( /4F7AE7BF $noname  U3 LEM {Lib=LEM}
-  (    1 /Usc )
-  (    2 VAA )
-  (    3 -VAA )
-  (    4 N-000031 )
-  (    5 N-000032 )
- )
- ( /4F5F6157 $noname  RV3 Seuil_5 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_5 )
-  (    3 GND )
- )
- ( /4F5610D0 $noname  C2 1u {Lib=CAPAPOL}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F5610CD $noname  C1 27p {Lib=C}
-  (    1 +5V )
-  (    2 GND )
- )
- ( /4F560B1E $noname  RV2 Seuil_6 {Lib=POT}
-  (    1 +5V )
-  (    2 /seuil_6 )
-  (    3 GND )
- )
- ( /4F4D0704 $noname  D1 DIODE {Lib=DIODE}
-  (    1 N-000053 )
-  (    2 +12V )
- )
- ( /4F4D06FC $noname  K1 RELAIS-SPDT {Lib=RELAIS-SPDT}
-  (    1 N-000053 )
-  (    2 +12V )
-  (    3 ? )
-  (    4 N-000052 )
-  (    5 +12V )
- )
- ( /4F4CDA84 $noname  RV1 Regl_1 {Lib=POT}
-  (    1 +5V )
-  (    2 N-000038 )
-  (    3 GND )
- )
- ( /4F4CDA68 $noname  Q1 FET_N {Lib=FET_N}
-  (    D N-000053 )
-  (    G N-000028 )
-  (    S GND )
- )
- ( /4F4CD4BB $noname  P2 Relais_seuil_1 {Lib=CONN_2}
-  (    1 N-000052 )
-  (    2 GND )
- )
- ( /4F4CD49A $noname  P1 Batterie {Lib=CONN_2}
-  (    1 /Batterie )
-  (    2 GND )
+ ( /4F5610CD C1 C1 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F5610D0 C1V5 C2 1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F7AE990 C1V8 C3 100u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F7AE986 C1 C4 27p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F9C1D4C C2V10 C5 100u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F9C1CE6 C1 C6 27p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F9C1D59 C1 C7 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9C1D5D C1V7 C8 10u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9FF660 C1 C9 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9FF65F C1V5 C10 1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9FF663 C1 C11 27p
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F9FF664 C1V5 C12 1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F4D0704 D4 D1 DIODE
+  ( 1 N-000052 )
+  ( 2 +12V )
+ )
+ ( /4F9C1B7E D4 D2 DIODE
+  ( 1 N-000013 )
+  ( 2 +12V )
+ )
+ ( /4F7B0157 D4 D3 DIODE
+  ( 1 GND )
+  ( 2 /Alim_secteur )
+ )
+ ( /4F9C1BA6 D4 D4 DIODE
+  ( 1 N-000008 )
+  ( 2 +12V )
+ )
+ ( /4F9FFB30 D4 D5 DIODE
+  ( 1 /soo )
+  ( 2 N-000054 )
+ )
+ ( /4F843362 D4 D6 DIODE
+  ( 1 GND )
+  ( 2 N-000033 )
+ )
+ ( /4F84325C D4 D7 DIODE
+  ( 1 /Batterie )
+  ( 2 N-000034 )
+ )
+ ( /4F84325F D4 D8 DIODE
+  ( 1 /Secteur )
+  ( 2 N-000034 )
+ )
+ ( /4FA00505 D4 D9 DIODE
+  ( 1 N-000057 )
+  ( 2 +12V )
+ )
+ ( /4F4D06FC RELAIS_SPDT K1 RELAIS-SPDT
+  ( 1 N-000052 )
+  ( 2 +12V )
+  ( 3 ? )
+  ( 4 N-000051 )
+  ( 5 +12V )
+ )
+ ( /4F9C1B7F RELAIS_SPDT K2 RELAIS-SPDT
+  ( 1 N-000013 )
+  ( 2 +12V )
+  ( 3 N-000012 )
+  ( 4 N-000006 )
+  ( 5 +12V )
+ )
+ ( /4FA0199D RELAIS_SPDT K3 RELAIS-SPDT
+  ( 1 GND )
+  ( 2 /Alim_secteur )
+  ( 3 /Alim_batterie )
+  ( 4 /Alim_secteur )
+  ( 5 +12V )
+ )
+ ( /4FA01963 RELAIS_DPDT K4 RELAIS-DPDT
+  ( 1 GND )
+  ( 2 N-000033 )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 /Alim_secteur )
+  ( 6 /Alim_batterie )
+  ( 7 /Secteur )
+  ( 8 /Batterie )
+ )
+ ( /4F9C1BA7 RELAIS_SPDT K5 RELAIS-SPDT
+  ( 1 N-000008 )
+  ( 2 +12V )
+  ( 3 ? )
+  ( 4 N-000047 )
+  ( 5 +12V )
+ )
+ ( /4FA00504 RELAIS_SPDT K6 RELAIS-SPDT
+  ( 1 N-000057 )
+  ( 2 +12V )
+  ( 3 N-000060 )
+  ( 4 N-000056 )
+  ( 5 +12V )
+ )
+ ( /4F4CD49A bornier2 P1 Batterie
+  ( 1 /Batterie )
+  ( 2 GND )
+ )
+ ( /4F4CD4BB bornier2 P2 Relais_seuil_1
+  ( 1 N-000051 )
+  ( 2 GND )
+ )
+ ( /4F7AFF36 bornier2 P3 Adapt_sect
+  ( 1 /Secteur )
+  ( 2 GND )
+ )
+ ( /4F7B0A9A bornier2 P4 Relais_seuil_oo
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /4F7AEF22 KK_8 P5 Selection_SC
+  ( 1 /seuil_1 )
+  ( 2 /seuil_2 )
+  ( 3 /seuil_3 )
+  ( 4 /seuil_4 )
+  ( 5 /seuil_5 )
+  ( 6 /seuil_6 )
+  ( 7 ? )
+  ( 8 /Vref )
+ )
+ ( /4F7AEA84 bornier2 P6 SC
+  ( 1 N-000022 )
+  ( 2 N-000028 )
+ )
+ ( /4F7D9A05 bornier2 P7 On/Off
+  ( 1 N-000033 )
+  ( 2 N-000034 )
+ )
+ ( /4F9C1C40 bornier2 P8 Ch/Dech
+  ( 1 +5V )
+  ( 2 /ch/dech )
+ )
+ ( /4FA004BC bornier2 P9 Voyant_chargement
+  ( 1 N-000012 )
+  ( 2 GND )
+ )
+ ( /4F7B130B bornier2 P10 Relais_seuil_2
+  ( 1 N-000047 )
+  ( 2 GND )
+ )
+ ( /4F7DC6FE bornier2 P11 Voyant_seuil_oo
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /4F7DC73F bornier2 P12 Voyant_seuil_1
+  ( 1 N-000051 )
+  ( 2 GND )
+ )
+ ( /4F7DC899 bornier2 P13 Voyant_SC_vide
+  ( 1 +12V )
+  ( 2 N-000041 )
+ )
+ ( /4F7DC746 bornier2 P14 Voyant_seuil_2
+  ( 1 N-000047 )
+  ( 2 GND )
+ )
+ ( /4FA0050A bornier2 P15 Voyant_charge
+  ( 1 N-000056 )
+  ( 2 GND )
+ )
+ ( /4FA00509 bornier2 P16 Voyant_decharge
+  ( 1 N-000060 )
+  ( 2 GND )
+ )
+ ( /4F9FF2C5 bornier2 P17 Voyant_alim
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4FA00430 bornier2 P18 Voyant_seuil_0
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4F4CDA68 TO92DGS Q1 FET_N
+  ( D N-000052 )
+  ( G N-000025 )
+  ( S GND )
+ )
+ ( /4F9C1B80 TO92DGS Q2 FET_N
+  ( D N-000013 )
+  ( G N-000011 )
+  ( S GND )
+ )
+ ( /4F9C1BA8 TO92DGS Q3 FET_N
+  ( D N-000008 )
+  ( G N-000009 )
+  ( S GND )
+ )
+ ( /4F7DC89C TO92DGS Q4 FET_N
+  ( D N-000041 )
+  ( G N-000042 )
+  ( S GND )
+ )
+ ( /4F9FFB12 TO92DGS Q5 FET_P
+  ( D N-000054 )
+  ( G N-000018 )
+  ( S +5V )
+ )
+ ( /4FA00503 TO92DGS Q6 FET_N
+  ( D N-000057 )
+  ( G N-000053 )
+  ( S GND )
+ )
+ ( /4F7AEA9D R7 R1 27k
+  ( 1 N-000029 )
+  ( 2 N-000022 )
+ )
+ ( /4F7B02DF R3 R2 200
+  ( 1 GND )
+  ( 2 /Usc )
+ )
+ ( /4F9C1B7A R3 R3 120
+  ( 1 N-000011 )
+  ( 2 N-000054 )
+ )
+ ( /4F9FFB14 R3 R4 120
+  ( 1 N-000018 )
+  ( 2 /ch/dech )
+ )
+ ( /4FA00508 R3 R5 120
+  ( 1 N-000053 )
+  ( 2 /ch/dech )
+ )
+ ( /4F9C1B61 R3 R7 120
+  ( 1 N-000025 )
+  ( 2 /r1 )
+ )
+ ( /4F9C1C8A R3 R8 120
+  ( 1 N-000042 )
+  ( 2 N-000031 )
+ )
+ ( /4F9C1BA2 R3 R9 120
+  ( 1 N-000009 )
+  ( 2 /r2 )
+ )
+ ( /4F9C1CC2 R3 R11 1k
+  ( 1 /ch/dech )
+  ( 2 GND )
+ )
+ ( /4F4CDA84 RV2X4 RV1 Regl_1
+  ( 1 +5V )
+  ( 2 N-000048 )
+  ( 3 GND )
+ )
+ ( /4F560B1E RV2X4 RV2 Seuil_6
+  ( 1 +5V )
+  ( 2 /seuil_6 )
+  ( 3 GND )
+ )
+ ( /4F5F6157 RV2X4 RV3 Seuil_5
+  ( 1 +5V )
+  ( 2 /seuil_5 )
+  ( 3 GND )
+ )
+ ( /4F7AEEF6 RV2X4 RV4 Seuil_3
+  ( 1 +5V )
+  ( 2 /seuil_3 )
+  ( 3 GND )
+ )
+ ( /4F7AEEF7 RV2X4 RV5 Seuil_4
+  ( 1 +5V )
+  ( 2 /seuil_4 )
+  ( 3 GND )
+ )
+ ( /4F7AEF00 RV2X4 RV6 Seuil_1
+  ( 1 +5V )
+  ( 2 /seuil_1 )
+  ( 3 GND )
+ )
+ ( /4F7AEEFF RV2X4 RV7 Seuil_2
+  ( 1 +5V )
+  ( 2 /seuil_2 )
+  ( 3 GND )
+ )
+ ( /4F7B1309 RV2X4 RV8 Regl_2
+  ( 1 +5V )
+  ( 2 N-000050 )
+  ( 3 GND )
+ )
+ ( /4F7DC89D RV2X4 RV9 Regl_dech
+  ( 1 +5V )
+  ( 2 N-000032 )
+  ( 3 GND )
+ )
+ ( /4F7DC89A DIP-14__300_ELL U1 LM324
+  ( 1 /soo )
+  ( 2 /Vref )
+  ( 3 /Usc )
+  ( 4 +5V )
+  ( 5 /Usc )
+  ( 6 N-000048 )
+  ( 7 /s1 )
+  ( 8 /s2 )
+  ( 9 N-000050 )
+  ( 10 /Usc )
+  ( 11 GND )
+  ( 12 N-000032 )
+  ( 13 /Usc )
+  ( 14 N-000031 )
+ )
+ ( /4F7AE87E TRACO_8W_12V_DUAL U2 TRACO_8W_12V_DUAL
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 GND )
+  ( 9 GND )
+  ( 11 -VAA )
+  ( 14 VAA )
+  ( 16 GND )
+  ( 22 +12V )
+  ( 23 +12V )
+ )
+ ( /4F7AE7BF LEM-LV25 U3 LEM
+  ( 1 /Usc )
+  ( 2 VAA )
+  ( 3 -VAA )
+  ( 4 N-000028 )
+  ( 5 N-000029 )
+ )
+ ( /4F9C1CE2 LM78XX_2 U4 7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO +5V )
+ )
+ ( /4F9FF3E2 DIP-14__300_ELL U5 4001
+  ( 1 /s1 )
+  ( 2 N-000061 )
+  ( 3 N-000015 )
+  ( 4 N-000016 )
+  ( 5 /ch/dech )
+  ( 6 N-000017 )
+  ( 7 GND )
+  ( 8 /ch/dech )
+  ( 9 /ch/dech )
+  ( 10 N-000061 )
+  ( 11 N-000017 )
+  ( 12 /s2 )
+  ( 13 /s2 )
+  ( 14 +5V )
+ )
+ ( /4F9FF55A DIP-14__300_ELL U6 4001
+  ( 1 N-000014 )
+  ( 2 N-000014 )
+  ( 3 /r2 )
+  ( 4 N-000014 )
+  ( 5 N-000015 )
+  ( 6 N-000016 )
+  ( 7 GND )
+  ( 8 /s1 )
+  ( 9 /ch/dech )
+  ( 10 N-000003 )
+  ( 11 /r1 )
+  ( 12 N-000003 )
+  ( 13 N-000003 )
+  ( 14 +5V )
  )
 )
 *
 { Allowed footprints by component:
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component D9
- D?
- S*
-$endlist
-$component D5
- D?
- S*
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C12
- CP*
- SM*
-$endlist
-$component C11
+$component C1
  SM*
  C?
  C1-1
 $endlist
-$component C9
- SM*
- C?
- C1-1
-$endlist
-$component C10
+$component C2
  CP*
  SM*
 $endlist
-$component C8
+$component C3
  CP*
  SM*
 $endlist
-$component C7
+$component C4
  SM*
  C?
  C1-1
@@ -450,36 +419,98 @@ $component C6
  C?
  C1-1
 $endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C7
+ SM*
+ C?
+ C1-1
 $endlist
-$component R8
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C8
+ CP*
+ SM*
 $endlist
-$component D4
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ CP*
+ SM*
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C12
+ CP*
+ SM*
+$endlist
+$component D1
  D?
  S*
-$endlist
-$component R9
- R?
- SM0603
- SM0805
- R?-*
- SM1206
 $endlist
 $component D2
  D?
  S*
 $endlist
+$component D3
+ D?
+ S*
+$endlist
+$component D4
+ D?
+ S*
+$endlist
+$component D5
+ D?
+ S*
+$endlist
+$component D6
+ D?
+ S*
+$endlist
+$component D7
+ D?
+ S*
+$endlist
+$component D8
+ D?
+ S*
+$endlist
+$component D9
+ D?
+ S*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
  R?
  SM0603
  SM0805
@@ -493,349 +524,26 @@ $component R7
  R?-*
  SM1206
 $endlist
-$component D6
- D?
- S*
-$endlist
-$component D8
- D?
- S*
-$endlist
-$component D7
- D?
- S*
-$endlist
-$component R2
+$component R8
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component D3
- D?
- S*
-$endlist
-$component R1
+$component R9
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component C3
- CP*
- SM*
-$endlist
-$component C4
- SM*
- C?
- C1-1
-$endlist
-$component C2
- CP*
- SM*
-$endlist
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component D1
- D?
- S*
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "/ch/dech" "ch/dech"
- U5 9
- U6 9
- U5 8
- R4 2
- U5 5
- R5 2
- R11 1
- P8 2
-Net 2 "GND" "GND"
- D3 1
- P10 2
- R2 1
- C1 2
- U5 7
- C2 2
- P17 2
- RV3 3
- Q6 S
- U2 16
- RV2 3
- P3 2
- P16 2
- P1 2
- Q4 S
- P2 2
- Q1 S
- RV1 3
- P15 2
- C3 2
- U2 2
- P9 2
- C4 2
- U2 3
- RV8 3
- P18 2
- RV4 3
- U2 9
- RV5 3
- RV7 3
- RV6 3
- C7 2
- D6 1
- P4 2
- U1 11
- P11 2
- C8 2
- P12 2
- RV9 3
- R11 2
- Q3 S
- U4 GND
- C6 2
- C5 2
- U6 7
- C10 2
- C9 2
- C11 2
- C12 2
- K4 1
- Q2 S
- P14 2
- K3 1
-Net 3 "+5V" "+5V"
- RV9 1
- Q5 S
- RV8 1
- C10 1
- C9 1
- C11 1
- C12 1
- U6 14
- U5 14
- C7 1
- C8 1
- P8 1
- U4 VO
- RV7 1
- RV3 1
- C2 1
- C1 1
- RV2 1
- RV6 1
- RV1 1
- RV4 1
- U1 4
- RV5 1
-Net 5 "" ""
- K5 1
- Q3 D
- D4 1
-Net 6 "/soo" "soo"
- D5 1
- U1 1
-Net 7 "" ""
- P4 1
- K2 4
- P11 1
-Net 9 "" ""
- K2 3
- P9 1
-Net 10 "" ""
- R9 1
- Q3 G
-Net 11 "/r2" "r2"
- U6 3
- R9 2
-Net 12 "" ""
- D2 1
- K2 1
- Q2 D
-Net 13 "" ""
- R3 1
- Q2 G
-Net 14 "/r1" "r1"
- R7 2
- U6 11
-Net 15 "" ""
- U5 11
- U5 6
-Net 16 "" ""
- U6 6
- U5 4
-Net 17 "" ""
- U5 2
- U5 10
-Net 18 "" ""
- U6 4
- U6 1
- U6 2
-Net 19 "" ""
- U5 3
- U6 5
-Net 20 "" ""
- U6 10
- U6 12
- U6 13
-Net 23 "/seuil_3" "seuil_3"
- P5 3
- RV4 2
-Net 24 "/seuil_4" "seuil_4"
- P5 4
- RV5 2
-Net 25 "" ""
- P6 1
- R1 2
-Net 27 "/seuil_6" "seuil_6"
- RV2 2
- P5 6
-Net 28 "" ""
- Q1 G
- R7 1
-Net 29 "VAA" "VAA"
- U3 2
- U2 14
-Net 30 "-VAA" "-VAA"
- U3 3
- U2 11
-Net 31 "" ""
- P6 2
- U3 4
-Net 32 "" ""
- U3 5
- R1 1
-Net 33 "/seuil_5" "seuil_5"
- RV3 2
- P5 5
-Net 34 "" ""
- R8 2
- U1 14
-Net 35 "" ""
- K4 2
- D6 2
- P7 1
-Net 36 "" ""
- D8 2
- D7 2
- P7 2
-Net 37 "/s2" "s2"
- U1 8
- U5 12
- U5 13
-Net 38 "" ""
- U1 6
- RV1 2
-Net 39 "/s1" "s1"
- U1 7
- U5 1
- U6 8
-Net 40 "/Alim_secteur" "Alim_secteur"
- K3 4
- K3 2
- K4 5
- D3 2
-Net 41 "/Secteur" "Secteur"
- P3 1
- K4 7
- D8 1
-Net 42 "/Batterie" "Batterie"
- K4 8
- D7 1
- P1 1
-Net 43 "" ""
- Q4 D
- P13 2
-Net 44 "" ""
- R8 1
- Q4 G
-Net 45 "" ""
- U1 12
- RV9 2
-Net 47 "/seuil_1" "seuil_1"
- RV6 2
- P5 1
-Net 48 "/seuil_2" "seuil_2"
- RV7 2
- P5 2
-Net 49 "/Vref" "Vref"
- U1 2
- P5 8
-Net 50 "" ""
- P10 1
- K5 4
- P14 1
-Net 51 "" ""
- RV8 2
- U1 9
-Net 52 "" ""
- P12 1
- K1 4
- P2 1
-Net 53 "" ""
- D1 1
- Q1 D
- K1 1
-Net 54 "/Usc" "Usc"
- U1 5
- U1 10
- U1 13
- U3 1
- R2 2
- U1 3
-Net 55 "" ""
- Q6 G
- R5 1
-Net 56 "" ""
- Q5 D
- D5 2
- R3 2
-Net 57 "" ""
- K6 4
- P15 1
-Net 58 "" ""
- Q6 D
- K6 1
- D9 1
-Net 59 "+12V" "+12V"
- C6 1
- K5 5
- K5 2
- C5 1
- U4 VI
- C4 1
- C3 1
- D1 2
- K1 2
- P17 1
- K1 5
- D2 2
- K2 5
- K2 2
- D4 2
- K3 5
- U2 22
- U2 23
- P13 1
- K6 5
- K6 2
- D9 2
- P18 1
-Net 60 "/Alim_batterie" "Alim_batterie"
- K3 3
- K4 6
-Net 61 "" ""
- P16 1
- K6 3
-Net 62 "" ""
- Q5 G
- R4 1
-}
-#End

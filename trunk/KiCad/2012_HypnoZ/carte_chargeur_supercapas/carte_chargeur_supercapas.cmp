@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 06/05/2012 15:23:42
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 16/05/2012 18:26:57
 
 BeginCmp
 TimeStamp = /4F5610CD;
@@ -193,28 +193,28 @@ BeginCmp
 TimeStamp = /4F4CD49A;
 Reference = P1;
 ValeurCmp = Batterie;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F4CD4BB;
 Reference = P2;
 ValeurCmp = Relais_seuil_1;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7AFF36;
 Reference = P3;
 ValeurCmp = Adapt_sect;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7B0A9A;
 Reference = P4;
 ValeurCmp = Relais_seuil_oo;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
@@ -228,91 +228,91 @@ BeginCmp
 TimeStamp = /4F7AEA84;
 Reference = P6;
 ValeurCmp = SC;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7D9A05;
 Reference = P7;
 ValeurCmp = On/Off;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F9C1C40;
 Reference = P8;
 ValeurCmp = Ch/Dech;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA004BC;
 Reference = P9;
 ValeurCmp = Voyant_chargement;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7B130B;
 Reference = P10;
 ValeurCmp = Relais_seuil_2;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7DC6FE;
 Reference = P11;
 ValeurCmp = Voyant_seuil_oo;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7DC73F;
 Reference = P12;
 ValeurCmp = Voyant_seuil_1;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7DC899;
 Reference = P13;
 ValeurCmp = Voyant_SC_vide;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7DC746;
 Reference = P14;
 ValeurCmp = Voyant_seuil_2;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA0050A;
 Reference = P15;
 ValeurCmp = Voyant_charge;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA00509;
 Reference = P16;
 ValeurCmp = Voyant_decharge;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F9FF2C5;
 Reference = P17;
 ValeurCmp = Voyant_alim;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA00430;
 Reference = P18;
 ValeurCmp = Voyant_seuil_0;
-IdModule  = KK_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
