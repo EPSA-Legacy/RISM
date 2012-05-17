@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 06/05/2012 22:56:11
+EESchema Schematic File Version 2  date 16/05/2012 18:26:26
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -40,7 +40,7 @@ $Descr A2 23400 16535
 encoding utf-8
 Sheet 1 1
 Title "Chargeur SC"
-Date "6 may 2012"
+Date "16 may 2012"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -48,6 +48,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_8 P5
+U 1 1 4F7AEF22
+P 1500 10050
+F 0 "P5" V 1450 10050 60  0000 C CNN
+F 1 "Selection_SC" V 1550 10050 60  0000 C CNN
+	1    1500 10050
+	-1   0    0    1   
+$EndComp
 $Comp
 L PWR_FLAG #FLG01
 U 1 1 4FA019D0
@@ -2071,15 +2080,6 @@ Text Label 2200 10300 2    60   ~ 0
 seuil_2
 Text Label 2200 10400 2    60   ~ 0
 seuil_1
-$Comp
-L CONN_8 P5
-U 1 1 4F7AEF22
-P 1500 10050
-F 0 "P5" V 1450 10050 60  0000 C CNN
-F 1 "Selection_SC" V 1550 10050 60  0000 C CNN
-	1    1500 10050
-	-1   0    0    1   
-$EndComp
 Text Label 3350 11000 0    60   ~ 0
 seuil_2
 Text Label 2650 11000 0    60   ~ 0
