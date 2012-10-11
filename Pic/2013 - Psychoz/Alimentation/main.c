@@ -14,6 +14,7 @@
 //		Version 1.06 - BLD - 11/12/2011 -> encapsulation debug //  
 //		Version 1.07 - BLD - 20/03/2012 -> patch extended id   // 
 //		Version 2.00 - BLD - 11/04/2012 -> test unitaire OK    //
+//		Version 2.x  - RWR - 11/10/2012 -> Copie saison 2013   //
 //                                                             //                                                
 /////////////////////////////////////////////////////////////////
 
