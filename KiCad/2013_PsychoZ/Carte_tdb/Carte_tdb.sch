@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 23/10/2012 17:29:00
+EESchema Schematic File Version 2  date 27/11/2012 17:11:52
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -40,7 +40,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Carte TDB"
-Date "23 oct 2012"
+Date "27 nov 2012"
 Rev "1.0"
 Comp "EPSA - PsychoZ"
 Comment1 ""

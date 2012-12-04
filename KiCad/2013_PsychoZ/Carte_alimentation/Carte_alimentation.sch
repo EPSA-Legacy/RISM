@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 06/11/2012 16:20:26
+EESchema Schematic File Version 2  date 27/11/2012 16:29:12
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -33,13 +33,14 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 43  0
+LIBS:Carte_alimentation-cache
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Carte alimentation"
-Date "6 nov 2012"
+Date "27 nov 2012"
 Rev "1.0"
 Comp "EPSA - Psychoz"
 Comment1 ""
