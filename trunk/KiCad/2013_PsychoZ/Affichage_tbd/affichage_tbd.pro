@@ -1,16 +1,6 @@
-update=06/11/2012 16:11:55
+update=08/01/2013 14:48:43
 version=1
-last_client=eeschema
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
+last_client=cvpcb
 [pcbnew]
 version=1
 PadDrlX=320
@@ -66,7 +56,6 @@ MaxLnkS=3
 ShowRat=0
 ShowMRa=1
 [pcbnew/libraries]
-LibDir=
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -77,6 +66,21 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
+LibName11=epsa_cmos
+LibName12=epsa_connect
+LibName13=epsa_divers
+LibName14=epsa_relais
+LibName15=symbioz
+LibName16=old/connect
+LibName17=old/discret
+LibName18=old/display
+LibName19=old/divers
+LibName20=old/drone
+LibName21=old/libcms
+LibName22=old/muonde
+LibName23=old/pin_array
+LibName24=old/supports
+LibDir=../../Modules
 [general]
 version=1
 [eeschema]
@@ -145,3 +149,8 @@ LibName31=opto
 LibName32=atmel
 LibName33=contrib
 LibName34=valves
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
