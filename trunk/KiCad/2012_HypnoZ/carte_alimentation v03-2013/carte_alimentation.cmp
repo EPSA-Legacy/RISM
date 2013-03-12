@@ -1,0 +1,129 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 13/03/2012 17:47:39
+
+BeginCmp
+TimeStamp = /4F426C2A;
+Reference = C1;
+ValeurCmp = 1000u;
+IdModule  = CP12;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426C2F;
+Reference = C2;
+ValeurCmp = 1000u;
+IdModule  = CP12;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F42851E;
+Reference = D1;
+ValeurCmp = DIODE;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426CF4;
+Reference = F1;
+ValeurCmp = FUSE;
+IdModule  = FUSE5-20;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F42808B;
+Reference = K1;
+ValeurCmp = Relais_BP;
+IdModule  = RELAIS_SPDT;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426D8A;
+Reference = MEZZA1;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426D6B;
+Reference = MEZZA2;
+ValeurCmp = MEZZA-10;
+IdModule  = he10-10df;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F427FA9;
+Reference = P1;
+ValeurCmp = Tableau_de_bord;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426BBA;
+Reference = P2;
+ValeurCmp = Alim;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F77A2;
+Reference = P3;
+ValeurCmp = ALIM11;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F77A1;
+Reference = P4;
+ValeurCmp = ALIM12;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F77A0;
+Reference = P5;
+ValeurCmp = ALIM13;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F779D;
+Reference = P6;
+ValeurCmp = ALIM21;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F779E;
+Reference = P7;
+ValeurCmp = ALIM22;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F5F779F;
+Reference = P8;
+ValeurCmp = ALIM23;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426C66;
+Reference = R1;
+ValeurCmp = 5.6k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F426C72;
+Reference = R2;
+ValeurCmp = 4k;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F42795F;
+Reference = RV1;
+ValeurCmp = V-;
+IdModule  = RV2X4;
+EndCmp
+
+EndListe

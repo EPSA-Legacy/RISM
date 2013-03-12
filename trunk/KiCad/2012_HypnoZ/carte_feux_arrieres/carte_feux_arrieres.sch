@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 09/04/2012 18:10:15
+EESchema Schematic File Version 2  date 02/10/2012 17:05:30
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -33,14 +33,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_feux_arrieres-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title "Carte phares arrières"
-Date "9 apr 2012"
+Date "2 oct 2012"
 Rev "v2.0"
 Comp "EPSA - Hypnoz"
 Comment1 ""
