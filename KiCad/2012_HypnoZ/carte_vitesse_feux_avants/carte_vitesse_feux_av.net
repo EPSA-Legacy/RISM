@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  dim. 19 févr. 2012 21:36:33 CET
+# EESchema Netlist Version 1.1 created  08/01/2013 16:39:25
 (
  ( /4D51649D C1V5 C1 1u
   ( 1 VCC )
@@ -112,7 +112,7 @@
   ( 7 N-000061 )
   ( 8 ? )
  )
- ( /4DAAEF07 MECA_5mm MECA1 MECA
+ ( /4DAAEF07 LM78XX MECA1 MECA
   ( 1 ? )
  )
  ( /4DAAEF12 MECA_5mm MECA2 MECA

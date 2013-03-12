@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 09/04/2012 15:02:19
+EESchema Schematic File Version 2  date 18/09/2012 17:16:34
 LIBS:epsa_cmos
 LIBS:epsa_puissance
 LIBS:epsa_relais
@@ -33,14 +33,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:carte_lem-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title "Carte mesure tension"
-Date "9 apr 2012"
+Date "18 sep 2012"
 Rev "1.0"
 Comp "EPSA - HypnoZ"
 Comment1 ""
