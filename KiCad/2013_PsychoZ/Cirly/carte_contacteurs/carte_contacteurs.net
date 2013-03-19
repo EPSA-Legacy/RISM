@@ -1,0 +1,202 @@
+# EESchema Netlist Version 1.1 created  09/04/2012 16:43:35
+(
+ ( /4D9A319F C1V7 C1 10u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4D9A319C C1 C2 27p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4E81C592 C1V7 C3 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4E81C595 C1 C4 27p
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4E81BEFE D4 D1 DIODE
+  ( 1 N-000023 )
+  ( 2 +12V )
+ )
+ ( /4E81C33F D4 D2 DIODE
+  ( 1 N-000004 )
+  ( 2 +12V )
+ )
+ ( /4E81C382 D4 D3 DIODE
+  ( 1 N-000032 )
+  ( 2 +12V )
+ )
+ ( /4DB0700A RELAIS_DPDT K1 RELAIS-DPDT
+  ( 1 N-000023 )
+  ( 2 +12V )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 +12P )
+  ( 7 ? )
+  ( 8 /contacteur+ )
+ )
+ ( /4E81C341 RELAIS_DPDT K2 RELAIS-DPDT
+  ( 1 N-000004 )
+  ( 2 +12V )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 +12P )
+  ( 7 ? )
+  ( 8 /contacteur- )
+ )
+ ( /4E81C380 RELAIS_DPDT K3 RELAIS-DPDT
+  ( 1 N-000032 )
+  ( 2 +12V )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 +12P )
+  ( 7 ? )
+  ( 8 /precharge )
+ )
+ ( /4D99B720 KK_2C P1 ALIM
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4D7116A0 KK_4C P2 INTERFACE
+  ( 1 GND )
+  ( 2 /cmd_contacteur+ )
+  ( 3 /cmd_precharge )
+  ( 4 ? )
+ )
+ ( /4D99B846 bornier4 P3 CONTACT.
+  ( 1 +12P )
+  ( 2 /contacteur- )
+  ( 3 /precharge )
+  ( 4 /contacteur+ )
+ )
+ ( /4DAAEE53 TO92DGS Q1 FET_N
+  ( D N-000023 )
+  ( G N-000011 )
+  ( S GND )
+ )
+ ( /4E81C342 TO92DGS Q2 FET_N
+  ( D N-000004 )
+  ( G N-000030 )
+  ( S GND )
+ )
+ ( /4E81C37F TO92DGS Q3 FET_N
+  ( D N-000032 )
+  ( G N-000031 )
+  ( S GND )
+ )
+ ( /4DB06F9A R3 R1 10k
+  ( 1 GND )
+  ( 2 /cmd_contacteur+ )
+ )
+ ( /4DB06F89 R3 R2 10k
+  ( 1 /cmd_precharge )
+  ( 2 GND )
+ )
+ ( /4E81C23A R3 R3 120
+  ( 1 N-000011 )
+  ( 2 /cmd_secu_cont+ )
+ )
+ ( /4E81C33D R3 R5 120
+  ( 1 N-000030 )
+  ( 2 /cmd_contacteur- )
+ )
+ ( /4E81C384 R3 R7 120
+  ( 1 N-000031 )
+  ( 2 /cmd_precharge )
+ )
+ ( /4D9A2FB9 LM78XX_2 U1 LM7805
+  ( GND GND )
+  ( VI +12V )
+  ( VO VCC )
+ )
+ ( /4DAAE64B DIP-14__300_ELL U5 4001
+  ( 1 N-000021 )
+  ( 2 /cmd_precharge )
+  ( 3 /cmd_secu_cont+ )
+  ( 4 N-000021 )
+  ( 5 /cmd_contacteur+ )
+  ( 6 GND )
+  ( 7 GND )
+  ( 8 /cmd_contacteur+ )
+  ( 9 /cmd_precharge )
+  ( 10 N-000017 )
+  ( 11 /cmd_contacteur- )
+  ( 12 N-000017 )
+  ( 13 GND )
+  ( 14 VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ CP*
+ SM*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D3
+ D?
+ S*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
