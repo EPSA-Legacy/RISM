@@ -1,0 +1,113 @@
+# EESchema Netlist Version 1.1 created  10/04/2012 14:48:05
+(
+ ( /4E5F9365 C1 C1 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4E5F936E C1V5 C2 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4F842BED C1 C3 27p
+  ( 1 GND )
+  ( 2 VCC )
+ )
+ ( /4F842BEC C1V5 C4 1u
+  ( 1 VCC )
+  ( 2 GND )
+ )
+ ( /4EE75F1F D4 D1 DIODE
+  ( 1 /bougie )
+  ( 2 N-000021 )
+ )
+ ( /4E5F88EF he10-10df MEZZA1 MEZZA-10
+  ( 1 /Vitesse_moteur_th )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 VCC )
+  ( 10 GND )
+ )
+ ( /4E5F88F2 he10-10df MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 ? )
+ )
+ ( /4EE75EBC KK_2 P1 Entrees
+  ( 1 /bougie )
+  ( 2 GND )
+ )
+ ( /4E5F8F3B R3 R1 10k
+  ( 1 /+2.5V )
+  ( 2 VCC )
+ )
+ ( /4E5F8F41 R3 R2 10k
+  ( 1 GND )
+  ( 2 /+2.5V )
+ )
+ ( /4F842B64 DIP-8__300_ELL U1 LM324
+  ( 1 N-000024 )
+  ( 2 N-000024 )
+  ( 3 N-000021 )
+  ( 4 VCC )
+  ( 11 GND )
+ )
+ ( /4F8423DE DIP-8__300_ELL U2 TL082
+  ( 1 /Vitesse_moteur_th )
+  ( 2 /+2.5V )
+  ( 3 N-000024 )
+  ( 4 GND )
+  ( 8 VCC )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}

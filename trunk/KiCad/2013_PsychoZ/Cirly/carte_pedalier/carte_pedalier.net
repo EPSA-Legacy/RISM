@@ -1,0 +1,300 @@
+# EESchema Netlist Version 1.1 created  18/02/2012 00:16:55
+(
+ ( /4EE75B63 C1 C1 27p
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4EE75B87 C1V7 C2 100u
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4EE760F5 C2 C3 330n
+  ( 1 N-000028 )
+  ( 2 GND )
+ )
+ ( /4EE763AF C1 C4 100n
+  ( 1 VAA )
+  ( 2 -VAA )
+ )
+ ( /4EE763B1 C1V5 C5 1u
+  ( 1 VAA )
+  ( 2 -VAA )
+ )
+ ( /4EE75E0B LEDV D1 JAUNE
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /4EE75E36 LEDV D2 JAUNE
+  ( 1 GND )
+  ( 2 N-000005 )
+ )
+ ( /4EE76285 D4 D3 10V
+  ( 1 GND )
+  ( 2 N-000009 )
+ )
+ ( /4EE76281 D4 D4 10V
+  ( 1 N-000008 )
+  ( 2 N-000009 )
+ )
+ ( /4EE761F3 D4 D5 10V
+  ( 1 N-000006 )
+  ( 2 N-000007 )
+ )
+ ( /4EE761F9 D4 D6 10V
+  ( 1 GND )
+  ( 2 N-000007 )
+ )
+ ( /4D7796C0 he10-10df MEZZA1 MEZZA-10
+  ( 1 /Uacc_in )
+  ( 2 /Frein )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 +12V )
+  ( 9 VCC )
+  ( 10 GND )
+ )
+ ( /4EE758B8 he10-10df MEZZA2 MEZZA-10
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 ? )
+  ( 6 /Frein_main )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 VCC )
+  ( 10 GND )
+ )
+ ( /4D920AA1 KK_2 P1 Frein_Main_in
+  ( 1 VCC )
+  ( 2 /Frein_main )
+ )
+ ( /4EE75911 KK_2 P5 Frein_ped_in
+  ( 1 VCC )
+  ( 2 /Frein )
+ )
+ ( /4EE75FCD KK_2 P7 Acc_out
+  ( 1 N-000008 )
+  ( 2 N-000006 )
+ )
+ ( /4EE764BA KK_2 P8 Frein_out
+  ( 1 /Frein )
+  ( 2 GND )
+ )
+ ( /4EE77370 KK_4 P9 Acc_in
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 /Uacc_in )
+  ( 4 VCC )
+ )
+ ( /4D920C00 R3 R1 10K
+  ( 1 /Frein_main )
+  ( 2 GND )
+ )
+ ( /4EE75CDC R3 R2 1k
+  ( 1 VAA )
+  ( 2 N-000002 )
+ )
+ ( /4EE75E37 R3 R3 1k
+  ( 1 -VAA )
+  ( 2 N-000005 )
+ )
+ ( /4EE7590F R3 R4 10K
+  ( 1 /Frein )
+  ( 2 GND )
+ )
+ ( /4EE7627D R3 R5 100
+  ( 1 N-000008 )
+  ( 2 N-000031 )
+ )
+ ( /4EE760D6 R3 R6 1k
+  ( 1 N-000028 )
+  ( 2 /Uacc_in )
+ )
+ ( /4EE761EE R3 R7 100
+  ( 1 N-000006 )
+  ( 2 N-000029 )
+ )
+ ( /4EE75FA2 R3 R8 1k
+  ( 1 N-000026 )
+  ( 2 N-000031 )
+ )
+ ( /4EE75F8D R3 R9 1k
+  ( 1 N-000029 )
+  ( 2 N-000026 )
+ )
+ ( /4EE75ED5 R3 R10 1k
+  ( 1 N-000031 )
+  ( 2 N-000027 )
+ )
+ ( /4EE75EF6 R3 R11 1k
+  ( 1 GND )
+  ( 2 N-000027 )
+ )
+ ( /4EE75A68 TRACO_8W_12V_DUAL U1 TRACO_8W_12V_DUAL
+  ( 1 ? )
+  ( 2 GND )
+  ( 3 GND )
+  ( 9 GND )
+  ( 11 -VAA )
+  ( 14 VAA )
+  ( 16 GND )
+  ( 22 +12V )
+  ( 23 +12V )
+ )
+ ( /4F02FFB0 DIP-8__300_ELL U2 LM358
+  ( 1 N-000029 )
+  ( 2 N-000026 )
+  ( 3 GND )
+  ( 4 -VAA )
+  ( 5 N-000028 )
+  ( 6 N-000027 )
+  ( 7 N-000031 )
+  ( 8 VAA )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ CP*
+ SM*
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D3
+ D?
+ SO*
+ SM*
+$endlist
+$component D4
+ D?
+ SO*
+ SM*
+$endlist
+$component D5
+ D?
+ SO*
+ SM*
+$endlist
+$component D6
+ D?
+ SO*
+ SM*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}

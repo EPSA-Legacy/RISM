@@ -1,0 +1,101 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 18/02/2012 14:37:05
+
+BeginCmp
+TimeStamp = /4F15946B;
+Reference = C1;
+ValeurCmp = 1000u;
+IdModule  = C2V8;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F159478;
+Reference = C2;
+ValeurCmp = 27p;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F159438;
+Reference = P1;
+ValeurCmp = ALIM;
+IdModule  = KK_2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE3FAA;
+Reference = P2;
+ValeurCmp = Mesures;
+IdModule  = KK_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F3FA822;
+Reference = P3;
+ValeurCmp = Tensions;
+IdModule  = bornier4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4198;
+Reference = P6;
+ValeurCmp = SC;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE411F;
+Reference = R1;
+ValeurCmp = 12k;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4168;
+Reference = R2;
+ValeurCmp = 12k;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE419A;
+Reference = R3;
+ValeurCmp = 27k;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4197;
+Reference = R4;
+ValeurCmp = 27k;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE3F77;
+Reference = U1;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE416B;
+Reference = U2;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE419D;
+Reference = U3;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+BeginCmp
+TimeStamp = /4EDE4194;
+Reference = U4;
+ValeurCmp = LEM;
+IdModule  = LEM-LV25;
+EndCmp
+
+EndListe
